@@ -3,7 +3,7 @@
 ## What is this?
 
 A small **bash script** that runs when the Docker container starts.
-
+    After build Images 
 It runs **before** the main app command (Uvicorn or Celery).
 
 ## Why does it exist?
