@@ -31,6 +31,6 @@ def setup_metrics(app: FastAPI):
     # Add Prometheus middleware
     app.add_middleware(PrometheusMiddleware)
 
-    @app.get("/TrhBVe_m5gg2002_E5VVqS", include_in_schema=False)
+    @app.get("/TrhBVe_m5gg2522_esvVqS", include_in_schema=False)
     def metrics():
         return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)

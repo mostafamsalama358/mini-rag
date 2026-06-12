@@ -148,7 +148,7 @@ services:
 
   # Grafana Dashboard
   grafana:
-    image: grafana/grafana:11.6.0-ubuntu
+    image: grafana/grafana:nightly-slim
     container_name: grafana
     ports:
       - "3000:3000"
@@ -165,7 +165,7 @@ services:
 
   # Node Exporter for system metrics
   node-exporter:
-    image: prom/node-exporter:v1.9.1
+    image: prom/node-exporter:master-distroless
     container_name: node-exporter
     ports:
       - "9100:9100"

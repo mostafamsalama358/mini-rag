@@ -7,7 +7,7 @@ scrape_configs:
   - job_name: 'fastapi'
     static_configs:
       - targets: ['fastapi:8000']
-    metrics_path: '/TrhBVe_m5gg2002_E5VVqS'
+    metrics_path: '/TrhBVe_m5gg2522_esvVqS'
 
   - job_name: 'node-exporter'
     static_configs:
