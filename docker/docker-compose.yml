@@ -9,6 +9,7 @@ services:
       - "8000:8000"
     volumes:
       - fastapi_data:/app/assets
+      - ./env/gcp-service-account.json:/app/gcp-credentials.json:ro
     networks:
       - backend
     restart: always
@@ -26,6 +27,7 @@ services:
     container_name: celery-worker
     volumes:
       - fastapi_data:/app/assets
+      - ./env/gcp-service-account.json:/app/gcp-credentials.json:ro
     networks:
       - backend
     restart: always
@@ -73,11 +75,20 @@ services:
       - backend
     restart: always
     depends_on:
-      - rabbitmq
-      - celery-worker
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      celery-worker:
+        condition: service_started
+    volumes:
+      - ./flowerconfig.py:/app/flowerconfig.py:ro
     env_file:
       - ./env/.env.app
-    command: ["python", "-m", "celery", "-A", "celery_app", "flower", "--conf=flowerconfig.py"]
+    environment:
+      FLOWER_PORT: "5555"
+      FLOWER_BASIC_AUTH: "admin:minirag_flower_2222"
+    entrypoint: ["python", "-m", "celery", "-A", "celery_app", "flower", "--conf=/app/flowerconfig.py"]
 
   # Nginx Service
   nginx:
@@ -115,17 +126,17 @@ services:
       start_period: 10s
 
   # Qdrant (VectorDB)
-  qdrant:
-    image: qdrant/qdrant:v1.13.6
-    container_name: qdrant
-    ports:
-      - "6333:6333"
-      - "6334:6334"
-    volumes:
-      - qdrant_data:/qdrant/storage
-    networks:
-      - backend
-    restart: always
+  # qdrant:
+  #   image: qdrant/qdrant:v1.13.6
+  #   container_name: qdrant
+  #   ports:
+  #     - "6333:6333"
+  #     - "6334:6334"
+  #   volumes:
+  #     - qdrant_data:/qdrant/storage
+  #   networks:
+  #     - backend
+  #   restart: always
 
   # Prometheus Monitoring
   prometheus:

@@ -1,4 +1,5 @@
-from celery_app import celery_app, get_setup_utils
+from celery_app import celery_app
+from celery_runtime import get_setup_utils
 from helpers.config import get_settings
 import asyncio
 from utils.idempotency_manager import IdempotencyManager
@@ -31,8 +32,14 @@ async def _clean_celery_executions_table(task_instance):
         # Create idempotency manager
         idempotency_manager = IdempotencyManager(db_client, db_engine)
 
-        logger.warning(f"cleaning !!!")
-        _ = await idempotency_manager.cleanup_old_tasks(5)
+        settings = get_settings()
+        retention_seconds = settings.CELERY_TASK_RETENTION_SECONDS
+        deleted_count = await idempotency_manager.cleanup_old_tasks(retention_seconds)
+        logger.info(
+            "Cleaned celery_task_executions older than %ss, deleted %s records",
+            retention_seconds,
+            deleted_count,
+        )
 
         return True
 

@@ -33,7 +33,7 @@ cd docker/minirag
 cp alembic.example.ini alembic.ini
 
 ### 2. Start the services
-
+r
 ```bash
 cd docker
 docker compose up --build -d

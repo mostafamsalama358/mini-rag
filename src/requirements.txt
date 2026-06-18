@@ -6,6 +6,8 @@ pydantic-settings==2.2.1
 aiofiles==23.2.1
 langchain==0.1.20
 PyMuPDF==1.24.3
+paddlepaddle>=3.3.0
+paddleocr>=3.0.0
 motor==3.4.0
 pydantic-mongo==2.3.0
 openai==1.75.0
@@ -13,6 +15,7 @@ cohere==5.5.8
 qdrant-client==1.10.1
 SQLAlchemy==2.0.36
 asyncpg==0.30.0
+greenlet>=3.1.1
 alembic==1.14.0
 psycopg2==2.9.10
 pgvector==0.4.0
@@ -30,3 +33,9 @@ kombu==5.5.4
 billiard==4.2.1
 vine==5.1.0
 flower==2.0.1
+
+# Vertex AI and Text Reshaping
+google-cloud-aiplatform>=1.71.0
+google-auth>=2.35.0
+arabic-reshaper>=3.0.0
+python-bidi>=0.4.2

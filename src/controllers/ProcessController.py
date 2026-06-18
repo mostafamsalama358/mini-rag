@@ -2,10 +2,12 @@ from .BaseController import BaseController
 from .ProjectController import ProjectController
 import os
 from langchain_community.document_loaders import TextLoader
-from langchain_community.document_loaders import PyMuPDFLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from models import ProcessingEnum
 from typing import List
 from dataclasses import dataclass
+from utils.text_cleaning import clean_extracted_text
+from utils.chunk_metadata import normalize_chunk_metadata
 
 @dataclass
 class Document:
@@ -37,41 +39,62 @@ class ProcessController(BaseController):
         if file_ext == ProcessingEnum.TXT.value:
             return TextLoader(file_path, encoding="utf-8")
 
-        if file_ext == ProcessingEnum.PDF.value:
-            return PyMuPDFLoader(file_path)
-        
         return None
 
     def get_file_content(self, file_id: str):
+        file_ext = self.get_file_extension(file_id=file_id)
+        file_path = os.path.join(self.project_path, file_id)
 
-        loader = self.get_file_loader(file_id=file_id)
-        if loader:
-            return loader.load()
+        if not os.path.exists(file_path):
+            return None
+
+        if file_ext == ProcessingEnum.TXT.value:
+            return TextLoader(file_path, encoding="utf-8").load()
+
+        if file_ext == ProcessingEnum.PDF.value:
+            from utils.pdf_ocr import load_pdf_with_ocr_fallback
+            return load_pdf_with_ocr_fallback(file_path)
 
         return None
+
+    def _normalize_loader_metadata(self, metadata: dict, file_id: str, source_type: str) -> dict:
+        normalized = normalize_chunk_metadata(metadata or {})
+        page = normalized.get("page")
+        if page is not None:
+            try:
+                normalized["page"] = int(page)
+            except (TypeError, ValueError):
+                normalized.pop("page", None)
+
+        normalized["file_name"] = normalized.get("file_name") or file_id
+        normalized["source_type"] = normalized.get("source_type") or source_type
+        normalized.pop("source", None)
+        return normalized
 
     def process_file_content(self, file_content: list, file_id: str,
                             chunk_size: int=100, overlap_size: int=20):
 
+        source_type = self.get_file_extension(file_id=file_id).lstrip(".") or "unknown"
+
         file_content_texts = [
-            rec.page_content
+            clean_extracted_text(rec.page_content)
             for rec in file_content
         ]
 
         file_content_metadata = [
-            rec.metadata
+            self._normalize_loader_metadata(rec.metadata, file_id=file_id, source_type=source_type)
             for rec in file_content
         ]
 
-        # chunks = text_splitter.create_documents(
-        #     file_content_texts,
-        #     metadatas=file_content_metadata
-        # )
-
-        chunks = self.process_simpler_splitter(
-            texts=file_content_texts,
-            metadatas=file_content_metadata,
+        splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,
+            chunk_overlap=overlap_size,
+            separators=["\n\n", "\n", ". ", " ", ""],
+        )
+
+        chunks = splitter.create_documents(
+            file_content_texts,
+            metadatas=file_content_metadata,
         )
 
         return chunks

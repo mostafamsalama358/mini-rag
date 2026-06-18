@@ -10,6 +10,8 @@ class Settings(BaseSettings):
     FILE_ALLOWED_TYPES: list
     FILE_MAX_SIZE: int
     FILE_DEFAULT_CHUNK_SIZE: int
+    TEXT_CHUNK_SIZE: int = 800
+    TEXT_CHUNK_OVERLAP: int = 120
 
     POSTGRES_USERNAME: str
     POSTGRES_PASSWORD: str
@@ -23,6 +25,12 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str = None
     OPENAI_API_URL: str = None
     COHERE_API_KEY: str = None
+    VERTEX_PROJECT_ID: str = None
+    VERTEX_LOCATION: str = "us-central1"
+    GOOGLE_APPLICATION_CREDENTIALS: str = None
+    VERTEX_EMBEDDING_BATCH_DELAY_SECONDS: int = 15
+    VERTEX_EMBEDDING_RATE_LIMIT_RETRIES: int = 10
+    VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS: int = 60
 
     GENERATION_MODEL_ID_LITERAL: List[str] = None
     GENERATION_MODEL_ID: str = None
@@ -49,6 +57,8 @@ class Settings(BaseSettings):
     CELERY_TASK_ACKS_LATE: bool = True
     CELERY_WORKER_CONCURRENCY: int = 2
     CELERY_FLOWER_PASSWORD: str = None
+    CELERY_TASK_CLEANUP_INTERVAL_SECONDS: int = 3600
+    CELERY_TASK_RETENTION_SECONDS: int = 86400
 
     class Config:
         env_file = ".env"
