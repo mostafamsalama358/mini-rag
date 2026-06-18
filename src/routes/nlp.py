@@ -1,9 +1,9 @@
 from fastapi import FastAPI, APIRouter, status, Request
 from fastapi.responses import JSONResponse
-from routes.schemes.nlp import PushRequest, SearchRequest
+from routes.schemes.nlp import PushRequest, SearchRequest, AnswerRequest
 from models.ProjectModel import ProjectModel
 from models.ChunkModel import ChunkModel
-from controllers import NLPController
+from controllers.NLPController import NLPController
 from models import ResponseSignal
 from tqdm.auto import tqdm
 from tasks.data_indexing import index_data_content
@@ -98,7 +98,7 @@ async def search_index(request: Request, project_id: int, search_request: Search
     )
 
 @nlp_router.post("/index/answer/{project_id}")
-async def answer_rag(request: Request, project_id: int, search_request: SearchRequest):
+async def answer_rag(request: Request, project_id: int, answer_request: AnswerRequest):
     
     project_model = await ProjectModel.create_instance(
         db_client=request.app.db_client
@@ -117,8 +117,10 @@ async def answer_rag(request: Request, project_id: int, search_request: SearchRe
 
     answer, full_prompt, chat_history = await nlp_controller.answer_rag_question(
         project=project,
-        query=search_request.text,
-        limit=search_request.limit,
+        query=answer_request.text,
+        limit=answer_request.limit,
+        session_id=answer_request.session_id,
+        db_client=request.app.db_client,
     )
 
     if not answer:

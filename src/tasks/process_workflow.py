@@ -1,5 +1,6 @@
 from celery import chain
-from celery_app import celery_app, get_setup_utils
+from celery_app import celery_app
+from celery_runtime import get_setup_utils
 from helpers.config import get_settings
 import asyncio
 from tasks.file_processing import process_project_files
@@ -13,10 +14,7 @@ logger = logging.getLogger(__name__)
                  autoretry_for=(Exception,),
                  retry_kwargs={'max_retries': 3, 'countdown': 60}
                 )
-def push_after_process_task(self, prev_task_result):
-
-    project_id = prev_task_result.get("project_id")
-    do_reset = prev_task_result.get("do_reset")
+def push_after_process_task(self, prev_task_result, project_id: int, do_reset: int):
 
     task_results = asyncio.run(
         _index_data_content(self, project_id, do_reset)
@@ -40,7 +38,7 @@ def process_and_push_workflow(  self, project_id: int,
 
     workflow = chain(
         process_project_files.s(project_id, file_id, chunk_size, overlap_size, do_reset),
-        push_after_process_task.s()
+        push_after_process_task.s(project_id, do_reset),
     )
 
     result = workflow.apply_async()

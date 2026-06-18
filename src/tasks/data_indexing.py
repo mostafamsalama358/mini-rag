@@ -1,11 +1,13 @@
-from celery_app import celery_app, get_setup_utils
+from celery_app import celery_app
+from celery_runtime import get_setup_utils
 from helpers.config import get_settings
 import asyncio
 from fastapi.responses import JSONResponse
 from models.ProjectModel import ProjectModel
 from models.ChunkModel import ChunkModel
-from controllers import NLPController
+from controllers.NLPController import NLPController
 from models import ResponseSignal
+from stores.llm.LLMEnums import LLMEnums
 from tqdm.auto import tqdm
 
 import logging
@@ -24,6 +26,9 @@ def index_data_content(self, project_id: int, do_reset: int):
     )
 
 async def _index_data_content(task_instance, project_id: int, do_reset: int):
+
+    if project_id is None:
+        raise ValueError("project_id is required for vector indexing")
 
     db_engine, vectordb_client = None, None
 
@@ -84,6 +89,13 @@ async def _index_data_content(task_instance, project_id: int, do_reset: int):
         total_chunks_count = await chunk_model.get_total_chunks_count(project_id=project.project_id)
         pbar = tqdm(total=total_chunks_count, desc="Vector Indexing", position=0)
 
+        settings = get_settings()
+        embedding_batch_delay = (
+            settings.VERTEX_EMBEDDING_BATCH_DELAY_SECONDS
+            if settings.EMBEDDING_BACKEND == LLMEnums.VERTEX.value
+            else 0
+        )
+
         while has_records:
             page_chunks = await chunk_model.get_poject_chunks(project_id=project.project_id, page_no=page_no)
             if len(page_chunks):
@@ -116,6 +128,9 @@ async def _index_data_content(task_instance, project_id: int, do_reset: int):
 
             pbar.update(len(page_chunks))
             inserted_items_count += len(page_chunks)
+
+            if embedding_batch_delay > 0 and inserted_items_count < total_chunks_count:
+                await asyncio.sleep(embedding_batch_delay)
         
 
         task_instance.update_state(

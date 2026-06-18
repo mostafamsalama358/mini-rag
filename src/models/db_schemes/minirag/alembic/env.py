@@ -1,3 +1,4 @@
+import os
 from logging.config import fileConfig
 
 from sqlalchemy import engine_from_config
@@ -9,6 +10,23 @@ from alembic import context
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+
+
+def _env(name: str, default: str) -> str:
+    value = os.getenv(name, default)
+    return value.strip().strip('"').strip("'")
+
+
+def get_sqlalchemy_url() -> str:
+    user = _env("POSTGRES_USERNAME", "postgres")
+    password = _env("POSTGRES_PASSWORD", "postgres_password")
+    host = _env("POSTGRES_HOST", "pgvector")
+    port = _env("POSTGRES_PORT", "5432")
+    database = _env("POSTGRES_MAIN_DATABASE", "minirag")
+    return f"postgresql://{user}:{password}@{host}:{port}/{database}"
+
+
+config.set_main_option("sqlalchemy.url", get_sqlalchemy_url())
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.

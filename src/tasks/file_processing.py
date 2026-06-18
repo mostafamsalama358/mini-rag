@@ -1,4 +1,5 @@
-from celery_app import celery_app, get_setup_utils
+from celery_app import celery_app
+from celery_runtime import get_db_client, get_setup_utils
 from helpers.config import get_settings
 import asyncio
 from models.ProjectModel import ProjectModel
@@ -7,9 +8,10 @@ from models.AssetModel import AssetModel
 from models.db_schemes import DataChunk
 from models import ResponseSignal
 from models.enums.AssetTypeEnum import AssetTypeEnum
-from controllers import ProcessController
-from controllers import NLPController
+from controllers.ProcessController import ProcessController
+from controllers.NLPController import NLPController
 from utils.idempotency_manager import IdempotencyManager
+from utils.chunk_metadata import normalize_chunk_metadata
 
 import logging
 logger = logging.getLogger(__name__)
@@ -35,48 +37,56 @@ async def _process_project_files(task_instance, project_id: int,
 
     
     db_engine, vectordb_client = None, None
-    
+    task_args = {
+        "project_id": project_id,
+        "file_id": file_id,
+        "chunk_size": chunk_size,
+        "overlap_size": overlap_size,
+        "do_reset": do_reset,
+    }
+    task_name = "tasks.file_processing.process_project_files"
+    settings = get_settings()
+
     try:
-
-        (db_engine, db_client, llm_provider_factory, 
-        vectordb_provider_factory,
-        generation_client, embedding_client,
-        vectordb_client, template_parser) = await get_setup_utils()
-
-        # Create idempotency manager
+        db_engine, db_client = await get_db_client()
         idempotency_manager = IdempotencyManager(db_client, db_engine)
 
-        # Define task arguments for idempotency check
-        task_args = {
-            "project_id": project_id,
-            "file_id": file_id,
-            "chunk_size": chunk_size,
-            "overlap_size": overlap_size,
-            "do_reset": do_reset
-        }
-        
-        task_name = "tasks.file_processing.process_project_files"
-
-        settings = get_settings()
-
-        # Check if task should execute (600 seconds = 10 minutes timeout)
         should_execute, existing_task = await idempotency_manager.should_execute_task(
             task_name=task_name,
             task_args=task_args,
             celery_task_id=task_instance.request.id,
-            task_time_limit=settings.CELERY_TASK_TIME_LIMIT
+            task_time_limit=settings.CELERY_TASK_TIME_LIMIT,
         )
 
         if not should_execute:
-            logger.warning(f"Can not handle th task | status: {existing_task.status}")
-            return existing_task.result
+            logger.info(
+                "Skipping duplicate file processing task | status: %s",
+                existing_task.status,
+            )
+            cached = existing_task.result or {}
+            return {
+                "signal": cached.get("signal", ResponseSignal.PROCESSING_SUCCESS.value),
+                "project_id": task_args["project_id"],
+                "do_reset": task_args["do_reset"],
+                "inserted_chunks": cached.get("inserted_chunks"),
+                "processed_files": cached.get("processed_files"),
+            }
+
+        await db_engine.dispose()
+        db_engine = None
+
+        (db_engine, db_client, llm_provider_factory,
+        vectordb_provider_factory,
+        generation_client, embedding_client,
+        vectordb_client, template_parser) = await get_setup_utils()
+
+        idempotency_manager = IdempotencyManager(db_client, db_engine)
 
         task_record = None
         if existing_task:
-            # Update existing task with new celery task ID
-            await idempotency_manager.update_task_status(
+            await idempotency_manager.update_task_for_retry(
                 execution_id=existing_task.execution_id,
-                status='PENDING'
+                celery_task_id=task_instance.request.id,
             )
             task_record = existing_task
         else:
@@ -214,7 +224,13 @@ async def _process_project_files(task_instance, project_id: int,
             file_chunks_records = [
                 DataChunk(
                     chunk_text=chunk.page_content,
-                    chunk_metadata=chunk.metadata,
+                    chunk_metadata=normalize_chunk_metadata({
+                        **(chunk.metadata or {}),
+                        "file_name": file_id,
+                        "asset_id": asset_id,
+                        "chunk_order": i + 1,
+                        "char_count": len(chunk.page_content),
+                    }),
                     chunk_order=i+1,
                     chunk_project_id=project.project_id,
                     chunk_asset_id=asset_id
@@ -232,21 +248,22 @@ async def _process_project_files(task_instance, project_id: int,
             }
         )
 
+        success_result = {
+            "signal": ResponseSignal.PROCESSING_SUCCESS.value,
+            "inserted_chunks": no_records,
+            "processed_files": no_files,
+            "project_id": project_id,
+            "do_reset": do_reset,
+        }
         await idempotency_manager.update_task_status(
             execution_id=task_record.execution_id,
             status='SUCCESS',
-            result={"signal": ResponseSignal.PROCESSING_SUCCESS.value}
+            result=success_result,
         )
 
         logger.warning(f"inserted_chunks: {no_records}")
 
-        return {
-                    "signal": ResponseSignal.PROCESSING_SUCCESS.value,
-                    "inserted_chunks": no_records,
-                    "processed_files": no_files,
-                    "project_id": project_id,
-                    "do_reset": do_reset
-                }
+        return success_result
     
     except Exception as e:
         logger.error(f"Task failed: {str(e)}")

@@ -2,7 +2,9 @@ from fastapi import FastAPI, APIRouter, Depends, UploadFile, status, Request
 from fastapi.responses import JSONResponse
 import os
 from helpers.config import get_settings, Settings
-from controllers import DataController, ProjectController, ProcessController
+from controllers.DataController import DataController
+from controllers.ProjectController import ProjectController
+from controllers.ProcessController import ProcessController
 import aiofiles
 from models import ResponseSignal
 import logging
@@ -12,7 +14,7 @@ from models.ChunkModel import ChunkModel
 from models.AssetModel import AssetModel
 from models.db_schemes import DataChunk, Asset
 from models.enums.AssetTypeEnum import AssetTypeEnum
-from controllers import NLPController
+from controllers.NLPController import NLPController
 from tasks.file_processing import process_project_files
 from tasks.process_workflow import process_and_push_workflow
 
@@ -87,15 +89,16 @@ async def upload_data(request: Request, project_id: int, file: UploadFile,
     return JSONResponse(
             content={
                 "signal": ResponseSignal.FILE_UPLOAD_SUCCESS.value,
-                "file_id": str(asset_record.asset_id),
+                "asset_name": asset_record.asset_name,
             }
         )
 
 @data_router.post("/process/{project_id}")
-async def process_endpoint(request: Request, project_id: int, process_request: ProcessRequest):
+async def process_endpoint(request: Request, project_id: int, process_request: ProcessRequest,
+                           app_settings: Settings = Depends(get_settings)):
 
-    chunk_size = process_request.chunk_size
-    overlap_size = process_request.overlap_size
+    chunk_size = process_request.chunk_size or app_settings.TEXT_CHUNK_SIZE
+    overlap_size = process_request.overlap_size or app_settings.TEXT_CHUNK_OVERLAP
     do_reset = process_request.do_reset
 
     task = process_project_files.delay(
@@ -114,10 +117,11 @@ async def process_endpoint(request: Request, project_id: int, process_request: P
     )
 
 @data_router.post("/process-and-push/{project_id}")
-async def process_and_push_endpoint(request: Request, project_id: int, process_request: ProcessRequest):
+async def process_and_push_endpoint(request: Request, project_id: int, process_request: ProcessRequest,
+                                    app_settings: Settings = Depends(get_settings)):
 
-    chunk_size = process_request.chunk_size
-    overlap_size = process_request.overlap_size
+    chunk_size = process_request.chunk_size or app_settings.TEXT_CHUNK_SIZE
+    overlap_size = process_request.overlap_size or app_settings.TEXT_CHUNK_OVERLAP
     do_reset = process_request.do_reset
 
     workflow_task = process_and_push_workflow.delay(

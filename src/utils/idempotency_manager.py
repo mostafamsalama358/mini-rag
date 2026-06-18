@@ -57,18 +57,36 @@ class IdempotencyManager:
 
     async def get_existing_task(self, task_name: str, 
                                 task_args: dict, celery_task_id: str) -> CeleryTaskExecution:
-        """Check if task with same name and args already exists."""
+        """Find the latest task record for the same task name and arguments."""
         args_hash = self.create_args_hash(task_name, task_args)
-        
+
         session = self.db_client()
         try:
-            stmt = select(CeleryTaskExecution).where(
-                CeleryTaskExecution.celery_task_id == celery_task_id,
-                CeleryTaskExecution.task_name == task_name,
-                CeleryTaskExecution.task_args_hash == args_hash
+            stmt = (
+                select(CeleryTaskExecution)
+                .where(
+                    CeleryTaskExecution.task_name == task_name,
+                    CeleryTaskExecution.task_args_hash == args_hash,
+                )
+                .order_by(CeleryTaskExecution.execution_id.desc())
+                .limit(1)
             )
             result = await session.execute(stmt)
             return result.scalar_one_or_none()
+        finally:
+            await session.close()
+
+    async def update_task_for_retry(self, execution_id: int, celery_task_id: str):
+        session = self.db_client()
+        try:
+            task_record = await session.get(CeleryTaskExecution, execution_id)
+            if task_record:
+                task_record.celery_task_id = celery_task_id
+                task_record.status = 'PENDING'
+                task_record.started_at = datetime.utcnow()
+                task_record.completed_at = None
+                task_record.result = None
+                await session.commit()
         finally:
             await session.close()
 
