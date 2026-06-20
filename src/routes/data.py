@@ -1,5 +1,8 @@
 from fastapi import FastAPI, APIRouter, Depends, UploadFile, status, Request
 from fastapi.responses import JSONResponse
+from celery import chain
+from celery.result import AsyncResult
+from celery_app import celery_app
 import os
 from helpers.config import get_settings, Settings
 from controllers.DataController import DataController
@@ -16,7 +19,7 @@ from models.db_schemes import DataChunk, Asset
 from models.enums.AssetTypeEnum import AssetTypeEnum
 from controllers.NLPController import NLPController
 from tasks.file_processing import process_project_files
-from tasks.process_workflow import process_and_push_workflow
+from tasks.process_workflow import push_after_process_task
 
 logger = logging.getLogger('uvicorn.error')
 
@@ -124,17 +127,41 @@ async def process_and_push_endpoint(request: Request, project_id: int, process_r
     overlap_size = process_request.overlap_size or app_settings.TEXT_CHUNK_OVERLAP
     do_reset = process_request.do_reset
 
-    workflow_task = process_and_push_workflow.delay(
-        project_id=project_id,
-        file_id=process_request.file_id,
-        chunk_size=chunk_size,
-        overlap_size=overlap_size,
-        do_reset=do_reset,
+    workflow = chain(
+        process_project_files.s(
+            project_id,
+            process_request.file_id,
+            chunk_size,
+            overlap_size,
+            do_reset,
+        ),
+        push_after_process_task.s(project_id, do_reset),
     )
+    workflow_result = workflow.apply_async()
 
     return JSONResponse(
         content={
             "signal": ResponseSignal.PROCESS_AND_PUSH_WORKFLOW_READY.value,
-            "workflow_task_id": workflow_task.id
+            "task_id": workflow_result.id,
+            "workflow_task_id": workflow_result.id,
         }
     )
+
+
+@data_router.get("/tasks/{task_id}")
+async def get_task_status(task_id: str):
+    result = AsyncResult(task_id, app=celery_app)
+    payload = {
+        "signal": ResponseSignal.TASK_STATUS_RETRIEVED.value,
+        "task_id": task_id,
+        "status": result.status,
+        "ready": result.ready(),
+        "successful": result.successful() if result.ready() else None,
+    }
+
+    if result.successful():
+        payload["result"] = result.result
+    elif result.failed():
+        payload["error"] = str(result.result) if result.result else "Task failed"
+
+    return JSONResponse(content=payload)

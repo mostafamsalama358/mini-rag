@@ -100,7 +100,7 @@ class VertexAIProvider(LLMInterface):
         contents.append(
             Content(
                 role="user",
-                parts=[Part.from_text(self.process_text(prompt))],
+                parts=[Part.from_text((prompt or "").strip())],
             )
         )
 

@@ -1,37 +1,39 @@
-FROM ghcr.io/astral-sh/uv:0.11-python3.13-trixie
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm
 
 WORKDIR /app
 
-# Install additional system dependencies for lxml and other packages
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    libavif-dev pkg-config \
+    libavif-dev \
+    pkg-config \
     libjpeg-dev \
-    gcc unzip zip \
-    python3-dev \
     libxml2-dev \
     libxslt1-dev \
     libffi-dev \
-    libgl1 \
-    libglib2.0-0 \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
 COPY src/requirements.txt .
 
-RUN uv pip install -r requirements.txt --system
+RUN uv pip install \
+    --system \
+    --no-cache \
+    -r requirements.txt
 
 COPY src/ .
 
-# Create directory structure for Alembic
 RUN mkdir -p /app/models/db_schemes/minirag/
 
-COPY docker/minirag/alembic.ini /app/models/db_schemes/minirag/alembic.ini
+COPY docker/minirag/alembic.ini \
+     /app/models/db_schemes/minirag/alembic.ini
 
 COPY docker/minirag/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+
+RUN sed -i 's/\r$//' /entrypoint.sh \
+    && chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-# Command to run the application
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4"]

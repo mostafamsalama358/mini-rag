@@ -8,6 +8,9 @@ from typing import List
 from dataclasses import dataclass
 from utils.text_cleaning import clean_extracted_text
 from utils.chunk_metadata import normalize_chunk_metadata
+from utils.chunk_sizing import resolve_chunk_params
+from utils.structural_split import split_at_structural_boundaries
+from helpers.config import get_settings
 
 @dataclass
 class Document:
@@ -71,33 +74,60 @@ class ProcessController(BaseController):
         normalized.pop("source", None)
         return normalized
 
+    def _split_text(self, text: str, metadata: dict, chunk_size: int, overlap_size: int, *, page_bound: bool = False):
+        effective_overlap = 0 if page_bound else overlap_size
+
+        if len(text) <= chunk_size:
+            return [Document(page_content=text, metadata=dict(metadata))]
+
+        splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,
+            chunk_overlap=effective_overlap,
+            separators=["\n\n", "\n", ". ", " ", ""],
+        )
+
+        return splitter.create_documents([text], metadatas=[metadata])
+
     def process_file_content(self, file_content: list, file_id: str,
                             chunk_size: int=100, overlap_size: int=20):
 
         source_type = self.get_file_extension(file_id=file_id).lstrip(".") or "unknown"
+        all_chunks = []
 
-        file_content_texts = [
-            clean_extracted_text(rec.page_content)
-            for rec in file_content
-        ]
+        for rec in file_content:
+            text = clean_extracted_text(rec.page_content)
+            if not text:
+                continue
 
-        file_content_metadata = [
-            self._normalize_loader_metadata(rec.metadata, file_id=file_id, source_type=source_type)
-            for rec in file_content
-        ]
+            metadata = self._normalize_loader_metadata(
+                rec.metadata,
+                file_id=file_id,
+                source_type=source_type,
+            )
+            page_bound = metadata.get("source_type") == "pdf" and metadata.get("page") is not None
 
-        splitter = RecursiveCharacterTextSplitter(
-            chunk_size=chunk_size,
-            chunk_overlap=overlap_size,
-            separators=["\n\n", "\n", ". ", " ", ""],
-        )
+            settings = get_settings()
+            effective_chunk_size, effective_overlap = resolve_chunk_params(
+                len(text),
+                chunk_size,
+                overlap_size,
+                min_chunk_size=settings.TEXT_CHUNK_MIN_SIZE,
+                max_chunk_size=settings.TEXT_CHUNK_MAX_SIZE,
+            )
 
-        chunks = splitter.create_documents(
-            file_content_texts,
-            metadatas=file_content_metadata,
-        )
+            segments = split_at_structural_boundaries(text)
+            for segment in segments:
+                all_chunks.extend(
+                    self._split_text(
+                        segment,
+                        metadata,
+                        effective_chunk_size,
+                        effective_overlap,
+                        page_bound=page_bound,
+                    )
+                )
 
-        return chunks
+        return all_chunks
 
     def process_simpler_splitter(self, texts: List[str], metadatas: List[dict], chunk_size: int, splitter_tag: str="\n"):
         

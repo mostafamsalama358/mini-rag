@@ -12,6 +12,7 @@ from controllers.ProcessController import ProcessController
 from controllers.NLPController import NLPController
 from utils.idempotency_manager import IdempotencyManager
 from utils.chunk_metadata import normalize_chunk_metadata
+from utils.project_assets import build_asset_fingerprint
 
 import logging
 logger = logging.getLogger(__name__)
@@ -37,12 +38,30 @@ async def _process_project_files(task_instance, project_id: int,
 
     
     db_engine, vectordb_client = None, None
+
+    try:
+        db_engine, db_client = await get_db_client()
+        asset_model = await AssetModel.create_instance(db_client=db_client)
+        project_assets = await asset_model.get_all_project_assets(
+            asset_project_id=project_id,
+            asset_type=AssetTypeEnum.FILE.value,
+        )
+        asset_fingerprint = build_asset_fingerprint(project_assets)
+        await db_engine.dispose()
+        db_engine = None
+    except Exception:
+        asset_fingerprint = "unknown"
+        if db_engine:
+            await db_engine.dispose()
+            db_engine = None
+
     task_args = {
         "project_id": project_id,
         "file_id": file_id,
         "chunk_size": chunk_size,
         "overlap_size": overlap_size,
         "do_reset": do_reset,
+        "asset_fingerprint": asset_fingerprint,
     }
     task_name = "tasks.file_processing.process_project_files"
     settings = get_settings()
@@ -75,10 +94,14 @@ async def _process_project_files(task_instance, project_id: int,
         await db_engine.dispose()
         db_engine = None
 
-        (db_engine, db_client, llm_provider_factory,
-        vectordb_provider_factory,
-        generation_client, embedding_client,
-        vectordb_client, template_parser) = await get_setup_utils()
+        vectordb_client = None
+        if do_reset == 1:
+            (db_engine, db_client, llm_provider_factory,
+            vectordb_provider_factory,
+            generation_client, embedding_client,
+            vectordb_client, template_parser) = await get_setup_utils()
+        else:
+            db_engine, db_client = await get_db_client()
 
         idempotency_manager = IdempotencyManager(db_client, db_engine)
 
@@ -112,12 +135,14 @@ async def _process_project_files(task_instance, project_id: int,
             project_id=project_id
         )
 
-        nlp_controller = NLPController(
-            vectordb_client=vectordb_client,
-            generation_client=generation_client,
-            embedding_client=embedding_client,
-            template_parser=template_parser,
-        )
+        nlp_controller = None
+        if do_reset == 1:
+            nlp_controller = NLPController(
+                vectordb_client=vectordb_client,
+                generation_client=generation_client,
+                embedding_client=embedding_client,
+                template_parser=template_parser,
+            )
 
         asset_model = await AssetModel.create_instance(
                 db_client=db_client
@@ -191,6 +216,12 @@ async def _process_project_files(task_instance, project_id: int,
                             db_client=db_client
                         )
 
+        indexed_asset_ids: set[int] = set()
+        if do_reset == 0:
+            indexed_asset_ids = await chunk_model.get_indexed_asset_ids(
+                project_id=project.project_id
+            )
+
         if do_reset == 1:
             # delete associated vectors collection
             collection_name = nlp_controller.create_collection_name(project_id=project.project_id)
@@ -202,6 +233,14 @@ async def _process_project_files(task_instance, project_id: int,
             )
 
         for asset_id, file_id in project_files_ids.items():
+
+            if do_reset == 0 and asset_id in indexed_asset_ids:
+                logger.info(
+                    "Skipping already processed asset | asset_id=%s file=%s",
+                    asset_id,
+                    file_id,
+                )
+                continue
 
             file_content = process_controller.get_file_content(file_id=file_id)
 

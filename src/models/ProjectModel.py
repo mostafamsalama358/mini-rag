@@ -62,3 +62,29 @@ class ProjectModel(BaseDataModel):
                 projects = await session.execute(query).scalars().all()
 
                 return projects, total_pages
+
+    async def create_user_project(self, project_name: str, user_id: str):
+        project = Project(
+            project_name=project_name.strip(),
+            user_id=user_id,
+        )
+        return await self.create_project(project=project)
+
+    async def list_projects_for_user(self, user_id: str):
+        async with self.db_client() as session:
+            query = (
+                select(Project)
+                .where(Project.user_id == user_id)
+                .order_by(Project.project_name.asc())
+            )
+            result = await session.execute(query)
+            return result.scalars().all()
+
+    async def get_project_by_uuid_for_user(self, project_uuid, user_id: str):
+        async with self.db_client() as session:
+            query = select(Project).where(
+                Project.project_uuid == project_uuid,
+                Project.user_id == user_id,
+            )
+            result = await session.execute(query)
+            return result.scalar_one_or_none()

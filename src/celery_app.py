@@ -27,6 +27,7 @@ celery_app.conf.update(
     task_ignore_resul=False,
     result_expires=3600,
     worker_concurrency=settings.CELERY_WORKER_CONCURRENCY,
+    worker_max_tasks_per_child=1,
     broker_connection_retry_on_startup=True,
     broker_connection_retry=True,
     broker_connection_max_retries=10,

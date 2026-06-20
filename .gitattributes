@@ -1,0 +1,1 @@
+docker/minirag/entrypoint.sh text eol=lf

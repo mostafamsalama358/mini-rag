@@ -74,24 +74,22 @@ class PGVectorProvider(VectorDBInterface):
     async def get_collection_info(self, collection_name: str) -> dict:
         async with self.db_client() as session:
             async with session.begin():
-                
-                table_info_sql = sql_text(f'''
+                table_info_sql = sql_text('''
                     SELECT schemaname, tablename, tableowner, tablespace, hasindexes 
                     FROM pg_tables 
                     WHERE tablename = :collection_name
                 ''')
 
-                count_sql = sql_text(f'SELECT COUNT(*) FROM {collection_name}')
-
-                count_sql = sql_text(f'SELECT COUNT(*) FROM {collection_name}')
-
-                table_info = await session.execute(table_info_sql, {"collection_name": collection_name})
-                record_count = await session.execute(count_sql)
-
+                table_info = await session.execute(
+                    table_info_sql, {"collection_name": collection_name}
+                )
                 table_data = table_info.fetchone()
                 if not table_data:
                     return None
-                
+
+                count_sql = sql_text(f'SELECT COUNT(*) FROM {collection_name}')
+                record_count = await session.execute(count_sql)
+
                 return {
                     "table_info": {
                         "schemaname": table_data[0],
@@ -229,6 +227,21 @@ class PGVectorProvider(VectorDBInterface):
         
         return True
     
+
+    async def get_indexed_chunk_ids(self, collection_name: str) -> set[int]:
+        is_collection_existed = await self.is_collection_existed(collection_name=collection_name)
+        if not is_collection_existed:
+            return set()
+
+        async with self.db_client() as session:
+            async with session.begin():
+                list_sql = sql_text(
+                    f'SELECT {PgVectorTableSchemeEnums.CHUNK_ID.value} '
+                    f'FROM {collection_name} '
+                    f'WHERE {PgVectorTableSchemeEnums.CHUNK_ID.value} IS NOT NULL'
+                )
+                result = await session.execute(list_sql)
+                return {row[0] for row in result.all() if row[0] is not None}
 
     async def insert_many(self, collection_name: str, texts: list,
                          vectors: list, metadata: list = None,

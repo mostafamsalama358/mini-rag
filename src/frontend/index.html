@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MiniRAG Console</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">M</span>
+          <div>
+            <strong>MiniRAG</strong>
+            <small data-i18n="workspace">Workspace</small>
+          </div>
+        </div>
+
+        <label class="field compact">
+          <span data-i18n="userId">User ID</span>
+          <input id="userIdInput" type="text" autocomplete="off" placeholder="demo-user" />
+        </label>
+
+        <section class="panel soft">
+          <div class="section-head">
+            <h2 data-i18n="projects">Projects</h2>
+            <button id="refreshProjectsBtn" class="icon-btn" type="button" title="Refresh">↻</button>
+          </div>
+          <form id="projectForm" class="inline-form">
+            <input id="projectNameInput" type="text" maxlength="255" data-i18n-placeholder="projectNamePlaceholder" placeholder="New project name" />
+            <button type="submit" data-i18n="create">Create</button>
+          </form>
+          <div id="projectsList" class="project-list" aria-live="polite"></div>
+        </section>
+
+        <section class="panel soft status-card">
+          <h2 data-i18n="activeProject">Active Project</h2>
+          <strong id="activeProjectName">-</strong>
+          <small id="activeProjectMeta">-</small>
+        </section>
+
+        <div class="sidebar-footer">
+          <button id="langToggleBtn" class="ghost-btn" type="button">عربي</button>
+          <a href="/docs" target="_blank" rel="noreferrer" data-i18n="apiDocs">API Docs</a>
+        </div>
+      </aside>
+
+      <section class="workspace">
+        <section class="chat-panel">
+          <div id="projectStatusBanner" class="project-status" hidden>
+            <span class="project-status__icon" id="projectStatusIcon" aria-hidden="true">○</span>
+            <div class="project-status__text">
+              <strong id="projectStatusTitle"></strong>
+              <small id="projectStatusDetail"></small>
+            </div>
+          </div>
+          <div id="chatLog" class="chat-log" aria-live="polite"></div>
+          <form id="chatForm" class="composer">
+            <textarea id="questionInput" rows="2" data-i18n-placeholder="askPlaceholder" placeholder="Ask me anything about this project..."></textarea>
+            <div class="composer-actions">
+              <input id="fileInput" type="file" accept=".txt,.pdf,text/plain,application/pdf" multiple hidden />
+              <button id="uploadBtn" class="icon-btn upload-btn" type="button" title="Upload" aria-label="Upload">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 16V4m0 0l-4 4m4-4l4 4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+                </svg>
+              </button>
+              <span id="fileHint" class="file-hint" hidden></span>
+              <button type="submit" data-i18n="ask">Ask</button>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
