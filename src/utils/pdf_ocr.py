@@ -1,30 +1,28 @@
 # Read the PDF page by page
 # → If the page contains actual text (selectable text), use it.
-
-# → If the page is a scanned PDF or the text is very limited, enable OCR and read the text from the image.
+# → If the page is a scanned PDF or the text is very limited, run Gemini OCR on the page image.
 
 import logging
 import os
 import re
+import gc
+import signal
+import time
+from contextlib import contextmanager
 from dataclasses import dataclass
-
-# Avoid oneDNN-related CPU inference errors on some platforms.
-os.environ.setdefault("PADDLE_PDX_ENABLE_MKLDNN_BYDEFAULT", "0")
 
 import fitz
 import numpy as np
+from PIL import Image
 
 from utils.text_cleaning import clean_extracted_text
 
 logger = logging.getLogger(__name__)
 
-OCR_IMAGE_SCALE = 2.5
-
+OCR_ENGINE = "gemini"
+OCR_IMAGE_SCALE = 1.5
 MIN_TEXT_LENGTH = 10
 MAX_LANG_SAMPLE_CHARS = 5000
-OCR_LANGS = ("ar", "en")
-
-_ocr_engines: dict[str, object] = {}
 
 
 @dataclass
@@ -50,20 +48,51 @@ def _default_ocr_language() -> str:
         return "en"
 
 
-def _get_ocr_engine(lang: str):
-    from paddleocr import PaddleOCR
+def _get_ocr_settings():
+    try:
+        from helpers.config import get_settings
 
-    paddle_lang = _normalize_ocr_lang(lang)
-    engine = _ocr_engines.get(paddle_lang)
-    if engine is None:
-        engine = PaddleOCR(
-            use_doc_orientation_classify=False,
-            use_doc_unwarping=False,
-            use_textline_orientation=False,
-            lang=paddle_lang,
-        )
-        _ocr_engines[paddle_lang] = engine
-    return engine
+        return get_settings()
+    except Exception:
+        return None
+
+
+def _configured_ocr_scale() -> float:
+    settings = _get_ocr_settings()
+    try:
+        return float(getattr(settings, "OCR_IMAGE_SCALE", OCR_IMAGE_SCALE))
+    except (TypeError, ValueError):
+        return OCR_IMAGE_SCALE
+
+
+def _configured_page_timeout() -> int:
+    settings = _get_ocr_settings()
+    try:
+        return max(10, int(getattr(settings, "OCR_PAGE_TIMEOUT_SECONDS", 120)))
+    except (TypeError, ValueError):
+        return 120
+
+
+class OcrPageTimeout(TimeoutError):
+    pass
+
+
+@contextmanager
+def _ocr_timeout(seconds: int):
+    if not hasattr(signal, "SIGALRM"):
+        yield
+        return
+
+    def _handle_timeout(signum, frame):
+        raise OcrPageTimeout(f"OCR page timed out after {seconds} seconds")
+
+    old_handler = signal.signal(signal.SIGALRM, _handle_timeout)
+    signal.alarm(seconds)
+    try:
+        yield
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, old_handler)
 
 
 def _collect_pdf_text_samples(doc: fitz.Document) -> str:
@@ -83,61 +112,23 @@ def _collect_pdf_text_samples(doc: fitz.Document) -> str:
     return "\n".join(parts)[:MAX_LANG_SAMPLE_CHARS]
 
 
-def _is_arabic_text(text: str) -> bool:
-    arabic_chars = len(re.findall(r"[\u0600-\u06ff\u0750-\u077f]", text))
-    latin_chars = len(re.findall(r"[A-Za-z]", text))
-    return arabic_chars >= 3 and arabic_chars >= latin_chars
-
-
 def _detect_language_from_text(text: str) -> str | None:
     cleaned = text.strip()
     if len(cleaned) < MIN_TEXT_LENGTH:
         return None
-    return "ar" if _is_arabic_text(cleaned) else "en"
 
+    arabic_chars = len(re.findall(r"[\u0600-\u06ff\u0750-\u077f]", cleaned))
+    latin_chars = len(re.findall(r"[A-Za-z]", cleaned))
 
-def _ocr_result_quality(texts: list[str], scores: list[float]) -> float:
-    if not texts or not scores:
-        return 0.0
-
-    combined = " ".join(texts).strip()
-    letter_count = sum(
-        1
-        for char in combined
-        if char.isalpha() or "\u0600" <= char <= "\u06ff"
-    )
-    if letter_count < 2:
-        return 0.0
-
-    return (sum(scores) / len(scores)) * min(1.0, letter_count / 5)
-
-
-def _probe_ocr_language(page: fitz.Page) -> str | None:
-    img = _page_to_image(page)
-    best_lang = None
-    best_score = 0.0
-
-    for lang in OCR_LANGS:
-        result = _get_ocr_engine(lang).predict(img)
-        if not result:
-            continue
-
-        res = result[0].json.get("res", {})
-        texts = res.get("rec_texts", [])
-        scores = res.get("rec_scores", [])
-        score = _ocr_result_quality(texts, scores)
-        combined = " ".join(texts)
-
-        if lang == "ar" and _is_arabic_text(combined):
-            score += 0.2
-        elif lang == "en" and not _is_arabic_text(combined):
-            score += 0.2
-
-        if score > best_score:
-            best_score = score
-            best_lang = lang
-
-    return best_lang
+    if arabic_chars >= 3 and arabic_chars >= latin_chars:
+        return "ar"
+    if arabic_chars >= 1 and latin_chars == 0:
+        return "ar"
+    if latin_chars >= 3 and latin_chars > arabic_chars:
+        return "en"
+    if arabic_chars > latin_chars:
+        return "ar"
+    return None
 
 
 def _resolve_ocr_language(doc: fitz.Document) -> str:
@@ -146,39 +137,20 @@ def _resolve_ocr_language(doc: fitz.Document) -> str:
     if detected:
         return detected
 
+    for page_num in range(min(3, len(doc))):
+        page_text = doc[page_num].get_text().strip()
+        page_detected = _detect_language_from_text(page_text)
+        if page_detected:
+            return page_detected
+
     if doc.language:
         return _normalize_ocr_lang(doc.language)
-
-    if len(doc) > 0:
-        probed = _probe_ocr_language(doc[0])
-        if probed:
-            return probed
 
     return _default_ocr_language()
 
 
-def _sort_ocr_texts_by_boxes(texts: list[str], boxes: list) -> list[str]:
-    if not texts:
-        return []
-
-    if not boxes or len(boxes) != len(texts):
-        return texts
-
-    indexed_texts = []
-    for text, box in zip(texts, boxes):
-        if not box:
-            indexed_texts.append((0.0, 0.0, text))
-            continue
-
-        y_coords = [point[1] for point in box]
-        x_coords = [point[0] for point in box]
-        indexed_texts.append((min(y_coords), min(x_coords), text))
-
-    indexed_texts.sort(key=lambda item: (item[0], item[1]))
-    return [text for _, _, text in indexed_texts]
-
-
-def _page_to_image(page: fitz.Page, scale: float = OCR_IMAGE_SCALE) -> np.ndarray:
+def _page_to_image(page: fitz.Page, scale: float | None = None) -> np.ndarray:
+    scale = scale or _configured_ocr_scale()
     pix = page.get_pixmap(matrix=fitz.Matrix(scale, scale))
     img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(
         pix.height, pix.width, pix.n
@@ -188,17 +160,45 @@ def _page_to_image(page: fitz.Page, scale: float = OCR_IMAGE_SCALE) -> np.ndarra
     return img
 
 
-def _extract_text_with_ocr(page: fitz.Page, lang: str) -> str:
-    result = _get_ocr_engine(lang).predict(_page_to_image(page))
+def _extract_text_with_gemini(page: fitz.Page) -> str:
+    from utils.gemini_ocr import extract_text_from_page_image
 
-    if not result:
+    pil_image = Image.fromarray(_page_to_image(page))
+    return extract_text_from_page_image(pil_image)
+
+
+def _extract_text_with_ocr(page: fitz.Page, lang: str, page_num: int, pdf_path: str) -> str:
+    timeout_seconds = _configured_page_timeout()
+    started = time.monotonic()
+
+    logger.info(
+        "Starting OCR | engine=%s lang=%s page=%s timeout=%ss file=%s",
+        OCR_ENGINE,
+        lang,
+        page_num,
+        timeout_seconds,
+        pdf_path,
+    )
+
+    try:
+        with _ocr_timeout(timeout_seconds):
+            text = _extract_text_with_gemini(page)
+    except OcrPageTimeout:
+        logger.exception("OCR timed out | page=%s file=%s", page_num, pdf_path)
+        return ""
+    except Exception:
+        logger.exception("OCR failed | engine=%s page=%s file=%s", OCR_ENGINE, page_num, pdf_path)
         return ""
 
-    res = result[0].json.get("res", {})
-    rec_texts = res.get("rec_texts", [])
-    rec_boxes = res.get("rec_boxes", [])
-    ordered_texts = _sort_ocr_texts_by_boxes(rec_texts, rec_boxes)
-    return " ".join(ordered_texts)
+    logger.info(
+        "Finished OCR | engine=%s page=%s chars=%s elapsed=%.2fs file=%s",
+        OCR_ENGINE,
+        page_num,
+        len(text or ""),
+        time.monotonic() - started,
+        pdf_path,
+    )
+    return text
 
 
 def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
@@ -210,6 +210,7 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
         logger.info("Resolved OCR language '%s' for %s", ocr_lang, pdf_path)
 
         file_name = os.path.basename(pdf_path)
+        extracted_texts: list[str] = []
 
         for page_num in range(len(doc)):
             page = doc[page_num]
@@ -222,10 +223,14 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
                     page_num + 1,
                     pdf_path,
                 )
-                text = _extract_text_with_ocr(page, ocr_lang)
+                text = _extract_text_with_ocr(page, ocr_lang, page_num + 1, pdf_path)
                 ocr_used = True
 
             text = clean_extracted_text(text)
+            if not text:
+                continue
+
+            extracted_texts.append(text)
 
             pages.append(
                 PdfPageDocument(
@@ -234,11 +239,19 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
                         "file_name": file_name,
                         "page": page_num + 1,
                         "source_type": "pdf",
+                        "ocr_engine": OCR_ENGINE,
                         "ocr_used": ocr_used,
                         "ocr_lang": ocr_lang if ocr_used else None,
                     },
                 )
             )
+            if ocr_used:
+                gc.collect()
+
+        resolved_lang = _detect_language_from_text(" ".join(extracted_texts)) or ocr_lang
+        for page_doc in pages:
+            if page_doc.metadata.get("ocr_used"):
+                page_doc.metadata["ocr_lang"] = resolved_lang
     finally:
         doc.close()
 

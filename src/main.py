@@ -1,5 +1,9 @@
+from pathlib import Path
+
 from fastapi import FastAPI
-from routes import base, data, nlp
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from routes import base, data, nlp, projects
 from helpers.config import get_settings
 from stores.llm.LLMProviderFactory import LLMProviderFactory
 from stores.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
@@ -11,6 +15,10 @@ from sqlalchemy.orm import sessionmaker
 from utils.metrics import setup_metrics
 
 app = FastAPI()
+frontend_dir = Path(__file__).resolve().parent / "frontend"
+
+if frontend_dir.exists():
+    app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
 
 # Setup Prometheus metrics
 setup_metrics(app)
@@ -57,5 +65,11 @@ app.on_event("startup")(startup_span)
 app.on_event("shutdown")(shutdown_span)
 
 app.include_router(base.base_router)
+app.include_router(projects.projects_router)
 app.include_router(data.data_router)
 app.include_router(nlp.nlp_router)
+
+
+@app.get("/", include_in_schema=False)
+async def serve_frontend():
+    return FileResponse(frontend_dir / "index.html")

@@ -4,6 +4,16 @@ from datetime import datetime, timedelta, timezone
 from sqlalchemy import select, delete
 from models.db_schemes.minirag.schemes.celery_task_execution import CeleryTaskExecution
 
+def _utcnow() -> datetime:
+    return datetime.now(timezone.utc)
+
+def _as_aware_utc(value: datetime | None) -> datetime | None:
+    if value is None:
+        return None
+    if value.tzinfo is None:
+        return value.replace(tzinfo=timezone.utc)
+    return value.astimezone(timezone.utc)
+
 class IdempotencyManager:
 
     def __init__(self, db_client, db_engine):
@@ -28,7 +38,7 @@ class IdempotencyManager:
             task_args=task_args,
             celery_task_id=celery_task_id,
             status='PENDING',
-            started_at=datetime.utcnow()
+            started_at=_utcnow()
         )
         
         session = self.db_client()
@@ -50,7 +60,7 @@ class IdempotencyManager:
                 if result:
                     task_record.result = result
                 if status in ['SUCCESS', 'FAILURE']:
-                    task_record.completed_at = datetime.utcnow()
+                    task_record.completed_at = _utcnow()
                 await session.commit()
         finally:
             await session.close()
@@ -83,7 +93,7 @@ class IdempotencyManager:
             if task_record:
                 task_record.celery_task_id = celery_task_id
                 task_record.status = 'PENDING'
-                task_record.started_at = datetime.utcnow()
+                task_record.started_at = _utcnow()
                 task_record.completed_at = None
                 task_record.result = None
                 await session.commit()
@@ -108,14 +118,15 @@ class IdempotencyManager:
         if existing_task.status == 'SUCCESS':
             return False, existing_task
             
-        # Check if task is stuck (running longer than time limit + 60 seconds)
+        # Re-run if a worker died mid-task (OCR can take minutes and may OOM).
+        stuck_after_seconds = min(120, max(90, task_time_limit // 5))
         if existing_task.status in ['PENDING', 'STARTED', 'RETRY']:
-            if existing_task.started_at:
-                time_elapsed = (datetime.utcnow() - existing_task.started_at).total_seconds()
-                time_gap = 60  # 60 seconds grace period
-                if time_elapsed > (task_time_limit + time_gap):
-                    return True, existing_task  # Task is stuck, allow re-execution
-            return False, existing_task  # Task is still running within time limit
+            started_at = _as_aware_utc(existing_task.started_at)
+            if started_at:
+                time_elapsed = (_utcnow() - started_at).total_seconds()
+                if time_elapsed > stuck_after_seconds:
+                    return True, existing_task
+            return False, existing_task
             
         # Re-execute if previous task failed
         return True, existing_task

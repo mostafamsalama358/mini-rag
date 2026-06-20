@@ -49,6 +49,76 @@ class ChunkModel(BaseDataModel):
             result = await session.execute(stmt)
             await session.commit()
         return result.rowcount
+
+    async def delete_chunks_by_asset_id(self, project_id: int, asset_id: int):
+        async with self.db_client() as session:
+            stmt = delete(DataChunk).where(
+                DataChunk.chunk_project_id == project_id,
+                DataChunk.chunk_asset_id == asset_id,
+            )
+            result = await session.execute(stmt)
+            await session.commit()
+        return result.rowcount
+
+    async def get_indexed_asset_ids(self, project_id: int) -> set[int]:
+        async with self.db_client() as session:
+            stmt = select(DataChunk.chunk_asset_id).where(
+                DataChunk.chunk_project_id == project_id
+            ).distinct()
+            result = await session.execute(stmt)
+            return {row[0] for row in result.all()}
+
+    async def get_chunks_by_asset(
+        self,
+        *,
+        project_id: int,
+        asset_id: int,
+    ):
+        async with self.db_client() as session:
+            stmt = select(DataChunk).where(
+                DataChunk.chunk_project_id == project_id,
+                DataChunk.chunk_asset_id == asset_id,
+            ).order_by(DataChunk.chunk_order)
+            result = await session.execute(stmt)
+            return result.scalars().all()
+
+    async def get_chunks_by_asset_page(
+        self,
+        *,
+        project_id: int,
+        asset_id: int,
+        page: int,
+    ):
+        async with self.db_client() as session:
+            stmt = select(DataChunk).where(
+                DataChunk.chunk_project_id == project_id,
+                DataChunk.chunk_asset_id == asset_id,
+            ).order_by(DataChunk.chunk_order)
+            result = await session.execute(stmt)
+            records = result.scalars().all()
+
+        return [
+            record for record in records
+            if (record.chunk_metadata or {}).get("page") == page
+        ]
+
+    async def get_chunks_by_asset_order_range(
+        self,
+        *,
+        project_id: int,
+        asset_id: int,
+        start_order: int,
+        end_order: int,
+    ):
+        async with self.db_client() as session:
+            stmt = select(DataChunk).where(
+                DataChunk.chunk_project_id == project_id,
+                DataChunk.chunk_asset_id == asset_id,
+                DataChunk.chunk_order >= start_order,
+                DataChunk.chunk_order <= end_order,
+            ).order_by(DataChunk.chunk_order)
+            result = await session.execute(stmt)
+            return result.scalars().all()
     
     async def get_poject_chunks(self, project_id: ObjectId, page_no: int=1, page_size: int=50):
         async with self.db_client() as session:
@@ -66,4 +136,19 @@ class ChunkModel(BaseDataModel):
         
         return total_count
 
+    async def get_chunk_by_asset_order(
+        self,
+        *,
+        project_id: int,
+        asset_id: int,
+        chunk_order: int,
+    ):
+        async with self.db_client() as session:
+            stmt = select(DataChunk).where(
+                DataChunk.chunk_project_id == project_id,
+                DataChunk.chunk_asset_id == asset_id,
+                DataChunk.chunk_order == chunk_order,
+            )
+            result = await session.execute(stmt)
+            return result.scalar_one_or_none()
 

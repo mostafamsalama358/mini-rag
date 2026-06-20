@@ -85,9 +85,16 @@ async def _index_data_content(task_instance, project_id: int, do_reset: int):
             do_reset=do_reset,
         )
 
+        indexed_chunk_ids: set[int] = set()
+        if do_reset != 1 and hasattr(vectordb_client, "get_indexed_chunk_ids"):
+            indexed_chunk_ids = await vectordb_client.get_indexed_chunk_ids(
+                collection_name=collection_name
+            )
+
         # setup batching
         total_chunks_count = await chunk_model.get_total_chunks_count(project_id=project.project_id)
-        pbar = tqdm(total=total_chunks_count, desc="Vector Indexing", position=0)
+        pending_chunks_count = max(0, total_chunks_count - len(indexed_chunk_ids))
+        pbar = tqdm(total=pending_chunks_count or total_chunks_count, desc="Vector Indexing", position=0)
 
         settings = get_settings()
         embedding_batch_delay = (
@@ -97,13 +104,25 @@ async def _index_data_content(task_instance, project_id: int, do_reset: int):
         )
 
         while has_records:
-            page_chunks = await chunk_model.get_poject_chunks(project_id=project.project_id, page_no=page_no)
+            page_chunks = await chunk_model.get_poject_chunks(
+                project_id=project.project_id,
+                page_no=page_no,
+                page_size=settings.INDEXING_CHUNK_PAGE_SIZE,
+            )
             if len(page_chunks):
                 page_no += 1
             
             if not page_chunks or len(page_chunks) == 0:
                 has_records = False
                 break
+
+            if indexed_chunk_ids:
+                page_chunks = [
+                    chunk for chunk in page_chunks
+                    if chunk.chunk_id not in indexed_chunk_ids
+                ]
+                if not page_chunks:
+                    continue
 
             chunks_ids =  [ c.chunk_id for c in page_chunks ]
             idx += len(page_chunks)
@@ -128,6 +147,7 @@ async def _index_data_content(task_instance, project_id: int, do_reset: int):
 
             pbar.update(len(page_chunks))
             inserted_items_count += len(page_chunks)
+            indexed_chunk_ids.update(chunks_ids)
 
             if embedding_batch_delay > 0 and inserted_items_count < total_chunks_count:
                 await asyncio.sleep(embedding_batch_delay)

@@ -3,6 +3,8 @@ from fastapi.responses import JSONResponse
 from routes.schemes.nlp import PushRequest, SearchRequest, AnswerRequest
 from models.ProjectModel import ProjectModel
 from models.ChunkModel import ChunkModel
+from models.AssetModel import AssetModel
+from models.enums.AssetTypeEnum import AssetTypeEnum
 from controllers.NLPController import NLPController
 from models import ResponseSignal
 from tqdm.auto import tqdm
@@ -52,6 +54,41 @@ async def get_project_index_info(request: Request, project_id: int):
     )
 
     collection_info = await nlp_controller.get_vector_db_collection_info(project=project)
+
+    chunk_model = await ChunkModel.create_instance(db_client=request.app.db_client)
+    asset_model = await AssetModel.create_instance(db_client=request.app.db_client)
+
+    chunk_count = await chunk_model.get_total_chunks_count(project_id=project.project_id)
+    project_assets = await asset_model.get_all_project_assets(
+        asset_project_id=project.project_id,
+        asset_type=AssetTypeEnum.FILE.value,
+    )
+    indexed_asset_ids = await chunk_model.get_indexed_asset_ids(project_id=project.project_id)
+    asset_count = len(project_assets)
+    indexed_asset_count = sum(
+        1 for asset in project_assets if asset.asset_id in indexed_asset_ids
+    )
+    coverage = {
+        "chunk_count": chunk_count,
+        "asset_count": asset_count,
+        "indexed_asset_count": indexed_asset_count,
+        "pending_asset_count": max(0, asset_count - indexed_asset_count),
+        "is_fully_indexed": asset_count > 0 and indexed_asset_count >= asset_count,
+    }
+
+    if collection_info is None:
+        return JSONResponse(
+            content={
+                "signal": ResponseSignal.VECTORDB_COLLECTION_NOT_FOUND.value,
+                "collection_info": {
+                    "table_info": None,
+                    "record_count": 0,
+                },
+                "coverage": coverage,
+            },
+        )
+
+    collection_info["coverage"] = coverage
 
     return JSONResponse(
         content={
@@ -115,7 +152,7 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
         template_parser=request.app.template_parser,
     )
 
-    answer, full_prompt, chat_history = await nlp_controller.answer_rag_question(
+    answer, full_prompt, chat_history, needs_clarification = await nlp_controller.answer_rag_question(
         project=project,
         query=answer_request.text,
         limit=answer_request.limit,
@@ -123,19 +160,39 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
         db_client=request.app.db_client,
     )
 
+    collection_info = await nlp_controller.get_vector_db_collection_info(project=project)
+    has_index = collection_info is not None and collection_info.get("record_count", 0) > 0
+
+    if not answer and not has_index:
+        return JSONResponse(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            content={
+                "signal": ResponseSignal.RAG_NO_CONTEXT.value,
+                "message": "No indexed documents found for this project. Upload a file and wait for indexing to finish.",
+            },
+        )
+
     if not answer:
         return JSONResponse(
                 status_code=status.HTTP_400_BAD_REQUEST,
                 content={
-                    "signal": ResponseSignal.RAG_ANSWER_ERROR.value
+                    "signal": ResponseSignal.RAG_ANSWER_ERROR.value,
+                    "message": "Could not generate an answer. Try rephrasing the question or re-indexing the project.",
                 }
         )
     
+    signal = (
+        ResponseSignal.RAG_CLARIFICATION_NEEDED
+        if needs_clarification
+        else ResponseSignal.RAG_ANSWER_SUCCESS
+    )
+
     return JSONResponse(
         content={
-            "signal": ResponseSignal.RAG_ANSWER_SUCCESS.value,
+            "signal": signal.value,
             "answer": answer,
+            "needs_clarification": needs_clarification,
             "full_prompt": full_prompt,
-            "chat_history": chat_history
+            "chat_history": chat_history,
         }
     )

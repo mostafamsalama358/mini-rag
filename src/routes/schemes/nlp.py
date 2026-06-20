@@ -10,5 +10,5 @@ class SearchRequest(BaseModel):
 
 class AnswerRequest(BaseModel):
     text: str
-    limit: Optional[int] = 5
+    limit: Optional[int] = 8
     session_id: Optional[str] = None
