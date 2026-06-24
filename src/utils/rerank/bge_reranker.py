@@ -4,6 +4,7 @@ from typing import Sequence
 import asyncio
 
 from models.db_schemes import RetrievedDocument
+from utils.bge_model_cache import get_bge_reranker_model, run_bge_reranker_inference
 from .interface import RerankerInterface
 
 logger = logging.getLogger(__name__)
@@ -30,27 +31,33 @@ class BgeReranker(RerankerInterface):
         self.reranker = None
         self.load_duration_seconds = 0.0
         self.warmup_duration_seconds = 0.0
-        load_started = time.perf_counter()
         try:
-            from FlagEmbedding import FlagReranker
-            init_kwargs = {"use_fp16": self.use_fp16}
-            if self.device:
-                init_kwargs["devices"] = [self.device]
-            self.reranker = FlagReranker(model_name, **init_kwargs)
-            self.load_duration_seconds = time.perf_counter() - load_started
-            logger.info(
-                "Loaded BGE Reranker model: %s on %s in %.2fs (fp16=%s, batch_size=%s)",
+            self.reranker, self.load_duration_seconds = get_bge_reranker_model(
                 model_name,
-                self.device,
-                self.load_duration_seconds,
-                self.use_fp16,
-                self.batch_size,
+                device=self.device,
+                use_fp16=self.use_fp16,
             )
+            if self.load_duration_seconds > 0:
+                logger.info(
+                    "BGE reranker ready: %s on %s in %.2fs (fp16=%s, batch_size=%s)",
+                    model_name,
+                    self.device,
+                    self.load_duration_seconds,
+                    self.use_fp16,
+                    self.batch_size,
+                )
+            else:
+                logger.info(
+                    "BGE reranker ready: %s on %s (reused cached instance, batch_size=%s)",
+                    model_name,
+                    self.device,
+                    self.batch_size,
+                )
         except ImportError:
-            self.load_duration_seconds = time.perf_counter() - load_started
+            self.load_duration_seconds = 0.0
             logger.error("FlagEmbedding package not found. Please install FlagEmbedding.")
         except Exception as e:
-            self.load_duration_seconds = time.perf_counter() - load_started
+            self.load_duration_seconds = 0.0
             logger.error(f"Failed to load BGE Reranker model {model_name}: {e}")
 
     def _prepare_text(self, text: str | None) -> str:
@@ -66,10 +73,12 @@ class BgeReranker(RerankerInterface):
         warmup_started = time.perf_counter()
         try:
             await asyncio.to_thread(
-                self.reranker.compute_score,
-                [["warmup", "warmup"]],
-                batch_size=1,
-                normalize=True,
+                run_bge_reranker_inference,
+                lambda: self.reranker.compute_score(
+                    [["warmup", "warmup"]],
+                    batch_size=1,
+                    normalize=True,
+                ),
             )
             self.warmup_duration_seconds = time.perf_counter() - warmup_started
             logger.info("BGE reranker warmup completed in %.2fs", self.warmup_duration_seconds)
@@ -94,10 +103,12 @@ class BgeReranker(RerankerInterface):
 
         try:
             scores = await asyncio.to_thread(
-                self.reranker.compute_score,
-                pairs,
-                batch_size=self.batch_size,
-                normalize=True,
+                run_bge_reranker_inference,
+                lambda: self.reranker.compute_score(
+                    pairs,
+                    batch_size=self.batch_size,
+                    normalize=True,
+                ),
             )
             
             # If there's only one pair, scores might be a float rather than a list

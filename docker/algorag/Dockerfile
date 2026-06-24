@@ -17,6 +17,13 @@ RUN apt-get update && apt-get install -y \
 
 COPY src/requirements.txt .
 
+# CPU-only PyTorch keeps the image small and avoids multi-GB NVIDIA CUDA wheels.
+RUN uv pip install \
+    --system \
+    --no-cache \
+    torch torchvision \
+    --index-url https://download.pytorch.org/whl/cpu
+
 RUN uv pip install \
     --system \
     --no-cache \

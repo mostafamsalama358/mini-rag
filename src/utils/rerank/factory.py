@@ -13,11 +13,15 @@ Supported values for ``RAG_RERANKER_BACKEND``:
 from __future__ import annotations
 
 import logging
+import threading
 
 from .interface import RerankerInterface
 from .noop import NoOpReranker
 
 logger = logging.getLogger(__name__)
+
+_bge_reranker_cache: dict[tuple, RerankerInterface] = {}
+_bge_reranker_cache_lock = threading.Lock()
 
 
 def get_reranker(settings=None) -> RerankerInterface:
@@ -62,15 +66,24 @@ def get_reranker(settings=None) -> RerankerInterface:
         use_fp16 = getattr(settings, "RAG_RERANKER_USE_FP16", False)
         max_chars = getattr(settings, "RAG_RERANKER_MAX_CHARS", 1024)
         
-        from .bge_reranker import BgeReranker
-        return BgeReranker(
-            model_name=model,
-            top_n=top_n,
-            device=device,
-            batch_size=batch_size,
-            use_fp16=use_fp16,
-            max_chars=max_chars,
-        )
+        cache_key = (model, top_n, device, batch_size, use_fp16, max_chars)
+        with _bge_reranker_cache_lock:
+            cached = _bge_reranker_cache.get(cache_key)
+            if cached is not None:
+                return cached
+
+            from .bge_reranker import BgeReranker
+
+            reranker = BgeReranker(
+                model_name=model,
+                top_n=top_n,
+                device=device,
+                batch_size=batch_size,
+                use_fp16=use_fp16,
+                max_chars=max_chars,
+            )
+            _bge_reranker_cache[cache_key] = reranker
+            return reranker
 
     logger.warning(
         f"Unknown RAG_RERANKER_BACKEND={backend!r} — falling back to no-op reranker. "

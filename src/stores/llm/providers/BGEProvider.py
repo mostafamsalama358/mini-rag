@@ -2,6 +2,8 @@ from ..LLMInterface import LLMInterface
 import logging
 from typing import List, Union
 
+from utils.bge_model_cache import get_bge_embedding_model, run_bge_embedding_inference
+
 class BGEProvider(LLMInterface):
 
     def __init__(self, default_input_max_characters: int=1000):
@@ -18,10 +20,21 @@ class BGEProvider(LLMInterface):
         self.embedding_model_id = model_id
         self.embedding_size = embedding_size
         try:
-            from FlagEmbedding import BGEM3FlagModel
-            # use_fp16=True usually good for performance if GPU is available
-            self.model = BGEM3FlagModel(self.embedding_model_id, use_fp16=True)
-            self.logger.info(f"Loaded BGE model: {self.embedding_model_id}")
+            self.model, load_elapsed = get_bge_embedding_model(
+                self.embedding_model_id,
+                use_fp16=True,
+            )
+            if load_elapsed > 0:
+                self.logger.info(
+                    "BGE embedding model ready: %s (loaded in %.2fs)",
+                    self.embedding_model_id,
+                    load_elapsed,
+                )
+            else:
+                self.logger.info(
+                    "BGE embedding model ready: %s (reused cached instance)",
+                    self.embedding_model_id,
+                )
         except ImportError:
             self.logger.error("FlagEmbedding package not found. Please install FlagEmbedding.")
         except Exception as e:
@@ -46,10 +59,17 @@ class BGEProvider(LLMInterface):
         processed_texts = [self.process_text(t) for t in text]
         
         try:
-            # BGEM3FlagModel returns a dict with 'dense_vecs', 'lexical_weights', 'colbert_vecs'
-            embeddings = self.model.encode(processed_texts, return_dense=True, return_sparse=False, return_colbert_vecs=False)
-            dense_vecs = embeddings.get('dense_vecs', [])
-            return [vec.tolist() for vec in dense_vecs]
+            def _encode():
+                embeddings = self.model.encode(
+                    processed_texts,
+                    return_dense=True,
+                    return_sparse=False,
+                    return_colbert_vecs=False,
+                )
+                dense_vecs = embeddings.get("dense_vecs", [])
+                return [vec.tolist() for vec in dense_vecs]
+
+            return run_bge_embedding_inference(_encode)
         except Exception as e:
             self.logger.error(f"Error embedding text with BGE: {e}")
             return None
