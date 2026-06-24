@@ -1,9 +1,9 @@
-APP_NAME="mini-RAG"
+APP_NAME="AlgoRAG"
 APP_VERSION="0.1"
 
 FILE_ALLOWED_TYPES=["text/plain", "application/pdf"]
 FILE_MAX_SIZE=10
-FILE_DEFAULT_CHUNK_SIZE=512000 # 512KB
+FILE_DEFAULT_CHUNK_SIZE=512000
 TEXT_CHUNK_SIZE=400
 TEXT_CHUNK_OVERLAP=80
 TEXT_CHUNK_MIN_SIZE=200
@@ -13,67 +13,105 @@ VECTOR_DB_INSERT_BATCH_SIZE=100
 VERTEX_EMBEDDING_BATCH_DELAY_SECONDS=2
 
 POSTGRES_USERNAME=postgres
-POSTGRES_PASSWORD=minirag_postgres_2222
+POSTGRES_PASSWORD=algorag_postgres_2222
 POSTGRES_HOST=pgvector
 POSTGRES_PORT=5432
-POSTGRES_MAIN_DATABASE=minirag
+POSTGRES_MAIN_DATABASE=algorag
 
-# ========================= LLM Config =========================
-# GENERATION_BACKEND / EMBEDDING_BACKEND: OPENAI | COHERE | VERTEX
-GENERATION_BACKEND="VERTEX"
-EMBEDDING_BACKEND="VERTEX"
+# ========================= Generation (LLM) =========================
+# GENERATION_BACKEND: DEEPSEEK | OPENAI | COHERE | VERTEX
+GENERATION_BACKEND=DEEPSEEK
 
-OPENAI_API_KEY="key___"
-OPENAI_API_URL=""
-COHERE_API_KEY=""
+DEEPSEEK_API_KEY=
+DEEPSEEK_API_URL=https://api.deepseek.com
+GENERATION_MODEL_ID=deepseek-v4-flash
+GENERATION_MODEL_ID_LITERAL=["deepseek-v4-flash","deepseek-v4-pro","gemini-2.5-flash"]
 
-VERTEX_PROJECT_ID="your-gcp-project-id"
-VERTEX_LOCATION="us-central1"
-# Path inside the container; mount your JSON key via docker-compose
-GOOGLE_APPLICATION_CREDENTIALS="/app/gcp-credentials.json"
-
-GENERATION_MODEL_ID_LITERAL=["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
-GENERATION_MODEL_ID="gemini-2.5-flash"
-EMBEDDING_MODEL_ID="text-multilingual-embedding-002"
-EMBEDDING_MODEL_SIZE=768
+# Alternate generation providers
+# GENERATION_BACKEND=VERTEX
+# VERTEX_PROJECT_ID=your-gcp-project-id
+# VERTEX_LOCATION=us-central1
+# GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-credentials.json
+# GENERATION_MODEL_ID=gemini-2.5-flash
 
 INPUT_DAFAULT_MAX_CHARACTERS=1024
 GENERATION_DAFAULT_MAX_TOKENS=2048
 GENERATION_DAFAULT_TEMPERATURE=0.1
 
-# ========================= Vector DB Config =========================
-VECTOR_DB_BACKEND_LITERAL = ["QDRANT", "PGVECTOR"]
-VECTOR_DB_BACKEND = "PGVECTOR"
-VECTOR_DB_PATH = "qdrant_db"
-VECTOR_DB_DISTANCE_METHOD = "cosine"
-VECTOR_DB_PGVEC_INDEX_THRESHOLD = 100
+# ========================= Embedding =========================
+# EMBEDDING_BACKEND: BGE | OPENAI | COHERE | VERTEX
+# BGE runs in-process — mount GPU into the app/celery container for best performance.
+EMBEDDING_BACKEND=BGE
+EMBEDDING_MODEL_ID=BAAI/bge-m3
+EMBEDDING_MODEL_SIZE=1024
 
-# ========================= Template Config =========================
-PRIMARY_LANG = "en"
-DEFAULT_LANG = "en"
+# Alternate embedding providers
+# EMBEDDING_BACKEND=VERTEX
+# EMBEDDING_MODEL_ID=text-multilingual-embedding-002
+# EMBEDDING_MODEL_SIZE=768
 
-# ========================= OCR Config =========================
-# Gemini OCR uses Vertex AI (same GCP credentials as GENERATION_BACKEND=VERTEX).
-OCR_GEMINI_MODEL_ID="gemini-2.5-flash"
+# ========================= Vector DB =========================
+VECTOR_DB_BACKEND_LITERAL=["QDRANT","PGVECTOR"]
+VECTOR_DB_BACKEND=PGVECTOR
+VECTOR_DB_PATH=qdrant_db
+VECTOR_DB_DISTANCE_METHOD=cosine
+VECTOR_DB_PGVEC_INDEX_THRESHOLD=100
+
+# ========================= OCR =========================
+# OCR_ENGINE: docling | gemini
+OCR_ENGINE=docling
 OCR_IMAGE_SCALE=1.5
 OCR_PAGE_TIMEOUT_SECONDS=180
+OCR_GEMINI_MODEL_ID=gemini-2.5-flash
 
-# ========================= RAG Config =========================
-# RAG_HISTORY_MODE: auto | full | minimal | user_only
-RAG_HISTORY_MODE="auto"
-RAG_RETRIEVAL_FETCH_MULTIPLIER=3
+# ========================= Language =========================
+PRIMARY_LANG=ar
+DEFAULT_LANG=en
+
+# ========================= Reranker =========================
+# RAG_RERANKER_BACKEND: bge | cohere
+RAG_ENABLE_RERANKER=true
+RAG_RERANKER_BACKEND=bge
+BGE_RERANKER_MODEL=BAAI/bge-reranker-v2-m3
+RAG_RERANKER_DEVICE=cpu
+RAG_RERANKER_BATCH_SIZE=8
+RAG_RERANKER_USE_FP16=false
+RAG_RERANKER_MAX_CHARS=1024
+RAG_RERANKER_WARMUP_ON_STARTUP=true
+# COHERE_RERANKER_MODEL=rerank-multilingual-v3.0
+# Final Top-N returned by the cross-encoder reranker (0/None = all).
+RAG_RERANKER_TOP_N=5
+# Benchmark local CPU settings (run from src/):
+# python scripts/benchmark_bge_reranker.py
+
+# ========================= RAG =========================
+# Hybrid retrieval: dense vector search + PostgreSQL full-text search
+# fused via classical Reciprocal Rank Fusion (RRF). RAG_ENABLE_BM25 is a
+# legacy alias (consulted only when RAG_ENABLE_HYBRID_SEARCH is unset).
+RAG_ENABLE_HYBRID_SEARCH=true
+RAG_ENABLE_BM25=false
+# Candidate window: both dense and sparse fetch this many candidates.
+RAG_RETRIEVAL_CANDIDATES=30
+# Classical RRF constant (k).
 RAG_RRF_K=60
+# Over-fetch multiplier for expansion queries only.
+RAG_RETRIEVAL_FETCH_MULTIPLIER=3
+RAG_HISTORY_MODE=auto
+RAG_PROMPT_CHAR_BUDGET=0
+LLM_USE_ASYNC=false
 
-# ========================= Celery Task Queue Config =========================
-CELERY_BROKER_URL="amqp://minirag_user:minirag_rabbitmq_2222@localhost:5672/minirag_vhost"
-CELERY_RESULT_BACKEND="redis://:minirag_redis_2222@localhost:6379/0"
-CELERY_TASK_SERIALIZER="json"
+# Hugging Face model cache (BGE reranker downloads on first startup)
+HF_HOME=/root/.cache/huggingface
+
+# ========================= Celery =========================
+CELERY_BROKER_URL=amqp://algorag_user:algorag_rabbitmq_2222@rabbitmq:5672/algorag_vhost
+CELERY_RESULT_BACKEND=redis://:algorag_redis_2222@redis:6379/0
+CELERY_TASK_SERIALIZER=json
 CELERY_TASK_TIME_LIMIT=600
 CELERY_TASK_ACKS_LATE=false
 CELERY_WORKER_CONCURRENCY=2
-CELERY_FLOWER_PASSWORD="minirag_flower_2222"
+CELERY_FLOWER_PASSWORD=algorag_flower_2222
 CELERY_TASK_CLEANUP_INTERVAL_SECONDS=3600
 CELERY_TASK_RETENTION_SECONDS=86400
 
-# User identity header for project scoping (sent by frontend / API gateway)
-AUTH_USER_ID_HEADER="X-User-Id"
+AUTH_USER_ID_HEADER=X-User-Id

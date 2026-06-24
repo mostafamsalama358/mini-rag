@@ -89,18 +89,25 @@ class ChunkModel(BaseDataModel):
         asset_id: int,
         page: int,
     ):
-        async with self.db_client() as session:
-            stmt = select(DataChunk).where(
-                DataChunk.chunk_project_id == project_id,
-                DataChunk.chunk_asset_id == asset_id,
-            ).order_by(DataChunk.chunk_order)
-            result = await session.execute(stmt)
-            records = result.scalars().all()
+        """Fetch chunks for a single page of a single asset.
 
-        return [
-            record for record in records
-            if (record.chunk_metadata or {}).get("page") == page
-        ]
+        Pushes the page filter into SQL via JSONB path access instead of
+        loading every chunk of the asset and filtering in Python. The asset_id
+        predicate still uses the existing ix_chunk_asset_id index.
+        """
+        async with self.db_client() as session:
+            stmt = (
+                select(DataChunk)
+                .where(
+                    DataChunk.chunk_project_id == project_id,
+                    DataChunk.chunk_asset_id == asset_id,
+                    # jsonb -> 'page' cast to text; coerce the input the same way
+                    DataChunk.chunk_metadata["page"].as_string() == str(page),
+                )
+                .order_by(DataChunk.chunk_order)
+            )
+            result = await session.execute(stmt)
+            return result.scalars().all()
 
     async def get_chunks_by_asset_order_range(
         self,

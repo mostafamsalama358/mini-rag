@@ -51,6 +51,7 @@ async def get_project_index_info(request: Request, project_id: int):
         generation_client=request.app.generation_client,
         embedding_client=request.app.embedding_client,
         template_parser=request.app.template_parser,
+        reranker=getattr(request.app, "reranker", None),
     )
 
     collection_info = await nlp_controller.get_vector_db_collection_info(project=project)
@@ -113,10 +114,14 @@ async def search_index(request: Request, project_id: int, search_request: Search
         generation_client=request.app.generation_client,
         embedding_client=request.app.embedding_client,
         template_parser=request.app.template_parser,
+        reranker=getattr(request.app, "reranker", None),
     )
 
     results = await nlp_controller.search_vector_db_collection(
-        project=project, text=search_request.text, limit=search_request.limit
+        project=project,
+        text=search_request.text,
+        limit=search_request.limit,
+        metadata_filter=search_request.metadata_filter,
     )
 
     if not results:
@@ -150,6 +155,7 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
         generation_client=request.app.generation_client,
         embedding_client=request.app.embedding_client,
         template_parser=request.app.template_parser,
+        reranker=getattr(request.app, "reranker", None),
     )
 
     answer, full_prompt, chat_history, needs_clarification = await nlp_controller.answer_rag_question(
@@ -158,6 +164,7 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
         limit=answer_request.limit,
         session_id=answer_request.session_id,
         db_client=request.app.db_client,
+        metadata_filter=answer_request.metadata_filter,
     )
 
     collection_info = await nlp_controller.get_vector_db_collection_info(project=project)

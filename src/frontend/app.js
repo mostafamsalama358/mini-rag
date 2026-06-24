@@ -33,7 +33,7 @@ const copy = {
     indexingTimeout: "Indexing is still running (OCR may take several minutes). Please wait and try again.",
     ragNoContext: "Documents are not indexed yet. Upload a file or wait for processing to finish.",
     you: "You",
-    assistant: "MiniRAG",
+    assistant: "AlgoRAG",
     langButton: "عربي",
     welcome: "Select a project, upload files, then ask questions.",
   },
@@ -71,25 +71,25 @@ const copy = {
     indexingTimeout: "الفهرسة ما زالت جارية (قد تستغرق OCR عدة دقائق). انتظر ثم حاول مرة أخرى.",
     ragNoContext: "المستندات غير مفهرسة بعد. ارفع ملفا أو انتظر انتهاء المعالجة.",
     you: "أنت",
-    assistant: "MiniRAG",
+    assistant: "AlgoRAG",
     langButton: "English",
     welcome: "اختر مشروعا وارفع الملفات ثم اسأل.",
   },
 };
 
 const state = {
-  lang: localStorage.getItem("minirag.lang") || "en",
-  userId: localStorage.getItem("minirag.userId") || "demo-user",
+  lang: localStorage.getItem("algorag.lang") || "en",
+  userId: localStorage.getItem("algorag.userId") || "demo-user",
   projects: [],
-  activeProjectId: localStorage.getItem("minirag.activeProjectId") || "",
-  sessionId: localStorage.getItem("minirag.sessionId") || crypto.randomUUID(),
+  activeProjectId: localStorage.getItem("algorag.activeProjectId") || "",
+  sessionId: localStorage.getItem("algorag.sessionId") || crypto.randomUUID(),
   uploadedFileNames: [],
   filePipelineBusy: false,
   projectStatus: "idle",
   indexedRecordCount: 0,
 };
 
-localStorage.setItem("minirag.sessionId", state.sessionId);
+localStorage.setItem("algorag.sessionId", state.sessionId);
 
 const $ = (id) => document.getElementById(id);
 
@@ -211,7 +211,7 @@ function renderProjects() {
       state.activeProjectId = project.id;
       state.uploadedFileNames = [];
       state.indexedRecordCount = 0;
-      localStorage.setItem("minirag.activeProjectId", project.id);
+      localStorage.setItem("algorag.activeProjectId", project.id);
       setProjectStatus("idle");
       renderProjects();
       renderActiveProject();
@@ -345,7 +345,7 @@ async function loadProjects() {
 
   if (!state.projects.some((project) => project.id === state.activeProjectId)) {
     state.activeProjectId = state.projects[0]?.id || "";
-    localStorage.setItem("minirag.activeProjectId", state.activeProjectId);
+    localStorage.setItem("algorag.activeProjectId", state.activeProjectId);
   }
 
   renderProjects();
@@ -370,7 +370,7 @@ async function createProject(event) {
     state.activeProjectId = project.id;
     state.uploadedFileNames = [];
     state.indexedRecordCount = 0;
-    localStorage.setItem("minirag.activeProjectId", project.id);
+    localStorage.setItem("algorag.activeProjectId", project.id);
     elements.projectName.value = "";
     setProjectStatus("idle");
     renderProjects();
@@ -640,13 +640,13 @@ function bindEvents() {
   elements.userId.value = state.userId;
   elements.userId.addEventListener("change", () => {
     state.userId = elements.userId.value.trim() || "demo-user";
-    localStorage.setItem("minirag.userId", state.userId);
+    localStorage.setItem("algorag.userId", state.userId);
     loadProjects().catch(console.error);
   });
 
   elements.langToggle.addEventListener("click", () => {
     state.lang = state.lang === "en" ? "ar" : "en";
-    localStorage.setItem("minirag.lang", state.lang);
+    localStorage.setItem("algorag.lang", state.lang);
     applyLanguage();
   });
 

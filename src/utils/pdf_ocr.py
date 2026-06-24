@@ -19,8 +19,8 @@ from utils.text_cleaning import clean_extracted_text
 
 logger = logging.getLogger(__name__)
 
-OCR_ENGINE = "gemini"
 OCR_IMAGE_SCALE = 1.5
+DEFAULT_OCR_ENGINE = "gemini"
 MIN_TEXT_LENGTH = 10
 MAX_LANG_SAMPLE_CHARS = 5000
 
@@ -71,6 +71,15 @@ def _configured_page_timeout() -> int:
         return max(10, int(getattr(settings, "OCR_PAGE_TIMEOUT_SECONDS", 120)))
     except (TypeError, ValueError):
         return 120
+
+
+def _configured_ocr_engine() -> str:
+    settings = _get_ocr_settings()
+    engine = (getattr(settings, "OCR_ENGINE", None) or DEFAULT_OCR_ENGINE).lower().strip()
+    if engine not in {"gemini", "docling"}:
+        logger.warning("Unknown OCR_ENGINE=%r; falling back to gemini", engine)
+        return DEFAULT_OCR_ENGINE
+    return engine
 
 
 class OcrPageTimeout(TimeoutError):
@@ -167,13 +176,22 @@ def _extract_text_with_gemini(page: fitz.Page) -> str:
     return extract_text_from_page_image(pil_image)
 
 
-def _extract_text_with_ocr(page: fitz.Page, lang: str, page_num: int, pdf_path: str) -> str:
+def _extract_text_with_docling(page: fitz.Page, lang: str) -> str:
+    from utils.docling_ocr import extract_text_from_page_image
+
+    pil_image = Image.fromarray(_page_to_image(page))
+    return extract_text_from_page_image(pil_image, lang=lang)
+
+
+def _extract_text_with_ocr(
+    page: fitz.Page, lang: str, page_num: int, pdf_path: str, engine: str
+) -> str:
     timeout_seconds = _configured_page_timeout()
     started = time.monotonic()
 
     logger.info(
         "Starting OCR | engine=%s lang=%s page=%s timeout=%ss file=%s",
-        OCR_ENGINE,
+        engine,
         lang,
         page_num,
         timeout_seconds,
@@ -182,17 +200,20 @@ def _extract_text_with_ocr(page: fitz.Page, lang: str, page_num: int, pdf_path: 
 
     try:
         with _ocr_timeout(timeout_seconds):
-            text = _extract_text_with_gemini(page)
+            if engine == "docling":
+                text = _extract_text_with_docling(page, lang)
+            else:
+                text = _extract_text_with_gemini(page)
     except OcrPageTimeout:
         logger.exception("OCR timed out | page=%s file=%s", page_num, pdf_path)
         return ""
     except Exception:
-        logger.exception("OCR failed | engine=%s page=%s file=%s", OCR_ENGINE, page_num, pdf_path)
+        logger.exception("OCR failed | engine=%s page=%s file=%s", engine, page_num, pdf_path)
         return ""
 
     logger.info(
         "Finished OCR | engine=%s page=%s chars=%s elapsed=%.2fs file=%s",
-        OCR_ENGINE,
+        engine,
         page_num,
         len(text or ""),
         time.monotonic() - started,
@@ -207,7 +228,13 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
 
     try:
         ocr_lang = _resolve_ocr_language(doc)
-        logger.info("Resolved OCR language '%s' for %s", ocr_lang, pdf_path)
+        ocr_engine = _configured_ocr_engine()
+        logger.info(
+            "Resolved OCR language '%s' and engine '%s' for %s",
+            ocr_lang,
+            ocr_engine,
+            pdf_path,
+        )
 
         file_name = os.path.basename(pdf_path)
         extracted_texts: list[str] = []
@@ -223,7 +250,9 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
                     page_num + 1,
                     pdf_path,
                 )
-                text = _extract_text_with_ocr(page, ocr_lang, page_num + 1, pdf_path)
+                text = _extract_text_with_ocr(
+                    page, ocr_lang, page_num + 1, pdf_path, ocr_engine
+                )
                 ocr_used = True
 
             text = clean_extracted_text(text)
@@ -239,7 +268,7 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
                         "file_name": file_name,
                         "page": page_num + 1,
                         "source_type": "pdf",
-                        "ocr_engine": OCR_ENGINE,
+                        "ocr_engine": ocr_engine,
                         "ocr_used": ocr_used,
                         "ocr_lang": ocr_lang if ocr_used else None,
                     },

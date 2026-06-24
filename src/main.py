@@ -1,4 +1,6 @@
 from pathlib import Path
+import logging
+import time
 
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
@@ -8,12 +10,16 @@ from helpers.config import get_settings
 from stores.llm.LLMProviderFactory import LLMProviderFactory
 from stores.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
 from stores.llm.templates.template_parser import TemplateParser
+from models.db_schemes import RetrievedDocument
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
+from helpers.db_indexes import ensure_startup_indexes
+from utils.rerank import get_reranker
 
 # Import metrics setup
-from utils.metrics import setup_metrics
+from utils.metrics import RAG_RERANK_STARTUP_LATENCY, setup_metrics
 
+logger = logging.getLogger("uvicorn")
 app = FastAPI()
 frontend_dir = Path(__file__).resolve().parent / "frontend"
 
@@ -32,6 +38,10 @@ async def startup_span():
     app.db_client = sessionmaker(
         app.db_engine, class_=AsyncSession, expire_on_commit=False
     )
+
+    # Idempotently ensure auxiliary indexes (e.g. GIN on chunk_metadata) exist
+    # without requiring a manual Alembic migration on already-deployed DBs.
+    await ensure_startup_indexes(app.db_engine)
 
     llm_provider_factory = LLMProviderFactory(settings)
     vectordb_provider_factory = VectorDBProviderFactory(config=settings, db_client=app.db_client)
@@ -54,6 +64,40 @@ async def startup_span():
     app.template_parser = TemplateParser(
         language=settings.PRIMARY_LANG,
         default_language=settings.DEFAULT_LANG,
+    )
+    rerank_backend = (getattr(settings, "RAG_RERANKER_BACKEND", "unknown") or "unknown").lower()
+    load_started = time.perf_counter()
+    app.reranker = get_reranker(settings)
+    load_elapsed = getattr(app.reranker, "load_duration_seconds", time.perf_counter() - load_started)
+    RAG_RERANK_STARTUP_LATENCY.labels(backend=rerank_backend, stage="load").observe(load_elapsed)
+
+    warmup_elapsed = 0.0
+    if getattr(settings, "RAG_ENABLE_RERANKER", False) and getattr(
+        settings, "RAG_RERANKER_WARMUP_ON_STARTUP", True
+    ):
+        warmup_started = time.perf_counter()
+        warmup = getattr(app.reranker, "warmup", None)
+        if callable(warmup):
+            await warmup()
+            warmup_elapsed = getattr(
+                app.reranker, "warmup_duration_seconds", time.perf_counter() - warmup_started
+            )
+        elif rerank_backend == "bge":
+            await app.reranker.rerank(
+                "warmup",
+                [RetrievedDocument(text="warmup", score=0.0, metadata={})],
+            )
+            warmup_elapsed = time.perf_counter() - warmup_started
+        if warmup_elapsed > 0:
+            RAG_RERANK_STARTUP_LATENCY.labels(backend=rerank_backend, stage="warmup").observe(
+                warmup_elapsed
+            )
+
+    logger.info(
+        "Reranker startup complete: backend=%s load=%.2fs warmup=%.2fs",
+        rerank_backend,
+        load_elapsed,
+        warmup_elapsed,
     )
 
 

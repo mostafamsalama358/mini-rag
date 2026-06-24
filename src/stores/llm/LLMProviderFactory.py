@@ -33,4 +33,19 @@ class LLMProviderFactory:
                 default_generation_temperature=self.config.GENERATION_DAFAULT_TEMPERATURE,
             )
 
+        if provider == LLMEnums.DEEPSEEK.value:
+            return OpenAIProvider(
+                api_key=self.config.DEEPSEEK_API_KEY,
+                api_url=self.config.DEEPSEEK_API_URL or "https://api.deepseek.com",
+                default_input_max_characters=self.config.INPUT_DAFAULT_MAX_CHARACTERS,
+                default_generation_max_output_tokens=self.config.GENERATION_DAFAULT_MAX_TOKENS,
+                default_generation_temperature=self.config.GENERATION_DAFAULT_TEMPERATURE
+            )
+
+        if provider == LLMEnums.BGE.value:
+            from .providers.BGEProvider import BGEProvider
+            return BGEProvider(
+                default_input_max_characters=self.config.INPUT_DAFAULT_MAX_CHARACTERS
+            )
+
         return None

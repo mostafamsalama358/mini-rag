@@ -3,25 +3,28 @@ services:
   fastapi:
     build:
       context: ..
-      dockerfile: docker/minirag/Dockerfile
+      dockerfile: docker/algorag/Dockerfile
     container_name: fastapi
     entrypoint: ["/bin/bash", "-c"]
     command:
       - |
-        cd /app/models/db_schemes/minirag
+        cd /app/models/db_schemes/algorag
         alembic upgrade head
         cd /app
-        exec uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+        exec uvicorn main:app --host 0.0.0.0 --port 8000 --workers 1
     ports:
       - "8000:8000"
     volumes:
       - fastapi_data:/app/assets
       - ../src:/app
-      - ./minirag/alembic.ini:/app/models/db_schemes/minirag/alembic.ini:ro
+      - huggingface_cache:/root/.cache/huggingface
+      - ./algorag/alembic.ini:/app/models/db_schemes/algorag/alembic.ini:ro
       - ./env/gcp-service-account.json:/app/gcp-credentials.json:ro
     networks:
       - backend
     restart: always
+    mem_limit: 8g
+    memswap_limit: 10g
     depends_on:
       pgvector:
         condition: service_healthy
@@ -32,7 +35,7 @@ services:
   celery-worker:
     build:
       context: ..
-      dockerfile: docker/minirag/Dockerfile
+      dockerfile: docker/algorag/Dockerfile
     container_name: celery-worker
     entrypoint: ["/bin/bash", "-c"]
     command:
@@ -40,7 +43,7 @@ services:
     volumes:
       - fastapi_data:/app/assets
       - ../src:/app
-      - ./minirag/alembic.ini:/app/models/db_schemes/minirag/alembic.ini:ro
+      - ./algorag/alembic.ini:/app/models/db_schemes/algorag/alembic.ini:ro
       - ./env/gcp-service-account.json:/app/gcp-credentials.json:ro
     networks:
       - backend
@@ -59,7 +62,7 @@ services:
   celery-beat:
     build:
       context: ..
-      dockerfile: docker/minirag/Dockerfile
+      dockerfile: docker/algorag/Dockerfile
     container_name: celery-beat
     entrypoint: ["/bin/bash", "-c"]
     command:
@@ -82,7 +85,7 @@ services:
   flower:
     build:
       context: ..
-      dockerfile: docker/minirag/Dockerfile
+      dockerfile: docker/algorag/Dockerfile
     container_name: flower
     ports:
       - "5555:5555"
@@ -102,7 +105,7 @@ services:
       - ./env/.env.app
     environment:
       FLOWER_PORT: "5555"
-      FLOWER_BASIC_AUTH: "admin:minirag_flower_2222"
+      FLOWER_BASIC_AUTH: "admin:algorag_flower_2222"
     entrypoint: ["python", "-m", "celery", "-A", "celery_app", "flower", "--conf=/app/flowerconfig.py"]
 
   # Nginx Service
@@ -259,7 +262,7 @@ services:
       test: ["CMD", "redis-cli", "ping"]
       timeout: 10s
       retries: 5
-    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-minirag_redis_2222}"]
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-algorag_redis_2222}"]
 
 networks:
   backend:
@@ -274,3 +277,4 @@ volumes:
   rabbitmq_data:
   redis_data:
   celery_beat_data:
+  huggingface_cache:

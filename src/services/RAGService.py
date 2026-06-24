@@ -7,20 +7,52 @@ from utils.rag_history import select_chat_history_messages
 from utils.rag_response import parse_rag_answer
 from utils.retrieval import (
     focus_document_text_for_query,
-    rerank_retrieved_documents,
+    is_comparison_query,
+    is_detail_query,
     should_focus_document_text,
     sort_documents_for_prompt,
 )
-from utils.structural_split import is_exhaustive_list_query
+from utils.structural_split import (
+    is_exhaustive_list_query,
+    is_structural_reference_query,
+)
+from utils.metrics import (
+    RAG_RETRIEVAL_COUNT,
+    RAG_RETRIEVAL_LATENCY,
+    RAG_GENERATION_LATENCY,
+    RAG_RERANK_LATENCY,
+    RAG_RERANK_DOCS,
+    RAG_RETRIEVAL_DOCS,
+    RAG_TOP_SCORE,
+    RAG_NO_CONTEXT_TOTAL,
+    RAG_CLARIFICATION_TOTAL,
+)
+from utils.rerank import get_reranker
+import time
+
+
+def _classify_query_type(query: str) -> str:
+    if not query:
+        return "unknown"
+    if is_structural_reference_query(query):
+        return "structural"
+    if is_comparison_query(query):
+        return "comparison"
+    if is_exhaustive_list_query(query):
+        return "exhaustive_list"
+    if is_detail_query(query):
+        return "detail"
+    return "factual"
 
 
 class RAGService:
 
-    def __init__(self, db_client, nlp_controller, generation_client, template_parser):
+    def __init__(self, db_client, nlp_controller, generation_client, template_parser, reranker=None):
         self.db_client = db_client
         self.nlp_controller = nlp_controller
         self.generation_client = generation_client
         self.template_parser = template_parser
+        self.reranker = reranker
 
     async def answer_question(
         self,
@@ -29,29 +61,76 @@ class RAGService:
         query: str,
         limit: int = 12,
         session_id: str | None = None,
+        metadata_filter: dict | None = None,
     ):
         answer, full_prompt, chat_history = None, None, None
         needs_clarification = False
 
+        project_label = str(getattr(project, "project_id", "unknown"))
+        query_type = _classify_query_type(query)
+        RAG_RETRIEVAL_COUNT.labels(project_id=project_label, query_type=query_type).inc()
+
+        retrieval_start = time.time()
         retrieved_documents = await self.nlp_controller.search_vector_db_collection(
             project=project,
             text=query,
             limit=limit,
+            metadata_filter=metadata_filter,
         )
+        RAG_RETRIEVAL_LATENCY.labels(project_id=project_label).observe(time.time() - retrieval_start)
 
         if not retrieved_documents:
+            RAG_NO_CONTEXT_TOTAL.labels(project_id=project_label).inc()
             return answer, full_prompt, chat_history, needs_clarification
 
+        settings = get_settings()
+        retrieved_documents = sort_documents_for_prompt(retrieved_documents, query)
+
+        # Cross-encoder reranker runs on the candidate window BEFORE
+        # enrichment so its capacity is spent on the most relevant base
+        # candidates rather than continuation/context chunks.
+        # (no-op when RAG_ENABLE_RERANKER=false)
+        reranker = self.reranker or get_reranker(settings)
+        rerank_backend = (getattr(settings, "RAG_RERANKER_BACKEND", "unknown") or "unknown").lower()
+        RAG_RERANK_DOCS.labels(project_id=project_label, backend=rerank_backend).observe(
+            len(retrieved_documents)
+        )
+        rerank_start = time.time()
+        retrieved_documents = await reranker.rerank(query, retrieved_documents)
+        RAG_RERANK_LATENCY.labels(project_id=project_label, backend=rerank_backend).observe(
+            time.time() - rerank_start
+        )
+
+        # Enrich the reranked set with continuation chunks and structural
+        # context — this expands only the documents that survived reranking.
         retrieved_documents = await self.nlp_controller.enrich_retrieved_documents(
             project=project,
             documents=retrieved_documents,
             db_client=self.db_client,
             query=query,
         )
-        settings = get_settings()
-        rrf_k = max(1, int(getattr(settings, "RAG_RRF_K", 60)))
-        retrieved_documents = rerank_retrieved_documents(retrieved_documents, query, rrf_k=rrf_k)
-        retrieved_documents = sort_documents_for_prompt(retrieved_documents, query)
+
+        RAG_RETRIEVAL_DOCS.labels(project_id=project_label).observe(len(retrieved_documents))
+        top_score = max(
+            (doc.score for doc in retrieved_documents if doc.score is not None),
+            default=0.0,
+        )
+        RAG_TOP_SCORE.labels(project_id=project_label).observe(float(top_score))
+
+        # N3 — Token budget guard: drop lowest-ranked docs when the joined
+        # context text would exceed RAG_PROMPT_CHAR_BUDGET characters.
+        # Always keeps at least one document so the answer is grounded.
+        char_budget = int(getattr(settings, "RAG_PROMPT_CHAR_BUDGET", 0))
+        if char_budget > 0 and retrieved_documents:
+            kept: list = []
+            running_chars = 0
+            for doc in retrieved_documents:          # already sorted best-first
+                doc_chars = len(doc.text or "")
+                if kept and running_chars + doc_chars > char_budget:
+                    break
+                kept.append(doc)
+                running_chars += doc_chars
+            retrieved_documents = kept or retrieved_documents[:1]
 
         previous_lang = self.template_parser.language
         query_lang = detect_query_language(
@@ -114,14 +193,28 @@ class RAGService:
 
             full_prompt = "\n\n".join([header_prompt, documents_prompts, footer_prompt])
 
-            raw_answer = self.generation_client.generate_text(
-                prompt=full_prompt,
-                chat_history=chat_history,
-                max_output_tokens=4096 if is_exhaustive_list_query(query) else None,
-            )
+            settings = get_settings()
+            generate_async = getattr(self.generation_client, "generate_text_async", None)
+            generation_start = time.time()
+            if getattr(settings, "LLM_USE_ASYNC", False) and generate_async is not None:
+                raw_answer = await generate_async(
+                    prompt=full_prompt,
+                    chat_history=chat_history,
+                    max_output_tokens=4096 if is_exhaustive_list_query(query) else None,
+                )
+            else:
+                raw_answer = self.generation_client.generate_text(
+                    prompt=full_prompt,
+                    chat_history=chat_history,
+                    max_output_tokens=4096 if is_exhaustive_list_query(query) else None,
+                )
+            RAG_GENERATION_LATENCY.labels(project_id=project_label).observe(time.time() - generation_start)
             answer, needs_clarification = parse_rag_answer(raw_answer)
         finally:
             self.template_parser.set_language(previous_lang)
+
+        if needs_clarification:
+            RAG_CLARIFICATION_TOTAL.labels(project_id=project_label).inc()
 
         if session_id and answer:
             chat_message_model = await ChatMessageModel.create_instance(self.db_client)

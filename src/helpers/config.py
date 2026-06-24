@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import List
+from functools import lru_cache
 
 class Settings(BaseSettings):
 
@@ -28,6 +29,8 @@ class Settings(BaseSettings):
 
     OPENAI_API_KEY: str = None
     OPENAI_API_URL: str = None
+    DEEPSEEK_API_KEY: str = None
+    DEEPSEEK_API_URL: str = "https://api.deepseek.com"
     COHERE_API_KEY: str = None
     VERTEX_PROJECT_ID: str = None
     VERTEX_LOCATION: str = "us-central1"
@@ -55,11 +58,57 @@ class Settings(BaseSettings):
 
     OCR_IMAGE_SCALE: float = 1.5
     OCR_PAGE_TIMEOUT_SECONDS: int = 120
+    OCR_ENGINE: str = "gemini"
     OCR_GEMINI_MODEL_ID: str = None
 
     RAG_HISTORY_MODE: str = "auto"
+    # Over-fetch multiplier for expansion queries. The initial retrieval pass
+    # uses RAG_RETRIEVAL_CANDIDATES instead (see below).
     RAG_RETRIEVAL_FETCH_MULTIPLIER: int = 3
     RAG_RRF_K: int = 60
+    # When true, async request paths use the native async LLM/embedding client
+    # instead of blocking the event loop with the sync SDK. Default off to
+    # preserve existing behavior; enable for production async deployments.
+    LLM_USE_ASYNC: bool = False
+    # Soft cap (in characters) for the prompt's document context. When the
+    # joined document text exceeds this, the lowest-ranked documents are
+    # dropped to stay within budget. 0 disables the guard.
+    RAG_PROMPT_CHAR_BUDGET: int = 0
+    # Master toggle for hybrid dense + sparse retrieval. When true, dense
+    # vector search and PostgreSQL full-text search run concurrently and
+    # are fused via classical Reciprocal Rank Fusion. Replaces the older
+    # RAG_ENABLE_BM25 setting (which is kept as a backward-compatible alias
+    # when RAG_ENABLE_HYBRID_SEARCH is not explicitly set).
+    RAG_ENABLE_HYBRID_SEARCH: bool = True
+    # Legacy alias for RAG_ENABLE_HYBRID_SEARCH. Only consulted when
+    # RAG_ENABLE_HYBRID_SEARCH is not explicitly provided in the environment.
+    RAG_ENABLE_BM25: bool = True
+    # Fixed candidate window size for the initial retrieval pass. Both dense
+    # and sparse retrieval channels fetch this many candidates. The combined
+    # results are fused via RRF and then narrowed to this count before
+    # cross-encoder reranking.
+    RAG_RETRIEVAL_CANDIDATES: int = 30
+    # When true, a cross-encoder reranker is applied after the initial
+    # retrieval and RRF fusion step. Requires RAG_RERANKER_BACKEND to be
+    # set to a supported provider (e.g. "cohere" or "bge").
+    RAG_ENABLE_RERANKER: bool = True
+    RAG_RERANKER_BACKEND: str = "bge"
+    # Model used by the Cohere reranker. Defaults to the multilingual v3 model
+    # which supports Arabic + English without extra configuration.
+    COHERE_RERANKER_MODEL: str = "rerank-multilingual-v3.0"
+    BGE_RERANKER_MODEL: str = "BAAI/bge-reranker-v2-m3"
+    # Local BGE reranker runtime controls. On CPU deployments keep fp16 off
+    # and use a modest batch size to avoid large latency spikes.
+    RAG_RERANKER_DEVICE: str = "cpu"
+    RAG_RERANKER_BATCH_SIZE: int = 8
+    RAG_RERANKER_USE_FP16: bool = False
+    RAG_RERANKER_MAX_CHARS: int = 1024
+    # Run a one-pair inference at startup so the first user request stays fast.
+    RAG_RERANKER_WARMUP_ON_STARTUP: bool = True
+    # Max documents returned by the cross-encoder reranker. When set to 0 or
+    # None, all input candidates are returned (just re-ordered). Defaults to
+    # 5 to keep the prompt focused on the most relevant documents.
+    RAG_RERANKER_TOP_N: int = 5
 
     # Celery Configuration
     CELERY_BROKER_URL: str = None
@@ -74,8 +123,8 @@ class Settings(BaseSettings):
 
     AUTH_USER_ID_HEADER: str = "X-User-Id"
 
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
+@lru_cache()
 def get_settings():
     return Settings()

@@ -4,6 +4,8 @@ class LLMEnums(Enum):
     OPENAI = "OPENAI"
     COHERE = "COHERE"
     VERTEX = "VERTEX"
+    DEEPSEEK = "DEEPSEEK"
+    BGE = "BGE"
 
 class OpenAIEnums(Enum):
     SYSTEM = "system"

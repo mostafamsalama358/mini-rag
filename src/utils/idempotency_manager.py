@@ -2,7 +2,7 @@ import hashlib
 import json
 from datetime import datetime, timedelta, timezone
 from sqlalchemy import select, delete
-from models.db_schemes.minirag.schemes.celery_task_execution import CeleryTaskExecution
+from models.db_schemes.algorag.schemes.celery_task_execution import CeleryTaskExecution
 
 def _utcnow() -> datetime:
     return datetime.now(timezone.utc)

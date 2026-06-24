@@ -1,6 +1,6 @@
-# Docker Setup for MiniRAG Application
+# Docker Setup for AlgoRAG Application
 
-This directory contains the Docker setup for the MiniRAG application, including all necessary services for development and monitoring.
+This directory contains the Docker setup for the AlgoRAG application, including all necessary services for development and monitoring.
 
 ## Services
 
@@ -28,15 +28,25 @@ cp .env.example.grafana .env.grafana
 cp .env.example.postgres-exporter .env.postgres-exporter
 
 # Setup the Alembic configuration for the FastAPI application
-cd ..
-cd docker/minirag
+cd ../algorag
 cp alembic.example.ini alembic.ini
+```
 
 ### 2. Start the services
-r
+
 ```bash
 cd docker
 docker compose up --build -d
+```
+
+**CPU note:** FastAPI runs with `--workers 1` so the local BGE reranker is loaded once.
+The first startup downloads `BAAI/bge-reranker-v2-m3` into the `huggingface_cache` volume.
+
+To restart after code-only changes (no `requirements.txt` changes):
+
+```bash
+cd docker
+docker compose restart fastapi celery-worker
 ```
 
 To start only specific services:
