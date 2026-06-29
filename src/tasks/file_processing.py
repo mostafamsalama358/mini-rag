@@ -74,7 +74,7 @@ async def _process_project_files(task_instance, project_id: int,
             task_name=task_name,
             task_args=task_args,
             celery_task_id=task_instance.request.id,
-            task_time_limit=settings.CELERY_TASK_TIME_LIMIT,
+            task_time_limit=settings.CELERY_LONG_TASK_TIME_LIMIT,
         )
 
         if not should_execute:

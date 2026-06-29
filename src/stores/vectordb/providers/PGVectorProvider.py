@@ -286,7 +286,8 @@ class PGVectorProvider(VectorDBInterface):
 
     async def insert_many(self, collection_name: str, texts: list,
                          vectors: list, metadata: list = None,
-                         record_ids: list = None, batch_size: int = 50):
+                         record_ids: list = None, batch_size: int = 50,
+                         create_index: bool = True):
         
         collection_name = _validate_identifier(collection_name)
         is_collection_existed = await self.is_collection_existed(collection_name=collection_name)
@@ -330,7 +331,8 @@ class PGVectorProvider(VectorDBInterface):
                     
                     await session.execute(batch_insert_sql, values)
 
-        await self.create_vector_index(collection_name=collection_name)
+        if create_index:
+            await self.create_vector_index(collection_name=collection_name)
 
         return True
     

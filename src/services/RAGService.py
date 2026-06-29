@@ -1,3 +1,16 @@
+"""
+services/RAGService.py — Answer Generation Service
+===================================================
+.NET Equivalent: IAnswerService / RagOrchestrator
+
+This service orchestrates the entire Retrieval-Augmented Generation (RAG) pipeline:
+  1. Retrieve raw candidate documents (Vector DB)
+  2. Rerank candidates (Cross-encoder LLM)
+  3. Enrich context (fetch neighboring chunks)
+  4. Trim to fit token budget
+  5. Construct the final prompt (System + Context + Chat History + Query)
+  6. Generate the answer (Generation LLM)
+"""
 from models.ChatMessageModel import ChatMessageModel
 from models.db_schemes import Project
 from helpers.config import get_settings
@@ -62,7 +75,11 @@ class RAGService:
         limit: int = 12,
         session_id: str | None = None,
         metadata_filter: dict | None = None,
-    ):
+    ) -> tuple[str | None, str | None, list | None, bool]:
+        """
+        Main pipeline to answer a user's question using RAG.
+        Returns a tuple of (answer, full_prompt, chat_history, needs_clarification).
+        """
         answer, full_prompt, chat_history = None, None, None
         needs_clarification = False
 
@@ -122,15 +139,15 @@ class RAGService:
         # Always keeps at least one document so the answer is grounded.
         char_budget = int(getattr(settings, "RAG_PROMPT_CHAR_BUDGET", 0))
         if char_budget > 0 and retrieved_documents:
-            kept: list = []
+            budget_filtered_docs: list = []
             running_chars = 0
             for doc in retrieved_documents:          # already sorted best-first
                 doc_chars = len(doc.text or "")
-                if kept and running_chars + doc_chars > char_budget:
+                if budget_filtered_docs and running_chars + doc_chars > char_budget:
                     break
-                kept.append(doc)
+                budget_filtered_docs.append(doc)
                 running_chars += doc_chars
-            retrieved_documents = kept or retrieved_documents[:1]
+            retrieved_documents = budget_filtered_docs or retrieved_documents[:1]
 
         previous_lang = self.template_parser.language
         query_lang = detect_query_language(
@@ -141,7 +158,22 @@ class RAGService:
         template_lang = query_lang
 
         try:
-            system_prompt = self.template_parser.get("rag", "system_prompt")
+            # Equivalent to a C# 'try-finally' or 'using' statement.
+            # Ensures the parser's language state is reset even if generation throws an error.
+            system_prompt_str = None
+            if project and getattr(project, "prompt_override", None):
+                if template_lang == "ar" and project.prompt_override.prompt_ar:
+                    from string import Template
+                    system_prompt_str = Template(project.prompt_override.prompt_ar).substitute({})
+                elif template_lang == "en" and project.prompt_override.prompt_en:
+                    from string import Template
+                    system_prompt_str = Template(project.prompt_override.prompt_en).substitute({})
+
+            if system_prompt_str:
+                system_prompt = system_prompt_str
+            else:
+                system_prompt = self.template_parser.get("rag", "system_prompt")
+
 
             documents_prompts = "\n".join([
                 self.template_parser.get("rag", "document_prompt", {
@@ -197,19 +229,19 @@ class RAGService:
             generate_async = getattr(self.generation_client, "generate_text_async", None)
             generation_start = time.time()
             if getattr(settings, "LLM_USE_ASYNC", False) and generate_async is not None:
-                raw_answer = await generate_async(
+                raw_generated_answer = await generate_async(
                     prompt=full_prompt,
                     chat_history=chat_history,
                     max_output_tokens=4096 if is_exhaustive_list_query(query) else None,
                 )
             else:
-                raw_answer = self.generation_client.generate_text(
+                raw_generated_answer = self.generation_client.generate_text(
                     prompt=full_prompt,
                     chat_history=chat_history,
                     max_output_tokens=4096 if is_exhaustive_list_query(query) else None,
                 )
             RAG_GENERATION_LATENCY.labels(project_id=project_label).observe(time.time() - generation_start)
-            answer, needs_clarification = parse_rag_answer(raw_answer)
+            answer, needs_clarification = parse_rag_answer(raw_generated_answer)
         finally:
             self.template_parser.set_language(previous_lang)
 

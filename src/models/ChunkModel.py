@@ -1,3 +1,10 @@
+"""
+models/ChunkModel.py — Chunk Repository
+========================================
+.NET Equivalent: IChunkRepository + ChunkRepository implementation
+
+This class handles database operations for the `DataChunk` entity (DB table `chunks`).
+"""
 from .BaseDataModel import BaseDataModel
 from .db_schemes import DataChunk
 from .enums.DataBaseEnum import DataBaseEnum
@@ -29,21 +36,27 @@ class ChunkModel(BaseDataModel):
     async def get_chunk(self, chunk_id: str):
 
         async with self.db_client() as session:
+            # Equivalent to: dbContext.Chunks.Where(c => c.ChunkId == chunkId).FirstOrDefaultAsync()
             result = await session.execute(select(DataChunk).where(DataChunk.chunk_id == chunk_id))
             chunk = result.scalar_one_or_none()
         return chunk
 
     async def insert_many_chunks(self, chunks: list, batch_size: int=100):
-
+        """
+        Equivalent to EF Core BulkInsert or AddRange() in batches.
+        """
         async with self.db_client() as session:
             async with session.begin():
                 for i in range(0, len(chunks), batch_size):
                     batch = chunks[i:i+batch_size]
-                    session.add_all(batch)
+                    session.add_all(batch) # Equivalent to dbContext.AddRange(batch)
             await session.commit()
         return len(chunks)
 
     async def delete_chunks_by_project_id(self, project_id: ObjectId):
+        """
+        Equivalent to: dbContext.Chunks.Where(c => c.ProjectId == projectId).ExecuteDeleteAsync()
+        """
         async with self.db_client() as session:
             stmt = delete(DataChunk).where(DataChunk.chunk_project_id == project_id)
             result = await session.execute(stmt)

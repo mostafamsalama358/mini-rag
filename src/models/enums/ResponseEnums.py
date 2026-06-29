@@ -29,3 +29,5 @@ class ResponseSignal(Enum):
     PROJECT_LIST_SUCCESS = "project_list_success"
     PROJECT_RETRIEVED_SUCCESS = "project_retrieved_success"
     PROJECT_NAME_REQUIRED = "project_name_required"
+    PROJECT_PROMPT_RETRIEVED = "project_prompt_retrieved"
+    PROJECT_PROMPT_UPDATED = "project_prompt_updated"

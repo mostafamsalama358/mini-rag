@@ -1,3 +1,15 @@
+"""
+helpers/config.py — Configuration Settings
+===========================================
+.NET Equivalent: appsettings.json + IOptions<AppSettings> + DI Singleton Registration
+
+This file defines the `Settings` class using Pydantic, which automatically
+loads configuration from environment variables and the `.env` file.
+
+The `get_settings()` function uses `@lru_cache` to ensure the settings
+are only loaded once and cached, essentially acting like a DI Singleton
+registration for the configuration object.
+"""
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import List, Optional
 from functools import lru_cache
@@ -68,7 +80,7 @@ class Settings(BaseSettings):
     # When true, async request paths use the native async LLM/embedding client
     # instead of blocking the event loop with the sync SDK. Default off to
     # preserve existing behavior; enable for production async deployments.
-    LLM_USE_ASYNC: bool = False
+    LLM_USE_ASYNC: bool = True
     # Soft cap (in characters) for the prompt's document context. When the
     # joined document text exceeds this, the lowest-ranked documents are
     # dropped to stay within budget. 0 disables the guard.
@@ -113,7 +125,9 @@ class Settings(BaseSettings):
     CELERY_BROKER_URL: Optional[str] = None
     CELERY_RESULT_BACKEND: Optional[str] = None
     CELERY_TASK_SERIALIZER: str = "json"
-    CELERY_TASK_TIME_LIMIT: int = 600
+    CELERY_TASK_TIME_LIMIT: int = 1200
+    # OCR, chunking, and embedding indexing routinely exceed the global limit.
+    CELERY_LONG_TASK_TIME_LIMIT: int = 3600
     CELERY_TASK_ACKS_LATE: bool = True
     CELERY_WORKER_CONCURRENCY: int = 3
     CELERY_FLOWER_PASSWORD: Optional[str] = None
@@ -122,8 +136,13 @@ class Settings(BaseSettings):
 
     AUTH_USER_ID_HEADER: str = "X-User-Id"
 
+    HF_TOKEN: Optional[str] = None
+    HF_HOME: str = "/root/.cache/huggingface"
+
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
+# @lru_cache ensures this function only runs once. Subsequent calls return the cached object.
+# Equivalent to: builder.Services.AddSingleton(Configuration.Get<Settings>());
 @lru_cache()
 def get_settings():
     return Settings()

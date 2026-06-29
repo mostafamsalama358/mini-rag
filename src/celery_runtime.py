@@ -11,7 +11,12 @@ async def get_db_client():
         f"{settings.POSTGRES_PASSWORD}@{settings.POSTGRES_HOST}:"
         f"{settings.POSTGRES_PORT}/{settings.POSTGRES_MAIN_DATABASE}"
     )
-    db_engine = create_async_engine(postgres_conn)
+    db_engine = create_async_engine(
+        postgres_conn,
+        pool_size=4,
+        max_overflow=8,
+        pool_pre_ping=True,
+    )
     db_client = sessionmaker(
         db_engine, class_=AsyncSession, expire_on_commit=False
     )
@@ -34,7 +39,12 @@ async def get_setup_utils():
         f"{settings.POSTGRES_PORT}/{settings.POSTGRES_MAIN_DATABASE}"
     )
 
-    db_engine = create_async_engine(postgres_conn)
+    db_engine = create_async_engine(
+        postgres_conn,
+        pool_size=4,
+        max_overflow=8,
+        pool_pre_ping=True,
+    )
     db_client = sessionmaker(
         db_engine, class_=AsyncSession, expire_on_commit=False
     )

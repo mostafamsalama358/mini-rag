@@ -130,7 +130,8 @@ async def _index_data_content(task_instance, project_id: int, do_reset: int):
             is_inserted = await nlp_controller.index_into_vector_db(
                 project=project,
                 chunks=page_chunks,
-                chunks_ids=chunks_ids
+                chunks_ids=chunks_ids,
+                defer_index=True
             )
 
             if not is_inserted:
@@ -152,6 +153,9 @@ async def _index_data_content(task_instance, project_id: int, do_reset: int):
             if embedding_batch_delay > 0 and inserted_items_count < total_chunks_count:
                 await asyncio.sleep(embedding_batch_delay)
         
+        # Create HNSW index once bulk ingestion finishes
+        if hasattr(vectordb_client, "create_vector_index"):
+            await vectordb_client.create_vector_index(collection_name=collection_name)
 
         task_instance.update_state(
             state="SUCCESS",

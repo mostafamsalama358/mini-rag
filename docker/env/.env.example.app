@@ -100,14 +100,16 @@ RAG_HISTORY_MODE=auto
 RAG_PROMPT_CHAR_BUDGET=0
 LLM_USE_ASYNC=false
 
-# Hugging Face model cache (BGE reranker downloads on first startup)
+# Hugging Face — get a token at https://huggingface.co/settings/tokens
+HF_TOKEN=
 HF_HOME=/root/.cache/huggingface
 
 # ========================= Celery =========================
 CELERY_BROKER_URL=amqp://algorag_user:algorag_rabbitmq_2222@rabbitmq:5672/algorag_vhost
 CELERY_RESULT_BACKEND=redis://:algorag_redis_2222@redis:6379/0
 CELERY_TASK_SERIALIZER=json
-CELERY_TASK_TIME_LIMIT=600
+CELERY_TASK_TIME_LIMIT=1200
+CELERY_LONG_TASK_TIME_LIMIT=3600
 CELERY_TASK_ACKS_LATE=false
 CELERY_WORKER_CONCURRENCY=3
 CELERY_FLOWER_PASSWORD=algorag_flower_2222

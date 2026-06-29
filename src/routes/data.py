@@ -11,13 +11,14 @@ from controllers.ProcessController import ProcessController
 import aiofiles
 from models import ResponseSignal
 import logging
-from .schemes.data import ProcessRequest
+from .schemes.data import ProcessRequest, SuggestMetadataRequest, UpdateMetadataRequest
 from models.ProjectModel import ProjectModel
 from models.ChunkModel import ChunkModel
 from models.AssetModel import AssetModel
 from models.db_schemes import DataChunk, Asset
 from models.enums.AssetTypeEnum import AssetTypeEnum
 from controllers.NLPController import NLPController
+from stores.llm.LLMProviderFactory import LLMProviderFactory
 from tasks.file_processing import process_project_files
 from tasks.process_workflow import push_after_process_task
 
@@ -28,8 +29,10 @@ data_router = APIRouter(
     tags=["api_v1", "data"],
 )
 
+from fastapi import Form
 @data_router.post("/upload/{project_id}")
 async def upload_data(request: Request, project_id: int, file: UploadFile,
+                      metadata: str = Form(None),
                       app_settings: Settings = Depends(get_settings)):
         
     
@@ -75,6 +78,14 @@ async def upload_data(request: Request, project_id: int, file: UploadFile,
             }
         )
 
+    import json
+    custom_config = {}
+    if metadata:
+        try:
+            custom_config = json.loads(metadata)
+        except json.JSONDecodeError:
+            pass
+
     # store the assets into the database
     asset_model = await AssetModel.create_instance(
         db_client=request.app.db_client
@@ -84,7 +95,8 @@ async def upload_data(request: Request, project_id: int, file: UploadFile,
         asset_project_id=project.project_id,
         asset_type=AssetTypeEnum.FILE.value,
         asset_name=file_id,
-        asset_size=os.path.getsize(file_path)
+        asset_size=os.path.getsize(file_path),
+        asset_config=custom_config
     )
 
     asset_record = await asset_model.create_asset(asset=asset_resource)
@@ -95,6 +107,8 @@ async def upload_data(request: Request, project_id: int, file: UploadFile,
                 "asset_name": asset_record.asset_name,
             }
         )
+
+
 
 @data_router.post("/process/{project_id}")
 async def process_endpoint(request: Request, project_id: int, process_request: ProcessRequest,
@@ -165,3 +179,41 @@ async def get_task_status(task_id: str):
         payload["error"] = str(result.result) if result.result else "Task failed"
 
     return JSONResponse(content=payload)
+
+
+@data_router.post("/suggest-metadata/{project_id}")
+async def suggest_metadata(request: Request, project_id: int, req_body: SuggestMetadataRequest, app_settings: Settings = Depends(get_settings)):
+    try:
+        if not req_body.file_names:
+            return JSONResponse(content={"tags": []})
+            
+        generation_client = getattr(request.app, "generation_client", None)
+        if not generation_client:
+            generation_client = LLMProviderFactory(app_settings).create(provider=app_settings.GENERATION_BACKEND)
+        
+        file_names_str = ", ".join(req_body.file_names)
+        prompt = f"Given the following file names uploaded to a project: {file_names_str}. Suggest up to 5 concise and relevant metadata tags that could be useful for categorizing them. Return ONLY the tags separated by commas. No extra text."
+        
+        response = generation_client.generate_text(prompt=prompt)
+        tags = [tag.strip() for tag in response.split(",") if tag.strip()]
+        return JSONResponse(content={"tags": tags[:5]})
+    except Exception as e:
+        import traceback
+        logger.error(f"Error generating metadata: {traceback.format_exc()}")
+        return JSONResponse(content={"tags": ["Report", "Document", "Data"]})
+
+@data_router.post("/update-metadata/{project_id}")
+async def update_metadata(req: Request, project_id: int, request: UpdateMetadataRequest):
+    if not request.file_names or not request.tags:
+        return JSONResponse(content={"signal": "NO_UPDATES"})
+        
+    asset_model = await AssetModel.create_instance(db_client=req.app.db_client)
+    
+    # get the project numeric id first
+    project_model = await ProjectModel.create_instance(db_client=req.app.db_client)
+    project = await project_model.get_project_or_create_one(project_id=project_id)
+    
+    config = {"tags": request.tags}
+    await asset_model.update_assets_config(project.project_id, request.file_names, config)
+    
+    return JSONResponse(content={"signal": "METADATA_UPDATED"})

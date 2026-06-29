@@ -23,8 +23,16 @@ _embedding_inference_lock = threading.Lock()
 _reranker_inference_lock = threading.Lock()
 
 
+def _ensure_hf_auth() -> None:
+    from helpers.config import get_settings
+    from helpers.hf_auth import configure_hf_from_settings
+
+    configure_hf_from_settings(get_settings())
+
+
 def get_bge_embedding_model(model_id: str, *, use_fp16: bool = True) -> tuple[Any, float]:
     """Return a cached ``BGEM3FlagModel`` and load duration (0 on cache hit)."""
+    _ensure_hf_auth()
     key = (model_id, use_fp16)
     with _cache_lock:
         cached = _embedding_models.get(key)

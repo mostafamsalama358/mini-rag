@@ -3,6 +3,8 @@ from .db_schemes import Asset
 from .enums.DataBaseEnum import DataBaseEnum
 from bson import ObjectId
 from sqlalchemy.future import select
+from sqlalchemy import update
+from typing import List
 
 class AssetModel(BaseDataModel):
 
@@ -45,6 +47,21 @@ class AssetModel(BaseDataModel):
             result = await session.execute(stmt)
             record = result.scalar_one_or_none()
         return record
+
+    async def update_assets_config(self, asset_project_id: str, asset_names: List[str], new_config: dict):
+        async with self.db_client() as session:
+            async with session.begin():
+                stmt = (
+                    update(Asset)
+                    .where(
+                        Asset.asset_project_id == asset_project_id,
+                        Asset.asset_name.in_(asset_names)
+                    )
+                    .values(asset_config=new_config)
+                )
+                await session.execute(stmt)
+            await session.commit()
+
 
 
     

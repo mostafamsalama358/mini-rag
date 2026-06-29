@@ -7,7 +7,7 @@ from helpers.auth import get_current_user_id
 from controllers.ProjectController import ProjectController
 from models import ResponseSignal
 from models.ProjectModel import ProjectModel
-from .schemes.projects import ProjectCreateRequest
+from .schemes.projects import ProjectCreateRequest, ProjectPromptUpdateRequest
 
 logger = logging.getLogger('uvicorn.error')
 
@@ -91,3 +91,67 @@ async def get_project(
         "signal": ResponseSignal.PROJECT_RETRIEVED_SUCCESS.value,
         "project": project_controller.serialize_project(result),
     })
+
+
+@projects_router.get("/{project_uuid}/prompt")
+async def get_project_prompt(
+    request: Request,
+    project_uuid: UUID,
+    user_id: str = Depends(get_current_user_id),
+):
+    project_model = await ProjectModel.create_instance(
+        db_client=request.app.db_client
+    )
+    prompt = await project_model.get_project_prompt(
+        project_uuid=project_uuid,
+        user_id=user_id,
+    )
+    if prompt is None:
+        return JSONResponse(content={
+            "signal": ResponseSignal.PROJECT_PROMPT_RETRIEVED.value,
+            "prompt": {
+                "prompt_en": None,
+                "prompt_ar": None,
+            }
+        })
+
+    return JSONResponse(content={
+        "signal": ResponseSignal.PROJECT_PROMPT_RETRIEVED.value,
+        "prompt": {
+            "prompt_en": prompt.prompt_en,
+            "prompt_ar": prompt.prompt_ar,
+        }
+    })
+
+
+@projects_router.put("/{project_uuid}/prompt")
+async def update_project_prompt(
+    request: Request,
+    project_uuid: UUID,
+    payload: ProjectPromptUpdateRequest,
+    user_id: str = Depends(get_current_user_id),
+):
+    project_model = await ProjectModel.create_instance(
+        db_client=request.app.db_client
+    )
+    prompt = await project_model.update_project_prompt(
+        project_uuid=project_uuid,
+        user_id=user_id,
+        prompt_en=payload.prompt_en,
+        prompt_ar=payload.prompt_ar,
+    )
+
+    if prompt is None:
+        return JSONResponse(
+            status_code=status.HTTP_404_NOT_FOUND,
+            content={"signal": ResponseSignal.PROJECT_NOT_FOUND_ERROR.value},
+        )
+
+    return JSONResponse(content={
+        "signal": ResponseSignal.PROJECT_PROMPT_UPDATED.value,
+        "prompt": {
+            "prompt_en": prompt.prompt_en,
+            "prompt_ar": prompt.prompt_ar,
+        }
+    })
+

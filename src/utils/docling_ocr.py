@@ -14,9 +14,9 @@ from PIL import Image
 
 logger = logging.getLogger(__name__)
 
-_converter = None
-_converter_lang: str | None = None
-_converter_scale: float | None = None
+import threading
+
+_local_storage = threading.local()
 
 
 def _normalize_ocr_lang(lang_code: str | None) -> str:
@@ -44,10 +44,13 @@ def _configured_image_scale() -> float:
 
 
 def _get_converter(lang: str, image_scale: float):
-    global _converter, _converter_lang, _converter_scale
+    # Check thread-local cache
+    converter = getattr(_local_storage, "converter", None)
+    cached_lang = getattr(_local_storage, "lang", None)
+    cached_scale = getattr(_local_storage, "scale", None)
 
-    if _converter is not None and _converter_lang == lang and _converter_scale == image_scale:
-        return _converter
+    if converter is not None and cached_lang == lang and cached_scale == image_scale:
+        return converter
 
     from docling.datamodel.base_models import InputFormat
     from docling.datamodel.pipeline_options import PdfPipelineOptions, RapidOcrOptions
@@ -62,19 +65,21 @@ def _get_converter(lang: str, image_scale: float):
         images_scale=image_scale,
     )
 
-    _converter = DocumentConverter(
+    converter = DocumentConverter(
         format_options={
             InputFormat.IMAGE: ImageFormatOption(pipeline_options=pipeline_options),
         }
     )
-    _converter_lang = lang
-    _converter_scale = image_scale
+    _local_storage.converter = converter
+    _local_storage.lang = lang
+    _local_storage.scale = image_scale
     logger.info(
-        "Initialized Docling OCR converter | backend=paddle lang=%s scale=%.2f",
+        "Initialized Docling OCR converter in thread %s | backend=paddle lang=%s scale=%.2f",
+        threading.current_thread().name,
         lang,
         image_scale,
     )
-    return _converter
+    return converter
 
 
 def extract_text_from_page_image(pil_image: Image.Image, lang: str | None = None) -> str:

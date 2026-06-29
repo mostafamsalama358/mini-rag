@@ -23,8 +23,8 @@ services:
     networks:
       - backend
     restart: always
-    mem_limit: 8g
-    memswap_limit: 10g
+    mem_limit: 2g
+    memswap_limit: 2g
     depends_on:
       pgvector:
         condition: service_healthy
@@ -39,7 +39,7 @@ services:
     container_name: celery-worker
     entrypoint: ["/bin/bash", "-c"]
     command:
-      - exec python -m celery -A celery_app worker --queues=default,file_processing,data_indexing --loglevel=info --concurrency=3
+      - exec python -m celery -A celery_app worker --queues=default,file_processing,data_indexing --loglevel=info --concurrency=8
     volumes:
       - fastapi_data:/app/assets
       - ../src:/app
@@ -57,7 +57,7 @@ services:
         condition: service_healthy
     env_file:
       - ./env/.env.app
-    mem_limit: 6g
+    mem_limit: 8g
     memswap_limit: 8g
   celery-beat:
     build:

@@ -1,3 +1,8 @@
 # Windows reserved device names (accidentally created by shell redirects)
 nul
 **/nul
+
+# GCP / cloud credentials (use docker/env/gcp-service-account.json locally)
+src/gcp-credentials.json
+**/gcp-service-account.json
+**/*-credentials.json

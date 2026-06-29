@@ -1,3 +1,12 @@
+"""
+controllers/NLPController.py — RAG Orchestration Service
+=========================================================
+.NET Equivalent: IRagService + implementation
+
+This service handles the core RAG logic: embedding queries, searching
+the vector database (both dense and sparse), ranking, and enriching
+documents.
+"""
 from .BaseController import BaseController
 from models.db_schemes import Project, DataChunk
 from models.ChunkModel import ChunkModel
@@ -64,6 +73,7 @@ class NLPController(BaseController):
                 document_type=DocumentTypeEnum.QUERY.value,
             )
         # No async surface — offload the blocking sync call to a thread.
+        # Equivalent to: Task.Run(() => self.embedding_client.embed_text(...))
         return await asyncio.to_thread(
             self.embedding_client.embed_text,
             text=text,
@@ -87,25 +97,41 @@ class NLPController(BaseController):
     
     async def index_into_vector_db(self, project: Project, chunks: List[DataChunk],
                                    chunks_ids: List[int], 
-                                   do_reset: bool = False):
+                                   do_reset: bool = False,
+                                   defer_index: bool = False) -> bool:
+        """
+        Embeds and stores chunks into the vector database.
+        
+        Equivalent to: IVectorDbRepository.UpsertBatchAsync(...)
+
+        Args:
+            project: The project context.
+            chunks: List of DataChunk entities to embed and store.
+            chunks_ids: Corresponding DB IDs for the chunks.
+            do_reset: If True, recreates the collection before inserting.
+            defer_index: If True, skips creating the vector index until later.
+
+        Returns:
+            True if insertion succeeded.
+        """
         
         # step1: get collection name
         collection_name = self.create_collection_name(project_id=project.project_id)
 
         # step2: manage items
-        texts = [ c.chunk_text for c in chunks ]
+        chunk_texts = [ c.chunk_text for c in chunks ]
         metadata = [ c.chunk_metadata for c in  chunks]
 
         settings = get_settings()
         embed_async = getattr(self.embedding_client, "embed_text_async", None)
         if getattr(settings, "LLM_USE_ASYNC", False) and embed_async is not None:
-            vectors = await embed_async(
-                text=texts,
+            embedding_vectors = await embed_async(
+                text=chunk_texts,
                 document_type=DocumentTypeEnum.DOCUMENT.value,
             )
         else:
-            vectors = self.embedding_client.embed_text(
-                text=texts,
+            embedding_vectors = self.embedding_client.embed_text(
+                text=chunk_texts,
                 document_type=DocumentTypeEnum.DOCUMENT.value,
             )
 
@@ -119,11 +145,12 @@ class NLPController(BaseController):
         # step4: insert into vector db
         _ = await self.vectordb_client.insert_many(
             collection_name=collection_name,
-            texts=texts,
+            texts=chunk_texts,
             metadata=metadata,
-            vectors=vectors,
+            vectors=embedding_vectors,
             record_ids=chunks_ids,
             batch_size=settings.VECTOR_DB_INSERT_BATCH_SIZE,
+            create_index=not defer_index,
         )
 
         return True
@@ -176,47 +203,92 @@ class NLPController(BaseController):
         text: str,
         limit: int = 10,
         metadata_filter: dict | None = None,
-    ):
-        """Retrieve candidate documents for *text* using hybrid dense + sparse search.
+    ) -> list[RetrievedDocument] | bool:
+        """
+        Retrieve candidate documents for a query using hybrid dense + sparse search.
 
-        Pipeline
-        --------
-        1. Embed query once.
-        2. Run dense vector search and (optionally) sparse FTS concurrently,
-           both respecting *metadata_filter* when provided.
-        3. Fuse results with classical Reciprocal Rank Fusion (rank-only).
-        4. Run expansion queries (detail / comparison / structural) and merge.
-        5. Return the top candidates for downstream reranking + enrichment.
+        Equivalent to: IVectorSearchService.SearchAsync(project, query, options)
+
+        Pipeline:
+            1. Embed query once (dense vector).
+            2. Run dense + sparse FTS search concurrently (like Task.WhenAll).
+            3. Fuse results via Reciprocal Rank Fusion (RRF).
+            4. Run expansion sub-queries and re-merge.
+            5. Return top candidates.
+
+        Args:
+            project: The project context (tenant scope).
+            text: The user query string.
+            limit: Max number of results to return.
+            metadata_filter: Optional JSONB filter (like a WHERE clause pre-filter).
+
+        Returns:
+            Sorted list of RetrievedDocument, or False if nothing found.
         """
         collection_name = self.create_collection_name(project_id=project.project_id)
-
         settings = get_settings()
         rrf_k = max(1, int(getattr(settings, "RAG_RRF_K", 60)))
-
-        # Candidate window: both dense and sparse fetch this many documents.
         candidates = int(getattr(settings, "RAG_RETRIEVAL_CANDIDATES", 30)) or 30
 
-        # Determine whether hybrid (dense + sparse) retrieval is enabled.
-        # RAG_ENABLE_HYBRID_SEARCH takes precedence; fall back to legacy
-        # RAG_ENABLE_BM25 for backward compatibility.
         hybrid_enabled = getattr(settings, "RAG_ENABLE_HYBRID_SEARCH", None)
         if hybrid_enabled is None:
             hybrid_enabled = getattr(settings, "RAG_ENABLE_BM25", False)
 
-        # Embed the primary query once to avoid duplicate API calls later.
+        primary_query_vector = await self._embed_primary_query(text)
+
+        dense_results, sparse_results = await self._fetch_dense_and_sparse_candidates(
+            collection_name=collection_name,
+            query_vector=primary_query_vector,
+            text=text,
+            metadata_filter=metadata_filter,
+            candidates=candidates,
+            hybrid_enabled=hybrid_enabled,
+        )
+
+        if not dense_results and not sparse_results:
+            return False
+
+        primary_results = hybrid_rrf(
+            dense_results,
+            sparse_results,
+            k=rrf_k,
+            limit=candidates,
+        )
+
+        if not primary_results:
+            return False
+
+        return await self._run_expansion_and_merge(
+            collection_name=collection_name,
+            primary_results=primary_results,
+            text=text,
+            metadata_filter=metadata_filter,
+            limit=limit,
+            candidates=candidates,
+            rrf_k=rrf_k,
+            settings=settings,
+        )
+
+    async def _embed_primary_query(self, text: str) -> list | None:
+        settings = get_settings()
         if getattr(settings, "LLM_USE_ASYNC", False):
             vectors = await self._embed_query_async(text)
         else:
             vectors = self._embed_query(text)
-        primary_query_vector = vectors[0] if isinstance(vectors, list) and vectors else None
+        return vectors[0] if isinstance(vectors, list) and vectors else None
 
-        # ----------------------------------------------------------------
-        # Stage 1: Concurrent dense + sparse retrieval with metadata
-        # pre-filtering applied directly inside each search query.
-        # ----------------------------------------------------------------
+    async def _fetch_dense_and_sparse_candidates(
+        self,
+        collection_name: str,
+        query_vector: list | None,
+        text: str,
+        metadata_filter: dict | None,
+        candidates: int,
+        hybrid_enabled: bool,
+    ) -> tuple[list, list]:
         dense_coro = self._vector_search(
             collection_name=collection_name,
-            query_vector=primary_query_vector,
+            query_vector=query_vector,
             fetch_limit=candidates,
             metadata_filter=metadata_filter,
         )
@@ -238,37 +310,24 @@ class NLPController(BaseController):
                 )
 
         if sparse_coro is not None:
+            # asyncio.gather is equivalent to Task.WhenAll
             (dense_results, sparse_results) = await asyncio.gather(dense_coro, sparse_coro)
-            dense_results = dense_results or []
-            sparse_results = sparse_results or []
+            return dense_results or [], sparse_results or []
         else:
             dense_results = await dense_coro
-            dense_results = dense_results or []
-            sparse_results = []
+            return dense_results or [], []
 
-        if not dense_results and not sparse_results:
-            return False
-
-        # ----------------------------------------------------------------
-        # Stage 2: Classical RRF fusion (rank-only, no score mixing).
-        # ----------------------------------------------------------------
-        primary_results = hybrid_rrf(
-            dense_results,
-            sparse_results,
-            k=rrf_k,
-            limit=candidates,
-        )
-
-        if not primary_results:
-            return False
-
-        # ----------------------------------------------------------------
-        # Stage 3: Query expansion — generates sub-queries for detail,
-        # comparison, and structural reference queries.  Expansion results
-        # are fused using the enriched RRF (lexical + structural boosts)
-        # which is better suited for domain-specific expansion scoring,
-        # then merged back into the primary candidate pool.
-        # ----------------------------------------------------------------
+    async def _run_expansion_and_merge(
+        self,
+        collection_name: str,
+        primary_results: list,
+        text: str,
+        metadata_filter: dict | None,
+        limit: int,
+        candidates: int,
+        rrf_k: int,
+        settings,
+    ):
         expansion_queries = build_retrieval_expansion_queries(text)
         if not expansion_queries:
             return primary_results
@@ -287,6 +346,8 @@ class NLPController(BaseController):
             )
             for expansion_query in expansion_queries
         ]
+        
+        # asyncio.gather is equivalent to Task.WhenAll
         expansion_batches = await asyncio.gather(*expansion_coroutines)
 
         extra_results: list = []
@@ -298,12 +359,12 @@ class NLPController(BaseController):
             return primary_results
 
         # Merge expansion results into the primary pool and re-rank.
-        merged = merge_retrieved_documents(primary_results, extra_results)
-        merged = rerank_retrieved_documents(merged, text, rrf_k=rrf_k)
+        merged_documents = merge_retrieved_documents(primary_results, extra_results)
+        merged_documents = rerank_retrieved_documents(merged_documents, text, rrf_k=rrf_k)
 
         # Deduplicate to the candidate window size.
         effective_limit = retrieval_limit_for_query(text, default_limit=limit)
-        return deduplicate_retrieved_documents(merged, limit=max(effective_limit, candidates))
+        return deduplicate_retrieved_documents(merged_documents, limit=max(effective_limit, candidates))
 
     def _append_chunk_if_new(
         self,
@@ -341,7 +402,7 @@ class NLPController(BaseController):
         if not targets["article_numbers"] and not targets["chapter_labels"]:
             return []
 
-        extras: list[RetrievedDocument] = []
+        enriched_extras: list[RetrievedDocument] = []
         seed_documents = sorted(documents, key=lambda item: item.score, reverse=True)[:5]
         asset_ids: set[int] = set()
 
@@ -369,7 +430,7 @@ class NLPController(BaseController):
                 )
                 for index, chunk in enumerate(context_chunks):
                     self._append_chunk_if_new(
-                        extras=extras,
+                        extras=enriched_extras,
                         existing_keys=existing_keys,
                         chunk=chunk,
                         score=0.98 - index * 0.005,
@@ -396,7 +457,7 @@ class NLPController(BaseController):
                             page=page_int,
                         ):
                             self._append_chunk_if_new(
-                                extras=extras,
+                                extras=enriched_extras,
                                 existing_keys=existing_keys,
                                 chunk=page_chunk,
                                 score=max(document.score, 0.96),
@@ -424,13 +485,13 @@ class NLPController(BaseController):
                         ):
                             break
                         self._append_chunk_if_new(
-                            extras=extras,
+                            extras=enriched_extras,
                             existing_keys=existing_keys,
                             chunk=sibling,
                             score=max(document.score, 0.95 - offset * 0.01),
                         )
 
-        return extras
+        return enriched_extras
 
     async def enrich_retrieved_documents(
         self,
@@ -449,7 +510,7 @@ class NLPController(BaseController):
             for doc in documents
             if (key := _source_key(doc.metadata))
         }
-        extras: list[RetrievedDocument] = []
+        enriched_extras: list[RetrievedDocument] = []
 
         for document in documents:
             if not needs_continuation_chunk(document.text):
@@ -469,14 +530,14 @@ class NLPController(BaseController):
                 continue
 
             self._append_chunk_if_new(
-                extras=extras,
+                extras=enriched_extras,
                 existing_keys=existing_keys,
                 chunk=sibling,
                 score=max(document.score, 0.95),
             )
 
         if is_structural_reference_query(query):
-            extras.extend(
+            enriched_extras.extend(
                 await self._expand_structural_context(
                     project=project,
                     documents=documents,
@@ -486,10 +547,10 @@ class NLPController(BaseController):
                 )
             )
 
-        if not extras:
+        if not enriched_extras:
             return documents
 
-        combined = list(documents) + extras
+        combined = list(documents) + enriched_extras
         return sorted(combined, key=lambda item: item.score, reverse=True)
 
     async def answer_rag_question(
@@ -500,7 +561,24 @@ class NLPController(BaseController):
         session_id: str | None = None,
         db_client=None,
         metadata_filter: dict | None = None,
-    ):
+    ) -> tuple[str | None, str | None, list | None, bool]:
+        """
+        Orchestrates answering a user question using RAG.
+        Instantiates the RAGService and delegates execution.
+        
+        Equivalent to: using var service = new RagOrchestrator(...); await service.AnswerQuestionAsync(...);
+
+        Args:
+            project: Project entity.
+            query: The user's question.
+            limit: Max number of retrieved documents to base the answer on.
+            session_id: Chat session UUID for history.
+            db_client: Database session factory.
+            metadata_filter: Optional filters for retrieval.
+
+        Returns:
+            Tuple: (answer, full_prompt, chat_history, needs_clarification)
+        """
         rag_service = RAGService(
             db_client=db_client,
             nlp_controller=self,

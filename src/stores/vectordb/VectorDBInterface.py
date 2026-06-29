@@ -43,7 +43,8 @@ class VectorDBInterface(ABC):
     @abstractmethod
     def insert_many(self, collection_name: str, texts: list, 
                           vectors: list, metadata: list = None, 
-                          record_ids: list = None, batch_size: int = 50):
+                          record_ids: list = None, batch_size: int = 50,
+                          create_index: bool = True):
         pass
 
     @abstractmethod

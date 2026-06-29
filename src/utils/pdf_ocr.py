@@ -169,22 +169,8 @@ def _page_to_image(page: fitz.Page, scale: float | None = None) -> np.ndarray:
     return img
 
 
-def _extract_text_with_gemini(page: fitz.Page) -> str:
-    from utils.gemini_ocr import extract_text_from_page_image
-
-    pil_image = Image.fromarray(_page_to_image(page))
-    return extract_text_from_page_image(pil_image)
-
-
-def _extract_text_with_docling(page: fitz.Page, lang: str) -> str:
-    from utils.docling_ocr import extract_text_from_page_image
-
-    pil_image = Image.fromarray(_page_to_image(page))
-    return extract_text_from_page_image(pil_image, lang=lang)
-
-
-def _extract_text_with_ocr(
-    page: fitz.Page, lang: str, page_num: int, pdf_path: str, engine: str
+def _extract_text_from_image_with_ocr(
+    img: np.ndarray, lang: str, page_num: int, pdf_path: str, engine: str
 ) -> str:
     timeout_seconds = _configured_page_timeout()
     started = time.monotonic()
@@ -200,10 +186,13 @@ def _extract_text_with_ocr(
 
     try:
         with _ocr_timeout(timeout_seconds):
+            pil_image = Image.fromarray(img)
             if engine == "docling":
-                text = _extract_text_with_docling(page, lang)
+                from utils.docling_ocr import extract_text_from_page_image
+                text = extract_text_from_page_image(pil_image, lang=lang)
             else:
-                text = _extract_text_with_gemini(page)
+                from utils.gemini_ocr import extract_text_from_page_image
+                text = extract_text_from_page_image(pil_image)
     except OcrPageTimeout:
         logger.exception("OCR timed out | page=%s file=%s", page_num, pdf_path)
         return ""
@@ -237,51 +226,97 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
         )
 
         file_name = os.path.basename(pdf_path)
-        extracted_texts: list[str] = []
-
+        
+        # Phase 1: Scan pages to see which ones need OCR
+        page_tasks = []
         for page_num in range(len(doc)):
             page = doc[page_num]
             text = page.get_text().strip()
-            ocr_used = False
-
+            
             if len(text) < MIN_TEXT_LENGTH:
-                logger.info(
-                    "Page %s in %s has little extractable text; running OCR",
-                    page_num + 1,
-                    pdf_path,
-                )
-                text = _extract_text_with_ocr(
-                    page, ocr_lang, page_num + 1, pdf_path, ocr_engine
-                )
-                ocr_used = True
+                # Render the image in the main thread (which is fast and PyMuPDF-thread-safe)
+                img = _page_to_image(page)
+                page_tasks.append({
+                    "page_num": page_num + 1,
+                    "text": None,
+                    "img": img,
+                    "ocr_used": True
+                })
+            else:
+                page_tasks.append({
+                    "page_num": page_num + 1,
+                    "text": clean_extracted_text(text),
+                    "img": None,
+                    "ocr_used": False
+                })
+        
+        # Close PyMuPDF document once we have text/rendered images
+        doc.close()
+        doc = None
+        
+        # Phase 2: Execute OCR concurrently for pages that need it
+        ocr_tasks = [task for task in page_tasks if task["ocr_used"]]
+        
+        if ocr_tasks:
+            import concurrent.futures
+            # Keep pool size moderate on CPU to balance context switching
+            max_workers = min(len(ocr_tasks), 4)
+            
+            logger.info("Running parallel OCR for %d pages with %d workers", len(ocr_tasks), max_workers)
+            
+            with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+                # Map futures to tasks
+                future_to_task = {
+                    executor.submit(
+                        _extract_text_from_image_with_ocr,
+                        task["img"],
+                        ocr_lang,
+                        task["page_num"],
+                        pdf_path,
+                        ocr_engine
+                    ): task
+                    for task in ocr_tasks
+                }
+                
+                for future in concurrent.futures.as_completed(future_to_task):
+                    task = future_to_task[future]
+                    try:
+                        task["text"] = future.result()
+                    except Exception as e:
+                        logger.error("OCR execution failed for page %d: %s", task["page_num"], e)
+                        task["text"] = ""
+                        
+                    gc.collect()
 
-            text = clean_extracted_text(text)
+        # Phase 3: Construct page documents in correct order
+        extracted_texts = []
+        for task in page_tasks:
+            text = clean_extracted_text(task["text"])
             if not text:
                 continue
-
+            
             extracted_texts.append(text)
-
             pages.append(
                 PdfPageDocument(
                     page_content=text,
                     metadata={
                         "file_name": file_name,
-                        "page": page_num + 1,
+                        "page": task["page_num"],
                         "source_type": "pdf",
                         "ocr_engine": ocr_engine,
-                        "ocr_used": ocr_used,
-                        "ocr_lang": ocr_lang if ocr_used else None,
+                        "ocr_used": task["ocr_used"],
+                        "ocr_lang": ocr_lang if task["ocr_used"] else None,
                     },
                 )
             )
-            if ocr_used:
-                gc.collect()
-
+            
         resolved_lang = _detect_language_from_text(" ".join(extracted_texts)) or ocr_lang
         for page_doc in pages:
             if page_doc.metadata.get("ocr_used"):
                 page_doc.metadata["ocr_lang"] = resolved_lang
+                
     finally:
-        doc.close()
+        if doc:
+            doc.close()
 
     return pages
