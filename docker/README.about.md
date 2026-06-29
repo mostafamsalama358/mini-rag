@@ -2,7 +2,7 @@
 
 ## What is this?
 
-Main documentation for the **Docker setup** of Mini-RAG.
+Main documentation for the **Docker setup** of AlgoRAG.
 
 The existing `README.md` explains how to start services, use volumes, and open Grafana.
 
@@ -21,7 +21,7 @@ Docker has many services. This README is the starting point for:
 |------|-----|
 | `docker/docker-compose.yml` | All services described here |
 | Root `README.md` | Sends you to `cd docker` |
-| `docker/minirag.service` | Production systemd uses same folder |
+| `docker/algorag.service` | Production systemd uses same folder |
 | Each `*.md` file next to config files | More detail per file |
 
 ## Quick map
@@ -30,7 +30,7 @@ Docker has many services. This README is the starting point for:
 docker/
 ├── docker-compose.yml    → starts everything
 ├── env/                  → secret env files (from examples)
-├── minirag/              → app Docker image
+├── algorag/              → app Docker image
 ├── nginx/                → reverse proxy
 ├── prometheus/           → metrics
 └── rabbitmq/             → message broker config

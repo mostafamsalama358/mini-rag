@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlgoRAG - Admin Dashboard</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo-area">
+        <div class="logo-icon">▲</div>
+        <span>AlgoRAG</span>
+      </div>
+      
+      <div class="input-group">
+        <label>User ID</label>
+        <input type="text" id="userIdInput" class="input-field" value="demo-user">
+      </div>
+      
+      <div class="input-group">
+        <label>Active Project</label>
+        <select id="projectSelector" class="project-selector">
+          <option value="">Loading...</option>
+        </select>
+      </div>
+
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a href="/admin" class="nav-item active">
+              <span class="material-symbols-outlined">dashboard</span>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="/" class="nav-item">
+              <span class="material-symbols-outlined">forum</span>
+              Chat Interface
+            </a>
+          </li>
+          <li>
+            <a href="/docs" class="nav-item" target="_blank">
+              <span class="material-symbols-outlined">api</span>
+              API Docs
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h2>Admin Dashboard</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Manage projects, upload files, and view statistics.</p>
+        </div>
+      </header>
+
+      <!-- Dashboard Grid -->
+      <div class="dashboard-grid">
+        <div class="stat-card glass-panel">
+          <span class="stat-title">Files Processed</span>
+          <span class="stat-value" id="statFiles">0</span>
+        </div>
+        <div class="stat-card glass-panel">
+          <span class="stat-title">Query Volume</span>
+          <span class="stat-value" id="statQueries">0</span>
+        </div>
+        <div class="stat-card glass-panel">
+          <span class="stat-title">Avg Score</span>
+          <span class="stat-value" id="statScore">0.0</span>
+        </div>
+        <div class="stat-card glass-panel">
+          <span class="stat-title">OCR Usage</span>
+          <span class="stat-value" id="statOcr">0</span>
+        </div>
+        <div class="stat-card glass-panel" style="grid-column: span 2;">
+          <span class="stat-title">Vertex Quota Consumed</span>
+          <div style="margin-top: 1rem; background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden;">
+            <div id="quotaBar" style="height: 100%; width: 0%; background: linear-gradient(90deg, var(--primary), var(--secondary)); transition: width 1s ease;"></div>
+          </div>
+          <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;" id="statQuota">0 / 100k tokens (0%)</span>
+        </div>
+      </div>
+
+      <!-- Action Area -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        
+        <!-- Create Project -->
+        <div class="glass-panel" style="padding: 2rem;">
+          <h3 style="margin-bottom: 1.5rem;">Create New Project</h3>
+          <form id="createProjectForm">
+            <div class="input-group">
+              <input type="text" id="newProjectName" class="input-field" placeholder="Project Name" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <span class="material-symbols-outlined">add</span> Create Project
+            </button>
+          </form>
+          <div id="createProjectMsg" style="margin-top: 1rem; font-size: 0.85rem; color: var(--accent);"></div>
+        </div>
+
+        <!-- File Upload -->
+        <div class="glass-panel" style="padding: 2rem;">
+          <h3 style="margin-bottom: 1.5rem;">Upload Files</h3>
+          <div class="upload-area" id="uploadArea">
+            <span class="material-symbols-outlined upload-icon">cloud_upload</span>
+            <h4>Drag & Drop files here</h4>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">or click to browse</p>
+            <input type="file" id="fileInput" multiple style="display: none;">
+          </div>
+          <div id="uploadStatus" style="font-size: 0.85rem; text-align: center; color: var(--text-muted);"></div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Metadata Suggestion Modal -->
+  <div class="modal-overlay" id="metadataModal">
+    <div class="modal-content">
+      <h3 style="margin-bottom: 1rem; color: var(--text-main);">Suggested Metadata</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+        Based on your uploaded files, we suggest adding the following metadata tags. Click to toggle.
+      </p>
+      
+      <div class="metadata-tags" id="metadataTagsList">
+        <span class="tag">Financial Report</span>
+        <span class="tag">Q3 2026</span>
+        <span class="tag">Confidential</span>
+        <span class="tag">Invoice</span>
+        <span class="tag">Meeting Notes</span>
+      </div>
+
+      <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem;">
+        <button class="btn btn-secondary" id="skipMetadataBtn">Skip</button>
+        <button class="btn btn-primary" id="saveMetadataBtn">Apply Metadata</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/js/admin.js"></script>
+</body>
+</html>

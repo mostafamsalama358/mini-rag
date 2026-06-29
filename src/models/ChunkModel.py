@@ -1,3 +1,10 @@
+"""
+models/ChunkModel.py — Chunk Repository
+========================================
+.NET Equivalent: IChunkRepository + ChunkRepository implementation
+
+This class handles database operations for the `DataChunk` entity (DB table `chunks`).
+"""
 from .BaseDataModel import BaseDataModel
 from .db_schemes import DataChunk
 from .enums.DataBaseEnum import DataBaseEnum
@@ -29,21 +36,27 @@ class ChunkModel(BaseDataModel):
     async def get_chunk(self, chunk_id: str):
 
         async with self.db_client() as session:
+            # Equivalent to: dbContext.Chunks.Where(c => c.ChunkId == chunkId).FirstOrDefaultAsync()
             result = await session.execute(select(DataChunk).where(DataChunk.chunk_id == chunk_id))
             chunk = result.scalar_one_or_none()
         return chunk
 
     async def insert_many_chunks(self, chunks: list, batch_size: int=100):
-
+        """
+        Equivalent to EF Core BulkInsert or AddRange() in batches.
+        """
         async with self.db_client() as session:
             async with session.begin():
                 for i in range(0, len(chunks), batch_size):
                     batch = chunks[i:i+batch_size]
-                    session.add_all(batch)
+                    session.add_all(batch) # Equivalent to dbContext.AddRange(batch)
             await session.commit()
         return len(chunks)
 
     async def delete_chunks_by_project_id(self, project_id: ObjectId):
+        """
+        Equivalent to: dbContext.Chunks.Where(c => c.ProjectId == projectId).ExecuteDeleteAsync()
+        """
         async with self.db_client() as session:
             stmt = delete(DataChunk).where(DataChunk.chunk_project_id == project_id)
             result = await session.execute(stmt)
@@ -89,18 +102,25 @@ class ChunkModel(BaseDataModel):
         asset_id: int,
         page: int,
     ):
-        async with self.db_client() as session:
-            stmt = select(DataChunk).where(
-                DataChunk.chunk_project_id == project_id,
-                DataChunk.chunk_asset_id == asset_id,
-            ).order_by(DataChunk.chunk_order)
-            result = await session.execute(stmt)
-            records = result.scalars().all()
+        """Fetch chunks for a single page of a single asset.
 
-        return [
-            record for record in records
-            if (record.chunk_metadata or {}).get("page") == page
-        ]
+        Pushes the page filter into SQL via JSONB path access instead of
+        loading every chunk of the asset and filtering in Python. The asset_id
+        predicate still uses the existing ix_chunk_asset_id index.
+        """
+        async with self.db_client() as session:
+            stmt = (
+                select(DataChunk)
+                .where(
+                    DataChunk.chunk_project_id == project_id,
+                    DataChunk.chunk_asset_id == asset_id,
+                    # jsonb -> 'page' cast to text; coerce the input the same way
+                    DataChunk.chunk_metadata["page"].as_string() == str(page),
+                )
+                .order_by(DataChunk.chunk_order)
+            )
+            result = await session.execute(stmt)
+            return result.scalars().all()
 
     async def get_chunks_by_asset_order_range(
         self,

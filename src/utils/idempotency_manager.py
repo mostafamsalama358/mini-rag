@@ -2,7 +2,7 @@ import hashlib
 import json
 from datetime import datetime, timedelta, timezone
 from sqlalchemy import select, delete
-from models.db_schemes.minirag.schemes.celery_task_execution import CeleryTaskExecution
+from models.db_schemes.algorag.schemes.celery_task_execution import CeleryTaskExecution
 
 def _utcnow() -> datetime:
     return datetime.now(timezone.utc)
@@ -102,7 +102,7 @@ class IdempotencyManager:
 
     async def should_execute_task(self, task_name: str, task_args: dict,
                                   celery_task_id: str, 
-                                  task_time_limit: int = 600) -> tuple[bool, CeleryTaskExecution]:
+                                  task_time_limit: int = 1200) -> tuple[bool, CeleryTaskExecution]:
         """
         Check if task should be executed or return existing result.
         Args:

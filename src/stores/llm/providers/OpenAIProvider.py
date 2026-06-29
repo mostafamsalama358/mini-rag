@@ -1,6 +1,6 @@
 from ..LLMInterface import LLMInterface
 from ..LLMEnums import OpenAIEnums
-from openai import OpenAI
+from openai import OpenAI, AsyncOpenAI
 import logging
 from typing import List, Union
 
@@ -24,6 +24,12 @@ class OpenAIProvider(LLMInterface):
         self.embedding_size = None
 
         self.client = OpenAI(
+            api_key = self.api_key,
+            base_url = self.api_url if self.api_url and len(self.api_url) else None
+        )
+        # Native async client used by *_async methods to avoid blocking the
+        # event loop in async request paths (Celery workers + FastAPI).
+        self.async_client = AsyncOpenAI(
             api_key = self.api_key,
             base_url = self.api_url if self.api_url and len(self.api_url) else None
         )
@@ -102,6 +108,65 @@ class OpenAIProvider(LLMInterface):
             "role": role,
             "content": prompt,
         }
+
+    # ------------------------------------------------------------------
+    # Native async implementations — used when LLM_USE_ASYNC is enabled so
+    # the event loop is never blocked by a synchronous HTTP call.
+    # ------------------------------------------------------------------
+    async def generate_text_async(self, prompt: str, chat_history: list = None,
+                                  max_output_tokens: int = None,
+                                  temperature: float = None):
+        if not self.async_client:
+            self.logger.error("OpenAI async client was not set")
+            return None
+
+        if not self.generation_model_id:
+            self.logger.error("Generation model for OpenAI was not set")
+            return None
+
+        max_output_tokens = max_output_tokens if max_output_tokens else self.default_generation_max_output_tokens
+        temperature = temperature if temperature else self.default_generation_temperature
+
+        chat_history = list(chat_history or [])
+        chat_history.append(
+            self.construct_prompt(prompt=prompt, role=OpenAIEnums.USER.value)
+        )
+
+        response = await self.async_client.chat.completions.create(
+            model=self.generation_model_id,
+            messages=chat_history,
+            max_tokens=max_output_tokens,
+            temperature=temperature,
+        )
+
+        if not response or not response.choices or len(response.choices) == 0 or not response.choices[0].message:
+            self.logger.error("Error while generating text with OpenAI (async)")
+            return None
+
+        return response.choices[0].message.content
+
+    async def embed_text_async(self, text: Union[str, List[str]], document_type: str = None):
+        if not self.async_client:
+            self.logger.error("OpenAI async client was not set")
+            return None
+
+        if isinstance(text, str):
+            text = [text]
+
+        if not self.embedding_model_id:
+            self.logger.error("Embedding model for OpenAI was not set")
+            return None
+
+        response = await self.async_client.embeddings.create(
+            model=self.embedding_model_id,
+            input=text,
+        )
+
+        if not response or not response.data or len(response.data) == 0 or not response.data[0].embedding:
+            self.logger.error("Error while embedding text with OpenAI (async)")
+            return None
+
+        return [rec.embedding for rec in response.data]
     
 
 

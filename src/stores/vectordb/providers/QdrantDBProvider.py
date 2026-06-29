@@ -92,7 +92,8 @@ class QdrantDBProvider(VectorDBInterface):
     
     async def insert_many(self, collection_name: str, texts: list, 
                           vectors: list, metadata: list = None, 
-                          record_ids: list = None, batch_size: int = 50):
+                          record_ids: list = None, batch_size: int = 50,
+                          create_index: bool = True):
         
         if metadata is None:
             metadata = [None] * len(texts)

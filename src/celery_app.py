@@ -4,8 +4,12 @@ from helpers.config import get_settings
 
 settings = get_settings()
 
+_long_task_limit = settings.CELERY_LONG_TASK_TIME_LIMIT
+_long_task_soft_limit = max(_long_task_limit - 120, int(_long_task_limit * 0.9))
+_default_soft_limit = max(settings.CELERY_TASK_TIME_LIMIT - 60, 1)
+
 celery_app = Celery(
-    "minirag",
+    "algorag",
     broker=settings.CELERY_BROKER_URL,
     backend=settings.CELERY_RESULT_BACKEND,
     include=[
@@ -24,10 +28,11 @@ celery_app.conf.update(
     ],
     task_acks_late=settings.CELERY_TASK_ACKS_LATE,
     task_time_limit=settings.CELERY_TASK_TIME_LIMIT,
+    task_soft_time_limit=_default_soft_limit,
     task_ignore_resul=False,
     result_expires=3600,
     worker_concurrency=settings.CELERY_WORKER_CONCURRENCY,
-    worker_max_tasks_per_child=1,
+    worker_max_tasks_per_child=100,
     broker_connection_retry_on_startup=True,
     broker_connection_retry=True,
     broker_connection_max_retries=10,
@@ -46,6 +51,20 @@ celery_app.conf.update(
         }
     },
     timezone="UTC",
+    task_annotations={
+        "tasks.file_processing.process_project_files": {
+            "time_limit": _long_task_limit,
+            "soft_time_limit": _long_task_soft_limit,
+        },
+        "tasks.data_indexing.index_data_content": {
+            "time_limit": _long_task_limit,
+            "soft_time_limit": _long_task_soft_limit,
+        },
+        "tasks.process_workflow.push_after_process_task": {
+            "time_limit": _long_task_limit,
+            "soft_time_limit": _long_task_soft_limit,
+        },
+    },
 )
 
 celery_app.conf.task_default_queue = "default"

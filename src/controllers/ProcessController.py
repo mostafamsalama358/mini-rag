@@ -1,3 +1,11 @@
+"""
+controllers/ProcessController.py — File Processing Service
+===========================================================
+.NET Equivalent: IFileProcessingService
+
+This service is responsible for reading files from disk, running OCR if needed,
+and splitting the text into smaller chunks for vector database indexing.
+"""
 from .BaseController import BaseController
 from .ProjectController import ProjectController
 import os
@@ -57,6 +65,31 @@ class ProcessController(BaseController):
         if file_ext == ProcessingEnum.PDF.value:
             from utils.pdf_ocr import load_pdf_with_ocr_fallback
             return load_pdf_with_ocr_fallback(file_path)
+
+        if file_ext == ProcessingEnum.CSV.value:
+            from langchain_community.document_loaders.csv_loader import CSVLoader
+            return CSVLoader(file_path=file_path, encoding="utf-8").load()
+
+        if file_ext == ProcessingEnum.XLSX.value:
+            import pandas as pd
+            from langchain.schema import Document
+            
+            try:
+                dfs = pd.read_excel(file_path, sheet_name=None)
+                text_content = ""
+                for sheet_name, df in dfs.items():
+                    if df.empty:
+                        continue
+                    text_content += f"--- Sheet: {sheet_name} ---\n"
+                    text_content += df.to_csv(index=False)
+                    text_content += "\n\n"
+                
+                if not text_content.strip():
+                    text_content = "Empty Excel File"
+                    
+                return [Document(page_content=text_content)]
+            except Exception as e:
+                return None
 
         return None
 

@@ -3,25 +3,28 @@ services:
   fastapi:
     build:
       context: ..
-      dockerfile: docker/minirag/Dockerfile
+      dockerfile: docker/algorag/Dockerfile
     container_name: fastapi
     entrypoint: ["/bin/bash", "-c"]
     command:
       - |
-        cd /app/models/db_schemes/minirag
+        cd /app/models/db_schemes/algorag
         alembic upgrade head
         cd /app
-        exec uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+        exec uvicorn main:app --host 0.0.0.0 --port 8000 --workers 1
     ports:
       - "8000:8000"
     volumes:
       - fastapi_data:/app/assets
       - ../src:/app
-      - ./minirag/alembic.ini:/app/models/db_schemes/minirag/alembic.ini:ro
+      - huggingface_cache:/root/.cache/huggingface
+      - ./algorag/alembic.ini:/app/models/db_schemes/algorag/alembic.ini:ro
       - ./env/gcp-service-account.json:/app/gcp-credentials.json:ro
     networks:
       - backend
     restart: always
+    mem_limit: 2g
+    memswap_limit: 2g
     depends_on:
       pgvector:
         condition: service_healthy
@@ -32,15 +35,15 @@ services:
   celery-worker:
     build:
       context: ..
-      dockerfile: docker/minirag/Dockerfile
+      dockerfile: docker/algorag/Dockerfile
     container_name: celery-worker
     entrypoint: ["/bin/bash", "-c"]
     command:
-      - exec python -m celery -A celery_app worker --queues=default,file_processing,data_indexing --loglevel=info --concurrency=1
+      - exec python -m celery -A celery_app worker --queues=default,file_processing,data_indexing --loglevel=info --concurrency=8
     volumes:
       - fastapi_data:/app/assets
       - ../src:/app
-      - ./minirag/alembic.ini:/app/models/db_schemes/minirag/alembic.ini:ro
+      - ./algorag/alembic.ini:/app/models/db_schemes/algorag/alembic.ini:ro
       - ./env/gcp-service-account.json:/app/gcp-credentials.json:ro
     networks:
       - backend
@@ -54,18 +57,19 @@ services:
         condition: service_healthy
     env_file:
       - ./env/.env.app
-    mem_limit: 6g
+    mem_limit: 8g
     memswap_limit: 8g
   celery-beat:
     build:
       context: ..
-      dockerfile: docker/minirag/Dockerfile
+      dockerfile: docker/algorag/Dockerfile
     container_name: celery-beat
     entrypoint: ["/bin/bash", "-c"]
     command:
       - exec python -m celery -A celery_app beat --loglevel=info
     volumes:
       - fastapi_data:/app/assets
+      - ../src:/app
       - celery_beat_data:/app/celerybeat
     networks:
       - backend
@@ -82,7 +86,7 @@ services:
   flower:
     build:
       context: ..
-      dockerfile: docker/minirag/Dockerfile
+      dockerfile: docker/algorag/Dockerfile
     container_name: flower
     ports:
       - "5555:5555"
@@ -97,12 +101,13 @@ services:
       celery-worker:
         condition: service_started
     volumes:
+      - ../src:/app
       - ./flowerconfig.py:/app/flowerconfig.py:ro
     env_file:
       - ./env/.env.app
     environment:
       FLOWER_PORT: "5555"
-      FLOWER_BASIC_AUTH: "admin:minirag_flower_2222"
+      FLOWER_BASIC_AUTH: "admin:algorag_flower_2222"
     entrypoint: ["python", "-m", "celery", "-A", "celery_app", "flower", "--conf=/app/flowerconfig.py"]
 
   # Nginx Service
@@ -227,8 +232,8 @@ services:
     image: rabbitmq:4.1.2-management-alpine
     container_name: rabbitmq
     ports:
-      - "5672:5672"   # AMQP port
-      - "15672:15672" # Management UI port
+      - "5673:5672"   # AMQP port (5673 on host — local Erlang/RabbitMQ uses 5672)
+      - "15673:15672" # Management UI port
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
       - ./rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
@@ -259,7 +264,7 @@ services:
       test: ["CMD", "redis-cli", "ping"]
       timeout: 10s
       retries: 5
-    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-minirag_redis_2222}"]
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-algorag_redis_2222}"]
 
 networks:
   backend:
@@ -274,3 +279,4 @@ volumes:
   rabbitmq_data:
   redis_data:
   celery_beat_data:
+  huggingface_cache:
