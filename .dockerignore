@@ -1,0 +1,58 @@
+# Build context hygiene — keeps Docker images small and secrets out of images.
+# (Dockerfile lives at docker/algorag/Dockerfile with build context = repo root.)
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# Tests, specs, docs (not needed at runtime)
+tests/
+specs/
+*.md
+LICENSE
+README.md
+AGENTS.md
+LEAN-CTX.md
+project-prompt.json
+.cursorrules
+.cursor/
+.agents/
+.vscode/
+.specify/
+.github/
+
+# Python caches / build artifacts
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local dev artifacts
+*.log
+*.tmp
+
+# Secrets — NEVER bake into images (constitution Principle IX)
+.env
+.env.*
+**/gcp-service-account.json
+**/*-credentials.json
+src/gcp-credentials.json
+docker/env/
+
+# OS
+.DS_Store
+Thumbs.db
