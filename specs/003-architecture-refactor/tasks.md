@@ -124,11 +124,11 @@
 
 **Independent Test**: `grep` for the old shim imports returns zero hits across `src/` and `tests/`. Exactly one definition of each algorithm exists.
 
-- [ ] T044 [US4] Migrate `src/services/rag/answer_service.py` (post-P2 `RAGService`) to import retrieval helpers from `core.retrieval` / `core.structural` instead of `utils.retrieval` / `utils.structural_split`
-- [ ] T045 [P] [US4] Migrate `src/services/rag/rag_service.py` (post-P2 `NLPController`) off the shims to `core.retrieval` / `core.structural`
-- [ ] T046 [P] [US4] Migrate `src/services/process_service.py` (post-P1 `ProcessController`) off the shims to `core.structural`
-- [ ] T047 [US4] Migrate all `tests/unit/` and `tests/conftest.py` imports off the shims (import lines only; assertions unchanged) — verify via grep that no `from utils.retrieval` or `from utils.structural_split` remains
-- [ ] T048 [US4] Delete `src/utils/retrieval.py` and `src/utils/structural_split.py` (the deprecated re-export shims)
+- [x] T044 [US4] Migrate `src/services/rag/answer_service.py` (post-P2 `RAGService`) to import retrieval helpers from `core.retrieval` / `core.structural` instead of `utils.retrieval` / `utils.structural_split`
+- [x] T045 [P] [US4] Migrate `src/services/rag/rag_service.py` (post-P2 `NLPController`) off the shims to `core.retrieval` / `core.structural`
+- [x] T046 [P] [US4] Migrate `src/services/process_service.py` (post-P1 `ProcessController`) off the shims to `core.structural`
+- [x] T047 [US4] Migrate all `tests/unit/` and `tests/conftest.py` imports off the shims (import lines only; assertions unchanged) — verify via grep that no `from utils.retrieval` or `from utils.structural_split` remains
+- [x] T048 [US4] Delete `src/utils/retrieval.py` and `src/utils/structural_split.py` (the deprecated re-export shims)
 - [ ] T049 [US4] If `src/core/retrieval/engine.py` was kept as a thin re-export in T036, delete it now; ensure all imports use `core.retrieval` package
 - [ ] T050 [US4] Run Checks A/B/C; grep confirms zero shim references
 

@@ -90,7 +90,7 @@ def main() -> int:
     current_batch = 8
     current_max_chars = 1024
     if settings is not None:
-        model_name = getattr(settings, "BGE_RERANKER_MODEL", model_name)
+        model_name = getattr(settings, "RAG_RERANKER_MODEL", model_name)
         device = getattr(settings, "RAG_RERANKER_DEVICE", device)
         use_fp16 = getattr(settings, "RAG_RERANKER_USE_FP16", use_fp16)
         current_batch = getattr(settings, "RAG_RERANKER_BATCH_SIZE", current_batch)

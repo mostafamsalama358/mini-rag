@@ -1,0 +1,22 @@
+by_extension:
+  .txt: character
+  .pdf: page
+  .csv: character
+  .xlsx: character
+default_strategy: character
+chunk_size: 800
+overlap: 120
+element_mapping:
+  table-row:
+    group: false
+    metadata_keys: [sheet_name, row_index]
+  paragraph:
+    group: true
+  section:
+    group: false
+  table:
+    group: false
+  list:
+    group: false
+  list-item:
+    group: true

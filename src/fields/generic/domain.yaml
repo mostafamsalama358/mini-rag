@@ -1,0 +1,4 @@
+key: generic
+label: Generic RAG
+languages: [en, ar]
+description: Safe fallback field pack with no domain-specific logic.

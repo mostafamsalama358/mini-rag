@@ -60,6 +60,30 @@ RAG_CLARIFICATION_TOTAL = Counter(
     'RAG answers flagged as needing clarification',
     ['project_id'],
 )
+RAG_PARSE_LATENCY = Histogram(
+    'rag_parse_latency_seconds',
+    'Semantic query parser stage latency',
+    ['project_id', 'domain_key', 'outcome'],
+    buckets=(0.1, 0.25, 0.5, 1.0, 2.0, 3.0, 5.0),
+)
+
+# Document Intelligence stage (spec 006 NFR-007)
+DI_PARSE_TOTAL = Counter(
+    'document_intelligence_parse_total',
+    'Document Intelligence parse outcomes',
+    ['source_format', 'outcome'],
+)
+DI_DEGRADED_TOTAL = Counter(
+    'document_intelligence_degraded_total',
+    'Document Intelligence degraded extractions by reason',
+    ['source_format', 'reason'],
+)
+DI_ELEMENTS = Histogram(
+    'document_intelligence_elements',
+    'Structural element counts emitted per parse',
+    ['source_format', 'element_type'],
+    buckets=(1, 5, 10, 25, 50, 100, 250, 500, 1000, 5000),
+)
 
 class PrometheusMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):

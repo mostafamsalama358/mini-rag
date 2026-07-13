@@ -1,0 +1,42 @@
+# Legal structural patterns — read by core/structural/engine.py.
+# Generic pack has empty patterns (no-op). Pharmacy omits this file.
+# All legal-specific Arabic patterns live HERE (core contains none).
+#
+# NOTE: regex patterns use SINGLE-QUOTED YAML strings so backslashes are
+# preserved literally (double-quoted YAML would interpret \s, \d, etc.).
+
+# Split before chapter/section/article headers (lookahead patterns).
+boundaries:
+  - '(?=(?:الفصل|الباب|القسم)\s+(?:ال)?(?:اول|اولى|أول|أولى|ثاني|ثانية|ثالث|ثالثة|رابع|رابعة|خامس|خامسة|سادس|سابعة|ثامن|تاسع|عاشر|\d+))'
+  - '(?=(?:chapter|section|part|article)\s+\d+)'
+  - '(?=(?:\(\s*)?م[ـ]?ادة\s*\(?\s*\d+)'
+
+# Match article references in a query; group(1) is the article number.
+article_query_patterns:
+  - '(?:ال?\s*م[ـ]?ادة|article)\s*(?:رقم\s*)?\(?\s*(\d+)'
+  - '\barticle\s+(\d+)\b'
+
+# Match chapter references in a query; group(1) is the chapter label.
+chapter_query_patterns:
+  - '(?:ال?\s*(?:فصل|باب|قسم)|chapter|section|part)\s+(?:رقم\s+)?(.+)'
+
+# Match article numbers in chunk body text.
+article_text_patterns:
+  - '(?:\(\s*)?م[ـ]?ادة\s*\(?\s*(\d+)'
+
+# Match chapter headers in chunk body text.
+chapter_text_patterns:
+  - '(?:الفصل|الباب|القسم)\s+(?:ال)?(?:اول|اولى|أول|ثان(?:ي|ية)|ثال(?:ث|ثة)|راب(?:ع|عة)|خام(?:س|سة)|ساد(?:س|سة)|ساب(?:ع|عة)|ثام(?:ن|نة)|تاس(?:ع|عة)|عاش(?:ر|رة)|\d+)'
+
+# When testing whether a chunk references a given article number, wrap the
+# number with this Arabic prefix (was hardcoded in old engine).
+article_reference_prefix: "مادة"
+
+# Expansion-query templates ({value} = the extracted number/label).
+expansion_article_template: "مادة {value}"
+expansion_chapter_template: "الفصل {value}"
+
+# Bare numbers near an article keyword are also treated as article refs.
+bare_number_article_hint_keywords: ["مادة", "article"]
+
+min_segment_chars: 80

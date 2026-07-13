@@ -1,0 +1,6 @@
+label_template: "{file_name} — مادة {article_number}"
+extra_keys:
+  - file_name
+  - page
+  - article_number
+  - chapter

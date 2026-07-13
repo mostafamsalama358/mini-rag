@@ -1,0 +1,13 @@
+# Generic pack field-concept registry.
+#
+# Generic projects have no domain fields, so this is an empty no-op. The
+# generic retrieval path (dense + BM25 + RRF) still works unchanged; the
+# field-aware path simply resolves no field and falls back to it.
+# A project may override this via projects.config_json.retrieval.field_registry
+# if it knows its columns.
+
+concepts: []
+entity_concept: null
+composition_concept: null
+interaction_column_pairs: []
+entity_key_hint: null

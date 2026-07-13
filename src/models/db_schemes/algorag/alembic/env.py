@@ -1,5 +1,13 @@
 import os
+import sys
 from logging.config import fileConfig
+
+# Ensure /app (project root) is on sys.path so that absolute imports
+# like "models.enums.DomainKeyEnum" resolve correctly when Alembic
+# is invoked from within the alembic/ directory.
+_project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool

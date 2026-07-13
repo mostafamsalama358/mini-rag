@@ -48,7 +48,8 @@ class OpenAIProvider(LLMInterface):
         return text[:self.default_input_max_characters].strip()
 
     def generate_text(self, prompt: str, chat_history: list=[], max_output_tokens: int=None,
-                            temperature: float = None):
+                            temperature: float = None, *, response_mime_type: str = None,
+                            response_schema: dict = None):
         
         if not self.client:
             self.logger.error("OpenAI client was not set")
@@ -115,7 +116,9 @@ class OpenAIProvider(LLMInterface):
     # ------------------------------------------------------------------
     async def generate_text_async(self, prompt: str, chat_history: list = None,
                                   max_output_tokens: int = None,
-                                  temperature: float = None):
+                                  temperature: float = None, *,
+                                  response_mime_type: str = None,
+                                  response_schema: dict = None):
         if not self.async_client:
             self.logger.error("OpenAI async client was not set")
             return None

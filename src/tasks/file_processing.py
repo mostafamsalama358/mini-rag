@@ -2,16 +2,22 @@ from celery_app import celery_app
 from celery_runtime import get_db_client, get_setup_utils
 from helpers.config import get_settings
 import asyncio
-from models.ProjectModel import ProjectModel
-from models.ChunkModel import ChunkModel
-from models.AssetModel import AssetModel
+import os
+from repositories.project_repository import ProjectModel
+from repositories.chunk_repository import ChunkModel
+from repositories.asset_repository import AssetModel
 from models.db_schemes import DataChunk
 from models import ResponseSignal
 from models.enums.AssetTypeEnum import AssetTypeEnum
-from controllers.ProcessController import ProcessController
-from controllers.NLPController import NLPController
+from services.process_service import ProcessController
+from services.rag.rag_service import NLPController
 from utils.idempotency_manager import IdempotencyManager
 from utils.chunk_metadata import normalize_chunk_metadata
+from services.rag.indexing_diagnostics import (
+    log_field_manifest_persist,
+    log_indexing_batch_summary,
+    log_indexing_chunk,
+)
 from utils.project_assets import build_asset_fingerprint
 
 import logging
@@ -209,6 +215,18 @@ async def _process_project_files(task_instance, project_id: int,
         
         process_controller = ProcessController(project_id=project_id)
 
+        # Resolve the field profile once per task so chunking follows the
+        # project's field pack (e.g. pharmacy row chunking). Spec 002 Phase C.
+        from services.FieldRegistry import get_field_registry
+        try:
+            _field_registry = get_field_registry()
+            _profile = _field_registry.build_profile(
+                getattr(project, "domain_key", None) or "generic",
+                project_overrides=getattr(project, "config_json", None) or {},
+            )
+        except Exception:
+            _profile = None
+
         no_records = 0
         no_files = 0
 
@@ -242,7 +260,11 @@ async def _process_project_files(task_instance, project_id: int,
                 )
                 continue
 
-            file_content = process_controller.get_file_content(file_id=file_id)
+            _file_ext = os.path.splitext(file_id)[-1].lstrip(".") or "unknown"
+            _strategy = _profile.chunking_strategy_for(_file_ext) if _profile is not None else None
+            file_content = process_controller.get_file_content(
+                file_id=file_id, strategy=_strategy
+            )
 
             if file_content is None:
                 logger.error(f"Error while processing file: {file_id}")
@@ -252,11 +274,12 @@ async def _process_project_files(task_instance, project_id: int,
                 file_content=file_content,
                 file_id=file_id,
                 chunk_size=chunk_size,
-                overlap_size=overlap_size
+                overlap_size=overlap_size,
+                profile=_profile,
             )
 
             if file_chunks is None or len(file_chunks) == 0:
-                
+
                 logger.error(f"No chunks for file_id: {file_id}")
                 pass
 
@@ -277,8 +300,119 @@ async def _process_project_files(task_instance, project_id: int,
                 for i, chunk in enumerate(file_chunks)
             ]
 
+            discovered_manifest = getattr(file_chunks, "field_manifest", None)
+            extraction_info = getattr(file_chunks, "extraction", None)
+            document_model = getattr(file_chunks, "document_model", None)
+            if extraction_info is None and document_model is not None:
+                extraction_info = {
+                    "outcome": document_model.extraction_outcome,
+                    "reason": document_model.degradation_reason,
+                    "element_counts": document_model.element_counts(),
+                }
+            if extraction_info:
+                logger.info(
+                    "document_intelligence | file=%s outcome=%s reason=%s "
+                    "element_counts=%s chunk_count=%s",
+                    file_id,
+                    extraction_info.get("outcome"),
+                    extraction_info.get("reason"),
+                    extraction_info.get("element_counts"),
+                    len(file_chunks_records),
+                )
+            manifest_entity_key = (
+                discovered_manifest.entity_key if discovered_manifest is not None else None
+            )
+            total_chunks = len(file_chunks_records)
+            for i, record in enumerate(file_chunks_records):
+                log_indexing_chunk(
+                    stage="db_insert",
+                    document_id=asset_id,
+                    chunk_id=None,
+                    chunk_order=record.chunk_order,
+                    metadata=record.chunk_metadata,
+                    text=record.chunk_text,
+                    entity_key=manifest_entity_key,
+                    index=i,
+                    total=total_chunks,
+                )
+            log_indexing_batch_summary(
+                stage="db_insert",
+                project_id=project.project_id,
+                asset_name=file_id,
+                chunk_count=total_chunks,
+                entity_key=manifest_entity_key,
+                manifest_columns=len(discovered_manifest.columns) if discovered_manifest else 0,
+            )
+
             no_records += await chunk_model.insert_many_chunks(chunks=file_chunks_records)
             no_files += 1
+
+            # Persist the discovered field manifest (columns + auto-detected
+            # entity key) to asset_config so retrieval can resolve user concepts
+            # to concrete columns generically — data-driven, no hardcoded keys.
+            row_chunked = _strategy == "row"
+            if row_chunked and discovered_manifest is None:
+                error_msg = f"field_manifest generation failed for {file_id}"
+                log_field_manifest_persist(
+                    asset_name=file_id,
+                    entity_key=None,
+                    columns={},
+                    persisted=False,
+                    error=error_msg,
+                )
+                raise RuntimeError(error_msg)
+
+            if discovered_manifest is not None:
+                try:
+                    manifest_payload = {
+                        "columns": discovered_manifest.columns,
+                        "entity_key": discovered_manifest.entity_key,
+                    }
+                    persisted = await asset_model.merge_asset_config_key(
+                        file_id,
+                        project_id=project.project_id,
+                        key="field_manifest",
+                        value=manifest_payload,
+                    )
+                    if not persisted:
+                        raise RuntimeError(f"asset record not found for {file_id}")
+                    log_field_manifest_persist(
+                        asset_name=file_id,
+                        entity_key=discovered_manifest.entity_key,
+                        columns=discovered_manifest.columns,
+                        persisted=True,
+                    )
+                except Exception as exc:
+                    log_field_manifest_persist(
+                        asset_name=file_id,
+                        entity_key=getattr(discovered_manifest, "entity_key", None),
+                        columns=getattr(discovered_manifest, "columns", {}),
+                        persisted=False,
+                        error=str(exc),
+                    )
+                    raise RuntimeError(
+                        f"Could not persist field_manifest for {file_id}: {exc}"
+                    ) from exc
+
+            # Spec 006 FR-012: persist Document Intelligence extraction outcome.
+            if extraction_info is not None:
+                try:
+                    await asset_model.merge_asset_config_key(
+                        file_id,
+                        project_id=project.project_id,
+                        key="extraction",
+                        value={
+                            "outcome": extraction_info.get("outcome"),
+                            "reason": extraction_info.get("reason"),
+                            "element_counts": extraction_info.get("element_counts") or {},
+                        },
+                    )
+                except Exception as exc:
+                    logger.warning(
+                        "Failed to persist extraction outcome for %s: %s",
+                        file_id,
+                        exc,
+                    )
 
         task_instance.update_state(
             state="SUCCESS",

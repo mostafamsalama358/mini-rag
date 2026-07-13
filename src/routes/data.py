@@ -5,19 +5,19 @@ from celery.result import AsyncResult
 from celery_app import celery_app
 import os
 from helpers.config import get_settings, Settings
-from controllers.DataController import DataController
-from controllers.ProjectController import ProjectController
-from controllers.ProcessController import ProcessController
+from services.data_service import DataController
+from services.project_service import ProjectController
+from services.process_service import ProcessController
 import aiofiles
 from models import ResponseSignal
 import logging
 from .schemes.data import ProcessRequest, SuggestMetadataRequest, UpdateMetadataRequest
-from models.ProjectModel import ProjectModel
-from models.ChunkModel import ChunkModel
-from models.AssetModel import AssetModel
+from repositories.project_repository import ProjectModel
+from repositories.chunk_repository import ChunkModel
+from repositories.asset_repository import AssetModel
 from models.db_schemes import DataChunk, Asset
 from models.enums.AssetTypeEnum import AssetTypeEnum
-from controllers.NLPController import NLPController
+from services.rag.rag_service import NLPController
 from stores.llm.LLMProviderFactory import LLMProviderFactory
 from tasks.file_processing import process_project_files
 from tasks.process_workflow import push_after_process_task

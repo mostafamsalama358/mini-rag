@@ -11,8 +11,16 @@ class LLMInterface(ABC):
         pass
 
     @abstractmethod
-    def generate_text(self, prompt: str, chat_history: list=[], max_output_tokens: int=None,
-                            temperature: float = None):
+    def generate_text(
+        self,
+        prompt: str,
+        chat_history: list = [],
+        max_output_tokens: int = None,
+        temperature: float = None,
+        *,
+        response_mime_type: str = None,
+        response_schema: dict = None,
+    ):
         pass
 
     @abstractmethod
@@ -29,12 +37,25 @@ class LLMInterface(ABC):
     # run inside a worker thread to avoid blocking the event loop.
     # Providers with a real async client (e.g. AsyncOpenAI) override these.
     # ------------------------------------------------------------------
-    async def generate_text_async(self, prompt: str, chat_history: list = None,
-                                  max_output_tokens: int = None,
-                                  temperature: float = None):
+    async def generate_text_async(
+        self,
+        prompt: str,
+        chat_history: list = None,
+        max_output_tokens: int = None,
+        temperature: float = None,
+        *,
+        response_mime_type: str = None,
+        response_schema: dict = None,
+    ):
         import asyncio
         return await asyncio.to_thread(
-            self.generate_text, prompt, chat_history or [], max_output_tokens, temperature
+            self.generate_text,
+            prompt,
+            chat_history or [],
+            max_output_tokens,
+            temperature,
+            response_mime_type=response_mime_type,
+            response_schema=response_schema,
         )
 
     async def embed_text_async(self, text, document_type: str = None):

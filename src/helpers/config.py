@@ -26,7 +26,11 @@ class Settings(BaseSettings):
     TEXT_CHUNK_OVERLAP: int = 120
     TEXT_CHUNK_MIN_SIZE: int = 200
     TEXT_CHUNK_MAX_SIZE: int = 1000
-    INDEXING_CHUNK_PAGE_SIZE: int = 100
+    INDEXING_CHUNK_PAGE_SIZE: int = 250
+    # Parallel indexing: split large projects across N Celery shard tasks.
+    INDEXING_SHARD_COUNT: int = 3
+    # Skip sharding below this chunk count (single-worker path is cheaper).
+    INDEXING_SHARD_MIN_CHUNKS: int = 500
     VECTOR_DB_INSERT_BATCH_SIZE: int = 100
 
     POSTGRES_USERNAME: str
@@ -46,15 +50,24 @@ class Settings(BaseSettings):
     VERTEX_PROJECT_ID: Optional[str] = None
     VERTEX_LOCATION: str = "us-central1"
     GOOGLE_APPLICATION_CREDENTIALS: Optional[str] = None
-    VERTEX_EMBEDDING_BATCH_DELAY_SECONDS: int = 2
-    VERTEX_EMBEDDING_RATE_LIMIT_RETRIES: int = 10
-    VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS: int = 60
+    VERTEX_EMBEDDING_BATCH_DELAY_SECONDS: int = 0.5
+    VERTEX_EMBEDDING_RATE_LIMIT_RETRIES: int = 2
+    VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS: int = 5
+    # Soft cap for total characters sent in one Vertex embedding request.
+    VERTEX_EMBEDDING_MAX_BATCH_CHARACTERS: int = 12000
+    # Reuse query embeddings across requests for identical text (LRU, in-process).
+    EMBEDDING_GLOBAL_CACHE_ENABLED: bool = True
+    EMBEDDING_GLOBAL_CACHE_MAX_ENTRIES: int = 256
+    # Cap concurrent Vertex/OpenAI embedding API calls (1 avoids quota bursts).
+    EMBEDDING_MAX_CONCURRENT_API_CALLS: int = 1
+    # Max texts per single batched embedding request.
+    EMBEDDING_BATCH_SIZE: int = 32
 
     GENERATION_MODEL_ID_LITERAL: Optional[List[str]] = None
     GENERATION_MODEL_ID: Optional[str] = None
     EMBEDDING_MODEL_ID: Optional[str] = None
     EMBEDDING_MODEL_SIZE: Optional[int] = None
-    INPUT_DAFAULT_MAX_CHARACTERS: Optional[int] = None
+    INPUT_DAFAULT_MAX_CHARACTERS: Optional[int] = 1024
     GENERATION_DAFAULT_MAX_TOKENS: int = 2048
     GENERATION_DAFAULT_TEMPERATURE: Optional[float] = None
 
@@ -103,11 +116,10 @@ class Settings(BaseSettings):
     # retrieval and RRF fusion step. Requires RAG_RERANKER_BACKEND to be
     # set to a supported provider (e.g. "cohere" or "bge").
     RAG_ENABLE_RERANKER: bool = True
-    RAG_RERANKER_BACKEND: str = "bge"
-    # Model used by the Cohere reranker. Defaults to the multilingual v3 model
-    # which supports Arabic + English without extra configuration.
-    COHERE_RERANKER_MODEL: str = "rerank-multilingual-v3.0"
-    BGE_RERANKER_MODEL: str = "BAAI/bge-reranker-v2-m3"
+    RAG_RERANKER_BACKEND: str = "vertex"
+    # Model used by the reranker backend. For Vertex, defaults to the
+    # semantic-ranker-available model which supports Arabic + English.
+    RAG_RERANKER_MODEL: str = "semantic-ranker-available@latest"
     # Local BGE reranker runtime controls. On CPU deployments keep fp16 off
     # and use a modest batch size to avoid large latency spikes.
     RAG_RERANKER_DEVICE: str = "cpu"
@@ -120,6 +132,14 @@ class Settings(BaseSettings):
     # None, all input candidates are returned (just re-ordered). Defaults to
     # 5 to keep the prompt focused on the most relevant documents.
     RAG_RERANKER_TOP_N: int = 5
+
+    # Semantic query parser (004-semantic-query-parser)
+    RAG_SEMANTIC_PARSER_ENABLED: bool = True
+    # Emit structured post-parse pipeline blocks (QUERY PLAN, RETRIEVAL REQUEST, …)
+    # at INFO level. When false, the same messages are logged at DEBUG only.
+    RAG_PIPELINE_DIAGNOSTICS: bool = True
+    # When set, indexing/retrieval diagnostics also log chunks matching this token.
+    RAG_INDEXING_TRACE_ENTITY: str | None = None
 
     # Celery Configuration
     CELERY_BROKER_URL: Optional[str] = None

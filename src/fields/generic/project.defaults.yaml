@@ -1,0 +1,14 @@
+# Copied into projects.config_json on project create (spec FR-005).
+# Runtime reads DB only — never this YAML per request.
+version: 1
+chunking:
+  by_extension:
+    .txt: character
+    .pdf: page
+    .csv: character
+    .xlsx: character
+  chunk_size: 800
+  overlap: 120
+retrieval:
+  exhaustive_min_limit: 30
+  disable_chunk_focus: false

@@ -16,6 +16,7 @@ Welcome to the Mini-RAG project. If you are coming from a C# / .NET background, 
 | `src/models/db_schemes/` | Entities (`[Table]`) | SQLAlchemy ORM entity classes. Equivalent to EF Core entities. |
 | `src/services/RAGService.py` | `IAnswerService` | A dedicated orchestrator service that handles the complex RAG pipeline (retrieval, ranking, enrichment, prompt building). |
 | `src/stores/` | Factories / Providers | Infrastructure integrations (LLMs, Vector Databases) using the Factory pattern. |
+| `src/core/document_intelligence/` | Document parsing application service | Generic Document Model + `ParserRegistry` + `chunk_mapper`. Format parsers (txt/csv/xlsx/pdf) emit `StructuralElement`s; domain packs configure grouping via `element_mapping` in `chunking.yaml` (no domain-name conditionals in core). |
 
 ---
 

@@ -1,0 +1,4 @@
+label_template: "{file_name} — page {page}"
+extra_keys:
+  - file_name
+  - page

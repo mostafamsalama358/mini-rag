@@ -1,0 +1,5 @@
+# Generic structural boundaries (minimal). Legal patterns live in fields/legal/.
+boundaries: []
+article_query_patterns: []
+chapter_query_patterns: []
+min_segment_chars: 80

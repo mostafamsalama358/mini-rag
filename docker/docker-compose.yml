@@ -23,13 +23,22 @@ services:
     networks:
       - backend
     restart: always
-    mem_limit: 2g
-    memswap_limit: 2g
+    mem_limit: 8g
+    memswap_limit: 8g
     depends_on:
       pgvector:
         condition: service_healthy
     env_file:
       - ./env/.env.app
+    environment:
+      RAG_ENABLE_RERANKER: "true"
+      RAG_SEMANTIC_PARSER_ENABLED: "true"
+      RAG_PIPELINE_DIAGNOSTICS: "true"
+      RAG_INDEXING_TRACE_ENTITY: "CATAFLAM"
+      RAG_RERANKER_BACKEND: "bge"
+      RAG_RERANKER_MODEL: "BAAI/bge-reranker-v2-m3"
+      RAG_RERANKER_DEVICE: "cpu"
+      RAG_RERANKER_WARMUP_ON_STARTUP: "true"
 
   # Celery Worker
   celery-worker:
@@ -57,6 +66,13 @@ services:
         condition: service_healthy
     env_file:
       - ./env/.env.app
+    environment:
+      RAG_ENABLE_RERANKER: "true"
+      RAG_SEMANTIC_PARSER_ENABLED: "true"
+      RAG_RERANKER_BACKEND: "bge"
+      RAG_RERANKER_MODEL: "BAAI/bge-reranker-v2-m3"
+      RAG_RERANKER_DEVICE: "cpu"
+      RAG_RERANKER_WARMUP_ON_STARTUP: "true"
     mem_limit: 8g
     memswap_limit: 8g
   celery-beat:
@@ -102,7 +118,7 @@ services:
         condition: service_started
     volumes:
       - ../src:/app
-      - ./flowerconfig.py:/app/flowerconfig.py:ro
+      - ../src/flowerconfig.py:/app/flowerconfig.py:ro
     env_file:
       - ./env/.env.app
     environment:

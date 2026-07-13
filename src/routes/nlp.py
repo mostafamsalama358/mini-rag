@@ -1,11 +1,12 @@
 from fastapi import FastAPI, APIRouter, status, Request
 from fastapi.responses import JSONResponse
 from routes.schemes.nlp import PushRequest, SearchRequest, AnswerRequest
-from models.ProjectModel import ProjectModel
-from models.ChunkModel import ChunkModel
-from models.AssetModel import AssetModel
+from repositories.project_repository import ProjectModel
+from repositories.chunk_repository import ChunkModel
+from repositories.asset_repository import AssetModel
 from models.enums.AssetTypeEnum import AssetTypeEnum
-from controllers.NLPController import NLPController
+from services.rag.rag_service import NLPController
+from services.rag.embedding import EmbeddingCache
 from models import ResponseSignal
 from tqdm.auto import tqdm
 from tasks.data_indexing import index_data_content
@@ -117,11 +118,13 @@ async def search_index(request: Request, project_id: int, search_request: Search
         reranker=getattr(request.app, "reranker", None),
     )
 
+    embedding_cache = EmbeddingCache()
     results = await nlp_controller.search_vector_db_collection(
         project=project,
         text=search_request.text,
         limit=search_request.limit,
         metadata_filter=search_request.metadata_filter,
+        embedding_cache=embedding_cache,
     )
 
     if not results:

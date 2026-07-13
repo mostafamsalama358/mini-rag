@@ -1,0 +1,11 @@
+version: 1
+chunking:
+  by_extension:
+    .pdf: page
+    .txt: character
+    .docx: page
+  chunk_size: 800
+  overlap: 120
+retrieval:
+  exhaustive_min_limit: 30
+  disable_chunk_focus: false

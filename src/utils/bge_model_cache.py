@@ -53,7 +53,7 @@ def get_bge_embedding_model(model_id: str, *, use_fp16: bool = True) -> tuple[An
         return model, load_elapsed
 
 
-def get_bge_reranker_model(
+def get_RAG_RERANKER_MODEL(
     model_name: str,
     *,
     device: str,

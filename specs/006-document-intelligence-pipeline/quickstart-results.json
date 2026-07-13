@@ -1,0 +1,76 @@
+{
+  "project_id": 1,
+  "process_elapsed_sec": 16.136444499948993,
+  "results": [
+    {
+      "name": "upload:sample_50_rows.xlsx",
+      "ok": true,
+      "detail": "6mp0p3yo07ng_sample_50_rows.xlsx"
+    },
+    {
+      "name": "upload:sample.csv",
+      "ok": true,
+      "detail": "7mp31bktasz7_sample.csv"
+    },
+    {
+      "name": "upload:sample.txt",
+      "ok": true,
+      "detail": "95ybn5x2busc_sample.txt"
+    },
+    {
+      "name": "upload:sample_with_table.pdf",
+      "ok": true,
+      "detail": "1uzc1ssmwqzn_sample_with_table.pdf"
+    },
+    {
+      "name": "upload:malformed.xlsx",
+      "ok": true,
+      "detail": "iii96dia22q4_malformed.xlsx"
+    },
+    {
+      "name": "upload:unreadable.pdf",
+      "ok": true,
+      "detail": "t3gwu7rvqp1q_unreadable.pdf"
+    },
+    {
+      "name": "process_all_reset",
+      "ok": true,
+      "detail": "elapsed=16.14s status=SUCCESS result={'signal': 'processing_success'}"
+    },
+    {
+      "name": "SC-001_row_completeness",
+      "ok": true,
+      "detail": "rows=50 unique_row_index=50"
+    },
+    {
+      "name": "US2_shared_vocabulary",
+      "ok": true,
+      "detail": "types=['paragraph', 'section', 'table-row'] bad=[]"
+    },
+    {
+      "name": "SC-002_003_004_pytest",
+      "ok": true,
+      "detail": "........                                                                 [100%] 8 passed in 1.95s "
+    },
+    {
+      "name": "SC-004_degraded",
+      "ok": true,
+      "detail": "outcome=degraded reason=empty_content chunks=0"
+    },
+    {
+      "name": "SC-004_hard_or_degraded_unreadable",
+      "ok": true,
+      "detail": "task_success=True status=SUCCESS extraction=degraded"
+    },
+    {
+      "name": "SC-006_timing_sample",
+      "ok": true,
+      "detail": "full_reset_process=16.14s (no pre-migration baseline; budget=no_regression vs this sample)"
+    },
+    {
+      "name": "SC-005_AQ1_proxy_row_coverage",
+      "ok": true,
+      "detail": "coverage=100.0% (50/50 rows indexed)"
+    }
+  ]
+}

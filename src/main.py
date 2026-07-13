@@ -34,6 +34,7 @@ from sqlalchemy.orm import sessionmaker
 from helpers.db_indexes import ensure_startup_indexes
 from helpers.hf_auth import configure_hf_from_settings
 from utils.rerank import get_reranker
+from services.FieldRegistry import get_field_registry
 
 # Import metrics setup
 from utils.metrics import RAG_RERANK_STARTUP_LATENCY, setup_metrics
@@ -153,6 +154,23 @@ async def startup_span():
         load_elapsed,
         warmup_elapsed,
     )
+
+    # Field registry: load + validate all field packs once at startup (spec 002).
+    # Field packs are YAML/text only; load failure fails fast in production.
+    app.field_registry = get_field_registry()
+    logger.info(
+        "FieldRegistry ready: default=%s fields=%s",
+        app.field_registry.default_key,
+        [f["key"] for f in app.field_registry.list_fields()],
+    )
+
+    # Auto-seed projects from field packs and sync user_ids from project_users.yaml.
+    from repositories.project_repository import ProjectModel
+    from services.project_service import ProjectController
+    project_model = await ProjectModel.create_instance(db_client=app.db_client)
+    project_controller = ProjectController(project_model=project_model, field_registry=app.field_registry)
+    await project_controller.ensure_projects_from_registry()
+    logger.info("Project auto-seed from field registry complete")
 
 
 async def shutdown_span():

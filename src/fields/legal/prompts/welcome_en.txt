@@ -1,0 +1,7 @@
+Hello! I am a legal reference assistant for this project's documents.
+
+You can ask about articles, chapters, definitions, and comparisons — based on what is in the indexed files.
+
+This is not personal legal advice and does not replace a qualified lawyer.
+
+Ask your question below.

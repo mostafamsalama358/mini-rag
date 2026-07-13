@@ -5,7 +5,8 @@ so call sites don't need to check whether reranking is on before calling
 ``reranker.rerank()``.
 
 Supported values for ``RAG_RERANKER_BACKEND``:
-    - ``"cohere"``   — Cohere Rerank API (default)
+    - ``"vertex"``   — Vertex AI Ranking API (Discovery Engine)
+    - ``"cohere"``   — Cohere Rerank API
     - ``"bge"``      — BAAI BGE Reranker (local)
     - anything else  — no-op (logs a warning)
 """
@@ -59,7 +60,7 @@ def get_reranker(settings=None) -> RerankerInterface:
         return CohereReranker(api_key=api_key, model=model, top_n=top_n)
 
     if backend == "bge":
-        model = getattr(settings, "BGE_RERANKER_MODEL", "BAAI/bge-reranker-v2-m3")
+        model = getattr(settings, "RAG_RERANKER_MODEL", "BAAI/bge-reranker-v2-m3")
         top_n = getattr(settings, "RAG_RERANKER_TOP_N", None)
         device = getattr(settings, "RAG_RERANKER_DEVICE", "cpu")
         batch_size = getattr(settings, "RAG_RERANKER_BATCH_SIZE", 16)
@@ -85,8 +86,29 @@ def get_reranker(settings=None) -> RerankerInterface:
             _bge_reranker_cache[cache_key] = reranker
             return reranker
 
+    if backend == "vertex":
+        project_id = getattr(settings, "VERTEX_PROJECT_ID", None)
+        if not project_id:
+            logger.warning(
+                "RAG_ENABLE_RERANKER=true with RAG_RERANKER_BACKEND=vertex but "
+                "VERTEX_PROJECT_ID is not set — falling back to no-op reranker."
+            )
+            return NoOpReranker()
+
+        location = getattr(settings, "VERTEX_LOCATION", "us-central1")
+        model = getattr(settings, "RAG_RERANKER_MODEL", None) or "semantic-ranker-available@latest"
+        top_n = getattr(settings, "RAG_RERANKER_TOP_N", None)
+
+        from .vertex_reranker import VertexReranker
+        return VertexReranker(
+            project_id=project_id,
+            location=location,
+            model=model,
+            top_n=top_n,
+        )
+
     logger.warning(
         f"Unknown RAG_RERANKER_BACKEND={backend!r} — falling back to no-op reranker. "
-        "Supported values: 'cohere', 'bge'."
+        "Supported values: 'vertex', 'cohere', 'bge'."
     )
     return NoOpReranker()

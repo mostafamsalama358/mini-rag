@@ -1,10 +1,7 @@
 from celery import chain
 from celery_app import celery_app
-from celery_runtime import get_setup_utils
-from helpers.config import get_settings
-import asyncio
 from tasks.file_processing import process_project_files
-from tasks.data_indexing import _index_data_content
+from tasks.data_indexing import dispatch_index_data_content
 
 import logging
 logger = logging.getLogger(__name__)
@@ -16,9 +13,7 @@ logger = logging.getLogger(__name__)
                 )
 def push_after_process_task(self, prev_task_result, project_id: int, do_reset: int):
 
-    task_results = asyncio.run(
-        _index_data_content(self, project_id, do_reset)
-    )
+    task_results = dispatch_index_data_content(self, project_id, do_reset)
 
     return {
         "project_id": project_id,

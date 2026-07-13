@@ -4,7 +4,7 @@ from typing import Sequence
 import asyncio
 
 from models.db_schemes import RetrievedDocument
-from utils.bge_model_cache import get_bge_reranker_model, run_bge_reranker_inference
+from utils.bge_model_cache import get_RAG_RERANKER_MODEL, run_bge_reranker_inference
 from .interface import RerankerInterface
 
 logger = logging.getLogger(__name__)
@@ -32,7 +32,7 @@ class BgeReranker(RerankerInterface):
         self.load_duration_seconds = 0.0
         self.warmup_duration_seconds = 0.0
         try:
-            self.reranker, self.load_duration_seconds = get_bge_reranker_model(
+            self.reranker, self.load_duration_seconds = get_RAG_RERANKER_MODEL(
                 model_name,
                 device=self.device,
                 use_fp16=self.use_fp16,

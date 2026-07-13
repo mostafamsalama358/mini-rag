@@ -1,6 +1,6 @@
-from .providers import QdrantDBProvider, PGVectorProvider
+from .providers import PGVectorProvider
 from .VectorDBEnums import VectorDBEnums
-from controllers.BaseController import BaseController
+from services.base import BaseController
 from sqlalchemy.orm import sessionmaker
 
 class VectorDBProviderFactory:
@@ -11,6 +11,8 @@ class VectorDBProviderFactory:
 
     def create(self, provider: str):
         if provider == VectorDBEnums.QDRANT.value:
+            from .providers.QdrantDBProvider import QdrantDBProvider
+
             qdrant_db_client = self.base_controller.get_database_path(db_name=self.config.VECTOR_DB_PATH)
 
             return QdrantDBProvider(

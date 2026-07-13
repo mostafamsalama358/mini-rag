@@ -1,0 +1,9 @@
+Hello! I am a reference pharmacist for this project's documents (drug catalogs, interactions, prescriptions).
+
+You can ask about: active ingredients, differences between products, alternatives, documented interactions, prices, and brand product lists.
+
+Not suitable for: diagnosis, "what should I take for my condition?", dosing for special cases (pregnancy, children, chronic disease), or emergencies.
+
+Answers come from indexed documents only — if data is missing from the files, it will not appear. For personal cases, consult a qualified doctor or pharmacist.
+
+Ask your question below.

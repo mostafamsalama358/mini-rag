@@ -1,0 +1,259 @@
+# Pharmacy retrieval intents + exhaustive rules (spec PH-FR-001 / PH-FR-002).
+# Patterns are Arabic + English; new patterns can be added here without code
+# changes (constitution Open/Closed, spec US2 acceptance 1).
+intents:
+  exhaustive_list:
+    patterns:
+      - "كل\\s+(?:ال)?ادوية(?!\\s+المتعارض)"
+      - "عايزهم\\s+كلهم"
+      - "عايز\\s+كل"
+      - "جميع\\s+(?:ال)?ادوية"
+      - "(?:اذكر|عدد)\\s+(?:كل\\s+)?(?:ال)?ادوية"
+      - "\\b(?:all|every)\\s+(?:the\\s+)?drugs\\b"
+      - "list\\s+all"
+      - "كل\\s+(?:ال)?ادوية\\s+المصنفة"
+      - "(?:ايه|إيه|يه)?\\s*هي\\s+(?:ال)?(?:انواع|أنواع)"
+      - "(?:انواع|أنواع)\\s+"
+      - "كل\\s+(?:ال)?(?:انواع|أنواع)"
+      - "types?\\s+of\\b"
+      - "what\\s+types?\\b"
+    flags: "IGNORECASE"
+
+  interaction_lookup:
+    patterns:
+      - "(?:متعارض|تفاعل|تداخل|تعارض)"
+      - "تفاعلات"
+      - "interactions?"
+      - "compatible"
+      - "عايز\\s+(?:كل\\s+)?(?:ال)?ادوية\\s+المتعارضة"
+      - "(?:ايه|إيه|يه)?\\s*هي\\s+(?:كل\\s+)?(?:ال)?ادوية\\s+المتعارض"
+      - "كل\\s+(?:ال)?ادوية\\s+المتعارض"
+    flags: "IGNORECASE"
+
+  contraindications:
+    patterns:
+      - "ممنوع"
+      - "مينفعش"
+      - "موانع"
+      - "contraindicat"
+      - "\\bavoid\\b"
+      - "pregnancy"
+      - "lactation"
+      - "حمل"
+      - "رضاعة"
+    flags: "IGNORECASE"
+
+  prescription_check:
+    patterns:
+      - "روشتة"
+      - "prescription"
+      - "هل\\s+في\\s+تعارض"
+      - "هل\\s+في\\s+تفاعل"
+      - "تعارض\\s+بين\\s+ال?ادوية"
+    flags: "IGNORECASE"
+
+  dosage:
+    patterns:
+      - "الجرعة"
+      - "الجرعه"
+      - "جرعة"
+      - "جرعه"
+      - "\\bdose\\b"
+      - "\\bdosage\\b"
+      - "ازاي\\s+اخده"
+      - "اخده\\s+امتى"
+      - "كام\\s+مرة"
+      - "كام\\s+مره"
+      - "every\\s+how\\s+many\\s+hours"
+      - "كم\\s+مرة"
+    examples:
+      - "كام مرة اخد الدوا في اليوم"
+      - "اخده كل كام ساعة"
+      - "how often should I take it"
+    flags: "IGNORECASE"
+
+  indications:
+    patterns:
+      - "دواعي"
+      - "استخدام"
+      - "استعمال"
+      - "استخدامات"
+      - "\\buses?\\b"
+      - "indication"
+      - "indication\\s+for"
+      - "يفيد"
+      - "يعالج"
+    flags: "IGNORECASE"
+
+  side_effects:
+    patterns:
+      - "اعراض"
+      - "أعراض"
+      - "side\\s+effects?"
+      - "adverse\\s+effects?"
+      - "complications?"
+      - "اعراض\\s+جانبية"
+      - "مضر"
+      - "خطر"
+    flags: "IGNORECASE"
+
+  exact_composition:
+    patterns:
+      - "بالظبط"
+      - "بالضبط"
+      - "لا\\s+زيادة"
+      - "ولا\\s+اقل"
+      - "ولا\\s+أقل"
+      - "من\\s+غير\\s+زيادة"
+      - "نفس\\s+المادة\\s+بالظبط"
+      - "نفس\\s+المكونات"
+      - "exact\\s+same"
+      - "identical\\s+composition"
+      - "same\\s+ingredients?\\s+only"
+      - "no\\s+more\\s+no\\s+less"
+    flags: "IGNORECASE"
+
+  drug_search:
+    patterns:
+      - "عايز\\s+دواء"
+      - "عاوز\\s+دواء"
+      - "عاوزين\\s+دواء"
+      - "محتاج\\s+دواء"
+      - "ممكن\\s+دواء"
+      - "فين\\s+دواء"
+      - "(?:ايه|إيه|يه)\\s+دواء"
+      - "دواء\\s+ل"
+      - "دواء\\s+باسط"
+      - "علاج\\s+ل"
+      - "looking\\s+for\\s+a\\s+drug"
+      - "need\\s+a\\s+drug"
+      - "want\\s+a\\s+drug"
+    examples:
+      - "عايز دواء باسط للعضلات"
+      - "I need a muscle relaxant drug"
+    flags: "IGNORECASE"
+
+  alternatives:
+    patterns:
+      - "بديل"
+      - "بدايل"
+      - "بدائل"
+      - "متشابه"
+      - "متشابهة"
+      - "مشابه"
+      - "مشابهة"
+      - "زي\\s+(?:كده|ده|دي)"
+      - "نفس\\s+(?:النوع|الفئة|العيلة)"
+      - "\\bsubstitute\\b"
+      - "\\balternative\\b"
+      - "\\breplacement\\b"
+      - "\\bsimilar\\b"
+      - "same\\s+(?:class|category|family)"
+    examples:
+      - "في حاجة تانية زي ده"
+      - "مش لاقي ده في الصيدلية"
+      - "something like this drug"
+    flags: "IGNORECASE"
+
+  price:
+    patterns:
+      - "سعر"
+      - "كام\\s+(?:سعر|تمن)"
+      - "\\bprice\\b"
+      - "\\bcost\\b"
+      - "تمن"
+    flags: "IGNORECASE"
+
+  composition:
+    patterns:
+      - "المادة\\s+الفعالة"
+      - "ماده\\s+فعاله"
+      - "مادة\\s+فعالة"
+      - "مواد\\s+فعالة"
+      - "مواد\\s+فعاله"
+      - "active\\s+ingredient"
+      - "\\bcomposition\\b"
+      - "\\bcontains\\b"
+      - "مكونات"
+      - "بتحتوي"
+      - "تحتوي"
+      - "فيه\\s+ايه"
+      - "فيها\\s+ايه"
+      - "لكل\\s+منهم"
+      - "لكل\\s+واحد"
+    flags: "IGNORECASE"
+
+  manufacturer:
+    patterns:
+      - "شركة"
+      - "المصنع"
+      - "\\bcompany\\b"
+      - "\\bmanufacturer\\b"
+    flags: "IGNORECASE"
+
+  drug_detail:
+    patterns:
+      - "ينفع"
+      - "اخد"
+      - "اخده"
+      - "اشرب"
+      - "ابلع"
+      - "استخدم"
+      - "يخف"
+      - "كويس"
+      - "آمن"
+      - "امن"
+    flags: "IGNORECASE"
+
+  comparison:
+    patterns:
+      - "الفرق\\s+بين"
+      - "compare"
+      - "\\bvs\\.?\\b"
+      - "افضل\\s+بين"
+    flags: "IGNORECASE"
+
+# When no intent regex matches, classify via embedding similarity against
+# plain-phrase patterns + optional examples (logged as intent_fallback_hit).
+intent_fallback:
+  enabled: true
+  method: embedding
+  min_similarity: 0.55
+  timeout_seconds: 1.0
+  max_output_tokens: 1024
+  priority:
+    - interaction_lookup
+    - exhaustive_list
+    - contraindications
+    - prescription_check
+    - side_effects
+    - dosage
+    - indications
+    - exact_composition
+    - drug_search
+    - alternatives
+    - composition
+    - price
+    - manufacturer
+    - comparison
+    - drug_detail
+
+# Exhaustive mode: raise the candidate floor and disable chunk focus so no
+# row/detail is dropped from the answer (PH-SC-001 / PH-SC-005).
+exhaustive_min_limit: 100
+disable_chunk_focus: true
+
+# Intents that use exhaustive_min_limit as the retrieval window floor.
+wide_retrieval_intents:
+  - exhaustive_list
+  - interaction_lookup
+  - contraindications
+  - side_effects
+  - prescription_check
+  - drug_search
+  - alternatives
+  - exact_composition
+  - composition
+  - indications
+  - price
+  - manufacturer

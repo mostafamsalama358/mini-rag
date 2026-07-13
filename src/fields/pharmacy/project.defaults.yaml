@@ -1,0 +1,16 @@
+# Pharmacy snapshot → projects.config_json on create.
+# Row chunking for spreadsheets, exhaustive retrieval, chunk focus disabled.
+version: 1
+chunking:
+  by_extension:
+    .xlsx: row
+    .csv: row
+    .pdf: page
+    .txt: character
+  chunk_size: 800
+  overlap: 120
+retrieval:
+  exhaustive_min_limit: 100
+  disable_chunk_focus: true
+generation:
+  exhaustive_max_output_tokens: 8192

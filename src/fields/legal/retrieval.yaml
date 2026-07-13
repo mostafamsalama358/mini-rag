@@ -1,0 +1,16 @@
+# Legal retrieval intents. Patterns here ARE the legal domain logic — core has none.
+# SINGLE-QUOTED YAML so backslashes are preserved literally for regex.
+intents:
+  structural:
+    patterns:
+      - '(?:ال?\s*م[ـ]?ادة|article)\s*(?:رقم\s+)?\(?\s*(\d+)'
+      - '(?:ال?\s*(?:فصل|باب|قسم)|chapter|section|part)\s+(?:رقم\s+)?(.+)'
+    flags: "IGNORECASE"
+  exhaustive_list:
+    patterns:
+      - '(?:اذكر|عدد)\s+(?:كل\s+)?(?:شروط|بنود|عناصر)\s+(?:ال?\s*م[ـ]?ادة|article)'
+      - '(?:كل\s+)?(?:شروط|بنود|عناصر)\s+(?:ال?\s*م[ـ]?ادة|article)'
+      - '\b(?:all|every)\b.*\b(?:conditions|requirements|items)\b'
+    flags: "IGNORECASE"
+exhaustive_min_limit: 30
+disable_chunk_focus: false

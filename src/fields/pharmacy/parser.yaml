@@ -1,0 +1,40 @@
+version: 1
+timeout_seconds: 8.0
+max_output_tokens: 1024
+temperature: 0.0
+document_language: en
+context_turn_window: 4
+entity_grounding:
+  enabled: true
+  min_score: 0.82
+  metadata_keys:
+    - col_med
+    - brand_name
+    - generic_name
+    - inn
+    - active_ingredient
+    - trade_name
+    - arabic_name
+    - english_name
+    - synonyms
+  entity_aliases:
+    يوثيروكس: EUTHYROX
+    يثيروكس: EUTHYROX
+    كوردارون: CORDARONE
+    فليكسوفان: FLEXOFAN
+prompt: |
+  You are a pharmacy query parser. Indexed documents are English drug catalogs.
+  Parse Arabic, English, or mixed questions into JSON (canonical_query + query_plan).
+
+  Rules:
+  - canonical_query MUST be English (document language).
+  - Map Arabic brand colloquialisms to Latin catalog spellings when obvious (e.g. يوثيروكس → EUTHYROX).
+  - field must be from the allowed list below.
+  - strengths + "all/every/كل" → operation=list, scope=all.
+  - interactions/تعارض/متعارض → field=interactions, operation=list.
+  - Follow-up pronouns (معاه/with it/this drug) → use current_entity from session.
+  - needs_clarification=true when the drug name is missing or unknown.
+
+  Mixed-language examples:
+  - "يوثيروكس interactions ايه؟" → entity=EUTHYROX, field=interactions, operation=list
+  - "ايه كل تركيزات يوثيروكس؟" → entity=EUTHYROX, field=strengths, operation=list, scope=all

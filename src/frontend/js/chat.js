@@ -6,6 +6,42 @@ const state = {
   isIndexed: false
 };
 
+const DEFAULT_WELCOME = {
+  en: "Hello! Select a project from the sidebar to see domain-specific guidance, then ask about your indexed documents.",
+  ar: "مرحباً! اختر مشروعاً من القائمة لعرض تعريف المجال، ثم اسأل عن المستندات المفهرسة.",
+};
+
+function uiLanguage() {
+  const lang = (navigator.language || "en").toLowerCase();
+  return lang.startsWith("ar") ? "ar" : "en";
+}
+
+function welcomeTextForProject(project) {
+  if (!project || !project.welcome) {
+    const lang = uiLanguage();
+    return DEFAULT_WELCOME[lang] || DEFAULT_WELCOME.en;
+  }
+  const lang = uiLanguage();
+  return project.welcome[lang] || project.welcome.en || project.welcome.ar || DEFAULT_WELCOME[lang];
+}
+
+function hasUserMessages() {
+  return el.chatLog.querySelectorAll(".message.user").length > 0;
+}
+
+function setWelcomeMessage(text) {
+  const bubble = document.getElementById("welcomeMessage");
+  if (!bubble) return;
+  bubble.innerHTML = escapeHtml(text).replace(/\n/g, "<br>");
+}
+
+function refreshWelcomeMessage() {
+  const project = state.projects.find((p) => p.id === state.activeProjectId);
+  if (!hasUserMessages()) {
+    setWelcomeMessage(welcomeTextForProject(project));
+  }
+}
+
 localStorage.setItem("algorag.sessionId", state.sessionId);
 
 const $ = (id) => document.getElementById(id);
@@ -91,6 +127,7 @@ function renderProjects() {
     el.projectSelector.value = state.activeProjectId;
     el.activeProjectName.textContent = state.projects[0].name;
   }
+  refreshWelcomeMessage();
 }
 
 function getActiveProjectNumericId() {
@@ -269,6 +306,14 @@ el.projectSelector.addEventListener("change", () => {
   localStorage.setItem("algorag.activeProjectId", state.activeProjectId);
   const p = state.projects.find(x => x.id === state.activeProjectId);
   el.activeProjectName.textContent = p ? p.name : "";
+  state.sessionId = crypto.randomUUID();
+  localStorage.setItem("algorag.sessionId", state.sessionId);
+  el.chatLog.innerHTML = `
+    <div class="message assistant welcome-message">
+      <div class="avatar"><span class="material-symbols-outlined">smart_toy</span></div>
+      <div class="message-bubble" id="welcomeMessage"></div>
+    </div>`;
+  refreshWelcomeMessage();
   checkIndexStatus();
 });
 

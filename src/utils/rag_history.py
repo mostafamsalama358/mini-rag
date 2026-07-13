@@ -29,15 +29,25 @@ def is_specific_query(query: str) -> bool:
 
 _FOLLOWUP_PATTERNS = [
     re.compile(
-        r"\b(it|its|that|this|those|these|same|above|mentioned|previous|earlier|there)\b",
+        r"\b(it|its|that|this|those|these|same|above|mentioned|previous|earlier|there|similar)\b",
         re.IGNORECASE,
     ),
     re.compile(
-        rf"(?:^|\s)(?:ده|دي|دا|دول|ه(?:و|ي)|هما|هم)\b|"
+        rf"(?:^|\s)(?:ده|دي|دا|دول|ه(?:و|ي)|هما|هم|معاه|معه|معاها)\b|"
         rf"(?:ال(?:سابق|مذكور|موض(?:ح|وح)|سابق(?:ة)?)|(?:اللي|الذي)\s+(?:فات|قلت|ذكرت|قصد))",
         re.IGNORECASE,
     ),
     re.compile(r"^(?:و|also|plus|additionally|كمان|أيضاً|además)\s", re.IGNORECASE),
+    re.compile(
+        rf"(?:^|\s)(?:طب|طيب|لا من|لو|بص|يعني|فيه|فيها|عنه|عنها|منه|منها"
+        rf"|بتاع|بتاعه|بتاعت|زيه|زيها|برضه|تاني|باقي|نفس|بعد)\b",
+        re.IGNORECASE,
+    ),
+    # Attribute follow-ups about the prior drug (no explicit "معاه").
+    re.compile(
+        r"(?:متشابه|مشابه|متعارض|تعارض|تفاعل|بديل|بدائل|جرع|اعراض|أعراض|سعره|سعرها|مكونات)",
+        re.IGNORECASE,
+    ),
 ]
 
 

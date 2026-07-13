@@ -40,6 +40,8 @@ celery_app.conf.update(
     task_routes={
         "tasks.file_processing.process_project_files": {"queue": "file_processing"},
         "tasks.data_indexing.index_data_content": {"queue": "data_indexing"},
+        "tasks.data_indexing.index_data_content_shard": {"queue": "data_indexing"},
+        "tasks.data_indexing.finalize_vector_index": {"queue": "data_indexing"},
         "tasks.process_workflow.process_and_push_workflow": {"queue": "file_processing"},
         "tasks.maintenance.clean_celery_executions_table": {"queue": "default"},
     },
@@ -57,6 +59,14 @@ celery_app.conf.update(
             "soft_time_limit": _long_task_soft_limit,
         },
         "tasks.data_indexing.index_data_content": {
+            "time_limit": _long_task_limit,
+            "soft_time_limit": _long_task_soft_limit,
+        },
+        "tasks.data_indexing.index_data_content_shard": {
+            "time_limit": _long_task_limit,
+            "soft_time_limit": _long_task_soft_limit,
+        },
+        "tasks.data_indexing.finalize_vector_index": {
             "time_limit": _long_task_limit,
             "soft_time_limit": _long_task_soft_limit,
         },

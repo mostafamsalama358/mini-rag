@@ -4,10 +4,14 @@ from uuid import UUID
 import logging
 
 from helpers.auth import get_current_user_id
-from controllers.ProjectController import ProjectController
+from services.project_service import ProjectController
 from models import ResponseSignal
-from models.ProjectModel import ProjectModel
-from .schemes.projects import ProjectCreateRequest, ProjectPromptUpdateRequest
+from repositories.project_repository import ProjectModel
+from services.FieldRegistry import get_field_registry
+from .schemes.projects import (
+    ProjectPatchRequest,
+    ProjectPromptUpdateRequest,
+)
 
 logger = logging.getLogger('uvicorn.error')
 
@@ -22,6 +26,11 @@ async def list_projects(
     request: Request,
     user_id: str = Depends(get_current_user_id),
 ):
+    """List projects assigned to the authenticated user.
+
+    Returns only public fields (id, project_id, name).
+    domain_key and config_json are internal — not exposed to clients.
+    """
     project_model = await ProjectModel.create_instance(
         db_client=request.app.db_client
     )
@@ -34,38 +43,17 @@ async def list_projects(
     })
 
 
-@projects_router.post("")
-async def create_project(
-    request: Request,
-    payload: ProjectCreateRequest,
-    user_id: str = Depends(get_current_user_id),
-):
-    project_model = await ProjectModel.create_instance(
-        db_client=request.app.db_client
-    )
-    project_controller = ProjectController(project_model=project_model)
-
-    is_valid, result = await project_controller.create_project(
-        name=payload.name,
-        user_id=user_id,
-    )
-
-    if not is_valid:
-        return JSONResponse(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            content={"signal": result.value},
-        )
-
-    return JSONResponse(
-        status_code=status.HTTP_201_CREATED,
-        content={
-            "signal": ResponseSignal.PROJECT_CREATED_SUCCESS.value,
-            "project": project_controller.serialize_project(result),
-        },
-    )
+# ------------------------------------------------------------------
+# Obsolete endpoints — hidden from Swagger (include_in_schema=False).
+# Kept functional for backward compatibility during migration.
+# ------------------------------------------------------------------
 
 
-@projects_router.get("/{project_uuid}")
+@projects_router.get(
+    "/{project_uuid}",
+    include_in_schema=False,
+    deprecated=True,
+)
 async def get_project(
     request: Request,
     project_uuid: UUID,
@@ -89,11 +77,53 @@ async def get_project(
 
     return JSONResponse(content={
         "signal": ResponseSignal.PROJECT_RETRIEVED_SUCCESS.value,
+        "project": project_controller.serialize_project(
+            result,
+            available_domains=project_controller.field_registry.list_fields(),
+        ),
+    })
+
+
+@projects_router.patch(
+    "/{project_uuid}",
+    include_in_schema=False,
+    deprecated=True,
+)
+async def patch_project_config(
+    request: Request,
+    project_uuid: UUID,
+    payload: ProjectPatchRequest,
+    user_id: str = Depends(get_current_user_id),
+):
+    """Update config_json in DB only. [Obsolete]"""
+    project_model = await ProjectModel.create_instance(
+        db_client=request.app.db_client
+    )
+    project_controller = ProjectController(project_model=project_model)
+
+    is_valid, result = await project_controller.update_project_config(
+        project_uuid=project_uuid,
+        user_id=user_id,
+        config_json=payload.config_json,
+    )
+
+    if not is_valid:
+        return JSONResponse(
+            status_code=status.HTTP_404_NOT_FOUND,
+            content={"signal": result.value},
+        )
+
+    return JSONResponse(content={
+        "signal": ResponseSignal.PROJECT_CONFIG_UPDATED.value,
         "project": project_controller.serialize_project(result),
     })
 
 
-@projects_router.get("/{project_uuid}/prompt")
+@projects_router.get(
+    "/{project_uuid}/prompt",
+    include_in_schema=False,
+    deprecated=True,
+)
 async def get_project_prompt(
     request: Request,
     project_uuid: UUID,
@@ -124,7 +154,11 @@ async def get_project_prompt(
     })
 
 
-@projects_router.put("/{project_uuid}/prompt")
+@projects_router.put(
+    "/{project_uuid}/prompt",
+    include_in_schema=False,
+    deprecated=True,
+)
 async def update_project_prompt(
     request: Request,
     project_uuid: UUID,
@@ -154,4 +188,3 @@ async def update_project_prompt(
             "prompt_ar": prompt.prompt_ar,
         }
     })
-

@@ -1,0 +1,284 @@
+# Pharmacy field-concept registry (spec: generic field-aware retrieval).
+#
+# This file is the SINGLE declarative bridge between how users phrase a
+# question and which column the answer lives in. It contains ONLY:
+#   - canonical concepts users ask about (strengths, warnings, storage, ...)
+#   - the surface forms (Arabic + English + abbreviations) that signal each
+#   - per-concept output shape ("list" = name-only enumeration, "prose" = answer)
+#   - optional column-header hints (last-resort field resolution)
+#   - dataset-shape rules (entity / composition / interaction pairs) as data
+#
+# It contains NO regex intents, NO Python column names, NO special-case code.
+# core/field_resolution.py matches a concept generically against the
+# normalized query; retrieval filters on the resolved field generically.
+# Adding a new field (e.g. "pediatric dose") is a YAML edit here, not code.
+
+# Dataset-shape rules --------------------------------------------------------
+# Which concept identifies a row (drug/product). When omitted, auto-detected.
+entity_concept: product_name
+# Which concept describes composition (for alternatives matching).
+composition_concept: active_ingredient
+# Column-header pairs that form an interaction edge. Data, not code: this
+# replaces the hardcoded col_API1/col_API2 SQL in chunk_repository.py.
+interaction_column_pairs:
+  - [API1, API2]
+  - [Drug A, Drug B]
+  - [API, Interacting Substance]
+# Optional explicit override for the entity column header. Leave null to
+# auto-detect (most-unique mostly-alphabetic column).
+entity_key_hint: null
+
+# Concepts users ask about ---------------------------------------------------
+concepts:
+  - concept: product_name
+    output_shape: list
+    synonyms:
+      - types
+      - type
+      - brand
+      - brands
+      - product
+      - products
+      - names
+      - انواع
+      - نوع
+      - اسماء
+      - الاسم
+      - المنتجات
+    resolves_to_columns: [med, brand_name, trade_name, product_name]
+
+  - concept: active_ingredient
+    output_shape: prose
+    synonyms:
+      - active ingredient
+      - active ingredients
+      - ingredient
+      - ingredients
+      - composition
+      - contains
+      - material
+      - المادة الفعالة
+      - المواد الفعالة
+      - مكونات
+      - يحتوي
+      - بيتكون من
+      - فيه ايه
+    resolves_to_columns: [New Material, active_ingredient, inn, generic_name]
+
+  - concept: strengths
+    output_shape: list
+    synonyms:
+      - strength
+      - strengths
+      - concentration
+      - concentrations
+      - potency
+      - mg
+      - ml
+      - mcg
+      - تركيز
+      - تركيزات
+      - قوة
+      - الجرعات المتاحة
+      - النسب
+    resolves_to_columns: [Strength, strength, concentration, dose]
+
+  - concept: dosage
+    output_shape: prose
+    synonyms:
+      - dose
+      - dosage
+      - how much
+      - how often
+      - how many times
+      - how to take
+      - الجرعة
+      - الجرعه
+      - جرعة
+      - كام مرة
+      - ازاي اخده
+      - اخده امتى
+      - كم مرة
+    resolves_to_columns: [Dose, dosage, posology]
+
+  - concept: indications
+    output_shape: prose
+    synonyms:
+      - uses
+      - indication
+      - indications
+      - treat
+      - treats
+      - used for
+      - used to treat
+      - دواعي
+      - دواعي الاستعمال
+      - استخدامات
+      - يفيد
+      - يعالج
+    resolves_to_columns: [Indications, indication, uses]
+
+  - concept: side_effects
+    output_shape: prose
+    synonyms:
+      - side effect
+      - side effects
+      - adverse effect
+      - adverse effects
+      - adverse reaction
+      - complications
+      - اعراض
+      - اعراض جانبية
+      - اعراض جانبيه
+      - اعراض الجانبية
+      - أعراض
+      - آثار جانبية
+      - مضر
+      - اضرار
+    resolves_to_columns: [Side Effects, adverse_effects, side_effects]
+
+  - concept: contraindications
+    output_shape: prose
+    synonyms:
+      - contraindication
+      - contraindications
+      - contraindicated
+      - avoid
+      - should not
+      - must not
+      - موانع
+      - موانع الاستعمال
+      - ممنوع
+      - مينفعش
+      - لا يستخدم
+    resolves_to_columns: [Contraindications, contraindications]
+
+  - concept: warnings
+    output_shape: prose
+    synonyms:
+      - warning
+      - warnings
+      - precaution
+      - precautions
+      - caution
+      - safety
+      - التحذيرات
+      - تحذير
+      - تحذيرات
+      - احتياط
+      - احتياطات
+      - احتياطات عامة
+      - حرص
+    resolves_to_columns: [Warnings, Precautions, warnings, precautions]
+
+  - concept: interactions
+    output_shape: list
+    synonyms:
+      - interaction
+      - interactions
+      - interact
+      - interacts
+      - interacting
+      - compatible
+      - incompatible
+      - drug interaction
+      - drug interactions
+      - تعارض
+      - متعارض
+      - تفاعل
+      - تفاعلات
+      - تداخل
+      - تداخلات
+      - يتعارض مع
+    resolves_to_columns: [API1, API2]
+
+  - concept: pregnancy
+    output_shape: prose
+    synonyms:
+      - pregnancy
+      - pregnant
+      - during pregnancy
+      - in pregnancy
+      - حمل
+      - أثناء الحمل
+      - اثناء الحمل
+      - للحامل
+      - الحامل
+    resolves_to_columns: [Pregnancy, pregnancy]
+
+  - concept: breastfeeding
+    output_shape: prose
+    synonyms:
+      - breastfeeding
+      - lactation
+      - nursing
+      - breast milk
+      - lactating
+      - رضاعة
+      - الرضاعة
+      - الرضاعه
+      - طبيعي
+      - الرضاعة الطبيعية
+      - المرضع
+    resolves_to_columns: [Lactation, lactation, breastfeeding]
+
+  - concept: storage
+    output_shape: prose
+    synonyms:
+      - storage
+      - store
+      - storing
+      - keep
+      - shelf life
+      - التخزين
+      - تخزين
+      - الحفظ
+      - حفظ
+      - التخزين والتداول
+    resolves_to_columns: [Storage, storage]
+
+  - concept: alternatives
+    output_shape: list
+    synonyms:
+      - alternative
+      - alternatives
+      - substitute
+      - substitutes
+      - replacement
+      - similar
+      - same class
+      - same family
+      - same category
+      - بديل
+      - بدائل
+      - بدايل
+      - متشابه
+      - متشابهة
+      - مشابه
+      - مشابهة
+      - زي ده
+      - زي كده
+      - نفس العيلة
+    resolves_to_columns: []
+
+  - concept: price
+    output_shape: prose
+    synonyms:
+      - price
+      - cost
+      - سعر
+      - تمن
+      - ثمن
+    resolves_to_columns: [Price, price]
+
+  - concept: manufacturer
+    output_shape: prose
+    synonyms:
+      - manufacturer
+      - company
+      - made by
+      - produced by
+      - المصنع
+      - شركة
+      - المنتج
+    resolves_to_columns: [Manufacturer, manufacturer, company]

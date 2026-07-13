@@ -11,7 +11,10 @@ PyMuPDF==1.24.3
 Pillow>=10.0.0
 # docling>=2.0.0
 # rapidocr-paddle>=1.4.0
-# FlagEmbedding>=1.2.0
+FlagEmbedding>=1.4.0
+# FlagEmbedding/BGE reranker breaks on transformers v5 (prepare_for_model removed).
+transformers>=4.44.2,<5.0.0
+huggingface_hub>=0.23.0
 # unstructured>=0.11.0
 openpyxl>=3.1.0
 pandas>=2.0.0
@@ -39,9 +42,15 @@ prometheus-client==0.21.1
 celery==5.5.3
 redis==6.2.0
 flower==2.0.1
+tqdm>=4.66.0
 
 google-cloud-aiplatform>=1.71.0
+google-cloud-discoveryengine>=0.13.0
 google-auth>=2.35.0
 
 # arabic-reshaper>=3.0.0
 # python-bidi>=0.4.2
+
+pytest>=8.0
+pytest-asyncio>=0.24
+PyYAML>=6.0

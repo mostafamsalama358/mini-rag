@@ -31,3 +31,5 @@ class ResponseSignal(Enum):
     PROJECT_NAME_REQUIRED = "project_name_required"
     PROJECT_PROMPT_RETRIEVED = "project_prompt_retrieved"
     PROJECT_PROMPT_UPDATED = "project_prompt_updated"
+    PROJECT_DOMAIN_INVALID = "project_domain_invalid"
+    PROJECT_CONFIG_UPDATED = "project_config_updated"

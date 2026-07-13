@@ -1,0 +1,6 @@
+label_template: "{file_name} — row {row_index}"
+extra_keys:
+  - file_name
+  - row_index
+  - sheet_name
+  - brand_name

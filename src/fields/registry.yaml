@@ -1,0 +1,13 @@
+# Field Registry — registered field packs.
+# Keys MUST be a subset of DomainKeyEnum values (models/enums/DomainKeyEnum.py).
+# Adding a domain: DomainKeyEnum + Alembic enum migration + registry entry + fields/{key}/
+version: 1
+default: generic
+
+fields:
+  - key: generic
+    label: Generic RAG
+  - key: pharmacy
+    label: Pharmacy
+  - key: legal
+    label: Legal
