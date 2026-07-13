@@ -13,10 +13,25 @@ StructuralElementType = Literal[
     "table-row",
     "list",
     "list-item",
+    "heading",
+    "code-block",
+    "quote",
+    "figure-placeholder",
 ]
 
 CANONICAL_ELEMENT_TYPES: frozenset[str] = frozenset(
-    {"section", "paragraph", "table", "table-row", "list", "list-item"}
+    {
+        "section",
+        "paragraph",
+        "table",
+        "table-row",
+        "list",
+        "list-item",
+        "heading",
+        "code-block",
+        "quote",
+        "figure-placeholder",
+    }
 )
 
 ExtractionOutcome = Literal["full", "degraded"]
@@ -52,6 +67,11 @@ class StructuralElement(BaseModel):
                 raise ValueError("table-row elements require fields")
             if has_text:
                 raise ValueError("table-row elements must not set text")
+        elif self.type == "figure-placeholder":
+            if not has_text:
+                raise ValueError("figure-placeholder elements require text (may be empty string)")
+            if has_fields:
+                raise ValueError("figure-placeholder elements must not set fields")
         else:
             if not has_text:
                 raise ValueError(f"{self.type} elements require text")

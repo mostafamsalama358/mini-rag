@@ -319,6 +319,19 @@ async def _process_project_files(task_instance, project_id: int,
                     extraction_info.get("element_counts"),
                     len(file_chunks_records),
                 )
+            chunk_set = getattr(file_chunks, "chunk_set", None)
+            if chunk_set is not None:
+                report = chunk_set.validation_report
+                logger.info(
+                    "chunking_engine | file=%s strategy_id=%s element_counts_by_type=%s "
+                    "validation_status=%s failed_rules=%s warnings=%s",
+                    file_id,
+                    chunk_set.strategy_id,
+                    chunk_set.element_counts_by_type,
+                    report.status,
+                    len(report.failed_rules),
+                    len(report.warnings),
+                )
             manifest_entity_key = (
                 discovered_manifest.entity_key if discovered_manifest is not None else None
             )

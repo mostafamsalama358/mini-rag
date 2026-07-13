@@ -20,6 +20,10 @@ def test_canonical_vocabulary():
         "table-row",
         "list",
         "list-item",
+        "heading",
+        "code-block",
+        "quote",
+        "figure-placeholder",
     }
 
 

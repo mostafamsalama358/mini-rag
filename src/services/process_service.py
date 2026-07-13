@@ -280,18 +280,28 @@ class ProcessController(BaseController):
             element_mapping = {}
             default_max = chunk_size
             overlap = overlap_size
+            strategy_name = "semantic_structural"
+            policy_name = "rule_based"
             if profile is not None:
                 element_mapping = dict(profile.chunking.element_mapping or {})
                 default_max = int(profile.chunking.chunk_size or chunk_size)
                 overlap = int(profile.chunking.overlap or overlap_size)
+                strategy_name = str(profile.chunking.strategy or strategy_name)
+                policy_name = str(profile.chunking.policy or policy_name)
 
-            records = map_elements_to_chunks(
-                model.elements,
-                element_mapping,
-                default_max_chars=default_max,
+            from core.chunking.models import ChunkingStrategyConfig
+            from core.chunking.registry import get_chunking_strategy
+
+            chunk_config = ChunkingStrategyConfig(
+                strategy=strategy_name,
+                max_chars=default_max,
                 overlap=overlap,
-                file_name=file_id,
+                policy=policy_name,
+                element_mapping=element_mapping,
             )
+            strategy_impl = get_chunking_strategy(strategy_name, chunk_config)
+            chunk_set = strategy_impl.chunk(model, chunk_config)
+            records = [{"text": c.text, "metadata": c.metadata} for c in chunk_set.chunks]
             all_chunks = DocumentBatch()
             for rec in records:
                 text = clean_extracted_text(rec["text"])
@@ -310,6 +320,7 @@ class ProcessController(BaseController):
                 "reason": model.degradation_reason,
                 "element_counts": model.element_counts(),
             }
+            all_chunks.chunk_set = chunk_set
             manifest = getattr(file_content, "field_manifest", None)
             if manifest is not None:
                 all_chunks.field_manifest = manifest

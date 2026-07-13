@@ -79,6 +79,8 @@ class ChunkingProfile(BaseModel):
     default_strategy: str = "character"
     chunk_size: int = 800
     overlap: int = 120
+    strategy: str = "semantic_structural"
+    policy: str = "rule_based"
     element_mapping: dict[str, ElementChunkConfig] = Field(default_factory=dict)
 
     @field_validator("by_extension", mode="before")

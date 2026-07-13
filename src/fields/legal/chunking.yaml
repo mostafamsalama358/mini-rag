@@ -3,6 +3,8 @@ by_extension:
   .txt: character
   .docx: page
 default_strategy: character
+strategy: semantic_structural
+policy: rule_based
 chunk_size: 800
 overlap: 120
 element_mapping:

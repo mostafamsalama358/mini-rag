@@ -5,6 +5,16 @@ without importing langchain/fastapi. ProcessController delegates to these.
 
 Spec 006: ``row_chunk_*`` are thin compatibility shims over
 ``xlsx_parser`` + ``map_elements_to_chunks`` (no behavior change for callers).
+
+Spec 007 Intelligent Chunking Engine:
+  The Boundary Decision Pipeline (SemanticBoundaryEvaluator → BoundaryFeatures
+  → BoundaryDecisionPolicy → BoundaryDecision → ChunkBuilder → ChunkValidator
+  → ChunkSet) lives in ``core.chunking.strategies.semantic_structural`` and is
+  selected via ``ChunkingProfile.strategy`` / ``get_chunking_strategy()``.
+  See ``specs/007-intelligent-chunking-engine/plan.md``.
+
+  ``row_chunk_dataframe`` / ``row_chunk_xlsx`` remain backward-compat shims that
+  still call ``map_elements_to_chunks`` directly for legacy pharmacy row paths.
 """
 from __future__ import annotations
 
