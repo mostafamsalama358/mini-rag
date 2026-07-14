@@ -1,0 +1,23 @@
+# Generic field pack — Evidence Orchestrator configuration (spec 011).
+# Domain packs (pharmacy, legal) may override any key.
+
+dedup_exact_enabled: true
+dedup_near_enabled: true
+dedup_similarity_threshold: 0.95
+dedup_near_batch_limit: 200
+expansion_enabled: true
+expansion_score_threshold: 0.80
+expansion_min_chars: 150
+
+fusion_weights:
+  retrieval: 0.6
+  entity: 0.3
+  recency: 0.1
+
+compressibility_weights:
+  redundancy: 0.6
+  relevance_inverse: 0.4
+
+token_counter: character
+celery_offload_threshold: 500
+schema_version: "1.0.0"

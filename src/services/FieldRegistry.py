@@ -25,6 +25,10 @@ from typing import Any
 import yaml
 
 from models.enums.DomainKeyEnum import DomainKeyEnum
+from core.context_builder.config import (
+    ContextBuilderConfig,
+    resolve_context_builder_config,
+)
 from fields.schemas import (
     ChunkingProfile,
     DomainMeta,
@@ -321,6 +325,21 @@ class FieldRegistry:
     def load_project_defaults(self, domain_key: str | DomainKeyEnum) -> dict[str, Any]:
         """Read `fields/{domain}/project.defaults.yaml` → dict."""
         return deepcopy(self.get_pack(domain_key).project_defaults)
+
+    def load_context_builder_config(
+        self,
+        domain_key: str | DomainKeyEnum,
+        project_overrides: dict[str, Any] | None = None,
+    ) -> ContextBuilderConfig:
+        """Resolve Context Builder config: generic < domain < project.config_json."""
+        key = domain_key.value if isinstance(domain_key, DomainKeyEnum) else str(domain_key)
+        overrides = _deep_merge(
+            self.get_pack(self._default_key).project_defaults,
+            self.get_pack(key).project_defaults,
+        )
+        if project_overrides:
+            overrides = _deep_merge(overrides, project_overrides)
+        return resolve_context_builder_config(key, overrides)
 
     def load_project_users(self) -> dict[str, list[str]]:
         """Load and validate `fields/project_users.yaml`.

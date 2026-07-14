@@ -1,0 +1,5 @@
+# Pharmacy domain overrides — entity-match boost for drug/product queries.
+fusion_weights:
+  entity: 0.4
+  retrieval: 0.5
+  recency: 0.1

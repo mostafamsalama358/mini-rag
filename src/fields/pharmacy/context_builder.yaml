@@ -1,0 +1,2 @@
+# Pharmacy domain overrides for Context Builder (spec 012).
+total_context_window: 16000

@@ -12,3 +12,9 @@ chunking:
 retrieval:
   exhaustive_min_limit: 30
   disable_chunk_focus: false
+evidence_orchestrator:
+  # Field-pack module: see fields/{domain}/evidence_orchestrator.yaml
+  module: evidence_orchestrator.yaml
+context_builder:
+  # Field-pack module: see fields/{domain}/context_builder.yaml
+  module: context_builder.yaml

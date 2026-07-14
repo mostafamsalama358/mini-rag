@@ -85,6 +85,22 @@ DI_ELEMENTS = Histogram(
     buckets=(1, 5, 10, 25, 50, 100, 250, 500, 1000, 5000),
 )
 
+CONTEXT_BUILDER_PIPELINE_DURATION = Histogram(
+    'context_builder_pipeline_duration_seconds',
+    'Context Builder pipeline stage latency',
+    ['stage'],
+)
+CONTEXT_BUILDER_ITEMS_DROPPED = Counter(
+    'context_builder_items_dropped_total',
+    'Evidence items dropped during Context Builder assembly',
+    ['reason'],
+)
+CONTEXT_BUILDER_CONFLICTS_DETECTED = Counter(
+    'context_builder_conflicts_detected_total',
+    'Conflict groups detected by Context Builder',
+    ['entity_tag'],
+)
+
 class PrometheusMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
 

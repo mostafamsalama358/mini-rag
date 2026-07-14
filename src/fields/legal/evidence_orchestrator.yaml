@@ -1,0 +1,5 @@
+# Legal domain overrides — recency boost for regulatory content.
+fusion_weights:
+  recency: 0.2
+  retrieval: 0.5
+  entity: 0.3

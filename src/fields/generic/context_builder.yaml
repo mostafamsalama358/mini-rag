@@ -1,0 +1,18 @@
+# Generic field pack — Context Builder configuration (spec 012).
+# Domain packs (pharmacy, legal) may override any key.
+
+total_context_window: 8000
+reservations:
+  system_prompt: 500
+  question: 200
+  output: 1000
+compressibility_threshold: 0.70
+final_dedup_enabled: true
+final_dedup_similarity_threshold: 0.85
+final_dedup_max_pairs: 2000
+compression_enabled: true
+compression_strategy: heuristic
+token_counter: character
+timeout_seconds: 30.0
+evidence_pack_schema_version: "1.0.0"
+schema_version: "1.0.0"

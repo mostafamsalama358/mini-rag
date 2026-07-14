@@ -1,0 +1,3 @@
+# Legal domain overrides for Context Builder (spec 012).
+compression_strategy: heuristic
+compressibility_threshold: 0.65
