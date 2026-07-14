@@ -261,6 +261,7 @@ class RetrievalPlanMetadata(BaseModel):
 class RetrievalPlan(BaseModel):
     model_config = ConfigDict(frozen=True)
 
+    canonical_query: str = ""
     intent: QueryIntent
     entities: tuple[ResolvedEntity, ...] = ()
     filters: tuple[QueryFilter, ...] = ()

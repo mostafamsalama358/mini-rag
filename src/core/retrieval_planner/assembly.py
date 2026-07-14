@@ -149,6 +149,7 @@ class PlanAssembler:
         ts = created_at or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
         return RetrievalPlan(
+            canonical_query=canonical_query,
             intent=intent,
             entities=tuple(entities),
             filters=tuple(filters),

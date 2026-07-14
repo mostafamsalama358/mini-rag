@@ -1,0 +1,28 @@
+# Generic field pack — Retrieval Engine configuration (spec 010).
+# Domain packs (pharmacy, legal) may override any key.
+
+enabled_strategies:
+  - semantic
+  - keyword
+  - metadata
+  - structured
+  - mixed
+
+hybrid_components:
+  - semantic
+  - keyword
+
+default_strategy: semantic
+fusion_algorithm: rrf
+rrf_k: 60
+reranker_backend: passthrough
+max_expander_variants: 3
+trace_enabled: true
+partial_results_allowed: true
+
+budget_defaults:
+  max_candidates: 50
+  max_evidence_units: 10
+
+# experimental retrievers are opt-in:
+# enabled_strategies: [..., graph, sql]

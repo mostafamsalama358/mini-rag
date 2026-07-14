@@ -1,0 +1,19 @@
+# Pharmacy domain overrides — Retrieval Engine (spec 010).
+
+enabled_strategies:
+  - semantic
+  - keyword
+  - metadata
+  - structured
+  - hybrid
+
+hybrid_components:
+  - semantic
+  - keyword
+  - metadata
+
+reranker_backend: bge_reranker
+
+budget_defaults:
+  max_candidates: 40
+  max_evidence_units: 10
