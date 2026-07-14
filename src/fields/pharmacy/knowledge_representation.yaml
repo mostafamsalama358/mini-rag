@@ -1,0 +1,4 @@
+knowledge_representation:
+  normalizer_params:
+    alias_map:
+      asa: acetylsalicylic acid

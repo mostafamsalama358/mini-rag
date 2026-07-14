@@ -17,6 +17,7 @@ celery_app = Celery(
         "tasks.data_indexing",
         "tasks.process_workflow",
         "tasks.maintenance",
+        "tasks.knowledge_representation",
     ],
 )
 

@@ -1,0 +1,10 @@
+knowledge_representation:
+  extractor_strategy: structural
+  normalizer_strategy: rule_based
+  discoverer_strategy: structural
+  representation_strategies: []
+  max_units: null
+  extractor_params: {}
+  normalizer_params:
+    alias_map: {}
+  discoverer_params: {}
