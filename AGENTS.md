@@ -1,15 +1,15 @@
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan:
-`specs/012-context-builder/plan.md`
+`specs/013-answer-generation/plan.md`
 
 Related:
-- `specs/012-context-builder/` — **active**; Context Builder: eight-stage async pipeline (allocate budget → select under budget → compress → detect conflicts → stitch → final dedup → assemble) consuming `EvidencePack` (spec 011) and emitting a token-budget-compliant `Context`; four pluggable interfaces (`ITokenBudgetAllocator`, `IContextCompressor`, `IConflictDetector`, `IContextStitcher`); `Context` is the stable public contract for spec 013 (Answer Generation); schema versioned at `1.0.0`; domain behaviour injected via `context_builder.yaml` field-pack config (generic < domain < project).
-- `specs/011-evidence-orchestrator/` — **dependency (active)**; `EvidencePack` (schema v1.0.0) is the primary input; `EvidenceItem` carries `entity_tags`, `section_path`, `compressibility_score`, `citation`, `relevance_score`; `ITokenCounter`, `char_ngrams`, `jaccard_similarity` reused directly (no duplication); `EvidencePack.schema_version` major-version checked at pipeline entry.
-- `specs/009-retrieval-planner/` — **dependency (complete)**; `plan_id` threaded through `EvidencePack` into `Context`.
-- `specs/008-knowledge-representation/` — **dependency (complete)**; `entity_tags` on `EvidenceItem` carry KnowledgeUnit canonical forms used by `IConflictDetector` for entity grouping.
-- `specs/002-field-registry/` — dependency; field packs supply context builder configuration via `context_builder.yaml`; controls budget reservations, compressibility threshold, dedup threshold, compression strategy.
-- `specs/001-pharmacy-query-enhancement/` — **superseded**; pharmacy work is Phase D in `002-field-registry/spec.md`
+- `specs/013-answer-generation/` — **active**; Answer Generation: seven-stage async pipeline (version gate → no-answer guard → prompt composition → conflict-disclosure injection → LLM call → output parsing → citation formatting → grounding check) consuming `Context` (spec 012) and emitting `AnswerResult` (schema v1.0.0); four pluggable interfaces (`IPromptComposer`, `IOutputParser`, `ICitationFormatter`, `IGroundingChecker`); `AnswerResult` is the stable public contract for spec 014 (Answer Quality); domain behaviour injected via `answer_generation.yaml` field-pack config (generic < domain < project); LLM call delegates to existing `LLMProviderFactory`.
+- `specs/012-context-builder/` — **dependency (active)**; `Context` (schema v1.0.0) is the primary input; `Context.citation_map` keys are `item_id` values (`ei_` prefix) — the unambiguous lookup key for `ICitationFormatter`; `Context.conflicts` drives conflict-disclosure injection; `Context.schema_version` major-version checked at pipeline entry (FR-010); `Context.plan_id` threaded into `AnswerResult` for correlation.
+- `specs/011-evidence-orchestrator/` — **dependency (active)**; `Citation` model (from `core.evidence_orchestrator.models`) is the value type in `Context.citation_map`; `EvidenceItem.entity_tags` are the entity vocabulary for the grounding checker.
+- `specs/009-retrieval-planner/` — **dependency (complete)**; `plan_id` threaded through `EvidencePack` → `Context` → `AnswerResult`.
+- `specs/002-field-registry/` — dependency; field packs supply answer generation configuration via `answer_generation.yaml`; controls `system_prompt_template`, `capability_modules`, temperature, output tokens, grounding check toggle.
+- `specs/005-answer-quality/` — **downstream**; `AnswerResult` is the input contract; golden query set used for SC-007 acceptance criteria.
 <!-- SPECKIT END -->
 
 <!-- lean-ctx -->

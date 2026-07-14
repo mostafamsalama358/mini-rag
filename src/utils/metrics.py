@@ -101,6 +101,24 @@ CONTEXT_BUILDER_CONFLICTS_DETECTED = Counter(
     ['entity_tag'],
 )
 
+ANSWER_GENERATION_DURATION_SECONDS = Histogram(
+    'answer_generation_duration_seconds',
+    'Answer Generation pipeline stage latency (excluding LLM round-trip is not separated)',
+    buckets=(0.01, 0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0),
+)
+ANSWER_GENERATION_CITATION_RESOLUTION_TOTAL = Counter(
+    'citation_resolution_total',
+    'Citations resolved during Answer Generation',
+)
+ANSWER_GENERATION_NO_ANSWER_TOTAL = Counter(
+    'no_answer_total',
+    'Answer Generation runs that returned an explicit no-answer result',
+)
+ANSWER_GENERATION_GROUNDING_FLAG_TOTAL = Counter(
+    'grounding_flag_total',
+    'Grounding flags emitted during Answer Generation',
+)
+
 class PrometheusMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
 

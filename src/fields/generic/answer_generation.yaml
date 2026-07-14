@@ -1,0 +1,16 @@
+# Generic field pack — Answer Generation configuration (spec 013).
+# Domain packs (pharmacy, legal) may override any key.
+
+context_schema_version: "1.0.0"
+max_output_tokens: 2048
+temperature: 0.3
+grounding_check_enabled: true
+no_answer_message: "The answer could not be found in the provided sources."
+conflict_disclosure_header: "## Conflicting Information"
+system_prompt_template: |
+  You are a precise question-answering assistant. Answer based strictly on
+  the provided context. Do not introduce information outside the context.
+  Cite sources by their block ID (e.g. [ei_4a7b3c9d]).
+  Return JSON: {"answer": "...", "confidence_note": "..."}.
+capability_modules: []
+schema_version: "1.0.0"
