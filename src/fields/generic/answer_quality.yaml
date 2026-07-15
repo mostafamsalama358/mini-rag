@@ -1,0 +1,13 @@
+# Generic field pack — Answer Quality configuration (spec 014).
+# Domain packs (pharmacy, legal) may override any key.
+
+global_thresholds:
+  coverage: 0.8
+  faithfulness: 0.8
+  completeness: 0.7
+pass_rate_threshold: 0.9
+regression_threshold: 0.1
+completeness_overlap_threshold: 0.5
+run_store_dir: ".answer_quality/runs"
+fixture_dir: "tests/fixtures/answer_quality"
+schema_version: "1.0.0"

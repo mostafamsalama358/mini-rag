@@ -1,126 +1,274 @@
-# Research: Answer Quality Gap (NotebookLM-level Completeness & Accuracy)
+# Research: Answer Quality (spec 014)
 
-**Feature**: `005-answer-quality`  
-**Date**: 2026-07-11  
-**Goal**: Generic core produces answers that are **complete** (not missing listed items) and **accurate** (faithful to sources), approaching NotebookLM answer quality — without domain-specific Python. Domain differences stay in YAML field packs.
-
-## Product intent (locked)
-
-| Wanted from NotebookLM | Not in scope |
-| ---------------------- | ------------ |
-| Complete answers | Audio Overview / podcast |
-| Exact, source-faithful answers | Mind maps / study guides |
-| Generic core + YAML packs | Pharmacy-only code paths |
+**Date**: 2026-07-15 | **Phase**: 0 (pre-design)
 
 ---
 
-## Success metrics (must be measurable)
+## R-01: EvidencePack Structure — Coverage Evaluator Input Key
 
-Numbers below are **targets**. Baseline is unknown until the eval harness (T003) runs once on a fixed fixture project.
+**Question**: What fields does `EvidencePack` expose, and which field should
+`ICoverageEvaluator` use to match against `GoldenTestFixture.expected_source_ids`?
 
-| ID | Metric | Definition | Target |
-| -- | ------ | ---------- | ------ |
-| **AQ-1** | Retrieval coverage | For exhaustive/list gold cases: `|retrieved ∩ gold_source_rows| / |gold_source_rows|` before generation | ≥ **95%** |
-| **AQ-2** | List completeness | For list answers: `|answer_items ∩ gold_items| / |gold_items|` | ≥ **95%** |
-| **AQ-3** | Hallucination / invent rate | Share of answer claims not supported by retrieved context (human or LLM-judge on golden set) | ≤ **5%** |
-| **AQ-4** | Unsupported silence | When gold says “not in sources”, system refuses or clarifies instead of inventing | **100%** |
-| **AQ-5** | Truncation rate | Exhaustive queries where char-budget or rerank drops >20% of retrieved candidates before prompt | ≤ **10%** |
-| **AQ-6** | Citation usefulness | Answer ends with Sources; cited labels correspond to chunks actually used | ≥ **90%** of cases |
+**Finding**: `src/core/evidence_orchestrator/models.py` defines:
 
-**Eval unit**: one case = `(question, optional chat context, gold_items or gold_claims, gold_source_keys)`.  
-Schema is **domain-agnostic**; fixtures live under pack folders (e.g. pharmacy) but the scorer lives in `core` / `scripts`.
+```python
+class EvidenceItem(BaseModel):
+    item_id: str          # "ei_" + sha16(chunk_id|doc_id)
+    doc_id: str           # stable document identifier
+    chunk_id: str         # chunk identifier within document
+    text: str             # the retrieved chunk text
+    relevance_score: float
+    citation: Citation    # metadata: document_title, section_title, page_number, etc.
+    entity_tags: list[str]
+    sources: list[EvidenceItemSource]
+    ...
 
----
+class EvidencePack(BaseModel):
+    pack_id: str          # "ep_" prefixed
+    plan_id: str          # threaded from RetrievalPlan
+    items: list[EvidenceItem]
+    is_empty: bool
+    ...
+```
 
-## Current pipeline strengths (keep)
+**Decision**: `GoldenTestFixture.expected_source_ids` entries are matched against
+`{item.doc_id for item in evidence_pack.items}`. Rationale:
 
-Already in core / packs (004 + field registry):
+- `doc_id` is stable and human-readable — golden fixture authors reference documents,
+  not internal chunk or item IDs.
+- `chunk_id` and `item_id` are internal system identifiers; fixtures authored by
+  humans cannot reasonably track chunk-level IDs.
+- Coverage means "did retrieval surface this document?" not "did it surface this
+  exact chunk?".
 
-1. Semantic `QueryPlan` → structured retrieval intent (entity, field, operation, scope).
-2. Exhaustive limit bump when `operation=list` + `scope=all` (`exhaustive_min_limit` from `retrieval.yaml`).
-3. Entity grounding (catalog + document-level).
-4. Clarification on unknown entity (no silent wrong retrieval).
-5. Hybrid search + rerank + citations prompt language.
-6. Domain prompts via `fields/*/prompts/` + generic `rag.py` system rules for “list every item”.
+A golden fixture entry `expected_source_ids: ["doc-aspirin-pil"]` passes if any
+`EvidenceItem` in the pack has `doc_id == "doc-aspirin-pil"`.
 
----
-
-## Gap analysis (why results are still “incomplete / imprecise”)
-
-### G1 — No coverage gate after retrieval (primary incompleteness)
-
-**Symptom**: List questions miss items that exist in the index.  
-**Cause**: Top-k / RRF / rerank return a subset; nothing compares retrieved count to **candidate row count** for the entity/field.  
-**Where**: `answer_service.py` retrieval stage; `count_entity_prefix_matches` is logged but not used as a top-up signal.  
-**Fix (core)**: If `scope=all` (or list-shaped field) and `candidate_rows > len(docs)`, fetch remaining entity-scoped rows (or raise limit and re-search) before generation.
-
-### G2 — Context truncation after successful retrieval
-
-**Symptom**: Retrieved 80 rows; prompt only keeps first N by `RAG_PROMPT_CHAR_BUDGET`.  
-**Cause**: Budget loop drops tail docs silently (`answer_service.py`).  
-**Fix (core)**: Prefer packing more shorter field values; log `truncated=true`; for exhaustive mode, raise budget or multi-pass generate (map-reduce lists) instead of silent drop.
-
-### G3 — Reranker can discard exhaustive recall
-
-**Symptom**: Correct rows retrieved, then rerank empties or heavily prunes the set.  
-**Cause**: Rerank optimized for “best passage”, not “all matching rows”.  
-**Fix (core)**: Exhaustive mode: rerank for ordering only, **do not cut** below `min(candidate_rows, retrieval_limit)`; or skip rerank cut for `scope=all`.
-
-### G4 — Generation may omit items still in context
-
-**Symptom**: All rows in prompt; model lists a subset.  
-**Cause**: Known LLM list truncation (001 research R7); no under-count retry.  
-**Fix (core)**: Completeness footer + heuristic count (bullets / distinct values vs retrieved row count) → one retry with stronger instruction.
-
-### G5 — No answer-quality golden harness
-
-**Symptom**: Parser golden set exists (004); answer completeness is not regression-tested.  
-**Fix (core)**: `tests/golden/answer_quality/` + `scripts/run_answer_quality_golden.py` scoring AQ-1…AQ-6.
-
-### G6 — Domain hooks still in Python
-
-**Symptom**: `if query_plan.field == "interactions"` hard-coded (limit 500, structured fetch).  
-**Cause**: Fast pharmacy path without YAML strategy.  
-**Fix (core + YAML)**: `retrieval.yaml` strategy keys (`structured_pair`, `entity_prefix_all`, `vector_default`); core dispatches by strategy name — packs only declare which concept uses which strategy.
-
-### G7 — Chunk focus can strip list detail
-
-**Symptom**: `focus_document_text_for_query` keeps a slice; other list items in the same chunk disappear.  
-**Fix (core)**: Disable focus when `scope=all` or `output_shape=list` (honor `disable_chunk_focus` already; make plan-driven default).
-
-### G8 — Faithfulness not verified
-
-**Symptom**: Fluent answer with invented numbers/names.  
-**Cause**: Prompt says “documents only”; no post-check.  
-**Fix (core, optional v1)**: Lightweight claim check against context for numeric / entity tokens; on fail, regenerate or soften to “not found”.
+**Alternatives considered**:
+- Match on `chunk_id`: rejected — too fine-grained; humans cannot maintain chunk IDs
+  as documents are re-chunked.
+- Match on `item_id`: rejected — `ei_` prefixes are deterministic hashes; same
+  problem as chunk_id.
 
 ---
 
-## Architectural verdict
+## R-02: AnswerResult Structure — Faithfulness and Completeness Inputs
 
-| Approach | Verdict |
-| -------- | ------- |
-| More pharmacy regex / special cases | Reject — fights generic core goal |
-| Bigger prompts only | Insufficient — cannot list what was never retrieved |
-| **Core completeness + faithfulness pipeline + YAML strategies** | Preferred |
-| Stuff entire corpus every turn (NotebookLM-style) | Too expensive; use **coverage-gated exhaustive retrieve** instead |
+**Question**: What fields does `AnswerResult` expose, and is `plan_id` present
+(resolving the spec 014 NFR-004 threading requirement)?
 
-NotebookLM-like quality here means: **almost all relevant indexed facts for the question reach the model, and the model is forced to use them faithfully** — not a clone of NotebookLM UX.
+**Finding**: `src/core/answer_generation/models.py` confirms:
+
+```python
+class AnswerResult(BaseModel):
+    answer: str
+    citations: list[CitationReference]
+    confidence_note: str | None
+    conflicts_disclosed: bool
+    no_answer: bool
+    grounding_flags: list[GroundingFlag]
+    plan_id: str          # ← confirmed present, Field(min_length=1)
+    context_id: str       # ← confirmed present
+    schema_version: str
+```
+
+`CitationReference` carries `citation_id`, `document_id`, `chunk_id`,
+`document_title`, `section_title`, `page_number`, `retrieval_score`.
+
+**Decision**: NFR-004 and `GoldenTestResult.plan_id` in spec 014 are correct.
+`plan_id` is threaded from `Context.plan_id` → `AnswerResult.plan_id` → `GoldenTestResult.plan_id`
+using `answer_result.plan_id` directly. No spec change needed.
 
 ---
 
-## Baseline measurement plan (before claiming %)
+## R-03: Faithfulness Text Corpus — Citations vs ContextBlocks
 
-1. Build one fixture project (pharmacy pack OK for fixtures; scorers stay generic).
-2. Curate ≥20 list cases + ≥15 factual cases + ≥10 “not in sources” cases.
-3. Run scorer once → fill **Baseline** column in a results table under `specs/005-answer-quality/baseline.md`.
-4. Implement G1–G4; re-run; gate merges on AQ-1/AQ-2/AQ-3 targets.
+**Question**: For text-based faithfulness checking, should the scorer compare answer
+claims against `Context.citation_map` values (Citation objects) or
+`Context.ordered_blocks[*].text`?
+
+**Finding**: `Citation` (from `core.evidence_orchestrator.models`) carries only
+metadata: `document_id`, `chunk_id`, `retrieval_score`, `score_source`, `page_number`,
+`section_title`, `document_title`, `chunk_index`. **It does not carry chunk text.**
+
+`ContextBlock` (from `core.context_builder.models`) carries `item_id`, `document_id`,
+`text`, `token_count`, `compressed`, `section_path`. The `text` field contains the
+actual retrieved chunk text shown to the LLM.
+
+**Decision**: `IFaithfulnessScorer.score()` builds its ground-truth text corpus from
+`Context.ordered_blocks[*].text`. Signature: `score(fixture, answer_result, context)`.
+
+Algorithm (v1 — `TextFaithfulnessScorer`):
+1. Build `source_corpus`: the union of all `ContextBlock.text` values, lower-cased.
+2. Tokenize `AnswerResult.answer` into candidate claim spans: numbers
+   (`\d+[\.,]?\d*\s*\w+`), capitalised sequences (≥2 consecutive title-cased words),
+   quoted strings.
+3. For each span, check if it (or a normalised form) appears in `source_corpus`.
+4. Unsupported spans → `unsupported_claims`; score = `1 - len(unsupported)/len(spans)`.
+5. If `ordered_blocks` is empty or `no_answer=True`: return `score=None`, set
+   `not_applicable=True`.
+
+**Algorithm selection**: A future "semantic" implementation would be a separate class
+implementing `IFaithfulnessScorer` and registered in `AnswerQualityRegistry` in its
+place. There is no per-fixture mode flag — algorithm selection is a registry-level
+decision, not a fixture-level one. `GoldenTestFixture` does not carry a `match_mode`
+field.
+
+**Alternatives considered**:
+- Use `Context.citation_map` values: rejected — Citations carry no text, only
+  metadata; cannot perform text-match faithfulness.
+- Use `EvidencePack` text: rejected — EvidencePack is not a declared input for the
+  faithfulness scorer; the context blocks already hold the text the LLM used.
+- Per-fixture `match_mode` field: rejected — algorithm selection belongs in the
+  registry, not the fixture; a fixture-level flag would create a dead field in v1
+  (only `"exact"` would be supported) and couple fixture authors to scorer internals.
 
 ---
 
-## Out of scope
+## R-04: Completeness Scoring — Facet Matching Strategy
 
-- Audio / mind-map / study-guide product features  
-- Fine-tuning a custom model  
-- Replacing hybrid retrieval architecture  
-- Pack-specific Python modules under `utils/{domain}/`
+**Question**: How should `ICompletenessScorer` match expected answer facets against
+the generated answer? Is there an existing text-similarity utility to reuse?
+
+**Finding**: `src/core/evidence_orchestrator/text_similarity.py` exists (used for
+deduplication). The project also has `utils/rerank/` (cross-encoder reranker).
+However, for v1 completeness scoring, the intent is to avoid live LLM/model calls.
+
+**Decision**: v1 uses keyword-set matching:
+1. Each `expected_answer_facet` string is tokenised into a set of meaningful tokens
+   (stop-words stripped).
+2. The `AnswerResult.answer` is tokenised the same way.
+3. A facet is "covered" if ≥50% of its tokens appear in the answer token set.
+4. `completeness_score = covered_facets / total_facets`.
+5. If `total_facets == 0` (single-part question): `score=None`, `not_applicable=True`.
+
+The 50% overlap threshold is configurable via `AnswerQualityConfig.completeness_overlap_threshold`.
+A semantic embedding-based implementation is a valid future replacement behind the
+same `ICompletenessScorer` interface.
+
+**Algorithm selection**: Same principle as R-03 — swapping to a semantic scorer is a
+registry-level decision. `GoldenTestFixture` does not carry a `match_mode` field;
+algorithm mode is not a per-fixture concern.
+
+**Alternatives considered**:
+- Exact substring match: rejected — too strict; synonyms and paraphrasing would cause
+  false negatives on valid answers.
+- Cross-encoder reranker: rejected — requires loading a model; violates the "no live
+  model calls in core scoring logic" constraint from spec 014 Assumptions.
+- `text_similarity.py` character n-gram: rejected — designed for deduplication, not
+  semantic facet coverage.
+- Per-fixture `match_mode` field: rejected — same rationale as R-03; dead field in
+  v1, couples fixture authors to scorer internals.
+
+---
+
+## R-05: Regression Store — Persistence Strategy
+
+**Question**: Where and how should `EvaluationResult` records be persisted for
+regression tracking?
+
+**Finding**: No existing persistence layer in `src/core/` is suitable for
+evaluation-specific records — SQLAlchemy models are project-data records (chunks,
+documents, projects); adding evaluation tables would couple the quality layer to the
+application DB. Celery/Redis are for task queues, not structured test result stores.
+
+**Decision**: v1 uses a `JsonRegressionStore` that persists `EvaluationResult`
+records as newline-delimited JSON in a configurable directory (default:
+`.answer_quality/runs/`). Each run produces one `{run_id}.json` file. The store
+exposes:
+- `save(result: EvaluationResult) → Path`
+- `load(run_id: str) → EvaluationResult`
+- `list_runs() → list[str]`
+- `diff(run_id_a: str, run_id_b: str) → RegressionDiff`
+
+The store directory is configurable via `AnswerQualityConfig.run_store_dir`. A
+database-backed store is a valid future implementation behind the same
+`IRegressionStore` interface.
+
+**Alternatives considered**:
+- SQLAlchemy table: rejected — couples quality evaluation to the application DB; adds
+  Alembic migration; unnecessary for offline/CI use.
+- SQLite file: considered; rejected for v1 — adds SQLAlchemy dependency; JSON is
+  sufficient for commit-keyed run records and more debuggable.
+
+---
+
+## R-06: Module Location and Naming Convention
+
+**Question**: Where in the source tree should `answer_quality` live, and what
+sub-module structure matches existing conventions?
+
+**Finding**: All pipeline-stage modules live under `src/core/`:
+`answer_generation/`, `context_builder/`, `evidence_orchestrator/`, etc. Each follows:
+
+```
+{feature}/
+├── __init__.py
+├── config.py       # Pydantic config model + YAML loader
+├── errors.py       # domain exceptions
+├── interfaces.py   # ABC interfaces
+├── models.py       # domain data models
+├── pipeline.py     # orchestration (runner)
+├── registry.py     # factory / DI registration
+└── {sub}/          # one sub-dir per pluggable concern
+    ├── __init__.py
+    └── {impl}.py
+```
+
+Existing test precedent for golden/fixture-driven tests:
+`tests/integration/test_retrieval_planner_golden.py` — runs the full planner against
+YAML fixtures in `tests/fixtures/`.
+
+**Decision**:
+- Source: `src/core/answer_quality/` (matches established convention)
+- Fixtures: `tests/fixtures/answer_quality/` (matches existing fixture location)
+- Unit tests: `tests/unit/core/answer_quality/`
+- Integration test: `tests/integration/test_answer_quality_golden.py`
+
+---
+
+## R-07: Golden Fixture Format
+
+**Question**: YAML or JSON for golden fixture files, and what fields are required?
+
+**Finding**: Existing fixtures (`tests/fixtures/chunking/`, `tests/fixtures/document_intelligence/`)
+are YAML. The retrieval planner golden test reads YAML fixtures. YAML is preferred for
+human-authored test data (comments, multi-line strings, readable lists).
+
+**Decision**: YAML format, one file per fixture set (domain or feature). Schema:
+
+```yaml
+version: "1.0.0"
+fixtures:
+  - question_id: "q001"
+    question: "What is the standard adult dose of aspirin?"
+    expected_source_ids:           # matched against EvidenceItem.doc_id (optional)
+      - "doc-aspirin-pil"
+    expected_answer_facets:        # for completeness scoring (optional)
+      - "325 mg"
+      - "every 4 to 6 hours"
+    thresholds:                    # per-question overrides (optional)
+      coverage: 0.8
+      faithfulness: 0.8
+      completeness: 0.7
+```
+
+Fields `expected_source_ids`, `expected_answer_facets`, and `thresholds` are all
+optional. When absent, the corresponding scoring dimension returns N/A.
+
+No `match_mode` field. Algorithm selection (text-matching vs semantic) is a registry
+configuration, not a per-fixture property — see R-03 and R-04.
+
+---
+
+## Resolution Summary
+
+| ID | Decision |
+|----|----------|
+| R-01 | Coverage matches `GoldenTestFixture.expected_source_ids` against `EvidenceItem.doc_id` |
+| R-02 | `AnswerResult.plan_id` confirmed present; `GoldenTestResult.plan_id` correct |
+| R-03 | Faithfulness corpus = `Context.ordered_blocks[*].text`; Citations carry no text |
+| R-04 | Completeness = keyword-set overlap at configurable threshold (default 50%) |
+| R-05 | v1 regression store = JSON files in configurable dir; `IRegressionStore` interface for future extension |
+| R-06 | Module at `src/core/answer_quality/`; tests under `tests/unit/core/answer_quality/` and `tests/integration/` |
+| R-07 | YAML golden fixtures in `tests/fixtures/answer_quality/`; all fields except `question_id` and `question` are optional; no `match_mode` field — algorithm mode is a registry decision (see R-03, R-04) |

@@ -1,0 +1,30 @@
+version: "1.0.0"
+fixtures:
+  - question_id: "q001"
+    question: "What is the adult dose of aspirin?"
+    expected_source_ids:
+      - "doc-aspirin-pil"
+    expected_answer_facets:
+      - "325 mg"
+      - "every 4 to 6 hours"
+    thresholds:
+      coverage: 0.8
+      faithfulness: 0.8
+      completeness: 0.7
+
+  - question_id: "q002"
+    question: "What are the contraindications for aspirin?"
+    expected_source_ids:
+      - "doc-aspirin-pil"
+      - "doc-bnf-aspirin"
+    expected_answer_facets:
+      - "allergic to aspirin"
+      - "bleeding disorder"
+
+  - question_id: "q003"
+    question: "Can children take aspirin?"
+    expected_source_ids:
+      - "doc-paediatric-guidance"
+    expected_answer_facets:
+      - "not recommended"
+      - "Reye's syndrome"

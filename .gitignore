@@ -39,7 +39,9 @@ build/
 .DS_Store
 Thumbs.db
 
-# Environment / secrets (constitution Principle IX — never commit secrets)
+# Answer quality run store (local evaluation artifacts)
+.answer_quality/
+
 .env
 .env.*
 !.env.example
