@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: TIMOLOL
+Risk: Masked bradycardia
+Type: Pharmacodynamic (blunted compensatory response)
+Monitoring: 24h Holter if HR<55 bpm
+Dose adjustment: Pantoprazole min effective dose
+Alternative: Antacids PRN
+Patient warning: Check AM pulse; withhold if <50 bpm.
+Severity: caution
+
+Clinical note:
+Risk: Masked bradycardia; Type: Pharmacodynamic (blunted compensatory response); Monitoring: 24h Holter if HR<55 bpm; Dosage: Pantoprazole min effective dose; Alternative: Antacids PRN; Patient Warnings: Check AM pulse; withhold if <50 bpm.

@@ -1,0 +1,16 @@
+Drug interaction — Daflon 500
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 11
+Brand: Daflon 500
+API 1: DIOSMIN
+API 2: ATORVASTATIN
+Risk: Potential increased risk of myopathy/rhabdomyolysis.
+Type: Uncertain pharmacokinetic (potential OATP inhibition).
+Monitoring: Monitor for muscle pain/weakness and CPK levels.
+Dose adjustment: Consider lower statin starting dose.
+Alternative: A non-interacting statin (e.g., pravastatin).
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Potential increased risk of myopathy/rhabdomyolysis. Type: Uncertain pharmacokinetic (potential OATP inhibition). Monitoring: Monitor for muscle pain/weakness and CPK levels. Dosage: Consider lower statin starting dose. Alternative: A non-interacting statin (e.g., pravastatin). Patient: Report unexplained muscle…

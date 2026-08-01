@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B6 (PYRIDOXINE)
+API 2: PHENYTOIN
+Risk: Reduced phenytoin efficacy → breakthrough seizures (pyridoxine >200mg/day induces metabolism).
+Type: -
+Monitoring: Serum phenytoin levels (target 10-20 μg/mL) monthly.
+Dose adjustment: Avoid high-dose B6; if essential, increase phenytoin by 25-50 mg/day.
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Reduced phenytoin efficacy → breakthrough seizures (pyridoxine >200mg/day induces metabolism). Monitoring: Serum phenytoin levels (target 10-20 μg/mL) monthly. Dosage: Avoid high-dose B6; if essential, increase phenytoin by 25-50 mg/day. Patient: Report aura/seizure recurrence immediately.

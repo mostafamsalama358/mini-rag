@@ -1,0 +1,97 @@
+NORVASC 5MG 30 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Norvasc
+Catalog SKU: NORVASC 5MG 30 TAB.
+INN / actives: Amlodipine
+Catalog New Material: AMLODIPINE
+Strength / form: Amlodipine 5 mg | (web-supplemented dosing below)
+Manufacturer / market: VIATRIS EGYPT
+Price (catalog): 162
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > HYPERTENSION
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=NORVASC 5MG; sheet lookup INNs=Amlodipine, AMLODIPINE
+Web clinical sources: Amlodipine SmPC; Norvasc
+
+1. What Norvasc is used for
+Catalog uses: antihypertensive.selective calcium channel blocker
+Approved uses (material sheet): Hypertension - Adults: Start 5 mg daily; max 10 mg daily. Pediatrics (≥6 years): 2.5 : 5 mg daily*
+Chronic Stable Angina - 5 : 10 mg daily*
+Vasospastic Angina - 5 : 10 mg daily*
+CAD - 5 : 10 mg daily to reduce hospitalization/revascularization*
+Off-label mentions (material sheet): Raynaud’s Phenomenon - 5 to 10 mg daily*
+Diabetic Nephropathy - 5 to 10 mg daily with ACEI/ARB*
+Group 1 PAH - 5 to 10 mg daily in vasoreactive patients*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Usually 5 mg once daily (may titrate to 10 mg). Take consistently.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Specialist paediatric hypertension dosing only.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Norvasc if / disease cautions
+From material/disease sheets:
+[AMLODIPINE] Hypersensitivity to AMLODIPINE *
+Severe Hypotension *
+Structural / Valvular & Inflammatory Heart Diseases*
+Heart Failure (CHF)*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+Pregnancy; unspecified gestational age*
+Breastfeeding*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): None for amlodipine. However, critical warnings include:
+• Angina/MI Exacerbation: Rare worsening of ischemia at initiation or dose escalation, especially in severe CAD.
+• Hypotension: Risk in volume-depleted or aortic stenosis patients
+Notes (material sheet): • Avoid grapefruit products 
+• Using amlodpine together with multivitamin with minerals can decrease the effects of amlodpine , You may need a dose adjustment or need your blood pressure checked more often if you take both medications (Calcium-containing products may decrease the effectiveness of calcium channel blockers by saturating calcium channels with calcium. Calcium chloride has been used to manage acute severe verapamil toxicity)
+• Avoid natural licorice
+.......................................................................................
+• Dose Modification:
+- Hepatic Impairment: Reduce initial dose to 2.5 mg daily in cirrhosis; titrate gradually due to prolonged half-life (60% ↑…
+Patient education excerpt: • Best Time to Take:
+- Once daily, same time each day; with/without food.
+• Interactions:
+- Avoid grapefruit juice (↑ side effects); report use of erectile drugs (e.g., sildenafil) due to hypotension risk.
+• Missed Dose:
+- Take ASAP if <12 hours late; skip if near next dose. Never double dose
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Amlodipine + AMIODARONE: Risk: Peripheral edema exacerbation; Type: Pharmacodynamic; Monitoring: Daily weights; Dosage Adjustments: Reduce amlodipine to 2.5mg; Alternative: ACE inhibitors; Patient Warnings/Management: Leg elevation.
+- Amlodipine + DRONEDARONE: Risk: Additive vasodilation → hypotension; Type: Pharmacodynamic; Monitoring: BP sitting/standing; Dosage Adjustments: Start amlodipine 2.5mg; Alternative: ACE inhibitors; Patient Warnings/Management: Rise slowly from bed.
+- Amlodipine + CAPTOPRIL: Risk: Additive hypotension and ankle edema; Type: Pharmacodynamic; Monitoring: BP, edema status; Dosage Adjustments: Start amlodipine at 2.5 mg daily; Alternative: ACEI monotherapy; Patient Warnings/Management: Elevate legs when sitting.
+- Amlodipine + ENALAPRIL: Risk: Hypotension and peripheral edema. Type: Pharmacodynamic (additive vasodilation). Monitoring: BP, edema severity, and renal function. Dosage: Start amlodipine at 2.5 mg/day in high-risk patients. Alternative: ARB + CCB if edema intolerable. Patient Warnings/Management: Elevate legs for edema; report shortness of…
+- Amlodipine + LISINOPRIL: Risk: Hypotension and peripheral edema. Type: Pharmacodynamic (additive vasodilation). Monitoring: BP, edema severity, and renal function. Dosage: Start amlodipine at 2.5 mg/day in high-risk patients. Alternative: ARB + CCB if edema intolerable. Patient Warnings/Management: Elevate legs for edema; report shortness of…
+- Amlodipine + RAMIPRIL: Risk: Hypotension and peripheral edema. Type: Pharmacodynamic (additive vasodilation). Monitoring: BP, edema severity, and renal function. Dosage: Start amlodipine at 2.5 mg/day in high-risk patients. Alternative: ARB + CCB if edema intolerable. Patient Warnings/Management: Elevate legs for edema; report shortness of…
+- Amlodipine + BENAZEPRIL: Risk: Hypotension and peripheral edema. Type: Pharmacodynamic (additive vasodilation). Monitoring: BP, edema severity, and renal function weekly. Dosage: Start amlodipine 2.5 mg/day with benazepril 5 mg/day. Alternative: ARB if edema intolerable. Patient Warnings/Management: Elevate legs; report shortness of breath.
+- Amlodipine + CILAZAPRIL: Risk: Ankle edema (↑ to 28% vs 12% monotherapy), hypotension (SBP <100 mmHg in 18%). Type: Pharmacodynamic (arteriolar vasodilation). Monitoring: Circumferential leg measurements, BP alternate days. Dosage: Cilazapril 2.5 mg + amlodipine 2.5 mg combo start. Alternative: Cilazapril + indapamide. Patient Warnings: Dayti…
+- Amlodipine + FOSINOPRIL: Risk: Dependent edema (32% vs 15% monotherapy) with angiotensin II escape. Type: Compensatory RAAS activation. Monitoring: Leg volume measurements, BP biweekly. Dosage: Fosinopril 20 mg + amlodipine 5 mg optimal. Alternative: Fosinopril + indapamide. Patient Warnings: Daytime leg elevation; compression stockings.
+- Amlodipine + QUINAPRIL: Risk: Dependent edema (38% vs 18% monotherapy) with morning BP surge. Type: Chronotherapeutic mismatch. Monitoring: Leg volume qAM, 24h ABPM. Dosage: Quinapril 20 mg + amlodipine 2.5 mg start. Alternative: Quinapril + indapamide SR. Patient Warnings: Evening leg elevation; report SOB.
+- Amlodipine + PERINDOPRIL: Risk: Dependent edema (35% vs 15% monotherapy) with angiotensin II escape. Type: Compensatory RAAS activation. Monitoring: Leg volume qAM, 24h ABPM. Dosage: Perindopril 4 mg + amlodipine 2.5 mg start (fixed-dose combo available). Alternative: Perindopril + indapamide SR. Patient Warnings: Daytime leg elevation; report…
+- Amlodipine + ALISKIREN: Risk: Peripheral edema (synergistic arteriolar dilation); Type: Pharmacodynamic; Monitoring: BP + weight biweekly; Dosage Adjustments: Start amlodipine 2.5 mg if combined; Alternative: ACEI+CCB combo; Patient Warnings/Management: Elevate legs for edema.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Calcium-channel blockers may be used when needed under obstetric advice.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Amlodipine appears in milk in small amounts; often considered acceptable with monitoring.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Peripheral edema - at 10 mg (10.8%)*
+Minor (material sheet): Dizziness (3.4%)*
+Flushing (2.6%)*
+Palpitations (4.5%)*
+Fatigue (4.5%)*
+Nausea (2.9%)*
+Abdominal pain (1.6%)*
+Gingival hyperplasia (<1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

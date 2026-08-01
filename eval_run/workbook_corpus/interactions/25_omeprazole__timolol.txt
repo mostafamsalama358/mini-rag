@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: TIMOLOL
+Risk: Ocular hypoperfusion and systemic hypotension
+Type: Pharmacodynamic (additive vasoactive effects)
+Monitoring: IOP weekly + orthostatic BP checks
+Dose adjustment: Limit timolol drops to 1 eye daily
+Alternative: Latanoprost for glaucoma
+Patient warning: Nasolacrimal occlusion technique; report vision changes/dizzines…
+Severity: caution
+
+Clinical note:
+Risk: Ocular hypoperfusion and systemic hypotension; Type: Pharmacodynamic (additive vasoactive effects); Monitoring: IOP weekly + orthostatic BP checks; Dosage: Limit timolol drops to 1 eye daily; Alternative: Latanoprost for glaucoma; Patient Warnings: Nasolacrimal occlusion technique; report vision changes/dizzines…

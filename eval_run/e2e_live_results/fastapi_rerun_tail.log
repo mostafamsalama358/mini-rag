@@ -1,0 +1,119 @@
+﻿INFO:     172.18.0.6:35918 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:60102 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:39708 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:52046 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:37558 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:35930 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:55568 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:38650 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:43416 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:40138 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:48854 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:34132 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:33080 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:46834 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:58656 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:50664 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.1:34740 - "GET /api/v1/ HTTP/1.1" 200 OK
+INFO:     172.18.0.6:43270 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:48588 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:55796 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.1:60686 - "POST /api/v1/nlp/index/answer/2 HTTP/1.1" 200 OK
+INFO:     172.18.0.6:58354 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:37294 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:57224 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:33620 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.1:60686 - "POST /api/v1/nlp/index/answer/2 HTTP/1.1" 400 Bad Request
+INFO:     172.18.0.6:36930 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+docker : INFO:     rag_pipeline_mode_resolved request_id=ac7e899d-e568-4e99-b8f3-11d5fa7f109e project_id=2 mode=unified
+At line:1 char:1
++ docker logs fastapi --tail 80 2>&1 | Out-File -Encoding utf8 d:\mini- ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (INFO:     rag_p...=2 mode=unified:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+INFO:     query_parse_complete domain=pharmacy outcome=ok latency_ms=4022.3 entity=Mediquick Ibuprofen field=dosage
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen' field_key='dosage'
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen' field_key='dosage'
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen' field_key='dosage'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen' field_key='dosage'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen' field_key='dosage'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen' field_key='dosage'
+/usr/local/lib/python3.11/site-packages/vertexai/generative_models/_generative_models.py:433: UserWarning: This 
+feature is deprecated as of June 24, 2025 and will be removed on June 24, 2026. For details, see 
+https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk.
+  warning_logs.show_deprecation_warning()
+INFO:     {'event': 'rag_pipeline_complete', 'request_id': 'ac7e899d-e568-4e99-b8f3-11d5fa7f109e', 'project_id': 2, 
+'mode': 'unified', 'outcome': 'success', 'duration_ms': 13376.451, 'plan_id': None, 'context_id': 
+'ctx_a03036a61b270c20'}
+INFO:     rag_pipeline_mode_resolved request_id=cf7921b4-f2fa-4adb-8d3a-3c9b7361b4d9 project_id=2 mode=unified
+INFO:     query_parse_complete domain=pharmacy outcome=ok latency_ms=2958.6 entity=Mediquick Ibuprofen 200 mg tablets 
+field=dosage
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen 200 mg tablets' field_key='dosage'
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen 200 mg tablets' field_key='dosage'
+Vertex AI embedding quota exceeded (attempt 1/5), retrying in 10s
+Vertex AI embedding quota exceeded (attempt 2/5), retrying in 10s
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen 200 mg tablets' field_key='dosage'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen 200 mg tablets' field_key='dosage'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen 200 mg tablets' field_key='dosage'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='Mediquick 
+Ibuprofen 200 mg tablets' field_key='dosage'
+Vertex AI embedding quota exceeded (attempt 1/5), retrying in 10s
+Vertex AI embedding quota exceeded (attempt 2/5), retrying in 10s
+Vertex AI embedding quota exceeded (attempt 3/5), retrying in 10s
+INFO:     {'event': 'rag_pipeline_complete', 'request_id': 'cf7921b4-f2fa-4adb-8d3a-3c9b7361b4d9', 'project_id': 2, 
+'mode': 'unified', 'outcome': 'timeout', 'duration_ms': 57028.386, 'plan_id': None, 'context_id': None}
+INFO:     rag_pipeline_mode_resolved request_id=0246ce50-f807-4e3a-a2ad-cb9b75e5dd2c project_id=2 mode=unified
+INFO:     query_parse_complete domain=pharmacy outcome=ok latency_ms=2025.1 entity=ibuprofen field=pregnancy
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='pregnancy'
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='pregnancy'
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='pregnancy'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='pregnancy'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='pregnancy'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='pregnancy'
+INFO:     {'event': 'rag_pipeline_complete', 'request_id': '0246ce50-f807-4e3a-a2ad-cb9b75e5dd2c', 'project_id': 2, 
+'mode': 'unified', 'outcome': 'success', 'duration_ms': 6606.959, 'plan_id': None, 'context_id': 
+'ctx_20516bb48687f228'}
+INFO:     rag_pipeline_mode_resolved request_id=33fe2773-e581-403f-923b-a6fc591bb9c9 project_id=2 mode=unified
+INFO:     query_parse_complete domain=pharmacy outcome=ok latency_ms=1586.7 entity=ibuprofen field=side_effects
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='side_effects'
+Vertex AI embedding quota exceeded (attempt 1/5), retrying in 10s
+Vertex AI embedding quota exceeded (attempt 2/5), retrying in 10s
+Vertex AI embedding quota exceeded (attempt 3/5), retrying in 10s
+Vertex AI embedding quota exceeded (attempt 4/5), retrying in 10s
+Vertex AI embedding quota exceeded (attempt 5/5), retrying in 10s
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='side_effects'
+INFO:     pgvector_dense_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='side_effects'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='side_effects'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='side_effects'
+INFO:     pgvector_sparse_scoped_miss_fallback collection=collection_768_2 entity_key=None entity_prefix='ibuprofen' 
+field_key='side_effects'
+INFO:     {'event': 'rag_pipeline_complete', 'request_id': '33fe2773-e581-403f-923b-a6fc591bb9c9', 'project_id': 2, 
+'mode': 'unified', 'outcome': 'timeout', 'duration_ms': 54491.991, 'plan_id': None, 'context_id': None}
+INFO:     172.18.0.1:60686 - "POST /api/v1/nlp/index/answer/2 HTTP/1.1" 200 OK
+INFO:     172.18.0.6:36750 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:40922 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:56328 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK
+INFO:     172.18.0.6:50940 - "GET /TrhBVe_m5gg2522_esvVqS HTTP/1.1" 200 OK

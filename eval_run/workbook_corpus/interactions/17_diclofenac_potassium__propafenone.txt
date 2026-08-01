@@ -1,0 +1,16 @@
+Drug interaction — Cataflam
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 17
+Brand: Cataflam
+API 1: DICLOFENAC POTASSIUM
+API 2: PROPAFENONE
+Risk: CYP2C9 inhibition → ↑ propafenone levels (arrhythmia risk) + GI bleeding
+Type: Pharmacokinetic (CYP2C9 competition) + Pharmacodynamic (antiplatelet)
+Monitoring: ECG (PR/QRS), Hgb, renal function
+Dose adjustment: Max 75 mg/day diclofenac
+Alternative: Topical diclofenac
+Patient warning: Report palpitation…
+Severity: caution
+
+Clinical note:
+Risk: CYP2C9 inhibition → ↑ propafenone levels (arrhythmia risk) + GI bleeding; Type: Pharmacokinetic (CYP2C9 competition) + Pharmacodynamic (antiplatelet); Monitoring: ECG (PR/QRS), Hgb, renal function; Dosage Adjustments: Max 75 mg/day diclofenac; Alternative: Topical diclofenac; Patient Warnings: Report palpitation…

@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: CARVEDILOL
+Risk: Heart failure exacerbation
+Type: Pharmacodynamic (blunted compensatory response)
+Monitoring: Daily weights + BNP
+Dose adjustment: Pantoprazole min effective dose
+Alternative: Magaldrate
+Patient warning: Weigh daily; report +2kg/24hr edema.
+Severity: caution
+
+Clinical note:
+Risk: Heart failure exacerbation; Type: Pharmacodynamic (blunted compensatory response); Monitoring: Daily weights + BNP; Dosage: Pantoprazole min effective dose; Alternative: Magaldrate; Patient Warnings: Weigh daily; report +2kg/24hr edema.

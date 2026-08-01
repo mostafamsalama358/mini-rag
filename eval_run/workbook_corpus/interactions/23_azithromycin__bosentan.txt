@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: BOSENTAN
+Risk: Hepatotoxicity (bilirubin ↑); minimal QT risk
+Type: Additive liver stress
+Monitoring: LFTs weekly + bilirubin
+Dose adjustment: Hold bosentan if ALT>3×ULN; Alternatives: Ceftriaxone
+Alternative: -
+Patient warning: "Report jaundice/abdominal pain"
+Severity: caution
+
+Clinical note:
+Risk: Hepatotoxicity (bilirubin ↑); minimal QT risk; Type: Additive liver stress; Monitoring: LFTs weekly + bilirubin; Dosage Adjustments: Hold bosentan if ALT>3×ULN; Alternatives: Ceftriaxone; Patient Warnings: "Report jaundice/abdominal pain"

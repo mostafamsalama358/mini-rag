@@ -1,0 +1,103 @@
+PANADOL EXTRA 24 F.C. TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Panadol Extra
+Catalog SKU: PANADOL EXTRA 24 F.C. TABS.
+INN / actives: Paracetamol * Caffeine
+Catalog New Material: CAFFEINE * PARACETAMOL (ACETAMINOPHEN)
+Strength / form: Paracetamol 500 mg + caffeine 65 mg (Panadol Extra) | (web-supplemented dosing below)
+Manufacturer / market: GLAXO SMITHKLINE
+Price (catalog): 54
+Categories: MEDICINE > PAIN, FEVER & INFLAMMATION > MIGRAINE RELIEF
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=PANADOL EXTRA 24; sheet lookup INNs=Paracetamol, Caffeine, CAFFEINE, PARACETAMOL (ACETAMINOPHEN)
+Web clinical sources: GSK Panadol Extra class labeling; caffeine+paracetamol SmPC
+
+1. What Panadol Extra is used for
+Catalog uses: mild analgesic
+Approved uses (material sheet): Mild to moderate pain (e.g., headache, backache, arthritis, toothache) - Dosage (Adults): Regular Strength: 325 to 650 mg every 4 to 6 hours as needed , Extra Strength: 500 to 1000 mg every 6 to 8 hours as needed , Maximum Total Daily Dose: Do not exceed 4000 mg (4 grams) in 24 hours. Many experts now recommend a max of 3000 mg (3 grams) for chronic use - Dosage (Pediatric): 10 to 15 mg/kg/dose every 4 to 6 hours as needed, up to 5 doses/24 hours , Max: 75 mg/kg/24 hours*
+Fever reduction (antipyretic)- Regular Strength: 325 to 650 mg every 4 to 6 hours as needed , Extra Strength: 500 to 1000 mg every 6 to 8 hours as needed , Maximum Total Daily Dose: Do not exceed 4000 mg (4 grams) in 24 hours. Many experts now recommend a max of 3000 mg (3 grams) for chronic use - Dosage (Pediatric): 10 to 15 mg/kg/dose every 4 to 6 hours as needed, up to 5 doses/24 hours , Max: 75 mg/kg/24 hours*
+Off-label mentions (material sheet): Patent Ductus Arteriosus (PDA) closure in preterm neonates (IV formulation)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Adults/adolescents ≥12 y: typically 2 tablets every 4–6 hours as needed. Do not exceed pack maximum (commonly 8 tablets/24 h). Space ≥4 hours. Distinct from Panadol Advance (no caffeine).
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not for under 12 years.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Panadol Extra if / disease cautions
+From material/disease sheets:
+[PARACETAMOL] Hypersensitivity to PARACETAMOL (ACETAMINOPHEN) * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+[CAFFEINE] Hypersensitivity to THEOPHYLLINE/CAFFEINE/AMINOPHYLLINE/PENTOXIFYLLINE * 
+Uncontrolled Hypertension * 
+Hyperthyroidism & Thyrotoxicosis * 
+Atrioventricular (AV) & Heart Blocks (Without Pacemaker) * 
+Cardiac Procedures & Perioperative Pain * 
+Vascular / Aneurysms Heart Diseases * 
+Structural / Valvular & Inflammatory Heart Diseases *
+Bradyarrhythmias & Sinus Node Dysfunction *
+Tachyarrhythmias & Hyperactive Conduction *
+Endocrine & Neuroendocrine Tumors *
+GERD & Esophageal Disorders * 
+Peptic Ulcer Disease & Gastritis*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • HEPATOTOXICITY:
+- Acetaminophen has been associated with cases of acute liver failure, at times resulting in liver transplant and death. Most of the cases of liver injury are associated with the use of acetaminophen at doses that exceed 4000 milligrams per day, and often involve more than one acetaminophen-containing product.
+• The warning also emphasizes the risk of allergic reactions (e.g., anaphylaxis, SJS/TEN).
+Notes (material sheet): • If used for Migraine , you can use FEWMIG 
+• Avoid:
+- Many OTC cold, flu, and pain products contain acetaminophen. Check labels to avoid accidental duplication and overdose.
+• Avoid alcohol. Alcohol may increase the risk of hepatotoxicity.
+• Take with or without food.
+• Avoid foods rich in carbohydrates, and pectin including jellies, cabbage, Brussels sprouts and broccoli as PARACETAMOL may interact with these foods.
+• Safe for kidney failure patients
+..........................................................................
+• Renal Impairment (GFR≥50 mL/min: No dosage adjustment necessary, GFR 10-50 mL/min: Administer q6hr, GFR<10mL/min: Administer q8hr)
+• Equation . ........ Creat_Clear…
+Patient education excerpt: • CRITICAL:
+- Check all your medicines. Many prescription and OTC cold/flu/pain medicines contain acetaminophen. Adding them together can cause a deadly overdose.
+• Maximum Dose:
+- Never take more than 4000 mg (4 grams) in one day. Taking more can cause severe liver damage, leading to liver failure or death.
+• Alcohol:
+- Do not take this medicine if you consume 3 or more alcoholic drinks per day. This increases your risk of liver damage.
+• Overdose is an emergency. 
+• Early symptoms (nausea, vomiting, loss of appetite) may seem like the flu. Seek immediate medical help even if you feel okay.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Paracetamol (Acetaminophen) + PROPAFENONE: Risk: Delayed onset of analgesia (transient effect with single doses only); Type: Pharmacodynamic (altered gastric motility); Monitoring: Pain relief timing; Dosage Adjustments: None needed for chronic use; Alternative: IV acetaminophen if rapid onset required; Patient Warnings: Take scheduled doses (not PRN) for cons…
+- Paracetamol (Acetaminophen) + CHOLESTYRAMINE: Risk: Reduced paracetamol absorption leading to decreased analgesic efficacy; Type: Pharmacokinetic (adsorption); Monitoring: Pain control and fever reduction; Dosage: Administer paracetamol ≥1h before or ≥1h after cholestyramine; Alternative: IV paracetamol if rapid effect needed; Patient Warnings: Maintain strict 1-…
+- Paracetamol (Acetaminophen) + COLESTIPOL: Risk: Moderate reduction in paracetamol absorption; Type: Pharmacokinetic; Monitoring: Therapeutic response; Dosage: Separate doses by ≥1h; Alternative: Liquid paracetamol formulation may have faster absorption; Patient Warnings: Ensure proper timing between medications.
+- Paracetamol (Acetaminophen) + COLESEVELAM: Risk: Minimal absorption reduction (clinically insignificant); Type: Pharmacokinetic; Monitoring: None routinely needed; Dosage: Optional separation (≥1h recommended for optimal efficacy); Alternative: None required; Patient Warnings: Timing less critical than with other sequestrants.
+- Paracetamol (Acetaminophen) + AMITRIPTYLINE: Risk: Delayed analgesia onset (30-60min) + chronic hepatotoxicity; Monitoring: LFTs q3mo if daily use; Dosage: Max acetaminophen 3g/day; Patient: Take 1h before TCA; report jaundice/dark urine; avoid alcohol.
+- Paracetamol (Acetaminophen) + AMOXAPINE: Risk: Hepatotoxicity (CYP3A4 competition) + delayed pain relief; Monitoring: ALT/AST monthly; Dosage: Max 2g/day acetaminophen; Patient: Do not substitute for missed TCA dose; report RUQ pain.
+- Paracetamol (Acetaminophen) + CLOMIPRAMINE: Risk: Glutathione depletion → ↑ hepatotoxicity risk; Monitoring: LFTs q2mo; Dosage: Avoid chronic >2g/day; Patient: Take separately; report fatigue/jaundice; NAC prophylaxis considered.
+- Paracetamol (Acetaminophen) + DESIPRAMINE: Risk: Delayed analgesia (gastric motility effects); Monitoring: Pain response at 45/90min; Dosage: Time acetaminophen 1h pre-TCA; Patient: Use scheduled dosing for chronic pain.
+- Paracetamol (Acetaminophen) + DOXEPIN: Risk: Additive sedation with high-dose acetaminophen formulations; Monitoring: Epworth scale; Dosage: Avoid combo PM formulations; Patient: Daytime dosing only; report excessive drowsiness.
+- Paracetamol (Acetaminophen) + IMIPRAMINE: Risk: Delayed Tmax (90min vs 30min) + anticholinergic constipation; Monitoring: Bowel regimen; Dosage: Liquid formulation preferred; Patient: Take with 240ml water; report ineffective analgesia.
+- Paracetamol (Acetaminophen) + MAPROTILINE: Risk: Seizure threshold lowering with chronic high doses; Monitoring: Seizure diary; Dosage: Max 3g/day; Patient: Avoid >3 consecutive days >3g; report myoclonus.
+- Paracetamol (Acetaminophen) + NORTRIPTYLINE: Risk: Competitive CYP2D6 metabolism → variable levels; Monitoring: Pain control consistency; Dosage: Fixed-interval dosing; Patient: Maintain consistent schedule; report breakthrough pain.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Prefer plain paracetamol when possible; caffeine-containing analgesics — ask obstetric advice for more than occasional use.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Usually compatible short courses; caffeine passes into milk — avoid near bedtime feeds if infant is sensitive.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): None
+Minor (material sheet): Hepatotoxicity - dose dependent, can be fatal (rare)*
+Hypersensitivity Reactions - rash, urticaria (<0.01%)*
+Gastrointestinal discomfort - nausea/vomiting, epigastric pain (1-3%)*
+Blood Disorders - e.g., thrombocytopenia, neutropenia; with chronic overdose (rare)*
+Renal Toxicity - analgesic nephropathy; with chronic, excessive use (rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

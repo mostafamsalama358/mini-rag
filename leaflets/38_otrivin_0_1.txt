@@ -1,0 +1,79 @@
+OTRIVIN 0.1% ADULT NASAL DROPS 15 ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Otrivin
+Catalog SKU: OTRIVIN 0.1% ADULT NASAL DROPS 15 ML
+INN / actives: Xylometazoline
+Catalog New Material: XYLOMETAZOLINE
+Strength / form: Xylometazoline 0.1% adult nasal drops | (web-supplemented dosing below)
+Manufacturer / market: GLAXO SMITHKLINE
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > NASAL DECONGESTANT & SINUS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=OTRIVIN 0.1%; sheet lookup INNs=Xylometazoline, XYLOMETAZOLINE
+Web clinical sources: Xylometazoline nasal SmPC; Otrivin
+
+1. What Otrivin is used for
+Catalog uses: nasal congestion.adrenergic alpha-agonist
+Approved uses (material sheet): See labeled uses
+Off-label mentions (material sheet): Not listed
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Usually 2–3 drops per nostril up to 2–3 times daily. Max continuous use typically 3–5–7 days to avoid rebound congestion.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: 0.1% is adult strength — use 0.05% paediatric products for children per age label.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Otrivin if / disease cautions
+From material/disease sheets:
+[XYLOMETAZOLINE] Hypersensitivity to Xylometazoline *
+Angle‑closure glaucoma *
+Rhinitis sicca anterior*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): None listed in material sheet
+Notes (material sheet): • Pregnancy Category: C
+• Lactation: not known if excreted in breast milk
+• Overuse may cause rebound congestion
+• Do not use this product for more than 3 days; use only as directed; frequent or prolonged use may cause nasal congestion to recur or worsen
+• Containdicated in Patients with transsphenoidal hypophysectomy or surgery exposing dura mater
+• The use of this device by more than one person may spread infection
+• Therapy with topical sympathomimetic agents should be administered cautiously In patients with prostate enlargement, urinary difficulty may develop or worsen due to smooth muscle contraction in the bladder neck via stimulation of alpha-1 adrenergic receptors
+• Therapy with to…
+Patient education excerpt: Follow pharmacist counseling
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Xylometazoline + LINEZOLID: Risk: Extreme vasoconstriction (nasal decongestant + MAOI). Action: Contraindicated. Patient Warning: Use saline spray instead; report nosebleeds/vision changes.
+- Xylometazoline + ISOCARBOXAZID: Risk: Hypertensive emergency. Action: Contraindicated. Patient Warning: Avoid all adrenergic stimulants (including OTC cold meds).
+- Xylometazoline + PHENELZINE: Risk: Potentially fatal BP spike. Action: Contraindicated. Patient Warning: Check BP if accidental use; seek immediate care for severe headache.
+- Xylometazoline + SELEGILINE CHLORIDE: Risk: Hypertension (even at low selegiline doses). Action: Contraindicated. Patient Warning: Transdermal selegiline >6 mg/24h carries highest risk.
+- Xylometazoline + TRANYLCYPROMINE: Risk: Cerebrovascular hemorrhage. Action: Contraindicated. Patient Warning: Symptoms require ER visit (e.g., unilateral weakness).
+- Xylometazoline + MOCLOBEMIDE: Risk: Pressor response (reversible MAOI). Action: Contraindicated. Patient Warning: Wait 48h after mocloemide cessation before use.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Prefer short courses / saline first; systemic absorption possible — ask obstetric advice.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Short topical courses usually low concern; prefer saline if possible.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Rebound Nasal Congestion - Rhinitis Medicamentosa: with use >3-5 days (>50%)*
+Local Burning (15%)*
+Stinging (15%)*
+Dryness (15%)*
+Minor (material sheet): Sneezing (5%)*
+Headache (<3%)*
+Palpitations - Systemic absorption (<1%)*
+Tachycardia - Systemic absorption (<1%)*
+Hypertension - Systemic absorption (<1%)*
+CNS Depression - Drowsiness, lethargy: Primarily in children from ingestion (<0.1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

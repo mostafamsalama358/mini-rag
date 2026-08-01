@@ -1,0 +1,102 @@
+CONTROLOC 20MG 14 GASTRO-RESISTANT TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Controloc 20
+Catalog SKU: CONTROLOC 20MG 14 GASTRO-RESISTANT TABS.
+INN / actives: Pantoprazole
+Catalog New Material: PANTOPRAZOLE
+Strength / form: Pantoprazole 20 mg gastro-resistant | (web-supplemented dosing below)
+Manufacturer / market: MARCYRL CO.
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-PEPTIC ULCER & ANTACIDS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=CONTROLOC 20MG; sheet lookup INNs=Pantoprazole, PANTOPRAZOLE
+Web clinical sources: Pantoprazole SmPC class (Controloc)
+
+1. What Controloc 20 is used for
+Catalog uses: peptic ulcer.proton pump inhibitor
+Approved uses (material sheet): Treatment and maintenance of healing of erosive esophagitis (EE) associated with GERD - Adults (Oral): 40 mg once daily for up to 8 weeks. Maintenance: 40 mg once daily , (IV): 40 mg once daily via IV infusion for 7 to 10 days*
+Treatment of pathological hypersecretory conditions (e.g., Zollinger Ellison syndrome) - Adults (Oral): Starting dose 40 mg twice daily; adjust based on acid output , (IV): 40 mg once daily via IV infusion for 7 to 10 days*
+Off-label mentions (material sheet): Stress ulcer prophylaxis in critically ill patients (IV formulation)*
+Treatment of non erosive reflux disease (NERD)*
+As part of H. pylori eradication therapy - (not a first line PPI choice)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Typical GERD/symptomatic acid: 20 mg once daily before meal for short courses (often 2–4 weeks) or as prescribed. Higher doses for ulcer/H. pylori per doctor.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Specialist paediatric dosing only; not routine OTC for young children.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Controloc 20 if / disease cautions
+From material/disease sheets:
+[PANTOPRAZOLE] Hypersensitivity to PANTOPRAZOLE *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • Pantoprazole does not carry an FDA Black Box Warning. However, the prescribing information contains WARNINGS and PRECAUTIONS for:
+- Acute Tubulointerstitial Nephritis
+- Clostridium difficile-Associated Diarrhea
+- Bone Fracture
+- Severe Hypomagnesemia
+- Vitamin B12 Deficiency
+Notes (material sheet): • Avoid:
+-Concomitant use with rilpivirine-containing products (due to potential for HIV treatment failure).
+• The (PPIs) drugs cause hypomagnesemia, but this does not happen until after (3 months) of using the (PPIs). It is necessary to monitor the magnesium in the blood after 3 months of using the (PPIs).
+• Hypomagnesemia may lead to hypocalcemia and/or hypokalemia and may exacerbate underlying hypocalcemia in at-risk patients; in most patients, treatment of hypomagnesemia required magnesium replacement and discontinuation of the PPI
+• And there is a lack of vitamin (B12) this thing does not happen until after (3 years) of using the (PPIs), and vitamin (B12) deficiency occurs in women mor…
+Patient education excerpt: • Timing:
+- Take the tablet once daily, before a meal (typically before breakfast). Swallow the delayed-release tablet whole; do not crush, split, or chew.
+• What to Report to Your Doctor:
+- Diarrhea that is watery or bloody.
+- Dizziness, fast or irregular heartbeat, jitteriness, muscle spasms (signs of low magnesium).
+- Joint pain, wrist, or hip pain (signs of bone issues).
+- New or worsening kidney disease symptoms (e.g., change in urine output).
+• Long-Term Use:
+- Use the lowest dose and shortest duration of therapy appropriate for your condition. Do not take for longer than prescribed.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Pantoprazole + DIPYRIDAMOLE: Risk: Minimal interaction (CYP2C19 sparing). Type: Negligible. Monitoring: Routine follow-up. Dosage Adjustments: None required. Alternative: First-line PPI. Patient Warnings/Management: No special precautions.
+- Pantoprazole + SOTALOL: Risk: Bradycardia exacerbation; Type: Pharmacodynamic (additive HR reduction); Monitoring: 24h Holter + exercise tolerance; Dosage: Avoid IV pantoprazole; Alternative: Sucralfate; Patient Warnings: Check AM pulse; withhold if <50 bpm.
+- Pantoprazole + METOPROLOL TARTRATE: Risk: Exercise-induced hypotension; Type: Pharmacodynamic (blunted compensatory response); Monitoring: Treadmill BP test; Dosage: Pantoprazole min effective dose; Alternative: Aluminum hydroxide; Patient Warnings: Avoid sudden standing; compression stockings.
+- Pantoprazole + METOPROLOL: Risk: Exercise-induced hypotension; Type: Pharmacodynamic (blunted compensatory response); Monitoring: Treadmill BP test + orthostatic checks; Dosage: Pantoprazole min effective dose; Alternative: Aluminum hydroxide antacids; Patient Warnings: Avoid sudden standing; compression stockings.
+- Pantoprazole + PROPRANOLOL: Risk: Masked hypoglycemia; Type: Pharmacodynamic (additive β₂-blockade); Monitoring: Fasting glucose + hypoglycemia symptoms; Dosage: Pantoprazole avoid IV route; Alternative: Magaldrate; Patient Warnings: Carry glucose tablets; recognize tremor/sweating.
+- Pantoprazole + TIMOLOL: Risk: Masked bradycardia; Type: Pharmacodynamic (blunted compensatory response); Monitoring: 24h Holter if HR<55 bpm; Dosage: Pantoprazole min effective dose; Alternative: Antacids PRN; Patient Warnings: Check AM pulse; withhold if <50 bpm.
+- Pantoprazole + ACEBUTOLOL: Risk: Exercise-induced AV block; Type: Pharmacodynamic (additive conduction delay); Monitoring: Stress test ECG; Dosage: Pantoprazole avoid IV; Alternative: Magaldrate; Patient Warnings: Stop activity if dizziness; compression garments.
+- Pantoprazole + ATENOLOL: Risk: Cold extremity exacerbation; Type: Pharmacodynamic (peripheral vasoconstriction); Monitoring: Digital thermography + capillary refill; Dosage: Avoid IV pantoprazole; Alternative: Sucralfate; Patient Warnings: Wear thermal gloves; avoid caffeine.
+- Pantoprazole + BETAXOLOL: Risk: Masked bronchospasm; Type: Pharmacodynamic (β₂-blockade synergy); Monitoring: Peak flow pre/post dose; Dosage: Pantoprazole min effective dose; Alternative: Magaldrate; Patient Warnings: Keep rescue inhaler; report wheezing.
+- Pantoprazole + BISOPROLOL FUMARATE: Risk: Exercise-induced AV block; Type: Pharmacodynamic (additive conduction delay); Monitoring: Stress test ECG + orthostatic BP; Dosage: Avoid IV pantoprazole; Alternative: Calcium-based antacids; Patient Warnings: Stop activity if dizzy; compression stockings.
+- Pantoprazole + BISOPROLOL: Risk: Exercise-induced AV block; Type: Pharmacodynamic (additive conduction delay); Monitoring: Stress test ECG; Dosage: Avoid IV pantoprazole; Alternative: Calcium antacids; Patient Warnings: Stop activity if dizzy; compression stockings.
+- Pantoprazole + CARVEDILOL: Risk: Heart failure exacerbation; Type: Pharmacodynamic (blunted compensatory response); Monitoring: Daily weights + BNP; Dosage: Pantoprazole min effective dose; Alternative: Magaldrate; Patient Warnings: Weigh daily; report +2kg/24hr edema.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Generally considered acceptable if acid suppression needed (PPI class; use when benefit outweighs risk).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Small amounts may appear in milk; usually compatible for short courses — confirm with clinician.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Headache (2-10%)*
+Minor (material sheet): Diarrhea (1-4%)*
+Nausea/Vomiting (1-5%)*
+Abdominal Pain (1-5%)*
+Flatulence (1-5%)*
+Dizziness (<1%)*
+Rash (<1%)*
+Pruritus (<1%)*
+Dry Mouth (<1%)*
+Fatigue (<1%)*
+Hypomagnesemia - risk with long term use >3 months (<1%)*
+Vitamin B12 Deficiency - risk with long term use (1-5%)*
+Increased risk of C. difficile infection (1-5%)*
+Increased risk of bone fracture - with high dose, long term use (1-5%)*
+Acute Interstitial Nephritis - kidney inflammation (Rare)*
+Fundic Gland Polyps - with long term use (Rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

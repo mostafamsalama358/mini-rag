@@ -42,6 +42,9 @@ Thumbs.db
 # Answer quality run store (local evaluation artifacts)
 .answer_quality/
 
+# Shadow dual-run artifacts (015-unified-pipeline-migration)
+.rag_shadow/
+
 .env
 .env.*
 !.env.example

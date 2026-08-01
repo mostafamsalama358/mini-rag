@@ -1,0 +1,7 @@
+﻿id: interactions
+name: Interactions
+profile: drug_interactions
+prompt: interactions
+validation:
+  require_medicine_pair: true
+order: 2

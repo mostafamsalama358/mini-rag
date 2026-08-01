@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: ACEBUTOLOL
+Risk: Acebutolol toxicity (CYP2D6 inhibition) and hypoglycemia
+Type: Pharmacokinetic + Pharmacodynamic
+Monitoring: Fasting glucose + acebutolol levels
+Dose adjustment: Reduce acebutolol 25%
+Alternative: Famotidine
+Patient warning: Carry glucose gel; report sweating/tremors.
+Severity: caution
+
+Clinical note:
+Risk: Acebutolol toxicity (CYP2D6 inhibition) and hypoglycemia; Type: Pharmacokinetic + Pharmacodynamic; Monitoring: Fasting glucose + acebutolol levels; Dosage: Reduce acebutolol 25%; Alternative: Famotidine; Patient Warnings: Carry glucose gel; report sweating/tremors.

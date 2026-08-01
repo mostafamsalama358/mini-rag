@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: QUINAPRIL
+Risk: Dependent edema (38% vs 18% monotherapy) with morning BP surge.
+Type: Chronotherapeutic mismatch.
+Monitoring: Leg volume qAM, 24h ABPM.
+Dose adjustment: Quinapril 20 mg + amlodipine 2.5 mg start.
+Alternative: Quinapril + indapamide SR.
+Patient warning: Evening leg elevation; report SOB.
+Severity: caution
+
+Clinical note:
+Risk: Dependent edema (38% vs 18% monotherapy) with morning BP surge. Type: Chronotherapeutic mismatch. Monitoring: Leg volume qAM, 24h ABPM. Dosage: Quinapril 20 mg + amlodipine 2.5 mg start. Alternative: Quinapril + indapamide SR. Patient Warnings: Evening leg elevation; report SOB.

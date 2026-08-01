@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: ZOLMITRIPTAN
+Risk: Possible reduced zolmitriptan efficacy
+Type: -
+Monitoring: Document migraine attack duration/severity
+Dose adjustment: Adjust dose based on clinical response
+Alternative: -
+Patient warning: Avoid missing doses due to interaction risk.
+Severity: yes
+
+Clinical note:
+Risk: Possible reduced zolmitriptan efficacy; Monitoring: Document migraine attack duration/severity; Dosage: Adjust dose based on clinical response; Patient Warnings: Avoid missing doses due to interaction risk.

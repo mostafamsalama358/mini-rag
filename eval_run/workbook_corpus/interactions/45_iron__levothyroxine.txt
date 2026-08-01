@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: LEVOTHYROXINE
+Risk: Iron reduces levothyroxine absorption by 30-50% when coadministered.
+Type: -
+Monitoring: TSH 6 weeks after iron initiation/dose change.
+Dose adjustment: -
+Alternative: -
+Patient warning: Take levothyroxine on empty stomach with water only.
+Severity: caution
+
+Clinical note:
+Risk: Iron reduces levothyroxine absorption by 30-50% when coadministered. Monitoring: TSH 6 weeks after iron initiation/dose change. Dosage Adjustment: Administer levothyroxine 4 hours before iron. Patient Warning: Take levothyroxine on empty stomach with water only.

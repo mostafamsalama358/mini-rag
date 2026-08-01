@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: PARECOXIB
+Risk: Postoperative bleeding (parenteral COX-2 + antiplatelet).
+Type: Pharmacodynamic.
+Monitoring: Surgical site bleeding, Hb.
+Dose adjustment: Withhold parecoxib if possible.
+Alternative: Regional anesthesia.
+Patient warning: /Management: Report unusual bruising; delay elective surgery.
+Severity: caution
+
+Clinical note:
+Risk: Postoperative bleeding (parenteral COX-2 + antiplatelet). Type: Pharmacodynamic. Monitoring: Surgical site bleeding, Hb. Dosage Adjustments: Withhold parecoxib if possible. Alternative: Regional anesthesia. Patient Warnings/Management: Report unusual bruising; delay elective surgery.

@@ -1,0 +1,95 @@
+DAFLON 1000MG 30 F.C. TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Daflon 1000
+Catalog SKU: DAFLON 1000MG 30 F.C. TABS.
+INN / actives: Diosmin * Hesperidin
+Catalog New Material: DIOSMIN * HESPERIDIN
+Strength / form: MPFF 1000 mg tablet | (web-supplemented dosing below)
+Manufacturer / market: SERVIER
+Price (catalog): 285
+Categories: MEDICINE > HEMORRHOIDS & VARICOSE > SYSTEMIC HEMORRHOIDS & VARICOSE
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=DAFLON 1000; sheet lookup INNs=Diosmin, Hesperidin, DIOSMIN, HESPERIDIN
+Web clinical sources: Servier Daflon 1000 SmPC
+
+1. What Daflon 1000 is used for
+Catalog uses: vascular-protecting agent
+Approved uses (material sheet): Chronic venous insufficiency (CVI) - 500 : 1,000 mg/day MPFF (diosmin + hesperidin) for 2 : 6 months*
+Hemorrhoids - Acute attacks : 1,350 mg + 150 mg hesperidin × 4 days, then 900 mg + 100 mg × 3 days*
+Venous leg ulcers - 900 mg + 100 mg hesperidin daily + compression therapy*
+Off-label mentions (material sheet): Varicocele/Pelvic congestion - 1,000 mg/day × 6 months 67*
+Post CABG recovery - 3,000 mg/day preoperatively*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Usual: 1 tablet daily with a meal. Acute hemorrhoids: 3 tablets/day ×4 days then 2 tablets/day ×3 days (Servier SmPC).
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not established in children/adolescents.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Daflon 1000 if / disease cautions
+From material/disease sheets:
+[DIOSMIN] Hypersensitivity to DIOSMIN * Pregnancy; unspecified gestational age*
+[HESPERIDIN] Hypersensitivity to HESPERIDIN * Hypersensitivity to CITRUS BIOFLAVONOIDS* Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation* Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): •None, 
+but warnings include rare arrhythmias and exacerbation of bleeding disorders
+Notes (material sheet): • Take with or without food
+• Avoid the intake of spicy and fried food as it might help to improve your symptoms
+• In hemorrhoid avoid too much pressure while defecation, as it may aggravate the disease.
+• Contraindicated with Children
+..............................................................................
+• It is primarily used to treat varicose veins (twisted and enlarged veins)
+• lymphedema (swelling of arms and legs)Acts as an antioxidant that promotes healing. Generally, the problems related to obstructive blood flow due to veins swelling are treated by DIOSMIN.
+• The usual diosmin dosage is 1,000 mg orally daily given in 2 divided doses for short durations
+• Hemorrhoidal crisis…
+Patient education excerpt: • Timing: 
+-Take with meals to reduce GI upset.
+• Missed dose: 
+-Skip if near next dose; no doubling.
+• Overdose: 
+-Rare; symptoms include diarrhea/nausea (manage supportively).
+• Precautions: 
+-Report dizziness, rash, or irregular heartbeat.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Diosmin + CELECOXIB: Risk: Increased celecoxib levels and side effects; Type: Pharmacokinetic (theoretical CYP2C9 inhibition); Monitoring: Assess for GI distress or unusual bruising; Dosage Adjustments: None typically required; Alternative: Acetaminophen; Patient Warnings/Management: Report stomach pain or signs of bleeding.
+- Diosmin + ROSUVASTATIN: Risk: Increased myopathy and rhabdomyolysis risk due to elevated rosuvastatin levels; Type: Pharmacokinetic (transporter inhibition); Monitoring: Assess for muscle pain/weakness, check CK/LFTs; Dosage Adjustments: Consider rosuvastatin dose reduction; Alternative: Pravastatin; Patient Warnings/Management: Report unexp…
+- Diosmin + ATORVASTATIN: Risk: Potential increased risk of myopathy/rhabdomyolysis. Type: Uncertain pharmacokinetic (potential OATP inhibition). Monitoring: Monitor for muscle pain/weakness and CPK levels. Dosage: Consider lower statin starting dose. Alternative: A non-interacting statin (e.g., pravastatin). Patient: Report unexplained muscle…
+- Diosmin + LOVASTATIN: Risk: Potential increased risk of myopathy/rhabdomyolysis. Type: Uncertain pharmacokinetic (potential OATP/CYP3A4 inhibition). Monitoring: Monitor for muscle pain/weakness and CPK levels. Dosage: Avoid combination or use lowest possible lovastatin dose. Alternative: A non-interacting statin (e.g., pravastatin). Patien…
+- Diosmin + SIMVASTATIN: Risk: Potential increased risk of myopathy/rhabdomyolysis. Type: Uncertain pharmacokinetic (potential OATP/CYP3A4 inhibition). Monitoring: Monitor for muscle pain/weakness and CPK levels. Dosage: Avoid combination or use lowest possible simvastatin dose. Alternative: A non-interacting statin (e.g., pravastatin). Patie…
+- Diosmin + DABIGATRAN ETEXILATE: Risk: Theoretical increased risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor for signs of bleeding. Dosage: No specific adjustment recommended. Alternative: Not usually required. Patient: Report unusual bruising, bleeding gums, or blood in stool/urine.
+- Diosmin + WARFARIN: Risk: Potential increased anticoagulant effect and risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor INR more frequently. Dosage: Warfarin dose reduction may be necessary. Alternative: Consider a non-interacting venous tonic. Patient: Report any signs of bleeding; do not change diosmin intake withou…
+- Diosmin + ACENOCOUMAROL: Risk: Potential increased anticoagulant effect and risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor INR more frequently. Dosage: Acenocoumarol dose reduction may be necessary. Alternative: Consider a non-interacting venous tonic. Patient: Report any signs of bleeding; do not change diosmin intake w…
+- Diosmin + APIXABAN: Risk: Theoretical increased risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor for signs of bleeding. Dosage: No specific adjustment recommended. Alternative: Not usually required. Patient: Report unusual bruising, bleeding gums, or blood in stool/urine.
+- Diosmin + RIVAROXABAN: Risk: Theoretical increased risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor for signs of bleeding. Dosage: No specific adjustment recommended. Alternative: Not usually required. Patient: Report unusual bruising, bleeding gums, or blood in stool/urine.
+- Diosmin + EDOXABAN: Risk: Theoretical increased risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor for signs of bleeding. Dosage: No specific adjustment recommended. Alternative: Not usually required. Patient: Report unusual bruising, bleeding gums, or blood in stool/urine.
+- Diosmin + BETRIXABAN: Risk: Theoretical increased risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor for signs of bleeding. Dosage: No specific adjustment recommended. Alternative: Not usually required. Patient: Report unusual bruising, bleeding gums, or blood in stool/urine.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Prefer avoid as precaution (Servier).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Not recommended / decide with clinician (Servier).
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): GI disturbances (15%)*
+Diarrhea (15%)*
+Nausea (15%)*
+Headache (10%)*
+Dizziness (10%)*
+Minor (material sheet): Skin rash (5%)*
+pruritus (5%)* 
+Muscle pain (5%)*
+Tachycardia (rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

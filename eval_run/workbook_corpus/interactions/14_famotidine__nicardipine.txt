@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: NICARDIPINE
+Risk: Enhanced cerebral vasodilation
+Type: Pharmacodynamic
+Monitoring: Neurological checks q2h
+Dose adjustment: Nicardipine ↓0.5mg/kg/min
+Alternative: IV pantoprazole
+Patient warning: /Management: Headache reporting.
+Severity: caution
+
+Clinical note:
+Risk: Enhanced cerebral vasodilation; Type: Pharmacodynamic; Monitoring: Neurological checks q2h; Dosage Adjustments: Nicardipine ↓0.5mg/kg/min; Alternative: IV pantoprazole; Patient Warnings/Management: Headache reporting.

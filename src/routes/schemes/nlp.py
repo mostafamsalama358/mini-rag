@@ -19,3 +19,5 @@ class AnswerRequest(BaseModel):
     # Optional metadata pre-filter applied before retrieval.
     # Supported keys: project_id, asset_id, document_type, category, etc.
     metadata_filter: Optional[dict] = None
+    # Feature 021 — explicit Domain Skill (conditionally required when pack has skills)
+    skill_id: Optional[str] = None

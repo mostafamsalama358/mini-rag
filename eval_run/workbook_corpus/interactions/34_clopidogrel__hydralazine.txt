@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: HYDRALAZINE
+Risk: Mild bleeding risk.
+Type: Pharmacodynamic.
+Monitoring: CBC baseline.
+Dose adjustment: None typically.
+Alternative: Aspirin.
+Patient warning: /Management: Standard monitoring.
+Severity: caution
+
+Clinical note:
+Risk: Mild bleeding risk. Type: Pharmacodynamic. Monitoring: CBC baseline. Dosage Adjustments: None typically. Alternative: Aspirin. Patient Warnings/Management: Standard monitoring.

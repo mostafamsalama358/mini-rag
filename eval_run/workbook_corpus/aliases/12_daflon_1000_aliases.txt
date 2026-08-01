@@ -1,0 +1,13 @@
+Alias registry — Daflon 1000
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 12
+Brand: Daflon 1000
+
+Known aliases:
+- Daflon 1000 (brand)
+- DAFLON 1000MG 30 F.C. TABS. (catalog_sku)
+- Diosmin (inn)
+- Hesperidin (inn)
+- دافلون 1000 (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

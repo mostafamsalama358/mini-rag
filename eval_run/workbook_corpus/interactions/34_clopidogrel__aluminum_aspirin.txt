@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: ALUMINUM ASPIRIN
+Risk: Increased bleeding risk due to synergistic antiplatelet effects (dual platelet inhibition)
+Type: Pharmacodynamic (additive effect)
+Monitoring: Monitor for bleeding signs (epistaxis, bruising, melena), CBC, and platelet function tests if available
+Dose adjustment: Use lowest effective aspirin dose (75-100 m…
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Increased bleeding risk due to synergistic antiplatelet effects (dual platelet inhibition); Type: Pharmacodynamic (additive effect); Monitoring: Monitor for bleeding signs (epistaxis, bruising, melena), CBC, and platelet function tests if available; Dosage Adjustments: Use lowest effective aspirin dose (75-100 m…

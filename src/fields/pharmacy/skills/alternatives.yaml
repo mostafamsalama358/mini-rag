@@ -1,0 +1,9 @@
+﻿id: alternatives
+name: Alternatives
+profile: indications_recommend
+prompt: alternatives
+validation:
+  require_need: true
+capabilities:
+  recommend_mode: true
+order: 10

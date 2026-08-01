@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: DRONEDARONE
+Risk: QT prolongation + CYP3A4 inhibition
+Type: Mixed
+Monitoring: QTc if >400mg/day
+Dose adjustment: Max fluconazole 200mg/day
+Alternative: Anidulafungin
+Patient warning: /Management: Watch for dizziness.
+Severity: caution
+
+Clinical note:
+Risk: QT prolongation + CYP3A4 inhibition; Type: Mixed; Monitoring: QTc if >400mg/day; Dosage Adjustments: Max fluconazole 200mg/day; Alternative: Anidulafungin; Patient Warnings/Management: Watch for dizziness.

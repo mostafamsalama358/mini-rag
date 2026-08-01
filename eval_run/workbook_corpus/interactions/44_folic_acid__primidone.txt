@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: PRIMIDONE
+Risk: ↓ Primidone/phenobarbital levels → increased seizure risk. Monitor: Phenobarbital levels (from primidone metabolism), seizure frequency. Dose Adjust: ↑ Primidone by 25% if phenobarbital <15 mcg/mL.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: ↓ Primidone/phenobarbital levels → increased seizure risk. Monitor: Phenobarbital levels (from primidone metabolism), seizure frequency. Dose Adjust: ↑ Primidone by 25% if phenobarbital <15 mcg/mL. Patient: Watch for tremor/nystagmus (toxicity when folate stopped).

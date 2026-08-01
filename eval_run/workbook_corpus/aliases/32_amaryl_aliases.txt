@@ -1,0 +1,12 @@
+Alias registry — Amaryl
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 32
+Brand: Amaryl
+
+Known aliases:
+- Amaryl (brand)
+- AMARYL 2 MG 30 TABS. (catalog_sku)
+- Glimepiride (inn)
+- اماريل (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

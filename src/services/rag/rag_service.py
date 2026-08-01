@@ -20,6 +20,7 @@ from core.structural.engine import is_exhaustive_list_query, is_structural_refer
 from services.rag.embedding import embed_primary_query, EmbeddingCache
 from services.rag.enrichment import enrich_retrieved_documents
 from services.rag.indexing_diagnostics import log_vector_insert_payload
+from services.rag.metadata_enrichment import enrich_chunk_metadata
 from helpers.config import get_settings
 from typing import List
 import asyncio
@@ -91,9 +92,17 @@ class NLPController(BaseController):
         # step1: get collection name
         collection_name = self.create_collection_name(project_id=project.project_id)
 
-        # step2: manage items
-        chunk_texts = [ c.chunk_text for c in chunks ]
-        metadata = [ c.chunk_metadata for c in  chunks]
+        # step2: manage items (enrich retrieval metadata before embed/insert)
+        chunk_texts = [c.chunk_text for c in chunks]
+        profile = self.build_profile_for_project(project)
+        metadata = [
+            enrich_chunk_metadata(
+                c.chunk_metadata,
+                c.chunk_text or "",
+                enrichment=profile.metadata,
+            )
+            for c in chunks
+        ]
 
         settings = get_settings()
         embed_async = getattr(self.embedding_client, "embed_text_async", None)
@@ -106,6 +115,22 @@ class NLPController(BaseController):
             embedding_vectors = self.embedding_client.embed_text(
                 text=chunk_texts,
                 document_type=DocumentTypeEnum.DOCUMENT.value,
+            )
+
+        if embedding_vectors is None:
+            raise RuntimeError(
+                "Embedding provider returned None (likely Vertex quota); "
+                "refusing vector insert to avoid corrupt indexing"
+            )
+        if len(embedding_vectors) != len(chunk_texts):
+            raise RuntimeError(
+                f"Embedding count mismatch: vectors={len(embedding_vectors)} "
+                f"texts={len(chunk_texts)}"
+            )
+        if any(v is None or len(v) == 0 for v in embedding_vectors):
+            raise RuntimeError(
+                "Embedding batch contained empty/None vectors; "
+                "refusing vector insert"
             )
 
         # step3: create collection if not exists
@@ -548,10 +573,33 @@ class NLPController(BaseController):
         session_id: str | None = None,
         db_client=None,
         metadata_filter: dict | None = None,
-    ) -> tuple[str | None, str | None, list | None, bool]:
+        pipeline_router=None,
+        skill_id: str | None = None,
+    ) -> tuple[str | None, str | None, list | None, bool, str | None]:
         from utils.detect_language import detect_query_language
+        from models.enums.ResponseEnums import ResponseSignal
+
         query_lang = detect_query_language(query, default="en")
         profile = self.build_profile_for_project(project, language=query_lang)
+
+        if pipeline_router is not None:
+            response = await pipeline_router.execute(
+                project=project,
+                query=query,
+                limit=limit,
+                session_id=session_id,
+                metadata_filter=metadata_filter,
+                profile=profile,
+                skill_id=skill_id,
+            )
+            # 5-tuple: answer, prompt, history, needs_clarification, signal
+            return (
+                response.answer,
+                response.full_prompt,
+                response.chat_history,
+                response.needs_clarification,
+                getattr(response.signal, "value", response.signal),
+            )
 
         rag_service = RAGService(
             db_client=db_client,
@@ -562,11 +610,18 @@ class NLPController(BaseController):
             field_registry=self.field_registry,
         )
 
-        return await rag_service.answer_question(
+        answer, full_prompt, chat_history, needs_clarification = await rag_service.answer_question(
             project=project,
             query=query,
             limit=limit,
             session_id=session_id,
             metadata_filter=metadata_filter,
             profile=profile,
+            skill_id=skill_id,
         )
+        signal = (
+            ResponseSignal.RAG_CLARIFICATION_NEEDED.value
+            if needs_clarification
+            else ResponseSignal.RAG_ANSWER_SUCCESS.value
+        )
+        return answer, full_prompt, chat_history, needs_clarification, signal

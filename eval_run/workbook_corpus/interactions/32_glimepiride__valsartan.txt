@@ -1,0 +1,16 @@
+Drug interaction — Amaryl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 32
+Brand: Amaryl
+API 1: GLIMEPIRIDE
+API 2: VALSARTAN
+Risk: Renal impairment exacerbates interaction (both renally cleared).
+Type: Pharmacodynamic.
+Monitoring: eGFR, potassium, BP biweekly.
+Dose adjustment: Halve glimepiride if eGFR <60. Alternatives: Non-renally cleared antidiabetic (e.g., repaglinide).
+Alternative: -
+Patient warning: /Management: Watch for edema, limit NSAIDs.
+Severity: caution
+
+Clinical note:
+Risk: Renal impairment exacerbates interaction (both renally cleared). Type: Pharmacodynamic. Monitoring: eGFR, potassium, BP biweekly. Dosage Adjustments: Halve glimepiride if eGFR <60. Alternatives: Non-renally cleared antidiabetic (e.g., repaglinide). Patient Warnings/Management: Watch for edema, limit NSAIDs.

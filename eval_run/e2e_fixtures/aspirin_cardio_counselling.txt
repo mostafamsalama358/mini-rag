@@ -1,0 +1,18 @@
+NORTHBRIDGE CLINICAL NOTE — Low-Dose Aspirin Counselling (E2E Corpus)
+Document ID: NB-ASA-CARDIO-E2E
+
+Low-dose aspirin (commonly 75–100 mg daily) is used for antiplatelet protection when prescribed.
+
+Interactions and cautions:
+Aspirin + warfarin: higher bleeding risk; only under specialist/clinician plans, often with gastroprotection.
+Aspirin + ibuprofen: regular ibuprofen may reduce aspirin’s antiplatelet effect if taken immediately beforehand; prefer paracetamol for pain when on cardio aspirin, or separate timing per pharmacist advice.
+Aspirin + SSRIs: increased GI bleed risk.
+Aspirin + alcohol binge: higher GI bleed risk.
+
+Supplements:
+High-dose fish oil, ginkgo, or garlic tablets may add bleed risk with aspirin — review before starting.
+Avoid starting multiple “heart health” herbals without pharmacist check.
+
+What to take for pain while on aspirin:
+Prefer paracetamol at standard doses.
+Avoid OTC ibuprofen/naproxen/diclofenac unless a clinician agrees.

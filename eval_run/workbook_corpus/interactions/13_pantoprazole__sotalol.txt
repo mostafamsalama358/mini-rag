@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: SOTALOL
+Risk: Bradycardia exacerbation
+Type: Pharmacodynamic (additive HR reduction)
+Monitoring: 24h Holter + exercise tolerance
+Dose adjustment: Avoid IV pantoprazole
+Alternative: Sucralfate
+Patient warning: Check AM pulse; withhold if <50 bpm.
+Severity: yes
+
+Clinical note:
+Risk: Bradycardia exacerbation; Type: Pharmacodynamic (additive HR reduction); Monitoring: 24h Holter + exercise tolerance; Dosage: Avoid IV pantoprazole; Alternative: Sucralfate; Patient Warnings: Check AM pulse; withhold if <50 bpm.

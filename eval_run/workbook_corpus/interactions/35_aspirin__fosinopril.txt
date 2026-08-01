@@ -1,0 +1,16 @@
+Drug interaction — Aspocid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 35
+Brand: Aspocid
+API 1: ASPIRIN
+API 2: FOSINOPRIL
+Risk: Mild ACEI effect reduction
+Type: Pharmacokinetic
+Monitoring: BP (if high-dose aspirin)
+Dose adjustment: Usually none needed for low-dose
+Alternative: Non-NSAID antiplatelets
+Patient warning: /Management: Report black stools (GI bleed).
+Severity: caution
+
+Clinical note:
+Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose aspirin); Dosage Adjustments: Usually none needed for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools (GI bleed).

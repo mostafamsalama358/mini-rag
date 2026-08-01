@@ -1,0 +1,16 @@
+Drug interaction — Glucophage
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 31
+Brand: Glucophage
+API 1: METFORMIN
+API 2: CAPTOPRIL
+Risk: Minimal hypoglycemia risk (unless combo therapy).
+Type: Pharmacodynamic.
+Monitoring: Renal function q3mo; lactate if symptomatic.
+Dose adjustment: None typically.
+Alternative: SGLT2 inhibitors.
+Patient warning: Stop for vomiting/diarrhea.
+Severity: caution
+
+Clinical note:
+Risk: Minimal hypoglycemia risk (unless combo therapy). Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate if symptomatic. Dosage: None typically. Alternative: SGLT2 inhibitors. Patient Warnings: Stop for vomiting/diarrhea.

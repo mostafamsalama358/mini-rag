@@ -1,0 +1,74 @@
+MILGA 40 F.C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Milga
+Catalog SKU: MILGA 40 F.C.TABS.
+INN / actives: Benfotiamine * Pyridoxine * Cyanocobalamin
+Catalog New Material: VITAMIN B1 (BENFOTIAMINE) * VITAMIN B12 (CYANOCOBALAMIN) * VITAMIN B6 (PYRIDOXINE) * B COMPLEX
+Strength / form: B-vitamin neurotropic complex (Milga) | (web-supplemented dosing below)
+Manufacturer / market: EVA PHARMA
+Price (catalog): 100
+Categories: VITAMINS & SUPPLEMENTS > VITAMINS > VITAMIN B & B COMPLEX
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=MILGA 40; sheet lookup INNs=Benfotiamine, Pyridoxine, Cyanocobalamin, VITAMIN B1 (BENFOTIAMINE), VITAMIN B12 (CYANOCOBALAMIN), VITAMIN B6 (PYRIDOXINE)
+Web clinical sources: Vitamin B complex counseling; Eva Milga pack class
+
+1. What Milga is used for
+Catalog uses: vitamin b
+Approved uses (material sheet): See labeled uses
+Off-label mentions (material sheet): Not listed
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Often 1 tablet 1–3 times daily as labeled for vitamin B supplementation/neuropathy support.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Adult strengths usually not for young children.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Milga if / disease cautions
+From material/disease sheets:
+[BENFOTIAMINE] Hypersensitivity to VITAMIN B1 (BENFOTIAMINE)*
+Children under 12 years *
+[PYRIDOXINE] Hypersensitivity to Vitamin B6 (Pyridoxine)*
+Peptic Ulcer Disease & Gastritis *
+[CYANOCOBALAMIN] Hypersensitivity to Vitamin B12 (Cobalamin)* 
+Leber’s Hereditary Optic Neuropathy (LHON) / Leber's Optic Atrophy*
+Hypersensitivity to Benzyl Alcohol (as preservatives: in some formulation)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): None listed in material sheet
+Notes (material sheet): None listed
+Patient education excerpt: Follow pharmacist counseling
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Vitamin B6 (Pyridoxine) + THIOPENTAL: Risk: High-dose pyridoxine (>200mg/day) induces metabolism → reduced thiopental efficacy → inadequate anesthesia/sedation. Monitoring: EEG during anesthesia; serum thiopental levels if prolonged use. Dosage: Increase thiopental dose 20-30% for induction. Patient Warning: Disclose all supplements pre-surgery; report in…
+- Vitamin B6 (Pyridoxine) + PHENOBARBITAL: Risk: Pyridoxine (>200mg/day) accelerates phenobarbital metabolism → subtherapeutic levels → breakthrough seizures. Monitoring: Serum phenobarbital levels (target 15-40 μg/mL) q2wk. Dosage: Increase phenobarbital 20-50% if levels drop. Patient Warning: Report aura/seizure recurrence; never stop antiepileptic suddenly.
+- Vitamin B6 (Pyridoxine) + PHENOBARBITONE: Risk: Pyridoxine (>200mg/day) accelerates phenobarbital metabolism → subtherapeutic levels → breakthrough seizures. Monitoring: Serum phenobarbital levels (target 15-40 μg/mL) q2wk. Dosage: Increase phenobarbital 20-50% if levels drop. Patient Warning: Report aura/seizure recurrence; never stop antiepileptic suddenly.
+- Vitamin B6 (Pyridoxine) + PRIMIDONE: Risk: Pyridoxine induces metabolism → reduced primidone/phenobarbital levels → loss of seizure control. Monitoring: Serum primidone (5-12 μg/mL) and phenobarbital levels monthly. Dosage: Increase primidone 25-50mg/day increments. Patient Warning: Report dizziness/ataxia with dose increases; avoid >100mg/day B6.
+- Vitamin B6 (Pyridoxine) + AMOBARBITAL: Risk: Reduced amobarbital efficacy → sedation/anesthesia failure. Monitoring: Respiratory rate and sedation scores during use. Dosage: Increase amobarbital 30-50% for procedural sedation. Patient Warning: Disclose B6 use before medical procedures.
+- Vitamin B6 (Pyridoxine) + PENTOBARBITAL: Risk: Pyridoxine-induced clearance → inadequate coma induction in refractory status epilepticus. Monitoring: Continuous EEG in ICU settings. Dosage: Higher pentobarbital loading doses (5-10mg/kg). Patient Warning: N/A (critical care use only).
+- Vitamin B6 (Pyridoxine) + SECOBARBITAL: Risk: Diminished secobarbital effect → insomnia treatment failure. Monitoring: Sleep architecture studies if available. Dosage: Avoid chronic use; consider non-barbiturate hypnotics. Patient Warning: Report rebound insomnia; max B6 ≤100mg/day.
+- Vitamin B6 (Pyridoxine) + PHENYTOIN: Risk: Reduced phenytoin efficacy → breakthrough seizures (pyridoxine >200mg/day induces metabolism). Monitoring: Serum phenytoin levels (target 10-20 μg/mL) monthly. Dosage: Avoid high-dose B6; if essential, increase phenytoin by 25-50 mg/day. Patient: Report aura/seizure recurrence immediately.
+- Vitamin B6 (Pyridoxine) + LEVODOPA: Risk: Pyridoxine cofactor effect → peripheral decarboxylation → ↓ levodopa CNS bioavailability → Parkinsonism exacerbation; Monitoring: "ON" time duration; Dosage: Avoid unless with decarboxylase inhibitor (carbidopa/benserazide); if essential, ↑ levodopa by 100-200mg/day; Patient: Do not take B6 supplements without c…
+- Vitamin B12 (Cyanocobalamin) + CHLORAMPHENICOL: Risk: CHLORAMPHENICOL may antagonize VITAMIN B12's hematinic effects, potentially masking/mimicking B12 deficiency. Monitoring: Weekly FBC, serum B12 levels (especially with prolonged therapy >2 weeks). Dosage: No adjustment needed. Patient Warning: Report fatigue/pallor; B12 supplementation may need continuation post…
+- Vitamin B12 (Cyanocobalamin) + COLCHICINE: Risk: Colchicine impairs B12 absorption, potentially worsening deficiency. Monitoring: B12 levels annually if chronic use. Dosage: No adjustment. Patient Warnings: Separate doses by ≥2hr; monitor for paresthesia.
+- Vitamin B12 (Cyanocobalamin) + METFORMIN: Risk: Metformin reduces B12 absorption (incidence: 5-30%), risking neuropathy. Monitoring: B12/MMA every 1-2yr. Dosage: B12 supplementation may be needed. Patient Warnings: Separate doses by ≥2hr; calcium may counteract effect.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: B vitamins generally acceptable at physiologic doses; avoid megadoses unless advised.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Usually compatible at labeled doses.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): See pack
+Minor (material sheet): See pack
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

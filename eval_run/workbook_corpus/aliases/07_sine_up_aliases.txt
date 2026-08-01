@@ -1,0 +1,16 @@
+Alias registry — Sine-Up
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 07
+Brand: Sine-Up
+
+Known aliases:
+- Sine-Up (brand)
+- SINE UP 20 TAB. (catalog_sku)
+- Pseudoephedrine (inn)
+- PSEUDOEPHEDRINE HCL (inn_alias)
+- PSEUDOEPHEDRINE HYDROCHLORIDE (inn_alias)
+- Triprolidine (inn)
+- ساين اب (arabic)
+- ساين أب (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

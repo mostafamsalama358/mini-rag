@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: ALCOHOL
+Risk: Avoid coingestion , DISULFIRAM-like reaction (nausea, vomiting, flushing, dizziness, throbbing headache, chest and abdominal discomfort)
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Avoid coingestion , DISULFIRAM-like reaction (nausea, vomiting, flushing, dizziness, throbbing headache, chest and abdominal discomfort)

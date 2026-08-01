@@ -1,0 +1,15 @@
+Alias registry — Panadol Extra
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 51
+Brand: Panadol Extra
+
+Known aliases:
+- Panadol Extra (brand)
+- PANADOL EXTRA 24 F.C. TABS. (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- Caffeine (inn)
+- بانادول اكسترا (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

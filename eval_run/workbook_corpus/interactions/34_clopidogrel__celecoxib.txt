@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: CELECOXIB
+Risk: Intracerebral hemorrhage (case reports) + GI bleeding.
+Type: Pharmacodynamic.
+Monitoring: Neurological symptoms, BP.
+Dose adjustment: Avoid combination.
+Alternative: Opioids/acetaminophen.
+Patient warning: /Management: Immediate discontinuation if headache/weakness occurs; strict BP control.
+Severity: yes
+
+Clinical note:
+Risk: Intracerebral hemorrhage (case reports) + GI bleeding. Type: Pharmacodynamic. Monitoring: Neurological symptoms, BP. Dosage Adjustments: Avoid combination. Alternative: Opioids/acetaminophen. Patient Warnings/Management: Immediate discontinuation if headache/weakness occurs; strict BP control.

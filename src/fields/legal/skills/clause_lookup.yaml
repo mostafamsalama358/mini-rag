@@ -1,0 +1,5 @@
+﻿id: clause_lookup
+name: Clause Lookup
+profile: clause
+prompt: clause_lookup
+validation: {}

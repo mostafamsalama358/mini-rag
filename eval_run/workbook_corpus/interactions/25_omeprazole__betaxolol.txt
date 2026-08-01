@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: BETAXOLOL
+Risk: Corneal edema with systemic absorption
+Type: Pharmacokinetic (CYP2D6 inhibition)
+Monitoring: Slit-lamp weekly + serum betaxolol
+Dose adjustment: Betaxolol ophthalmic only
+Alternative: Dorzolamide
+Patient warning: Preservative-free tears Q2h; report halos.
+Severity: caution
+
+Clinical note:
+Risk: Corneal edema with systemic absorption; Type: Pharmacokinetic (CYP2D6 inhibition); Monitoring: Slit-lamp weekly + serum betaxolol; Dosage: Betaxolol ophthalmic only; Alternative: Dorzolamide; Patient Warnings: Preservative-free tears Q2h; report halos.

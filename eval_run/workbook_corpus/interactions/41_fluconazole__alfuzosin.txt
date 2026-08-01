@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: ALFUZOSIN
+Risk: Mild QT prolongation risk (high-dose fluconazole)
+Type: Pharmacodynamic
+Monitoring: ECG if >400mg/day fluconazole
+Dose adjustment: None typically needed
+Alternative: Terbinafine if cardiac risk
+Patient warning: /Management: Monitor for arrhythmias.
+Severity: caution
+
+Clinical note:
+Risk: Mild QT prolongation risk (high-dose fluconazole); Type: Pharmacodynamic; Monitoring: ECG if >400mg/day fluconazole; Dosage Adjustments: None typically needed; Alternative: Terbinafine if cardiac risk; Patient Warnings/Management: Monitor for arrhythmias.

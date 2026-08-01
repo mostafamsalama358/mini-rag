@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: SECOBARBITAL
+Risk: Psychotic reactions possible.
+Type: -
+Monitoring: Mental status exams.
+Dose adjustment: ↑ Metronidazole 100% or avoid.
+Alternative: -
+Patient warning: Report hallucinations/confusion.
+Severity: yes
+
+Clinical note:
+Risk: Psychotic reactions possible. Monitoring: Mental status exams. Dosage: ↑ Metronidazole 100% or avoid. Patient Warning: Report hallucinations/confusion.

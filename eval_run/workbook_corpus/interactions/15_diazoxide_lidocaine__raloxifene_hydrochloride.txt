@@ -1,0 +1,16 @@
+Drug interaction — Anaseziago
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 15
+Brand: Anaseziago
+API 1: DIAZOXIDE/LIDOCAINE
+API 2: RALOXIFENE HYDROCHLORIDE
+Risk: Raloxifene's plasma protein binding displacement increases free fractions of both drugs (diazoxide ↑40%, lidocaine ↑35%). Effects: Severe hypotension (SBP <90mmHg), neurotoxicity (lidocaine levels >5mcg/mL), and hyperglycemia (glucose >250mg/dL).
+Type: -
+Monitoring: Continuous ECG (QTc), BP q5min, glucose checks.
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Raloxifene's plasma protein binding displacement increases free fractions of both drugs (diazoxide ↑40%, lidocaine ↑35%). Effects: Severe hypotension (SBP <90mmHg), neurotoxicity (lidocaine levels >5mcg/mL), and hyperglycemia (glucose >250mg/dL). Monitoring: Continuous ECG (QTc), BP q5min, glucose checks. Dosage…

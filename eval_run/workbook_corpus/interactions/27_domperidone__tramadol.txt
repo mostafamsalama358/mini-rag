@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: TRAMADOL
+Risk: Serotonin syndrome risk (weak SRI effect of tramadol).
+Type: -
+Monitoring: Watch for clonus, hyperreflexia. Dose Adjustment: Max tramadol 200mg/day if combined.
+Dose adjustment: -
+Alternative: -
+Patient warning: Report muscle twitching. Mechanism: Mu agonist + SNRI activity.
+Severity: caution
+
+Clinical note:
+Risk: Serotonin syndrome risk (weak SRI effect of tramadol). Monitoring: Watch for clonus, hyperreflexia. Dose Adjustment: Max tramadol 200mg/day if combined. Patient Warning: Report muscle twitching. Mechanism: Mu agonist + SNRI activity.

@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B6 (PYRIDOXINE)
+API 2: PRIMIDONE
+Risk: Pyridoxine induces metabolism → reduced primidone/phenobarbital levels → loss of seizure control.
+Type: -
+Monitoring: Serum primidone (5-12 μg/mL) and phenobarbital levels monthly.
+Dose adjustment: Increase primidone 25-50mg/day increments.
+Alternative: -
+Patient warning: Report dizziness/ataxia with dose increases; avoid >100mg/day B6.
+Severity: yes
+
+Clinical note:
+Risk: Pyridoxine induces metabolism → reduced primidone/phenobarbital levels → loss of seizure control. Monitoring: Serum primidone (5-12 μg/mL) and phenobarbital levels monthly. Dosage: Increase primidone 25-50mg/day increments. Patient Warning: Report dizziness/ataxia with dose increases; avoid >100mg/day B6.

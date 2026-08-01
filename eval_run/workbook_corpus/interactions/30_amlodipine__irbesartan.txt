@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: IRBESARTAN
+Risk: Refractory edema (30% incidence)
+Type: Synergistic
+Monitoring: Daily weights + pedal exams
+Dose adjustment: Start amlodipine 2.5mg QD
+Alternative: Chlorthalidone add-on; Warnings: Consider loop diuretic for edema
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Refractory edema (30% incidence); Type: Synergistic; Monitoring: Daily weights + pedal exams; Dosage: Start amlodipine 2.5mg QD; Alternative: Chlorthalidone add-on; Warnings: Consider loop diuretic for edema

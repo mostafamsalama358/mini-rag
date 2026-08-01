@@ -1,0 +1,16 @@
+Drug interaction — Aspocid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 35
+Brand: Aspocid
+API 1: ASPIRIN
+API 2: PRAZOSIN
+Risk: GI bleeding with hypotension
+Type: Mixed
+Monitoring: Hgb, BP, GI symptoms
+Dose adjustment: PPI prophylaxis recommended
+Alternative: COX-2 inhibitors
+Patient warning: Report black stools immediately.
+Severity: caution
+
+Clinical note:
+Risk: GI bleeding with hypotension; Type: Mixed; Monitoring: Hgb, BP, GI symptoms; Dosage: PPI prophylaxis recommended; Alternative: COX-2 inhibitors; Patient Warnings: Report black stools immediately.

@@ -1,0 +1,103 @@
+GAVISCON ADVANCE 150 ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Gaviscon Advance
+Catalog SKU: GAVISCON ADVANCE 150 ML
+INN / actives: Sodium Alginate * Potassium Bicarbonate * Alginate
+Catalog New Material: POTASSIUM BICARBONATE * SODIUM ALGINATE
+Strength / form: Alginate antacid liquid (Advance-class) | (web-supplemented dosing below)
+Manufacturer / market: UNITED PARTNERS
+Price (catalog): 144
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-PEPTIC ULCER & ANTACIDS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=GAVISCON ADVANCE; sheet lookup INNs=Sodium Alginate, Potassium Bicarbonate, Alginate, POTASSIUM BICARBONATE, SODIUM ALGINATE
+Web clinical sources: Gaviscon Advance SmPC class
+
+1. What Gaviscon Advance is used for
+Catalog uses: antacid
+Approved uses (material sheet): Symptomatic Relief of Gastroesophageal Reflux Disease (GERD) and Heartburn - Particularly effective for "water brash" and regurgitation; Mechanism: Forms a gel like "raft" that floats on top of stomach contents, acting as a physical barrier to prevent reflux. Dosing (OTC): Typically taken after meals and at bedtime , Usual dose is 10 to 20 mL of liquid or 1 to 2 chewable tablets. Max frequency is usually 4 times daily. Always follow specific product label instructions*
+Off-label mentions (material sheet): Laryngopharyngeal Reflux (LPR/Silent Reflux)*
+As a mechanical barrier to protect the esophagus - in patients with persistent reflux*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Typically 10–20 ml after meals and at bedtime (follow bottle). Do not exceed pack maximum.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Age-banded paediatric alginate products preferred; adult Advance may be ≥12 y.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Gaviscon Advance if / disease cautions
+From material/disease sheets:
+[SODIUM ALGINATE] Hypersensitivity to SODIUM ALGINATE *
+[ALGINATE] Hypersensitivity to ALGINATE*
+Heart Failure (CHF) *
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5)*
+Obstructive GI Diseases*
+Dehydration & Hypovolemia*
+[SODIUM] Hypersensitivity to SODIUM * 
+hypernatremia*
+Heart Failure (CHF)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None.
+• Sodium Alginate, as an OTC agent, does not carry a Black Box Warning.
+Notes (material sheet): • Dose Modification:
+- Renal Impairment:
+ Use with caution in severe impairment due to sodium content (in formulations containing sodium bicarbonate). Monitoring of fluid balance and blood pressure may be necessary.
+- Hepatic Impairment:
+ Use with caution in conditions predisposing to fluid overload (e.g., cirrhosis).
+- Concomitant Therapy:
+ Can interfere with the absorption of other oral medications. It is recommended to take other medications at least 2 hours before or after taking sodium alginate. This is due to its physical barrier-forming mechanism in the stomach.
+.....................................................................................
+• Medical Info for HCPs:
+- Key Risks:…
+Patient education excerpt: • Best Time to Take:
+- Take after meals and at bedtime.
+- This ensures the protective raft is present when the stomach is full and when lying down, which can trigger reflux.
+• How to Take:
+- Chew tablets thoroughly before swallowing. Do not swallow them whole. For liquid, shake the bottle well and take the liquid undiluted.
+• Missed Dose:
+- Take it as soon as you remember.
+- If it is almost time for your next dose, skip the missed dose. Do not double the dose.
+• Interactions:
+- Take other medications at least 2 hours before or after you take sodium alginate.
+- It can block the absorption of other drugs.
+• What to Watch For:
+- If symptoms do not improve after 2 weeks, see your doctor. Stop u…
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Sodium Alginate + CAPTOPRIL: Risk: Minimal absorption impact; Type: Minimal interaction; Monitoring: Routine BP monitoring; Dosage Adjustments: None typically needed; Alternative: Preferred for GERD with ACEIs; Patient Warnings/Management: Can be taken together if needed.
+- Sodium Alginate + BENAZEPRIL: Risk: No clinically relevant interaction; Type: Non-interacting; Monitoring: Standard care; Dosage Adjustments: None; Alternative: Preferred for GERD; Patient Warnings/Management: Safe for any administration timing.
+- Sodium Alginate + CILAZAPRIL: Risk: No interaction expected; Type: Non-interacting; Monitoring: Standard BP monitoring; Dosage Adjustments: None; Alternative: Preferred for GERD; Patient Warnings/Management: No administration restrictions.
+- Sodium Alginate + ALUMINUM ASPIRIN: Risk: Mild absorption delay; Type: Physical barrier effect; Monitoring: Clinical response; Dosage Adjustments: Usually not required; Alternative: Alginate-free formulations; Patient Warnings/Management: Take aspirin first if GERD symptoms.
+- Sodium Alginate + ACETYL SALICYLIC ACID: Risk: Minimal clinical impact; Type: Mechanical interference; Monitoring: Not typically needed; Dosage Adjustments: None; Alternative: Non-alginate antacids; Patient Warnings/Management: Normal dosing acceptable.
+- Sodium Alginate + ASPIRIN: Risk: Minimal absorption impact; Type: Mechanical barrier effect; Monitoring: Not typically required; Dosage Adjustments: None; Alternative: Alginate-free antireflux agents; Patient Warnings/Management: Take aspirin first if GERD symptoms.
+- Sodium Alginate + DIPYRIDAMOLE: Risk: Mucosal barrier interference. Type: Physical. Monitoring: GERD symptom control. Dosage Adjustments: Liquid formulation spacing. Alternative: H2 blockers. Patient Warnings/Management: Upright positioning after doses.
+- Sodium Alginate + DIGOXIN: Risk: Minimal interaction (physical barrier mechanism); Type: Low-risk; Monitoring: Routine monitoring; Dosage Adjustments: None typically; Alternative: Administer digoxin 1h before alginate; Patient Warnings/Management: No special precautions, Avoid high-fiber meals (reduces digoxin absorption)
+- Sodium Alginate + GEMFIBROZIL: Risk: Minimal clinical interaction. Type: Pharmacokinetic (negligible). Monitoring: Routine lipid monitoring. Dosage Adjustments: None required. Alternative: Alginate-antacid combinations. Patient Warnings/Management: Standard dosing acceptable.
+- Sodium Alginate + FENOFIBRATE: Risk: No interaction expected. Type: Pharmacokinetic (none). Monitoring: Routine care. Dosage Adjustments: Unnecessary. Alternative: No restrictions. Patient Warnings/Management: No special precautions.
+- Sodium Alginate + CLOFIBRATE: Risk: No significant interaction. Type: Pharmacokinetic (none). Monitoring: Routine lipid tests. Dosage Adjustments: Unnecessary. Alternative: Alginate combinations acceptable. Patient Warnings/Management: No special precautions needed.
+- Sodium Alginate + ATORVASTATIN: Risk: No significant interaction. Type: Pharmacokinetic. Monitoring: Routine lipid tests. Dosage Adjustments: Unnecessary. Alternative: Alginate combinations acceptable. Patient Warnings/Management: No special precautions.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Alginates widely used for pregnancy heartburn when lifestyle measures fail.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Compatible (minimal systemic absorption).
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): None
+Minor (material sheet): Nausea - Mild (1-5%)*
+Bloating (1-5%)*
+Diarrhea (1-5%)*
+constipation (1-2%)*
+Allergic Reactions (rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

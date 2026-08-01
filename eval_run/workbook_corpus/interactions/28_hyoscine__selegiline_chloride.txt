@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: SELEGILINE CHLORIDE
+Risk: Worsened sialorrhea management, paradoxical drooling
+Type: Pharmacodynamic
+Monitoring: Saliva production scale
+Dose adjustment: Transdermal only
+Alternative: Glycopyrronium wipes
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Worsened sialorrhea management, paradoxical drooling; Type: Pharmacodynamic; Monitoring: Saliva production scale; Dosage: Transdermal only; Alternative: Glycopyrronium wipes; Patient: Change patches cautiously.

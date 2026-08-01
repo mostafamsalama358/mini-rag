@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B12 (CYANOCOBALAMIN)
+API 2: CHLORAMPHENICOL
+Risk: CHLORAMPHENICOL may antagonize VITAMIN B12's hematinic effects, potentially masking/mimicking B12 deficiency.
+Type: -
+Monitoring: Weekly FBC, serum B12 levels (especially with prolonged therapy >2 weeks).
+Dose adjustment: No adjustment needed.
+Alternative: -
+Patient warning: Report fatigue/pallor; B12 supplementation may need continuation post…
+Severity: caution
+
+Clinical note:
+Risk: CHLORAMPHENICOL may antagonize VITAMIN B12's hematinic effects, potentially masking/mimicking B12 deficiency. Monitoring: Weekly FBC, serum B12 levels (especially with prolonged therapy >2 weeks). Dosage: No adjustment needed. Patient Warning: Report fatigue/pallor; B12 supplementation may need continuation post…

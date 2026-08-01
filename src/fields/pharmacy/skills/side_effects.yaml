@@ -1,0 +1,7 @@
+﻿id: side_effects
+name: Side Effects
+profile: side_effects
+prompt: side_effects
+validation:
+  require_medicine: true
+order: 8

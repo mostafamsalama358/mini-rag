@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: AMOXAPINE
+Risk: Significant CNS depression risk with additive sedation; monitor respiratory rate; avoid in COPD; warn about dizziness and driving avoidance.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Significant CNS depression risk with additive sedation; monitor respiratory rate; avoid in COPD; warn about dizziness and driving avoidance.

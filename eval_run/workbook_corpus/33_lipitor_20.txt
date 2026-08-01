@@ -1,0 +1,115 @@
+LIPITOR 20 MG 28 TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Lipitor
+Product line: Lipitor
+Catalog SKU: LIPITOR 20 MG 28 TABS.
+SKU ID: 33
+INN / actives: Atorvastatin
+INN primary: Atorvastatin
+INN aliases: ATORVASTATIN; ATORVASTATIN CALCIUM
+Strength / form: Atorvastatin 20 mg | Form=TAB. | Min.age=10 years
+Manufacturer / market: VIATRIS EGYPT
+Price (catalog): 58.5
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > HYPERLIPIDEMIA
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Lipitor is used for
+Hyperlipidemia - Reduce elevated TC, LDL C, apoB, TG. Start 10 : 20 mg once daily; max 80 mg. Starting dose in patients requiring larger LDL C reduction (ie, >45%): 40 mg PO qDay , Maintenance: 10 : 80 mg PO qDay, check lipid levels after 2 : 4 weeks and adjust dose accordingly*
+Hypertriglyceridemia, Adjunct to diet for elevated TG levels - 10 mg PO qDay initially , Maintenance: 10 to 80 mg PO qDay maintenance, check lipid levels after 2 : 4 weeks and adjust dose accordingly*
+Reduction of risk of stroke, heart attack, and revascularization procedures in patients without evidence of coronary heart disease (CHD) but with multiple risk factors other than diabetes (eg, smoking, HTN, low HDL C, family history of early CHD)-10 : 80 mg PO qDay*
+Primary Prevention - Reduce CV risk in adults with multiple risk factors*
+Secondary Prevention- Reduce risk of MI, stroke in adults with CVD*
+Heterozygo
+
+2. Dosage — Adults
+Adult dose: 20 mg once daily
+Maximum daily dose: 80 mg/day (80 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 10 years
+Pediatric min age: 10 years
+Pediatric dose: >=10 years: 10 mg once daily. Max 20 mg/day.
+Pediatric max daily dose: 20 mg/day
+
+4. Do not take Lipitor if / disease cautions
+Hypersensitivity to ATORVASTATIN * 
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation * 
+Rhabdomyolysis *
+Myasthenia Gravis *
+Amyotrophic lateral sclerosis (ALS) *
+Hypothyroidism*
+Myopathies & Muscular Dystrophies *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None
+Warnings: • Missed dose : Take as soon as possible , If dose missed by >12 hours, do not take; wait until next scheduled dose , Do not take 2 doses at the same time
+• Avoid grapefruit products
+• Administer atorvastatin/ezetimibe ≥2 hr before or ≥4 hr after administering bile acid sequestrant
+• Do not take any red yeast rice products while you are taking atorvastatin because some red yeast rice products may also contain a statin called lovastatin
+• healthy weight by using weight loss medicine & follow up by scale weight
+• health diet
+• Adding another method of contraception, such as condom
+........................................................................
+• Dose Modification:
+- Hepatic: Use with
+HCP notes: • Missed dose : Take as soon as possible , If dose missed by >12 hours, do not take; wait until next scheduled dose , Do not take 2 doses at the same time
+• Avoid grapefruit products
+• Administer atorvastatin/ezetimibe ≥2 hr before or ≥4 hr after administering bile acid sequestrant
+• Do not take any red yeast rice products while you are taking atorvastatin because some red yeast rice products may also contain a statin called lovastatin
+• healthy weight by using weight loss medicine & follow up by scale weight
+• health diet
+• Adding another method of contraception, such as condom
+........................................................................
+• Dose Modification:
+- Hepatic: Use with
+Patient education: • Timing: Once daily, with or without food, at any time. Be consistent.
+• Oral suspension : Take only on an empty stomach (1 hr before or 2 hr after a meal) , Measure dose using calibrated oral syringe or other oral dosing device scored using metric units of measurements (ie, mL)
+• Interactions: Avoid grapefruit juice. Avoid St. John's Wort. Tell your doctor all medications you take.
+• Missed Dose: Take as soon as remembered. If near next dose, skip it. Do not double dose.
+• Seek Immediate Help For: Unexplained muscle pain/tenderness/weakness (especially with fever/dark urine); yellowing of skin/eyes; severe stomach pain.
+• Pregnancy: Do not use if pregnant or trying to become pregnant.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- ATORVASTATIN + AMIODARONE; Risk: ↑ Atorvastatin levels → myopathy; Type: Pharmacokinetic; Monitoring: LFTs/CPK; Dose adjustment: Max 20mg daily; Alternative: Rosuvastatin; Patient warning: /Management: Avoid strenuous exercise.
+- ATORVASTATIN + DRONEDARONE; Risk: ↑ Atorvastatin levels (CYP3A4 inhibition) → myopathy; Type: Pharmacokinetic; Monitoring: CPK if muscle symptoms; Dose adjustment: Max 20mg daily; Alternative: Rosuvastatin; Patient warning: /Management: Report unexplained muscle pain.
+- ATORVASTATIN + DIAZOXIDE; Risk: Exacerbated hyperglycemia; Type: Additive metabolic effect; Monitoring: Glucose HbA1c q3mo, LFTs; Dose adjustment: Usually none needed; Alternative: Pravastatin
+- ATORVASTATIN + BOSENTAN; Risk: Reduced atorvastatin efficacy (CYP3A4 induction) & hepatotoxicity; Type: Pharmacokinetic & additive toxicity; Monitoring: Lipid panel, LFTs monthly; Dose adjustment: ↑ Atorvastatin dose likely; Alternative: Fluvastatin
+- ATORVASTATIN + MINOXIDIL; Risk: Orthostatic hypotension; Type: Pharmacodynamic; Monitoring: Sitting/standing BP, CK; Dose adjustment: Minoxidil dose reduction may be needed; Alternative: Pravastatin
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: contraindicated
+
+8. Breastfeeding
+Breastfeeding safety: contraindicated
+
+9. Supplements / cross-selling
+Catalog cross-selling: • BETA GLUCAN (e,g; UBMIMMUNE CAPS)
+• CO-ENZYME Q10
+
+10. Possible side effects
+Major: Nasopharyngitis - Common Cold (>10%)*
+Arthralgia - Joint Pain (>10%)*
+Diarrhea (>10%)*
+Pain in Extremity (>10%)*
+Urinary Tract Infection (>10%)*
+Minor: Insomnia (<10%)*
+Urinary tract infection (URTI) (<10%)*
+Nausea (<10%)*
+Dyspepsia (<10%)*
+Increased transaminases (<10%)*
+Muscle spasms (<10%)*
+Musculoskeletal pain (<10%)*
+Myalgia (<10%)*
+Limb pain (<10%)*
+Pharyngolaryngeal pain (<10%)*
+Angina (<1%)*
+Syncope (<1%)* 
+Dyspnea (<1%)*
+Myopathy (<10%)*
+Anaphylaxis (<10%)*
+Stevens Johnson syndrome (<1%)*
+Myositis (<1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

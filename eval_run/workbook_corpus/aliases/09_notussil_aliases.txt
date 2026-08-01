@@ -1,0 +1,12 @@
+Alias registry — Notussil
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 09
+Brand: Notussil
+
+Known aliases:
+- Notussil (brand)
+- NOTUSSIL 4MG/ML SUSP. 60ML (catalog_sku)
+- Levodropropizine (inn)
+- نوتوسيل (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

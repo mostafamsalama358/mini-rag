@@ -1,0 +1,16 @@
+Drug interaction — Hi-Biotic
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 22
+Brand: Hi-Biotic
+API 1: AMOXICILLIN
+API 2: METHOTREXATE
+Risk: Competitive tubular secretion → 60% ↑ MTX AUC.
+Type: -
+Monitoring: Pre/post-dose creatinine clearance. Dose Adjustment: MTX ≤15mg/week + IV hydration.
+Dose adjustment: -
+Alternative: -
+Patient warning: Report ↓ urine output immediately.
+Severity: caution
+
+Clinical note:
+Risk: Competitive tubular secretion → 60% ↑ MTX AUC. Monitoring: Pre/post-dose creatinine clearance. Dose Adjustment: MTX ≤15mg/week + IV hydration. Patient Warning: Report ↓ urine output immediately.

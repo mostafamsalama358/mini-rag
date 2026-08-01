@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: THIOPENTAL
+Risk: ↓ Antiepileptic efficacy (enhanced metabolism) → breakthrough seizures. Monitor: Seizure frequency, EEG if indicated. Dose Adjust: ↑ Thiopental dose by 20-30% if levels subtherapeutic.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: ↓ Antiepileptic efficacy (enhanced metabolism) → breakthrough seizures. Monitor: Seizure frequency, EEG if indicated. Dose Adjust: ↑ Thiopental dose by 20-30% if levels subtherapeutic. Patient: Report aura/seizure recurrence; maintain medication adherence.

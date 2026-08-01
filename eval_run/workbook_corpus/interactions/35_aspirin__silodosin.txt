@@ -1,0 +1,16 @@
+Drug interaction — Aspocid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 35
+Brand: Aspocid
+API 1: ASPIRIN
+API 2: SILODOSIN
+Risk: Increased bleeding with prostate procedures
+Type: Mixed
+Monitoring: BP, bleeding time pre-op
+Dose adjustment: Hold aspirin 7 days pre-TURP
+Alternative: Clopidogrel if antiplatelet needed
+Patient warning: Report hematuria.
+Severity: caution
+
+Clinical note:
+Risk: Increased bleeding with prostate procedures; Type: Mixed; Monitoring: BP, bleeding time pre-op; Dosage: Hold aspirin 7 days pre-TURP; Alternative: Clopidogrel if antiplatelet needed; Patient Warnings: Report hematuria.

@@ -1,0 +1,7 @@
+﻿id: consultations
+name: Consultations
+profile: pharmacy_consult
+prompt: consultations
+validation:
+  require_medicine: true
+order: 1

@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: PROPAFENONE
+Risk: Mild ↑ propafenone levels (CYP2D6 inhibition)
+Type: Pharmacokinetic
+Monitoring: ECG (PR interval), BP
+Dose adjustment: None unless CYP2D6 PM
+Alternative: Amorolfine nail lacquer
+Patient warning: Watch for worsened side effects.
+Severity: caution
+
+Clinical note:
+Risk: Mild ↑ propafenone levels (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: ECG (PR interval), BP; Dosage Adjustments: None unless CYP2D6 PM; Alternative: Amorolfine nail lacquer; Patient Warnings: Watch for worsened side effects.

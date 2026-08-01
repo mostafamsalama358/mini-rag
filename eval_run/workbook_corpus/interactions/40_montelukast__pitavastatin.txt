@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: PITAVASTATIN
+Risk: OATP1B1 transporter competition → possible ↑ pitavastatin levels
+Type: -
+Monitoring: CK baseline + q6mo; Dose Adjust: Max pitavastatin 2mg/day
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: OATP1B1 transporter competition → possible ↑ pitavastatin levels; Monitoring: CK baseline + q6mo; Dose Adjust: Max pitavastatin 2mg/day; Patient: Take doses 12h apart; report unexplained fatigue.

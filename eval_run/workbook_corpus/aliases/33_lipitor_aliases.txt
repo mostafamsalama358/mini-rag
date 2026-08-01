@@ -1,0 +1,13 @@
+Alias registry — Lipitor
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 33
+Brand: Lipitor
+
+Known aliases:
+- Lipitor (brand)
+- LIPITOR 20 MG 28 TABS. (catalog_sku)
+- Atorvastatin (inn)
+- ATORVASTATIN CALCIUM (inn_alias)
+- ليبيتور (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

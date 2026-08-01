@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: DEXTROMETHORPHAN
+Risk: Additive CNS depression via dopamine/sigma-1 receptor effects.
+Type: -
+Monitoring: Watch for excessive sedation, especially in CYP2D6 poor metabolizers. Dose Adjustment: Limit dextromethorphan to 30mg q6h if combined.
+Dose adjustment: -
+Alternative: -
+Patient warning: Avoid alcohol and driving. Mechanism: Weak opioid agonist with serotonergic activity.
+Severity: yes
+
+Clinical note:
+Risk: Additive CNS depression via dopamine/sigma-1 receptor effects. Monitoring: Watch for excessive sedation, especially in CYP2D6 poor metabolizers. Dose Adjustment: Limit dextromethorphan to 30mg q6h if combined. Patient Warning: Avoid alcohol and driving. Mechanism: Weak opioid agonist with serotonergic activity.

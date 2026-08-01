@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: MEMANTINE
+Risk: Sedation (RASS ≤-1).
+Type: Pharmacodynamic.
+Monitoring: Sedation scale q8h.
+Dose adjustment: ↓ HYOSCINE 50%.
+Alternative: Ondansetron.
+Patient warning: /Management: Avoid alcohol.
+Severity: yes
+
+Clinical note:
+Risk: Sedation (RASS ≤-1). Type: Pharmacodynamic. Monitoring: Sedation scale q8h. Dosage Adjustments: ↓ HYOSCINE 50%. Alternative: Ondansetron. Patient Warnings/Management: Avoid alcohol.

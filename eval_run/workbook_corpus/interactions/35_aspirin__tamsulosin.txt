@@ -1,0 +1,16 @@
+Drug interaction — Aspocid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 35
+Brand: Aspocid
+API 1: ASPIRIN
+API 2: TAMSULOSIN
+Risk: Increased perioperative bleeding (TURP risk)
+Type: Mixed
+Monitoring: BP, bleeding time pre-procedure
+Dose adjustment: Hold aspirin 7-10 days pre-TURP
+Alternative: Heparin bridge if needed
+Patient warning: Report blood in urine/stool.
+Severity: caution
+
+Clinical note:
+Risk: Increased perioperative bleeding (TURP risk); Type: Mixed; Monitoring: BP, bleeding time pre-procedure; Dosage: Hold aspirin 7-10 days pre-TURP; Alternative: Heparin bridge if needed; Patient Warnings: Report blood in urine/stool.

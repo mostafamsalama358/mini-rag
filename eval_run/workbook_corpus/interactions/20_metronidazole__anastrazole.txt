@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: ANASTRAZOLE
+Risk: CYP2C19 inhibition → anastrozole AUC↑150%.
+Type: -
+Monitoring: Breast tenderness/pain. Dose Adjustment: Anastrozole 0.5mg daily during combo.
+Dose adjustment: -
+Alternative: -
+Patient warning: Discontinue if metallic taste occurs.
+Severity: caution
+
+Clinical note:
+Risk: CYP2C19 inhibition → anastrozole AUC↑150%. Monitoring: Breast tenderness/pain. Dose Adjustment: Anastrozole 0.5mg daily during combo. Patient Warning: Discontinue if metallic taste occurs.

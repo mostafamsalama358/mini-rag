@@ -1,0 +1,16 @@
+Drug interaction — Panadol Sinus Relief PE
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 03
+Brand: Panadol Sinus Relief PE
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: DOXEPIN
+Risk: Additive sedation with high-dose acetaminophen formulations
+Type: -
+Monitoring: Epworth scale
+Dose adjustment: Avoid combo PM formulations
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Additive sedation with high-dose acetaminophen formulations; Monitoring: Epworth scale; Dosage: Avoid combo PM formulations; Patient: Daytime dosing only; report excessive drowsiness.

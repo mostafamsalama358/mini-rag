@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: MOCLOBEMIDE
+Risk: Visual hallucinations, coma
+Type: Pharmacodynamic
+Monitoring: GCS if sedated
+Dose adjustment: Transdermal only
+Alternative: Ondansetron
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Visual hallucinations, coma; Type: Pharmacodynamic; Monitoring: GCS if sedated; Dosage: Transdermal only; Alternative: Ondansetron; Patient: Discontinue if "dream-like" state occurs.

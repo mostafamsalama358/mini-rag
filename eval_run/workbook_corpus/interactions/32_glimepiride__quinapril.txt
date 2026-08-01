@@ -1,0 +1,16 @@
+Drug interaction — Amaryl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 32
+Brand: Amaryl
+API 1: GLIMEPIRIDE
+API 2: QUINAPRIL
+Risk: Dose-dependent hypoglycemia.
+Type: Pharmacodynamic.
+Monitoring: Pre-dinner glucose.
+Dose adjustment: Max 2mg daily.
+Alternative: Saxagliptin.
+Patient warning: Consistent carbohydrate intake at meals.
+Severity: caution
+
+Clinical note:
+Risk: Dose-dependent hypoglycemia. Type: Pharmacodynamic. Monitoring: Pre-dinner glucose. Dosage: Max 2mg daily. Alternative: Saxagliptin. Patient Warnings: Consistent carbohydrate intake at meals.

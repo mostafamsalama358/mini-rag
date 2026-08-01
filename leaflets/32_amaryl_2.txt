@@ -1,0 +1,114 @@
+AMARYL 2 MG 30 TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Amaryl
+Catalog SKU: AMARYL 2 MG 30 TABS.
+INN / actives: Glimepiride
+Catalog New Material: GLIMEPIRIDE
+Strength / form: Glimepiride 2 mg | (web-supplemented dosing below)
+Manufacturer / market: SANOFI
+Price (catalog): 78
+Categories: MEDICINE > DIABETES MELLITUS > ANTI-DIABETIC DRUGS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=AMARYL 2 MG; sheet lookup INNs=Glimepiride, GLIMEPIRIDE
+Web clinical sources: Glimepiride SmPC; Amaryl
+
+1. What Amaryl is used for
+Catalog uses: anti-diabetic.secretagogues.sulfonylurea
+Approved uses (material sheet): Type 2 diabetes - (1 : 8 mg/day monotherapy or with insulin/metformin)*
+Off-label mentions (material sheet): MODY (Maturity Onset Diabetes of the Young) - Limited evidence for subtypes 1/3*
+Cardioprotection - Less impact on ischemic preconditioning vs. other sulfonylureas*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Usually start 1 mg once daily with breakfast; titrate. Maintenance often 1–4 mg/day (max commonly 6–8 mg). Hypoglycaemia risk.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not indicated.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Amaryl if / disease cautions
+From material/disease sheets:
+[GLIMEPIRIDE] Hypersensitivity to GLIMEPIRIDE * Diabetes mellitus- type 1 * Diabetic ketoacidosis (DKA) * Hypersensitivity to Sulfonamides/ Sulpha drugs*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None for glimepiride, 
+• but sulfonylureas carry a class warning for increased cardiovascular mortality (based on UGDP study)
+Notes (material sheet): • Avoid alcohol. Acute and chronic alcohol intake may unpredictably affect the glucose-lowering action of glimepiride
+• Avoid with bosentan:
+-Contraindicated due to hepatotoxicity risk.
+• Herbal interactions: 
+-Bitter melon/fenugreek may potentiate hypoglycemia
+• Take with food. 
+The manufacturer recommends administration with the first meal of the day
+• If you are taking colesevelam, take glimepiride at least 4 hours before taking colesevelam
+• Check the labels on all your medicines (such as cough-and-cold products) because they may contain ingredients that could affect your blood sugar.
+.......................................................................
+• Type 2 Diabetes Mellitus :
+ I…
+Patient education excerpt: • Timing: 
+-Take with breakfast to avoid hypoglycemia.
+• Missed Dose: 
+-Skip if near next dose; never double.
+• Hypoglycemia Management: 
+-Use 15g fast-acting sugar (e.g., juice) if blood glucose <70 mg/dL.
+• Interactions: 
+-Avoid alcohol, NSAIDs, and beta-blockers.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Glimepiride + CAPTOPRIL: Risk: Moderate hypoglycemia (dose-dependent). Type: Pharmacodynamic. Monitoring: Postprandial glucose checks. Dosage: Max 2mg daily if combined. Alternative: Alogliptin. Patient Warnings: Consistent meal timing essential.
+- Glimepiride + ENALAPRIL: Risk: Dose-dependent hypoglycemia. Type: Pharmacodynamic. Monitoring: Pre-dinner glucose. Dosage: Max 2mg daily. Alternative: Saxagliptin. Patient Warnings: Consistent carbohydrate intake.
+- Glimepiride + LISINOPRIL: Risk: Dose-dependent hypoglycemia. Type: Pharmacodynamic. Monitoring: Pre-dinner glucose. Dosage: Max 2mg daily. Alternative: Saxagliptin. Patient Warnings: Consistent carb intake.
+- Glimepiride + RAMIPRIL: Risk: Dose-dependent hypoglycemia. Type: Pharmacodynamic. Monitoring: Pre-dinner glucose. Dosage: Max 2mg daily. Alternative: Saxagliptin. Patient Warnings: Consistent carb intake.
+- Glimepiride + BENAZEPRIL: Risk: Dose-dependent hypoglycemia. Type: Pharmacodynamic. Monitoring: Pre-dinner glucose. Dosage: Max 2mg daily. Alternative: Saxagliptin. Patient Warnings: Consistent carbohydrate intake at meals.
+- Glimepiride + CILAZAPRIL: Risk: Dose-dependent hypoglycemia. Type: Pharmacodynamic. Monitoring: Pre-dinner glucose. Dosage: Max 2mg daily. Alternative: Saxagliptin. Patient Warnings: Consistent carbohydrate intake at meals.
+- Glimepiride + FOSINOPRIL: Risk: Dose-dependent hypoglycemia. Type: Pharmacodynamic. Monitoring: Pre-dinner glucose. Dosage: Max 2mg daily. Alternative: Saxagliptin. Patient Warnings: Consistent carbohydrate intake at meals.
+- Glimepiride + QUINAPRIL: Risk: Dose-dependent hypoglycemia. Type: Pharmacodynamic. Monitoring: Pre-dinner glucose. Dosage: Max 2mg daily. Alternative: Saxagliptin. Patient Warnings: Consistent carbohydrate intake at meals.
+- Glimepiride + PERINDOPRIL: Risk: Hypoglycemia, especially in renal impairment; Type: Pharmacodynamic; Monitoring: Renal function, glucose trends; Dosage Adjustment: Reduce glimepiride if eGFR <60; Alternative: SGLT2 inhibitors (e.g., empagliflozin) if renal concerns; Patient Warnings/Management: Report weakness/palpitations; bedtime snacks if n…
+- Glimepiride + IRBESARTAN: Risk: Synergistic hypotension and unpredictable hypoglycemia. Type: Pharmacodynamic. Monitoring: BP pre/post-dose, renal function (both drugs renally excreted). Dosage Adjustments: Avoid maximum doses of either drug; adjust for renal impairment. Alternatives: Metformin or ARB with neutral glucose effects (e.g., telmis…
+- Glimepiride + VALSARTAN: Risk: Renal impairment exacerbates interaction (both renally cleared). Type: Pharmacodynamic. Monitoring: eGFR, potassium, BP biweekly. Dosage Adjustments: Halve glimepiride if eGFR <60. Alternatives: Non-renally cleared antidiabetic (e.g., repaglinide). Patient Warnings/Management: Watch for edema, limit NSAIDs.
+- Glimepiride + LOSARTAN: Risk: Severe hypotension in renal impairment (both renally excreted). Type: Pharmacodynamic. Monitoring: eGFR, potassium, BP biweekly. Dosage Adjustments: Halve glimepiride dose if eGFR <60. Alternatives: Non-renally cleared antidiabetic (e.g., repaglinide). Patient Warnings/Management: Limit NSAIDs; report swelling o…
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Avoid sulfonylureas; switch to insulin protocols in pregnancy.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Avoid — hypoglycaemia risk to infant.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Hypoglycemia (12–44%)*
+Weight gain (5–10%)*
+Headache (8%)*
+Minor (material sheet): Rash (2%)*
+Dizziness (3%)*
+Asthenia (4%)*
+Nausea (5%)*
+Allergic skin reactions (5%)* 
+Erythema (5%)*
+Morbilliform eruptions (3%)*
+maculopapular eruptions (3%)* 
+Pruritus (5%)*
+Urticaria (5%)*
+Diarrhea (6%)*
+Gastrointestinal pain (5%)*
+Vomiting (6%)* 
+Agranulocytosis (1%)*
+Anemia (4%)*
+Aplastic anemia (1%)* 
+Leukopenia (1%)*
+Pancytopenia (1%)*
+Thrombocytopenia (1%)*
+Cholestasis (3%)*
+Elevation of liver enzyme levels (2%)*
+Hepatic porphyria reactions (1%)*
+Jaundice (Rare)*
+Disulfiram like reactions (2%)* 
+Hyponatremia (3%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

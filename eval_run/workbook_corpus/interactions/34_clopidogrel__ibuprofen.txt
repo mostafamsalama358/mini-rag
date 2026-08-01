@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: IBUPROFEN
+Risk: Reduced clopidogrel efficacy (CYP2C9 competition) + GI bleeding.
+Type: Mixed (PK/PD).
+Monitoring: Platelet function if needed.
+Dose adjustment: Space ibuprofen 2hrs after clopidogrel.
+Alternative: Paracetamol.
+Patient warning: /Management: Short-term NSAID use only; monitor for chest pain (reduced clopidogrel…
+Severity: caution
+
+Clinical note:
+Risk: Reduced clopidogrel efficacy (CYP2C9 competition) + GI bleeding. Type: Mixed (PK/PD). Monitoring: Platelet function if needed. Dosage Adjustments: Space ibuprofen 2hrs after clopidogrel. Alternative: Paracetamol. Patient Warnings/Management: Short-term NSAID use only; monitor for chest pain (reduced clopidogrel…

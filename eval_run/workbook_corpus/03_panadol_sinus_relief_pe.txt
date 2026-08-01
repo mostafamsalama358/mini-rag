@@ -1,0 +1,98 @@
+PANADOL SINUS RELIEF PE 24 TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Panadol Sinus Relief PE
+Product line: Panadol Sinus Relief PE
+Catalog SKU: PANADOL SINUS RELIEF PE 24 TABS.
+SKU ID: 03
+INN / actives: Paracetamol * Phenylephrine
+INN primary: Paracetamol
+INN aliases: ACETAMINOPHEN; PARACETAMOL; PARACETAMOL (ACETAMINOPHEN); PHENYLEPHRINE; PHENYLEPHRINE HCL; PHENYLEPHRINE HYDROCHLORIDE
+Strength / form: Paracetamol 500 mg + Phenylephrine HCl 5 mg/tablet | Form=TAB. | Min.age=12 years
+Manufacturer / market: GLAXO SMITHKLINE
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > COLD & FLU MEDICATIONS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Panadol Sinus Relief PE is used for
+Mild to moderate pain (e.g., headache, backache, arthritis, toothache) - Dosage (Adults): Regular Strength: 325 to 650 mg every 4 to 6 hours as needed , Extra Strength: 500 to 1000 mg every 6 to 8 hours as needed , Maximum Total Daily Dose: Do not exceed 4000 mg (4 grams) in 24 hours. Many experts now recommend a max of 3000 mg (3 grams) for chronic use - Dosage (Pediatric): 10 to 15 mg/kg/dose every 4 to 6 hours as needed, up to 5 doses/24 hours , Max: 75 mg/kg/24 hours*
+Fever reduction (antipyretic)- Regular Strength: 325 to 650 mg every 4 to 6 hours as needed , Extra Strength: 500 to 1000 mg every 6 to 8 hours as needed , Maximum Total Daily Dose: Do not exceed 4000 mg (4 grams) in 24 hours. Many experts now recommend a max of 3000 mg (3 grams) for chronic use - Dosage (Pediatric): 10 to 15 mg/kg/dose every 4 to 6 hours as needed, up to 5 doses/24 hours , Max: 75 mg/kg/24 hours*
+
+2. Dosage — Adults
+Adult dose: 2 tablets every 4-6 hours; max 8 tablets/day
+Maximum daily dose: 8 tablets/day (8 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: See pack
+Pediatric dose: Not recommended under 12 years
+Pediatric max daily dose: See pack
+
+4. Do not take Panadol Sinus Relief PE if / disease cautions
+Hypersensitivity to PARACETAMOL (ACETAMINOPHEN) * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • HEPATOTOXICITY:
+- Acetaminophen has been associated with cases of acute liver failure, at times resulting in liver transplant and death. Most of the cases of liver injury are associated with the use of acetaminophen at doses that exceed 4000 milligrams per day, and often involve more than one acetaminophen-containing product.
+• The warning also emphasizes the risk of allergic reactions (e.g., anaphylaxis, SJS/TEN).
+Warnings: • If used for Migraine , you can use FEWMIG 
+• Avoid:
+- Many OTC cold, flu, and pain products contain acetaminophen. Check labels to avoid accidental duplication and overdose.
+• Avoid alcohol. Alcohol may increase the risk of hepatotoxicity.
+• Take with or without food.
+• Avoid foods rich in carbohydrates, and pectin including jellies, cabbage, Brussels sprouts and broccoli as PARACETAMOL may interact with these foods.
+• Safe for kidney failure patients
+..........................................................................
+• Renal Impairment (GFR≥50 mL/min: No dosage adjustment necessary, GFR 10-50 mL/min: Administer q6hr, GFR<10mL/min: Administer q8hr)
+• Equation . ........ Creat_Clear
+HCP notes: • If used for Migraine , you can use FEWMIG 
+• Avoid:
+- Many OTC cold, flu, and pain products contain acetaminophen. Check labels to avoid accidental duplication and overdose.
+• Avoid alcohol. Alcohol may increase the risk of hepatotoxicity.
+• Take with or without food.
+• Avoid foods rich in carbohydrates, and pectin including jellies, cabbage, Brussels sprouts and broccoli as PARACETAMOL may interact with these foods.
+• Safe for kidney failure patients
+..........................................................................
+• Renal Impairment (GFR≥50 mL/min: No dosage adjustment necessary, GFR 10-50 mL/min: Administer q6hr, GFR<10mL/min: Administer q8hr)
+• Equation . ........ Creat_Clear
+Patient education: • CRITICAL:
+- Check all your medicines. Many prescription and OTC cold/flu/pain medicines contain acetaminophen. Adding them together can cause a deadly overdose.
+• Maximum Dose:
+- Never take more than 4000 mg (4 grams) in one day. Taking more can cause severe liver damage, leading to liver failure or death.
+• Alcohol:
+- Do not take this medicine if you consume 3 or more alcoholic drinks per day. This increases your risk of liver damage.
+• Overdose is an emergency. 
+• Early symptoms (nausea, vomiting, loss of appetite) may seem like the flu. Seek immediate medical help even if you feel okay.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- PARACETAMOL (ACETAMINOPHEN) + PROPAFENONE; Risk: Delayed onset of analgesia (transient effect with single doses only); Type: Pharmacodynamic (altered gastric motility); Monitoring: Pain relief timing; Dose adjustment: None needed for chronic use; Alternative: IV acetaminophen if rapid onset required; Patient warning: Take scheduled doses (not PRN) for cons…
+- PARACETAMOL (ACETAMINOPHEN) + CHOLESTYRAMINE; Risk: Reduced paracetamol absorption leading to decreased analgesic efficacy; Type: Pharmacokinetic (adsorption); Monitoring: Pain control and fever reduction; Dose adjustment: Administer paracetamol ≥1h before or ≥1h after cholestyramine; Alternative: IV paracetamol if rapid effect needed; Patient warning: Maintain strict 1-…
+- PARACETAMOL (ACETAMINOPHEN) + COLESTIPOL; Risk: Moderate reduction in paracetamol absorption; Type: Pharmacokinetic; Monitoring: Therapeutic response; Dose adjustment: Separate doses by ≥1h; Alternative: Liquid paracetamol formulation may have faster absorption; Patient warning: Ensure proper timing between medications.
+- PARACETAMOL (ACETAMINOPHEN) + COLESEVELAM; Risk: Minimal absorption reduction (clinically insignificant); Type: Pharmacokinetic; Monitoring: None routinely needed; Dose adjustment: Optional separation (≥1h recommended for optimal efficacy); Alternative: None required; Patient warning: Timing less critical than with other sequestrants.
+- PARACETAMOL (ACETAMINOPHEN) + AMITRIPTYLINE; Risk: Delayed analgesia onset (30-60min) + chronic hepatotoxicity; Monitoring: LFTs q3mo if daily use; Dose adjustment: Max acetaminophen 3g/day
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: avoid
+
+8. Breastfeeding
+Breastfeeding safety: avoid
+
+9. Supplements / cross-selling
+Catalog cross-selling: • Gargel specially POVIDONE IODINE
+• lozenges
+• Immunity Vitamin ( vitamin D , vitamin C , Zinc)
+• Nasal drops/ spray
+• Hot drink (Anise , Peperment , Tilia)
+• Hot / Cold Gel poultice for fever or muscle pain
+• Masks
+
+10. Possible side effects
+Major: None
+Minor: Hepatotoxicity - dose dependent, can be fatal (rare)*
+Hypersensitivity Reactions - rash, urticaria (<0.01%)*
+Gastrointestinal discomfort - nausea/vomiting, epigastric pain (1-3%)*
+Blood Disorders - e.g., thrombocytopenia, neutropenia; with chronic overdose (rare)*
+Renal Toxicity - analgesic nephropathy; with chronic, excessive use (rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

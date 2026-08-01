@@ -1,0 +1,95 @@
+HIBIOTIC 1 GM 16 TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Hi-Biotic
+Catalog SKU: HIBIOTIC 1 GM 16 TABS.
+INN / actives: Amoxicillin * Clavulanic Acid
+Catalog New Material: AMOXICILLIN * CLAVULANIC ACID
+Strength / form: Amoxicillin/clavulanate 1 g | (web-supplemented dosing below)
+Manufacturer / market: PHARCO
+Price (catalog): 173
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-BACTERIAL
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=HIBIOTIC 1 GM; sheet lookup INNs=Amoxicillin, Clavulanic Acid, AMOXICILLIN, CLAVULANIC ACID
+Web clinical sources: Co-amoxiclav SmPC; Pharco Hi-Biotic
+
+1. What Hi-Biotic is used for
+Catalog uses: penicillins.penicillin with b-lactamase inhbitor
+Approved uses (material sheet): Otitis media - 40 : 90 mg/kg/day divided q8 : 12h (pediatrics)*
+Strep pharyngitis - 500 mg q12h or 1000 mg q24h x 10d*
+UTI - 250 : 500 mg q8h*
+Off-label mentions (material sheet): Lyme disease -500 mg q8h (adults)*
+H. pylori -1 g q12h with clarithromycin/PPI*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Usually 1 g every 12 h with food for the prescribed course.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Paediatric liquid by weight only.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Hi-Biotic if / disease cautions
+From material/disease sheets:
+[AMOXICILLIN] Hypersensitivity to β lactams * Clostridioides difficile-associated diarrhea (CDAD) * Infectious Mononucleosis * Infants under 3 months *
+[CLAVULANIC ACID] Hypersensitivity to CLAVULANIC ACID* Drug‑induced liver injury (DILI) / hepatotoxicity* Hypersensitivity to β lactams*
+[POTASSIUM CLAVULANATE] Hypersensitivity to POTASSIUM * 
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) *
+Hyperkalemia *
+Adrenal insufficiency (primary/ secondary or unspecified) *
+Dehydration & Hypovolemia*
+Peptic Ulcer Disease & Gastritis *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None
+Notes (material sheet): • Cinnarizine interferes with the allergy test and gives a false result because there is no allergy to penicillins despite the presence of allergy. The solution, as mentioned in the scientific sources, is to stop the Cinnarizine drug 4 days before the allergy test 
+• he must have a probiotic such as lacteol fort cap for use after it and advise him to eat prebiotic-rich food such as garlic, onions, bananas, yogurt
+• Avoid taking too many calcium-enriched foods and drinks as it might affect the working of AMOXICILLIN.
+• Avoid bacteriostatic agents (e.g., tetracyclines) which may antagonize effects
+• Take with food.
+.............................................................................…
+Patient education excerpt: • Timing: 
+-Take at start of meal to enhance absorption
+• Missed dose: 
+-Take as soon as remembered unless close to next dose
+• Completion: 
+-Finish full course even if symptoms improve
+• Warning: 
+-Report diarrhea, rash, or difficulty breathing
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Amoxicillin + METHOTREXATE: Risk: Competitive tubular secretion → 60% ↑ MTX AUC. Monitoring: Pre/post-dose creatinine clearance. Dose Adjustment: MTX ≤15mg/week + IV hydration. Patient Warning: Report ↓ urine output immediately.
+- Amoxicillin + WARFARIN: Risk: Minimal INR change (occasional GI flora effect); Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dosage: None typically; Alternative: Cephalexin; Patient Warnings: Report rash (mononucleosis contraindication).
+- Amoxicillin + DICUMAROL: Risk: Minimal INR change; Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dosage: None; Alternative: Cephalexin; Patient Warnings: Maintain consistent vitamin K intake.
+- Amoxicillin + PHENPROCOUMON: Risk: Minimal INR change; Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dosage: None; Alternative: Cephalexin; Patient Warnings: Maintain consistent vitamin K intake.
+- Amoxicillin + ACENOCOUMAROL: Risk: Minimal INR change; Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dosage: None; Alternative: Cephalexin; Patient Warnings: Maintain consistent vitamin K intake.
+- Amoxicillin + ALLOPURINOL: Risk: Maculopapular rash (22% incidence, higher in renal impairment); Type: Hypersensitivity; Monitoring: Skin exam daily for 14 days; Dosage: Consider alternative antibiotics; Alternative: Cefuroxime; Patient Warnings: Discontinue at first sign of rash.
+- Amoxicillin + PROBENECID: Risk: Maculopapular rash (↑ amoxicillin levels); Type: Pharmacokinetic; Monitoring: Skin exam; Dosage: Reduce amoxicillin by 25%; Alternative: Cefuroxime; Patient Warnings: Discontinue at first rash.
+- Amoxicillin + SULFINPYRAZONE: Risk: Maculopapular rash (↑ amoxicillin levels); Type: Pharmacokinetic; Monitoring: Skin exam; Dosage: Reduce amoxicillin by 25%; Alternative: Cefuroxime; Patient Warnings: Discontinue at first rash.
+- Amoxicillin + DABIGATRAN ETEXILATE: Risk: Potential increased bleeding risk due to altered gut flora affecting dabigatran absorption. Type: Pharmacokinetic (indirect). Monitoring: Monitor for signs of bleeding (INR not reliable for dabigatran); assess renal function (CrCl). Dosage: Adjust dabigatran in renal impairment (CrCl <50 mL/min). Alternative: Ce…
+- Amoxicillin + APIXABAN: Risk: Theoretical bleeding risk due to gut microbiome changes. Type: Indirect pharmacokinetic. Monitoring: No INR needed; monitor for clinical bleeding. Dosage: Standard apixaban dosing. Alternative: Azithromycin for respiratory infections. Patient Warnings: Use soft-bristle toothbrush; avoid NSAIDs.
+- Amoxicillin + RIVAROXABAN: Risk: Minimal interaction but possible bleeding risk. Type: Unclear mechanism. Monitoring: Anti-Xa levels if available; clinical bleeding assessment. Dosage: No adjustment needed. Alternative: Doxycycline for skin infections. Patient Warnings: Report headaches or swelling (signs of hemorrhage).
+- Amoxicillin + EDOXABAN: Risk: Low clinical significance. Type: Theoretical. Monitoring: Clinical bleeding signs; renal function. Dosage: Edoxaban 30 mg if CrCl 15-50 mL/min. Alternative: Nitrofurantoin for UTIs. Patient Warnings: Avoid falls/trauma; monitor gum bleeding.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Generally acceptable beta-lactam when indicated.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Usually compatible; monitor infant GI symptoms.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Diarrhea (14%)*
+Rash (10%)*
+Vaginal candidiasis (10%)*
+Minor (material sheet): Nausea (8%)*
+Urticaria (3%)*
+Serum sickness like reaction (0.2%)*
+C. difficile colitis (0.1-1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

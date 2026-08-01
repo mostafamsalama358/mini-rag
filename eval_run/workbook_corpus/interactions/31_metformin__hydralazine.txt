@@ -1,0 +1,16 @@
+Drug interaction — Glucophage
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 31
+Brand: Glucophage
+API 1: METFORMIN
+API 2: HYDRALAZINE
+Risk: Hyperglycemia + lactic acidosis risk
+Type: Pharmacodynamic antagonism
+Monitoring: Renal function + lactate annually, glucose daily
+Dose adjustment: Increase metformin by 500 mg weekly (max 2550 mg/day)
+Alternative: Add DPP-4 inhibitor
+Patient warning: Report muscle pain/hyperventilation
+Severity: caution
+
+Clinical note:
+Risk: Hyperglycemia + lactic acidosis risk; Type: Pharmacodynamic antagonism; Monitoring: Renal function + lactate annually, glucose daily; Dosage: Increase metformin by 500 mg weekly (max 2550 mg/day); Alternative: Add DPP-4 inhibitor; Patient Warnings: Report muscle pain/hyperventilation

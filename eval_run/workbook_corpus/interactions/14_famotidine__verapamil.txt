@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: VERAPAMIL
+Risk: Mild PR prolongation (additive AV node effects)
+Type: Pharmacodynamic
+Monitoring: ECG PR interval weekly
+Dose adjustment: Verapamil ↓25% if HR<55 bpm
+Alternative: Pantoprazole
+Patient warning: /Management: Report dizziness/syncope.
+Severity: caution
+
+Clinical note:
+Risk: Mild PR prolongation (additive AV node effects); Type: Pharmacodynamic; Monitoring: ECG PR interval weekly; Dosage Adjustments: Verapamil ↓25% if HR<55 bpm; Alternative: Pantoprazole; Patient Warnings/Management: Report dizziness/syncope.

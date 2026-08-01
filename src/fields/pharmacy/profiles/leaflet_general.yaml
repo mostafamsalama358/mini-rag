@@ -1,0 +1,4 @@
+﻿id: leaflet_general
+filters: {}
+notes: Product-info skill profile (skill id leaflet). No field allow-list. Corpus = RAG_CORPUS Excel workbook render (txt) — not legacy /leaflets PDFs.
+retrieval_strategy: document_lookup

@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: PROPAFENONE
+Risk: Pronounced sedation, memory impairment
+Type: Pharmacodynamic
+Monitoring: Respiratory rate (if combined with other sedatives), cognition
+Dose adjustment: Avoid in CNS-depressant users
+Alternative: Scopolamine patch (lower oral burden)
+Patient warning: /Management: Avoid driving, use alarms for medication r…
+Severity: yes
+
+Clinical note:
+Risk: Pronounced sedation, memory impairment; Type: Pharmacodynamic; Monitoring: Respiratory rate (if combined with other sedatives), cognition; Dosage Adjustments: Avoid in CNS-depressant users; Alternative: Scopolamine patch (lower oral burden); Patient Warnings/Management: Avoid driving, use alarms for medication r…

@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: GRAPEFRUIT JUICE
+Risk: OATP2B1 INHIBITION: GFJ (≥5% concentration) ↓ montelukast absorption by 30% → reduced asthma control; monitor peak flow/FEV₁; take montelukast ≥2h before/after GFJ; warn patients to avoid GFJ entirely and use water for a
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+OATP2B1 INHIBITION: GFJ (≥5% concentration) ↓ montelukast absorption by 30% → reduced asthma control; monitor peak flow/FEV₁; take montelukast ≥2h before/after GFJ; warn patients to avoid GFJ entirely and use water for administration, report increased rescue inhaler use or nighttime symptoms.

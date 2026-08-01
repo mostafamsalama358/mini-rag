@@ -1,0 +1,118 @@
+GLUCOPHAGE 500 MG 50 F.C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Glucophage
+Catalog SKU: GLUCOPHAGE 500 MG 50 F.C.TABS.
+INN / actives: Metformin
+Catalog New Material: METFORMIN HYDROCHLORIDE
+Strength / form: Metformin 500 mg | (web-supplemented dosing below)
+Manufacturer / market: MERCK SANTE-FRANCE
+Price (catalog): 60
+Categories: MEDICINE > DIABETES MELLITUS > ANTI-DIABETIC DRUGS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=GLUCOPHAGE 500 MG; sheet lookup INNs=Metformin, METFORMIN HYDROCHLORIDE
+Web clinical sources: Metformin SmPC; Glucophage
+
+1. What Glucophage is used for
+Catalog uses: anti-diabetic.sensitizers.biguanide
+Approved uses (material sheet): T2DM - Start 500 mg daily → ↑ to 2000 mg/day (max 2550 mg)*
+XR formulation - 500 to 2000 mg daily*
+Off-label mentions (material sheet): PCOS - 1500 mg/day (improves ovulation)*
+Prediabetes - 850 mg BID (↓ progression by 31%)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Start often 500 mg once/twice daily with meals; titrate as tolerated. Typical maintenance 1500–2000 mg/day in divided doses (max per local label).
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Specialist paediatric T2DM regimens only.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Glucophage if / disease cautions
+From material/disease sheets:
+[METFORMIN] Hypersensitivity to METFORMIN *
+Metabolic & Acid‑Base Disorders *
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) *
+Diabetic ketoacidosis (DKA)*
+Serious/ Severe or Uncontrolled Systemic Infection*
+Myocardial Infarction (MI / Heart Attack)*
+Heart Failure (CHF)*
+Respiratory Failure & Insufficiency*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+Dehydration & Hypovolemia *
+Alcohol Consumption*
+Radiologic contrast administration (Temporary)*
+Hypertensive disorders of pregnancy (including pre‑eclampsia and gestational hypertension)*
+[METFORMIN HYDROCHLORIDE] Hypersensitivity to METFORMIN * 
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) *
+Metabolic & Acid‑Base Disorders *
+Diabetic ketoacidosis (DKA)*
+Serious/ Severe or Uncontrolled Systemic Infection*
+Myocardial Infarction (MI / Heart Attack) *
+Heart Failure (CHF)*
+Respiratory Failure & Insufficiency*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+Dehydration & Hypovolemia*
+Alcohol Consumption*
+Radiologic contrast administration (Temporary)*
+Hypertensive disorders of pregnancy (including pre‑eclampsia and gestational hypertension)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • Lactic Acidosis:
+- Incidence: 
+0.03/1000 patient-years
+- Risk factors: 
+Renal impairment, hypoxia, sepsis
+- Mortality: 
+50% if untreated
+Notes (material sheet): • Usage can cause aggravation of acute kidney injury.
+• its use should be interrupted for a day before we give the patient (radio contrast media) for the purpose of CT diagnosis and cut off for two days after taking the diagnostic picture because it can cause (lactic acidosis) if the patient has (AKI), Re-evaluate eGFR 48 hr after imaging procedure; restart metformin HCl if renal function is stable
+• The side effects of Metformin increase in the digestive system when (the dose of Metformin is suddenly increased or when this medicine is used in the form of (intermediate release IR) or if a diabetic has stomach germs or if the diabetic patient use (OCT1-inhibiting agents) such as (Verapamil o…
+Patient education excerpt: • Timing: 
+-With meals to reduce GI upset
+• SUPPLEMENTS TO AVOID/CAUTION:
+- Berberine: AVOID concurrent use. Similar glucose-lowering mechanism; risk of additive hypoglycemia.
+- High-Dose Bitter Melon/ Cinnamon: Use with caution and glucose monitoring. May potentiate hypoglycemia.
+- Chromium: Evidence is mixed. If used, limit to 200-1000 mcg daily with MD supervision.
+• Dosing: 
+-Take exactly as prescribed (do not crush XR)
+• Missed dose: 
+-Skip if >6h late; never double
+• Stop & seek help: 
+-Muscle pain, trouble breathing, dizziness (lactic acidosis signs)
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Metformin + CAPTOPRIL: Risk: Minimal hypoglycemia risk (unless combo therapy). Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate if symptomatic. Dosage: None typically. Alternative: SGLT2 inhibitors. Patient Warnings: Stop for vomiting/diarrhea.
+- Metformin + ENALAPRIL: Risk: Minimal hypoglycemia. Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate. Dosage: Hold if eGFR <30. Alternative: Empagliflozin. Patient Warnings: Stop for GI illness.
+- Metformin + LISINOPRIL: Risk: Minimal hypoglycemia. Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate. Dosage: Hold if eGFR <30. Alternative: Dapagliflozin. Patient Warnings: Stop for GI illness.
+- Metformin + RAMIPRIL: Risk: Minimal hypoglycemia. Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate. Dosage: Hold if eGFR <30. Alternative: Empagliflozin. Patient Warnings: Stop for GI illness.
+- Metformin + BENAZEPRIL: Risk: Minimal hypoglycemia. Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate if symptomatic. Dosage: Hold if eGFR <30. Alternative: Dapagliflozin. Patient Warnings: Stop for vomiting/diarrhea.
+- Metformin + CILAZAPRIL: Risk: Minimal hypoglycemia. Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate if symptomatic. Dosage: Hold if eGFR <30. Alternative: Dapagliflozin. Patient Warnings: Stop for vomiting/diarrhea.
+- Metformin + FOSINOPRIL: Risk: Minimal hypoglycemia. Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate if symptomatic. Dosage: Hold if eGFR <30. Alternative: Dapagliflozin. Patient Warnings: Stop for vomiting/diarrhea.
+- Metformin + QUINAPRIL: Risk: Minimal hypoglycemia. Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate if symptomatic. Dosage: Hold if eGFR <30. Alternative: Dapagliflozin. Patient Warnings: Stop for vomiting/diarrhea.
+- Metformin + PERINDOPRIL: Risk: Low hypoglycemia risk (metformin alone rarely causes it); Type: Beneficial synergy; Monitoring: Renal function (both drugs renally cleared), lactate if symptoms; Dosage Adjustment: Adjust metformin if eGFR <45; Alternative: None needed; Patient Warnings/Management: Watch for lactic acidosis symptoms (muscle pain…
+- Metformin + DIAZOXIDE: Risk: Hyperglycemia; Type: Pharmacodynamic antagonism; Monitoring: Renal function + lactate annually; Dosage: Increase metformin by 500mg weekly (max 2550mg/day); Alternative: DPP-4 inhibitors; Patient Warnings: Report muscle pain/hyperventilation (lactic acidosis signs) 813.
+- Metformin + BOSENTAN: Risk: Hyperglycemia; Type: Pharmacodynamic antagonism; Monitoring: Renal function + lactate annually; Dosage: Increase metformin by 500mg weekly (max 2550mg/day); Alternative: DPP-4 inhibitor; Patient Warnings: Report muscle pain/hyperventilation
+- Metformin + MINOXIDIL: Risk: Hyperglycemia; Type: Pharmacodynamic antagonism; Monitoring: Renal function + lactate annually; Dosage: Increase metformin by 500mg weekly (max 2550mg/day); Alternative: Add DPP-4 inhibitor; Patient Warnings: Report muscle pain/hyperventilation .
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Increasingly used in GDM/PCOS under obstetric protocols; follow specialist advice.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Generally considered compatible; monitor infant.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Diarrhea (53%)*
+Nausea/vomiting (25%)*
+Flatulence (12%)*
+Minor (material sheet): B₁₂ deficiency (7%)*
+Lactic acidosis (0.03%)*
+Metallic taste (3%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

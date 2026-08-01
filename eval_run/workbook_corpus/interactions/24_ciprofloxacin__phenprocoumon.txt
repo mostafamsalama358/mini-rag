@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: PHENPROCOUMON
+Risk: Marked INR increase (CYP1A2 inhibition)
+Type: Pharmacokinetic
+Monitoring: INR every 2-3 days
+Dose adjustment: Reduce phenprocoumon by 35-45%
+Alternative: Levofloxacin
+Patient warning: Hydrate well, report tendon pain.
+Severity: caution
+
+Clinical note:
+Risk: Marked INR increase (CYP1A2 inhibition); Type: Pharmacokinetic; Monitoring: INR every 2-3 days; Dosage: Reduce phenprocoumon by 35-45%; Alternative: Levofloxacin; Patient Warnings: Hydrate well, report tendon pain.

@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: NORFLOXACIN
+Risk: Norfloxacin and iron may form insoluble complexes, reducing antibiotic absorption byup to 50%; separate doses by4–6 hours; monitor for inadequate infection resolution; advise patients to avoid concurrent administration a
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Norfloxacin and iron may form insoluble complexes, reducing antibiotic absorption byup to 50%; separate doses by4–6 hours; monitor for inadequate infection resolution; advise patients to avoid concurrent administration and report persistent symptoms (e.g., fever, pain).

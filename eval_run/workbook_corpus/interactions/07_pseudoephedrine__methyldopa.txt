@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: METHYLDOPA
+Risk: Uncontrolled HTN → renal injury
+Type: Pharmacodynamic
+Monitoring: BP 3x/week, renal function
+Dose adjustment: Max 30mg pseudoephedrine/day; Alternatives: Fluticasone nasal
+Alternative: -
+Patient warning: "Avoid OTC cold medicines containing stimulants"
+Severity: yes
+
+Clinical note:
+Risk: Uncontrolled HTN → renal injury; Type: Pharmacodynamic; Monitoring: BP 3x/week, renal function; Dosage Adjustments: Max 30mg pseudoephedrine/day; Alternatives: Fluticasone nasal; Patient Warnings: "Avoid OTC cold medicines containing stimulants"

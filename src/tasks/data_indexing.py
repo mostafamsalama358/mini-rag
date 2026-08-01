@@ -324,31 +324,20 @@ def dispatch_index_data_content(task_instance, project_id: int, do_reset: int):
         shard_count,
         total_chunks,
     )
+    # Reset/create once here; shards must NOT reset again (would race/truncate).
     asyncio.run(_prepare_indexing_collection(project_id, do_reset))
 
-    chord_result = chord(
+    # Never chord_result.get() inside a Celery task — that raises
+    # "Never call result.get() within a task!" and leaves a half-built index
+    # when the parent retries and truncates again.
+    workflow = chord(
         group(
-            index_data_content_shard.s(project_id, do_reset, shard_idx, shard_count)
+            index_data_content_shard.s(project_id, 0, shard_idx, shard_count)
             for shard_idx in range(shard_count)
         ),
         finalize_vector_index.s(project_id),
-    )()
-
-    try:
-        final_result = chord_result.get(timeout=settings.CELERY_LONG_TASK_TIME_LIMIT)
-    except Exception as exc:
-        logger.error("Sharded indexing failed: %s", exc)
-        task_instance.update_state(
-            state="FAILURE",
-            meta={"signal": ResponseSignal.INSERT_INTO_VECTORDB_ERROR.value},
-        )
-        raise
-
-    task_instance.update_state(
-        state="SUCCESS",
-        meta={"signal": ResponseSignal.INSERT_INTO_VECTORDB_SUCCESS.value},
     )
-    return final_result
+    raise task_instance.replace(workflow)
 
 
 # Backward-compatible alias for workflow tasks.
@@ -358,8 +347,9 @@ _index_data_content = dispatch_index_data_content
 @celery_app.task(
     bind=True,
     name="tasks.data_indexing.index_data_content",
-    autoretry_for=(Exception,),
-    retry_kwargs={"max_retries": 3, "countdown": 60},
+    # Orchestrator must not autoretry after collection reset — retries truncate
+    # mid-flight while shard workers are still inserting.
+    autoretry_for=(),
 )
 def index_data_content(self, project_id: int, do_reset: int):
     return dispatch_index_data_content(self, project_id, do_reset)

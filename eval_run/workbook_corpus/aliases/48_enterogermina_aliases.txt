@@ -1,0 +1,14 @@
+Alias registry — Enterogermina
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 48
+Brand: Enterogermina
+
+Known aliases:
+- Enterogermina (brand)
+- ENTEROGERMINA 2 BILLION/5ML ORAL SUSP. 10 MINI BOTTLES (catalog_sku)
+- Bacillus Clausii (inn)
+- BACILLUS CLAUSII SPORES (inn_alias)
+- BACILLUS (inn_alias)
+- انتروجرمينا (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

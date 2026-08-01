@@ -1,0 +1,82 @@
+STREPSILS HONEY & LEMON 24 LOZENGES
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Strepsils
+Catalog SKU: STREPSILS HONEY & LEMON 24 LOZENGES
+INN / actives: Amylmetacresol * Dichlorobenzyl
+Catalog New Material: DICHLOROPHENYLCARBINOL * AMYLMETACRESOL
+Strength / form: Antiseptic/local anaesthetic lozenges (Honey & Lemon catalog match) | (web-supplemented dosing below)
+Manufacturer / market: UNITED PARTNERS
+Price (catalog): 200
+Categories: MEDICINE > COUGH & COLD > SORE THROAT
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=STREPSILS HONEY; sheet lookup INNs=Amylmetacresol, Dichlorobenzyl, DICHLOROPHENYLCARBINOL, AMYLMETACRESOL
+Web clinical sources: Strepsils SmPC class
+
+1. What Strepsils is used for
+Catalog uses: sore throat
+Approved uses (material sheet): It’s an antiseptic found in lozenges (e.g., Strepsils®) used for sore throats -Its role: local antiseptic effect in the mouth and throat*
+Off-label mentions (material sheet): NONE
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Dissolve 1 lozenge slowly every 2–3 hours as needed; respect max/day on pack.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Choking risk — usually ≥6 years if pack allows; never for infants.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Strepsils if / disease cautions
+From material/disease sheets:
+[AMYLMETACRESOL] Hypersensitivity to AMYLMETACRESOL * Children under 6 years * Non-Acute / Cutaneous Porphyrias *
+[DICHLOROPHENYLCARBINOL] Hypersensitivity to DICHLOROPHENYLCARBINOL*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None
+Notes (material sheet): • Dose Modification:
+- No hepatic/renal adjustment needed (minimal systemic absorption)
+- Pediatrics: Safety not established <6 years
+..............................................................................................................................
+• Medical Info for HCPs:
+- Phenolic antiseptic/analgesic
+- Primarily used in throat lozenges (0.6-1.2 mg per unit)
+- Local action only; negligible systemic absorption
+.............................................................................................................
+• Pregnancy/Lactation:
+- Pregnancy: Likely safe due to minimal systemic absorption, but use only if clearly needed.
+- Lactation: Likely safe due to minimal syste…
+Patient education excerpt: • Timing:
+- Dissolve one lozenge slowly in your mouth every 2-3 hours as needed. Do not chew or swallow whole.
+- Not for children <6 years
+• Administration:
+- Allow the lozenge to dissolve slowly to maximize contact time with the throat.
+• Missed Dose:
+- Not applicable. Use as needed for symptoms.
+• Storage:
+- Store at room temperature.
+• Important Note:
+- This is for temporary relief. If symptoms persist after 2-3 days, see a doctor. Do not use for more than 3 days without medical advice.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- No top pairs extracted for this API in the interaction sheet sample.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Short topical courses generally acceptable; check specific actives (amylmetacresol/dichlorobenzyl alcohol etc.).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Short courses usually fine; avoid excessive use.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Oral numbness (15%)*
+Taste disturbance (12%)*
+Minor (material sheet): Mouth irritation (8%)*
+Allergic reactions (3%)*
+Tooth staining (2%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

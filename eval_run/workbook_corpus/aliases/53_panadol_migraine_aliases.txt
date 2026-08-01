@@ -1,0 +1,16 @@
+Alias registry — Panadol Migraine
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 53
+Brand: Panadol Migraine
+
+Known aliases:
+- Panadol Migraine (brand)
+- PANADOL MIGRAINE 30 F.C.TABS. (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- Caffeine (inn)
+- بانادول ميغرين (arabic)
+- بانادول صداع نصفي (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

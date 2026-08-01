@@ -1,0 +1,16 @@
+Drug interaction — Glucophage
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 31
+Brand: Glucophage
+API 1: METFORMIN
+API 2: PERINDOPRIL
+Risk: Low hypoglycemia risk (metformin alone rarely causes it)
+Type: Beneficial synergy
+Monitoring: Renal function (both drugs renally cleared), lactate if symptoms
+Dose adjustment: -
+Alternative: None needed
+Patient warning: /Management: Watch for lactic acidosis symptoms (muscle pain…
+Severity: caution
+
+Clinical note:
+Risk: Low hypoglycemia risk (metformin alone rarely causes it); Type: Beneficial synergy; Monitoring: Renal function (both drugs renally cleared), lactate if symptoms; Dosage Adjustment: Adjust metformin if eGFR <45; Alternative: None needed; Patient Warnings/Management: Watch for lactic acidosis symptoms (muscle pain…

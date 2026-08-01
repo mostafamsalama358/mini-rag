@@ -1,0 +1,16 @@
+Drug interaction — Augmentin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 21
+Brand: Augmentin
+API 1: AMOXICILLIN
+API 2: PROBENECID
+Risk: Maculopapular rash (↑ amoxicillin levels)
+Type: Pharmacokinetic
+Monitoring: Skin exam
+Dose adjustment: Reduce amoxicillin by 25%
+Alternative: Cefuroxime
+Patient warning: Discontinue at first rash.
+Severity: caution
+
+Clinical note:
+Risk: Maculopapular rash (↑ amoxicillin levels); Type: Pharmacokinetic; Monitoring: Skin exam; Dosage: Reduce amoxicillin by 25%; Alternative: Cefuroxime; Patient Warnings: Discontinue at first rash.

@@ -1,0 +1,67 @@
+﻿[
+    {
+        "id":  "p1",
+        "question":  "What is the maximum daily dose of MediQuick Ibuprofen for adults?",
+        "latency_ms":  3431,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}",
+        "ok":  false
+    },
+    {
+        "id":  "p2",
+        "question":  "Can children under 12 take MediQuick Ibuprofen 200 mg tablets?",
+        "latency_ms":  4380,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}",
+        "ok":  false
+    },
+    {
+        "id":  "p3",
+        "question":  "Is ibuprofen safe in the third trimester of pregnancy?",
+        "latency_ms":  13482,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}",
+        "ok":  false
+    },
+    {
+        "id":  "p4",
+        "question":  "What are the common side effects of ibuprofen?",
+        "latency_ms":  3223,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}",
+        "ok":  false
+    },
+    {
+        "id":  "p5",
+        "question":  "Can a patient on warfarin take ibuprofen? What monitoring is needed?",
+        "latency_ms":  27596,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}",
+        "ok":  false
+    },
+    {
+        "id":  "p6",
+        "question":  "How should MediQuick Ibuprofen be stored?",
+        "latency_ms":  30763,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}",
+        "ok":  false
+    },
+    {
+        "id":  "p7",
+        "question":  "What is the capital of France?",
+        "latency_ms":  2430,
+        "signal":  "rag_clarification_needed",
+        "needs_clarification":  true,
+        "answer":  "I could not map your question to a supported topic (\u0027unsupported\u0027). Please rephrase or name a specific item.",
+        "ok":  true
+    },
+    {
+        "id":  "p8",
+        "question":  "What are the contraindications for ibuprofen?",
+        "latency_ms":  3183,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}",
+        "ok":  false
+    }
+]

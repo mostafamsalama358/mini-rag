@@ -1,0 +1,16 @@
+Alias registry — Aspocid
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 35
+Brand: Aspocid
+
+Known aliases:
+- Aspocid (brand)
+- ASPOCID 75MG 20 TAB. (catalog_sku)
+- Aspirin (inn)
+- ACETYLSALICYLIC ACID (inn_alias)
+- ACETYLSALICYLIC (inn_alias)
+- اسبوسيد (arabic)
+- أسبروسيد (arabic)
+- اسبرين 75 (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

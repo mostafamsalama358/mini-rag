@@ -1,0 +1,16 @@
+Drug interaction — Gaviscon Advance
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 26
+Brand: Gaviscon Advance
+API 1: SODIUM ALGINATE
+API 2: ALUMINUM ASPIRIN
+Risk: Mild absorption delay
+Type: Physical barrier effect
+Monitoring: Clinical response
+Dose adjustment: Usually not required
+Alternative: Alginate-free formulations
+Patient warning: /Management: Take aspirin first if GERD symptoms.
+Severity: caution
+
+Clinical note:
+Risk: Mild absorption delay; Type: Physical barrier effect; Monitoring: Clinical response; Dosage Adjustments: Usually not required; Alternative: Alginate-free formulations; Patient Warnings/Management: Take aspirin first if GERD symptoms.

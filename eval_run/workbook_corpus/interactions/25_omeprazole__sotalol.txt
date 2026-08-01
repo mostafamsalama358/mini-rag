@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: SOTALOL
+Risk: QT prolongation and hypomagnesemia-induced torsades
+Type: Pharmacokinetic (CYP2C19 competition) + Pharmacodynamic (electrolyte imbalance)
+Monitoring: Biweekly ECG (QTc), serum Mg²⁺/K⁺
+Dose adjustment: Max omeprazole 20mg/day; sotalol reduce 25%
+Alternative: Famotidine
+Patient warning: Report palpitations; avoid gra…
+Severity: yes
+
+Clinical note:
+Risk: QT prolongation and hypomagnesemia-induced torsades; Type: Pharmacokinetic (CYP2C19 competition) + Pharmacodynamic (electrolyte imbalance); Monitoring: Biweekly ECG (QTc), serum Mg²⁺/K⁺; Dosage: Max omeprazole 20mg/day; sotalol reduce 25%; Alternative: Famotidine; Patient Warnings: Report palpitations; avoid gra…

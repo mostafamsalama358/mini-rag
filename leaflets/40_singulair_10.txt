@@ -1,0 +1,100 @@
+SINGULAIR 10MG 14 F.C. TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Singulair
+Catalog SKU: SINGULAIR 10MG 14 F.C. TAB.
+INN / actives: Montelukast
+Catalog New Material: MONTELUKAST
+Strength / form: Montelukast 10 mg | (web-supplemented dosing below)
+Manufacturer / market: MERCK SHARP & DOHME
+Price (catalog): 192
+Categories: MEDICINE > ANTI-ASTHMA > ANTI-ASTHMA
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=SINGULAIR 10MG; sheet lookup INNs=Montelukast, MONTELUKAST
+Web clinical sources: Montelukast SmPC; Singulair (neuropsychiatric warning applies)
+
+1. What Singulair is used for
+Catalog uses: asthma.anti-inflammatory.leukotriene antagonist
+Approved uses (material sheet): Asthma prophylaxis - 10 mg daily (adults); 5 mg (6 to 14y); 4 mg (2 to 5y)*
+Allergic rhinitis - 10 mg daily: If Patients with both asthma and allergic rhinitis should take only 1 dose qPM*
+Exercise induced bronchospasm - 10 mg 2h pre exercise*
+Off-label mentions (material sheet): Chronic urticaria - 10 mg daily (second-line)*
+Eosinophilic esophagitis - 10 mg daily*
+Aspirin exacerbated respiratory disease, including aspirin challenge/desensitization (adjunct) - Oral: 10 mg once daily in the evening*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: 10 mg once daily in the evening.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Age-specific chewable/granule strengths (4–5 mg); 10 mg for ≥15 y typically.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Singulair if / disease cautions
+From material/disease sheets:
+[MONTELUKAST] Hypersensitivity to MONTELUKAST * Psychotic Disorders * Mood Disorders (Depression & Bipolar) * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation* Phenylketonuria (PKU)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): Serious neuropsychiatric events that may include suicidal thoughts or actions have been reported in patients taking montelukast, If changes in behavior are observed, or aggression, depression, and sleep disturbances reported, advise patients to discontinue montelukast, especially in children. This Events have occurred in patients with and without pre-existing psychiatric disease
+Notes (material sheet): • personal hygiene and keep your surroundings clean to avoid allergens (allergy-causing agents) such as pollen, dust : disifectant , soap ,air filtter , wipes , napkin , masks
+• Try to sleep 7-9 hours each night can using Melatonin
+• Avoid in History of depression, ADHD, or anxiety disorders., Phenobarbital/rifampin (↓ efficacy via CYP3A4 induction), Zileuton (redundant mechanism).
+............................................................................
+• Dose Modification:
+- Hepatic/Renal: 
+No adjustment needed.
+- DDIs: 
+↑ Effects of theophylline (monitor levels); ↓ efficacy with cholestyramine.
+........................................................
+• Pregnancy/Lactation: 
+-Category…
+Patient education excerpt: • Timing: 
+-Daily in evening (for asthma/rhinitis); pre-exercise for EIB, Take with or without food
+• Missed Dose: 
+-Take ASAP; skip if near next dose.
+• Oral granules: 
+-administer either directly in the mouth, dissolve in breast milk, or only applesauce, carrots, rice, or ice cream (not liquid)& After opening, the full dose must be administered within 15 min
+• Interactions: 
+- Take 2h before/after cholestyramine.
+• Overdose: 
+- ER for agitation/hallucinations (symptomatic support).
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Montelukast + THIOPENTAL: Risk: THIOPENTAL decreases MONTELUKAST levels by 30% via CYP3A4 induction. Monitor: Asthma control tests. Dosage: MONTELUKAST may need 50% dose increase. Patient Warning: Watch for worsening wheezing.
+- Montelukast + PHENOBARBITAL: Risk: PHENOBARBITAL decreases MONTELUKAST levels by 40% via CYP3A4 induction. Monitor: Asthma control test scores monthly. Dosage: Increase MONTELUKAST to 15mg nightly if >15yo. Patient Warning: Watch for nocturnal asthma symptoms.
+- Montelukast + PHENOBARBITONE: Risk: PHENOBARBITONE reduces MONTELUKAST efficacy by 50%. Monitor: Fractional exhaled nitric oxide (FeNO) levels. Dosage: Consider alternative leukotriene modifier. Patient Warning: Increased rescue inhaler use may be needed.
+- Montelukast + PRIMIDONE: Risk: PRIMIDONE (via phenobarbital) decreases MONTELUKAST AUC by 60%. Monitor: Morning/evening peak flow variability. Dosage: MONTELUKAST may need 2x daily dosing. Patient Warning: Report increased wheezing at night.
+- Montelukast + AMOBARBITAL: Risk: Reduced montelukast efficacy (CYP3A4/CYP2C9 induction) worsening asthma control. Monitor: Asthma symptoms, PEFR/FEV1, rescue inhaler use. Dose Adjust: Consider montelukast dose increase if control declines; Patient Warning: Report increased wheezing/shortness of breath immediately; never stop asthma meds without…
+- Montelukast + PENTOBARBITAL: Risk: Significantly reduced montelukast exposure (CYP induction) compromising asthma management. Monitor: Day/night symptom scores, exacerbation frequency. Dose Adjust: Optimize asthma therapy; consider alternative controller; Patient Warning: Use rescue inhaler for breakthrough symptoms; attend all follow-ups.
+- Montelukast + SECOBARBITAL: Risk: Loss of asthma control from reduced montelukast AUC. Monitor: ACT/C-ACT scores, exacerbations. Dose Adjust: Consider high-dose montelukast (only if >15yrs) or switch therapy; Patient Warning: Carry emergency epinephrine if history of anaphylaxis; track symptom triggers.
+- Montelukast + ANASTRAZOLE: Risk: CYP2C8 competition → anastrozole levels↑. Monitoring: Morning trough levels. Dose Adjustment: Evening montelukast dosing. Patient Warning: Mood changes significant.
+- Montelukast + REPAGLINIDE: Mild hypoglycemia via weak CYP2C8 inhibition; monitor weekly HbA1c; no initial dose change; counsel on Churg-Strauss syndrome signs (neuropathy/rashes).
+- Montelukast + SALMETEROL: CYP2C8/3A4 INHIBITION: Salmeterol ↓ montelukast metabolism → ↑ serum levels → neuropsychiatric risk (agitation, depression, suicidal ideation); monitor for behavioral changes monthly; consider montelukast dose reduction (max 5mg/day if pediatric); warn patients/caregivers to report mood changes immediately and avoid d…
+- Montelukast + GRAPEFRUIT JUICE: OATP2B1 INHIBITION: GFJ (≥5% concentration) ↓ montelukast absorption by 30% → reduced asthma control; monitor peak flow/FEV₁; take montelukast ≥2h before/after GFJ; warn patients to avoid GFJ entirely and use water for administration, report increased rescue inhaler use or nighttime symptoms.
+- Montelukast + ATORVASTATIN: Risk: Increased atorvastatin exposure (CYP3A4 inhibition) → elevated myopathy/rhabdomyolysis risk; Monitoring: CK baseline + q3mo; LFTs monthly ×3; Dose Adjust: Max atorvastatin 20mg/day; Patient: Report muscle pain/weakness or brown urine immediately.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Use if benefit outweighs risk; asthma control priority.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Limited data — usually continue if clinically needed with monitoring.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Headache (18%)* 
+Influenza (13%)*
+Abdominal pain - children (10%)*
+Minor (material sheet): Aggression (2.9%)*
+Anxiety (2.3%)*
+Nightmares (1.5%)*
+increase ALT (4%)*
+Rash (3%)*
+Dizziness (2%)*
+Churg Strauss syndrome (<0.1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

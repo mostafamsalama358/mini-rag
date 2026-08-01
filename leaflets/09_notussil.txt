@@ -1,0 +1,96 @@
+NOTUSSIL 4MG/ML SUSP. 60ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Notussil
+Catalog SKU: NOTUSSIL 4MG/ML SUSP. 60ML
+INN / actives: Levodropropizine
+Catalog New Material: CLOPERASTINE
+Strength / form: Cloperastine HCl 20 mg/5 ml suspension (Egyptian Notussil note) / class 3.54 mg/ml syrups elsewhere | (web-supplemented dosing below)
+Manufacturer / market: CHEMIPHARM
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > COUGH MEDICATIONS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=NOTUSSIL 4MG; sheet lookup INNs=Levodropropizine, CLOPERASTINE
+Web clinical sources: Notussil Egypt pack notes; AEMPS CIMA Cloperastine Kern SmPC
+
+1. What Notussil is used for
+Catalog uses: anti-cough.non-productive
+Approved uses (material sheet): Non Productive Cough - Adults: 60 mg PO TID , Children 2 to 14y: 1 mg/kg/dose TID (max 60mg/day)*
+Off-label mentions (material sheet): COPD Associated Cough - 60 mg TID*
+Post Infectious Cough - 60 mg BID to TID × 5d *
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Egyptian Notussil-type: adults often 5 ml three times daily (confirm concentration on bottle). EU cloperastine 3.54 mg/ml syrups commonly 10 ml three times daily for ≥12 y.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Contraindicated under 2 years. Age-banded syrup dosing (examples for 3.54 mg/ml class): 2–4 y 2 ml BID; 5–6 y 3 ml BID; 7–12 y 5 ml BID–TID — always follow the Egyptian pack.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Notussil if / disease cautions
+From material/disease sheets:
+[LEVODROPROPIZINE] Hypersensitivity to LEVODROPROPIZINE* 
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5)* 
+Children under 2 years*
+[CLOPERASTINE] Hypersensitivity to CLOPERASTINE * Asthma & Reactive Airway Diseases * Children under 2 years*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None
+Notes (material sheet): • Avoid: 
+-CNS depressants (alcohol, opioids - ↑ sedation), MAO inhibitors (theoretical interaction) .
+...................................................................................
+• Dose Modification:
+- Hepatic: 
+Mild-mod impairment: No adjustment; Severe (Child-Pugh C): ↓ 50%
+- Renal (eGFR):
+ 30-60 mL/min: ↓ 30%; <30 mL/min: Avoid
+- Concomitant Therapy: 
+Sedating antihistamines (↑ drowsiness); Theophylline (↓ clearance)
+..........................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Not recommended (limited data; Category N/A)
+- Lactation: 
+Avoid (excreted in milk; no safety data)
+.............................................................
+• Lab Tes…
+Patient education excerpt: • Administration: 
+-With/without food; use calibrated dropper for syrup. 
+• Missed Dose: 
+-Skip if >1h late; never double dose. 
+• Sedation Alert: 
+-Drowsiness may occur (avoid driving).
+• Overdose Signs: 
+-Vomiting, hypotension. 
+• Critical Alert: 
+-Discontinue if rash/angioedema. 
+• Storage: 
+-Syrup discard 6mo after opening.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- No top pairs extracted for this API in the interaction sheet sample.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Contraindicated / not recommended — insufficient human data (AEMPS/EU SmPC).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Not recommended; unknown excretion in milk (EU SmPC).
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Somnolence (10-15%)*
+Diarrhea (8-12%)*
+Dizziness (5-10%)*
+Minor (material sheet): Rash (3-5%)*
+Hypotension (2-4%)*
+Nausea (1-3%)*
+Headache (1-2%)*
+Bradycardia (<1%)*
+Anaphylaxis (rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

@@ -1,0 +1,16 @@
+Drug interaction — Brufen
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 18
+Brand: Brufen
+API 1: IBUPROFEN
+API 2: VALSARTAN
+Risk: HTN exacerbation (SBP↑ 10-15mmHg)
+Type: Pharmacodynamic
+Monitoring: Home BP daily
+Dose adjustment: ≤400mg TID x5d
+Alternative: Naproxen
+Patient warning: BP self-monitoring required
+Severity: caution
+
+Clinical note:
+Risk: HTN exacerbation (SBP↑ 10-15mmHg); Type: Pharmacodynamic; Monitoring: Home BP daily; Dosage: ≤400mg TID x5d; Alternative: Naproxen; Patient Warnings: BP self-monitoring required

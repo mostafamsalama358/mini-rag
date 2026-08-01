@@ -1,0 +1,16 @@
+Drug interaction — Otrivin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 38
+Brand: Otrivin
+API 1: XYLOMETAZOLINE
+API 2: MOCLOBEMIDE
+Risk: Pressor response (reversible MAOI). Action: Contraindicated.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: Wait 48h after mocloemide cessation before use.
+Severity: yes
+
+Clinical note:
+Risk: Pressor response (reversible MAOI). Action: Contraindicated. Patient Warning: Wait 48h after mocloemide cessation before use.

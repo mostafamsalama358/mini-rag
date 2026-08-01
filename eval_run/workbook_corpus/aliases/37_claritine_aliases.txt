@@ -1,0 +1,12 @@
+Alias registry — Claritine
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 37
+Brand: Claritine
+
+Known aliases:
+- Claritine (brand)
+- CLARITINE 10MG 20 TAB. (catalog_sku)
+- Loratadine (inn)
+- كلاريتين (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

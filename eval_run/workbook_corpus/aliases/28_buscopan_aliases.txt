@@ -1,0 +1,14 @@
+Alias registry — Buscopan
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 28
+Brand: Buscopan
+
+Known aliases:
+- Buscopan (brand)
+- BUSCOPAN PLUS 20 F.C.TAB. (N/A) (catalog_sku)
+- Hyoscine Butylbromide (inn)
+- HYOSCINE (inn_alias)
+- BUTYLSCOPOLAMINE (inn_alias)
+- بسكوبان (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

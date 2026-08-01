@@ -1,0 +1,11 @@
+NORTHBRIDGE CLINICAL NOTE — NSAID Use in Breastfeeding (E2E Test Corpus)
+Document ID: NB-LACT-IBU-E2E
+Audience: Pharmacists and clinicians
+
+Ibuprofen is generally considered compatible with breastfeeding when used at standard short-term doses.
+MediQuick Ibuprofen 200 mg may be used by breastfeeding mothers if clinically appropriate.
+Prefer the lowest effective dose for the shortest duration.
+Advise the mother to watch the infant for unusual sleepiness, feeding problems, or rash and to seek advice if these occur.
+
+Prefer ibuprofen over longer-acting NSAIDs when an NSAID is required during lactation.
+Paracetamol remains a first-line analgesic option in breastfeeding when pain relief is needed and NSAIDs are unsuitable.

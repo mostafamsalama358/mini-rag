@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: COLESEVELAM
+Risk: Moderate absorption decrease (30-50%)
+Type: Pharmacokinetic (GI binding)
+Monitoring: FBC every 3-4 weeks
+Dose adjustment: Minimum 4h separation
+Alternative: Ferric maltol if compliance issues
+Patient warning: /Management: Morning iron/evening colesevelam preferred.
+Severity: caution
+
+Clinical note:
+Risk: Moderate absorption decrease (30-50%); Type: Pharmacokinetic (GI binding); Monitoring: FBC every 3-4 weeks; Dosage: Minimum 4h separation; Alternative: Ferric maltol if compliance issues; Patient Warnings/Management: Morning iron/evening colesevelam preferred.

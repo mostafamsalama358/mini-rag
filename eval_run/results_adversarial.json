@@ -1,0 +1,81 @@
+[
+  {
+    "probe": "adv_hallucination_textual",
+    "question": "When should aspirin be stopped?",
+    "answer_text": "you should stop taking this medication immediately if a rash develops or if you experience unusual swelling, since this may indicate a serious allergic reaction",
+    "conflicts_in_context": 0,
+    "conflicts_disclosed_by_answer": false,
+    "coverage_score": 1.0,
+    "coverage_passed": true,
+    "faithfulness_score": 0.0,
+    "faithfulness_passed": false,
+    "unsupported_claims": [
+      "you should stop taking this medication immediately if a rash develops or if you experience unusual swelling, since th..."
+    ],
+    "completeness_score": null,
+    "completeness_passed": true,
+    "overall_passed": false
+  },
+  {
+    "probe": "adv_hallucination_numeric",
+    "question": "What is the adult dose of aspirin?",
+    "answer_text": "The adult dose is 500 mg every 4 to 6 hours.",
+    "conflicts_in_context": 0,
+    "conflicts_disclosed_by_answer": false,
+    "coverage_score": 1.0,
+    "coverage_passed": true,
+    "faithfulness_score": 0.6666666666666667,
+    "faithfulness_passed": false,
+    "unsupported_claims": [
+      "500 mg"
+    ],
+    "completeness_score": 1.0,
+    "completeness_passed": true,
+    "overall_passed": false
+  },
+  {
+    "probe": "adv_keyword_stuffing",
+    "question": "What are the contraindications for aspirin?",
+    "answer_text": "This document discusses aspirin allergic reactions, bleeding disorder risk, aspirin dosage warnings, and general aspirin safety information for patients.",
+    "conflicts_in_context": 0,
+    "conflicts_disclosed_by_answer": false,
+    "coverage_score": 1.0,
+    "coverage_passed": true,
+    "faithfulness_score": 1.0,
+    "faithfulness_passed": true,
+    "unsupported_claims": [],
+    "completeness_score": 0.0,
+    "completeness_passed": false,
+    "overall_passed": false
+  },
+  {
+    "probe": "adv_fabricated_citation",
+    "question": "What are the contraindications for aspirin?",
+    "answer_text": "Avoid aspirin if allergic to aspirin, or if you have an active bleeding disorder.",
+    "conflicts_in_context": 0,
+    "conflicts_disclosed_by_answer": false,
+    "coverage_score": 1.0,
+    "coverage_passed": true,
+    "faithfulness_score": 1.0,
+    "faithfulness_passed": true,
+    "unsupported_claims": [],
+    "completeness_score": 1.0,
+    "completeness_passed": true,
+    "overall_passed": true
+  },
+  {
+    "probe": "adv_undisclosed_conflict",
+    "question": "What is the maximum daily dose of aspirin?",
+    "answer_text": "The maximum daily dose of aspirin is 4000 mg.",
+    "conflicts_in_context": 1,
+    "conflicts_disclosed_by_answer": false,
+    "coverage_score": 1.0,
+    "coverage_passed": true,
+    "faithfulness_score": 1.0,
+    "faithfulness_passed": true,
+    "unsupported_claims": [],
+    "completeness_score": 1.0,
+    "completeness_passed": true,
+    "overall_passed": false
+  }
+]

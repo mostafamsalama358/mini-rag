@@ -1,0 +1,6 @@
+﻿id: indications_recommend
+filters:
+  field:
+    - indications
+notes: Alternatives / recommend-mode (020). Corpus = RAG_CORPUS Excel workbook render (txt).
+retrieval_strategy: default

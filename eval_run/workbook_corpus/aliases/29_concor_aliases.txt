@@ -1,0 +1,13 @@
+Alias registry — Concor
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 29
+Brand: Concor
+
+Known aliases:
+- Concor (brand)
+- CONCOR 5 MG 30 F.C. TABS (catalog_sku)
+- Bisoprolol (inn)
+- BISOPROLOL FUMARATE (inn_alias)
+- كونكور (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

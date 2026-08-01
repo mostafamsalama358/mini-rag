@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: TIMOLOL
+Risk: Systemic absorption potentiation → bradycardia
+Type: Pharmacokinetic
+Monitoring: IOP + resting HR
+Dose adjustment: Switch to 0.25% solution
+Alternative: Brimonidine
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Systemic absorption potentiation → bradycardia; Type: Pharmacokinetic; Monitoring: IOP + resting HR; Dosage: Switch to 0.25% solution; Alternative: Brimonidine; Patient: Report fatigue/lightheadedness.

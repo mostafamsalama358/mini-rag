@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: COLESTIPOL
+Risk: Severe iron absorption reduction (50-70%) → refractory anemia
+Type: Pharmacokinetic (GI binding)
+Monitoring: FBC weekly, iron studies monthly
+Dose adjustment: Strict 6h separation (AM iron/PM colestipol)
+Alternative: IV iron (ferric carboxymaltose/ferumoxytol)
+Patient warning: /Management: Take iron with 250mg vitami…
+Severity: caution
+
+Clinical note:
+Risk: Severe iron absorption reduction (50-70%) → refractory anemia; Type: Pharmacokinetic (GI binding); Monitoring: FBC weekly, iron studies monthly; Dosage: Strict 6h separation (AM iron/PM colestipol); Alternative: IV iron (ferric carboxymaltose/ferumoxytol); Patient Warnings/Management: Take iron with 250mg vitami…

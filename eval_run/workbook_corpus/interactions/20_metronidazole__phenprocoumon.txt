@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: PHENPROCOUMON
+Risk: Delayed INR ↑ (peaks at 1-2 weeks)
+Type: Pharmacokinetic
+Monitoring: INR weekly x3
+Dose adjustment: Reduce phenprocoumon by 30%
+Alternative: Cefuroxime
+Patient warning: Avoid prolonged use (>10 days).
+Severity: yes
+
+Clinical note:
+Risk: Delayed INR ↑ (peaks at 1-2 weeks); Type: Pharmacokinetic; Monitoring: INR weekly x3; Dosage: Reduce phenprocoumon by 30%; Alternative: Cefuroxime; Patient Warnings: Avoid prolonged use (>10 days).

@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: CLOPIDOGREL
+Risk: Reduced clopidogrel efficacy (CYP3A4 competition).
+Type: Pharmacokinetic.
+Monitoring: Platelet function tests.
+Dose adjustment: Max atorvastatin 20mg/day.
+Alternative: Rosuvastatin.
+Patient warning: /Management: Report breakthrough angina; avoid grapefruit.
+Severity: yes
+
+Clinical note:
+Risk: Reduced clopidogrel efficacy (CYP3A4 competition). Type: Pharmacokinetic. Monitoring: Platelet function tests. Dosage Adjustments: Max atorvastatin 20mg/day. Alternative: Rosuvastatin. Patient Warnings/Management: Report breakthrough angina; avoid grapefruit.

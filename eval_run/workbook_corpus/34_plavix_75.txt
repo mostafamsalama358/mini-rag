@@ -1,0 +1,107 @@
+PLAVIX 75 MG 28 F.C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Plavix
+Product line: Plavix
+Catalog SKU: PLAVIX 75 MG 28 F.C.TABS.
+SKU ID: 34
+INN / actives: Clopidogrel
+INN primary: Clopidogrel
+INN aliases: CLOPIDOGREL
+Strength / form: Clopidogrel 75 mg | Form=TAB. | Min.age=18 years
+Manufacturer / market: SANOFI
+Price (catalog): 311
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > ANTI-BLOOD CLOTTING
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Plavix is used for
+Acute Coronary Syndrome (ACS) - Unstable Angina (UA), Non ST Elevation MI (NSTEMI), ST Elevation MI (STEMI) - 300 mg or 600 mg loading dose, then 75 mg once daily*
+Recent MI, Recent Stroke, or Established Peripheral Arterial Disease (PAD) - 75 mg once daily*
+Post Percutaneous Coronary Intervention (PCI) with stent placement - 75 mg once daily with Aspirin 81 mg daily. Duration depends on indication and stent type (e.g., 1 : 12 months or longer)*
+
+2. Dosage — Adults
+Adult dose: 75 mg once daily
+Maximum daily dose: 75 mg/day (75 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: See pack
+Pediatric dose: Use only under specialist supervision. Dose indication-specific.
+Pediatric max daily dose: See pack
+
+4. Do not take Plavix if / disease cautions
+Hypersensitivity to CLOPIDOGREL * Gastrointestinal (GI) bleeding * Non‑specific active hemorrhage / major bleeding * Abnormal uterine/ Vaginal bleeding (AUB)* Peptic Ulcer Disease & Gastritis * Intracranial hemorrhage (ICH) (intracerebral/ cerebral/ subarachnoid and hemorrhagic stroke)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: WARNING: DIMINISHED EFFECTIVENESS IN POOR METABOLIZERS
+
+Effectiveness of Clopidogrel depends on activation by CYP2C19.
+
+• Patients who are poor metabolizers (2-14% of population) receive less antiplatelet effect.
+• Tests are available to identify a patient's CYP2C19 genotype.
+• Consider alternative treatment strategies in patients identified as poor metabolizers.
+Warnings: • Take with or without food
+• Avoid eating grapefruit or drinking grapefruit juice while using this medication
+• PROTON PUMP INHIBITORS: USE WITH CAUTION. Avoid concomitant use with Omeprazole or Esomeprazole. Rationale: They inhibit CYP2C19, significantly reducing Clopidogrel's efficacy. Pantoprazole or H2 blockers are preferred
+• Vitamin K: AVOID high-dose supplements. Does not directly interact, but can counteract the anti-thrombotic state.
+• Fibrinolytic (like; heparine)administered ≤24 hours ago without a loading dose of clopidogrel: Initial: 300 mg once
+• Fibrinolytic administered >24 hours ago without a loading dose of clopidogrel: Initial: 600 mg once
+• The effectiveness of clopidogr
+HCP notes: • Take with or without food
+• Avoid eating grapefruit or drinking grapefruit juice while using this medication
+• PROTON PUMP INHIBITORS: USE WITH CAUTION. Avoid concomitant use with Omeprazole or Esomeprazole. Rationale: They inhibit CYP2C19, significantly reducing Clopidogrel's efficacy. Pantoprazole or H2 blockers are preferred
+• Vitamin K: AVOID high-dose supplements. Does not directly interact, but can counteract the anti-thrombotic state.
+• Fibrinolytic (like; heparine)administered ≤24 hours ago without a loading dose of clopidogrel: Initial: 300 mg once
+• Fibrinolytic administered >24 hours ago without a loading dose of clopidogrel: Initial: 600 mg once
+• The effectiveness of clopidogr
+Patient education: • Timing: 
+-Once daily with/without food
+• Missed dose: 
+-Take ASAP unless near next dose
+• Warning: 
+-Report unusual bleeding/black stools
+• Antidote: 
+-Platelet transfusion for severe bleeding
+• Interactions: 
+-Tell all your doctors and dentists you are on Clopidogrel. Avoid aspirin, ibuprofen, and naproxen unless specifically told to use them by your cardiologist.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- CLOPIDOGREL + DIAZOXIDE; Risk: Increased bleeding risk due to additive antiplatelet effects.; Type: Pharmacodynamic (synergistic platelet inhibition).; Monitoring: CBC weekly, fecal occult blood test.; Dose adjustment: Reduce clopidogrel to 75mg QOD if combined.; Alternative: Aspirin (lower bleeding risk).; Patient warning: /Management: Report b…
+- CLOPIDOGREL + BOSENTAN; Risk: Moderate bleeding risk.; Type: Pharmacodynamic.; Monitoring: CBC monthly.; Dose adjustment: None typically needed.; Alternative: Aspirin.; Patient warning: /Management: Report unusual bruising.
+- CLOPIDOGREL + MINOXIDIL; Risk: Mild additive bleeding risk.; Type: Pharmacodynamic.; Monitoring: Routine CBC.; Dose adjustment: None typically.; Alternative: Aspirin.; Patient warning: /Management: Standard precautions.
+- CLOPIDOGREL + HYDRALAZINE; Risk: Mild bleeding risk.; Type: Pharmacodynamic.; Monitoring: CBC baseline.; Dose adjustment: None typically.; Alternative: Aspirin.; Patient warning: /Management: Standard monitoring.
+- CLOPIDOGREL + ILOPROST; Risk: Severe bleeding due to additive antiplatelet effects.; Type: Pharmacodynamic (synergistic platelet inhibition).; Monitoring: CBC weekly, fecal occult blood test.; Dose adjustment: Reduce clopidogrel to 75mg QOD if combined.; Alternative: Aspirin (lower bleeding risk).; Patient warning: /Management: Report bruising/…
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Lipitor
+
+10. Possible side effects
+Major: Bleeding (15.7%)*
+Purpura (5-15%)*
+Bruising (5-15%)*
+Diarrhea (4-6%)*
+Rash (4-6%)*
+Pruritus (Itching (3-5%)*
+Minor: Dyspepsia (5%)*
+Abdominal Pain (5%)*
+Headache (3-5%)*
+Nausea/Vomiting (3%)*
+Arthralgia (3%)*
+Epistaxis - Nosebleeds (2-4%)*
+Neutropenia (<0.1%)*
+Agranulocytosis (<0.1%)*
+Thrombotic Thrombocytopenic Purpura (TTP) (<0.02%)*
+Liver Function Test Abnormalities (Rare)*
+Upper respiratory tract infection (URTI) (3%)*
+Chest pain (4%)*
+Flu like syndrome (4%)*
+Dizziness (4%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

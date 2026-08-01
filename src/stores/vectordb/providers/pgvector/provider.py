@@ -176,6 +176,7 @@ class PGVectorProvider(VectorDBInterface):
         *,
         entity_key: str | None = None,
         entity_prefix: str | None = None,
+        entity_prefixes: list[str] | None = None,
         field_key: str | None = None,
         metadata_filter: dict | None = None,
     ):
@@ -187,6 +188,7 @@ class PGVectorProvider(VectorDBInterface):
             limit,
             entity_key=entity_key,
             entity_prefix=entity_prefix,
+            entity_prefixes=entity_prefixes,
             field_key=field_key,
             metadata_filter=metadata_filter,
         )
@@ -199,6 +201,7 @@ class PGVectorProvider(VectorDBInterface):
         *,
         entity_key: str | None = None,
         entity_prefix: str | None = None,
+        entity_prefixes: list[str] | None = None,
         field_key: str | None = None,
         metadata_filter: dict | None = None,
         language: str = "simple",
@@ -211,6 +214,7 @@ class PGVectorProvider(VectorDBInterface):
             limit,
             entity_key=entity_key,
             entity_prefix=entity_prefix,
+            entity_prefixes=entity_prefixes,
             field_key=field_key,
             metadata_filter=metadata_filter,
             language=language,

@@ -1,0 +1,14 @@
+Alias registry — Tussigreen
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 10
+Brand: Tussigreen
+
+Known aliases:
+- Tussigreen (brand)
+- TUSSIGLOBE 0.3% SYRUP 120 ML (catalog_sku)
+- Ivy (inn)
+- IVY EXTRACT (inn_alias)
+- HEDERA HELIX (inn_alias)
+- توسيجرين (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

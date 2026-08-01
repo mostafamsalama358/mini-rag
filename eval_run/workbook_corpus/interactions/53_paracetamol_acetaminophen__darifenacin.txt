@@ -1,0 +1,16 @@
+Drug interaction — Panadol Migraine
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 53
+Brand: Panadol Migraine
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: DARIFENACIN
+Risk: Delayed gastric emptying may postpone paracetamol absorption (Tmax increased by 30-60 min), potentially delaying pain relief in acute situations.
+Type: -
+Monitoring: Assess pain relief onset time; consider IV paracetamol if rapid analgesia needed. Dose Adjustment: No change required for chronic use.
+Dose adjustment: -
+Alternative: -
+Patient warning: All…
+Severity: caution
+
+Clinical note:
+Risk: Delayed gastric emptying may postpone paracetamol absorption (Tmax increased by 30-60 min), potentially delaying pain relief in acute situations. Monitoring: Assess pain relief onset time; consider IV paracetamol if rapid analgesia needed. Dose Adjustment: No change required for chronic use. Patient Warning: All…

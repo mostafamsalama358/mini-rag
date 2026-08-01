@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: THIOPENTAL
+Risk: ↓ Metronidazole efficacy + disulfiram-like reaction with IV thiopental.
+Type: -
+Monitoring: Ethanol screen, neurologic status.
+Dose adjustment: Avoid ethanol-containing products; ↑ metronidazole 33%.
+Alternative: -
+Patient warning: No alcohol 72h post-treatment.
+Severity: yes
+
+Clinical note:
+Risk: ↓ Metronidazole efficacy + disulfiram-like reaction with IV thiopental. Monitoring: Ethanol screen, neurologic status. Dosage: Avoid ethanol-containing products; ↑ metronidazole 33%. Patient Warning: No alcohol 72h post-treatment.

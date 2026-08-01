@@ -1,0 +1,13 @@
+Alias registry — Controloc 20
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 13
+Brand: Controloc 20
+
+Known aliases:
+- Controloc 20 (brand)
+- CONTROLOC 20MG 14 GASTRO-RESISTANT TABS. (catalog_sku)
+- Pantoprazole (inn)
+- كونترولوك (arabic)
+- كنترولوك (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

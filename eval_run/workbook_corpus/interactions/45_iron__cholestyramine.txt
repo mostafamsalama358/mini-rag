@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: CHOLESTYRAMINE
+Risk: Reduced iron absorption → impaired anemia correction (risk of persistent fatigue/cardiac strain)
+Type: Pharmacokinetic (GI binding)
+Monitoring: FBC every 2-4 weeks, ferritin monthly
+Dose adjustment: Administer iron ≥4h before cholestyramine (preferably on empty stomach)
+Alternative: IV iron preparations (e.g., ferric…
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Reduced iron absorption → impaired anemia correction (risk of persistent fatigue/cardiac strain); Type: Pharmacokinetic (GI binding); Monitoring: FBC every 2-4 weeks, ferritin monthly; Dosage: Administer iron ≥4h before cholestyramine (preferably on empty stomach); Alternative: IV iron preparations (e.g., ferric…

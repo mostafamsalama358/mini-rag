@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: ISRADIPINE
+Risk: Cerebral hypoperfusion
+Type: Pharmacodynamic
+Monitoring: ICP if available
+Dose adjustment: Famotidine hold during infusion
+Alternative: IV PPIs
+Patient warning: /Management: Neuro checks q1h.
+Severity: caution
+
+Clinical note:
+Risk: Cerebral hypoperfusion; Type: Pharmacodynamic; Monitoring: ICP if available; Dosage Adjustments: Famotidine hold during infusion; Alternative: IV PPIs; Patient Warnings/Management: Neuro checks q1h.

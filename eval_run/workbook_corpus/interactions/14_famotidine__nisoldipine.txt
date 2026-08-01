@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: NISOLDIPINE
+Risk: Photosensitivity exacerbation
+Type: Pharmacodynamic
+Monitoring: Skin exam q2weeks
+Dose adjustment: Nisoldipine ↓10mg if rash
+Alternative: Nisoldipine + magaldrate
+Patient warning: /Management: SPF 50+ required.
+Severity: caution
+
+Clinical note:
+Risk: Photosensitivity exacerbation; Type: Pharmacodynamic; Monitoring: Skin exam q2weeks; Dosage Adjustments: Nisoldipine ↓10mg if rash; Alternative: Nisoldipine + magaldrate; Patient Warnings/Management: SPF 50+ required.

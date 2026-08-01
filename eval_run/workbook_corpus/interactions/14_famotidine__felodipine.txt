@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: FELODIPINE
+Risk: CYP3A4 substrate competition
+Type: Pharmacokinetic
+Monitoring: BP q12h
+Dose adjustment: Felodipine ↓25%
+Alternative: Felodipine + aluminum hydroxide
+Patient warning: /Management: Grapefruit strict avoidance.
+Severity: yes
+
+Clinical note:
+Risk: CYP3A4 substrate competition; Type: Pharmacokinetic; Monitoring: BP q12h; Dosage Adjustments: Felodipine ↓25%; Alternative: Felodipine + aluminum hydroxide; Patient Warnings/Management: Grapefruit strict avoidance.

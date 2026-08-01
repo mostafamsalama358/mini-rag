@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: PRIMIDONE
+Risk: PRIMIDONE (via phenobarbital) decreases MONTELUKAST AUC by 60%. Monitor: Morning/evening peak flow variability.
+Type: -
+Monitoring: -
+Dose adjustment: MONTELUKAST may need 2x daily dosing.
+Alternative: -
+Patient warning: Report increased wheezing at night.
+Severity: caution
+
+Clinical note:
+Risk: PRIMIDONE (via phenobarbital) decreases MONTELUKAST AUC by 60%. Monitor: Morning/evening peak flow variability. Dosage: MONTELUKAST may need 2x daily dosing. Patient Warning: Report increased wheezing at night.

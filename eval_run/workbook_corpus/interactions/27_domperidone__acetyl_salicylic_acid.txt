@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: ACETYL SALICYLIC ACID
+Risk: Cardiac arrest
+Type: Potassium channel blockade
+Monitoring: K+ >4.0 required
+Dose adjustment: Max 30mg/day
+Alternative: Mosapride
+Patient warning: Syncope danger
+Severity: caution
+
+Clinical note:
+Risk: Cardiac arrest; Type: Potassium channel blockade; Monitoring: K+ >4.0 required; Dosage Adjustments: Max 30mg/day; Alternative: Mosapride; Patient Warnings: Syncope danger

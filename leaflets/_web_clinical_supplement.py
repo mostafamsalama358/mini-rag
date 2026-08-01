@@ -1,0 +1,570 @@
+"""Fill dose / pediatric / pregnancy / lactation gaps from public SmPC/label sources.
+
+Sources used (public web labels / SmPC / DailyMed / manufacturer pages):
+- GSK Panadol ME / UK leaflets; DailyMed Panadol Cold & Flu
+- Servier Daflon 500/1000 SmPC
+- DailyMed Pepcid Complete (famotidine/Ca/Mg) for Jeparilon-class
+- DailyMed / EMC EMLA (lidocaine/prilocaine) for Anaseziago-class
+- AEMPS CIMA cloperastine SmPC + Notussil Egypt pack notes
+- Medizen / Health Canada throat-lozenge monograph (domiphen)
+- Wikipedia / Egyptian Pectipro leaflet class dosing (benproperine)
+- Standard SmPC/FDA dosing for common INNs (paracetamol, NSAIDs, PPIs, etc.)
+
+Corpus disclaimer remains: verify against Egyptian MoH PIL before clinical use.
+"""
+from __future__ import annotations
+
+import json
+import re
+from pathlib import Path
+
+OUT = Path(__file__).resolve().parent
+
+# Per-file web clinical fill for sections 2, 3, 7, 8 (+ optional strength)
+SUPPLEMENT: dict[str, dict[str, str]] = {
+    "01_panadol_paracetamol_500.txt": {
+        "strength": "500 mg film-coated / Advance tablet",
+        "adult": "1–2 tablets (500–1000 mg) every 4–6 hours as needed. Maximum usually 4 g paracetamol/24 h (do not exceed pack maximum; typically ≤8×500 mg/day). Space doses ≥4 hours.",
+        "child": "Do not use adult 500 mg tablets under 12 years unless a doctor advises a weight-based plan. Prefer paediatric suspensions/syrups dosed by weight (≈10–15 mg/kg/dose).",
+        "pregnancy": "Paracetamol is widely used in pregnancy at the lowest effective dose for the shortest time when needed. Avoid chronic high-dose use without medical advice.",
+        "lactation": "Compatible with breastfeeding at usual short-course analgesic doses; amounts in milk are small.",
+        "sources": "GSK Panadol Advance class labeling; standard paracetamol SmPC",
+    },
+    "02_panadol_cold_flu_day.txt": {
+        "strength": "Paracetamol 500 mg + caffeine 25 mg + phenylephrine HCl 5 mg (ME Day formula)",
+        "adult": "Adults and adolescents ≥12 y: typically 2 tablets every 4–6 hours while symptoms last. Do not exceed pack maximum (commonly 6–8 tablets/24 h). Max course usually a few days.",
+        "child": "Not for children under 12 years (decongestant + combination cold product).",
+        "pregnancy": "Avoid unless a doctor advises: phenylephrine/sympathomimetic decongestants are generally not preferred in pregnancy; combination cold products often labeled do-not-use/ask doctor.",
+        "lactation": "Ask a doctor/pharmacist. Decongestants may reduce milk supply; prefer single-ingredient options when possible.",
+        "sources": "Panadol ME Cold & Flu Day product page; GSK cold/flu leaflets",
+    },
+    "03_panadol_sinus_relief_pe.txt": {
+        "strength": "Paracetamol + phenylephrine (Sinus Relief PE)",
+        "adult": "Adults/adolescents ≥12 y: usually 2 tablets every 4–6 hours as needed; respect pack maximum (commonly ≤8 tablets/24 h).",
+        "child": "Not for under 12 years unless labeled otherwise.",
+        "pregnancy": "Avoid phenylephrine decongestant combinations in pregnancy unless clinician-directed.",
+        "lactation": "Ask clinician; decongestants may reduce milk supply.",
+        "sources": "GSK Panadol Sinus PE class labeling",
+    },
+    "51_panadol_extra.txt": {
+        "strength": "Paracetamol 500 mg + caffeine 65 mg (Panadol Extra)",
+        "adult": "Adults/adolescents ≥12 y: typically 2 tablets every 4–6 hours as needed. Do not exceed pack maximum (commonly 8 tablets/24 h). Space ≥4 hours. Distinct from Panadol Advance (no caffeine).",
+        "child": "Not for under 12 years.",
+        "pregnancy": "Prefer plain paracetamol when possible; caffeine-containing analgesics — ask obstetric advice for more than occasional use.",
+        "lactation": "Usually compatible short courses; caffeine passes into milk — avoid near bedtime feeds if infant is sensitive.",
+        "sources": "GSK Panadol Extra class labeling; caffeine+paracetamol SmPC",
+    },
+    "52_panadol_joint.txt": {
+        "strength": "Paracetamol extended-release joint pain formula (Panadol Joint class)",
+        "adult": "Adults: follow pack (often 2 tablets every 8 hours for sustained relief). Do not crush/chew modified-release tablets. Max per pack/24 h; do not stack with other paracetamol products.",
+        "child": "Adult joint modified-release products are not for children.",
+        "pregnancy": "Paracetamol at lowest effective dose/shortest time when needed; prefer standard immediate-release unless doctor advises otherwise.",
+        "lactation": "Compatible at usual short-course doses.",
+        "sources": "GSK Panadol Joint / Osteo class labeling",
+    },
+    "53_panadol_migraine.txt": {
+        "strength": "Paracetamol + caffeine (+/− other migraine co-actives per SKU)",
+        "adult": "Adults: take at migraine onset per pack (commonly 2 tablets). Do not exceed labeled maximum/24 h. Do not combine with other paracetamol or high-caffeine products.",
+        "child": "Not for children unless a specific paediatric migraine product is labeled.",
+        "pregnancy": "Ask obstetric advice before caffeine-combination migraine analgesics; prefer single-ingredient options when possible.",
+        "lactation": "Short courses usually OK; watch infant caffeine sensitivity.",
+        "sources": "GSK Panadol Migraine class labeling",
+    },
+    "54_panadol_acute_head_cold.txt": {
+        "strength": "Paracetamol + antihistamine + decongestant (Acute Head Cold combo)",
+        "adult": "Adults/≥12 y: typically 2 tablets every 4–6 hours while symptoms last; respect pack max; no other paracetamol products.",
+        "child": "Not for under 12 years (adult cold combo).",
+        "pregnancy": "Avoid multi-ingredient cold products in pregnancy unless clinician-directed.",
+        "lactation": "Avoid if possible (sedation + milk-supply effects from antihistamine/decongestant).",
+        "sources": "GSK Panadol Acute Head Cold class labeling",
+    },
+    "55_panadol_cold_flu_all_in_one.txt": {
+        "strength": "Multi-symptom Cold & Flu All-In-One (paracetamol + decongestant +/− antihistamine/expectorant per pack)",
+        "adult": "Adults/≥12 y: dose as on pack (often 2 tablets every 4–6 h). Short courses only; do not duplicate actives across brands.",
+        "child": "Not for under 12 years.",
+        "pregnancy": "Avoid combination cold/flu products unless doctor advises.",
+        "lactation": "Ask pharmacist; prefer single-ingredient options.",
+        "sources": "GSK Panadol Cold & Flu All In One class labeling",
+    },
+    "56_panadol_vapour_release.txt": {
+        "strength": "Cold & Flu with vapour-release / menthol sensory actives + paracetamol class",
+        "adult": "Adults/≥12 y: follow pack tablet schedule; do not exceed maxima; avoid stacking other paracetamol cold brands.",
+        "child": "Not for young children; respect pack age cut-off.",
+        "pregnancy": "Avoid combination cold products with decongestants in pregnancy unless advised.",
+        "lactation": "Ask clinician; decongestants may reduce milk supply.",
+        "sources": "GSK Panadol Cold & Flu Vapour Release class labeling",
+    },
+    "04_cetal_cold_flu_day.txt": {
+        "strength": "Paracetamol + chlorpheniramine + pseudoephedrine (cold/flu day)",
+        "adult": "Adults: typically 1–2 tablets every 6–8 hours as needed; do not exceed pack maximum or duplicate other paracetamol products. Limit short courses.",
+        "child": "Usually not for young children; follow Egyptian pack age cut-off (often ≥12 y for adult cold combos).",
+        "pregnancy": "Avoid: pseudoephedrine and first-generation antihistamines in combination cold products are generally not recommended in pregnancy without specialist advice.",
+        "lactation": "Avoid or ask pharmacist: chlorpheniramine may sedate infant; pseudoephedrine can reduce milk supply.",
+        "sources": "Egyptian cold-combo class labeling; pseudoephedrine pregnancy/lactation cautions",
+    },
+    "05_flurest_n.txt": {
+        "strength": "Chlorpheniramine + paracetamol + phenylephrine",
+        "adult": "Adults: usually 1 tablet every 6–8 hours as needed; do not exceed pack maximum; do not combine with other paracetamol products.",
+        "child": "Age-restricted; not for infants/young children — use paediatric formulations if prescribed.",
+        "pregnancy": "Avoid combination cold products with phenylephrine/antihistamine unless doctor advises.",
+        "lactation": "Avoid if possible (sedating antihistamine + decongestant effects on milk supply).",
+        "sources": "GSK Flurest-N catalog actives + cold-product class SmPC cautions",
+    },
+    "06_congestal.txt": {
+        "strength": "Chlorpheniramine + paracetamol + pseudoephedrine",
+        "adult": "Adults: typically 1 tablet 3 times daily or as on pack; max short course; no other paracetamol.",
+        "child": "Follow pack minimum age; adult tablets not for young children.",
+        "pregnancy": "Avoid pseudoephedrine-containing cold products in pregnancy unless clinician-directed.",
+        "lactation": "Avoid/ask: may reduce milk supply and sedate infant.",
+        "sources": "CID Congestal class labeling",
+    },
+    "07_sine_up.txt": {
+        "strength": "Chlorpheniramine + paracetamol + phenylephrine",
+        "adult": "Adults: 1 tablet every 6–8 hours as needed per pack; avoid duplicate actives.",
+        "child": "Not for young children; respect pack age limit.",
+        "pregnancy": "Avoid decongestant/antihistamine combinations unless advised.",
+        "lactation": "Avoid if possible (sedation + milk-supply effects).",
+        "sources": "PHARCO Sine-Up class labeling",
+    },
+    "08_bradozen.txt": {
+        "strength": "Domiphen bromide 0.5 mg lozenge",
+        "adult": "Dissolve 1 lozenge slowly in the mouth every 2–4 hours (commonly 3–6 times/day). Do not chew/swallow whole. Do not exceed pack daily maximum.",
+        "child": "Not for infants (choking risk). For school-age children only if pack allows; dissolve slowly under supervision.",
+        "pregnancy": "Topical antiseptic with minimal systemic absorption; ask doctor/pharmacist before use (standard lozenge warning).",
+        "lactation": "Likely low systemic exposure; ask clinician before routine use.",
+        "sources": "Medizen Bradozen; Health Canada throat-lozenge monograph (domiphen)",
+    },
+    "09_notussil.txt": {
+        "strength": "Cloperastine HCl 20 mg/5 ml suspension (Egyptian Notussil note) / class 3.54 mg/ml syrups elsewhere",
+        "adult": "Egyptian Notussil-type: adults often 5 ml three times daily (confirm concentration on bottle). EU cloperastine 3.54 mg/ml syrups commonly 10 ml three times daily for ≥12 y.",
+        "child": "Contraindicated under 2 years. Age-banded syrup dosing (examples for 3.54 mg/ml class): 2–4 y 2 ml BID; 5–6 y 3 ml BID; 7–12 y 5 ml BID–TID — always follow the Egyptian pack.",
+        "pregnancy": "Contraindicated / not recommended — insufficient human data (AEMPS/EU SmPC).",
+        "lactation": "Not recommended; unknown excretion in milk (EU SmPC).",
+        "sources": "Notussil Egypt pack notes; AEMPS CIMA Cloperastine Kern SmPC",
+    },
+    "10_tussigreen.txt": {
+        "strength": "Corpus proxy: benproperine cough syrup class (Tussiglobe catalog match); confirm real Tussigreen PIL if available",
+        "adult": "Benproperine class: adults often 25–50 mg 2–3 times daily OR syrup tablespoon-equivalent 2–3×/day with meals (Egyptian Pectipro-class leaflets).",
+        "child": "Age-banded syrup teaspoons (example Pectipro-class): 1–3 y ½ tsp; 3–6 y 1 tsp; 6–12 y 2 tsp; 2–3× daily. Catalog min.age for Tussiglobe proxy: 6 years.",
+        "pregnancy": "Not recommended — limited safety data.",
+        "lactation": "Not recommended — limited data.",
+        "sources": "Benproperine monograph; Egyptian Pectipro syrup leaflet class",
+    },
+    "11_daflon_500.txt": {
+        "strength": "MPFF 500 mg (diosmin 450 mg + hesperidin 50 mg)",
+        "adult": "Venous insufficiency: 2 tablets daily (1 midday + 1 evening) with meals. Acute hemorrhoids: 6 tablets/day for 4 days then 4 tablets/day for 3 days (Servier SmPC).",
+        "child": "Not established under 18 years (Servier SmPC).",
+        "pregnancy": "Prefer avoid as precaution — limited human data; animal studies not teratogenic (Servier).",
+        "lactation": "Not recommended — unknown if excreted in milk (Servier).",
+        "sources": "Servier Daflon 500 SmPC (ME)",
+    },
+    "12_daflon_1000.txt": {
+        "strength": "MPFF 1000 mg tablet",
+        "adult": "Usual: 1 tablet daily with a meal. Acute hemorrhoids: 3 tablets/day ×4 days then 2 tablets/day ×3 days (Servier SmPC).",
+        "child": "Not established in children/adolescents.",
+        "pregnancy": "Prefer avoid as precaution (Servier).",
+        "lactation": "Not recommended / decide with clinician (Servier).",
+        "sources": "Servier Daflon 1000 SmPC",
+    },
+    "13_controloc_20.txt": {
+        "strength": "Pantoprazole 20 mg gastro-resistant",
+        "adult": "Typical GERD/symptomatic acid: 20 mg once daily before meal for short courses (often 2–4 weeks) or as prescribed. Higher doses for ulcer/H. pylori per doctor.",
+        "child": "Specialist paediatric dosing only; not routine OTC for young children.",
+        "pregnancy": "Generally considered acceptable if acid suppression needed (PPI class; use when benefit outweighs risk).",
+        "lactation": "Small amounts may appear in milk; usually compatible for short courses — confirm with clinician.",
+        "sources": "Pantoprazole SmPC class (Controloc)",
+    },
+    "14_jeparilon.txt": {
+        "strength": "Famotidine 10 mg + calcium carbonate + magnesium hydroxide chewable (Pepcid Complete–class)",
+        "adult": "Chew 1 tablet completely when symptoms occur; do not swallow whole. Max 2 tablets/24 h. Limit short self-care courses (≈2 weeks) unless doctor advises.",
+        "child": "Typically ≥12 years (US OTC class). Not for younger children unless prescribed.",
+        "pregnancy": "Ask doctor before use; combination lacks adequate pregnancy studies — use only if benefit outweighs risk.",
+        "lactation": "Ask healthcare professional before use.",
+        "sources": "DailyMed Pepcid Complete; HPRA Pepcid Duo SmPC class",
+    },
+    "15_anaseziago.txt": {
+        "strength": "Lidocaine 2.5% + prilocaine 2.5% cream (EMLA-class)",
+        "adult": "Intact skin minor procedures: apply thick layer under occlusive dressing, typically ~1.5 g/10 cm² for ~1 hour (follow pack). Do not apply to broken skin/eyes/mucosa unless directed.",
+        "child": "Strict max dose/area/time by age & weight (e.g. 0–3 mo ≤1 g/10 cm²/1 h; older children higher per EMLA table). Avoid in <37 weeks gestation neonates; caution with methemoglobin-inducing drugs in infants <12 mo.",
+        "pregnancy": "Former FDA Cat B; use only if clearly needed (limited human data).",
+        "lactation": "Small milk amounts; EMC states can be used if clinically needed at therapeutic topical doses.",
+        "sources": "DailyMed lidocaine/prilocaine; EMC EMLA SmPC",
+    },
+    "16_adol_500.txt": {
+        "strength": "Paracetamol 500 mg",
+        "adult": "1–2 tablets every 4–6 h PRN; max usually 4 g/24 h.",
+        "child": "Prefer paediatric liquid under 12 y; weight-based 10–15 mg/kg/dose.",
+        "pregnancy": "Preferred simple analgesic in pregnancy at lowest effective dose/shortest time.",
+        "lactation": "Compatible at usual doses.",
+        "sources": "Paracetamol SmPC; Julphar Adol class",
+    },
+    "17_cataflam_25.txt": {
+        "strength": "Catalog match Cataflam 50 mg sugar-coated (diclofenac potassium); file name legacy 25 mg",
+        "adult": "Diclofenac potassium: often 50 mg initially then 25–50 mg every 6–8 h as needed; max commonly 150 mg/day short course with food. Use lowest dose/shortest duration.",
+        "child": "Not for young children unless specialist paediatric diclofenac product prescribed.",
+        "pregnancy": "Avoid in 3rd trimester (ductus arteriosus / oligohydramnios risk). Avoid if possible in 1st/2nd unless doctor directs.",
+        "lactation": "Prefer avoid NSAIDs or use short courses only with clinician advice; ibuprofen often preferred if NSAID needed.",
+        "sources": "Diclofenac potassium SmPC; Novartis Cataflam class",
+    },
+    "18_brufen_400.txt": {
+        "strength": "Ibuprofen 400 mg",
+        "adult": "200–400 mg every 6–8 h with food; OTC max often 1200 mg/day; prescription regimens may go higher under supervision.",
+        "child": "Use paediatric ibuprofen by weight (~5–10 mg/kg/dose). Adult 400 mg tablets not for young children.",
+        "pregnancy": "Avoid in 3rd trimester; avoid if possible earlier unless advised.",
+        "lactation": "Usually compatible in short courses at usual doses; prefer after feeds if concerned.",
+        "sources": "Ibuprofen SmPC; Abbott Brufen",
+    },
+    "19_antinal.txt": {
+        "strength": "Nifuroxazide 200 mg capsules",
+        "adult": "Common adult regimen: 200 mg four times daily for acute bacterial diarrhoea short courses (typically ≤7 days) — follow pack/doctor.",
+        "child": "Age/formulation dependent; suspensions for younger children when labeled. Capsules not for toddlers.",
+        "pregnancy": "Avoid unless clinician judges benefit > risk (limited data for nifuroxazide).",
+        "lactation": "Ask clinician; often avoided if safer alternatives exist.",
+        "sources": "Nifuroxazide product information class (Amoun Antinal)",
+    },
+    "20_flagyl_500.txt": {
+        "strength": "Metronidazole 500 mg tablets",
+        "adult": "Indication-dependent (e.g. anaerobic infection / amebiasis / bacterial vaginosis protocols). Common oral ranges 400–500 mg 2–3×/day for prescribed durations. Avoid alcohol during and ≥48 h after.",
+        "child": "Weight-based paediatric dosing only under prescription.",
+        "pregnancy": "Avoid in 1st trimester if possible; may be used later when clearly indicated (e.g. trichomoniasis protocols) under obstetric advice.",
+        "lactation": "Excreted in milk; may interrupt breastfeeding for high-dose courses or choose alternatives — follow obstetric/paediatric advice.",
+        "sources": "Metronidazole SmPC; Sanofi Flagyl",
+    },
+    "21_augmentin_1g.txt": {
+        "strength": "Amoxicillin 875 mg + clavulanate 125 mg (1 g co-amoxiclav)",
+        "adult": "Typically 1 tablet every 12 hours with food for prescribed duration (often 5–14 days). Complete the course.",
+        "child": "Use paediatric suspensions by weight; adult 1 g tabs not for young children.",
+        "pregnancy": "Penicillins generally considered acceptable when antibiotic needed.",
+        "lactation": "Usually compatible; watch infant for diarrhoea/rash/thrush.",
+        "sources": "Co-amoxiclav SmPC; GSK Augmentin",
+    },
+    "22_hibiotic_1g.txt": {
+        "strength": "Amoxicillin/clavulanate 1 g",
+        "adult": "Usually 1 g every 12 h with food for the prescribed course.",
+        "child": "Paediatric liquid by weight only.",
+        "pregnancy": "Generally acceptable beta-lactam when indicated.",
+        "lactation": "Usually compatible; monitor infant GI symptoms.",
+        "sources": "Co-amoxiclav SmPC; Pharco Hi-Biotic",
+    },
+    "23_zithrokan_500.txt": {
+        "strength": "Azithromycin 500 mg",
+        "adult": "Common short courses: 500 mg once daily for 3 days, OR 500 mg day 1 then 250 mg days 2–5 — indication-specific.",
+        "child": "Weight-based paediatric regimens; capsules may not suit young children.",
+        "pregnancy": "Macrolides used when indicated; azithromycin often acceptable with clinician oversight.",
+        "lactation": "Usually compatible short courses; monitor infant GI flora.",
+        "sources": "Azithromycin SmPC; Hikma Zithrokan",
+    },
+    "24_ciprobay_500.txt": {
+        "strength": "Ciprofloxacin 500 mg",
+        "adult": "Often 500 mg every 12 h for prescribed duration. Separate from dairy/antacids/minerals by ≥2–4 h. Tendon/CNS warnings apply.",
+        "child": "Generally avoid in children/adolescents unless specialist exception (cartilage risk).",
+        "pregnancy": "Avoid if safer alternatives exist (fluoroquinolone caution).",
+        "lactation": "Generally avoid; excreted in milk.",
+        "sources": "Ciprofloxacin SmPC; Bayer Ciprobay",
+    },
+    "25_risek_20.txt": {
+        "strength": "Omeprazole 20 mg capsules",
+        "adult": "Usually 20 mg once daily before breakfast for GERD/ulcer regimens as prescribed (duration often 2–8 weeks).",
+        "child": "Specialist paediatric dosing by weight.",
+        "pregnancy": "PPIs generally acceptable when needed.",
+        "lactation": "Small milk amounts; usually compatible short courses.",
+        "sources": "Omeprazole SmPC; Julphar Risek",
+    },
+    "26_gaviscon.txt": {
+        "strength": "Alginate antacid liquid (Advance-class)",
+        "adult": "Typically 10–20 ml after meals and at bedtime (follow bottle). Do not exceed pack maximum.",
+        "child": "Age-banded paediatric alginate products preferred; adult Advance may be ≥12 y.",
+        "pregnancy": "Alginates widely used for pregnancy heartburn when lifestyle measures fail.",
+        "lactation": "Compatible (minimal systemic absorption).",
+        "sources": "Gaviscon Advance SmPC class",
+    },
+    "27_motilium_10.txt": {
+        "strength": "Domperidone 10 mg",
+        "adult": "Often 10 mg up to 3 times daily before meals; short courses preferred. Cardiac QT risk — respect max daily dose and contraindications.",
+        "child": "Restricted; cardiac risk — specialist only / avoid in young children per current warnings.",
+        "pregnancy": "Use only if clearly needed; limited data.",
+        "lactation": "Used carefully (also galactagogue off-label) — cardiac risk assessment required; prefer clinician oversight.",
+        "sources": "Domperidone SmPC (Motilium) with QT warnings",
+    },
+    "28_buscopan.txt": {
+        "strength": "Catalog match Buscopan Plus (hyoscine butylbromide + analgesic combo) / Buscopan class",
+        "adult": "Hyoscine butylbromide class: often 10–20 mg up to 3–4×/day. Buscopan Plus: follow combo pack (includes analgesic) — do not exceed labeled maxima.",
+        "child": "Age-restricted; paediatric products when needed.",
+        "pregnancy": "Ask doctor; anticholinergics used with caution.",
+        "lactation": "Ask clinician; limited data.",
+        "sources": "Buscopan / Buscopan Plus SmPC class",
+    },
+    "29_concor_5.txt": {
+        "strength": "Bisoprolol 5 mg",
+        "adult": "Hypertension/HF titration under doctor — common maintenance 2.5–10 mg once daily. Do not stop abruptly.",
+        "child": "Not routine paediatric use.",
+        "pregnancy": "Beta-blockers may be used when indicated; fetal growth monitoring may be needed — specialist care.",
+        "lactation": "Bisoprolol: limited data; monitor infant for bradycardia/hypoglycaemia if used.",
+        "sources": "Bisoprolol SmPC; Concor",
+    },
+    "30_norvasc_5.txt": {
+        "strength": "Amlodipine 5 mg",
+        "adult": "Usually 5 mg once daily (may titrate to 10 mg). Take consistently.",
+        "child": "Specialist paediatric hypertension dosing only.",
+        "pregnancy": "Calcium-channel blockers may be used when needed under obstetric advice.",
+        "lactation": "Amlodipine appears in milk in small amounts; often considered acceptable with monitoring.",
+        "sources": "Amlodipine SmPC; Norvasc",
+    },
+    "31_glucophage_500.txt": {
+        "strength": "Metformin 500 mg",
+        "adult": "Start often 500 mg once/twice daily with meals; titrate as tolerated. Typical maintenance 1500–2000 mg/day in divided doses (max per local label).",
+        "child": "Specialist paediatric T2DM regimens only.",
+        "pregnancy": "Increasingly used in GDM/PCOS under obstetric protocols; follow specialist advice.",
+        "lactation": "Generally considered compatible; monitor infant.",
+        "sources": "Metformin SmPC; Glucophage",
+    },
+    "32_amaryl_2.txt": {
+        "strength": "Glimepiride 2 mg",
+        "adult": "Usually start 1 mg once daily with breakfast; titrate. Maintenance often 1–4 mg/day (max commonly 6–8 mg). Hypoglycaemia risk.",
+        "child": "Not indicated.",
+        "pregnancy": "Avoid sulfonylureas; switch to insulin protocols in pregnancy.",
+        "lactation": "Avoid — hypoglycaemia risk to infant.",
+        "sources": "Glimepiride SmPC; Amaryl",
+    },
+    "33_lipitor_20.txt": {
+        "strength": "Atorvastatin 20 mg",
+        "adult": "Usually 10–20 mg once daily (range 10–80 mg) at any time of day. Avoid grapefruit excess.",
+        "child": "Specialist paediatric familial hypercholesterolaemia only.",
+        "pregnancy": "Contraindicated — stop if pregnancy planned/confirmed.",
+        "lactation": "Contraindicated / not recommended.",
+        "sources": "Atorvastatin SmPC; Lipitor",
+    },
+    "34_plavix_75.txt": {
+        "strength": "Clopidogrel 75 mg",
+        "adult": "Maintenance 75 mg once daily. Loading doses for ACS only under cardiology protocols.",
+        "child": "Not routine.",
+        "pregnancy": "Use only if clearly needed (bleeding risk).",
+        "lactation": "Limited data — specialist decision.",
+        "sources": "Clopidogrel SmPC; Plavix",
+    },
+    "35_aspocid_75.txt": {
+        "strength": "Aspirin (acetylsalicylic acid) 75 mg",
+        "adult": "Antiplatelet: 75–100 mg once daily as prescribed. Take with food if GI upset.",
+        "child": "Avoid aspirin in children/teens with viral illness (Reye risk) unless specialist Kawasaki protocols.",
+        "pregnancy": "Low-dose aspirin used in obstetric protocols when indicated; avoid analgesic-dose NSAID aspirin especially late pregnancy.",
+        "lactation": "Low-dose often acceptable; avoid high-dose.",
+        "sources": "Aspirin antiplatelet SmPC; Aspocid",
+    },
+    "36_telfast_120.txt": {
+        "strength": "Fexofenadine 120 mg",
+        "adult": "Allergic rhinitis: 120 mg once daily. Chronic urticaria may use 180 mg products.",
+        "child": "Age-banded paediatric fexofenadine; 120 mg tabs usually ≥12 y.",
+        "pregnancy": "Non-sedating antihistamines: use if needed after clinician advice (fexofenadine often acceptable).",
+        "lactation": "Limited data; non-sedating agents preferred over 1st-generation — ask pharmacist.",
+        "sources": "Fexofenadine SmPC; Telfast",
+    },
+    "37_claritine_10.txt": {
+        "strength": "Loratadine 10 mg",
+        "adult": "10 mg once daily.",
+        "child": "Paediatric syrups/chewables by age; 10 mg tabs often ≥6–12 y per label.",
+        "pregnancy": "Often considered acceptable non-sedating choice when antihistamine needed.",
+        "lactation": "Usually compatible; amounts in milk low.",
+        "sources": "Loratadine SmPC; Claritine",
+    },
+    "38_otrivin_0_1.txt": {
+        "strength": "Xylometazoline 0.1% adult nasal drops",
+        "adult": "Usually 2–3 drops per nostril up to 2–3 times daily. Max continuous use typically 3–5–7 days to avoid rebound congestion.",
+        "child": "0.1% is adult strength — use 0.05% paediatric products for children per age label.",
+        "pregnancy": "Prefer short courses / saline first; systemic absorption possible — ask obstetric advice.",
+        "lactation": "Short topical courses usually low concern; prefer saline if possible.",
+        "sources": "Xylometazoline nasal SmPC; Otrivin",
+    },
+    "39_ventolin_inhaler.txt": {
+        "strength": "Salbutamol (albuterol) 100 mcg/actuation MDI",
+        "adult": "Relief: typically 1–2 puffs as needed; may repeat. Acute severe asthma needs medical emergency care. Controllers are separate.",
+        "child": "Paediatric puff counts by age/spacer; caregiver training essential.",
+        "pregnancy": "Salbutamol inhalers are used in pregnancy when needed for asthma control — uncontrolled asthma is riskier.",
+        "lactation": "Compatible; minimal milk levels.",
+        "sources": "Salbutamol inhaler SmPC; Ventolin",
+    },
+    "40_singulair_10.txt": {
+        "strength": "Montelukast 10 mg",
+        "adult": "10 mg once daily in the evening.",
+        "child": "Age-specific chewable/granule strengths (4–5 mg); 10 mg for ≥15 y typically.",
+        "pregnancy": "Use if benefit outweighs risk; asthma control priority.",
+        "lactation": "Limited data — usually continue if clinically needed with monitoring.",
+        "sources": "Montelukast SmPC; Singulair (neuropsychiatric warning applies)",
+    },
+    "41_diflucan_150.txt": {
+        "strength": "Fluconazole 150 mg capsule",
+        "adult": "Vaginal candidiasis: single 150 mg oral dose (common). Other infections need multi-day regimens.",
+        "child": "Weight-based systemic regimens when prescribed — not the single 150 mg OTC pattern.",
+        "pregnancy": "Avoid single/high-dose fluconazole in pregnancy especially 1st trimester (teratogenicity signals at high/prolonged doses).",
+        "lactation": "Compatible after single 150 mg dose in many references; confirm for multi-day courses.",
+        "sources": "Fluconazole SmPC; Diflucan",
+    },
+    "42_lamisil_250.txt": {
+        "strength": "Terbinafine 250 mg tablets",
+        "adult": "Often 250 mg once daily for weeks–months depending on nail/skin infection site.",
+        "child": "Specialist weight-based if used.",
+        "pregnancy": "Prefer postpone oral terbinafine until after pregnancy unless essential.",
+        "lactation": "Avoid oral terbinafine — excreted in milk.",
+        "sources": "Terbinafine SmPC; Lamisil",
+    },
+    "43_duphaston_10.txt": {
+        "strength": "Dydrogesterone 10 mg",
+        "adult": "Indication-specific (cycle support, endometriosis, threatened miscarriage protocols): commonly 10 mg 2–3×/day for defined days — only as prescribed.",
+        "child": "Not indicated.",
+        "pregnancy": "Used in obstetric protocols when prescribed; do not self-medicate.",
+        "lactation": "Progestogens may be used with caution — follow obstetric advice.",
+        "sources": "Dydrogesterone SmPC; Duphaston",
+    },
+    "44_folic_acid_5.txt": {
+        "strength": "Folic acid 5 mg (EIPICO catalog match)",
+        "adult": "Deficiency/therapeutic: often 5 mg daily. Preconception neural-tube prevention commonly 400 mcg–5 mg depending on risk (high-risk 5 mg).",
+        "child": "Paediatric dosing by indication/weight.",
+        "pregnancy": "Recommended in pregnancy; higher doses for high-risk women under advice.",
+        "lactation": "Compatible and often continued.",
+        "sources": "Folic acid SmPC / WHO antenatal guidance class",
+    },
+    "45_ferrotron.txt": {
+        "strength": "Iron + vitamins capsule (Ferrotron complex)",
+        "adult": "Usually 1 capsule daily or as pack directs, preferably not with tea/coffee/calcium/quinolones at the same moment (space 2–4 h).",
+        "child": "Adult iron capsules not for young children (overdose risk).",
+        "pregnancy": "Iron supplementation common in pregnancy when indicated — follow antenatal dose.",
+        "lactation": "Compatible when iron needed.",
+        "sources": "Oral iron counseling standards; Ferrotron pack class",
+    },
+    "46_milga.txt": {
+        "strength": "B-vitamin neurotropic complex (Milga)",
+        "adult": "Often 1 tablet 1–3 times daily as labeled for vitamin B supplementation/neuropathy support.",
+        "child": "Adult strengths usually not for young children.",
+        "pregnancy": "B vitamins generally acceptable at physiologic doses; avoid megadoses unless advised.",
+        "lactation": "Usually compatible at labeled doses.",
+        "sources": "Vitamin B complex counseling; Eva Milga pack class",
+    },
+    "47_smecta.txt": {
+        "strength": "Diosmectite (smectite) suspension/sachets",
+        "adult": "Often 3 sachets/day (or suspension equivalent) between meals for acute diarrhoea short courses; ensure rehydration.",
+        "child": "Age-banded sachets; maintain ORS. Not a substitute for rehydration.",
+        "pregnancy": "Generally considered acceptable (minimal absorption) when needed.",
+        "lactation": "Compatible.",
+        "sources": "Diosmectite SmPC class; Smecta",
+    },
+    "48_enterogermina.txt": {
+        "strength": "Bacillus clausii 2 billion / 5 ml mini-bottle",
+        "adult": "Typically 1–2 mini-bottles/day (or as pack), spaced from antibiotics by a few hours when possible.",
+        "child": "Paediatric schedules on pack; widely used in children when labeled.",
+        "pregnancy": "Probiotics generally considered low risk; use labeled products.",
+        "lactation": "Compatible.",
+        "sources": "Enterogermina product information class",
+    },
+    "49_strepsils.txt": {
+        "strength": "Antiseptic/local anaesthetic lozenges (Honey & Lemon catalog match)",
+        "adult": "Dissolve 1 lozenge slowly every 2–3 hours as needed; respect max/day on pack.",
+        "child": "Choking risk — usually ≥6 years if pack allows; never for infants.",
+        "pregnancy": "Short topical courses generally acceptable; check specific actives (amylmetacresol/dichlorobenzyl alcohol etc.).",
+        "lactation": "Short courses usually fine; avoid excessive use.",
+        "sources": "Strepsils SmPC class",
+    },
+    "50_comtrex.txt": {
+        "strength": "Multi-ingredient cold tablet (paracetamol + antihistamine + decongestant class)",
+        "adult": "Typically 1–2 tablets every 6 hours as needed; do not exceed pack max; no other paracetamol products.",
+        "child": "Adult cold combos usually ≥12 years.",
+        "pregnancy": "Avoid combination cold products; prefer single-ingredient clinician-guided options.",
+        "lactation": "Avoid if possible (sedation + milk-supply effects from antihistamine/decongestant).",
+        "sources": "Comtrex Acute Head Cold class labeling",
+    },
+}
+
+
+SECTION_PATTERNS = {
+    "adult": re.compile(
+        r"(2\. Dosage — Adults\n)(.*?)(\n\n3\. Dosage — Children)",
+        re.S,
+    ),
+    "child": re.compile(
+        r"(3\. Dosage — Children\n)(.*?)(\n\n4\. Do not take)",
+        re.S,
+    ),
+    "pregnancy": re.compile(
+        r"(7\. Pregnancy\n)(.*?)(\n\n8\. Breastfeeding)",
+        re.S,
+    ),
+    "lactation": re.compile(
+        r"(8\. Breastfeeding\n)(.*?)(\n\n9\. Supplements)",
+        re.S,
+    ),
+}
+
+
+def patch_text(text: str, data: dict[str, str]) -> str:
+    # strength line
+    if data.get("strength"):
+        text = re.sub(
+            r"^Strength / form:.*$",
+            f"Strength / form: {data['strength']} | (web-supplemented dosing below)",
+            text,
+            count=1,
+            flags=re.M,
+        )
+
+    # ensure source note near top after Match note
+    src_line = f"Web clinical sources: {data.get('sources', 'public SmPC/label class')}"
+    if "Web clinical sources:" not in text:
+        text = re.sub(
+            r"(Match note:.*\n)",
+            r"\1" + src_line + "\n",
+            text,
+            count=1,
+        )
+    else:
+        text = re.sub(r"^Web clinical sources:.*$", src_line, text, count=1, flags=re.M)
+
+    adult_body = (
+        f"Web-supplemented adult dosing: {data['adult']}\n"
+        f"Catalog DOSE field may still be empty — prefer this section + official Egyptian pack."
+    )
+    child_body = (
+        f"Web-supplemented paediatric dosing: {data['child']}\n"
+        f"Always prefer the age/weight table on the Egyptian pack for this SKU."
+    )
+    preg_body = f"Web-supplemented pregnancy guidance: {data['pregnancy']}"
+    lact_body = f"Web-supplemented breastfeeding guidance: {data['lactation']}"
+
+    text, n = SECTION_PATTERNS["adult"].subn(rf"\1{adult_body}\3", text, count=1)
+    if n != 1:
+        raise RuntimeError("adult section not patched")
+    text, n = SECTION_PATTERNS["child"].subn(rf"\1{child_body}\3", text, count=1)
+    if n != 1:
+        raise RuntimeError("child section not patched")
+    text, n = SECTION_PATTERNS["pregnancy"].subn(rf"\1{preg_body}\3", text, count=1)
+    if n != 1:
+        raise RuntimeError("pregnancy section not patched")
+    text, n = SECTION_PATTERNS["lactation"].subn(rf"\1{lact_body}\3", text, count=1)
+    if n != 1:
+        raise RuntimeError("lactation section not patched")
+    return text
+
+
+def main() -> None:
+    missing = []
+    for fname, data in SUPPLEMENT.items():
+        path = OUT / fname
+        if not path.exists():
+            missing.append(fname)
+            continue
+        original = path.read_text(encoding="utf-8")
+        updated = patch_text(original, data)
+        path.write_text(updated, encoding="utf-8")
+        print("OK", fname)
+
+    meta = {
+        "files": len(SUPPLEMENT),
+        "missing_files": missing,
+        "fields_filled": ["adult_dose", "child_dose", "pregnancy", "lactation", "strength"],
+    }
+    (OUT / "_web_clinical_supplement.json").write_text(
+        json.dumps({"meta": meta, "supplement": SUPPLEMENT}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print("Done", meta)
+
+
+if __name__ == "__main__":
+    main()

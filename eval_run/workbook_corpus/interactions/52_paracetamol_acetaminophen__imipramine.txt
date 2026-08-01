@@ -1,0 +1,16 @@
+Drug interaction — Panadol Joint
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 52
+Brand: Panadol Joint
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: IMIPRAMINE
+Risk: Delayed Tmax (90min vs 30min) + anticholinergic constipation
+Type: -
+Monitoring: Bowel regimen
+Dose adjustment: Liquid formulation preferred
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Delayed Tmax (90min vs 30min) + anticholinergic constipation; Monitoring: Bowel regimen; Dosage: Liquid formulation preferred; Patient: Take with 240ml water; report ineffective analgesia.

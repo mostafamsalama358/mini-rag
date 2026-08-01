@@ -1,0 +1,13 @@
+Alias registry — Lamisil
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 42
+Brand: Lamisil
+
+Known aliases:
+- Lamisil (brand)
+- LAMISIL 250MG 14 TAB. (catalog_sku)
+- Terbinafine (inn)
+- TERBINAFINE HCL (inn_alias)
+- لاميزيل (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

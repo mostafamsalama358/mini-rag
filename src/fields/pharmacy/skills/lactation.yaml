@@ -1,0 +1,7 @@
+﻿id: lactation
+name: Lactation
+profile: lactation
+prompt: lactation
+validation:
+  require_medicine: true
+order: 5

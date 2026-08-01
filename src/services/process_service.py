@@ -10,6 +10,7 @@ Spec 006: Document Intelligence (ParserRegistry → DocumentModel → chunk_mapp
 """
 from .base import BaseController
 from .project_service import ProjectController
+import logging
 import os
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -19,9 +20,12 @@ from dataclasses import dataclass
 from utils.text_cleaning import clean_extracted_text
 from utils.chunk_metadata import normalize_chunk_metadata
 from utils.chunk_sizing import resolve_chunk_params
+from services.rag.metadata_enrichment import enrich_chunk_metadata, metadata_contract_ok
 from core.structural.engine import split_at_structural_boundaries
 from services.FieldRegistry import FieldProfile
 from helpers.config import get_settings
+
+logger = logging.getLogger("uvicorn.error")
 
 from core.document_intelligence.errors import DocumentIntelligenceDegraded
 from core.document_intelligence.fallback import build_fallback_model
@@ -229,7 +233,15 @@ class ProcessController(BaseController):
             text_content = "Empty Excel File"
         return [LCDocument(page_content=text_content)]
 
-    def _normalize_loader_metadata(self, metadata: dict, file_id: str, source_type: str) -> dict:
+    def _normalize_loader_metadata(
+        self,
+        metadata: dict,
+        file_id: str,
+        source_type: str,
+        *,
+        text: str | None = None,
+        profile: FieldProfile | None = None,
+    ) -> dict:
         normalized = normalize_chunk_metadata(metadata or {})
         page = normalized.get("page")
         if page is not None:
@@ -241,6 +253,13 @@ class ProcessController(BaseController):
         normalized["file_name"] = normalized.get("file_name") or file_id
         normalized["source_type"] = normalized.get("source_type") or source_type
         normalized.pop("source", None)
+        if text:
+            enrichment = profile.metadata if profile is not None else None
+            normalized = enrich_chunk_metadata(
+                normalized,
+                text,
+                enrichment=enrichment,
+            )
         return normalized
 
     def _split_text(self, text: str, metadata: dict, chunk_size: int, overlap_size: int, *, page_bound: bool = False):
@@ -265,12 +284,17 @@ class ProcessController(BaseController):
         overlap_size: int=20,
         *,
         profile: FieldProfile | None = None,
+        max_batch_elements: int | None = None,
     ):
         """Split loaded file content into chunks.
 
         When a DocumentModel is attached (spec 006), chunking is driven by
         ``element_mapping`` via ``map_elements_to_chunks``. Otherwise the
         legacy strategy path is used.
+
+        ``max_batch_elements`` (017) caps how many structural elements are
+        mapped in one pass for large-document memory budgets; remaining
+        elements are mapped in subsequent batches and concatenated.
         """
         source_type = self.get_file_extension(file_id=file_id).lstrip(".") or "unknown"
         strategy = profile.chunking_strategy_for(source_type) if profile is not None else None
@@ -300,9 +324,36 @@ class ProcessController(BaseController):
                 element_mapping=element_mapping,
             )
             strategy_impl = get_chunking_strategy(strategy_name, chunk_config)
-            chunk_set = strategy_impl.chunk(model, chunk_config)
-            records = [{"text": c.text, "metadata": c.metadata} for c in chunk_set.chunks]
+
+            # 017: memory-bounded batching for large documents — chunk element
+            # slices rather than requiring the full element list in one mapper pass
+            # beyond the workload budget.
+            element_batches: list[DocumentModel]
+            if (
+                max_batch_elements
+                and max_batch_elements > 0
+                and len(model.elements) > max_batch_elements
+            ):
+                element_batches = []
+                for i in range(0, len(model.elements), max_batch_elements):
+                    slice_els = model.elements[i : i + max_batch_elements]
+                    element_batches.append(
+                        model.model_copy(update={"elements": slice_els})
+                    )
+            else:
+                element_batches = [model]
+
+            records: list[dict] = []
+            chunk_set = None
+            for batch_model in element_batches:
+                batch_set = strategy_impl.chunk(batch_model, chunk_config)
+                chunk_set = batch_set if chunk_set is None else chunk_set
+                records.extend(
+                    {"text": c.text, "metadata": c.metadata} for c in batch_set.chunks
+                )
             all_chunks = DocumentBatch()
+            settings = get_settings()
+            strict = bool(getattr(settings, "RAG_METADATA_CONTRACT_STRICT", False))
             for rec in records:
                 text = clean_extracted_text(rec["text"])
                 if not text:
@@ -311,7 +362,18 @@ class ProcessController(BaseController):
                     rec.get("metadata") or {},
                     file_id=file_id,
                     source_type=source_type,
+                    text=text,
+                    profile=profile,
                 )
+                ok, reason = metadata_contract_ok(metadata, strict=strict)
+                if not ok:
+                    logger.warning(
+                        "chunk_metadata_contract_reject file_id=%s reason=%s preview=%r",
+                        file_id,
+                        reason,
+                        text[:120],
+                    )
+                    continue
                 all_chunks.append(Document(page_content=text, metadata=metadata))
 
             all_chunks.document_model = model
@@ -337,6 +399,8 @@ class ProcessController(BaseController):
                 rec.metadata,
                 file_id=file_id,
                 source_type=source_type,
+                text=text,
+                profile=profile,
             )
             for key in ("row_index", "sheet_name", "brand_name"):
                 if rec.metadata and rec.metadata.get(key) is not None:

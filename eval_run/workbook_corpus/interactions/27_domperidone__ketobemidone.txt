@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: KETOBEMIDONE
+Risk: Enhanced dopamine blockade causing rigidity.
+Type: -
+Monitoring: Observe for Parkinsonian symptoms. Dose Adjustment: Avoid combination.
+Dose adjustment: -
+Alternative: -
+Patient warning: Report muscle stiffness. Mechanism: Mu agonist with NMDA antagonism.
+Severity: yes
+
+Clinical note:
+Risk: Enhanced dopamine blockade causing rigidity. Monitoring: Observe for Parkinsonian symptoms. Dose Adjustment: Avoid combination. Patient Warning: Report muscle stiffness. Mechanism: Mu agonist with NMDA antagonism.

@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: ASPIRIN
+Risk: 1-2% annual major bleeding risk with DAPT
+Type: Pharmacodynamic (additive effect)
+Monitoring: Verify CYP2C19 status for clopidogrel efficacy
+Dose adjustment: Consider 325 mg ASA loading dose in ACS
+Alternative: Ticagrelor in poor metabolizers
+Patient warning: /Management: Use electric razors, soft-bristle…
+Severity: caution
+
+Clinical note:
+Risk: 1-2% annual major bleeding risk with DAPT; Type: Pharmacodynamic (additive effect); Monitoring: Verify CYP2C19 status for clopidogrel efficacy; Dosage Adjustments: Consider 325 mg ASA loading dose in ACS; Alternative: Ticagrelor in poor metabolizers; Patient Warnings/Management: Use electric razors, soft-bristle…

@@ -1,0 +1,196 @@
+﻿[
+    {
+        "id":  "q1",
+        "question":  "What is the maximum daily dose of MediQuick Ibuprofen for adults?",
+        "latency_ms":  2683,
+        "signal":  "rag_clarification_needed",
+        "needs_clarification":  true,
+        "answer":  "I could not map your question to a supported topic (\u0027maximum daily dose\u0027). Please rephrase or name a specific item.",
+        "full_prompt_len":  0,
+        "chat_history_len":  0,
+        "raw_keys":  [
+                         "signal",
+                         "answer",
+                         "needs_clarification",
+                         "full_prompt",
+                         "chat_history"
+                     ],
+        "search_top":  [
+                           {
+                               "text":  "MEDIQUICK Ibuprofen 200 mg Film-Coated Tablets Patient Information Leaflet â Test Document for E2E Evaluation Product code: MQ-IBU-200-E2E Manufacturer: North...",
+                               "score":  0.06409026801977621
+                           },
+                           {
+                               "text":  "3. Dosage â Children under 12 years MediQuick Ibuprofen 200 mg tablets are not recommended for children under 12 years of age.\nAsk a doctor or pharmacist for ...",
+                               "score":  0.05939572118702553
+                           },
+                           {
+                               "text":  "NORTHBRIDGE CLINICAL NOTE â Anticoagulant Interactions (E2E Test Corpus)\nDocument ID: NB-WARF-NOTE-E2E Audience: Pharmacists and clinicians Warfarin has a nar...",
+                               "score":  0.056203864734299516
+                           }
+                       ]
+    },
+    {
+        "id":  "q2",
+        "question":  "Can children under 12 take MediQuick Ibuprofen 200 mg tablets?",
+        "latency_ms":  4718,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}",
+        "search_top":  [
+                           {
+                               "text":  "3. Dosage â Children under 12 years MediQuick Ibuprofen 200 mg tablets are not recommended for children under 12 years of age.\nAsk a doctor or pharmacist for ...",
+                               "score":  0.8643605574414015
+                           },
+                           {
+                               "text":  "MEDIQUICK Ibuprofen 200 mg Film-Coated Tablets Patient Information Leaflet â Test Document for E2E Evaluation Product code: MQ-IBU-200-E2E Manufacturer: North...",
+                               "score":  0.7878945670230663
+                           },
+                           {
+                               "text":  "7. Possible side effects Common: indigestion, heartburn, nausea, stomach pain.\nUncommon: headache, dizziness, skin rash.\nRare but serious: stomach ulcer, gastro...",
+                               "score":  0.7386324625703754
+                           }
+                       ]
+    },
+    {
+        "id":  "q3",
+        "question":  "Is MediQuick Ibuprofen safe in the third trimester of pregnancy?",
+        "latency_ms":  3371,
+        "signal":  "rag_clarification_needed",
+        "needs_clarification":  true,
+        "answer":  "I could not map your question to a supported topic (\u0027safety_in_pregnancy\u0027). Please rephrase or name a specific item.",
+        "full_prompt_len":  0,
+        "chat_history_len":  0,
+        "raw_keys":  [
+                         "signal",
+                         "answer",
+                         "needs_clarification",
+                         "full_prompt",
+                         "chat_history"
+                     ],
+        "search_top":  [
+                           {
+                               "text":  "3. Dosage â Children under 12 years MediQuick Ibuprofen 200 mg tablets are not recommended for children under 12 years of age.\nAsk a doctor or pharmacist for ...",
+                               "score":  0.7633905695453188
+                           },
+                           {
+                               "text":  "MEDIQUICK Ibuprofen 200 mg Film-Coated Tablets Patient Information Leaflet â Test Document for E2E Evaluation Product code: MQ-IBU-200-E2E Manufacturer: North...",
+                               "score":  0.693997637270746
+                           },
+                           {
+                               "text":  "7. Possible side effects Common: indigestion, heartburn, nausea, stomach pain.\nUncommon: headache, dizziness, skin rash.\nRare but serious: stomach ulcer, gastro...",
+                               "score":  0.6502906726202833
+                           }
+                       ]
+    },
+    {
+        "id":  "q4",
+        "question":  "What are the common side effects of MediQuick Ibuprofen?",
+        "latency_ms":  1884,
+        "signal":  "rag_clarification_needed",
+        "needs_clarification":  true,
+        "answer":  "I could not map your question to a supported topic (\u0027side effects\u0027). Please rephrase or name a specific item.",
+        "full_prompt_len":  0,
+        "chat_history_len":  0,
+        "raw_keys":  [
+                         "signal",
+                         "answer",
+                         "needs_clarification",
+                         "full_prompt",
+                         "chat_history"
+                     ],
+        "search_top":  [
+                           {
+                               "text":  "7. Possible side effects Common: indigestion, heartburn, nausea, stomach pain.\nUncommon: headache, dizziness, skin rash.\nRare but serious: stomach ulcer, gastro...",
+                               "score":  0.06307866300366301
+                           },
+                           {
+                               "text":  "3. Dosage â Children under 12 years MediQuick Ibuprofen 200 mg tablets are not recommended for children under 12 years of age.\nAsk a doctor or pharmacist for ...",
+                               "score":  0.05992170349251604
+                           },
+                           {
+                               "text":  "MEDIQUICK Ibuprofen 200 mg Film-Coated Tablets Patient Information Leaflet â Test Document for E2E Evaluation Product code: MQ-IBU-200-E2E Manufacturer: North...",
+                               "score":  0.05758968253968254
+                           }
+                       ]
+    },
+    {
+        "id":  "q5",
+        "question":  "Can a patient on warfarin take ibuprofen? What monitoring is needed?",
+        "latency_ms":  16079,
+        "signal":  "rag_clarification_needed",
+        "needs_clarification":  true,
+        "answer":  "I could not understand your question. Please rephrase or name a specific item.",
+        "full_prompt_len":  0,
+        "chat_history_len":  0,
+        "raw_keys":  [
+                         "signal",
+                         "answer",
+                         "needs_clarification",
+                         "full_prompt",
+                         "chat_history"
+                     ],
+        "search_top":  [
+                           {
+                               "text":  "NORTHBRIDGE CLINICAL NOTE â Anticoagulant Interactions (E2E Test Corpus)\nDocument ID: NB-WARF-NOTE-E2E Audience: Pharmacists and clinicians Warfarin has a nar...",
+                               "score":  0.06407499024199843
+                           },
+                           {
+                               "text":  "MEDIQUICK Ibuprofen 200 mg Film-Coated Tablets Patient Information Leaflet â Test Document for E2E Evaluation Product code: MQ-IBU-200-E2E Manufacturer: North...",
+                               "score":  0.05960155249679898
+                           },
+                           {
+                               "text":  "SSRIs combined with warfarin also increase bleeding risk and warrant caution.\nParacetamol at standard doses is generally preferred over ibuprofen for pain relie...",
+                               "score":  0.055910515873015876
+                           }
+                       ]
+    },
+    {
+        "id":  "q6",
+        "question":  "How should MediQuick Ibuprofen be stored?",
+        "latency_ms":  1610,
+        "signal":  "rag_clarification_needed",
+        "needs_clarification":  true,
+        "answer":  "I could not map your question to a supported topic (\u0027storage\u0027). Please rephrase or name a specific item.",
+        "full_prompt_len":  0,
+        "chat_history_len":  0,
+        "raw_keys":  [
+                         "signal",
+                         "answer",
+                         "needs_clarification",
+                         "full_prompt",
+                         "chat_history"
+                     ],
+        "search_top":  [
+                           {
+                               "text":  "MEDIQUICK Ibuprofen 200 mg Film-Coated Tablets Patient Information Leaflet â Test Document for E2E Evaluation Product code: MQ-IBU-200-E2E Manufacturer: North...",
+                               "score":  0.06405249024199844
+                           },
+                           {
+                               "text":  "3. Dosage â Children under 12 years MediQuick Ibuprofen 200 mg tablets are not recommended for children under 12 years of age.\nAsk a doctor or pharmacist for ...",
+                               "score":  0.060646060606060606
+                           },
+                           {
+                               "text":  "NORTHBRIDGE CLINICAL NOTE â Anticoagulant Interactions (E2E Test Corpus)\nDocument ID: NB-WARF-NOTE-E2E Audience: Pharmacists and clinicians Warfarin has a nar...",
+                               "score":  0.058224143222506394
+                           }
+                       ]
+    },
+    {
+        "id":  "q7",
+        "question":  "What is the capital of France?",
+        "latency_ms":  1935,
+        "signal":  "rag_clarification_needed",
+        "needs_clarification":  true,
+        "answer":  "I could not map your question to a supported topic (\u0027capital\u0027). Please rephrase or name a specific item.",
+        "full_prompt_len":  0,
+        "chat_history_len":  0,
+        "raw_keys":  [
+                         "signal",
+                         "answer",
+                         "needs_clarification",
+                         "full_prompt",
+                         "chat_history"
+                     ],
+        "search_error":  "The remote server returned an error: (400) Bad Request."
+    }
+]

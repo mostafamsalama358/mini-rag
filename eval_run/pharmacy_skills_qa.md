@@ -1,0 +1,1106 @@
+# Pharmacy Skills — أسئلة وإجابات مرجعية
+
+ملف مرجعي لكل Skill في مجال الصيدلة: التعريف، متطلبات الإدخال، ثم 10 أسئلة مع إجابات حية من `/api/v1/nlp/index/answer/2` على كوربس `RAG_CORPUS` (Excel workbook) — project_id=2.
+
+_Generated: 2026-08-01 15:47:48_
+
+---
+
+## فهرس المهارات
+
+1. **Consultations** (`consultations`) — استشارة صيدلية عامة حول دواء محدد: يجمع نقاطاً من الجرعة والتحذيرات وموانع الاستعمال والآثار الجانبية والحمل/الرضاعة حسب المتاح في الكوربس.
+2. **Interactions** (`interactions`) — التحقق من وجود تفاعل دوائي بين دواءين مذكورين في السؤال، اعتماداً على مستندات التفاعلات في كوربس Excel.
+3. **Dosage** (`dosage`) — الاستعلام عن الجرعة المعتادة للكبار/الأطفال والحد الأقصى اليومي حسب بيانات المنتج في الكوربس.
+4. **Pregnancy** (`pregnancy`) — معلومات أمان الدواء أثناء الحمل كما وردت في بيانات المنتج المفهرسة.
+5. **Lactation** (`lactation`) — معلومات أمان الدواء أثناء الرضاعة الطبيعية من بيانات الكوربس.
+6. **Contraindications** (`contraindications`) — موانع الاستعمال: الحالات التي يُمنع فيها أخذ الدواء حسب النشرة/الكوربس.
+7. **Warnings** (`warnings`) — التحذيرات والاحتياطات (بما فيها التحذيرات الجادة إن وُجدت) من بيانات المنتج.
+8. **Side Effects** (`side_effects`) — الآثار الجانبية المحتملة (رئيسية/ثانوية) كما وردت في الكوربس للمنتج.
+9. **Storage** (`storage`) — ظروف تخزين الدواء حسب تعليمات العبوة/البيانات المفهرسة.
+10. **Alternatives** (`alternatives`) — توصية حسب الاحتياج/العَرَض (برد، صداع، سعال…) دون اشتراط اسم دواء؛ يبحث في دواعي الاستعمال ويقترح منتجات مناسبة من الكوربس.
+11. **Leaflet** (`leaflet`) — معلومات عامة عن المنتج من الكوربس (استخدامات، نظرة شاملة) بدون تقييد حقل واحد؛ يشترط اسم دواء. الاسم التاريخي Leaflet مع أن المصدر الحي هو Excel workbook.
+
+---
+
+## Consultations (`consultations`)
+
+**التعريف:** استشارة صيدلية عامة حول دواء محدد: يجمع نقاطاً من الجرعة والتحذيرات وموانع الاستعمال والآثار الجانبية والحمل/الرضاعة حسب المتاح في الكوربس.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. نصيحة صيدلية عامة عن Congestal
+
+**الإجابة:**
+
+Congestal يستخدم لتخفيف الآلام الخفيفة إلى المتوسطة (مثل الصداع، آلام الظهر، التهاب المفاصل، آلام الأسنان) ولخفض الحمى (مضاد للحمى). (المستند رقم 1)
+
+**الجرعات:**
+*   **للبالغين:**
+    *   لتخفيف الألم وخفض الحمى:
+        *   التركيز العادي: 325 إلى 650 ملغ كل 4 إلى 6 ساعات حسب الحاجة.
+        *   التركيز الإضافي: 500 إلى 1000 ملغ كل 6 إلى 8 ساعات حسب الحاجة.
+        *   الجرعة اليومية القصوى: لا تتجاوز 4000 ملغ (4 جرام) خلال 24 ساعة. يوصي العديد من الخبراء بحد أقصى 3000 ملغ (3 جرام) للاستخدام المزمن. (المستند رقم 1)
+    *   جرعة Congestal المحددة: قرص واحد 3 مرات يوميًا. الجرعة اليومية القصوى: 6 أقراص يوميًا. (المستند رقم 2)
+*   **للأطفال:**
+    *   لتخفيف الألم وخفض الحمى: 10 إلى 15 ملغ/كجم/جرعة كل 4 إلى 6 ساعات حسب الحاجة، بحد أقصى 5 جرعات/24 ساعة. الجرعة القصوى: 75 ملغ/كجم/24 ساعة. (المستند رقم 1)
+    *   لا يُنصح باستخدام Congestal للأطفال دون سن 12 عامًا. (المستند رقم 2)
+
+**موانع الاستعمال:**
+*   لا تتناول Congestal إذا كنت تعاني من فرط الحساسية للباراسيتامول (الأسيتامينوفين).
+*   لا تتناوله إذا كنت تعاني من أمراض الكبد المزمنة مع ضعف كبدي متوسط إلى شديد (فئة Child-Pugh B أو C)، بما في ذلك تليف الكبد والتعويض. (المستند رقم 2)
+
+### س2. Give pharmacy counseling points for Brufen
+
+**الإجابة:**
+
+Here are some pharmacy counseling points for Brufen, based on the provided document:
+
+*   **Dosage for Adults:** Take 1 tablet every 6-8 hours. Do not exceed a maximum daily dose of 2400 mg per day. (Document No: 1)
+*   **Dosage for Children:** Brufen is for children 12 years and older. The pediatric dose is 20-30 mg/kg/day, divided into 3-4 doses. Do not exceed a maximum daily dose of 40 mg/kg/day for children. (Document No: 1)
+
+### س3. ما أهم نقاط الاستشارة لمريض يأخذ Glucophage؟
+
+**الإجابة:**
+
+بناءً على المستندات المتوفرة، أهم نقاط الاستشارة لمريض يأخذ Glucophage هي:
+
+*   **الجرعة للبالغين:** 500 ملغ مرتين إلى ثلاث مرات يومياً مع الوجبات. الجرعة اليومية القصوى هي 2550 ملغ/يوم. (t2rtuslqvec2_31_glucophage_500.txt)
+*   **الجرعة للأطفال:**
+    *   الحد الأدنى للعمر هو 10 سنوات.
+    *   الجرعة الأولية للأطفال بعمر 10 سنوات فما فوق هي 500 ملغ مرة واحدة يومياً، ثم يتم تعديلها.
+    *   الجرعة اليومية القصوى للأطفال هي 2000 ملغ/يوم. (t2rtuslqvec2_31_glucophage_500.txt)
+
+### س4. Counsel a patient starting Augmentin
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س5. نصائح عامة عند استخدام Panadol Extra
+
+**الإجابة:**
+
+عند استخدام Panadol Extra، يُرجى الانتباه إلى النصائح العامة التالية:
+
+*   **الاستخدامات:** يُستخدم Panadol Extra لتخفيف الآلام الخفيفة إلى المتوسطة (مثل الصداع، آلام الظهر، التهاب المفاصل، ألم الأسنان) ولخفض الحمى. (المستند 1)
+*   **الجرعة للبالغين:**
+    *   الجرعة المعتادة: 1-2 قرص كل 4-6 ساعات. (المستند 2)
+    *   الجرعة القصوى اليومية: لا تتجاوز 8 أقراص في اليوم، أو 4000 ملغ (4 جرام) في 24 ساعة. (المستند 2)
+    *   يوصي العديد من الخبراء بحد أقصى 3000 ملغ (3 جرام) للاستخدام المزمن. (المستند 1)
+*   **الجرعة للأطفال:**
+    *   الحد الأدنى للعمر المذكور في الكتالوج هو 12 سنة. (المستند 2)
+    *   الجرعة للأطفال: 10 إلى 15 ملغ/كجم/جرعة كل 4 إلى 6 ساعات حسب الحاجة، بحد أقصى 5 جرعات/24 ساعة. (المستند 1)
+    *   الحد الأقصى: 75 ملغ/كجم/24 ساعة. (المستند 1)
+*   **موانع الاستخدام:** لا تتناول Panadol Extra إذا كنت تعاني من:
+    *   حساسية مفرطة للباراسيتامول (أسيتامينوفين). (المستند 2)
+    *   أمراض الكبد المزمنة مع ضعف كبدي متوسط إلى شديد (فئة Child-Pugh B أو C) بما في ذلك تليف الكبد وتدهور وظائف الكبد. (المستند 2)
+
+### س6. What should a pharmacist tell a patient about Motilium?
+
+**الإجابة:**
+
+A pharmacist should tell a patient the following about Motilium:
+
+*   **Dosage for Adults:** The adult dose is 10 mg up to 3 times a day, to be taken before meals. The maximum daily dose is 3 tablets per day. (ccpczl2qn5o3_27_motilium_10.txt)
+*   **Dosage for Children:** Motilium is not routinely recommended for children. It should only be used if prescribed by a doctor. The minimum age for use is 12 years and the child must weigh at least 35 kg. For pediatric maximum daily dose, refer to the pack. (ccpczl2qn5o3_27_motilium_10.txt)
+
+### س7. استشارة عن استخدام Daflon 500
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س8. Counseling points for Lipitor
+
+**الإجابة:**
+
+Here are some counseling points for Lipitor, based on the provided documents:
+
+*   **Dosage:**
+    *   **Adults:** The typical adult dose is 20 mg once daily, with a maximum daily dose of 80 mg. (Document 1)
+    *   **Children (10 years and older):** The dose is 10 mg once daily, with a maximum of 20 mg per day. (Document 1)
+*   **When NOT to take Lipitor:** Do not take Lipitor if you have:
+    *   Hypersensitivity to atorvastatin.
+    *   Chronic liver disease with moderate to severe hepatic impairment (Child-Pugh class B or C), including cirrhosis and decompensation.
+    *   Rhabdomyolysis.
+    *   Myasthenia Gravis.
+    *   Amyotrophic lateral sclerosis (ALS).
+    *   Hypothyroidism.
+    *   Myopathies & Muscular Dystrophies. (Document 1)
+*   **Missed Dose:** If you miss a dose, take it as soon as possible. However, if more than 12 hours have passed since the missed dose, do not take it; wait until your next scheduled dose. Do not take two doses at the same time. (Document 2)
+*   **Food and Drug Interactions:**
+    *   Avoid grapefruit products. (Document 2)
+    *   Do not take any red yeast rice products while on atorvastatin, as some may contain another statin (lovastatin). (Document 2)
+    *   If you are also taking a bile acid sequestrant, administer atorvastatin/ezetimibe at least 2 hours before or at least 4 hours after the bile acid sequestrant. (Document 2)
+*   **Lifestyle Recommendations:**
+    *   Maintain a healthy weight through diet and exercise. (Document 2)
+    *   Follow a healthy diet. (Document 2)
+*   **Contraception:** If applicable, consider adding another method of contraception, such as a condom. (Document 2)
+
+### س9. نصيحة عامة عن Flagyl
+
+**الإجابة:**
+
+بناءً على المعلومات المتوفرة:
+
+*   **الجرعة للأطفال:**
+    *   الحد الأدنى للعمر في الكتالوج: 10 سنوات.
+    *   الحد الأدنى لعمر الأطفال: انظر العبوة.
+    *   جرعة الأطفال: 20-30 ملجم/كجم/يوم مقسمة على جرعات. تعتمد على دواعي الاستعمال.
+    *   الجرعة اليومية القصوى للأطفال: انظر العبوة. (المستند رقم 1، النقطة 3)
+
+*   **موانع الاستعمال/تحذيرات الأمراض:**
+    *   لا تتناول فلاجيل إذا كنت تعاني من فرط الحساسية لمجموعة النيتروإيميدازول (ميترونيدازول/تينيدازول/سيكنيدازول).
+    *   الرضع الصغار (أقل من شهرين).
+    *   الثلث الأول من الحمل.
+    *   متلازمة كوكاين. (المستند رقم 1، النقطة 4)
+
+### س10. What counseling advice applies to Ventolin inhaler use?
+
+**الإجابة:**
+
+Based on the provided documents, here's the counseling advice applicable to Ventolin inhaler use:
+
+*   **Pediatric Use:**
+    *   Ventolin inhalers are for children aged 4 years and older (Document 1).
+    *   The pediatric dose is 100-200 mcg as needed, with a maximum dose as directed by a physician (Document 1).
+    *   Ventolin should not be given to children under 2 years (Document 1).
+
+*   **Contraindications/Disease Cautions:**
+    *   Do not take Ventolin if you have hypersensitivity to Salbutamol (the active ingredient) (Document 1).
+    *   Do not take Ventolin if you have hypersensitivity to milk, whey, or lactoferrin (Document 1).
+    *   Do not take Ventolin if you have Tachyarrhythmias or Hyperactive Conduction (Document 1).
+
+*   **General Asthma Management (from Montelukast interactions, but relevant to rescue inhaler use):**
+    *   Use a rescue inhaler (like Ventolin) for breakthrough symptoms (Document 3).
+    *   Report increased wheezing or shortness of breath immediately (Document 2).
+    *   Never stop asthma medications without consulting a healthcare professional (Document 2).
+    *   Attend all follow-up appointments (Document 3).
+
+---
+
+## Interactions (`interactions`)
+
+**التعريف:** التحقق من وجود تفاعل دوائي بين دواءين مذكورين في السؤال، اعتماداً على مستندات التفاعلات في كوربس Excel.
+
+**المطلوب من المستخدم:** اسمان لأدوية (زوج)
+
+### س1. Does Congestal interact with Warfarin?
+
+**الإجابة:**
+
+I cannot answer your question as the provided documents do not contain information about an interaction between Congestal and Warfarin. The documents discuss interactions of Congestal with other drugs (Blocks 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16) and interactions of Warfarin with other drugs (Blocks 10, 11, 17, 18), but not with Congestal.
+
+### س2. هل في تفاعل بين Daflon و Warfarin؟
+
+**الإجابة:**
+
+نعم، يوجد تفاعل بين Daflon و Warfarin. هذا التفاعل قد يؤدي إلى زيادة محتملة في تأثير الوارفارين المضاد للتخثر وزيادة خطر النزيف. يُنصح بمراقبة INR بشكل متكرر، وقد يكون من الضروري تقليل جرعة الوارفارين. يمكن النظر في استخدام منشط وريدي لا يتفاعل كبديل. (المستندات 1، 2)
+
+### س3. Does Ciprobay interact with Warfarin?
+
+**الإجابة:**
+
+Yes, Ciprobay (Ciprofloxacin) interacts with Warfarin. This interaction can lead to a significant increase in INR due to CYP1A2 inhibition. Monitoring INR every 2-3 days is recommended, and the warfarin dose may need to be reduced by 30-40%. Levofloxacin is suggested as an alternative. Patients should be warned to hydrate well and report tendon pain. (Block ID: b8pqdsi4w5dp_interactions__24_ciprofloxacin__warfarin.txt)
+
+### س4. هل Augmentin يتفاعل مع Warfarin؟
+
+**الإجابة:**
+
+نعم، يتفاعل Augmentin مع Warfarin.
+
+يحتوي Augmentin على مكونين نشطين رئيسيين، وهما:
+
+*   **حمض الكلافولانيك (Clavulanic Acid):** عند استخدامه مع الوارفارين، يكون هناك "تأثير ضئيل على INR" (نسبة التطبيع الدولية). يوصى بمراقبة INR الأساسية. (المستند 1، المستند 12)
+*   **أموكسيسيلين (Amoxicillin):** عند استخدامه مع الوارفارين، يكون هناك "تغير ضئيل في INR" (تأثير عرضي على فلورا الجهاز الهضمي). يوصى بمراقبة INR الأساسية ثم أسبوعيًا. (المستند 3)
+
+بشكل عام، التفاعل بين Augmentin و Warfarin يعتبر ذا خطورة "ضئيلة" أو "نعم" (بمعنى أنه موجود ولكن قد لا يكون شديدًا). (المستند 1، المستند 3)
+
+### س5. Does Flagyl interact with Warfarin?
+
+**الإجابة:**
+
+Yes, Flagyl (Metronidazole) interacts with Warfarin. The interaction can lead to a severe INR elevation due to CYP2C9 inhibition. Monitoring INR every 2-3 days during and for 2 weeks post-therapy is recommended, and the warfarin dose should be reduced by 30-50% preemptively. Patients should avoid alcohol and report dark urine or bleeding. [Block 1]
+
+### س6. هل في تفاعل بين Congestal و Amitriptyline؟
+
+**الإجابة:**
+
+نعم، يوجد تفاعل بين Congestal و Amitriptyline.
+
+المخاطر المحتملة هي:
+*   تأخر بدء مفعول المسكن (30-60 دقيقة).
+*   تسمم كبدي مزمن.
+
+يجب مراقبة وظائف الكبد كل 3 أشهر في حال الاستخدام اليومي، ويجب ألا تتجاوز الجرعة القصوى من الباراسيتامول (المكون النشط في Congestal) 3 جرامات يوميًا. يُنصح بتناول Congestal قبل ساعة واحدة من تناول Amitriptyline، ويجب على المريض الإبلاغ عن أي علامات لليرقان أو البول الداكن، وتجنب الكحول.
+
+(المستند رقم 2)
+
+### س7. Does Panadol interact with Cholestyramine?
+
+**الإجابة:**
+
+_(empty)_
+
+### س8. هل Glucophage يتفاعل مع Vitamin B12؟
+
+**الإجابة:**
+
+_(empty)_
+
+### س9. Does Diflucan interact with Warfarin?
+
+**الإجابة:**
+
+I'm sorry, but the provided documents do not contain information about an interaction between Diflucan (Fluconazole) and Warfarin. The documents discuss interactions of Diflucan with other drugs such as Amiodarone, Hydralazine, Diazoxide, Tolazoline, Doxazosin, Dronedarone, Prazosin, Propafenone, Silodosin, Alfuzosin, Terazosin, Ketanserin, Minoxidil, Tamsulosin, and Bosentan (Blocks 1-11, 13-16). They also mention interactions of Warfarin with Metronidazole and Diosmin (Blocks 12, 17-18).
+
+### س10. هل في تفاعل بين Plavix و Aspirin؟
+
+**الإجابة:**
+
+_(empty)_
+
+---
+
+## Dosage (`dosage`)
+
+**التعريف:** الاستعلام عن الجرعة المعتادة للكبار/الأطفال والحد الأقصى اليومي حسب بيانات المنتج في الكوربس.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. What is the adult dose of Congestal?
+
+**الإجابة:**
+
+_(empty)_
+
+### س2. ما هي جرعة Brufen 400 للكبار؟
+
+**الإجابة:**
+
+جرعة Brufen 400 للكبار هي قرص واحد كل 6-8 ساعات، والجرعة اليومية القصوى هي 2400 ملغ/يوم. (fraryja7223i_18_brufen_400.txt)
+
+### س3. What is the maximum daily dose of Panadol Extra?
+
+**الإجابة:**
+
+The maximum daily dose of Panadol Extra is 4000 mg (4 grams) in 24 hours. Some experts recommend a maximum of 3000 mg (3 grams) for chronic use. (Block 1, 8)
+
+### س4. جرعة Glucophage للكبار؟
+
+**الإجابة:**
+
+جرعة Glucophage للبالغين هي 500 ملغ مرتين أو ثلاث مرات يوميًا مع الوجبات، والجرعة اليومية القصوى هي 2550 ملغ/يوم. (t2rtuslqvec2_31_glucophage_500.txt)
+
+### س5. What is the adult dose of Motilium?
+
+**الإجابة:**
+
+The adult dose of Motilium is 10 mg up to 3 times/day before meals, with a maximum daily dose of 3 tablets/day. (ccpczl2qn5o3_27_motilium_10.txt)
+
+### س6. ما جرعة Augmentin 1g للبالغين؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س7. Adult dose of Daflon 500?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س8. ما الجرعة القصوى اليومية لـ Congestal؟
+
+**الإجابة:**
+
+الجرعة القصوى اليومية للبالغين من Congestal هي 6 أقراص في اليوم. (المستند 2)
+
+### س9. What is the adult dose of Flagyl 500?
+
+**الإجابة:**
+
+This document does not contain information about the adult dose of Flagyl 500. It only specifies the pediatric dosage (54hd0grx3fll_20_flagyl_500.txt).
+
+### س10. جرعة Strepsils للكبار؟
+
+**الإجابة:**
+
+لا توجد معلومات عن جرعة Strepsils للكبار في المستندات المتوفرة. (89gln7rt2hui_49_strepsils.txt)
+
+---
+
+## Pregnancy (`pregnancy`)
+
+**التعريف:** معلومات أمان الدواء أثناء الحمل كما وردت في بيانات المنتج المفهرسة.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. Is Congestal safe in pregnancy?
+
+**الإجابة:**
+
+This document does not contain information about Congestal. It discusses warnings and precautions for a different product, including its Pregnancy Category C status. Therefore, I cannot answer whether Congestal is safe in pregnancy based on the provided text.
+
+### س2. هل Brufen آمن في الحمل؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س3. Is Flagyl safe during pregnancy?
+
+**الإجابة:**
+
+_(empty)_
+
+### س4. هل Glucophage آمن للحامل؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س5. Is Daflon safe in pregnancy?
+
+**الإجابة:**
+
+This document does not contain information about Daflon. It discusses Otrivin and its safety during pregnancy, stating it is Pregnancy Category C (Block ID: 92soca3oj80f_38_otrivin_0_1.txt).
+
+### س6. هل Augmentin آمن أثناء الحمل؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س7. Is Motilium safe in pregnancy?
+
+**الإجابة:**
+
+This question cannot be answered from the given source. The provided text discusses "Otrivin" and its warnings and precautions, including its pregnancy category, but does not mention "Motilium."
+
+### س8. هل Panadol آمن في الحمل؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س9. Is Lipitor safe during pregnancy?
+
+**الإجابة:**
+
+_(empty)_
+
+### س10. هل Diflucan آمن للحامل؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+---
+
+## Lactation (`lactation`)
+
+**التعريف:** معلومات أمان الدواء أثناء الرضاعة الطبيعية من بيانات الكوربس.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. Is Congestal safe while breastfeeding?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س2. هل Brufen آمن أثناء الرضاعة؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س3. Is Flagyl safe in lactation?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س4. هل Glucophage آمن مع الرضاعة؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س5. Is Daflon safe while breastfeeding?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س6. هل Augmentin آمن للمرضعة؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س7. Is Motilium safe in lactation?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س8. هل Panadol آمن أثناء الرضاعة؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س9. Is Lipitor safe while breastfeeding?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س10. هل Diflucan آمن مع الرضاعة؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+---
+
+## Contraindications (`contraindications`)
+
+**التعريف:** موانع الاستعمال: الحالات التي يُمنع فيها أخذ الدواء حسب النشرة/الكوربس.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. What are the contraindications of Congestal?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س2. ما موانع استخدام Brufen؟
+
+**الإجابة:**
+
+موانع استخدام Brufen هي:
+
+*   الرضع أقل من 6 أشهر (fraryja7223i_18_brufen_400.txt)
+*   فرط الحساسية لمضادات الالتهاب غير الستيرويدية (NSAIDs) / الأسبرين (fraryja7223i_18_brufen_400.txt)
+*   اعتلالات التخثر واضطرابات الصفائح الدموية المحددة (fraryja7223i_18_brufen_400.txt)
+*   الربو وأمراض الجهاز التنفسي التفاعلية (fraryja7223i_18_brufen_400.txt)
+*   الفشل الكبدي الحاد (بما في ذلك النخر الكبدي الخاطف والفشل الكبدي الحاد على المزمن) (fraryja7223i_18_brufen_400.txt)
+*   أمراض الكبد المزمنة مع ضعف كبدي متوسط إلى شديد (فئة Child-Pugh B أو C) بما في ذلك تليف الكبد والتعويض (fraryja7223i_18_brufen_400.txt)
+*   أورام الكبد (الخبيثة والحميدة) (fraryja7223i_18_brufen_400.txt)
+*   أمراض الكلى المزمنة الشديدة غير المعتمدة على غسيل الكلى (المرحلة 4-5 من CKD) (fraryja7223i_18_brufen_400.txt)
+*   متلازمة ستيفنز جونسون (SJS) (fraryja7223i_18_brufen_400.txt)
+*   انحلال البشرة السمي (TEN) (fraryja7223i_18_brufen_400.txt)
+*   الثلث الثالث من الحمل (fraryja7223i_18_brufen_400.txt)
+*   أمراض الشريان التاجي وأمراض القلب الإقفارية (fraryja7223i_18_brufen_400.txt)
+*   الكلية الوحيدة (fraryja7223i_18_brufen_400.txt)
+*   إجراءات القلب والألم حول الجراحة (fraryja7223i_18_brufen_400.txt)
+
+### س3. Contraindications of Flagyl?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س4. موانع Glucophage؟
+
+**الإجابة:**
+
+موانع استخدام Glucophage هي:
+
+*   فرط الحساسية للميتفورمين (METFORMIN) (t2rtuslqvec2_31_glucophage_500.txt)
+*   اضطرابات التمثيل الغذائي والحمض القاعدي (Metabolic & Acid‑Base Disorders) (t2rtuslqvec2_31_glucophage_500.txt)
+*   مرض الكلى المزمن الشديد غير المعتمد على غسيل الكلى (المرحلة 4-5) (Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5)) (t2rtuslqvec2_31_glucophage_500.txt)
+*   الحماض الكيتوني السكري (Diabetic ketoacidosis (DKA)) (t2rtuslqvec2_31_glucophage_500.txt)
+*   عدوى جهازية خطيرة/شديدة أو غير متحكم بها (Serious/ Severe or Uncontrolled Systemic Infection) (t2rtuslqvec2_31_glucophage_500.txt)
+*   احتشاء عضلة القلب (MI / Heart Attack) (t2rtuslqvec2_31_glucophage_500.txt)
+*   فشل القلب (CHF) (t2rtuslqvec2_31_glucophage_500.txt)
+*   الفشل والتنفسي (Respiratory Failure & Insufficiency) (t2rtuslqvec2_31_glucophage_500.txt)
+*   أمراض الكبد المزمنة مع ضعف كبدي متوسط إلى شديد (فئة Child‑Pugh B أو C) بما في ذلك تليف الكبد والتعويض (Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class Bor C) including cirrhosis and decompensation) (t2rtuslqvec2_31_glucophage_500.txt)
+*   الجفاف ونقص حجم الدم (Dehydration & Hypovolemia) (t2rtuslqvec2_31_glucophage_500.txt)
+*   استهلاك الكحول (Alcohol Consumption) (t2rtuslqvec2_31_glucophage_500.txt)
+*   إعطاء مادة التباين الإشعاعية (مؤقت) (Radiologic contrast administration (Temporary)) (t2rtuslqvec2_31_glucophage_500.txt)
+*   اضطرابات ارتفاع ضغط الدم أثناء الحمل (بما في ذلك تسمم الحمل وارتفاع ضغط الدم الحملي) (Hypertensive disorders of pregnancy (including pre‑eclampsia and gestational hypertension)) (t2rtuslqvec2_31_glucophage_500.txt)
+
+### س5. What are contraindications for Augmentin?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س6. موانع استخدام Motilium؟
+
+**الإجابة:**
+
+موانع استخدام Motilium هي:
+
+*   فرط الحساسية للدومبيريدون (DOMPERIDONE) (ccpczl2qn5o3_27_motilium_10.txt)
+*   الرضع تحت عمر سنة واحدة (ccpczl2qn5o3_27_motilium_10.txt)
+*   أمراض الكبد المزمنة مع ضعف كبدي متوسط إلى شديد (فئة Child-Pugh B أو C) بما في ذلك تليف الكبد وعدم التعويض (ccpczl2qn5o3_27_motilium_10.txt)
+*   إحصار أذيني بطيني (AV) وإحصار القلب (بدون منظم ضربات القلب) (ccpczl2qn5o3_27_motilium_10.txt)
+*   إجراءات القلب والألم حول الجراحة (ccpczl2qn5o3_27_motilium_10.txt)
+*   أمراض الأوعية الدموية / تمدد الأوعية الدموية في القلب (ccpczl2qn5o3_27_motilium_10.txt)
+*   أمراض القلب الهيكلية / الصمامية والالتهابية (ccpczl2qn5o3_27_motilium_10.txt)
+*   بطء القلب واختلال وظيفة العقدة الجيبية (ccpczl2qn5o3_27_motilium_10.txt)
+*   تسرع القلب التسرعي والتوصيل المفرط النشاط (ccpczl2qn5o3_27_motilium_10.txt)
+*   فرط برولاكتين الدم (ccpczl2qn5o3_27_motilium_10.txt)
+*   نزيف الجهاز الهضمي (GI) (ccpczl2qn5o3_27_motilium_10.txt)
+*   أمراض الجهاز الهضمي الانسدادية (ccpczl2qn5o3_27_motilium_10.txt)
+
+### س7. Contraindications of Lipitor?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س8. متى يُمنع Congestal؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س9. What are contraindications of Diflucan?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س10. موانع استخدام Controloc؟
+
+**الإجابة:**
+
+موانع استخدام Controloc هي:
+
+*   فرط الحساسية لمادة البانتوبرازول (PANTOPRAZOLE). (zo3cbdydyojn_13_controloc_20.txt)
+
+---
+
+## Warnings (`warnings`)
+
+**التعريف:** التحذيرات والاحتياطات (بما فيها التحذيرات الجادة إن وُجدت) من بيانات المنتج.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. What are the warnings for Congestal?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س2. تحذيرات استخدام Panadol؟
+
+**الإجابة:**
+
+التحذيرات والاحتياطات المتعلقة باستخدام بانادول هي كالتالي:
+
+*   **سمية الكبد (HEPATOTOXICITY):**
+    *   ارتبط الأسيتامينوفين بحالات فشل الكبد الحاد، والتي أدت أحيانًا إلى زراعة الكبد والوفاة. ترتبط معظم حالات إصابة الكبد باستخدام الأسيتامينوفين بجرعات تتجاوز 4000 ملليجرام يوميًا، وغالبًا ما تتضمن أكثر من منتج واحد يحتوي على الأسيتامينوفين. (block_0)
+*   يؤكد التحذير أيضًا على خطر حدوث تفاعلات تحسسية (مثل الحساسية المفرطة، متلازمة ستيفنز جونسون/انحلال البشرة السمي). (block_0)
+*   **تجنب:**
+    *   العديد من منتجات البرد والإنفلونزا والألم التي لا تستلزم وصفة طبية تحتوي على الأسيتامينوفين. تحقق من الملصقات لتجنب التكرار العرضي والجرعة الزائدة. (block_0)
+    *   تجنب الكحول. قد يزيد الكحول من خطر سمية الكبد. (block_0)
+    *   تجنب الأطعمة الغنية بالكربوهيدرات والبكتين بما في ذلك الهلام والملفوف وكرنب بروكسل والبروكلي حيث قد يتفاعل الباراسيتامول مع هذه الأطعمة. (block_0)
+
+### س3. What warnings apply to Brufen?
+
+**الإجابة:**
+
+Warnings for Brufen include:
+
+*   **CARDIOVASCULAR RISK:** Increased risk of myocardial infarction (MI) or stroke, which may be fatal. This risk begins in the first week of use and is highest at doses of 2,400mg/day or more. Brufen should be avoided after Coronary Artery Bypass Graft (CABG) surgery. (Block ID: 1)
+
+### س4. تحذيرات Flagyl؟
+
+**الإجابة:**
+
+تحذيرات Flagyl هي:
+
+*   لا توجد تحذيرات خطيرة (صندوق أسود) (لوحظت السرطنة في القوارض؛ تجنب الاستخدام غير الضروري). (المستند 1)
+*   يغير لون الجلد أو البول أو البراز إلى البني/الأصفر. (المستند 1)
+*   إذا كان مريض السكري يعاني من الإسهال وهذا الإسهال يحدث دائمًا في الليل (لمدة تزيد عن 10 إلى 14 يومًا)، فإن العلاجات المستخدمة لعلاج الإسهال هي: ميترونيدازول، دوكسيسيكلين، وإذا لم يتوقف الإسهال عند استخدام هذين الدواءين، يجب على مريض السكري استخدام أوكتريوتيد (العلاج الأولي لتأخر الهضم لدى مرضى السكري). (المستند 1)
+*   إذا كنت تعالج من عدوى معينة (داء المشعرات)، فقد يحتاج جميع الشركاء الجنسيين أيضًا إلى العلاج لتجنب إعادة العدوى. أثناء العلاج، تجنب الجماع، أو استخدم دائمًا واقيًا ذكريًا من اللاتكس أو البولي يوريثين. (المستند 1)
+*   تجنب: الكحول (تفاعل شبيه بالديسلفيرام)، الوارفارين (زيادة INR). (المستند 1)
+
+### س5. Warnings for Glucophage?
+
+**الإجابة:**
+
+Here are the warnings for Glucophage, based on the provided text:
+
+*   **BLACK BOX / serious warnings:**
+    *   Lactic Acidosis (Block ID: t2rtuslqvec2_31_glucophage_500)
+        *   Incidence: 0.03/1000 patient-years (Block ID: t2rtuslqvec2_31_glucophage_500)
+        *   Risk factors: Renal impairment, hypoxia, sepsis (Block ID: t2rtuslqvec2_31_glucophage_500)
+        *   Mortality: 50% if untreated (Block ID: t2rtuslqvec2_31_glucophage_500)
+*   **Warnings:**
+    *   Usage can cause aggravation of acute kidney injury. (Block ID: t2rtuslqvec2_31_glucophage_500)
+    *   Its use should be interrupted for a day before giving the patient radio contrast media for CT diagnosis and cut off for two days after taking the diagnostic picture because it can cause lactic acidosis if the patient has AKI. Re-evaluate eGFR 48 hr after imaging procedure; restart metformin HCl if renal function is stable. (Block ID: t2rtuslqvec2_31_glucophage_500)
+    *   The side effects of Metformin increase in the digestive system when the dose of Metformin is suddenly increased or when this medicine is used in the form of intermediate release (IR) or if a diabetic has stomach germs or if the diabetic patient uses OCT1-inhibiting agents such as Verapamil or HCP. (Block ID: t2rtuslqvec2_31_glucophage_500)
+
+### س6. ما تحذيرات Augmentin؟
+
+**الإجابة:**
+
+تحذيرات Augmentin هي:
+*   يتعارض Cinnarizine مع اختبار الحساسية ويعطي نتيجة خاطئة (0u02cg6bk1ly_21_augmentin_1g.txt).
+*   يجب تناول البروبيوتيك مثل lacteol fort cap بعده، وينصح بتناول الأطعمة الغنية بالبريبايوتكس مثل الثوم والبصل والموز والزبادي (0u02cg6bk1ly_21_augmentin_1g.txt).
+*   تجنب تناول الكثير من الأطعمة والمشروبات الغنية بالكالسيوم لأنها قد تؤثر على عمل الأموكسيسيلين (0u02cg6bk1ly_21_augmentin_1g.txt).
+*   تجنب العوامل البكتيرية (مثل التتراسيكلين) التي قد تعارض التأثيرات (0u02cg6bk1ly_21_augmentin_1g.txt).
+*   يجب تناوله مع الطعام (0u02cg6bk1ly_21_augmentin_1g.txt).
+
+### س7. What are the precautions for Motilium?
+
+**الإجابة:**
+
+Based on the provided text, here are the warnings and precautions for Motilium:
+
+*   **Serious Warnings (EMA/FDA):**
+    *   QT prolongation and sudden cardiac death (highest risk in age >60, doses >30 mg/day, or with CYP3A4 inhibitors). (Block ID: ccpczl2qn5o3_27_motilium_10.txt)
+    *   Neuropsychiatric effects (agitation, suicidal ideation) on withdrawal during lactation. (Block ID: ccpczl2qn5o3_27_motilium_10.txt)
+
+*   **General Warnings:**
+    *   Increases the secretion of the hormone prolactin, which can lead to increased breast milk, reduced fertility in men, gynecomastia, amenorrhea, or impotence (reversible upon decreasing dose or discontinuing drug). (Block ID: ccpczl2qn5o3_27_motilium_10.txt)
+
+*   **Avoid:**
+    *   CYP3A4 inhibitors (e.g., ketoconazole, erythromycin) due to increased cardiac risk. (Block ID: ccpczl2qn5o3_27_motilium_10.txt)
+
+*   **Caution with:**
+    *   Antacids/PPIs (take ≥2h apart to avoid reduced absorption). (Block ID: ccpczl2qn5o3_27_motilium_10.txt)
+
+### س8. تحذيرات Lipitor؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س9. Warnings for Diflucan?
+
+**الإجابة:**
+
+Based on the provided text, here are the warnings for Diflucan (fluconazole):
+
+*   **Hepatic Toxicity & QT Prolongation:** May cause severe hepatotoxicity. Monitor Liver Function Tests (LFTs). Avoid in congenital long QT syndrome or with other QT-prolonging drugs. (Block ID: yvsokdggqsll_41_diflucan_150.txt)
+*   **Liver Problems and Heart Rhythm Disturbances:** All azole antifungal medicines cause liver problems and heart rhythm disturbances because they prolong the QT. (Block ID: yvsokdggqsll_41_diflucan_150.txt)
+*   **Increased INR with Warfarin:** Fluconazole increases the level of INR in patients using warfarin, making it necessary to monitor INR levels closely. (Block ID: yvsokdggqsll_41_diflucan_150.txt)
+*   **Avoid St. John's Wort:** St. John's wort decreases fluconazole levels via CYP3A4 induction. (Block ID: yvsokdggqsll_41_diflucan_150.txt)
+*   **Avoid Alcohol:** Alcohol increases the risk of hepatotoxicity. (Block ID: yvsokdggqsll_41_diflucan_150.txt)
+
+### س10. ما الاحتياطات عند استخدام Congestal؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+---
+
+## Side Effects (`side_effects`)
+
+**التعريف:** الآثار الجانبية المحتملة (رئيسية/ثانوية) كما وردت في الكوربس للمنتج.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. What are the side effects of Congestal?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س2. الآثار الجانبية لـ Brufen؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س3. Side effects of Flagyl?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س4. أعراض جانبية Glucophage؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س5. What are side effects of Augmentin?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س6. الآثار الجانبية لـ Motilium؟
+
+**الإجابة:**
+
+الآثار الجانبية لـ Motilium هي:
+
+*   **الآثار الجانبية الرئيسية:**
+    *   جفاف الفم (15%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   تشنجات البطن (12%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   فرط برولاكتين الدم (12%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   ثَرّ اللبن (11%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   تثدي الرجل (11%) (ccpczl2qn5o3_27_motilium_10.txt)
+
+*   **الآثار الجانبية الثانوية:**
+    *   صداع (5%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   تململ (3%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   وذمة (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   خفقان (7%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   حكة (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   شرى (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   هبات ساخنة (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   زيادة الكوليسترول الكلي في الدم (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   زيادة العطش (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   ارتجاع الحمض (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   تغير في الشهية (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   إمساك (3%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   إسهال (9%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   غثيان (5%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   التهاب الفم (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   عسر التبول - ألم/حرقة أثناء التبول (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   ألم الثدي (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   كثرة التبول (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   زيادة مصل ALT - ناقلة أمين الألانين (5%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   زيادة مصل AST - ناقلة أمين الأسبارتات (5%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   وهن - ضعف (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   تفاعل خارج هرمي (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   أرق (3%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   عصبية (3%) (ccpczl2qn5o3_27_motilium_10.txt)
+    *   خمول - كسل (4%) (ccpczl2qn5o3_27_motilium_10.txt)
+
+### س7. Side effects of Lipitor?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س8. أعراض جانبية لـ Panadol Extra؟
+
+**الإجابة:**
+
+لم يتم ذكر أي معلومات عن الآثار الجانبية لـ "Panadol Extra" في المستندات المقدمة.
+
+### س9. What are the side effects of Diflucan?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س10. الآثار الجانبية لـ Daflon؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+---
+
+## Storage (`storage`)
+
+**التعريف:** ظروف تخزين الدواء حسب تعليمات العبوة/البيانات المفهرسة.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. How should Congestal be stored?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س2. كيف أخزن Brufen؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س3. Storage conditions for Flagyl?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س4. تخزين Glucophage؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س5. How to store Augmentin?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س6. ظروف تخزين Motilium؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س7. How should Lipitor be stored?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س8. تخزين Panadol؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+### س9. Storage for Diflucan?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+### س10. كيف أخزن Ventolin inhaler؟
+
+**الإجابة:**
+
+لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+
+---
+
+## Alternatives (`alternatives`)
+
+**التعريف:** توصية حسب الاحتياج/العَرَض (برد، صداع، سعال…) دون اشتراط اسم دواء؛ يبحث في دواعي الاستعمال ويقترح منتجات مناسبة من الكوربس.
+
+**المطلوب من المستخدم:** وصف احتياج (العمر مفيد)
+
+### س1. عندي برد وسني 25 سنة اخد ايه؟
+
+**الإجابة:**
+
+للتخفيف من أعراض البرد، يمكنك استخدام بانادول كولد آند فلو (Panadol Cold & Flu) أو بانادول كولد آند فلو أول إن وان (Panadol Cold & Flu All In One) لتقليل الألم والحمى. الجرعة الموصى بها للبالغين هي 325 إلى 650 ملغ كل 4 إلى 6 ساعات حسب الحاجة، أو 500 إلى 1000 ملغ كل 6 إلى 8 ساعات حسب الحاجة. يجب ألا تتجاوز الجرعة اليومية القصوى 4000 ملغ (4 جرام) خلال 24 ساعة، ويوصي العديد من الخبراء بحد أقصى 3000 ملغ (3 جرام) للاستخدام المزمن. (المستند 7، المستند 8)
+
+إذا كنت تعاني من احتقان الأنف الناتج عن البرد، يمكنك استخدام ساين-أب (Sine-Up). الجرعة الموصى بها للبالغين هي قرص واحد كل 6-8 ساعات، والجرعة اليومية القصوى هي 4 أقراص. (المستند 15)
+
+للتخفيف من التهاب الحلق، يمكنك استخدام ستربسلز (Strepsils). الجرعة الموصى بها للبالغين هي قرص واحد كل 2-3 ساعات، بحد أقصى 12 قرصًا في اليوم. (المستند 5)
+
+إذا كنت تعاني من ألم وحمى، يمكنك أيضًا استخدام بروفين (Brufen) بجرعة 200-400 ملغ كل 4-6 ساعات، بحد أقصى 1200 ملغ في اليوم. (المستند 12)
+
+### س2. I have a headache, what can I take?
+
+**الإجابة:**
+
+You can take Panadol Cold & Flu All In One or Panadol Cold & Flu Vapour Release for a headache. (Document No. 1, Document No. 2)
+
+For adults, the dosage for regular strength is 325 to 650 mg every 4 to 6 hours as needed, and for extra strength, it's 500 to 1000 mg every 6 to 8 hours as needed. Do not exceed 4000 mg (4 grams) in 24 hours. (Document No. 1, Document No. 2)
+
+### س3. عندي سعال منتج، آخد إيه؟
+
+**الإجابة:**
+
+وفقًا للمعلومات المتوفرة، يمكنك استخدام **Tussigreen** للسعال المنتج ("Chesty")، حيث يعمل على تخفيف المخاط وتحسين إزالته. (المستند رقم 7)
+
+### س4. I have a sore throat, age 30, what should I take?
+
+**الإجابة:**
+
+You can take Strepsils for your sore throat. The adult dose is one lozenge every 2-3 hours, with a maximum of 12 lozenges per day [89gln7rt2hui_49_strepsils.txt].
+
+### س5. عندي احتقان أنف، نصيحة دوائية؟
+
+**الإجابة:**
+
+لعلاج احتقان الأنف، يمكنك استخدام **Sine-Up** (المستند رقم 3).
+
+**الجرعة للبالغين:**
+*   60 ملغ عن طريق الفم كل 4 إلى 6 ساعات.
+*   أو 120 ملغ كل 12 ساعة (ممتد المفعول).
+*   الجرعة القصوى: 240 ملغ خلال 24 ساعة.
+
+**الجرعة للأطفال:**
+*   من 6 إلى 12 سنة: 30 ملغ كل 4 إلى 6 ساعات. الجرعة القصوى: 120 ملغ/24 ساعة.
+*   من 4 إلى 5 سنوات: 15 ملغ كل 4 إلى 6 ساعات. الجرعة القصوى: 60 ملغ/24 ساعة.
+
+**ملاحظة:** لا يُنصح به للأطفال دون 12 سنة في بعض الحالات (المستند رقم 3).
+
+يمكنك أيضًا استخدام **Telfast 120mg** لعلاج التهاب الأنف التحسسي (Allergic Rhinitis) الذي قد يسبب احتقان الأنف (المستند رقم 2).
+
+**الجرعة للبالغين:**
+*   60 ملغ مرتين يوميًا (BID).
+*   أو 180 ملغ مرة واحدة يوميًا.
+
+**الجرعة للأطفال من 6 إلى 11 سنة:**
+*   30 ملغ مرتين يوميًا (BID).
+
+**Singulair** يمكن استخدامه أيضًا لالتهاب الأنف التحسسي (Allergic rhinitis) (المستند رقم 12).
+
+**الجرعة للبالغين:**
+*   10 ملغ يوميًا.
+
+**الجرعة للأطفال:**
+*   من 6 أشهر إلى 5 سنوات: 4 ملغ يوميًا.
+*   من 6 إلى 14 سنة: 5 ملغ يوميًا.
+*   من 15 سنة فما فوق: 10 ملغ يوميًا.
+
+**ملاحظة:** إذا كان المريض يعاني من الربو والتهاب الأنف التحسسي، يجب أن يأخذ جرعة واحدة فقط في المساء (المستند رقم 12).
+
+### س6. I have fever and body aches, what OTC options?
+
+**الإجابة:**
+
+For fever and body aches, you have a few over-the-counter (OTC) options:
+
+*   **Ibuprofen (Brufen 400 mg)**: This can be used for pain and fever. The recommended dosage is 200-400 mg every 4-6 hours, with a maximum daily dose of 1200 mg for OTC use. (Document No. 1)
+*   **Acetaminophen (Panadol Cold & Flu Vapour Release or Panadol Cold & Flu All In One)**: This is used for mild to moderate pain and fever reduction.
+    *   **Regular Strength**: 325 to 650 mg every 4 to 6 hours as needed.
+    *   **Extra Strength**: 500 to 1000 mg every 6 to 8 hours as needed.
+    *   Do not exceed 4000 mg (4 grams) in 24 hours. Some experts recommend a maximum of 3000 mg (3 grams) for chronic use. (Document No. 2, Document No. 3)
+
+### س7. عندي حموضة ومعدة، آخد إيه؟
+
+**الإجابة:**
+
+بناءً على المعلومات المتوفرة، يمكن استخدام الأدوية التالية للحموضة والمعدة:
+
+*   **Gaviscon Advance**: يستخدم للتخفيف من أعراض ارتجاع المريء (GERD) وحرقة المعدة، خاصةً "الارتجاع المائي" والارتجاع. يعمل عن طريق تكوين طبقة هلامية تطفو فوق محتويات المعدة كحاجز فيزيائي لمنع الارتجاع. الجرعة المعتادة هي 10 إلى 20 مل من السائل أو 1 إلى 2 قرص للمضغ بعد الوجبات وقبل النوم، بحد أقصى 4 مرات يوميًا. (المستند رقم 3)
+*   **Jeparilon**: يستخدم لارتجاع المريء (GERD) وقرحة المعدة وحرقة المعدة. لارتجاع المريء، الجرعة هي 20 ملغ مرتين يوميًا لمدة 6 أسابيع. لحرقة المعدة (بدون وصفة طبية)، الجرعة هي 10 إلى 20 ملغ حسب الحاجة (بحد أقصى 40 ملغ/24 ساعة). (المستند رقم 2)
+*   **Controloc 20**: يستخدم لعلاج وصيانة شفاء التهاب المريء التآكلي المرتبط بارتجاع المريء (GERD). الجرعة للبالغين هي 40 ملغ مرة واحدة يوميًا لمدة تصل إلى 8 أسابيع. (المستند رقم 4)
+*   **Risek**: يستخدم لشفاء التهاب المريء التآكلي، وصيانة الشفاء، وارتجاع المريء العرضي (Symptomatic GERD)، وتقليل خطر قرحة المعدة المرتبطة بمضادات الالتهاب غير الستيرويدية. لارتجاع المريء العرضي، الجرعة هي 20 ملغ يوميًا لمدة 4 أسابيع. (المستند رقم 9)
+*   **Smecta**: يستخدم للعلاج العرضي لالتهاب المريء والتهاب المعدة. الجرعة هي كيس واحد (3 جرام) ثلاث مرات يوميًا بعد الوجبات. (المستند رقم 7)
+
+**ملاحظة هامة:** هذه المعلومات للاستخدام العام فقط ولا تغني عن استشارة الطبيب أو الصيدلي لتحديد العلاج الأنسب لحالتك وتجنب أي تفاعلات دوائية أو موانع استخدام.
+
+### س8. I have diarrhea, what can help from the catalog?
+
+**الإجابة:**
+
+Based on the catalog, the following can help with diarrhea:
+
+*   **Enterogermina**: Used for acute diarrhea. (Document No: 1)
+*   **Smecta**: Used for acute diarrhea in adults and children. (Document No: 2)
+
+### س9. عندي حساسية ورشح خفيف، اقتراحات؟
+
+**الإجابة:**
+
+بناءً على الأعراض التي ذكرتها (حساسية ورشح خفيف)، إليك بعض الاقتراحات من الأدوية المتاحة:
+
+*   **Telfast 120mg**: يُستخدم لعلاج حساسية الأنف (Allergic Rhinitis). الجرعة للبالغين هي 60 ملجم مرتين يوميًا أو 180 ملجم مرة يوميًا. (المستند رقم 1)
+*   **Singulair**: يُستخدم للوقاية من الربو وعلاج حساسية الأنف (Allergic rhinitis). الجرعة للبالغين هي 10 ملجم مرة يوميًا. (المستند رقم 7)
+*   **Sine-Up**: يُستخدم لاحتقان الأنف الناتج عن الحساسية. الجرعة للبالغين هي 60 ملجم عن طريق الفم كل 4 إلى 6 ساعات، أو 120 ملجم كل 12 ساعة (ممتد المفعول). (المستند رقم 16)
+
+### س10. Cold and flu symptoms for an adult — what products fit?
+
+**الإجابة:**
+
+I could not find enough information in the indexed documents to answer this question. Try naming a specific drug or product, or rephrase your question.
+
+---
+
+## Leaflet (`leaflet`)
+
+**التعريف:** معلومات عامة عن المنتج من الكوربس (استخدامات، نظرة شاملة) بدون تقييد حقل واحد؛ يشترط اسم دواء. الاسم التاريخي Leaflet مع أن المصدر الحي هو Excel workbook.
+
+**المطلوب من المستخدم:** اسم دواء واحد
+
+### س1. What is Congestal and what is it used for?
+
+**الإجابة:**
+
+Congestal is a medicine that comes in tablet form, containing Paracetamol (450 mg), Pseudoephedrine (30 mg), and Chlorpheniramine (2 mg). It is used for cough, cold, and flu medications. (6ibpp3rj47ya_06_congestal.txt)
+
+### س2. إيه هو Brufen وإيه استخداماته؟
+
+**الإجابة:**
+
+Brufen هو دواء يحتوي على المادة الفعالة **Ibuprofen** بتركيز 400 ملجم على شكل أقراص (TAB). يُستخدم Brufen لتخفيف **الألم والحمى والالتهابات**.
+
+تشمل استخداماته المحددة:
+*   **الألم والحمى**: بجرعة 200 إلى 400 ملجم كل 4 إلى 6 ساعات (الحد الأقصى 1200 ملجم/يوم بدون وصفة طبية؛ 3200 ملجم/يوم بوصفة طبية).
+*   **التهاب المفاصل الروماتويدي (RA) والتهاب المفاصل العظمي (OA)**: بجرعة 400 إلى 800 ملجم ثلاث مرات يوميًا (الحد الأقصى 2400 إلى 3200 ملجم/يوم).
+
+(المستند رقم 1)
+
+### س3. What is Glucophage used for?
+
+**الإجابة:**
+
+Glucophage is used for Type 2 Diabetes Mellitus (T2DM). The typical starting dose is 500 mg daily, which can be increased to a maximum of 2000 mg/day (or 2550 mg/day for XR formulation). (Document 1)
+
+### س4. عرف لي Augmentin باختصار
+
+**الإجابة:**
+
+Augmentin هو دواء يحتوي على المواد الفعالة أموكسيسيلين (Amoxicillin) وحمض الكلافولانيك (Clavulanic Acid)، ويستخدم كمضاد حيوي (ANTI-BACTERIAL) ضمن فئة الأدوية المضادة للميكروبات (ANTI-MICROBIAL). (المستند رقم: 1)
+
+### س5. What is Daflon 500?
+
+**الإجابة:**
+
+Daflon 500 is a brand of medicine containing 450 mg of Diosmin and 50 mg of Hesperidin per tablet. It is manufactured by SERVIER and is used for hemorrhoids and varicose veins. The minimum age for use is 18 years. (1)
+
+### س6. إيه استخدامات Flagyl؟
+
+**الإجابة:**
+
+يستخدم فلاجيل كمضاد للميكروبات ومضاد للطفيليات (ANTI-MICROBIAL > ANTI-PROTOZOAL). (المستند رقم 1)
+
+### س7. What is Motilium?
+
+**الإجابة:**
+
+Motilium is a brand-name medication containing the active ingredient Domperidone. It comes in a 10mg tablet form and is used to treat nausea/vomiting and gastroparesis. (ccpczl2qn5o3_27_motilium_10.txt)
+
+### س8. لخص معلومات Lipitor
+
+**الإجابة:**
+
+ليبيتور (Lipitor) هو دواء يحتوي على المادة الفعالة أتورفاستاتين (Atorvastatin)، ويستخدم بشكل أساسي لخفض مستويات الكوليسترول والدهون الثلاثية المرتفعة في الدم (فرط شحميات الدم وفرط ثلاثي غليسيريد الدم). كما يستخدم للوقاية من أمراض القلب والأوعية الدموية مثل السكتة الدماغية والنوبات القلبية لدى المرضى الذين يعانون من عوامل خطر متعددة، وللحد من مخاطر النوبات القلبية والسكتات الدماغية لدى البالغين المصابين بأمراض القلب والأوعية الدموية. (المستند 1، 2)
+
+**الجرعات:**
+*   **البالغون:** الجرعة المعتادة هي 20 ملغ مرة واحدة يوميًا، والجرعة القصوى هي 80 ملغ يوميًا. (المستند 3)
+*   **الأطفال (من 10 سنوات فما فوق):** الجرعة المعتادة هي 10 ملغ مرة واحدة يوميًا، والجرعة القصوى هي 20 ملغ يوميًا. (المستند 3)
+
+**موانع الاستعمال والتحذيرات:**
+*   لا يجب تناول ليبيتور في حالات فرط الحساسية للأتورفاستاتين، أمراض الكبد المزمنة مع ضعف كبدي متوسط إلى شديد، انحلال الربيدات، الوهن العضلي الوبيل، التصلب الجانبي الضموري، قصور الغدة الدرقية، والاعتلالات العضلية وضمور العضلات. (المستند 3)
+*   يجب تجنب منتجات الجريب فروت. (المستند 5)
+*   لا تتناول منتجات الأرز الأحمر المخمر أثناء تناول أتورفاستاتين. (المستند 5)
+*   في حال نسيان جرعة، يجب تناولها في أقرب وقت ممكن، وإذا مر أكثر من 12 ساعة، يجب عدم تناولها والانتظار للجرعة التالية المجدولة. لا تتناول جرعتين في نفس الوقت. (المستند 5)
+*   يمنع استخدامه أثناء الحمل والرضاعة. (المستند 7)
+
+**التفاعلات الدوائية:**
+يتفاعل أتورفاستاتين مع بعض الأدوية مثل الأميودارون والدرونيدارون (يزيد من مستويات أتورفاستاتين وخطر الاعتلال العضلي)، والديازوكسايد (يزيد من خطر ارتفاع السكر في الدم)، والبوسنتان (يقلل من فعالية أتورفاستاتين ويزيد من سمية الكبد). (المستند 6)
+
+**الآثار الجانبية المحتملة:**
+*   **شائعة (أكثر من 10%):** التهاب البلعوم الأنفي (نزلات البرد)، ألم المفاصل، إسهال، ألم في الأطراف، التهاب المسالك البولية. (المستند 7)
+*   **أقل شيوعًا (أقل من 10%):** أرق، غثيان، عسر الهضم، زيادة إنزيمات الكبد، تشنجات عضلية، ألم عضلي هيكلي، ألم عضلي، ألم في الأطراف، ألم في البلعوم والحنجرة، اعتلال عضلي، تأق. (المستند 7)
+*   **نادرة (أقل من 1%):** ذبحة صدرية، إغماء، ضيق في التنفس، متلازمة ستيفنز جونسون، التهاب العضلات. (المستند 7)
+
+**التخزين:**
+يجب تخزينه حسب التعليمات الموجودة على العبوة المصرية (عادةً أقل من 25-30 درجة مئوية، جاف، بعيدًا عن متناول الأطفال). (المستند 8)
+
+### س9. What is Diflucan used for?
+
+**الإجابة:**
+
+Diflucan is used for:
+*   Oropharyngeal Candidiasis (200 mg on day 1, then 100 mg daily for 7-14 days)
+*   Vaginal Candidiasis (150 mg as a single dose)
+*   Cryptococcal Meningitis (400-800 mg daily for 10-12 weeks for induction) [41]
+
+### س10. إيه هو Congestal باختصار؟
+
+**الإجابة:**
+
+Congestal هو دواء يُستخدم لعلاج نزلات البرد والإنفلونزا. (المستند رقم 1)
+
+**مكوناته النشطة:**
+*   **باراسيتامول (Paracetamol):** بتركيز 450 ملجم.
+*   **سودوإيفيدرين (Pseudoephedrine):** بتركيز 30 ملجم.
+*   **كلورفينيرامين ماليات (Chlorpheniramine Maleate):** بتركيز 2 ملجم. (المستند رقم 1)
+
+**الشكل الصيدلاني:** أقراص (TAB). (المستند رقم 1)
+
+**الحد الأدنى للعمر:** 12 سنة. (المستند رقم 1)
+
+**الشركة المصنعة:** CID. (المستند رقم 1)
+
+---

@@ -1,0 +1,14 @@
+Alias registry — Smecta
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 47
+Brand: Smecta
+
+Known aliases:
+- Smecta (brand)
+- SMECTA 20% SUSPENSION 120 ML (catalog_sku)
+- Diosmectite (inn)
+- DIOCTAHEDRAL SMECTITE (inn_alias)
+- SMECTITE (inn_alias)
+- سمكتا (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

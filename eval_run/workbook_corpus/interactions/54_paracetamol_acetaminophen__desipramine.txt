@@ -1,0 +1,16 @@
+Drug interaction — Panadol Acute Head Cold
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 54
+Brand: Panadol Acute Head Cold
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: DESIPRAMINE
+Risk: Delayed analgesia (gastric motility effects)
+Type: -
+Monitoring: Pain response at 45/90min
+Dose adjustment: Time acetaminophen 1h pre-TCA
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Delayed analgesia (gastric motility effects); Monitoring: Pain response at 45/90min; Dosage: Time acetaminophen 1h pre-TCA; Patient: Use scheduled dosing for chronic pain.

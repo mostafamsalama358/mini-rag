@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B12 (CYANOCOBALAMIN)
+API 2: METFORMIN HYDROCHLORIDE
+Risk: Metformin reduces B12 absorption (incidence: 5-30%), risking neuropathy.
+Type: -
+Monitoring: B12/MMA every 1-2yr.
+Dose adjustment: B12 supplementation may be needed.
+Alternative: -
+Patient warning: Separate doses by ≥2hr; calcium may counteract effect.
+Severity: caution
+
+Clinical note:
+Risk: Metformin reduces B12 absorption (incidence: 5-30%), risking neuropathy. Monitoring: B12/MMA every 1-2yr. Dosage: B12 supplementation may be needed. Patient Warnings: Separate doses by ≥2hr; calcium may counteract effect.

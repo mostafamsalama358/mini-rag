@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: CLONIDINE HYDROCHLORIDE
+Risk: Cerebral hemorrhage
+Type: Pharmacodynamic
+Monitoring: Neuro checks + BP
+Dose adjustment: Max 60mg/day pseudoephedrine; Alternatives: Oxymetazoline nasal
+Alternative: -
+Patient warning: "Discontinue if severe headache occurs"
+Severity: caution
+
+Clinical note:
+Risk: Cerebral hemorrhage; Type: Pharmacodynamic; Monitoring: Neuro checks + BP; Dosage Adjustments: Max 60mg/day pseudoephedrine; Alternatives: Oxymetazoline nasal; Patient Warnings: "Discontinue if severe headache occurs"

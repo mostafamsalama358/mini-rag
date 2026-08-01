@@ -1,0 +1,117 @@
+CONCOR 5 MG 30 F.C. TABS
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Concor
+Catalog SKU: CONCOR 5 MG 30 F.C. TABS
+INN / actives: Bisoprolol
+Catalog New Material: BISOPROLOL FUMARATE
+Strength / form: Bisoprolol 5 mg | (web-supplemented dosing below)
+Manufacturer / market: SIGMA
+Price (catalog): 72
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > HYPERTENSION
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=CONCOR 5 MG; sheet lookup INNs=Bisoprolol, BISOPROLOL FUMARATE
+Web clinical sources: Bisoprolol SmPC; Concor
+
+1. What Concor is used for
+Catalog uses: anti-hypertensive.beta blocker.selective b1
+Approved uses (material sheet): Hypertension - Initial dose 5 mg once daily. May be increased to 10 mg, and then up to 20 mg once daily if needed*
+Chronic Heart Failure (NYHA Class II , III) - Must be initiated at a very low dose and titrated slowly. Initial: 1.25 mg once daily. Target: 10 mg once daily, if tolerated*
+Off-label mentions (material sheet): Stable Coronary Artery Disease / Angina Pectoris - 5 to 20 mg once daily*
+Supraventricular Arrhythmias - For rate control*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Hypertension/HF titration under doctor — common maintenance 2.5–10 mg once daily. Do not stop abruptly.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not routine paediatric use.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Concor if / disease cautions
+From material/disease sheets:
+[BISOPROLOL] Hypersensitivity to BISOPROLOL FUMARATE * 
+Bradyarrhythmias & Sinus Node Dysfunction *
+Heart Failure (CHF)*
+Severe Hypotension*
+Asthma & Reactive Airway Diseases *
+COPD & Chronic Obstructive Lung Disease*
+Raynaud's phenomenon*
+Endocrine & Neuroendocrine Tumors*
+Atrioventricular (AV) & Heart Blocks (Without Pacemaker)*
+End‑Stage Renal Disease (ESRD) requiring or treated with Renal Replacement Therapy (RRT)*
+Coronary Artery Disease & Ischemic Heart Disease*
+Vascular / Aneurysms Heart Diseases*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None
+Notes (material sheet): • NSAIDs reduce the effectiveness of antihypertensive therapy, especially if they are used concomitantly with beta-blockers, ACE inhibitors, or ARBs
+• Take with or without food.
+• When gradually stopping this medication, it is recommended that you temporarily limit physical activity to decrease strain on the heart.
+......................................................................
+• Equation . ........ Creat_Clear = Sex * ((140 - Age) / (Serum_Creat)) * (Weight / 72) ; NOTE: Female = 0.85 , Male = 1
+Dose Modification:
+• Renal Impairment: Dose adjustment is recommended. In severe renal impairment (CrCl <20 mL/min), the maximum recommended dose is 10 mg daily. Start low (2.5 mg/day) and t…
+Patient education excerpt: Do not stop taking this medicine suddenly. This can cause dangerous heart problems. Your doctor will tell you how to reduce the dose gradually if you need to stop.
+
+Monitor Your Pulse: Learn how to check your heart rate. If it drops below 50-55 beats per minute (or as directed by your doctor) and you feel dizzy or tired, contact your doctor.
+
+For Diabetics: This drug can mask the fast heartbeat you feel when your blood sugar is low. Be extra vigilant about monitoring your blood glucose levels.
+
+Side Effects: You may feel more tired or dizzy when you first start. This usually improves. Be careful when standing up from a sitting or lying position. Report any shortness of breath, swelling in y…
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Bisoprolol + AMIODARONE: Risk: ↑ Bisoprolol levels → exercise intolerance; Type: Pharmacokinetic; Monitoring: Exercise tolerance; Dosage Adjustments: Reduce bisoprolol by 2.5mg increments; Alternative: Ranolazine; Patient Warnings/Management: Gradual activity increase.
+- Bisoprolol + CAPTOPRIL: Risk: Additive cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, and signs of heart failure; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema or dyspnea.
+- Bisoprolol + ENALAPRIL: Risk: Additive cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, and signs of HF; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.
+- Bisoprolol + LISINOPRIL: Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.
+- Bisoprolol + RAMIPRIL: Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.
+- Bisoprolol + BENAZEPRIL: Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.
+- Bisoprolol + CILAZAPRIL: Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.
+- Bisoprolol + FOSINOPRIL: Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.
+- Bisoprolol + QUINAPRIL: Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.
+- Bisoprolol + PERINDOPRIL: Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.
+- Bisoprolol + ALISKIREN: Risk: Balanced hepatic/renal excretion minimizes interaction; Type: Minimal; Monitoring: BP monthly if stable; Dosage Adjustments: None; Alternative: First-line β-blocker combo; Patient Warnings/Management: Take in morning.
+- Bisoprolol + SILODOSIN: Risk: Mild hypotension; Type: Pharmacodynamic; Monitoring: BP weekly; Dosage Adjustments: None; Alternative: Nebivolol; Patient Warnings/Management: Standard precautions.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Beta-blockers may be used when indicated; fetal growth monitoring may be needed — specialist care.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Bisoprolol: limited data; monitor infant for bradycardia/hypoglycaemia if used.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Dizziness (>10%)*
+Insomnia (>10%)*
+Bradyarrhythmia (>10%)*
+Cold extremities (>10%)*
+Rhinitis (>10%)*
+Arthralgia (joint pain (>10%)*
+Cough (>10%)*
+Dyspnea (>10%)*
+Nausea (>10%)*
+Pharyngitis (>10%)*
+Sinusitis (>10%)*
+Vomiting (>10%)*
+Minor (material sheet): Upper respiratory tract infection (URTI) (1-10%)*
+Hypotension (1-10%)*
+Depression (1-10%)*
+Dyspepsia (1-10%)*
+Diarrhea (1-10%)*
+Bronchospasm (1-10%)*
+Aggravated congestive heart failure (CHF) (1-10%)*
+Decrease HDL (1-10%)*
+Hypertriglyceridemia (1-10%)*
+Mask symptoms of hypoglycemia (1-10%)*
+Decreased exercise tolerance (1-10%)*
+Raynaud syndrome (1-10%)*
+Increase triglyceride levels (<1%)*
+Increase insulin resistance (<1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

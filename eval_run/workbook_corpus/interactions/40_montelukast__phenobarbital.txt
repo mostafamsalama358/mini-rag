@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: PHENOBARBITAL
+Risk: PHENOBARBITAL decreases MONTELUKAST levels by 40% via CYP3A4 induction. Monitor: Asthma control test scores monthly.
+Type: -
+Monitoring: -
+Dose adjustment: Increase MONTELUKAST to 15mg nightly if >15yo.
+Alternative: -
+Patient warning: Watch for nocturnal asthma symptoms.
+Severity: caution
+
+Clinical note:
+Risk: PHENOBARBITAL decreases MONTELUKAST levels by 40% via CYP3A4 induction. Monitor: Asthma control test scores monthly. Dosage: Increase MONTELUKAST to 15mg nightly if >15yo. Patient Warning: Watch for nocturnal asthma symptoms.

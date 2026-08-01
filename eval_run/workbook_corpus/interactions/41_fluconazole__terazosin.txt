@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: TERAZOSIN
+Risk: Moderate hypotension (mild CYP3A4 inhibition)
+Type: Pharmacokinetic
+Monitoring: BP daily x7
+Dose adjustment: Start terazosin 1mg at bedtime
+Alternative: Preferred antifungal option
+Patient warning: /Management: Rise slowly.
+Severity: caution
+
+Clinical note:
+Risk: Moderate hypotension (mild CYP3A4 inhibition); Type: Pharmacokinetic; Monitoring: BP daily x7; Dosage Adjustments: Start terazosin 1mg at bedtime; Alternative: Preferred antifungal option; Patient Warnings/Management: Rise slowly.

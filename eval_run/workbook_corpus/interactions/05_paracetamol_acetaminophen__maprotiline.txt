@@ -1,0 +1,16 @@
+Drug interaction — Flurest-N
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 05
+Brand: Flurest-N
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: MAPROTILINE
+Risk: Seizure threshold lowering with chronic high doses
+Type: -
+Monitoring: Seizure diary
+Dose adjustment: Max 3g/day
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Seizure threshold lowering with chronic high doses; Monitoring: Seizure diary; Dosage: Max 3g/day; Patient: Avoid >3 consecutive days >3g; report myoclonus.

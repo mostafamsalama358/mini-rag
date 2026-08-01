@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: DRONEDARONE
+Risk: Additive vasodilation → hypotension
+Type: Pharmacodynamic
+Monitoring: BP sitting/standing
+Dose adjustment: Start amlodipine 2.5mg
+Alternative: ACE inhibitors
+Patient warning: /Management: Rise slowly from bed.
+Severity: caution
+
+Clinical note:
+Risk: Additive vasodilation → hypotension; Type: Pharmacodynamic; Monitoring: BP sitting/standing; Dosage Adjustments: Start amlodipine 2.5mg; Alternative: ACE inhibitors; Patient Warnings/Management: Rise slowly from bed.

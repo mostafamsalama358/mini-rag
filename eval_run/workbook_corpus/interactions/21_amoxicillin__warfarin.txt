@@ -1,0 +1,16 @@
+Drug interaction — Augmentin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 21
+Brand: Augmentin
+API 1: AMOXICILLIN
+API 2: WARFARIN
+Risk: Minimal INR change (occasional GI flora effect)
+Type: Pharmacodynamic
+Monitoring: INR baseline + weekly
+Dose adjustment: None typically
+Alternative: Cephalexin
+Patient warning: Report rash (mononucleosis contraindication).
+Severity: yes
+
+Clinical note:
+Risk: Minimal INR change (occasional GI flora effect); Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dosage: None typically; Alternative: Cephalexin; Patient Warnings: Report rash (mononucleosis contraindication).

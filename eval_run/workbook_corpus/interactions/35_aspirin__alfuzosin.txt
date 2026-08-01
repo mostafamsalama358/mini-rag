@@ -1,0 +1,16 @@
+Drug interaction — Aspocid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 35
+Brand: Aspocid
+API 1: ASPIRIN
+API 2: ALFUZOSIN
+Risk: Postural hypotension with bleeding risk
+Type: Mixed
+Monitoring: BP sitting/standing
+Dose adjustment: Avoid aspirin >325mg/day
+Alternative: Dipyridamole
+Patient warning: Use handrails on stairs.
+Severity: yes
+
+Clinical note:
+Risk: Postural hypotension with bleeding risk; Type: Mixed; Monitoring: BP sitting/standing; Dosage: Avoid aspirin >325mg/day; Alternative: Dipyridamole; Patient Warnings: Use handrails on stairs.

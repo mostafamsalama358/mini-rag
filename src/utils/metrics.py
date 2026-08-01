@@ -119,6 +119,64 @@ ANSWER_GENERATION_GROUNDING_FLAG_TOTAL = Counter(
     'Grounding flags emitted during Answer Generation',
 )
 
+# Unified production pipeline migration (015)
+RAG_PIPELINE_REQUESTS_TOTAL = Counter(
+    'rag_pipeline_requests_total',
+    'Total RAG pipeline router requests by mode and outcome',
+    ['mode', 'outcome'],
+)
+RAG_PIPELINE_STAGE_DURATION = Histogram(
+    'rag_pipeline_stage_duration_seconds',
+    'Per-stage wall time inside the unified / routed pipeline',
+    ['stage', 'status'],
+)
+RAG_SHADOW_DIVERGENCE_TOTAL = Counter(
+    'rag_shadow_divergence_total',
+    'Shadow dual-run comparisons flagged as diverged',
+    ['project_id'],
+)
+PIPELINE_FALLBACK_TOTAL = Counter(
+    'pipeline_fallback_total',
+    'Unified-path failures that fell back to the legacy executor',
+    ['reason'],
+)
+
+# Ingest reliability / scalability (017)
+INGEST_ADMISSION_TOTAL = Counter(
+    'ingest_admission_total',
+    'Ingest admission outcomes',
+    ['outcome', 'reason'],
+)
+INGEST_STAGE_DURATION = Histogram(
+    'ingest_stage_duration_seconds',
+    'Ingest stage wall time',
+    ['stage', 'workload_class'],
+)
+INGEST_PARSE_OUTCOME_TOTAL = Counter(
+    'ingest_parse_outcome_total',
+    'Ingest parse outcome classifications',
+    ['outcome'],
+)
+INGEST_PROGRESS_EVENTS_TOTAL = Counter(
+    'ingest_progress_events_total',
+    'Ingest progress kind transitions',
+    ['kind'],
+)
+INGEST_PUBLISH_TOTAL = Counter(
+    'ingest_publish_total',
+    'Ingest publish completions and exactly-once no-ops',
+    ['result'],
+)
+INGEST_CAPACITY_CLAIM_LEAKS_TOTAL = Counter(
+    'ingest_capacity_claim_leaks_total',
+    'Detected held capacity claims past terminal without release',
+)
+INGEST_ORPHAN_RECOVERY_TOTAL = Counter(
+    'ingest_orphan_recovery_total',
+    'Orphan recovery outcomes',
+    ['outcome'],
+)
+
 class PrometheusMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
 

@@ -1,0 +1,104 @@
+JEPARILON 10 MG 20 CHEW. TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Jeparilon
+Catalog SKU: JEPARILON 10 MG 20 CHEW. TABS.
+INN / actives: Famotidine * Calcium Carbonate * Magnesium Hydroxide
+Catalog New Material: CALCIUM CARBONATE * FAMOTIDINE * MAGNESIUM HYDROXIDE
+Strength / form: Famotidine 10 mg + calcium carbonate + magnesium hydroxide chewable (Pepcid Complete–class) | (web-supplemented dosing below)
+Manufacturer / market: FUTURE PHARMACEUTICAL INDUSTRIES (FPI)
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-PEPTIC ULCER & ANTACIDS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=JEPARILON; sheet lookup INNs=Famotidine, Calcium Carbonate, Magnesium Hydroxide, CALCIUM CARBONATE, FAMOTIDINE, MAGNESIUM HYDROXIDE
+Web clinical sources: DailyMed Pepcid Complete; HPRA Pepcid Duo SmPC class
+
+1. What Jeparilon is used for
+Catalog uses: antacid plus h2 blocker
+Approved uses (material sheet): GERD - 20 mg PO BID × 6w*
+Gastric Ulcer - 40 mg PO daily × 8w*
+Heartburn (OTC) - 10 : 20 mg PRN (max 40 mg/24h)*
+Off-label mentions (material sheet): Stress Ulcer Prophylaxis (ICU) - 20 mg IV/PO BID*
+Chronic Urticaria - 40 mg PO daily (adjunct to H₁ blockers)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Chew 1 tablet completely when symptoms occur; do not swallow whole. Max 2 tablets/24 h. Limit short self-care courses (≈2 weeks) unless doctor advises.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Typically ≥12 years (US OTC class). Not for younger children unless prescribed.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Jeparilon if / disease cautions
+From material/disease sheets:
+[FAMOTIDINE] Hypersensitivity to FAMOTIDINE* Infants under 1 year *
+[CALCIUM CARBONATE] Colitis (Non-IBD) *
+Vitamin D Deficiency * 
+Calcitonin Deficiency *
+[CALCIUM] Hyperphosphatemia * 
+Malabsorption & Structural GI Disorders *
+Colitis (Non-IBD) *
+Vitamin D Deficiency * 
+Calcitonin Deficiency*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None
+Notes (material sheet): • causes a lack of vitamin # B12
+• Avoid excessive or chronic alcohol consumption. Alcohol increases the risk of gastric irritation.
+• Avoid: Antacids (separate by 1–2h; ↓ famotidine absorption).
+• Limit caffeine intake. Caffeine and other acidic beverages increases the risk of gastric irritation.
+• Take with or without food.
+• increases the level of Bilirubin in the blood
+........................................................................
+• for Benign Gastric Ulcer…..40 mg PO at bedtime up to 8 weeks
+• Mastocytosis (adjunct) (off-label use):
+ Oral: 10 to 20 mg every 12 hours adjusted to achieve GI symptom relief.
+• Pathological hypersecretory conditions (eg, Zollinger-Ellison syndrome…
+Patient education excerpt: • Timing: 
+-With/without food; bedtime dosing for nocturnal symptoms.
+• Missed Dose: 
+-Take ASAP; skip if near next dose.
+• Interactions: 
+-Avoid antacids within 1h; limit alcohol (↑ GI irritation).
+• Overdose Antidote: 
+-None. Supportive care.
+• Seek Help: 
+-Bloody stools, racing heart, confusion, rash.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Famotidine + AMIODARONE: Risk: Minimal interaction (safe alternative); Type: None; Monitoring: Routine care; Dosage Adjustments: None needed; Alternative: Pantoprazole; Patient Warnings/Management: None specific.
+- Famotidine + TOLAZOLINE: Risk: Minimal interaction expected; Type: Pharmacodynamic; Monitoring: Standard tolazoline monitoring; Dosage Adjustments: None typically; Alternative: Pantoprazole if concerned; Patient Warnings/Management: No special precautions.
+- Famotidine + DIPYRIDAMOLE: Risk: Mild absorption delay (pH effect). Type: Pharmacokinetic. Monitoring: Headache timing (therapeutic marker). Dosage Adjustments: MR formulation preferred. Alternative: Rabeprazole. Patient Warnings/Management: Evening H2A dosing minimizes interaction.
+- Famotidine + VERAPAMIL: Risk: Mild PR prolongation (additive AV node effects); Type: Pharmacodynamic; Monitoring: ECG PR interval weekly; Dosage Adjustments: Verapamil ↓25% if HR<55 bpm; Alternative: Pantoprazole; Patient Warnings/Management: Report dizziness/syncope.
+- Famotidine + NIFEDIPINE: Risk: Reflex tachycardia (acute); Type: Pharmacodynamic; Monitoring: BP/HR q4h x3 doses; Dosage Adjustments: Nifedipine XL formulation; Alternative: Nifedipine + sucralfate; Patient Warnings/Management: Seated BP measurements.
+- Famotidine + DILTIAZEM: Risk: Bradycardia exacerbation; Type: Pharmacodynamic; Monitoring: Ambulatory HR for 24h; Dosage Adjustments: Diltiazem CD formulation preferred; Alternative: Diltiazem + antacids; Patient Warnings/Management: Nighttime HR checks.
+- Famotidine + NICARDIPINE: Risk: Enhanced cerebral vasodilation; Type: Pharmacodynamic; Monitoring: Neurological checks q2h; Dosage Adjustments: Nicardipine ↓0.5mg/kg/min; Alternative: IV pantoprazole; Patient Warnings/Management: Headache reporting.
+- Famotidine + AMLODIPINE: Risk: Delayed edema onset (2-3 weeks); Type: Pharmacodynamic; Monitoring: Ankle circumference weekly; Dosage Adjustments: Amlodipine ↓2.5mg if edema; Alternative: Amlodipine + PPIs; Patient Warnings/Management: Leg elevation protocol.
+- Famotidine + NISOLDIPINE: Risk: Photosensitivity exacerbation; Type: Pharmacodynamic; Monitoring: Skin exam q2weeks; Dosage Adjustments: Nisoldipine ↓10mg if rash; Alternative: Nisoldipine + magaldrate; Patient Warnings/Management: SPF 50+ required.
+- Famotidine + FELODIPINE: Risk: CYP3A4 substrate competition; Type: Pharmacokinetic; Monitoring: BP q12h; Dosage Adjustments: Felodipine ↓25%; Alternative: Felodipine + aluminum hydroxide; Patient Warnings/Management: Grapefruit strict avoidance.
+- Famotidine + BEPRIDIL: Risk: QT prolongation (additive K+ effects); Type: Pharmacodynamic; Monitoring: Telemetry, QTc q8h; Dosage Adjustments: Absolute contraindication; Alternative: Famotidine + verapamil; Patient Warnings/Management: Defibrillator access required.
+- Famotidine + ISRADIPINE: Risk: Cerebral hypoperfusion; Type: Pharmacodynamic; Monitoring: ICP if available; Dosage Adjustments: Famotidine hold during infusion; Alternative: IV PPIs; Patient Warnings/Management: Neuro checks q1h.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Ask doctor before use; combination lacks adequate pregnancy studies — use only if benefit outweighs risk.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Ask healthcare professional before use.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Headache (4.7–16%)*
+Dizziness (1.3–11%)*
+Constipation (2–5%)*
+Diarrhea (1–3%)*
+Minor (material sheet): Confusion - elderly (0.2–1%)*
+Thrombocytopenia (0.1%)*
+Gynecomastia - long term (<0.1%)*
+Hepatitis (rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

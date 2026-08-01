@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: TOLAZOLINE
+Risk: Prolonged hypotension (long half-life interaction)
+Type: Pharmacodynamic
+Monitoring: BP for 72h post-infusion
+Dose adjustment: Hold amlodipine 72h pre-tolazoline
+Alternative: Short-acting CCBs
+Patient warning: /Management: Gradual ambulation.
+Severity: caution
+
+Clinical note:
+Risk: Prolonged hypotension (long half-life interaction); Type: Pharmacodynamic; Monitoring: BP for 72h post-infusion; Dosage Adjustments: Hold amlodipine 72h pre-tolazoline; Alternative: Short-acting CCBs; Patient Warnings/Management: Gradual ambulation.

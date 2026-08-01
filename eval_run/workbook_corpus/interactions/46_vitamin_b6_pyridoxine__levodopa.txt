@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B6 (PYRIDOXINE)
+API 2: LEVODOPA
+Risk: Pyridoxine cofactor effect → peripheral decarboxylation → ↓ levodopa CNS bioavailability → Parkinsonism exacerbation
+Type: -
+Monitoring: "ON" time duration
+Dose adjustment: Avoid unless with decarboxylase inhibitor (carbidopa/benserazide); if essential, ↑ levodopa by 100-200mg/day
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Pyridoxine cofactor effect → peripheral decarboxylation → ↓ levodopa CNS bioavailability → Parkinsonism exacerbation; Monitoring: "ON" time duration; Dosage: Avoid unless with decarboxylase inhibitor (carbidopa/benserazide); if essential, ↑ levodopa by 100-200mg/day; Patient: Do not take B6 supplements without c…

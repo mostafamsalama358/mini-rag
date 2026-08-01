@@ -1,0 +1,16 @@
+Drug interaction — Amaryl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 32
+Brand: Amaryl
+API 1: GLIMEPIRIDE
+API 2: LOSARTAN POTASSIUM
+Risk: Renal dysfunction exacerbates hyperkalemia/hypotension.
+Type: Pharmacodynamic.
+Monitoring: eGFR, K+, BP weekly if CKD.
+Dose adjustment: Avoid losartan K+ if eGFR <30. Alternatives: Non-ARB antihypertensive (e.g., amlodipine).
+Alternative: -
+Patient warning: /Management: Report muscle cramps or irregular heartbeat.
+Severity: yes
+
+Clinical note:
+Risk: Renal dysfunction exacerbates hyperkalemia/hypotension. Type: Pharmacodynamic. Monitoring: eGFR, K+, BP weekly if CKD. Dosage Adjustments: Avoid losartan K+ if eGFR <30. Alternatives: Non-ARB antihypertensive (e.g., amlodipine). Patient Warnings/Management: Report muscle cramps or irregular heartbeat.

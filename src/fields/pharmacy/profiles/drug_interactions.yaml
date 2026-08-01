@@ -1,0 +1,6 @@
+﻿id: drug_interactions
+filters:
+  field:
+    - interactions
+notes: Live corpus is RAG_CORPUS Excel workbook render (txt), not legacy /leaflets PDFs.
+retrieval_strategy: pair_lookup

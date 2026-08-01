@@ -1,0 +1,16 @@
+Drug interaction — Brufen
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 18
+Brand: Brufen
+API 1: IBUPROFEN
+API 2: IRBESARTAN
+Risk: Antihypertensive effect reversal (SBP↑ 10-15mmHg)
+Type: Pharmacodynamic
+Monitoring: Daily home BP x14d
+Dose adjustment: Ibuprofen ≤400mg TID x3d
+Alternative: Naproxen (shorter course)
+Patient warning: BP self-monitoring required.
+Severity: caution
+
+Clinical note:
+Risk: Antihypertensive effect reversal (SBP↑ 10-15mmHg); Type: Pharmacodynamic; Monitoring: Daily home BP x14d; Dosage: Ibuprofen ≤400mg TID x3d; Alternative: Naproxen (shorter course); Patient Warnings: BP self-monitoring required.

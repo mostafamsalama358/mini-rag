@@ -1,0 +1,16 @@
+Drug interaction — Brufen
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 18
+Brand: Brufen
+API 1: IBUPROFEN
+API 2: RAMIPRIL
+Risk: Moderate BP increase and reversible renal dysfunction
+Type: Pharmacodynamic
+Monitoring: BP pre/post dose, Cr if use >3 days
+Dose adjustment: Adjust ramipril based on response
+Alternative: Naproxen if CVD risk low
+Patient warning: /Management: Use ≤400 mg ibuprofen per dose.
+Severity: caution
+
+Clinical note:
+Risk: Moderate BP increase and reversible renal dysfunction; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust ramipril based on response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use ≤400 mg ibuprofen per dose.

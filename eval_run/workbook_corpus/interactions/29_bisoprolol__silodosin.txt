@@ -1,0 +1,16 @@
+Drug interaction — Concor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 29
+Brand: Concor
+API 1: BISOPROLOL
+API 2: SILODOSIN
+Risk: Mild hypotension
+Type: Pharmacodynamic
+Monitoring: BP weekly
+Dose adjustment: None
+Alternative: Nebivolol
+Patient warning: /Management: Standard precautions.
+Severity: caution
+
+Clinical note:
+Risk: Mild hypotension; Type: Pharmacodynamic; Monitoring: BP weekly; Dosage Adjustments: None; Alternative: Nebivolol; Patient Warnings/Management: Standard precautions.

@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: DIAZOXIDE
+Risk: QTc prolongation (≥500 ms) + fluid retention
+Type: Pharmacodynamic synergy
+Monitoring: ECG weekly, daily weights, renal function
+Dose adjustment: Fluconazole ≤200 mg/day
+Alternative: Anidulafungin
+Patient warning: Report swelling/irregular heartbeat, limit salt intake .
+Severity: caution
+
+Clinical note:
+Risk: QTc prolongation (≥500 ms) + fluid retention; Type: Pharmacodynamic synergy; Monitoring: ECG weekly, daily weights, renal function; Dosage: Fluconazole ≤200 mg/day; Alternative: Anidulafungin; Patient Warnings: Report swelling/irregular heartbeat, limit salt intake .

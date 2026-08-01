@@ -1,0 +1,60 @@
+version: 1
+tags:
+  - tag_id: acidity
+    display_name: Acidity / heartburn
+  - tag_id: antacid
+    display_name: Antacid
+  - tag_id: ppi
+    display_name: Proton pump inhibitor
+  - tag_id: migraine
+    display_name: Migraine
+  - tag_id: headache
+    display_name: Headache
+  - tag_id: pain
+    display_name: Pain
+  - tag_id: fever
+    display_name: Fever
+  - tag_id: diarrhea
+    display_name: Diarrhea
+  - tag_id: cold
+    display_name: Cold / flu symptomatic
+  - tag_id: congestion
+    display_name: Congestion
+# Seed product → tags (corpus-bounded; extend via ingest metadata)
+product_tags:
+  - brand: Risek
+    product_line: Risek
+    tags: [acidity, ppi]
+  - brand: Controloc
+    product_line: Controloc
+    tags: [acidity, ppi]
+  - brand: Gaviscon
+    product_line: Gaviscon
+    tags: [acidity, antacid]
+  - brand: Jeparilon
+    product_line: Jeparilon
+    tags: [acidity, antacid]
+  - brand: Panadol
+    product_line: Panadol Migraine
+    tags: [migraine, headache, pain]
+  - brand: Panadol
+    product_line: Panadol
+    tags: [pain, fever, headache]
+  - brand: Brufen
+    product_line: Brufen
+    tags: [pain, fever]
+    safety:
+      pregnancy: avoid
+      breastfeeding: use_with_caution
+  - brand: Cataflam
+    product_line: Cataflam
+    tags: [pain]
+    safety:
+      pregnancy: avoid
+      breastfeeding: avoid
+  - brand: Smecta
+    product_line: Smecta
+    tags: [diarrhea]
+  - brand: Antinal
+    product_line: Antinal
+    tags: [diarrhea]

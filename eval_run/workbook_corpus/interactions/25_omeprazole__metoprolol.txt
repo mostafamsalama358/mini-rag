@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: METOPROLOL
+Risk: Metoprolol toxicity (bradycardia, fatigue) due to CYP2D6 inhibition
+Type: Pharmacokinetic (metabolism inhibition)
+Monitoring: Daily HR/BP + metoprolol levels if available
+Dose adjustment: Reduce metoprolol 25-50%
+Alternative: Rabeprazole
+Patient warning: Report dizziness; no driving with fatigue; avoid grapefruit.
+Severity: yes
+
+Clinical note:
+Risk: Metoprolol toxicity (bradycardia, fatigue) due to CYP2D6 inhibition; Type: Pharmacokinetic (metabolism inhibition); Monitoring: Daily HR/BP + metoprolol levels if available; Dosage: Reduce metoprolol 25-50%; Alternative: Rabeprazole; Patient Warnings: Report dizziness; no driving with fatigue; avoid grapefruit.

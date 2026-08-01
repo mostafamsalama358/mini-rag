@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: MINOXIDIL
+Risk: Moderate fluid retention.
+Type: Pharmacokinetic.
+Monitoring: JVP assessment weekly.
+Dose adjustment: Max minoxidil 5mg/day.
+Alternative: Valsartan.
+Patient warning: /Management: Leg elevation for edema.
+Severity: caution
+
+Clinical note:
+Risk: Moderate fluid retention. Type: Pharmacokinetic. Monitoring: JVP assessment weekly. Dosage Adjustments: Max minoxidil 5mg/day. Alternative: Valsartan. Patient Warnings/Management: Leg elevation for edema.

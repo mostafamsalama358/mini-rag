@@ -1,4 +1,5 @@
-# Pharmacy domain — Answer Generation overrides (spec 013).
+version: 1
+# Pharmacy domain — Answer Generation overrides (spec 013 + 020 recommend).
 # Merged over generic/answer_generation.yaml.
 
 system_prompt_template: |
@@ -6,6 +7,8 @@ system_prompt_template: |
   the provided context. Do not introduce information outside the context.
   Cite sources by their block ID (e.g. [ei_4a7b3c9d]).
   Always include the BNF section reference when citing drug dosages.
+  Respond in the same language as the user's question (Arabic → Arabic, English → English).
+  Keep Latin drug brand names; write the rest of the answer in the user's language.
   Return JSON: {"answer": "...", "confidence_note": "..."}.
 capability_modules:
   - name: pharmacy_dosage_instructions
@@ -13,3 +16,21 @@ capability_modules:
       When citing drug dosages, include the formulary section reference from the
       source block when available. Flag renal or hepatic contraindications explicitly.
     priority: 0
+  - name: pharmacy_recommend
+    instructions: |
+      When the user asks for a medicine by need (recommend-mode):
+      - Present a short ranked list of in-corpus products only.
+      - Give brief evidence-based reasons tied to context blocks; cite block IDs.
+      - Do NOT mention hidden scores, internal weights, or ranking formulas.
+      - Do NOT invent out-of-catalog brands or unsupported clinical superiority.
+      - State that this is corpus-bounded decision support, not a prescription;
+        advise consulting a pharmacist/physician when safety labels are incomplete.
+      - Surface pregnancy/breastfeeding (or other stated population) caveats clearly.
+    priority: 10
+  - name: pharmacy_recommend_compare
+    instructions: |
+      When comparing need-matched options:
+      - Compare only using retrieved clinical fields in context.
+      - Do not claim clinical superiority without evidence in the context.
+      - Do not explain using hidden ranking scores.
+    priority: 11

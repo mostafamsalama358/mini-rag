@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: DULOXETINE
+Risk: ↑ Duloxetine levels (CYP1A2 inhibition)
+Type: Pharmacokinetic
+Monitoring: BP, serotonin syndrome signs
+Dose adjustment: -
+Alternative: Levofloxacin
+Patient warning: Discontinue if hypertensive crisis occurs.
+Severity: caution
+
+Clinical note:
+Risk: ↑ Duloxetine levels (CYP1A2 inhibition); Type: Pharmacokinetic; Monitoring: BP, serotonin syndrome signs; Dosage Adjustment: Max duloxetine 40mg/day; Alternative: Levofloxacin; Patient Warning: Discontinue if hypertensive crisis occurs.

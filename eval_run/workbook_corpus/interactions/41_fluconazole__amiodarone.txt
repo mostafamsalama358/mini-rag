@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: AMIODARONE
+Risk: Sudden cardiac death (QTc >550ms)
+Type: CYP3A4 + hERG inhibition
+Monitoring: LFTs + QTc weekly
+Dose adjustment: Contraindicated
+Alternative: Isavuconazonium
+Patient warning: Avoid grapefruit.
+Severity: yes
+
+Clinical note:
+Risk: Sudden cardiac death (QTc >550ms); Type: CYP3A4 + hERG inhibition; Monitoring: LFTs + QTc weekly; Dosage Adjustments: Contraindicated; Alternative: Isavuconazonium; Patient Warnings: Avoid grapefruit.

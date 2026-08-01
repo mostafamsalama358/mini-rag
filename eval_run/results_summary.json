@@ -1,0 +1,64 @@
+{
+  "recall_at_5": {
+    "n": 12,
+    "mean": 0.7083333333333334
+  },
+  "recall_at_10": {
+    "n": 12,
+    "mean": 0.7083333333333334
+  },
+  "recall_at_20": {
+    "n": 12,
+    "mean": 0.7083333333333334
+  },
+  "precision_at_5": {
+    "n": 12,
+    "mean": 0.275
+  },
+  "precision_at_10": {
+    "n": 12,
+    "mean": 0.26875
+  },
+  "mrr": {
+    "n": 12,
+    "mean": 0.6875
+  },
+  "ndcg_at_10": {
+    "n": 12,
+    "mean": 0.6512265554410197
+  },
+  "coverage_score": {
+    "n": 12,
+    "mean": 0.9583333333333334
+  },
+  "faithfulness_score": {
+    "n": 12,
+    "mean": 0.8015873015873016
+  },
+  "completeness_score": {
+    "n": 12,
+    "mean": 1.0
+  },
+  "planner_latency_ms": {
+    "n": 14,
+    "mean": 0.23034999841391773
+  },
+  "retrieval_latency_ms": {
+    "n": 13,
+    "mean": 0.82970000221394
+  },
+  "evidence_latency_ms": {
+    "n": 13,
+    "mean": 0.7949076926496883
+  },
+  "context_latency_ms": {
+    "n": 13,
+    "mean": 0.664823075147489
+  },
+  "answer_latency_ms": {
+    "n": 13,
+    "mean": 0.15749230694312316
+  },
+  "planner_intent_accuracy": 1.0,
+  "clarification_rate": 0.07142857142857142
+}

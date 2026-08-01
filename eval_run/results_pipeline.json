@@ -1,0 +1,1363 @@
+[
+  {
+    "query_id": "q_adult_dose",
+    "category": "factual",
+    "text": "What is the adult dose of aspirin?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.3905000048689544,
+      "plan_id": "rp_7ba68936da83d3ce"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c17",
+        "c1",
+        "c12",
+        "c19",
+        "c18"
+      ],
+      "relevant_chunk_ids": [
+        "c1"
+      ],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 1.5334000054281205,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.6309297535714575,
+      "irrelevant_in_top5": [
+        "c17",
+        "c12",
+        "c19",
+        "c18"
+      ],
+      "missed_evidence": []
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-aspirin-pil-duplicate",
+        "doc-conflicting-a",
+        "doc-conflicting-b",
+        "doc-ibuprofen-pil"
+      ],
+      "expected_doc_ids": [
+        "doc-aspirin-pil"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.8185000042431056
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 107,
+      "budget_total": 3000,
+      "token_utilization": 0.035666666666666666,
+      "conflicts_detected": true,
+      "conflict_groups": 1,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 1.5167999954428524
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "The adult dose is 325 mg every 4 to 6 hours [ei_cece937d48891ecf].",
+      "citation_count": 1,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.3873999958159402
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": false
+    }
+  },
+  {
+    "query_id": "q_contraindications",
+    "category": "factual",
+    "text": "What are the contraindications for aspirin?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.28279999969527125,
+      "plan_id": "rp_d26bc706da74060a"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c2",
+        "c17",
+        "c5",
+        "c6",
+        "c7"
+      ],
+      "relevant_chunk_ids": [
+        "c2",
+        "c5"
+      ],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 1.0813999979291111,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.4,
+      "mrr": 1.0,
+      "ndcg_at_10": 0.9197207891481876,
+      "irrelevant_in_top5": [
+        "c17",
+        "c6",
+        "c7"
+      ],
+      "missed_evidence": []
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin",
+        "doc-conflicting-a"
+      ],
+      "expected_doc_ids": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 1.0544999968260527
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 90,
+      "budget_total": 3000,
+      "token_utilization": 0.03,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.9391000057803467
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "Avoid aspirin if allergic to aspirin or NSAIDs [ei_20b3bf4c6b6e6712], or if you have an active bleeding disorder [ei_85d7234888298ff1].",
+      "citation_count": 2,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.2049000031547621
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": true
+    }
+  },
+  {
+    "query_id": "q_children",
+    "category": "factual",
+    "text": "Can children take aspirin?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.30309999419841915,
+      "plan_id": "rp_299e89dc04d42535"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c9",
+        "c1",
+        "c12",
+        "c19",
+        "c2"
+      ],
+      "relevant_chunk_ids": [
+        "c8",
+        "c9"
+      ],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 0.753400003304705,
+      "recall_at_5": 0.5,
+      "recall_at_10": 0.5,
+      "recall_at_20": 0.5,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "mrr": 1.0,
+      "ndcg_at_10": 0.6131471927654584,
+      "irrelevant_in_top5": [
+        "c1",
+        "c12",
+        "c19",
+        "c2"
+      ],
+      "missed_evidence": [
+        "c8"
+      ]
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-aspirin-pil-duplicate",
+        "doc-ibuprofen-pil",
+        "doc-paediatric-guidance"
+      ],
+      "expected_doc_ids": [
+        "doc-paediatric-guidance"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.7167000003391877
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 118,
+      "budget_total": 3000,
+      "token_utilization": 0.03933333333333333,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.38949999725446105
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "Aspirin is not recommended for children [ei_20b3bf4c6b6e6712] due to the risk of Reye's syndrome [ei_cece937d48891ecf].",
+      "citation_count": 2,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.11950000771321356
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": true
+    }
+  },
+  {
+    "query_id": "q_multihop_warfarin",
+    "category": "multi_hop",
+    "text": "Is it safe to take aspirin together with warfarin, and why?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.17830000433605164,
+      "plan_id": "rp_39f50f33906e7c35"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c6",
+        "c11",
+        "c10",
+        "c1",
+        "c12"
+      ],
+      "relevant_chunk_ids": [
+        "c10",
+        "c11",
+        "c6"
+      ],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 0.6417999975383282,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "precision_at_5": 0.6,
+      "precision_at_10": 0.6,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0,
+      "irrelevant_in_top5": [
+        "c1",
+        "c12"
+      ],
+      "missed_evidence": []
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin",
+        "doc-ibuprofen-pil",
+        "doc-warfarin-monograph"
+      ],
+      "expected_doc_ids": [
+        "doc-bnf-aspirin",
+        "doc-warfarin-monograph"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.6585999944945797
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 118,
+      "budget_total": 3000,
+      "token_utilization": 0.03933333333333333,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.3453999961493537
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "No. Aspirin combined with warfarin significantly increases bleeding risk [ei_cece937d48891ecf] because aspirin potentiates warfarin's anticoagulant effect [ei_21b6331ff1cd3442]; INR should be monitored closely [ei_af7e3fd0ba30736c].",
+      "citation_count": 3,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.11690000246744603
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": true
+    }
+  },
+  {
+    "query_id": "q_compare_aspirin_ibuprofen_dose",
+    "category": "comparative",
+    "text": "Compare the adult dose of aspirin versus ibuprofen.",
+    "planner": {
+      "intent_category": "comparative",
+      "intent_confidence": 0.8,
+      "expected_intent": "comparative",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid",
+        "keyword"
+      ],
+      "max_evidence_units": 8,
+      "max_candidates": 30,
+      "scope": "standard",
+      "latency_ms": 0.17729999672155827,
+      "plan_id": "rp_c0dabc385b398ed4"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c17",
+        "c2",
+        "c5",
+        "c18",
+        "c6",
+        "c7",
+        "c8",
+        "c11"
+      ],
+      "relevant_chunk_ids": [
+        "c1",
+        "c12"
+      ],
+      "candidate_count": 8,
+      "partial": false,
+      "latency_ms": 0.9361999982502311,
+      "recall_at_5": 0.0,
+      "recall_at_10": 0.0,
+      "recall_at_20": 0.0,
+      "precision_at_5": 0.0,
+      "precision_at_10": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_10": 0.0,
+      "irrelevant_in_top5": [
+        "c17",
+        "c2",
+        "c5",
+        "c18",
+        "c6"
+      ],
+      "missed_evidence": [
+        "c1",
+        "c12"
+      ]
+    },
+    "evidence": {
+      "item_count": 8,
+      "raw_candidate_count": 8,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin",
+        "doc-conflicting-a",
+        "doc-conflicting-b",
+        "doc-paediatric-guidance",
+        "doc-warfarin-monograph"
+      ],
+      "expected_doc_ids": [
+        "doc-aspirin-pil",
+        "doc-ibuprofen-pil"
+      ],
+      "doc_coverage": 0.5,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 1.477600002544932
+    },
+    "context": {
+      "blocks_included": 8,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 151,
+      "budget_total": 3000,
+      "token_utilization": 0.050333333333333334,
+      "conflicts_detected": true,
+      "conflict_groups": 2,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 1.7425999976694584
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "Aspirin: 325 mg every 4-6 hours [ei_20b3bf4c6b6e6712]. Ibuprofen: 200-400 mg every 4-6 hours [ei_85d7234888298ff1].",
+      "citation_count": 2,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.25949999690055847
+    },
+    "quality": {
+      "coverage_score": 0.5,
+      "coverage_passed": false,
+      "missing_source_ids": [
+        "doc-ibuprofen-pil"
+      ],
+      "faithfulness_score": 0.2857142857142857,
+      "faithfulness_passed": false,
+      "unsupported_claims": [
+        "325 mg",
+        "6 hours",
+        "200",
+        "400 mg",
+        "6 hours"
+      ],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": false
+    }
+  },
+  {
+    "query_id": "q_dosing_table",
+    "category": "tabular",
+    "text": "Show the aspirin dosing table by age band.",
+    "planner": {
+      "intent_category": "tabular",
+      "intent_confidence": 0.8,
+      "expected_intent": "tabular",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "keyword"
+      ],
+      "max_evidence_units": 3,
+      "max_candidates": 10,
+      "scope": "narrow",
+      "latency_ms": 0.2562999870860949,
+      "plan_id": "rp_1187cd1ebfd4c5ed"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c16",
+        "c8"
+      ],
+      "relevant_chunk_ids": [
+        "c16"
+      ],
+      "candidate_count": 2,
+      "partial": false,
+      "latency_ms": 0.39850000757724047,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "precision_at_5": 0.5,
+      "precision_at_10": 0.5,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0,
+      "irrelevant_in_top5": [
+        "c8"
+      ],
+      "missed_evidence": []
+    },
+    "evidence": {
+      "item_count": 2,
+      "raw_candidate_count": 2,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-dose-table",
+        "doc-paediatric-guidance"
+      ],
+      "expected_doc_ids": [
+        "doc-aspirin-dose-table"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.5096999957459047
+    },
+    "context": {
+      "blocks_included": 2,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 54,
+      "budget_total": 3000,
+      "token_utilization": 0.018,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.14989999181125313
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "12-15 years: 250-500 mg every 4-6 hours. 16+ years: 300-900 mg every 4-6 hours [ei_250eedb79f734809].",
+      "citation_count": 1,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.10349998774472624
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": true
+    }
+  },
+  {
+    "query_id": "q_storage",
+    "category": "factual",
+    "text": "How should aspirin be stored?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.15579999308101833,
+      "plan_id": "rp_a902a113555c9f7f"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c7",
+        "c20",
+        "c2",
+        "c17",
+        "c5"
+      ],
+      "relevant_chunk_ids": [
+        "c20",
+        "c3"
+      ],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 0.5729999975301325,
+      "recall_at_5": 0.5,
+      "recall_at_10": 0.5,
+      "recall_at_20": 0.5,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "mrr": 0.5,
+      "ndcg_at_10": 0.38685280723454163,
+      "irrelevant_in_top5": [
+        "c7",
+        "c2",
+        "c17",
+        "c5"
+      ],
+      "missed_evidence": [
+        "c3"
+      ]
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin",
+        "doc-conflicting-a",
+        "doc-storage-extended"
+      ],
+      "expected_doc_ids": [
+        "doc-aspirin-pil",
+        "doc-storage-extended"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.7000999903539196
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 92,
+      "budget_total": 3000,
+      "token_utilization": 0.030666666666666665,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.371300004189834
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "Store below 25 degrees Celsius, in a dry place, away from sunlight [ei_20b3bf4c6b6e6712].",
+      "citation_count": 1,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.09200000204145908
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": true
+    }
+  },
+  {
+    "query_id": "q_max_daily_dose_conflict",
+    "category": "conflicting",
+    "text": "What is the maximum daily dose of aspirin for adults?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.15269999857991934,
+      "plan_id": "rp_fe5feb75af86d7fa"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c17",
+        "c18",
+        "c1",
+        "c12",
+        "c19"
+      ],
+      "relevant_chunk_ids": [
+        "c17",
+        "c18"
+      ],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 0.6259000074351206,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.4,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0,
+      "irrelevant_in_top5": [
+        "c1",
+        "c12",
+        "c19"
+      ],
+      "missed_evidence": []
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-aspirin-pil-duplicate",
+        "doc-conflicting-a",
+        "doc-conflicting-b",
+        "doc-ibuprofen-pil"
+      ],
+      "expected_doc_ids": [
+        "doc-conflicting-a",
+        "doc-conflicting-b"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.687899999320507
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 107,
+      "budget_total": 3000,
+      "token_utilization": 0.035666666666666666,
+      "conflicts_detected": true,
+      "conflict_groups": 1,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.4028999974252656
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "Sources disagree: one states 4000 mg/day [ei_cece937d48891ecf], another states 3000 mg/day [ei_fa43c704672a74f3].",
+      "citation_count": 2,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.11480000102892518
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": false
+    }
+  },
+  {
+    "query_id": "q_howto_procedure",
+    "category": "procedural",
+    "text": "Explain how to safely start a patient on aspirin therapy.",
+    "planner": {
+      "intent_category": "procedural",
+      "intent_confidence": 1.0,
+      "expected_intent": "procedural",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "keyword"
+      ],
+      "max_evidence_units": 8,
+      "max_candidates": 30,
+      "scope": "standard",
+      "latency_ms": 0.15279999934136868,
+      "plan_id": "rp_52ccfe2652744cd3"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c2",
+        "c11",
+        "c5",
+        "c7",
+        "c17",
+        "c8",
+        "c6",
+        "c10"
+      ],
+      "relevant_chunk_ids": [
+        "c1",
+        "c7"
+      ],
+      "candidate_count": 8,
+      "partial": false,
+      "latency_ms": 0.9157000022241846,
+      "recall_at_5": 0.5,
+      "recall_at_10": 0.5,
+      "recall_at_20": 0.5,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.125,
+      "mrr": 0.25,
+      "ndcg_at_10": 0.2640681225725909,
+      "irrelevant_in_top5": [
+        "c2",
+        "c11",
+        "c5",
+        "c17"
+      ],
+      "missed_evidence": [
+        "c1"
+      ]
+    },
+    "evidence": {
+      "item_count": 8,
+      "raw_candidate_count": 8,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin",
+        "doc-conflicting-a",
+        "doc-paediatric-guidance",
+        "doc-warfarin-monograph"
+      ],
+      "expected_doc_ids": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.9016000112751499
+    },
+    "context": {
+      "blocks_included": 8,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 156,
+      "budget_total": 3000,
+      "token_utilization": 0.052,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.8275000000139698
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "Start at 325 mg every 4-6 hours [ei_20b3bf4c6b6e6712], using caution in patients with peptic ulcer history [ei_85d7234888298ff1].",
+      "citation_count": 2,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.19899998733308166
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 0.33333333333333337,
+      "faithfulness_passed": false,
+      "unsupported_claims": [
+        "325 mg",
+        "6 hours"
+      ],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": false
+    }
+  },
+  {
+    "query_id": "q_unanswerable_pregnancy",
+    "category": "unanswerable",
+    "text": "Is aspirin safe during the third trimester of pregnancy?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.1660999987507239,
+      "plan_id": "rp_31c9f5199b8a5af1"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c13",
+        "c2",
+        "c17",
+        "c5",
+        "c6"
+      ],
+      "relevant_chunk_ids": [],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 0.5730999982915819,
+      "recall_at_5": null,
+      "recall_at_10": null,
+      "recall_at_20": null,
+      "precision_at_5": null,
+      "precision_at_10": null,
+      "mrr": null,
+      "ndcg_at_10": null,
+      "irrelevant_in_top5": [
+        "c13",
+        "c2",
+        "c17",
+        "c5",
+        "c6"
+      ],
+      "missed_evidence": []
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin",
+        "doc-conflicting-a",
+        "doc-ibuprofen-pil"
+      ],
+      "expected_doc_ids": [],
+      "doc_coverage": null,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 1.0866000084206462
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 85,
+      "budget_total": 3000,
+      "token_utilization": 0.028333333333333332,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.861699998495169
+    },
+    "answer": {
+      "no_answer": true,
+      "answer_text": "The answer could not be found in the provided sources.",
+      "citation_count": 0,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.12450000212993473
+    },
+    "quality": {
+      "coverage_score": null,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": null,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": null,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": true
+    }
+  },
+  {
+    "query_id": "q_side_effects",
+    "category": "factual",
+    "text": "What are the common side effects of aspirin?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.4154999915044755,
+      "plan_id": "rp_442fd27dc119385f"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c4",
+        "c10",
+        "c2",
+        "c17",
+        "c5"
+      ],
+      "relevant_chunk_ids": [
+        "c4"
+      ],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 1.3768000062555075,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "precision_at_5": 0.2,
+      "precision_at_10": 0.2,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0,
+      "irrelevant_in_top5": [
+        "c10",
+        "c2",
+        "c17",
+        "c5"
+      ],
+      "missed_evidence": []
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin",
+        "doc-conflicting-a",
+        "doc-warfarin-monograph"
+      ],
+      "expected_doc_ids": [
+        "doc-aspirin-pil"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.7825000066077337
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 87,
+      "budget_total": 3000,
+      "token_utilization": 0.029,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.4388999950606376
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "Common side effects include stomach upset, heartburn, and nausea [ei_20b3bf4c6b6e6712].",
+      "citation_count": 1,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.12159999459981918
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": true
+    }
+  },
+  {
+    "query_id": "q_ambiguous_dose",
+    "category": "ambiguous",
+    "text": "What's the dose?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 0.4,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": true,
+      "strategies": [],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.2739000046858564,
+      "plan_id": "rp_bda2bc9ef04dca55"
+    },
+    "retrieval": null,
+    "evidence": null,
+    "context": null,
+    "answer": {
+      "no_answer": true,
+      "reason": "clarification_required"
+    },
+    "quality": null
+  },
+  {
+    "query_id": "q_duplicate_collision",
+    "category": "factual",
+    "text": "What dose of aspirin should adults take for pain relief?",
+    "planner": {
+      "intent_category": "factual",
+      "intent_confidence": 1.0,
+      "expected_intent": "factual",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "hybrid"
+      ],
+      "max_evidence_units": 5,
+      "max_candidates": 20,
+      "scope": "narrow",
+      "latency_ms": 0.15870000061113387,
+      "plan_id": "rp_a304ebdf2262bcf1"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c19",
+        "c1",
+        "c12",
+        "c7",
+        "c17"
+      ],
+      "relevant_chunk_ids": [
+        "c1",
+        "c19"
+      ],
+      "candidate_count": 5,
+      "partial": false,
+      "latency_ms": 0.794000006862916,
+      "recall_at_5": 1.0,
+      "recall_at_10": 1.0,
+      "recall_at_20": 1.0,
+      "precision_at_5": 0.4,
+      "precision_at_10": 0.4,
+      "mrr": 1.0,
+      "ndcg_at_10": 1.0,
+      "irrelevant_in_top5": [
+        "c12",
+        "c7",
+        "c17"
+      ],
+      "missed_evidence": []
+    },
+    "evidence": {
+      "item_count": 5,
+      "raw_candidate_count": 5,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-aspirin-pil-duplicate",
+        "doc-bnf-aspirin",
+        "doc-conflicting-a",
+        "doc-ibuprofen-pil"
+      ],
+      "expected_doc_ids": [
+        "doc-aspirin-pil",
+        "doc-aspirin-pil-duplicate"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.6140000041341409
+    },
+    "context": {
+      "blocks_included": 5,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 110,
+      "budget_total": 3000,
+      "token_utilization": 0.03666666666666667,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.39960000140126795
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "The adult dose is 325 mg every 4 to 6 hours [ei_cece937d48891ecf].",
+      "citation_count": 1,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.11910000466741621
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 1.0,
+      "faithfulness_passed": true,
+      "unsupported_claims": [],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": true
+    }
+  },
+  {
+    "query_id": "q_navigational_section",
+    "category": "navigational",
+    "text": "Where is the interactions section for aspirin located?",
+    "planner": {
+      "intent_category": "navigational",
+      "intent_confidence": 0.8,
+      "expected_intent": "navigational",
+      "intent_correct": true,
+      "clarification_required": false,
+      "strategies": [
+        "semantic",
+        "keyword"
+      ],
+      "max_evidence_units": 3,
+      "max_candidates": 15,
+      "scope": "narrow",
+      "latency_ms": 0.16110000433400273,
+      "plan_id": "rp_467c08fc2f8d53f0"
+    },
+    "retrieval": {
+      "ranked_chunk_ids": [
+        "c2",
+        "c17",
+        "c5"
+      ],
+      "relevant_chunk_ids": [
+        "c6",
+        "c7"
+      ],
+      "candidate_count": 3,
+      "partial": false,
+      "latency_ms": 0.5829000001540408,
+      "recall_at_5": 0.0,
+      "recall_at_10": 0.0,
+      "recall_at_20": 0.0,
+      "precision_at_5": 0.0,
+      "precision_at_10": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_10": 0.0,
+      "irrelevant_in_top5": [
+        "c2",
+        "c17",
+        "c5"
+      ],
+      "missed_evidence": [
+        "c6",
+        "c7"
+      ]
+    },
+    "evidence": {
+      "item_count": 3,
+      "raw_candidate_count": 3,
+      "token_reduction_ratio": 1.0,
+      "doc_ids_present": [
+        "doc-aspirin-pil",
+        "doc-bnf-aspirin",
+        "doc-conflicting-a"
+      ],
+      "expected_doc_ids": [
+        "doc-bnf-aspirin"
+      ],
+      "doc_coverage": 1.0,
+      "duplicate_chunk_ids": [],
+      "dedup_method_used": "character_ngram",
+      "latency_ms": 0.3254999901400879
+    },
+    "context": {
+      "blocks_included": 3,
+      "items_dropped": 0,
+      "items_compressed": 0,
+      "token_count": 46,
+      "budget_total": 3000,
+      "token_utilization": 0.015333333333333332,
+      "conflicts_detected": false,
+      "conflict_groups": 0,
+      "lost_relevant_chunks_after_evidence": [],
+      "latency_ms": 0.25749999622348696
+    },
+    "answer": {
+      "no_answer": false,
+      "answer_text": "The interactions section covers warfarin [ei_20b3bf4c6b6e6712] and peptic ulcer precautions [ei_85d7234888298ff1].",
+      "citation_count": 2,
+      "grounding_flags": [],
+      "conflicts_disclosed": false,
+      "latency_ms": 0.0847000046633184
+    },
+    "quality": {
+      "coverage_score": 1.0,
+      "coverage_passed": true,
+      "missing_source_ids": [],
+      "faithfulness_score": 0.0,
+      "faithfulness_passed": false,
+      "unsupported_claims": [
+        "The interactions section covers warfarin   and peptic ulcer precautions  ."
+      ],
+      "completeness_score": 1.0,
+      "completeness_passed": true,
+      "uncovered_facets": [],
+      "overall_passed": false
+    }
+  }
+]

@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: NADOLOL
+Risk: Weekend effect bradycardia
+Type: Pharmacodynamic (cumulative blockade)
+Monitoring: Friday-Monday HR comparison
+Dose adjustment: Nadolol QAM dosing
+Alternative: Sucralfate
+Patient warning: Sunday pulse checks; report fatigue.
+Severity: caution
+
+Clinical note:
+Risk: Weekend effect bradycardia; Type: Pharmacodynamic (cumulative blockade); Monitoring: Friday-Monday HR comparison; Dosage: Nadolol QAM dosing; Alternative: Sucralfate; Patient Warnings: Sunday pulse checks; report fatigue.

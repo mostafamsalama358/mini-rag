@@ -1,0 +1,15 @@
+Alias registry — Cataflam
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 17
+Brand: Cataflam
+
+Known aliases:
+- Cataflam (brand)
+- CATAFLAM 50 MG 20 SUGAR C.TABS. (catalog_sku)
+- Diclofenac Potassium (inn)
+- DICLOFENAC (inn_alias)
+- DICLOFENAC SODIUM (inn_alias)
+- كتافلام (arabic)
+- كاتافلام (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

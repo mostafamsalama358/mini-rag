@@ -23,6 +23,25 @@ _CATEGORICAL_PAIRS: tuple[tuple[str, str], ...] = (
     ("enabled", "disabled"),
 )
 _WINDOW_CHARS = 100
+# Numbers only conflict when they share an attribute cue (dose vs age, etc.).
+_ATTRIBUTE_CUES: dict[str, tuple[str, ...]] = {
+    "dose": (
+        "dose",
+        "dosage",
+        "mg",
+        "mcg",
+        "g",
+        "tablet",
+        "tablets",
+        "maximum",
+        "max",
+        "daily",
+        "every",
+        "hours",
+    ),
+    "age": ("age", "year", "years", "old", "under", "over", "paediatric", "pediatric"),
+    "duration": ("day", "days", "week", "weeks", "month", "months", "hour", "hours"),
+}
 
 
 class EntityTagConflictDetector(IConflictDetector):
@@ -44,18 +63,19 @@ class EntityTagConflictDetector(IConflictDetector):
                 if len(tagged_items) < 2:
                     continue
 
-                numeric_by_item: dict[str, set[str]] = {}
+                numeric_by_attr: dict[str, dict[str, set[str]]] = defaultdict(dict)
                 for item in tagged_items:
-                    numeric_by_item[item.item_id] = _extract_numeric_values(
-                        item.text, tag
-                    )
+                    by_attr = _extract_numeric_values_by_attribute(item.text, tag)
+                    for attr, values in by_attr.items():
+                        numeric_by_attr[attr][item.item_id] = values
 
-                all_numeric: set[str] = set()
-                for values in numeric_by_item.values():
-                    all_numeric.update(values)
-                if len(all_numeric) > 1:
-                    key = (tag, f"{tag}:numeric")
-                    groups[key].update(item.item_id for item in tagged_items)
+                for attr, per_item in numeric_by_attr.items():
+                    all_numeric: set[str] = set()
+                    for values in per_item.values():
+                        all_numeric.update(values)
+                    if len(all_numeric) > 1 and len(per_item) >= 2:
+                        key = (tag, f"{tag}:{attr}")
+                        groups[key].update(per_item.keys())
 
                 categorical_by_item: dict[str, set[str]] = {}
                 for item in tagged_items:
@@ -99,7 +119,19 @@ class EntityTagConflictDetector(IConflictDetector):
 
 
 def _extract_numeric_values(text: str, entity_tag: str) -> set[str]:
+    """Backward-compatible flat extract; prefer attribute-aware helper."""
+    by_attr = _extract_numeric_values_by_attribute(text, entity_tag)
     values: set[str] = set()
+    for attrs in by_attr.values():
+        values.update(attrs)
+    return values
+
+
+def _extract_numeric_values_by_attribute(
+    text: str, entity_tag: str
+) -> dict[str, set[str]]:
+    """Map attribute cue → numeric tokens near the entity tag."""
+    by_attr: dict[str, set[str]] = defaultdict(set)
     lower_text = text.lower()
     lower_tag = entity_tag.lower()
     start = 0
@@ -110,9 +142,21 @@ def _extract_numeric_values(text: str, entity_tag: str) -> set[str]:
         window_start = max(0, idx - _WINDOW_CHARS)
         window_end = min(len(text), idx + len(entity_tag) + _WINDOW_CHARS)
         window = text[window_start:window_end]
-        values.update(_NUMERIC_PATTERN.findall(window))
+        window_lower = window.lower()
+        numbers = _NUMERIC_PATTERN.findall(window)
+        if not numbers:
+            start = idx + len(entity_tag)
+            continue
+        matched_attr = False
+        for attr, cues in _ATTRIBUTE_CUES.items():
+            if any(re.search(rf"\b{re.escape(cue)}\b", window_lower) for cue in cues):
+                by_attr[attr].update(numbers)
+                matched_attr = True
+        if not matched_attr:
+            # No shared attribute cue → ignore (avoids dose↔age false positives).
+            pass
         start = idx + len(entity_tag)
-    return values
+    return by_attr
 
 
 def _extract_categorical_values(text: str, entity_tag: str) -> set[str]:

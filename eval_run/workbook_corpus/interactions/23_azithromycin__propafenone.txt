@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: PROPAFENONE
+Risk: Additive QT prolongation (especially with hypokalemia)
+Type: Pharmacodynamic
+Monitoring: ECG (QTc) & K⁺ if combination unavoidable
+Dose adjustment: Prefer single 1g dose over multi-day
+Alternative: Ceftriaxone
+Patient warning: /Management: Report syncope/palpitations immediately.
+Severity: yes
+
+Clinical note:
+Risk: Additive QT prolongation (especially with hypokalemia); Type: Pharmacodynamic; Monitoring: ECG (QTc) & K⁺ if combination unavoidable; Dosage Adjustments: Prefer single 1g dose over multi-day; Alternative: Ceftriaxone; Patient Warnings/Management: Report syncope/palpitations immediately.

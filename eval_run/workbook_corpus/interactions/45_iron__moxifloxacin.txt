@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: MOXIFLOXACIN
+Risk: Moxifloxacin chelates iron in the gut, reducing antibiotic absorption by ~30–50% and risking subtherapeutic exposure; separate doses by ≥2 h, monitor infection response, and instruct patients to space iron supplements aw
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Moxifloxacin chelates iron in the gut, reducing antibiotic absorption by ~30–50% and risking subtherapeutic exposure; separate doses by ≥2 h, monitor infection response, and instruct patients to space iron supplements away from antibiotic dosing.

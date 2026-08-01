@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: BISOPROLOL FUMARATE
+Risk: Moderate increase in bisoprolol levels (partial CYP2D6 metabolism)
+Type: Pharmacokinetic
+Monitoring: BP/HR trends
+Dose adjustment: Reduce by 25-50% if needed
+Alternative: Atenolol
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Moderate increase in bisoprolol levels (partial CYP2D6 metabolism); Type: Pharmacokinetic; Monitoring: BP/HR trends; Dosage: Reduce by 25-50% if needed; Alternative: Atenolol; Patient: Report excessive fatigue.

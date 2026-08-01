@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: METHOTREXATE
+Risk: OATP1B1 inhibition → hepatic MTX retention.
+Type: -
+Monitoring: Daily LFTs +胆汁酸. Dose Adjustment: MTX ≤15mg/m² with cipro.
+Dose adjustment: -
+Alternative: -
+Patient warning: Pruritus precedes hepatotoxicity.
+Severity: caution
+
+Clinical note:
+Risk: OATP1B1 inhibition → hepatic MTX retention. Monitoring: Daily LFTs +胆汁酸. Dose Adjustment: MTX ≤15mg/m² with cipro. Patient Warning: Pruritus precedes hepatotoxicity.

@@ -1,0 +1,17 @@
+Alias registry — Gaviscon Advance
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 26
+Brand: Gaviscon Advance
+
+Known aliases:
+- Gaviscon Advance (brand)
+- GAVISCON ADVANCE 150 ML (catalog_sku)
+- Sodium Alginate (inn)
+- ALGINATE (inn_alias)
+- SODIUM (inn_alias)
+- Potassium Bicarbonate (inn)
+- POTASSIUM (inn_alias)
+- جافيسكون (arabic)
+- جافسكون (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

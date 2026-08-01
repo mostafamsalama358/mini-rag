@@ -1,0 +1,139 @@
+BUSCOPAN PLUS 20 F.C.TAB. (N/A)
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Buscopan
+Catalog SKU: BUSCOPAN PLUS 20 F.C.TAB. (N/A)
+INN / actives: Hyoscine Butylbromide * Hyoscine
+Catalog New Material: HYOSCINE * PARACETAMOL (ACETAMINOPHEN)
+Strength / form: Catalog match Buscopan Plus (hyoscine butylbromide + analgesic combo) / Buscopan class | (web-supplemented dosing below)
+Manufacturer / market: SANOFI
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-SPASMODIC
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=BUSCOPAN PLUS; sheet lookup INNs=Hyoscine Butylbromide, Hyoscine, HYOSCINE, PARACETAMOL (ACETAMINOPHEN)
+Web clinical sources: Buscopan / Buscopan Plus SmPC class
+
+1. What Buscopan is used for
+Catalog uses: antispasmodic
+Approved uses (material sheet): Motion Sickness - Transdermal patch (1 mg/72h) or tablets (0.3 : 0.6 mg PRN)*
+Postoperative Nausea/Vomiting (PONV) - Patch applied pre surgery*
+Palliative Care - 0.2 : 0.4 mg SC q4h for excessive secretions*
+Off-label mentions (material sheet): Irritable Bowel Syndrome - 10 to 20 mg PO TID* 
+Clozapine Induced Drooling - 1 mg patch/72h*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Hyoscine butylbromide class: often 10–20 mg up to 3–4×/day. Buscopan Plus: follow combo pack (includes analgesic) — do not exceed labeled maxima.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Age-restricted; paediatric products when needed.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Buscopan if / disease cautions
+From material/disease sheets:
+[HYOSCINE BUTYLBROMIDE] Hypersensitivity to HYOSCINE*
+Angle‑closure glaucoma*
+Obstructive GI Diseases* 
+Myasthenia Gravis*
+Hypersensitivity to BELLADONNA*
+[BUTYLSCOPOLAMINE] Hypersensitivity to SCOPOLAMINE *
+Angle‑closure glaucoma*
+Non‑specific active hemorrhage / major bleeding *
+Urinary Retention * 
+Benign prostatic hyperplasia (BPH) * 
+Obstructive GI Diseases *
+Myasthenia Gravis*
+[PARACETAMOL (ACETAMINOPHEN)] Hypersensitivity to PARACETAMOL (ACETAMINOPHEN) * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None. 
+• Critical Warnings:
+- Acute angle-closure glaucoma (discontinue if eye pain/vision loss occurs).
+- Severe CNS effects (hallucinations, seizures) in overdose
+Notes (material sheet): • Avoid:
+- Other anticholinergics ( TCAs, antihistamines) → ↑ side effects.
+- Probiotics (no interaction but may mask underlying IBS/SIBO).
+.........................................................................
+• Dose Modification:
+- Renal/Hepatic: 
+Reduce dose in severe impairment; avoid in cirrhosis.
+............................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Category B2 (AU); use only if benefits outweigh risks.
+- Lactation: 
+Avoid (excreted in breast milk).
+................................................................
+• Lab Interactions: 
+-Interferes with gastric secretion tests.
+................................................…
+Patient education excerpt: • Timing: Tablets: 
+- 30 min pre-travel; Patch: 4–6h pre-exposure (behind ear).
+• Missed Dose: 
+-Skip if close to next dose; never double.
+• Interactions: 
+-Avoid alcohol, CNS depressants, MAOIs .
+• Overdose: 
+-Seek help for confusion/seizures
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Hyoscine + PROPAFENONE: Risk: Pronounced sedation, memory impairment; Type: Pharmacodynamic; Monitoring: Respiratory rate (if combined with other sedatives), cognition; Dosage Adjustments: Avoid in CNS-depressant users; Alternative: Scopolamine patch (lower oral burden); Patient Warnings/Management: Avoid driving, use alarms for medication r…
+- Hyoscine + NITROGLYCERIN: Risk: Toxic delirium (CNS penetration). Type: Pharmacodynamic. Monitoring: CAM-ICU score. Dosage Adjustments: Transdermal only. Alternative: Meclizine. Patient Warnings/Management: Caregiver supervision required.
+- Hyoscine + ISOSORBIDE DINITRATE: Risk: Delirium in elderly. Type: Pharmacodynamic. Monitoring: CAM-ICU score. Dosage Adjustments: Transdermal only. Alternative: Meclizine. Patient Warnings/Management: Caregiver supervision required.
+- Hyoscine + ISOSORBIDE-5-MONONITRATE: Risk: Delirium in elderly. Type: Pharmacodynamic. Monitoring: CAM-ICU score. Dosage Adjustments: Transdermal only. Alternative: Meclizine. Patient Warnings/Management: Caregiver supervision required.
+- Hyoscine + SODIUM NITROPRUSSIDE: Risk: Delirium, toxic megacolon (elderly); Type: Pharmacodynamic; Monitoring: RR, pupil dilation; Dosage: Avoid IV hyoscine; Alternative: Scopolamine patch (lower systemic exposure); Patient Warnings/Management: Supervise for agitation.
+- Hyoscine + MEMANTINE: Risk: Sedation (RASS ≤-1). Type: Pharmacodynamic. Monitoring: Sedation scale q8h. Dosage Adjustments: ↓ HYOSCINE 50%. Alternative: Ondansetron. Patient Warnings/Management: Avoid alcohol.
+- Hyoscine + ISOCARBOXAZID: Risk: Visual hallucinations, coma; Type: Pharmacodynamic; Monitoring: GCS if sedated; Dosage: Transdermal only; Alternative: Ondansetron; Patient: Discontinue if "dream-like" state occurs.
+- Hyoscine + PHENELZINE: Risk: Serotonin syndrome, coma; Type: Pharmacodynamic; Monitoring: GCS, clonus assessment; Dosage: Transdermal only (≤1mg/72h); Alternative: Granisetron; Patient: Discontinue if myoclonus; avoid fermented foods.
+- Hyoscine + SELEGILINE CHLORIDE: Risk: Worsened sialorrhea management, paradoxical drooling; Type: Pharmacodynamic; Monitoring: Saliva production scale; Dosage: Transdermal only; Alternative: Glycopyrronium wipes; Patient: Change patches cautiously.
+- Hyoscine + TRANYLCYPROMINE: Risk: Serotonin syndrome, coma; Type: Pharmacodynamic; Monitoring: GCS, hyperreflexia; Dosage: Transdermal only (≤1mg/72h); Alternative: Ondansetron; Patient: Discontinue if myoclonus; avoid fermented foods.
+- Hyoscine + MOCLOBEMIDE: Risk: Visual hallucinations, coma; Type: Pharmacodynamic; Monitoring: GCS if sedated; Dosage: Transdermal only; Alternative: Ondansetron; Patient: Discontinue if "dream-like" state occurs.
+- Hyoscine + LINEZOLID: Risk: Serotonin syndrome, coma; Type: Pharmacodynamic; Monitoring: GCS, hyperreflexia; Dosage: Transdermal only; Alternative: Ondansetron; Patient: Discontinue if myoclonus.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Ask doctor; anticholinergics used with caution.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Ask clinician; limited data.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Drowsiness (20–30%)*
+Dry mouth (15–25%)*
+Blurred vision (12–20%)*
+Minor (material sheet): Urinary retention (5–8%)*
+Tachycardia (4–7%)*
+Hallucinations (rare)*
+Confusion (rare)*
+Bradycardia (1-5%)*
+Flushing (1-5%)*
+Orthostatic hypotension (1-5%)*
+Amnesia (1-3%)*
+Ataxia (being like drunk (1%)*
+Fatigue (1-5%)*
+Headache (1-5%)*
+Restlessness (1-5%)*
+Sedation (1-10%)*
+Dyshidrotic eczema (1-5%)*
+Erythema (1-5%)*
+Hypohidrosis (1-5%)*
+pruritus (1-5%)*
+skin rash - including drug eruption (1-5%)*
+urticaria (1-5%)*
+xeroderma (1-5%)*
+Increased thirst (1-5%)*
+Constipation (1-5%)*
+Diarrhea (1-2%)*
+dysphagia (1-5%)*
+Nausea/Vomiting (1-5%)*
+Dysuria (1-5%)*
+Angioedema (1-5%)*
+Tremor (1-5%)*
+Weaknes…
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

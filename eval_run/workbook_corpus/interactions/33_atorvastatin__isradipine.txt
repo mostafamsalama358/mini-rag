@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: ISRADIPINE
+Risk: Orthostatic myopathy
+Type: Pharmacodynamic
+Monitoring: Postural CK changes
+Dose adjustment: Atorvastatin ≤20mg
+Alternative: Isradipine + colesevelam
+Patient warning: /Management: Rise slowly.
+Severity: caution
+
+Clinical note:
+Risk: Orthostatic myopathy; Type: Pharmacodynamic; Monitoring: Postural CK changes; Dosage Adjustments: Atorvastatin ≤20mg; Alternative: Isradipine + colesevelam; Patient Warnings/Management: Rise slowly.

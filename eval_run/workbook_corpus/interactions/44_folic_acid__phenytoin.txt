@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: PHENYTOIN
+Risk: Reduced phenytoin efficacy → breakthrough seizures.
+Type: -
+Monitoring: Serum phenytoin monthly; RBC folate.
+Dose adjustment: Limit folate to ≤1 mg/day; increase phenytoin as needed.
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Reduced phenytoin efficacy → breakthrough seizures. Monitoring: Serum phenytoin monthly; RBC folate. Dosage: Limit folate to ≤1 mg/day; increase phenytoin as needed. Patient: Take folate at opposite time of day from phenytoin.

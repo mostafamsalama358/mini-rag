@@ -31,14 +31,10 @@ services:
     env_file:
       - ./env/.env.app
     environment:
-      RAG_ENABLE_RERANKER: "true"
+      RAG_ENABLE_RERANKER: "false"
       RAG_SEMANTIC_PARSER_ENABLED: "true"
       RAG_PIPELINE_DIAGNOSTICS: "true"
       RAG_INDEXING_TRACE_ENTITY: "CATAFLAM"
-      RAG_RERANKER_BACKEND: "bge"
-      RAG_RERANKER_MODEL: "BAAI/bge-reranker-v2-m3"
-      RAG_RERANKER_DEVICE: "cpu"
-      RAG_RERANKER_WARMUP_ON_STARTUP: "true"
 
   # Celery Worker
   celery-worker:
@@ -48,7 +44,8 @@ services:
     container_name: celery-worker
     entrypoint: ["/bin/bash", "-c"]
     command:
-      - exec python -m celery -A celery_app worker --queues=default,file_processing,data_indexing --loglevel=info --concurrency=8
+      # concurrency=2 while Vertex embedding quota is tight (was 8)
+      - exec python -m celery -A celery_app worker --queues=default,file_processing,data_indexing --loglevel=info --concurrency=2
     volumes:
       - fastapi_data:/app/assets
       - ../src:/app
@@ -67,12 +64,8 @@ services:
     env_file:
       - ./env/.env.app
     environment:
-      RAG_ENABLE_RERANKER: "true"
+      RAG_ENABLE_RERANKER: "false"
       RAG_SEMANTIC_PARSER_ENABLED: "true"
-      RAG_RERANKER_BACKEND: "bge"
-      RAG_RERANKER_MODEL: "BAAI/bge-reranker-v2-m3"
-      RAG_RERANKER_DEVICE: "cpu"
-      RAG_RERANKER_WARMUP_ON_STARTUP: "true"
     mem_limit: 8g
     memswap_limit: 8g
   celery-beat:

@@ -65,6 +65,9 @@ class RetrievalContext(BaseModel):
     constraints: RetrievalConstraints | None = None
     hints: ExecutionHints | None = None
     policy: ExecutionPolicy
+    # Adapter scope: collection_name, project_id, entity_key, entity_prefix,
+    # field_key, metadata_filter, limit, etc. (spec 015 adapters contract).
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
 
 class ExpansionContext(BaseModel):

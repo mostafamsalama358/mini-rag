@@ -1,0 +1,6 @@
+﻿id: side_effects
+filters:
+  field:
+    - side_effects
+notes: Live corpus is RAG_CORPUS Excel workbook render (txt), not legacy /leaflets PDFs.
+retrieval_strategy: default

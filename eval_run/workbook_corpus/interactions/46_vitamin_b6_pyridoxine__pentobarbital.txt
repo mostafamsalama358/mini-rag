@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B6 (PYRIDOXINE)
+API 2: PENTOBARBITAL
+Risk: Pyridoxine-induced clearance → inadequate coma induction in refractory status epilepticus.
+Type: -
+Monitoring: Continuous EEG in ICU settings.
+Dose adjustment: Higher pentobarbital loading doses (5-10mg/kg).
+Alternative: -
+Patient warning: N/A (critical care use only).
+Severity: caution
+
+Clinical note:
+Risk: Pyridoxine-induced clearance → inadequate coma induction in refractory status epilepticus. Monitoring: Continuous EEG in ICU settings. Dosage: Higher pentobarbital loading doses (5-10mg/kg). Patient Warning: N/A (critical care use only).

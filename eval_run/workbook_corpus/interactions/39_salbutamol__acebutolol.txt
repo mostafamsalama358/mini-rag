@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: ACEBUTOLOL
+Risk: Partial β₂-blockade (ISA may reduce but not eliminate risk)
+Type: Pharmacodynamic
+Monitoring: FEV₁, nocturnal symptoms
+Dose adjustment: Acebutolol ≤200 mg BID
+Alternative: Amlodipine
+Patient warning: /Management: Report increased inhaler use.
+Severity: caution
+
+Clinical note:
+Risk: Partial β₂-blockade (ISA may reduce but not eliminate risk); Type: Pharmacodynamic; Monitoring: FEV₁, nocturnal symptoms; Dosage Adjustments: Acebutolol ≤200 mg BID; Alternative: Amlodipine; Patient Warnings/Management: Report increased inhaler use.

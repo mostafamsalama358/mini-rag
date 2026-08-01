@@ -1,0 +1,16 @@
+Drug interaction — Brufen
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 18
+Brand: Brufen
+API 1: IBUPROFEN
+API 2: LOSARTAN POTASSIUM
+Risk: HTN exacerbation (SBP↑ 10-14mmHg)
+Type: Pharmacodynamic
+Monitoring: Home BP TID
+Dose adjustment: ≤400mg TID x5d
+Alternative: Naproxen
+Patient warning: Morning BP checks critical
+Severity: caution
+
+Clinical note:
+Risk: HTN exacerbation (SBP↑ 10-14mmHg); Type: Pharmacodynamic; Monitoring: Home BP TID; Dosage: ≤400mg TID x5d; Alternative: Naproxen; Patient Warnings: Morning BP checks critical

@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: AMOBARBITAL
+Risk: Reduced montelukast efficacy (CYP3A4/CYP2C9 induction) worsening asthma control. Monitor: Asthma symptoms, PEFR/FEV1, rescue inhaler use. Dose Adjust: Consider montelukast dose increase if control declines
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: Report increased wheezing/shortness of breath immediately; never stop asthma meds without…
+Severity: caution
+
+Clinical note:
+Risk: Reduced montelukast efficacy (CYP3A4/CYP2C9 induction) worsening asthma control. Monitor: Asthma symptoms, PEFR/FEV1, rescue inhaler use. Dose Adjust: Consider montelukast dose increase if control declines; Patient Warning: Report increased wheezing/shortness of breath immediately; never stop asthma meds without…

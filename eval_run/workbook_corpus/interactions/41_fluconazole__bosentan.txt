@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: BOSENTAN
+Risk: Moderate hepatotoxicity (ALT >3×ULN in 20%).
+Type: Pharmacokinetic.
+Monitoring: LFTs weekly.
+Dose adjustment: Reduce bosentan to 62.5mg daily.
+Alternative: Selexipag.
+Patient warning: /Management: Standard PAH monitoring.
+Severity: caution
+
+Clinical note:
+Risk: Moderate hepatotoxicity (ALT >3×ULN in 20%). Type: Pharmacokinetic. Monitoring: LFTs weekly. Dosage Adjustments: Reduce bosentan to 62.5mg daily. Alternative: Selexipag. Patient Warnings/Management: Standard PAH monitoring.

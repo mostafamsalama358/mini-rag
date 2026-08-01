@@ -1,0 +1,142 @@
+BRUFEN 400 MG 30 TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Brufen
+Product line: Brufen
+Catalog SKU: BRUFEN 400 MG 30 TABS.
+SKU ID: 18
+INN / actives: Ibuprofen
+INN primary: Ibuprofen
+INN aliases: IBUPROFEN
+Strength / form: Ibuprofen 400 mg | Form=TAB. | Min.age=12 years
+Manufacturer / market: ABBOTT LABORATORIES
+Price (catalog): 78
+Categories: MEDICINE > PAIN, FEVER & INFLAMMATION > ANALGESICS & ANTI-PYRETICS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Brufen is used for
+Pain/fever - 200 : 400mg q4 : 6h (max 1200mg/day OTC; 3200mg/day Rx)*
+RA/OA - 400 : 800mg TID (max 2400 : 3200mg/day)*
+
+2. Dosage — Adults
+Adult dose: 1 tablet every 6-8 hours; max 1200-2400 mg/day
+Maximum daily dose: 2400 mg/day (2400 mg/day)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: See pack
+Pediatric dose: 20-30 mg/kg/day in 3-4 divided doses. Max 40 mg/kg/day.
+Pediatric max daily dose: 40 mg/kg/day
+
+4. Do not take Brufen if / disease cautions
+Infants under 6 months *
+Hypersensitivity to NSAIDs/ASPIRIN *
+Specific Coagulopathies & Platelet Disorders *
+Asthma & Reactive Airway Diseases * 
+Acute liver failure (including fulminant hepatic necrosis and acute‑on‑chronic liver failure) * 
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation *
+Liver tumours (malignant and benign) * 
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) * 
+Stevens-Johnson syndrome (SJS) * 
+Toxic Epidermal Necrolysis (TEN)* 
+Third trimester pregnancy*
+Coronary Artery Disease & Ischemic Heart Disease * 
+Solitary kidney*
+Cardiac Procedures & Perioperative Pain*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • CARDIOVASCULAR RISK:
+-↑ MI/stroke risk (may be fatal). Risk starts 1st week; highest at ≥2,400mg/day. Avoid post-CABG .
+
+• GI RISK:
+-↑ Ulcer/bleeding/perforation (may be fatal). Elderly/high-dose/history of ulcers highest risk .
+Warnings: • Avoid:
+- High-dose VITAMIN E (TOCOPHEROL) , Ginkgo , Garlic (↑ bleed risk)
+• Caution with: 
+- Fish Oil / OMEGA 3 (additive antiplatelet effect)
+.......................................................................
+• Dose Mod:
+- Renal: 
+Avoid if eGFR <30 mL/min
+- Hepatic: 
+Avoid in severe impairment (Child-Pugh C)
+- DDI: 
+↓ Dose w/aspirin, anticoagulants
+..........................................................
+• HCP Info:
+- Risks: 
+GI bleed, AKI, MI/stroke
+- Stop if: 
+Dark stools, abdominal pain, ↓ urine output
+- Surgery: 
+D/C ≥48h pre-op (if non-essential)
+.....................................................................
+• Pregnancy: 
+-Avoid ≥30 wks (D closure risk)
+• Lactation: 
+-
+HCP notes: • Avoid:
+- High-dose VITAMIN E (TOCOPHEROL) , Ginkgo , Garlic (↑ bleed risk)
+• Caution with: 
+- Fish Oil / OMEGA 3 (additive antiplatelet effect)
+.......................................................................
+• Dose Mod:
+- Renal: 
+Avoid if eGFR <30 mL/min
+- Hepatic: 
+Avoid in severe impairment (Child-Pugh C)
+- DDI: 
+↓ Dose w/aspirin, anticoagulants
+..........................................................
+• HCP Info:
+- Risks: 
+GI bleed, AKI, MI/stroke
+- Stop if: 
+Dark stools, abdominal pain, ↓ urine output
+- Surgery: 
+D/C ≥48h pre-op (if non-essential)
+.....................................................................
+• Pregnancy: 
+-Avoid ≥30 wks (D closure risk)
+• Lactation: 
+-
+Patient education: • Timing: 
+-Take w/food/milk. For chronic use, dose with meals.
+• Food: 
+-Avoid alcohol (↑ GI bleed risk).
+• Missed Dose: 
+-Skip if near next dose; never double.
+• Overdose: 
+-No specific antidote. ER immediately for vomiting, drowsiness, or black stools.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- IBUPROFEN + PROPAFENONE; Risk: Reversible ↓ propafenone metabolism (CYP2C9 competition) → arrhythmia risk; Type: Pharmacokinetic; Monitoring: ECG (prolonged PR/QRS), ibuprofen duration; Dose adjustment: Limit ibuprofen to 3 days; Alternative: Naproxen (preferred CYP2C9 substrate); Patient warning: Report palpitations, avoid high-dose OTC…
+- IBUPROFEN + CAPTOPRIL; Risk: Reversible AKI and hypertension exacerbation; Type: Pharmacodynamic (prostaglandin-mediated); Monitoring: BP, renal function (baseline + 3–5 days post-NSAID start); Dose adjustment: Adjust captopril based on BP response; Alternative: Naproxen if CVD risk low, but same precautions apply; Patient warning: /Manag…
+- IBUPROFEN + ENALAPRIL; Risk: Moderate BP elevation and reversible AKI; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dose adjustment: Adjust enalapril based on BP response; Alternative: Naproxen if CVD risk low; Patient warning: /Management: Use lowest effective ibuprofen dose (≤400 mg/dose).
+- IBUPROFEN + LISINOPRIL; Risk: Moderate BP elevation and reversible AKI; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dose adjustment: Adjust lisinopril based on BP response; Alternative: Naproxen if CVD risk low; Patient warning: /Management: Use lowest effective ibuprofen dose (≤400 mg/dose).
+- IBUPROFEN + RAMIPRIL; Risk: Moderate BP increase and reversible renal dysfunction; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dose adjustment: Adjust ramipril based on response; Alternative: Naproxen if CVD risk low; Patient warning: /Management: Use ≤400 mg ibuprofen per dose.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: avoid
+
+8. Breastfeeding
+Breastfeeding safety: use_with_caution
+
+9. Supplements / cross-selling
+Catalog cross-selling: Controloc 20|Gaviscon Advance
+
+10. Possible side effects
+Major: Dyspepsia (10-15%)*
+Nausea (10%)*
+Headache (10%)*
+Dizziness (10%)*
+Minor: GI ulcer (1-2%)*
+GI bleeding (1-2%)*
+Hypertension (5%)*
+Rash (3%)*
+Tinnitus (2%)*
+AKI (1%)*
+Anaphylaxis (<1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

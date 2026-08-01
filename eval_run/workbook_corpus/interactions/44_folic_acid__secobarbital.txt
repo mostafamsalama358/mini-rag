@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: SECOBARBITAL
+Risk: Subtherapeutic levels → withdrawal seizures. Monitor: Withdrawal symptoms, level checks after folate initiation. Dose Adjust: ↑ Secobarbital by 25-50mg if levels drop >25%.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Subtherapeutic levels → withdrawal seizures. Monitor: Withdrawal symptoms, level checks after folate initiation. Dose Adjust: ↑ Secobarbital by 25-50mg if levels drop >25%. Patient: Taper gradually if discontinuing; report anxiety/tremors.

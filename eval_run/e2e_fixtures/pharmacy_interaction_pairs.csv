@@ -1,0 +1,24 @@
+drug_a,drug_b,severity_level,summary,preferred_alternative
+warfarin,ibuprofen,avoid,Increased bleeding and INR effect; avoid OTC NSAIDs,paracetamol
+warfarin,paracetamol,caution,Prolonged regular high doses may raise INR; short courses usually OK,short-course paracetamol with INR check if prolonged
+warfarin,amoxicillin,monitor,Usually minor INR change; monitor if unstable or prolonged course,amoxicillin with INR check
+warfarin,omeprazole,monitor,Possible INR increase when starting or stopping PPI,monitor INR
+warfarin,fish oil,caution,Additive bleeding risk with high-dose omega-3,diet sources; avoid high-dose OTC without review
+amoxicillin,oral contraceptives,caution,May reduce contraceptive reliability; extra contraception during course + 7 days,extra non-hormonal contraception
+amoxicillin,methotrexate,caution,Increased methotrexate toxicity risk,monitor; seek specialist advice
+amoxicillin,allopurinol,caution,Higher rash risk,monitor skin
+omeprazole,clopidogrel,caution,May reduce clopidogrel activation,clinician-selected alternative acid suppression
+omeprazole,iron,caution,Reduced iron absorption possible,separate timing; review formulation
+omeprazole,calcium carbonate,caution,Reduced absorption of carbonate salt,calcium citrate
+metformin,alcohol,avoid binge,Binge drinking raises lactic acidosis risk,limit alcohol; no binges
+metformin,iodinated contrast,protocol,Hold around contrast per local renal protocol,follow hospital hold/restart plan
+metformin,vitamin B12,monitor,Long-term metformin can lower B12,check levels; supplement if deficient
+atorvastatin,clarithromycin,avoid,Myopathy risk rises with macrolides,alternative antibiotic or hold/adjust statin per guidance
+atorvastatin,grapefruit juice,caution,Large amounts raise statin levels,avoid large daily grapefruit intake
+atorvastatin,red yeast rice,avoid,Duplicate statin-like effect / myopathy risk,stop red yeast rice
+atorvastatin,gemfibrozil,avoid,High myopathy risk,do not combine
+diclofenac,warfarin,avoid,Serious bleeding risk,paracetamol for pain if suitable
+diclofenac,SSRI,caution,Higher GI bleed risk,gastroprotection if both required
+ibuprofen,aspirin,caution,Ibuprofen may blunt aspirin antiplatelet effect if poorly timed,paracetamol for pain; separate timing if NSAID unavoidable
+SSRI,tramadol,caution,Serotonin syndrome risk,avoid combination unless specialist advice
+clopidogrel,omeprazole,caution,Possible reduced antiplatelet effect,ask clinician about PPI choice

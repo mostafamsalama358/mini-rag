@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: DEXIBUPROFEN
+Risk: GI bleeding + potential clopidogrel inhibition (CYP2C9).
+Type: Mixed.
+Monitoring: Signs of bleeding, CV events.
+Dose adjustment: Limit dexibuprofen duration.
+Alternative: COX-2 selective NSAID (higher CV risk).
+Patient warning: /Management: Discontinue NSAID if bleeding occurs; use PPI if unavoidable.
+Severity: yes
+
+Clinical note:
+Risk: GI bleeding + potential clopidogrel inhibition (CYP2C9). Type: Mixed. Monitoring: Signs of bleeding, CV events. Dosage Adjustments: Limit dexibuprofen duration. Alternative: COX-2 selective NSAID (higher CV risk). Patient Warnings/Management: Discontinue NSAID if bleeding occurs; use PPI if unavoidable.

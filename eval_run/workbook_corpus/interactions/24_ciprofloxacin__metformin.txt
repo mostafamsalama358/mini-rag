@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: METFORMIN
+Risk: Ciprofloxacin may potentiate metformin-induced hypoglycemia; monitor glucose daily during and for 3 days post-therapy; reduce metformin dose by 25% if CrCl <60 mL/min; advise patients to avoid fasting during treatment.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Ciprofloxacin may potentiate metformin-induced hypoglycemia; monitor glucose daily during and for 3 days post-therapy; reduce metformin dose by 25% if CrCl <60 mL/min; advise patients to avoid fasting during treatment.

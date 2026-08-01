@@ -1,0 +1,9 @@
+﻿id: leaflet
+name: Leaflet
+profile: leaflet_general
+prompt: leaflet
+# Skill id kept for API/UI compatibility; live answers come from Excel workbook corpus, not /leaflets PDFs.
+validation:
+  require_medicine: true
+order: 11
+

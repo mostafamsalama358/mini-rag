@@ -1,0 +1,16 @@
+Drug interaction — Amaryl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 32
+Brand: Amaryl
+API 1: GLIMEPIRIDE
+API 2: PERINDOPRIL
+Risk: Hypoglycemia, especially in renal impairment
+Type: Pharmacodynamic
+Monitoring: Renal function, glucose trends
+Dose adjustment: -
+Alternative: SGLT2 inhibitors (e.g., empagliflozin) if renal concerns
+Patient warning: /Management: Report weakness/palpitations; bedtime snacks if n…
+Severity: caution
+
+Clinical note:
+Risk: Hypoglycemia, especially in renal impairment; Type: Pharmacodynamic; Monitoring: Renal function, glucose trends; Dosage Adjustment: Reduce glimepiride if eGFR <60; Alternative: SGLT2 inhibitors (e.g., empagliflozin) if renal concerns; Patient Warnings/Management: Report weakness/palpitations; bedtime snacks if n…

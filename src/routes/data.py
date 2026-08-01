@@ -110,6 +110,21 @@ async def upload_data(request: Request, project_id: int, file: UploadFile,
 
 
 
+async def _resolve_asset_size_bytes(request: Request, project_id: int, file_id: str | None) -> int:
+    if not file_id:
+        return 0
+    try:
+        asset_model = await AssetModel.create_instance(db_client=request.app.db_client)
+        asset = await asset_model.get_asset_record(
+            asset_project_id=project_id, asset_name=file_id
+        )
+        if asset is not None:
+            return int(asset.asset_size or 0)
+    except Exception as exc:
+        logger.warning("asset size lookup failed for admission: %s", exc)
+    return 0
+
+
 @data_router.post("/process/{project_id}")
 async def process_endpoint(request: Request, project_id: int, process_request: ProcessRequest,
                            app_settings: Settings = Depends(get_settings)):
@@ -117,6 +132,24 @@ async def process_endpoint(request: Request, project_id: int, process_request: P
     chunk_size = process_request.chunk_size or app_settings.TEXT_CHUNK_SIZE
     overlap_size = process_request.overlap_size or app_settings.TEXT_CHUNK_OVERLAP
     do_reset = process_request.do_reset
+
+    from services.ingest_reliability.admit_flow import admit_ingest_job
+    from utils.metrics import INGEST_ADMISSION_TOTAL
+
+    size_bytes = await _resolve_asset_size_bytes(
+        request, project_id, process_request.file_id
+    )
+    job, admission_error = await admit_ingest_job(
+        request=request,
+        project_id=project_id,
+        file_id=process_request.file_id,
+        asset_size_bytes=size_bytes,
+        settings=app_settings,
+    )
+    if admission_error is not None:
+        outcome = "delay" if admission_error.status_code == status.HTTP_429_TOO_MANY_REQUESTS else "reject"
+        INGEST_ADMISSION_TOTAL.labels(outcome=outcome, reason="admission").inc()
+        return admission_error
 
     task = process_project_files.delay(
         project_id=project_id,
@@ -126,12 +159,25 @@ async def process_endpoint(request: Request, project_id: int, process_request: P
         do_reset=do_reset,
     )
 
-    return JSONResponse(
-        content={
-            "signal": ResponseSignal.PROCESSING_SUCCESS.value,
-            "task_id": task.id
-        }
-    )
+    if job is not None:
+        try:
+            from services.ingest_reliability.job_service import IngestJobService
+            svc = await IngestJobService.create_instance(request.app.db_client)
+            await svc.attach_celery_task(job.job_id, task.id)
+        except Exception as exc:
+            logger.warning("attach celery task to ingest job failed: %s", exc)
+        INGEST_ADMISSION_TOTAL.labels(outcome="accept", reason="capacity_available").inc()
+
+    content = {
+        "signal": ResponseSignal.PROCESSING_SUCCESS.value,
+        "task_id": task.id,
+    }
+    if job is not None:
+        content["job_id"] = str(job.job_id)
+        content["correlation_id"] = str(job.correlation_id)
+        content["workload_class"] = job.workload_class
+        content["lifecycle_state"] = job.lifecycle_state
+    return JSONResponse(content=content)
 
 @data_router.post("/process-and-push/{project_id}")
 async def process_and_push_endpoint(request: Request, project_id: int, process_request: ProcessRequest,
@@ -140,6 +186,24 @@ async def process_and_push_endpoint(request: Request, project_id: int, process_r
     chunk_size = process_request.chunk_size or app_settings.TEXT_CHUNK_SIZE
     overlap_size = process_request.overlap_size or app_settings.TEXT_CHUNK_OVERLAP
     do_reset = process_request.do_reset
+
+    from services.ingest_reliability.admit_flow import admit_ingest_job
+    from utils.metrics import INGEST_ADMISSION_TOTAL
+
+    size_bytes = await _resolve_asset_size_bytes(
+        request, project_id, process_request.file_id
+    )
+    job, admission_error = await admit_ingest_job(
+        request=request,
+        project_id=project_id,
+        file_id=process_request.file_id,
+        asset_size_bytes=size_bytes,
+        settings=app_settings,
+    )
+    if admission_error is not None:
+        outcome = "delay" if admission_error.status_code == status.HTTP_429_TOO_MANY_REQUESTS else "reject"
+        INGEST_ADMISSION_TOTAL.labels(outcome=outcome, reason="admission").inc()
+        return admission_error
 
     workflow = chain(
         process_project_files.s(
@@ -153,13 +217,26 @@ async def process_and_push_endpoint(request: Request, project_id: int, process_r
     )
     workflow_result = workflow.apply_async()
 
-    return JSONResponse(
-        content={
-            "signal": ResponseSignal.PROCESS_AND_PUSH_WORKFLOW_READY.value,
-            "task_id": workflow_result.id,
-            "workflow_task_id": workflow_result.id,
-        }
-    )
+    if job is not None:
+        try:
+            from services.ingest_reliability.job_service import IngestJobService
+            svc = await IngestJobService.create_instance(request.app.db_client)
+            await svc.attach_celery_task(job.job_id, workflow_result.id)
+        except Exception as exc:
+            logger.warning("attach celery task to ingest job failed: %s", exc)
+        INGEST_ADMISSION_TOTAL.labels(outcome="accept", reason="capacity_available").inc()
+
+    content = {
+        "signal": ResponseSignal.PROCESS_AND_PUSH_WORKFLOW_READY.value,
+        "task_id": workflow_result.id,
+        "workflow_task_id": workflow_result.id,
+    }
+    if job is not None:
+        content["job_id"] = str(job.job_id)
+        content["correlation_id"] = str(job.correlation_id)
+        content["workload_class"] = job.workload_class
+        content["lifecycle_state"] = job.lifecycle_state
+    return JSONResponse(content=content)
 
 
 @data_router.get("/tasks/{task_id}")
@@ -179,6 +256,74 @@ async def get_task_status(task_id: str):
         payload["error"] = str(result.result) if result.result else "Task failed"
 
     return JSONResponse(content=payload)
+
+
+@data_router.get("/ingest-jobs/{job_id}")
+async def get_ingest_job(request: Request, job_id: str):
+    """Operator-facing ingest job status + recent history (017)."""
+    from sqlalchemy.future import select
+    from models.db_schemes.algorag.schemes.ingest_control_plane import (
+        IngestOperationalEvent,
+    )
+    from services.ingest_reliability.job_service import IngestJobService
+
+    svc = await IngestJobService.create_instance(request.app.db_client)
+    job = await svc.get_by_job_id(job_id)
+    if job is None:
+        return JSONResponse(
+            status_code=status.HTTP_404_NOT_FOUND,
+            content={"signal": "INGEST_JOB_NOT_FOUND"},
+        )
+    async with request.app.db_client() as session:
+        result = await session.execute(
+            select(IngestOperationalEvent)
+            .where(IngestOperationalEvent.job_id == job.job_id)
+            .order_by(IngestOperationalEvent.recorded_at.desc())
+            .limit(50)
+        )
+        events = [
+            {
+                "event_type": e.event_type,
+                "stage": e.stage,
+                "detail": e.detail,
+                "recorded_at": e.recorded_at.isoformat() if e.recorded_at else None,
+            }
+            for e in result.scalars().all()
+        ]
+    return JSONResponse(
+        content={
+            "signal": "INGEST_JOB_STATUS",
+            "job_id": str(job.job_id),
+            "correlation_id": str(job.correlation_id),
+            "lifecycle_state": job.lifecycle_state,
+            "workload_class": job.workload_class,
+            "progress_stage": job.progress_stage,
+            "progress_kind": job.progress_kind,
+            "progress_percent": job.progress_percent,
+            "parse_outcome": job.parse_outcome,
+            "failure_ownership": job.failure_ownership,
+            "failure_reason": job.failure_reason,
+            "celery_task_id": job.celery_task_id,
+            "history": list(reversed(events)),
+        }
+    )
+
+
+@data_router.post("/ingest-jobs/{job_id}/cancel")
+async def cancel_ingest_job(request: Request, job_id: str):
+    from services.ingest_reliability.cancellation import cancel_job
+
+    try:
+        await cancel_job(request.app.db_client, job_id, cause="operator_cancel")
+    except Exception as exc:
+        logger.warning("cancel ingest job failed: %s", exc)
+        return JSONResponse(
+            status_code=status.HTTP_404_NOT_FOUND,
+            content={"signal": "INGEST_JOB_CANCEL_FAILED", "error": str(exc)},
+        )
+    return JSONResponse(
+        content={"signal": "INGEST_JOB_CANCELLED", "job_id": job_id}
+    )
 
 
 @data_router.post("/suggest-metadata/{project_id}")

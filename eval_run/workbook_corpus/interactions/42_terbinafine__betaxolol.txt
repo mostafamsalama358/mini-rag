@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: BETAXOLOL
+Risk: Potentiated systemic effects (CYP2D6 inhibition)
+Type: Pharmacokinetic
+Monitoring: Pulmonary function in asthmatics
+Dose adjustment: Use 0.25% solution
+Alternative: Prostaglandin analogs
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Potentiated systemic effects (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: Pulmonary function in asthmatics; Dosage: Use 0.25% solution; Alternative: Prostaglandin analogs; Patient: Keep rescue inhaler available.

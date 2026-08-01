@@ -1,0 +1,16 @@
+Drug interaction — Concor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 29
+Brand: Concor
+API 1: BISOPROLOL
+API 2: FOSINOPRIL
+Risk: Cardiac depression
+Type: Pharmacodynamic
+Monitoring: BP, HR, HF signs
+Dose adjustment: Reduce bisoprolol by 25% if needed
+Alternative: ARB monotherapy
+Patient warning: /Management: Monitor for edema.
+Severity: caution
+
+Clinical note:
+Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dosage Adjustments: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient Warnings/Management: Monitor for edema.

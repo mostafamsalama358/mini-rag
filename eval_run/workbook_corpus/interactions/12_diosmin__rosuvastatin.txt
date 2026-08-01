@@ -1,0 +1,16 @@
+Drug interaction — Daflon 1000
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 12
+Brand: Daflon 1000
+API 1: DIOSMIN
+API 2: ROSUVASTATIN
+Risk: Increased myopathy and rhabdomyolysis risk due to elevated rosuvastatin levels
+Type: Pharmacokinetic (transporter inhibition)
+Monitoring: Assess for muscle pain/weakness, check CK/LFTs
+Dose adjustment: Consider rosuvastatin dose reduction
+Alternative: Pravastatin
+Patient warning: /Management: Report unexp…
+Severity: caution
+
+Clinical note:
+Risk: Increased myopathy and rhabdomyolysis risk due to elevated rosuvastatin levels; Type: Pharmacokinetic (transporter inhibition); Monitoring: Assess for muscle pain/weakness, check CK/LFTs; Dosage Adjustments: Consider rosuvastatin dose reduction; Alternative: Pravastatin; Patient Warnings/Management: Report unexp…

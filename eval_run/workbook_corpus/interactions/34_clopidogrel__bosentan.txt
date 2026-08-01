@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: BOSENTAN
+Risk: Moderate bleeding risk.
+Type: Pharmacodynamic.
+Monitoring: CBC monthly.
+Dose adjustment: None typically needed.
+Alternative: Aspirin.
+Patient warning: /Management: Report unusual bruising.
+Severity: caution
+
+Clinical note:
+Risk: Moderate bleeding risk. Type: Pharmacodynamic. Monitoring: CBC monthly. Dosage Adjustments: None typically needed. Alternative: Aspirin. Patient Warnings/Management: Report unusual bruising.

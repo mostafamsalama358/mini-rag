@@ -6,6 +6,7 @@ from core.answer_generation.config import AnswerGenerationConfig
 from core.answer_generation.interfaces import IPromptComposer
 from core.answer_generation.models import ComposedPrompt
 from core.context_builder.models import Context
+from utils.detect_language import detect_query_language
 
 
 class DefaultPromptComposer(IPromptComposer):
@@ -22,6 +23,19 @@ class DefaultPromptComposer(IPromptComposer):
         for module in modules:
             module_names.append(module.name)
             system_parts.append(f"\n## Domain Module: {module.name}\n{module.instructions.rstrip()}")
+
+        lang = detect_query_language(question or "", default="en")
+        if lang == "ar":
+            system_parts.append(
+                "\n## Output language\n"
+                "The user asked in Arabic. Write the entire answer in Arabic (العربية). "
+                "Keep drug brand names and citation IDs in Latin script."
+            )
+        else:
+            system_parts.append(
+                "\n## Output language\n"
+                "Respond in the same language as the user's question."
+            )
 
         block_lines: list[str] = []
         for index, block in enumerate(context.ordered_blocks, start=1):

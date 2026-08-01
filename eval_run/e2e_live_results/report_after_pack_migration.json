@@ -1,0 +1,54 @@
+﻿{
+    "timestamp":  "2026-07-19T14:26:43",
+    "note":  "after pharmacy pack enrichment migration",
+    "pass_rate":  "7/7",
+    "passed":  [
+                   "p1",
+                   "p2",
+                   "p3",
+                   "p4",
+                   "p5",
+                   "p7",
+                   "p8"
+               ],
+    "failed":  [
+
+               ],
+    "results":  [
+                    {
+                        "id":  "p1",
+                        "ok":  true,
+                        "signal":  "rag_answer_success"
+                    },
+                    {
+                        "id":  "p2",
+                        "ok":  true,
+                        "signal":  "rag_answer_success"
+                    },
+                    {
+                        "id":  "p3",
+                        "ok":  true,
+                        "signal":  "rag_answer_success"
+                    },
+                    {
+                        "id":  "p4",
+                        "ok":  true,
+                        "signal":  "rag_answer_success"
+                    },
+                    {
+                        "id":  "p5",
+                        "ok":  true,
+                        "signal":  "rag_answer_success"
+                    },
+                    {
+                        "id":  "p7",
+                        "ok":  true,
+                        "signal":  "rag_clarification_needed"
+                    },
+                    {
+                        "id":  "p8",
+                        "ok":  true,
+                        "signal":  "rag_answer_success"
+                    }
+                ]
+}

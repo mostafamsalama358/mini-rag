@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: ALISKIREN
+Risk: Peripheral edema (synergistic arteriolar dilation)
+Type: Pharmacodynamic
+Monitoring: BP + weight biweekly
+Dose adjustment: Start amlodipine 2.5 mg if combined
+Alternative: ACEI+CCB combo
+Patient warning: /Management: Elevate legs for edema.
+Severity: caution
+
+Clinical note:
+Risk: Peripheral edema (synergistic arteriolar dilation); Type: Pharmacodynamic; Monitoring: BP + weight biweekly; Dosage Adjustments: Start amlodipine 2.5 mg if combined; Alternative: ACEI+CCB combo; Patient Warnings/Management: Elevate legs for edema.

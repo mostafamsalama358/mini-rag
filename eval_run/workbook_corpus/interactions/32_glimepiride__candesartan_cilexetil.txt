@@ -1,0 +1,16 @@
+Drug interaction — Amaryl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 32
+Brand: Amaryl
+API 1: GLIMEPIRIDE
+API 2: CANDESARTAN CILEXETIL
+Risk: Severe hypotension in elderly (both highly protein-bound).
+Type: Pharmacodynamic.
+Monitoring: Albumin levels, fall risk assessment.
+Dose adjustment: Reduce glimepiride to 1 mg/day if age >65. Alternatives: Meglitinide (e.g., nateglinide).
+Alternative: -
+Patient warning: /Management: Use grab bars at home; wear medical alert…
+Severity: caution
+
+Clinical note:
+Risk: Severe hypotension in elderly (both highly protein-bound). Type: Pharmacodynamic. Monitoring: Albumin levels, fall risk assessment. Dosage Adjustments: Reduce glimepiride to 1 mg/day if age >65. Alternatives: Meglitinide (e.g., nateglinide). Patient Warnings/Management: Use grab bars at home; wear medical alert…

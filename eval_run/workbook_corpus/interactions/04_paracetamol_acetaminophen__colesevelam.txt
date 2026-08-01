@@ -1,0 +1,16 @@
+Drug interaction — Cetal Cold & Flu Day
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 04
+Brand: Cetal Cold & Flu Day
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: COLESEVELAM
+Risk: Minimal absorption reduction (clinically insignificant)
+Type: Pharmacokinetic
+Monitoring: None routinely needed
+Dose adjustment: Optional separation (≥1h recommended for optimal efficacy)
+Alternative: None required
+Patient warning: Timing less critical than with other sequestrants.
+Severity: caution
+
+Clinical note:
+Risk: Minimal absorption reduction (clinically insignificant); Type: Pharmacokinetic; Monitoring: None routinely needed; Dosage: Optional separation (≥1h recommended for optimal efficacy); Alternative: None required; Patient Warnings: Timing less critical than with other sequestrants.

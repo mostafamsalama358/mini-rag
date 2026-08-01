@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: TIMOLOL
+Risk: Severe bronchospasm (non-selective β-blockade)
+Type: Pharmacodynamic
+Monitoring: ICU preparedness
+Dose adjustment: Contraindicated in asthma
+Alternative: Labetalol (if β-blocker essential)
+Patient warning: /Management: Emergency med-alert bracelet.
+Severity: yes
+
+Clinical note:
+Risk: Severe bronchospasm (non-selective β-blockade); Type: Pharmacodynamic; Monitoring: ICU preparedness; Dosage Adjustments: Contraindicated in asthma; Alternative: Labetalol (if β-blocker essential); Patient Warnings/Management: Emergency med-alert bracelet.

@@ -1,0 +1,16 @@
+Drug interaction — Hi-Biotic
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 22
+Brand: Hi-Biotic
+API 1: AMOXICILLIN
+API 2: APIXABAN
+Risk: Theoretical bleeding risk due to gut microbiome changes.
+Type: Indirect pharmacokinetic.
+Monitoring: No INR needed; monitor for clinical bleeding.
+Dose adjustment: Standard apixaban dosing.
+Alternative: Azithromycin for respiratory infections.
+Patient warning: Use soft-bristle toothbrush; avoid NSAIDs.
+Severity: yes
+
+Clinical note:
+Risk: Theoretical bleeding risk due to gut microbiome changes. Type: Indirect pharmacokinetic. Monitoring: No INR needed; monitor for clinical bleeding. Dosage: Standard apixaban dosing. Alternative: Azithromycin for respiratory infections. Patient Warnings: Use soft-bristle toothbrush; avoid NSAIDs.

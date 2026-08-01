@@ -1,0 +1,16 @@
+Drug interaction — Duphaston
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 43
+Brand: Duphaston
+API 1: DYDROGESTERONE
+API 2: LISINOPRIL
+Risk: Minimal hyperkalemia (<1% incidence).
+Type: Negligible interaction.
+Monitoring: Routine lisinopril monitoring only (K⁺ q6-12mo).
+Dose adjustment: None required. Alternatives: N/A.
+Alternative: -
+Patient warning: /Management: Standard precautions suffice.
+Severity: caution
+
+Clinical note:
+Risk: Minimal hyperkalemia (<1% incidence). Type: Negligible interaction. Monitoring: Routine lisinopril monitoring only (K⁺ q6-12mo). Dosage Adjustments: None required. Alternatives: N/A. Patient Warnings/Management: Standard precautions suffice.

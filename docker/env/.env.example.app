@@ -1,16 +1,20 @@
 APP_NAME="AlgoRAG"
 APP_VERSION="0.1"
 
-FILE_ALLOWED_TYPES=["text/plain", "application/pdf"]
+FILE_ALLOWED_TYPES=["text/plain", "application/pdf", "text/csv", "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]
 FILE_MAX_SIZE=10
 FILE_DEFAULT_CHUNK_SIZE=512000
 TEXT_CHUNK_SIZE=400
 TEXT_CHUNK_OVERLAP=80
 TEXT_CHUNK_MIN_SIZE=200
 TEXT_CHUNK_MAX_SIZE=1000
-INDEXING_CHUNK_PAGE_SIZE=100
+INDEXING_CHUNK_PAGE_SIZE=250
+INDEXING_SHARD_COUNT=3
+INDEXING_SHARD_MIN_CHUNKS=500
 VECTOR_DB_INSERT_BATCH_SIZE=100
 VERTEX_EMBEDDING_BATCH_DELAY_SECONDS=2
+VERTEX_EMBEDDING_RATE_LIMIT_RETRIES=5
+VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS=10
 
 POSTGRES_USERNAME=postgres
 POSTGRES_PASSWORD=algorag_postgres_2222
@@ -20,19 +24,17 @@ POSTGRES_MAIN_DATABASE=algorag
 
 # ========================= Generation (LLM) =========================
 # GENERATION_BACKEND: DEEPSEEK | OPENAI | COHERE | VERTEX
-GENERATION_BACKEND=DEEPSEEK
+GENERATION_BACKEND=VERTEX
+GENERATION_MODEL_ID=gemini-2.5-flash
+GENERATION_MODEL_ID_LITERAL=["deepseek-v4-flash","deepseek-v4-pro","gemini-2.5-flash"]
 
 DEEPSEEK_API_KEY=
 DEEPSEEK_API_URL=https://api.deepseek.com
-GENERATION_MODEL_ID=deepseek-v4-flash
-GENERATION_MODEL_ID_LITERAL=["deepseek-v4-flash","deepseek-v4-pro","gemini-2.5-flash"]
 
-# Alternate generation providers
-# GENERATION_BACKEND=VERTEX
-# VERTEX_PROJECT_ID=your-gcp-project-id
-# VERTEX_LOCATION=us-central1
-# GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-credentials.json
-# GENERATION_MODEL_ID=gemini-2.5-flash
+# Required when GENERATION_BACKEND=VERTEX (or EMBEDDING_BACKEND=VERTEX)
+VERTEX_PROJECT_ID=your-gcp-project-id
+VERTEX_LOCATION=us-central1
+GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-credentials.json
 
 INPUT_DAFAULT_MAX_CHARACTERS=1024
 GENERATION_DAFAULT_MAX_TOKENS=2048
@@ -40,15 +42,14 @@ GENERATION_DAFAULT_TEMPERATURE=0.1
 
 # ========================= Embedding =========================
 # EMBEDDING_BACKEND: BGE | OPENAI | COHERE | VERTEX
-# BGE runs in-process — mount GPU into the app/celery container for best performance.
-EMBEDDING_BACKEND=BGE
-EMBEDDING_MODEL_ID=BAAI/bge-m3
-EMBEDDING_MODEL_SIZE=1024
-
-# Alternate embedding providers
-# EMBEDDING_BACKEND=VERTEX
-# EMBEDDING_MODEL_ID=text-multilingual-embedding-002
-# EMBEDDING_MODEL_SIZE=768
+EMBEDDING_BACKEND=VERTEX
+EMBEDDING_MODEL_ID=text-multilingual-embedding-002
+EMBEDDING_MODEL_SIZE=768
+EMBEDDING_GLOBAL_CACHE_ENABLED=true
+EMBEDDING_GLOBAL_CACHE_MAX_ENTRIES=256
+EMBEDDING_MAX_CONCURRENT_API_CALLS=1
+EMBEDDING_BATCH_SIZE=32
+# Changing EMBEDDING_MODEL_SIZE requires a full reindex (do_reset=1).
 
 # ========================= Vector DB =========================
 VECTOR_DB_BACKEND_LITERAL=["QDRANT","PGVECTOR"]
@@ -69,38 +70,57 @@ PRIMARY_LANG=ar
 DEFAULT_LANG=en
 
 # ========================= Reranker =========================
-# RAG_RERANKER_BACKEND: bge | cohere
-RAG_ENABLE_RERANKER=true
-RAG_RERANKER_BACKEND=bge
-BGE_RERANKER_MODEL=BAAI/bge-reranker-v2-m3
-RAG_RERANKER_DEVICE=cpu
-RAG_RERANKER_BATCH_SIZE=8
-RAG_RERANKER_USE_FP16=false
-RAG_RERANKER_MAX_CHARS=1024
-RAG_RERANKER_WARMUP_ON_STARTUP=true
-# COHERE_RERANKER_MODEL=rerank-multilingual-v3.0
-# Final Top-N returned by the cross-encoder reranker (0/None = all).
+# RAG_RERANKER_BACKEND: bge | cohere | vertex
+# Off = no Vertex ranking calls (saves quota). Order stays fusion/vector scores.
+RAG_ENABLE_RERANKER=false
+RAG_RERANKER_BACKEND=vertex
+RAG_RERANKER_MODEL=semantic-ranker-available@latest
+RAG_RERANKER_WARMUP_ON_STARTUP=false
 RAG_RERANKER_TOP_N=5
-# Benchmark local CPU settings (run from src/):
-# python scripts/benchmark_bge_reranker.py
 
 # ========================= RAG =========================
-# Hybrid retrieval: dense vector search + PostgreSQL full-text search
-# fused via classical Reciprocal Rank Fusion (RRF). RAG_ENABLE_BM25 is a
-# legacy alias (consulted only when RAG_ENABLE_HYBRID_SEARCH is unset).
 RAG_ENABLE_HYBRID_SEARCH=true
+# Legacy alias only — consulted only when RAG_ENABLE_HYBRID_SEARCH is unset.
 RAG_ENABLE_BM25=false
-# Candidate window: both dense and sparse fetch this many candidates.
 RAG_RETRIEVAL_CANDIDATES=30
-# Classical RRF constant (k).
 RAG_RRF_K=60
-# Over-fetch multiplier for expansion queries only.
-RAG_RETRIEVAL_FETCH_MULTIPLIER=3
+RAG_RETRIEVAL_FETCH_MULTIPLIER=2
 RAG_HISTORY_MODE=auto
-RAG_PROMPT_CHAR_BUDGET=0
-LLM_USE_ASYNC=false
+RAG_PROMPT_CHAR_BUDGET=12000
+LLM_USE_ASYNC=true
 
-# Hugging Face — get a token at https://huggingface.co/settings/tokens
+# Semantic query parser (004)
+RAG_SEMANTIC_PARSER_ENABLED=true
+RAG_PIPELINE_DIAGNOSTICS=true
+RAG_INDEXING_TRACE_ENTITY=CATAFLAM
+
+# Unified production pipeline (015)
+# legacy | shadow | unified
+RAG_PIPELINE_MODE=unified
+RAG_PIPELINE_FALLBACK_ON_ERROR=false
+RAG_PIPELINE_SHADOW_PERSIST=true
+RAG_PIPELINE_SHADOW_DIR=.rag_shadow/
+RAG_PIPELINE_UNIFIED_TIMEOUT_S=45.0
+RAG_PIPELINE_CANARY_PROJECT_IDS=
+RAG_PIPELINE_SHADOW_DIVERGENCE_THRESHOLD=0.85
+
+# Ingest reliability (017)
+INGEST_RELIABILITY_ENABLED=true
+INGEST_OPERATIONAL_MODE=normal
+INGEST_CANARY_PROJECT_IDS=
+INGEST_MAX_CONCURRENT_JOBS=32
+INGEST_MAX_BACKLOG=64
+INGEST_LARGE_DOCUMENT_BYTES=5000000
+INGEST_HARD_MAX_BYTES=0
+INGEST_PARSE_TIMEOUT_SECONDS=900
+INGEST_JOB_TIMEOUT_SECONDS=3600
+INGEST_STALL_SECONDS=300
+INGEST_MAX_RETRIES=3
+INGEST_POISON_THRESHOLD=3
+INGEST_INTERACTIVE_RESERVED_SLOTS=8
+INGEST_CONFIG_VERSION=1.0.0
+
+# Hugging Face — only needed if you switch embedding/reranker to BGE
 HF_TOKEN=
 HF_HOME=/root/.cache/huggingface
 
@@ -111,9 +131,18 @@ CELERY_TASK_SERIALIZER=json
 CELERY_TASK_TIME_LIMIT=1200
 CELERY_LONG_TASK_TIME_LIMIT=3600
 CELERY_TASK_ACKS_LATE=false
-CELERY_WORKER_CONCURRENCY=3
+CELERY_WORKER_CONCURRENCY=8
 CELERY_FLOWER_PASSWORD=algorag_flower_2222
 CELERY_TASK_CLEANUP_INTERVAL_SECONDS=3600
 CELERY_TASK_RETENTION_SECONDS=86400
 
 AUTH_USER_ID_HEADER=X-User-Id
+# Scoped retrieval / metadata (pharmacy E2E hardening)
+RAG_ALLOW_UNSCOPED_DEGRADE=false
+RAG_METADATA_CONTRACT_STRICT=false
+RAG_FIELD_SCORE_BOOST=0.15
+RAG_FIELD_SCORE_PENALTY=0.08
+RAG_PIPELINE_DIAGNOSTICS=true
+VERTEX_EMBEDDING_RATE_LIMIT_RETRIES=1
+VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS=3
+VERTEX_EMBEDDING_RATE_LIMIT_RETRY_MAX_WAIT_SECONDS=8

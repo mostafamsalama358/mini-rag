@@ -1,0 +1,16 @@
+Drug interaction — Duphaston
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 43
+Brand: Duphaston
+API 1: DYDROGESTERONE
+API 2: FOSINOPRIL
+Risk: Minimal (0.5-1.2%).
+Type: Clinically insignificant.
+Monitoring: Standard ACEi monitoring only.
+Dose adjustment: None required. Alternatives: N/A. Note: "No increased monitoring beyond routine care."
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Minimal (0.5-1.2%). Type: Clinically insignificant. Monitoring: Standard ACEi monitoring only. Dosage Adjustments: None required. Alternatives: N/A. Note: "No increased monitoring beyond routine care."

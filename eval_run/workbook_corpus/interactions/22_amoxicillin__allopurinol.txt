@@ -1,0 +1,16 @@
+Drug interaction — Hi-Biotic
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 22
+Brand: Hi-Biotic
+API 1: AMOXICILLIN
+API 2: ALLOPURINOL
+Risk: Maculopapular rash (22% incidence, higher in renal impairment)
+Type: Hypersensitivity
+Monitoring: Skin exam daily for 14 days
+Dose adjustment: Consider alternative antibiotics
+Alternative: Cefuroxime
+Patient warning: Discontinue at first sign of rash.
+Severity: caution
+
+Clinical note:
+Risk: Maculopapular rash (22% incidence, higher in renal impairment); Type: Hypersensitivity; Monitoring: Skin exam daily for 14 days; Dosage: Consider alternative antibiotics; Alternative: Cefuroxime; Patient Warnings: Discontinue at first sign of rash.

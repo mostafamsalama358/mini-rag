@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: KETANSERIN
+Risk: TdP (CYP2C9 inhibition)
+Type: Pharmacokinetic + dynamic
+Monitoring: ECG + ketanserin levels
+Dose adjustment: Avoid >200mg/day fluconazole; Alternatives: Anidulafungin
+Alternative: -
+Patient warning: "Report dizziness"
+Severity: yes
+
+Clinical note:
+Risk: TdP (CYP2C9 inhibition); Type: Pharmacokinetic + dynamic; Monitoring: ECG + ketanserin levels; Dosage Adjustments: Avoid >200mg/day fluconazole; Alternatives: Anidulafungin; Patient Warnings: "Report dizziness"

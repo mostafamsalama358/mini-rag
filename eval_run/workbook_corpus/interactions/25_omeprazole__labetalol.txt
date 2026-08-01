@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: LABETALOL
+Risk: Orthostatic hypotension (CYP2D6 inhibition)
+Type: Pharmacokinetic (metabolism inhibition)
+Monitoring: Orthostatic BP qAM + LFTs
+Dose adjustment: Labetalol reduce 50%
+Alternative: Pantoprazole
+Patient warning: Rise slowly; report lightheadedness; avoid alcohol.
+Severity: yes
+
+Clinical note:
+Risk: Orthostatic hypotension (CYP2D6 inhibition); Type: Pharmacokinetic (metabolism inhibition); Monitoring: Orthostatic BP qAM + LFTs; Dosage: Labetalol reduce 50%; Alternative: Pantoprazole; Patient Warnings: Rise slowly; report lightheadedness; avoid alcohol.

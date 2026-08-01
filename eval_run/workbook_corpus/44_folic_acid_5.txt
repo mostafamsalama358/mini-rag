@@ -1,0 +1,107 @@
+FOLIC ACID (EIPICO) 5 MG 20 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Folic Acid
+Product line: Folic Acid
+Catalog SKU: FOLIC ACID (EIPICO) 5 MG 20 TAB.
+SKU ID: 44
+INN / actives: Folic Acid
+INN primary: Folic Acid
+INN aliases: FOLIC; FOLIC ACID
+Strength / form: Folic acid 5 mg | Form=TAB. | Min.age=Any age when indicated
+Manufacturer / market: EIPICO
+Price (catalog): 100
+Categories: VITAMINS & SUPPLEMENTS > SUPPLEMENTS > FOLIC ACID
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Folic Acid is used for
+Folate Deficiency - 1 : 5 mg/day PO*
+NTD Prevention - 400 : 800 µg/day pre conception → 12w gestation*
+
+2. Dosage — Adults
+Adult dose: 5 mg once daily
+Maximum daily dose: 5 mg/day (5 mg)
+
+3. Dosage — Children
+Minimum age in catalog: Any age when indicated
+Pediatric min age: See pack
+Pediatric dose: 0.1-1 mg/day depending on indication.
+Pediatric max daily dose: See pack
+
+4. Do not take Folic Acid if / disease cautions
+Hypersensitivity to VITAMIN B9 (FOLATE/FOLIC ACID) * Vitamin B12 deficiency *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None.
+Warnings: • Avoid:
+- High-dose ZINC OR ZINC GLUCONATE (>50 mg/day; ↓ folate absorption).
+.........................................................................
+• Dose Modification:
+- Renal: 
+↑ Dose in dialysis (1 mg/day; losses in dialysate).
+-Hepatic: 
+No adjustment.
+.........................................................................
+• Pregnancy: 
+-Category A (essential for neural tube defect prevention).
+• Lactation: 
+-Safe (milk levels adequate).
+..........................................................................
+• Lab Interactions: 
+-Masks B12 deficiency (corrects anemia but not neuropathy); false ↓ serum folate if recent meal.
+......................................................
+HCP notes: • Avoid:
+- High-dose ZINC OR ZINC GLUCONATE (>50 mg/day; ↓ folate absorption).
+.........................................................................
+• Dose Modification:
+- Renal: 
+↑ Dose in dialysis (1 mg/day; losses in dialysate).
+-Hepatic: 
+No adjustment.
+.........................................................................
+• Pregnancy: 
+-Category A (essential for neural tube defect prevention).
+• Lactation: 
+-Safe (milk levels adequate).
+..........................................................................
+• Lab Interactions: 
+-Masks B12 deficiency (corrects anemia but not neuropathy); false ↓ serum folate if recent meal.
+......................................................
+Patient education: • Timing: 
+-With/without food; consistent daily.
+• Missed Dose: 
+-Take ASAP; skip if near next dose.
+• Interactions:
+- Take 2h apart from zinc, antacids, cholestyramine.
+• Overdose Antidote: 
+-None (excess excreted renally).
+• Seek Help Immediately: 
+-Rash, wheezing, neurological changes (numbness/balance issues).
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- FOLIC ACID + THIOPENTAL; Risk: ↓ Antiepileptic efficacy (enhanced metabolism) → breakthrough seizures. Monitor: Seizure frequency, EEG if indicated. Dose Adjust: ↑ Thiopental dose by 20-30% if levels subtherapeutic.
+- FOLIC ACID + PHENOBARBITAL; Risk: ↓ Phenobarbital levels → seizure recurrence (CYP induction by folate). Monitor: Phenobarbital levels q1-2mo, seizure diary. Dose Adjust: ↑ Phenobarbital by 25% if levels <15 mcg/mL.
+- FOLIC ACID + PHENOBARBITONE; Risk: ↓ Antiepileptic efficacy → loss of seizure control. Monitor: Serum levels (target 15-40 mcg/mL), breakthrough seizures. Dose Adjust: ↑ Phenobarbitone by 5-10mg/wk guided by levels.
+- FOLIC ACID + PRIMIDONE; Risk: ↓ Primidone/phenobarbital levels → increased seizure risk. Monitor: Phenobarbital levels (from primidone metabolism), seizure frequency. Dose Adjust: ↑ Primidone by 25% if phenobarbital <15 mcg/mL.
+- FOLIC ACID + AMOBARBITAL; Risk: Reduced antiepileptic effect → status epilepticus risk. Monitor: Amobarbital levels (if available), seizure clusters. Dose Adjust: ↑ Amobarbital by 30-50mg/day if control wanes.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: safe
+
+8. Breastfeeding
+Breastfeeding safety: safe
+
+9. Supplements / cross-selling
+Catalog cross-selling: Ferrotron
+
+10. Possible side effects
+Major: Nausea - High dose >5 mg/day (3%)*
+Bloating - High dose >5 mg/day (2%)*
+Minor: Masks B12 Deficiency - neurological progression (1-10%)*
+Hypersensitivity (rare)*
+Rash (rare)*
+Bronchospasm (rare)*
+Zinc Deficiency - chronic high dose (1-10%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

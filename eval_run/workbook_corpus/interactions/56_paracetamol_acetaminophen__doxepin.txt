@@ -1,0 +1,16 @@
+Drug interaction — Panadol Cold & Flu Vapour Release
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 56
+Brand: Panadol Cold & Flu Vapour Release
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: DOXEPIN
+Risk: Additive sedation with high-dose acetaminophen formulations
+Type: -
+Monitoring: Epworth scale
+Dose adjustment: Avoid combo PM formulations
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Additive sedation with high-dose acetaminophen formulations; Monitoring: Epworth scale; Dosage: Avoid combo PM formulations; Patient: Daytime dosing only; report excessive drowsiness.

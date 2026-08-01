@@ -1,0 +1,98 @@
+GLUCOPHAGE 500 MG 50 F.C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Glucophage
+Product line: Glucophage
+Catalog SKU: GLUCOPHAGE 500 MG 50 F.C.TABS.
+SKU ID: 31
+INN / actives: Metformin
+INN primary: Metformin
+INN aliases: METFORMIN; METFORMIN HCL; METFORMIN HYDROCHLORIDE
+Strength / form: Metformin 500 mg | Form=TAB. | Min.age=10 years
+Manufacturer / market: MERCK SANTE-FRANCE
+Price (catalog): 60
+Categories: MEDICINE > DIABETES MELLITUS > ANTI-DIABETIC DRUGS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Glucophage is used for
+T2DM - Start 500 mg daily → ↑ to 2000 mg/day (max 2550 mg)*
+XR formulation - 500 to 2000 mg daily*
+
+2. Dosage — Adults
+Adult dose: 500 mg 2-3 times/day with meals
+Maximum daily dose: 2550 mg/day (2550 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 10 years
+Pediatric min age: 10 years
+Pediatric dose: >=10 years: Start 500 mg once daily, titrate. Max 2000 mg/day.
+Pediatric max daily dose: 2000 mg/day
+
+4. Do not take Glucophage if / disease cautions
+Hypersensitivity to METFORMIN *
+Metabolic & Acid‑Base Disorders *
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) *
+Diabetic ketoacidosis (DKA)*
+Serious/ Severe or Uncontrolled Systemic Infection*
+Myocardial Infarction (MI / Heart Attack)*
+Heart Failure (CHF)*
+Respiratory Failure & Insufficiency*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+Dehydration & Hypovolemia *
+Alcohol Consumption*
+Radiologic contrast administration (Temporary)*
+Hypertensive disorders of pregnancy (including pre‑eclampsia and gestational hypertension)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • Lactic Acidosis:
+- Incidence: 
+0.03/1000 patient-years
+- Risk factors: 
+Renal impairment, hypoxia, sepsis
+- Mortality: 
+50% if untreated
+Warnings: • Usage can cause aggravation of acute kidney injury.
+• its use should be interrupted for a day before we give the patient (radio contrast media) for the purpose of CT diagnosis and cut off for two days after taking the diagnostic picture because it can cause (lactic acidosis) if the patient has (AKI), Re-evaluate eGFR 48 hr after imaging procedure; restart metformin HCl if renal function is stable
+• The side effects of Metformin increase in the digestive system when (the dose of Metformin is suddenly increased or when this medicine is used in the form of (intermediate release IR) or if a diabetic has stomach germs or if the diabetic patient use (OCT1-inhibiting agents) such as (Verapamil or
+HCP notes: • Usage can cause aggravation of acute kidney injury.
+• its use should be interrupted for a day before we give the patient (radio contrast media) for the purpose of CT diagnosis and cut off for two days after taking the diagnostic picture because it can cause (lactic acidosis) if the patient has (AKI), Re-evaluate eGFR 48 hr after imaging procedure; restart metformin HCl if renal function is stable
+• The side effects of Metformin increase in the digestive system when (the dose of Metformin is suddenly increased or when this medicine is used in the form of (intermediate release IR) or if a diabetic has stomach germs or if the diabetic patient use (OCT1-inhibiting agents) such as (Verapamil or
+Patient education: • Timing: 
+-With meals to reduce GI upset
+• SUPPLEMENTS TO AVOID/CAUTION:
+- Berberine: AVOID concurrent use. Similar glucose-lowering mechanism; risk of additive hypoglycemia.
+- High-Dose Bitter Melon/ Cinnamon: Use with caution and glucose monitoring. May potentiate hypoglycemia.
+- Chromium: Evidence is mixed. If used, limit to 200-1000 mcg daily with MD supervision.
+• Dosing: 
+-Take exactly as prescribed (do not crush XR)
+• Missed dose: 
+-Skip if >6h late; never double
+• Stop & seek help: 
+-Muscle pain, trouble breathing, dizziness (lactic acidosis signs)
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- METFORMIN + CAPTOPRIL; Risk: Minimal hypoglycemia risk (unless combo therapy).; Type: Pharmacodynamic.; Monitoring: Renal function q3mo; lactate if symptomatic.; Dose adjustment: None typically.; Alternative: SGLT2 inhibitors.; Patient warning: Stop for vomiting/diarrhea.
+- METFORMIN + ENALAPRIL; Risk: Minimal hypoglycemia.; Type: Pharmacodynamic.; Monitoring: Renal function q3mo; lactate.; Dose adjustment: Hold if eGFR <30.; Alternative: Empagliflozin.; Patient warning: Stop for GI illness.
+- METFORMIN + LISINOPRIL; Risk: Minimal hypoglycemia.; Type: Pharmacodynamic.; Monitoring: Renal function q3mo; lactate.; Dose adjustment: Hold if eGFR <30.; Alternative: Dapagliflozin.; Patient warning: Stop for GI illness.
+- METFORMIN + RAMIPRIL; Risk: Minimal hypoglycemia.; Type: Pharmacodynamic.; Monitoring: Renal function q3mo; lactate.; Dose adjustment: Hold if eGFR <30.; Alternative: Empagliflozin.; Patient warning: Stop for GI illness.
+- METFORMIN + BENAZEPRIL; Risk: Minimal hypoglycemia.; Type: Pharmacodynamic.; Monitoring: Renal function q3mo; lactate if symptomatic.; Dose adjustment: Hold if eGFR <30.; Alternative: Dapagliflozin.; Patient warning: Stop for vomiting/diarrhea.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: safe
+
+8. Breastfeeding
+Breastfeeding safety: safe
+
+9. Supplements / cross-selling
+Catalog cross-selling: Lipitor|Aspocid
+
+10. Possible side effects
+Major: Diarrhea (53%)*
+Nausea/vomiting (25%)*
+Flatulence (12%)*
+Minor: B₁₂ deficiency (7%)*
+Lactic acidosis (0.03%)*
+Metallic taste (3%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

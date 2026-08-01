@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: FLUVASTATIN
+Risk: Minimal interaction (CYP2C9 metabolism unaffected)
+Type: -
+Monitoring: Routine CK/LFTs per statin guidelines; Dose Adjust: None required
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction (CYP2C9 metabolism unaffected); Monitoring: Routine CK/LFTs per statin guidelines; Dose Adjust: None required; Patient: Standard statin precautions apply.

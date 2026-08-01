@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: DILTIAZEM
+Risk: Bradycardia exacerbation
+Type: Pharmacodynamic
+Monitoring: Ambulatory HR for 24h
+Dose adjustment: Diltiazem CD formulation preferred
+Alternative: Diltiazem + antacids
+Patient warning: /Management: Nighttime HR checks.
+Severity: caution
+
+Clinical note:
+Risk: Bradycardia exacerbation; Type: Pharmacodynamic; Monitoring: Ambulatory HR for 24h; Dosage Adjustments: Diltiazem CD formulation preferred; Alternative: Diltiazem + antacids; Patient Warnings/Management: Nighttime HR checks.

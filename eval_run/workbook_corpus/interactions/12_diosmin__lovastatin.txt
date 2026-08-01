@@ -1,0 +1,16 @@
+Drug interaction — Daflon 1000
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 12
+Brand: Daflon 1000
+API 1: DIOSMIN
+API 2: LOVASTATIN
+Risk: Potential increased risk of myopathy/rhabdomyolysis.
+Type: Uncertain pharmacokinetic (potential OATP/CYP3A4 inhibition).
+Monitoring: Monitor for muscle pain/weakness and CPK levels.
+Dose adjustment: Avoid combination or use lowest possible lovastatin dose.
+Alternative: A non-interacting statin (e.g., pravastatin). Patien…
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Potential increased risk of myopathy/rhabdomyolysis. Type: Uncertain pharmacokinetic (potential OATP/CYP3A4 inhibition). Monitoring: Monitor for muscle pain/weakness and CPK levels. Dosage: Avoid combination or use lowest possible lovastatin dose. Alternative: A non-interacting statin (e.g., pravastatin). Patien…

@@ -1,0 +1,16 @@
+Drug interaction — Flurest-N
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 05
+Brand: Flurest-N
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: NORTRIPTYLINE
+Risk: Competitive CYP2D6 metabolism → variable levels
+Type: -
+Monitoring: Pain control consistency
+Dose adjustment: Fixed-interval dosing
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Competitive CYP2D6 metabolism → variable levels; Monitoring: Pain control consistency; Dosage: Fixed-interval dosing; Patient: Maintain consistent schedule; report breakthrough pain.

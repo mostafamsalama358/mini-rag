@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: CLONIDINE HYDROCHLORIDE
+Risk: Reduced clonidine absorption leading to decreased efficacy and potential hypertension
+Type: Chelation interaction
+Monitoring: BP weekly, watch for rebound hypertension
+Dose adjustment: Administer iron 2-4 hours after clonidine
+Alternative: IV iron if oral separation not feasible
+Patient warning: /Manageme…
+Severity: caution
+
+Clinical note:
+Risk: Reduced clonidine absorption leading to decreased efficacy and potential hypertension; Type: Chelation interaction; Monitoring: BP weekly, watch for rebound hypertension; Dosage Adjustments: Administer iron 2-4 hours after clonidine; Alternative: IV iron if oral separation not feasible; Patient Warnings/Manageme…

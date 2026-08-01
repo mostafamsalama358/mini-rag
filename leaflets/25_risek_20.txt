@@ -1,0 +1,118 @@
+RISEK 20 MG 14 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Risek
+Catalog SKU: RISEK 20 MG 14 CAPS.
+INN / actives: Omeprazole
+Catalog New Material: OMEPRAZOLE
+Strength / form: Omeprazole 20 mg capsules | (web-supplemented dosing below)
+Manufacturer / market: JULPHAR
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-PEPTIC ULCER & ANTACIDS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=RISEK 20 MG; sheet lookup INNs=Omeprazole, OMEPRAZOLE
+Web clinical sources: Omeprazole SmPC; Julphar Risek
+
+1. What Risek is used for
+Catalog uses: peptic ulcer.proton pump inhibitor
+Approved uses (material sheet): Healing of Erosive Esophagitis - 20 mg daily for 4 to 8 weeks*
+Maintenance of Healing - 20 mg daily*
+Symptomatic GERD - 20 mg daily for 4 weeks*
+Risk Reduction of NSAID Associated Gastric Ulcer - 20 mg daily for up to 6 months*
+H. pylori Eradication - 20 mg BID as part of combination therapy (e.g., with amoxicillin and clarithromycin) for 10 to 14 days*
+Pathological Hypersecretory Conditions (e.g., Zollinger Ellison syndrome) - Starting dose 60 mg daily; adjust based on acid output. Doses >80 mg daily should be divided*
+Duodenal Ulcer - 20 mg daily for 4 to 8 weeks*
+Off-label mentions (material sheet): Upper GI Bleed Prophylaxis in critically ill patients*
+Eosinophilic Esophagitis - (as a diagnostic trial for PPI responsive esophageal eosinophilia)*
+Functional Dyspepsia*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Usually 20 mg once daily before breakfast for GERD/ulcer regimens as prescribed (duration often 2–8 weeks).
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Specialist paediatric dosing by weight.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Risek if / disease cautions
+From material/disease sheets:
+[OMEPRAZOLE] Hypersensitivity to OMEPRAZOLE*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation *
+Gastrointestinal (GI) Malignancies*
+Hypomagnesemia*
+Vitamin B12 deficiency *
+Clostridioides difficile-associated diarrhea (CDAD)*
+Infectious & Structural Lung Diseases *
+Pyelonephritis (Kidney Infection)*
+Systemic lupus erythematosus (SLE)*
+Pregnancy; unspecified gestational age*
+Breastfeeding*
+Hypersensitivity to benzimidazoles*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None for omeprazole. 
+• However, the class label contains warnings about increased risk of fractures and C. difficile-associated diarrhea.
+Notes (material sheet): • The (PPIs) drugs cause hypomagnesemia, but this does not happen until after (3 months) of using the (PPIs). It is necessary to monitor the magnesium in the blood after 3 months of using the (PPIs).
+• And there is a lack of vitamin (B12) this thing does not happen until after (3 years) of using the (PPIs), and vitamin (B12) deficiency occurs in women more than men, especially those who are less than (30 years old)
+• Safe in kidney failure
+• Take before a meal. Allow 30-60 minutes before a meal.
+• In children, the dosage is also based on weight
+• Antacids may be taken along with this medication.
+• Do not take it for more than 14 days unless directed by your doctor.
+• Avoid:
+- Atazanavir, Ri…
+Patient education excerpt: • Administration (CRITICAL):
+- Take before a meal, typically 30-60 minutes before breakfast. For twice-daily dosing, take before the morning and evening meals.
+- Swallow delayed-release capsules/tablets whole; do not crush, chew, or break them.
+- For oral suspension:
+ Empty the packet into a small cup containing 1-2 tablespoons of water. Stir and drink immediately. Refill with water, stir, and drink again to ensure full dose.
+• Key Points:
+- Short-Term Course:
+ Use the lowest effective dose for the shortest duration needed. Do not take longer than prescribed without consulting your doctor.
+- Bone Fracture Risk:
+ Long-term, high-dose use may increase the risk of fractures of the hip, wrist,…
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Omeprazole + CLOPIDOGREL: Risk: Stent thrombosis (CYP2C19 competitive inhibition). Type: Pharmacokinetic. Monitoring: Platelet reactivity index. Dosage Adjustments: Absolute avoidance. Alternative: Pantoprazole. Patient Warnings/Management: Separate by 12 hours if unavoidable.
+- Omeprazole + DIPYRIDAMOLE: Risk: Therapeutic failure (CYP2C19 competition). Type: Pharmacokinetic. Monitoring: Platelet function tests. Dosage Adjustments: MR formulation required. Alternative: Pantoprazole. Patient Warnings/Management: Separate by 12h if unavoidable.
+- Omeprazole + SOTALOL: Risk: QT prolongation and hypomagnesemia-induced torsades; Type: Pharmacokinetic (CYP2C19 competition) + Pharmacodynamic (electrolyte imbalance); Monitoring: Biweekly ECG (QTc), serum Mg²⁺/K⁺; Dosage: Max omeprazole 20mg/day; sotalol reduce 25%; Alternative: Famotidine; Patient Warnings: Report palpitations; avoid gra…
+- Omeprazole + METOPROLOL TARTRATE: Risk: Metoprolol toxicity (CYP2D6 inhibition); Type: Pharmacokinetic (metabolism inhibition); Monitoring: Metoprolol levels + HR/BP daily ×7; Dosage: Reduce metoprolol 50%; Alternative: Rabeprazole; Patient Warnings: Report fatigue; no driving with dizziness.
+- Omeprazole + METOPROLOL: Risk: Metoprolol toxicity (bradycardia, fatigue) due to CYP2D6 inhibition; Type: Pharmacokinetic (metabolism inhibition); Monitoring: Daily HR/BP + metoprolol levels if available; Dosage: Reduce metoprolol 25-50%; Alternative: Rabeprazole; Patient Warnings: Report dizziness; no driving with fatigue; avoid grapefruit.
+- Omeprazole + PROPRANOLOL: Risk: Propranolol toxicity (bronchospasm, hypotension) via CYP2C19/1A2 inhibition; Type: Pharmacokinetic (metabolism inhibition); Monitoring: Peak flowmetry + weekly LFTs; Dosage: Propranolol reduce 30%; Alternative: Pantoprazole; Patient Warnings: Use rescue inhaler; report wheezing.
+- Omeprazole + TIMOLOL: Risk: Ocular hypoperfusion and systemic hypotension; Type: Pharmacodynamic (additive vasoactive effects); Monitoring: IOP weekly + orthostatic BP checks; Dosage: Limit timolol drops to 1 eye daily; Alternative: Latanoprost for glaucoma; Patient Warnings: Nasolacrimal occlusion technique; report vision changes/dizzines…
+- Omeprazole + ACEBUTOLOL: Risk: Acebutolol toxicity (CYP2D6 inhibition) and hypoglycemia; Type: Pharmacokinetic + Pharmacodynamic; Monitoring: Fasting glucose + acebutolol levels; Dosage: Reduce acebutolol 25%; Alternative: Famotidine; Patient Warnings: Carry glucose gel; report sweating/tremors.
+- Omeprazole + ATENOLOL: Risk: Exaggerated bradycardia and electrolyte-mediated arrhythmias; Type: Pharmacodynamic (additive cardiac depression); Monitoring: Biweekly ECG + serum Mg²⁺/K⁺; Dosage: Max omeprazole 20mg/day; Alternative: Famotidine; Patient Warnings: Report palpitations; oral Mg²⁺ supplements; avoid grapefruit.
+- Omeprazole + BETAXOLOL: Risk: Corneal edema with systemic absorption; Type: Pharmacokinetic (CYP2D6 inhibition); Monitoring: Slit-lamp weekly + serum betaxolol; Dosage: Betaxolol ophthalmic only; Alternative: Dorzolamide; Patient Warnings: Preservative-free tears Q2h; report halos.
+- Omeprazole + BISOPROLOL FUMARATE: Risk: Exaggerated bradycardia and QT prolongation via hypomagnesemia; Type: Pharmacodynamic (electrolyte-mediated synergy); Monitoring: Biweekly ECG (QTc) + serum Mg²⁺; Dosage: Max omeprazole 20mg/day; bisoprolol ≤5mg; Alternative: Famotidine; Patient Warnings: Report palpitations; oral Mg²⁺ supplements; avoid grapefr…
+- Omeprazole + BISOPROLOL: Risk: QT prolongation and hypomagnesemia-induced torsades; Type: Pharmacodynamic (electrolyte-mediated); Monitoring: Biweekly ECG (QTc) + serum Mg²⁺; Dosage: Bisoprolol ≤5mg; omeprazole ≤20mg/day; Alternative: Famotidine; Patient Warnings: Report palpitations; oral Mg²⁺ supplements; avoid grapefruit.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: PPIs generally acceptable when needed.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Small milk amounts; usually compatible short courses.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Headache (7%)*
+Abdominal Pain (5%)*
+Nausea (4%)*
+Diarrhea (4%)*
+Vomiting (3%)*
+Flatulence (3%)*
+Minor (material sheet): Constipation (2%)*
+Dizziness (2%)*
+Rash (2%)*
+Cough (1%)*
+Acute Interstitial Nephritis (<1%)*
+C. difficile associated Diarrhea (<1%)*
+Hypomagnesemia - with long term use (4%)*
+Vitamin B12 Deficiency - with long term use (3%)*
+Increased risk of fractures - with long term, high dose use (4%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

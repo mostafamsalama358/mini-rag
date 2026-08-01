@@ -1,0 +1,16 @@
+Drug interaction — Gaviscon Advance
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 26
+Brand: Gaviscon Advance
+API 1: SODIUM ALGINATE
+API 2: PITAVASTATIN
+Risk: No significant interaction.
+Type: Pharmacokinetic.
+Monitoring: Routine care.
+Dose adjustment: Unnecessary.
+Alternative: First-line with antacids.
+Patient warning: /Management: No concerns.
+Severity: caution
+
+Clinical note:
+Risk: No significant interaction. Type: Pharmacokinetic. Monitoring: Routine care. Dosage Adjustments: Unnecessary. Alternative: First-line with antacids. Patient Warnings/Management: No concerns.

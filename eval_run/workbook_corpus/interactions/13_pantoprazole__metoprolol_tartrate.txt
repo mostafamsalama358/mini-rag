@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: METOPROLOL TARTRATE
+Risk: Exercise-induced hypotension
+Type: Pharmacodynamic (blunted compensatory response)
+Monitoring: Treadmill BP test
+Dose adjustment: Pantoprazole min effective dose
+Alternative: Aluminum hydroxide
+Patient warning: Avoid sudden standing; compression stockings.
+Severity: yes
+
+Clinical note:
+Risk: Exercise-induced hypotension; Type: Pharmacodynamic (blunted compensatory response); Monitoring: Treadmill BP test; Dosage: Pantoprazole min effective dose; Alternative: Aluminum hydroxide; Patient Warnings: Avoid sudden standing; compression stockings.

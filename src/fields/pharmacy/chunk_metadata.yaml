@@ -1,6 +1,168 @@
+# Pharmacy chunk metadata + leaflet/note enrichment.
+# Shared enrichment engine reads this profile; keep domain heuristics here.
 label_template: "{file_name} — row {row_index}"
 extra_keys:
   - file_name
   - row_index
   - sheet_name
   - brand_name
+  # Feature 020 — ingestible recommend metadata (sole ingest path; no second pipeline)
+  - indication_tags
+  - product_line
+  - pregnancy_safety
+  - breastfeeding_safety
+  - safety_labels
+
+enrichment:
+  enabled: true
+  entity_key_default: entity
+  section_header_pattern: '(?m)^\s*(\d+)\.\s+([^\n]{3,120})'
+  # Order matters: first text match is listed first in field_names;
+  # section headers still win for primary field_name when present.
+  field_patterns:
+    - field: interactions
+      pattern: '\binteractions?\b|\banticoagulant|\bwarfarin|\bsupplement|\bprobiotic|\bvitamin B12\b|\bred yeast\b|\bcoenzyme Q10\b|\bfish oil\b'
+    # Breastfeeding before dosage so lactation notes are not labeled "dosage"
+    # from phrases like "lowest effective dose"; section headers still win
+    # primary field_name for numbered Dosage sections.
+    - field: breastfeeding
+      pattern: '\bbreastfeed|\blactation|\bnursing'
+    - field: pregnancy
+      pattern: '\bpregnan|\bthird trimester|\blast 3 months of pregnancy'
+    - field: dosage
+      pattern: '\bdosage\b|\bdose\b|\badults and adolescents\b|\bchildren under\b'
+    - field: indications
+      pattern: '\bindications?\b|\bused for\b'
+    - field: contraindications
+      pattern: '\bdo not take\b.{0,60}\bif\b|\bcontraindic|\bif you (are|have)\b.{0,40}\bdo not'
+    - field: side_effects
+      pattern: '\bside effects?\b|\badverse'
+    - field: warnings
+      pattern: '\bwarnings?\b|\bprecautions?\b'
+    - field: storage
+      pattern: '\bstor(e|age)\b'
+    - field: composition
+      pattern: '\bingredients?\b|\bexcipients?\b'
+  entity_detectors:
+    # Clinical anticoagulant notes: prefer warfarin as scoped entity.
+    - id: warfarin_clinical_note
+      entity: warfarin
+      match_any: true
+      file_name_regex: '(?i)warfarin'
+      text_head_regex: '(?i)anticoagulant'
+      text_head_prefix: 'northbridge clinical note'
+      also_require: '(?i)\bwarfarin\b'
+    # Compendium/guides before bare INN detectors so shared mentions do not steal entity.
+    - id: interactions_compendium
+      entity: drug interactions
+      match_any: true
+      file_name_regex: '(?i)interaction'
+      text_head_prefix: 'northbridge drug interactions'
+    - id: supplements_guide
+      entity: supplements
+      match_any: true
+      file_name_regex: '(?i)supplement'
+      text_head_prefix: 'northbridge supplements'
+    # Workbook product renders (and legacy leaflet txt) use a structured Brand line.
+    # Brand may share a physical line with Catalog SKU after paragraph flatten.
+
+    - id: leaflet_brand_line
+      entity_from_match: '{1}'
+      text_regex: '(?im)(?:^|\n)\s*Brand:\s*(.+?)(?=\s+(?:Catalog SKU|INN\s*/\s*actives|Strength\s*/\s*form|Manufacturer)\b|\s*$)'
+    - id: mediquick_product
+      entity: MediQuick Ibuprofen
+      match_any: true
+      text_regex: '(?i)\bMediQuick\s+Ibuprofen\b'
+      file_name_regex: '(?i)ibuprofen'
+    - id: reliefmax_paracetamol
+      entity: ReliefMax Paracetamol
+      match_any: true
+      text_regex: '(?i)\bReliefMax\s+Paracetamol\b'
+      file_name_regex: '(?i)paracetamol'
+    - id: cataflam_diclofenac
+      entity: Cataflam Diclofenac
+      match_any: true
+      text_regex: '(?i)\bCataflam\b|\bDiclofenac\s+Potassium\b'
+      file_name_regex: '(?i)cataflam|diclofenac'
+    - id: amoxil_amoxicillin
+      entity: Amoxil Amoxicillin
+      match_any: true
+      text_regex: '(?i)^AMOXIL\b|\bAmoxil\s*\(amoxicillin\)'
+      file_name_regex: '(?i)amoxil|amoxicillin'
+    - id: losec_omeprazole
+      entity: Losec Omeprazole
+      match_any: true
+      text_regex: '(?i)^LOSEC\b|\bLosec\s*\(omeprazole\)'
+      file_name_regex: '(?i)losec|omeprazole'
+    - id: glucophage_metformin
+      entity: Glucophage Metformin
+      match_any: true
+      text_regex: '(?i)^GLUCOPHAGE\b|\bGlucophage\s*\(metformin\)'
+      file_name_regex: '(?i)glucophage|metformin'
+    - id: lipitor_atorvastatin
+      entity: Lipitor Atorvastatin
+      match_any: true
+      text_regex: '(?i)^LIPITOR\b|\bLipitor\s*\(atorvastatin\)'
+      file_name_regex: '(?i)lipitor|atorvastatin'
+    - id: aspirin_cardio
+      entity: aspirin
+      match_any: true
+      text_regex: '(?i)\blow-dose aspirin\b'
+      file_name_regex: '(?i)aspirin'
+    # Title-line Brand + INN (avoid mid-sentence false hits).
+    - id: brand_ibuprofen_title
+      entity_from_match: '{1} Ibuprofen'
+      text_regex: '(?m)^(?:\s*)([A-Z][A-Za-z0-9]+(?:\s+[A-Z][A-Za-z0-9]+){0,2})\s+Ibuprofen\b'
+    - id: brand_paracetamol_title
+      entity_from_match: '{1} Paracetamol'
+      text_regex: '(?m)^(?:\s*)([A-Z][A-Za-z0-9]+(?:\s+[A-Z][A-Za-z0-9]+){0,2})\s+Paracetamol\b'
+    - id: brand_diclofenac_title
+      entity_from_match: '{1} Diclofenac'
+      text_regex: '(?m)^(?:\s*)([A-Z][A-Za-z0-9]+(?:\s+[A-Z][A-Za-z0-9]+){0,2})\s+Diclofenac\b'
+    - id: brand_amoxicillin_title
+      entity_from_match: '{1} Amoxicillin'
+      text_regex: '(?m)^(?:\s*)([A-Z][A-Za-z0-9]+(?:\s+[A-Z][A-Za-z0-9]+){0,2})\s+Amoxicillin\b'
+    - id: warfarin_mention
+      entity: warfarin
+      text_regex: '(?i)\bWarfarin\b'
+  alias_detectors:
+    - aliases: [MediQuick Ibuprofen, ibuprofen]
+      text_regex: '(?i)\bMediQuick\s+Ibuprofen\b'
+    - aliases: [MediQuick Ibuprofen, ibuprofen]
+      primary_contains: ibuprofen
+    - aliases: [ibuprofen]
+      text_regex: '(?i)\bibuprofen\b'
+    - aliases: [ReliefMax Paracetamol, paracetamol]
+      text_regex: '(?i)\bReliefMax\s+Paracetamol\b'
+    - aliases: [ReliefMax Paracetamol, paracetamol]
+      primary_contains: paracetamol
+    - aliases: [paracetamol]
+      text_regex: '(?i)\bparacetamol\b'
+    - aliases: [Cataflam Diclofenac, diclofenac, cataflam]
+      text_regex: '(?i)\bCataflam\b|\bdiclofenac\b'
+    - aliases: [Cataflam Diclofenac, diclofenac]
+      primary_contains: diclofenac
+    - aliases: [warfarin]
+      primary_contains: warfarin
+    - aliases: [Amoxil Amoxicillin, amoxicillin, amoxil]
+      primary_contains: amoxil
+    - aliases: [amoxicillin]
+      primary_contains: amoxicillin
+    - aliases: [Losec Omeprazole, omeprazole, losec]
+      primary_contains: losec
+    - aliases: [omeprazole]
+      primary_contains: omeprazole
+    - aliases: [Glucophage Metformin, metformin, glucophage]
+      primary_contains: glucophage
+    - aliases: [metformin]
+      primary_contains: metformin
+    - aliases: [Lipitor Atorvastatin, atorvastatin, lipitor]
+      primary_contains: lipitor
+    - aliases: [atorvastatin]
+      primary_contains: atorvastatin
+    - aliases: [aspirin]
+      primary_contains: aspirin
+    - aliases: [supplements, probiotic, vitamin B12]
+      primary_contains: supplement
+    - aliases: [drug interactions, interactions]
+      primary_contains: interaction

@@ -1,0 +1,13 @@
+Alias registry — Telfast
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 36
+Brand: Telfast
+
+Known aliases:
+- Telfast (brand)
+- TELFAST 120MG 20 F.C. TABS. (catalog_sku)
+- Fexofenadine (inn)
+- FEXOFENADINE HCL (inn_alias)
+- تلفاست (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

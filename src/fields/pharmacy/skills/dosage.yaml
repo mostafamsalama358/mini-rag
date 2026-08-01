@@ -1,0 +1,7 @@
+﻿id: dosage
+name: Dosage
+profile: dosage
+prompt: dosage
+validation:
+  require_medicine: true
+order: 3

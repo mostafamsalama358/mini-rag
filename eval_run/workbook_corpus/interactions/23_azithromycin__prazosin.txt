@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: PRAZOSIN
+Risk: Mild additive hypotension (minimal CYP3A4 interaction)
+Type: Pharmacodynamic
+Monitoring: BP at days 1/3/7
+Dose adjustment: None typically needed
+Alternative: First-line macrolide choice
+Patient warning: /Management: Take evening dose if drinking alcohol.
+Severity: caution
+
+Clinical note:
+Risk: Mild additive hypotension (minimal CYP3A4 interaction); Type: Pharmacodynamic; Monitoring: BP at days 1/3/7; Dosage Adjustments: None typically needed; Alternative: First-line macrolide choice; Patient Warnings/Management: Take evening dose if drinking alcohol.

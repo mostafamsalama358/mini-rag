@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: PIROXICAM
+Risk: Elevated GI bleeding risk (synergistic antiplatelet + NSAID effects).
+Type: Pharmacodynamic.
+Monitoring: Hemoglobin, GI symptoms.
+Dose adjustment: Minimize NSAID dose/duration.
+Alternative: Non-NSAID analgesics.
+Patient warning: /Management: Watch for bleeding signs; avoid alcohol; consider gastroprotection.
+Severity: yes
+
+Clinical note:
+Risk: Elevated GI bleeding risk (synergistic antiplatelet + NSAID effects). Type: Pharmacodynamic. Monitoring: Hemoglobin, GI symptoms. Dosage Adjustments: Minimize NSAID dose/duration. Alternative: Non-NSAID analgesics. Patient Warnings/Management: Watch for bleeding signs; avoid alcohol; consider gastroprotection.

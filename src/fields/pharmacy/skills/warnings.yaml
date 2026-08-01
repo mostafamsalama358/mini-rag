@@ -1,0 +1,7 @@
+﻿id: warnings
+name: Warnings
+profile: warnings
+prompt: warnings
+validation:
+  require_medicine: true
+order: 7

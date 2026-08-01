@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: ENTACAPONE
+Risk: Reduced entacapone absorption → wearing-off
+Type: -
+Monitoring: "Off" time diaries
+Dose adjustment: Separate by 4h; increase levodopa if needed
+Alternative: IV iron if severe deficiency
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Reduced entacapone absorption → wearing-off; Monitoring: "Off" time diaries; Dosage: Separate by 4h; increase levodopa if needed; Alternative: IV iron if severe deficiency; Patient: Take iron with orange juice at night.

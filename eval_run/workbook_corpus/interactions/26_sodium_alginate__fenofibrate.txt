@@ -1,0 +1,16 @@
+Drug interaction — Gaviscon Advance
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 26
+Brand: Gaviscon Advance
+API 1: SODIUM ALGINATE
+API 2: FENOFIBRATE
+Risk: No interaction expected.
+Type: Pharmacokinetic (none).
+Monitoring: Routine care.
+Dose adjustment: Unnecessary.
+Alternative: No restrictions.
+Patient warning: /Management: No special precautions.
+Severity: caution
+
+Clinical note:
+Risk: No interaction expected. Type: Pharmacokinetic (none). Monitoring: Routine care. Dosage Adjustments: Unnecessary. Alternative: No restrictions. Patient Warnings/Management: No special precautions.

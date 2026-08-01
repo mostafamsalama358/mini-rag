@@ -1,0 +1,16 @@
+Drug interaction — Hi-Biotic
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 22
+Brand: Hi-Biotic
+API 1: AMOXICILLIN
+API 2: BETRIXABAN
+Risk: Unknown interaction but caution advised.
+Type: Speculative.
+Monitoring: Bleeding symptoms.
+Dose adjustment: Standard betrixaban dosing.
+Alternative: Clindamycin for penicillin allergy.
+Patient warning: Discontinue if severe diarrhea occurs.
+Severity: caution
+
+Clinical note:
+Risk: Unknown interaction but caution advised. Type: Speculative. Monitoring: Bleeding symptoms. Dosage: Standard betrixaban dosing. Alternative: Clindamycin for penicillin allergy. Patient Warnings: Discontinue if severe diarrhea occurs.

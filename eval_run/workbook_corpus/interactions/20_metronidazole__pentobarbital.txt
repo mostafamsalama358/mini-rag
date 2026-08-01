@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: PENTOBARBITAL
+Risk: Seizure threshold lowering + neurotoxicity.
+Type: -
+Monitoring: EEG if high doses.
+Dose adjustment: Avoid in epilepsy
+Alternative: -
+Patient warning: Report numbness/tingling immediately.
+Severity: yes
+
+Clinical note:
+Risk: Seizure threshold lowering + neurotoxicity. Monitoring: EEG if high doses. Dosage: Avoid in epilepsy patients. Patient Warning: Report numbness/tingling immediately.

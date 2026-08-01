@@ -1,0 +1,20 @@
+Alias registry — Comtrex
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 50
+Brand: Comtrex
+
+Known aliases:
+- Comtrex (brand)
+- COMTREX ACUTE HEAD COLD 20 F.C.TAB. (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- Pseudoephedrine (inn)
+- PSEUDOEPHEDRINE HCL (inn_alias)
+- PSEUDOEPHEDRINE HYDROCHLORIDE (inn_alias)
+- Chlorpheniramine Maleate (inn)
+- CHLORPHENIRAMINE (inn_alias)
+- CHLORPHENAMINE (inn_alias)
+- كومتريكس (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

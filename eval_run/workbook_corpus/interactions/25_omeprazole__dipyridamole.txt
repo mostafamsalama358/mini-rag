@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: DIPYRIDAMOLE
+Risk: Therapeutic failure (CYP2C19 competition).
+Type: Pharmacokinetic.
+Monitoring: Platelet function tests.
+Dose adjustment: MR formulation required.
+Alternative: Pantoprazole.
+Patient warning: /Management: Separate by 12h if unavoidable.
+Severity: yes
+
+Clinical note:
+Risk: Therapeutic failure (CYP2C19 competition). Type: Pharmacokinetic. Monitoring: Platelet function tests. Dosage Adjustments: MR formulation required. Alternative: Pantoprazole. Patient Warnings/Management: Separate by 12h if unavoidable.

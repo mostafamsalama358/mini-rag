@@ -1,0 +1,16 @@
+Drug interaction — Panadol Migraine
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 53
+Brand: Panadol Migraine
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: PROPAFENONE
+Risk: Delayed onset of analgesia (transient effect with single doses only)
+Type: Pharmacodynamic (altered gastric motility)
+Monitoring: Pain relief timing
+Dose adjustment: None needed for chronic use
+Alternative: IV acetaminophen if rapid onset required
+Patient warning: Take scheduled doses (not PRN) for cons…
+Severity: caution
+
+Clinical note:
+Risk: Delayed onset of analgesia (transient effect with single doses only); Type: Pharmacodynamic (altered gastric motility); Monitoring: Pain relief timing; Dosage Adjustments: None needed for chronic use; Alternative: IV acetaminophen if rapid onset required; Patient Warnings: Take scheduled doses (not PRN) for cons…

@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: METOPROLOL
+Risk: β₂-blockade counteracts salbutamol
+Type: Pharmacodynamic
+Monitoring: FEV₁/FVC ratio
+Dose adjustment: Avoid metoprolol in uncontrolled asthma
+Alternative: Diltiazem
+Patient warning: /Management: Annual flu vaccine.
+Severity: yes
+
+Clinical note:
+Risk: β₂-blockade counteracts salbutamol; Type: Pharmacodynamic; Monitoring: FEV₁/FVC ratio; Dosage Adjustments: Avoid metoprolol in uncontrolled asthma; Alternative: Diltiazem; Patient Warnings/Management: Annual flu vaccine.

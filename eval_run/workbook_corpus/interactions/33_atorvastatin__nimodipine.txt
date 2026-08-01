@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: NIMODIPINE
+Risk: Cerebral myopathy
+Type: Pharmacodynamic
+Monitoring: Neuro checks q2h
+Dose adjustment: Atorvastatin ≤20mg daily
+Alternative: IV nimodipine + oral ezetimibe
+Patient warning: /Management: Report vision changes.
+Severity: caution
+
+Clinical note:
+Risk: Cerebral myopathy; Type: Pharmacodynamic; Monitoring: Neuro checks q2h; Dosage Adjustments: Atorvastatin ≤20mg daily; Alternative: IV nimodipine + oral ezetimibe; Patient Warnings/Management: Report vision changes.

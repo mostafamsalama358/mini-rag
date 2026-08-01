@@ -1,0 +1,13 @@
+Alias registry — Strepsils
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 49
+Brand: Strepsils
+
+Known aliases:
+- Strepsils (brand)
+- STREPSILS HONEY & LEMON 24 LOZENGES (catalog_sku)
+- Amylmetacresol (inn)
+- Dichlorobenzyl (inn)
+- ستربسيلز (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

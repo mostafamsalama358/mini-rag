@@ -1,0 +1,16 @@
+Drug interaction — Daflon 500
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 11
+Brand: Daflon 500
+API 1: DIOSMIN
+API 2: VERAPAMIL
+Risk: Potential increased diosmin absorption/bioavailability.
+Type: Pharmacokinetic (P-gp inhibition).
+Monitoring: Monitor for enhanced diosmin effects (GI upset).
+Dose adjustment: No specific adjustment recommended.
+Alternative: Not usually required.
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Potential increased diosmin absorption/bioavailability. Type: Pharmacokinetic (P-gp inhibition). Monitoring: Monitor for enhanced diosmin effects (GI upset). Dosage: No specific adjustment recommended. Alternative: Not usually required. Patient: Report increased gastrointestinal discomfort.

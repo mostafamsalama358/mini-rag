@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: PROPRANOLOL
+Risk: Markedly increased propranolol levels (CYP2D6/1A2 inhibition)
+Type: Pharmacokinetic
+Monitoring: BP, CNS depression signs
+Dose adjustment: Reduce dose by 50% or switch to LA formulation
+Alternative: Nadolol
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Markedly increased propranolol levels (CYP2D6/1A2 inhibition); Type: Pharmacokinetic; Monitoring: BP, CNS depression signs; Dosage: Reduce dose by 50% or switch to LA formulation; Alternative: Nadolol; Patient: Avoid driving until stable.

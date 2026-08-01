@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: ASPIRIN
+Risk: Torsades de Pointes
+Type: QTc prolongation (≥500ms)
+Monitoring: ECG baseline + weekly
+Dose adjustment: Max 10mg TID
+Alternative: Mosapride
+Patient warning: Syncope danger
+Severity: caution
+
+Clinical note:
+Risk: Torsades de Pointes; Type: QTc prolongation (≥500ms); Monitoring: ECG baseline + weekly; Dosage Adjustments: Max 10mg TID; Alternative: Mosapride; Patient Warnings: Syncope danger

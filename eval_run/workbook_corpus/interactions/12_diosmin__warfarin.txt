@@ -1,0 +1,16 @@
+Drug interaction — Daflon 1000
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 12
+Brand: Daflon 1000
+API 1: DIOSMIN
+API 2: WARFARIN
+Risk: Potential increased anticoagulant effect and risk of bleeding.
+Type: Pharmacodynamic synergy.
+Monitoring: Monitor INR more frequently.
+Dose adjustment: Warfarin dose reduction may be necessary.
+Alternative: Consider a non-interacting venous tonic.
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Potential increased anticoagulant effect and risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor INR more frequently. Dosage: Warfarin dose reduction may be necessary. Alternative: Consider a non-interacting venous tonic. Patient: Report any signs of bleeding; do not change diosmin intake withou…

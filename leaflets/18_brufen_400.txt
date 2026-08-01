@@ -1,0 +1,126 @@
+BRUFEN 400 MG 30 TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Brufen
+Catalog SKU: BRUFEN 400 MG 30 TABS.
+INN / actives: Ibuprofen
+Catalog New Material: IBUPROFEN
+Strength / form: Ibuprofen 400 mg | (web-supplemented dosing below)
+Manufacturer / market: ABBOTT LABORATORIES
+Price (catalog): 78
+Categories: MEDICINE > PAIN, FEVER & INFLAMMATION > ANALGESICS & ANTI-PYRETICS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=BRUFEN 400 MG; sheet lookup INNs=Ibuprofen, IBUPROFEN
+Web clinical sources: Ibuprofen SmPC; Abbott Brufen
+
+1. What Brufen is used for
+Catalog uses: nsaid.propionic acid derivatives
+Approved uses (material sheet): Pain/fever - 200 : 400mg q4 : 6h (max 1200mg/day OTC; 3200mg/day Rx)*
+RA/OA - 400 : 800mg TID (max 2400 : 3200mg/day)*
+Off-label mentions (material sheet): Gout - 600mg q6h (max 2400mg/day)*
+Pericarditis - 600mg TID (wean over 2 to 4 wks)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: 200–400 mg every 6–8 h with food; OTC max often 1200 mg/day; prescription regimens may go higher under supervision.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Use paediatric ibuprofen by weight (~5–10 mg/kg/dose). Adult 400 mg tablets not for young children.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Brufen if / disease cautions
+From material/disease sheets:
+[IBUPROFEN] Infants under 6 months *
+Hypersensitivity to NSAIDs/ASPIRIN *
+Specific Coagulopathies & Platelet Disorders *
+Asthma & Reactive Airway Diseases * 
+Acute liver failure (including fulminant hepatic necrosis and acute‑on‑chronic liver failure) * 
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation *
+Liver tumours (malignant and benign) * 
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) * 
+Stevens-Johnson syndrome (SJS) * 
+Toxic Epidermal Necrolysis (TEN)* 
+Third trimester pregnancy*
+Coronary Artery Disease & Ischemic Heart Disease * 
+Solitary kidney*
+Cardiac Procedures & Perioperative Pain*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • CARDIOVASCULAR RISK:
+-↑ MI/stroke risk (may be fatal). Risk starts 1st week; highest at ≥2,400mg/day. Avoid post-CABG .
+
+• GI RISK:
+-↑ Ulcer/bleeding/perforation (may be fatal). Elderly/high-dose/history of ulcers highest risk .
+Notes (material sheet): • Avoid:
+- High-dose VITAMIN E (TOCOPHEROL) , Ginkgo , Garlic (↑ bleed risk)
+• Caution with: 
+- Fish Oil / OMEGA 3 (additive antiplatelet effect)
+.......................................................................
+• Dose Mod:
+- Renal: 
+Avoid if eGFR <30 mL/min
+- Hepatic: 
+Avoid in severe impairment (Child-Pugh C)
+- DDI: 
+↓ Dose w/aspirin, anticoagulants
+..........................................................
+• HCP Info:
+- Risks: 
+GI bleed, AKI, MI/stroke
+- Stop if: 
+Dark stools, abdominal pain, ↓ urine output
+- Surgery: 
+D/C ≥48h pre-op (if non-essential)
+.....................................................................
+• Pregnancy: 
+-Avoid ≥30 wks (D closure risk)
+• Lactation:…
+Patient education excerpt: • Timing: 
+-Take w/food/milk. For chronic use, dose with meals.
+• Food: 
+-Avoid alcohol (↑ GI bleed risk).
+• Missed Dose: 
+-Skip if near next dose; never double.
+• Overdose: 
+-No specific antidote. ER immediately for vomiting, drowsiness, or black stools.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Ibuprofen + PROPAFENONE: Risk: Reversible ↓ propafenone metabolism (CYP2C9 competition) → arrhythmia risk; Type: Pharmacokinetic; Monitoring: ECG (prolonged PR/QRS), ibuprofen duration; Dosage Adjustments: Limit ibuprofen to 3 days; Alternative: Naproxen (preferred CYP2C9 substrate); Patient Warnings: Report palpitations, avoid high-dose OTC…
+- Ibuprofen + CAPTOPRIL: Risk: Reversible AKI and hypertension exacerbation; Type: Pharmacodynamic (prostaglandin-mediated); Monitoring: BP, renal function (baseline + 3–5 days post-NSAID start); Dosage Adjustments: Adjust captopril based on BP response; Alternative: Naproxen if CVD risk low, but same precautions apply; Patient Warnings/Manag…
+- Ibuprofen + ENALAPRIL: Risk: Moderate BP elevation and reversible AKI; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust enalapril based on BP response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use lowest effective ibuprofen dose (≤400 mg/dose).
+- Ibuprofen + LISINOPRIL: Risk: Moderate BP elevation and reversible AKI; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust lisinopril based on BP response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use lowest effective ibuprofen dose (≤400 mg/dose).
+- Ibuprofen + RAMIPRIL: Risk: Moderate BP increase and reversible renal dysfunction; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust ramipril based on response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use ≤400 mg ibuprofen per dose.
+- Ibuprofen + BENAZEPRIL: Risk: Moderate BP increase and reversible renal dysfunction; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust benazepril based on response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use ≤400 mg ibuprofen per dose.
+- Ibuprofen + CILAZAPRIL: Risk: Moderate BP increase and reversible renal dysfunction; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust cilazapril based on response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use ≤400 mg ibuprofen per dose.
+- Ibuprofen + FOSINOPRIL: Risk: Moderate BP increase (+10-15 mmHg) and reversible renal dysfunction; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust fosinopril based on response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use ≤400 mg ibuprofen per dose.
+- Ibuprofen + QUINAPRIL: Risk: Moderate BP increase (+10-15 mmHg) and reversible renal dysfunction; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust quinapril based on response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use ≤400 mg ibuprofen per dose.
+- Ibuprofen + PERINDOPRIL: Risk: Moderate BP increase (+10-15 mmHg) and reversible renal dysfunction; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust perindopril based on response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use ≤400 mg ibuprofen per dose.
+- Ibuprofen + ALISKIREN: Risk: Triple threat - (1) Renal impairment (30-50% Cr elevation), (2) Hyperkalemia (K⁺ >5.5 in 15-25%), (3) Attenuated antihypertensive effect (SBP ↑10-15mmHg). Type: Pharmacodynamic (PG inhibition) + Pharmacokinetic (renal clearance competition). Monitoring: Baseline + weekly: BP, Cr, eGFR, K⁺ (q48h if CKD). Dosage A…
+- Ibuprofen + IRBESARTAN: Risk: Antihypertensive effect reversal (SBP↑ 10-15mmHg); Type: Pharmacodynamic; Monitoring: Daily home BP x14d; Dosage: Ibuprofen ≤400mg TID x3d; Alternative: Naproxen (shorter course); Patient Warnings: BP self-monitoring required.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Avoid in 3rd trimester; avoid if possible earlier unless advised.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Usually compatible in short courses at usual doses; prefer after feeds if concerned.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Dyspepsia (10-15%)*
+Nausea (10%)*
+Headache (10%)*
+Dizziness (10%)*
+Minor (material sheet): GI ulcer (1-2%)*
+GI bleeding (1-2%)*
+Hypertension (5%)*
+Rash (3%)*
+Tinnitus (2%)*
+AKI (1%)*
+Anaphylaxis (<1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: LISINOPRIL
+Risk: Hypotension and peripheral edema.
+Type: Pharmacodynamic (additive vasodilation).
+Monitoring: BP, edema severity, and renal function.
+Dose adjustment: Start amlodipine at 2.5 mg/day in high-risk
+Alternative: ARB + CCB if edema intolerable.
+Patient warning: /Management: Elevate legs for edema; report shortness of…
+Severity: caution
+
+Clinical note:
+Risk: Hypotension and peripheral edema. Type: Pharmacodynamic (additive vasodilation). Monitoring: BP, edema severity, and renal function. Dosage: Start amlodipine at 2.5 mg/day in high-risk patients. Alternative: ARB + CCB if edema intolerable. Patient Warnings/Management: Elevate legs for edema; report shortness of…

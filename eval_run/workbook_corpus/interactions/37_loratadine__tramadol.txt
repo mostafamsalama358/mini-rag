@@ -1,0 +1,16 @@
+Drug interaction — Claritine
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 37
+Brand: Claritine
+API 1: LORATADINE
+API 2: TRAMADOL
+Risk: Cognitive slowing; Interaction: Subtle CNS effects
+Type: -
+Monitoring: Digit symbol test
+Dose adjustment: Space doses 8h apart
+Alternative: Fluticasone nasal
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Cognitive slowing; Interaction: Subtle CNS effects; Monitoring: Digit symbol test; Dosage: Space doses 8h apart; Alternative: Fluticasone nasal; Patient: Avoid complex decisions.

@@ -1,0 +1,16 @@
+Drug interaction — Cataflam
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 17
+Brand: Cataflam
+API 1: DICLOFENAC POTASSIUM
+API 2: LISINOPRIL
+Risk: Hyperkalemia (potassium salt) + AKI
+Type: Pharmacodynamic
+Monitoring: K⁺, Cr (baseline + 3 days)
+Dose adjustment: Avoid in CKD; max 75 mg/day
+Alternative: Diclofenac topical
+Patient warning: /Management: Avoid potassium supplements.
+Severity: yes
+
+Clinical note:
+Risk: Hyperkalemia (potassium salt) + AKI; Type: Pharmacodynamic; Monitoring: K⁺, Cr (baseline + 3 days); Dosage Adjustments: Avoid in CKD; max 75 mg/day; Alternative: Diclofenac topical; Patient Warnings/Management: Avoid potassium supplements.

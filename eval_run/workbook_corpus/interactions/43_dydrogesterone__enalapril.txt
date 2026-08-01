@@ -1,0 +1,16 @@
+Drug interaction — Duphaston
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 43
+Brand: Duphaston
+API 1: DYDROGESTERONE
+API 2: ENALAPRIL
+Risk: Minimal hyperkalemia risk as dydrogesterone has negligible mineralocorticoid activity.
+Type: Minimal interaction.
+Monitoring: Routine potassium monitoring not required unless other risk factors present.
+Dose adjustment: None typically needed. Alternatives: N/A.
+Alternative: -
+Patient warning: /Management: Standard enalapril…
+Severity: caution
+
+Clinical note:
+Risk: Minimal hyperkalemia risk as dydrogesterone has negligible mineralocorticoid activity. Type: Minimal interaction. Monitoring: Routine potassium monitoring not required unless other risk factors present. Dosage Adjustments: None typically needed. Alternatives: N/A. Patient Warnings/Management: Standard enalapril…

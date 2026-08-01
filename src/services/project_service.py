@@ -56,9 +56,26 @@ class ProjectController(BaseController):
             payload["domain_key"] = domain_key
             payload["config_json"] = getattr(project, "config_json", None) or {}
         elif field_registry is not None:
-            welcomes = dict(field_registry.get_pack(domain_key).prompts.welcomes)
+            pack = field_registry.get_pack(domain_key)
+            welcomes = dict(pack.prompts.welcomes)
             if welcomes:
                 payload["welcome"] = welcomes
+            # Feature 021 — Skill catalog for chat UI (explicit selection)
+            if pack.skills:
+                from services.rag.skills import list_skill_catalog
+                from services.FieldRegistry import FieldProfile
+
+                # Build a thin profile view for catalog ordering
+                thin = FieldProfile(
+                    domain_key=pack.key,
+                    chunking=pack.chunking,
+                    retrieval=pack.retrieval,
+                    structural=pack.structural,
+                    metadata=pack.metadata,
+                    skills=dict(pack.skills),
+                    skill_profiles=dict(pack.skill_profiles),
+                )
+                payload["skills"] = list_skill_catalog(thin)
         if available_domains is not None:
             payload["available_domains"] = available_domains
         return payload

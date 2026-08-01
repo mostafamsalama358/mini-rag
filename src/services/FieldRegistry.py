@@ -38,6 +38,8 @@ from fields.schemas import (
     ProjectDefaults,
     PromptBundle,
     RetrievalProfile,
+    SkillDefinition,
+    SkillFilterProfile,
     StructuralProfile,
 )
 
@@ -72,6 +74,8 @@ class FieldPack:
     prompts: PromptBundle
     parser: ParserProfile = field(default_factory=ParserProfile)
     field_registry: FieldRegistryProfile = field(default_factory=FieldRegistryProfile)
+    skills: dict[str, SkillDefinition] = field(default_factory=dict)
+    skill_profiles: dict[str, SkillFilterProfile] = field(default_factory=dict)
 
 
 @dataclass
@@ -91,6 +95,8 @@ class FieldProfile:
     prompts: PromptBundle = field(default_factory=PromptBundle)
     parser_profile: ParserProfile = field(default_factory=ParserProfile)
     field_registry: FieldRegistryProfile = field(default_factory=FieldRegistryProfile)
+    skills: dict[str, SkillDefinition] = field(default_factory=dict)
+    skill_profiles: dict[str, SkillFilterProfile] = field(default_factory=dict)
     _compiled_structural_patterns: Any = None
 
     def chunking_strategy_for(self, file_ext: str) -> str:
@@ -228,6 +234,7 @@ class FieldRegistry:
         prompts = self._load_prompts(pack_dir)
         parser = self._load_parser(pack_dir)
         field_registry = self._load_field_registry(pack_dir)
+        skills, skill_profiles = self._load_skills_and_profiles(pack_dir)
 
         return FieldPack(
             key=key,
@@ -241,7 +248,22 @@ class FieldRegistry:
             prompts=prompts,
             parser=parser,
             field_registry=field_registry,
+            skills=skills,
+            skill_profiles=skill_profiles,
         )
+
+    @staticmethod
+    def list_pharmacy_recommend_pack_files() -> list[str]:
+        """Feature 020 — discover recommend YAML beside the pharmacy pack (not a new owner)."""
+        try:
+            from services.rag.domain_helpers import call_domain_helper
+
+            result = call_domain_helper(
+                "pharmacy", "recommend_pack", "list_recommend_pack_files"
+            )
+            return list(result or [])
+        except Exception:
+            return []
 
     @staticmethod
     def _load_yaml_model(path: Path, model_cls: type) -> Any:
@@ -298,6 +320,49 @@ class FieldRegistry:
         with path.open("r", encoding="utf-8") as handle:
             data = yaml.safe_load(handle) or {}
         return FieldRegistryProfile.model_validate(data)
+
+    @staticmethod
+    def _load_skills_and_profiles(
+        pack_dir: Path,
+    ) -> tuple[dict[str, SkillDefinition], dict[str, SkillFilterProfile]]:
+        """Load profiles/*.yaml then skills/*.yaml (021). Fail-fast on dangling refs."""
+        profiles_dir = pack_dir / "profiles"
+        skills_dir = pack_dir / "skills"
+        skill_profiles: dict[str, SkillFilterProfile] = {}
+        skills: dict[str, SkillDefinition] = {}
+
+        if profiles_dir.is_dir():
+            for path in sorted(profiles_dir.glob("*.yaml")):
+                with path.open("r", encoding="utf-8") as handle:
+                    raw = yaml.safe_load(handle) or {}
+                profile = SkillFilterProfile.model_validate(raw)
+                if profile.id in skill_profiles:
+                    raise ValueError(
+                        f"Duplicate SkillFilterProfile id '{profile.id}' in {path}"
+                    )
+                skill_profiles[profile.id] = profile
+
+        if skills_dir.is_dir():
+            for path in sorted(skills_dir.glob("*.yaml")):
+                with path.open("r", encoding="utf-8") as handle:
+                    raw = yaml.safe_load(handle) or {}
+                if isinstance(raw, dict) and "filters" in raw:
+                    raise ValueError(
+                        f"Skill YAML must not embed filters (use profile ref): {path}"
+                    )
+                skill = SkillDefinition.model_validate(raw)
+                if skill.id in skills:
+                    raise ValueError(
+                        f"Duplicate SkillDefinition id '{skill.id}' in {path}"
+                    )
+                if skill.profile not in skill_profiles:
+                    raise ValueError(
+                        f"Skill '{skill.id}' references missing profile "
+                        f"'{skill.profile}' in {path}"
+                    )
+                skills[skill.id] = skill
+
+        return skills, skill_profiles
 
     # ---- public API ----
 
@@ -444,6 +509,8 @@ class FieldRegistry:
             prompts=prompts,
             parser_profile=parser_profile,
             field_registry=field_registry,
+            skills=dict(domain.skills),
+            skill_profiles=dict(domain.skill_profiles),
         )
 
     def _merge_field_registry(

@@ -10,9 +10,9 @@ Conventions:
 """
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 
 class IntentRule(BaseModel):
@@ -190,6 +190,59 @@ class StructuralProfile(BaseModel):
     min_segment_chars: int = 80
 
 
+class MetadataFieldPattern(BaseModel):
+    """Regex → logical field_name used during chunk metadata enrichment."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    field: str
+    pattern: str
+
+
+class MetadataEntityDetector(BaseModel):
+    """Ordered entity extraction rule (first match wins)."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str | None = None
+    entity: str | None = None
+    # When set, format with regex groups: "{1} Ibuprofen"
+    entity_from_match: str | None = None
+    text_regex: str | None = None
+    also_require: str | None = None
+    file_name_regex: str | None = None
+    text_head_regex: str | None = None
+    text_head_prefix: str | None = None
+    # If true, any of file_name / text_head / text_regex triggers (AND also_require).
+    match_any: bool = False
+
+
+class MetadataAliasDetector(BaseModel):
+    """Secondary entity aliases stored for scoped retrieval."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    aliases: list[str] = Field(default_factory=list)
+    text_regex: str | None = None
+    primary_contains: str | None = None
+
+
+class MetadataEnrichmentProfile(BaseModel):
+    """Domain-pack driven chunk enrichment (leaflets / notes).
+
+    Shared code applies these rules; packs own the vocabulary/heuristics.
+    """
+
+    model_config = ConfigDict(extra="ignore")
+
+    enabled: bool = False
+    entity_key_default: str = "entity"
+    section_header_pattern: str = r"(?m)^\s*(\d+)\.\s+([^\n]{3,120})"
+    field_patterns: list[MetadataFieldPattern] = Field(default_factory=list)
+    entity_detectors: list[MetadataEntityDetector] = Field(default_factory=list)
+    alias_detectors: list[MetadataAliasDetector] = Field(default_factory=list)
+
+
 class MetadataProfile(BaseModel):
     """Per-field label formatting + extra metadata keys (research R9)."""
 
@@ -197,6 +250,9 @@ class MetadataProfile(BaseModel):
 
     label_template: str | None = None
     extra_keys: list[str] = Field(default_factory=list)
+    enrichment: MetadataEnrichmentProfile = Field(
+        default_factory=MetadataEnrichmentProfile
+    )
 
 
 class DomainMeta(BaseModel):
@@ -268,3 +324,104 @@ class ParserProfile(BaseModel):
     prompt: str = ""
     allowed_fields: list[str] = Field(default_factory=list)
     entity_grounding: GroundingConfig = Field(default_factory=GroundingConfig)
+
+
+# ---------------------------------------------------------------------------
+# Feature 021 — Domain Skills (DISTINCT from chunk MetadataProfile above)
+# ---------------------------------------------------------------------------
+
+
+class SkillValidationRules(BaseModel):
+    """Per-Skill entity/slot validation. Clarify on failure; never switch Skill."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    require_medicine: bool = False
+    require_medicine_pair: bool = False
+    require_need: bool = False
+    min_entities: int | None = None
+    max_entities: int | None = None
+
+
+class SkillCapabilities(BaseModel):
+    """Optional Skill capability flags (e.g. 020 recommend-mode gate)."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    recommend_mode: bool = False
+    require_need_frame: bool = False
+
+
+class SkillFilterProfileFilters(BaseModel):
+    """Retrieval filter constraints for a SkillFilterProfile (Metadata Profile)."""
+
+    model_config = ConfigDict(extra="allow")
+
+    field: list[str] = Field(default_factory=list)
+    source: list[str] = Field(default_factory=list)
+    extra: dict[str, Any] = Field(default_factory=dict)
+
+
+class SkillFilterProfile(BaseModel):
+    """Skill Metadata Profile — retrieval filters + strategy; NOT chunk ``MetadataProfile``.
+
+    Authored under ``fields/{domain}/profiles/*.yaml``. Profiles are the sole
+    source of truth for metadata filters and retrieval strategy.
+    """
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    filters: SkillFilterProfileFilters = Field(default_factory=SkillFilterProfileFilters)
+    fallback: dict[str, Any] | None = None
+    notes: str | None = None
+    # Retrieval strategy key consumed by SkillExecutionContext (not Skill name).
+    retrieval_strategy: Literal[
+        "default",
+        "pair_lookup",
+        "document_lookup",
+        "semantic_only",
+        "hybrid",
+    ] = "default"
+
+
+class SkillDefinition(BaseModel):
+    """Domain Skill — references a SkillFilterProfile; MUST NOT embed filters/field/operation."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    name: str
+    profile: str
+    prompt: str = ""
+    validation: SkillValidationRules = Field(default_factory=SkillValidationRules)
+    output: dict[str, Any] | None = None
+    retrieval: dict[str, Any] | None = None
+    capabilities: SkillCapabilities = Field(default_factory=SkillCapabilities)
+    description: str | None = None
+    order: int | None = None
+    # Optional additive contracts (021 medium priority)
+    response_schema: dict[str, Any] | str | None = None
+    citation_policy: Literal["strict", "relaxed", "leaflet_only"] | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def _reject_embedded_filters_and_metadata(cls, data: Any) -> Any:
+        if not isinstance(data, dict):
+            return data
+        if "filters" in data:
+            raise ValueError(
+                "SkillDefinition must not embed filters; use profile reference only"
+            )
+        # Reject legacy Skill→metadata coupling (field/operation belong on Profile).
+        if "field" in data or "operation" in data:
+            raise ValueError(
+                "SkillDefinition must not embed field/operation; Profiles own retrieval targeting"
+            )
+        validation = data.get("validation")
+        if isinstance(validation, dict) and (
+            "filters" in validation
+            or (isinstance(validation.get("field"), list))
+        ):
+            raise ValueError("Skill validation must not contain field filter lists")
+        return data

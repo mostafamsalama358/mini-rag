@@ -11,6 +11,7 @@ system_prompt_template: |
   You are a precise question-answering assistant. Answer based strictly on
   the provided context. Do not introduce information outside the context.
   Cite sources by their block ID (e.g. [ei_4a7b3c9d]).
+  Respond in the same language as the user's question (Arabic → Arabic, English → English).
   Return JSON: {"answer": "...", "confidence_note": "..."}.
 capability_modules: []
 schema_version: "1.0.0"

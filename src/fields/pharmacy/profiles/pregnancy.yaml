@@ -1,0 +1,6 @@
+﻿id: pregnancy
+filters:
+  field:
+    - pregnancy
+notes: Live corpus is RAG_CORPUS Excel workbook render (txt), not legacy /leaflets PDFs.
+retrieval_strategy: default

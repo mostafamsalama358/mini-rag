@@ -5,12 +5,26 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
-OperationEnum = Literal["lookup", "list", "compare", "explain", "count", "unsupported"]
+from core.query_parser.need_frame import NeedFrame
+
+OperationEnum = Literal[
+    "lookup",
+    "list",
+    "compare",
+    "explain",
+    "count",
+    "recommend",
+    "unsupported",
+]
 ScopeEnum = Literal["all", "single", "subset"]
 
 
 class QueryPlan(BaseModel):
-    """Structured retrieval intent consumed by the retriever."""
+    """Structured retrieval intent consumed by the retriever.
+
+    Feature 020 adds optional recommend_mode + need_frame (additive; existing
+    callers remain valid). recommend is NOT a new production API owner.
+    """
 
     model_config = ConfigDict(extra="forbid")
 
@@ -24,6 +38,8 @@ class QueryPlan(BaseModel):
     confidence: float | None = Field(default=None, ge=0.0, le=1.0)
     needs_clarification: bool = False
     clarification_prompt: str | None = None
+    recommend_mode: bool = False
+    need_frame: NeedFrame | None = None
 
     @field_validator("language")
     @classmethod

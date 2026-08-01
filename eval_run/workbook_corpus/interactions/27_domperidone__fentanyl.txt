@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: FENTANYL
+Risk: Delayed gastric emptying increases transdermal absorption.
+Type: -
+Monitoring: Continuous pulse oximetry recommended. Dose Adjustment: Reduce fentanyl patch dose by 25%.
+Dose adjustment: -
+Alternative: -
+Patient warning: Remove patch if excessive drowsiness. Mechanism: Potent mu agonist.
+Severity: caution
+
+Clinical note:
+Risk: Delayed gastric emptying increases transdermal absorption. Monitoring: Continuous pulse oximetry recommended. Dose Adjustment: Reduce fentanyl patch dose by 25%. Patient Warning: Remove patch if excessive drowsiness. Mechanism: Potent mu agonist.

@@ -1,0 +1,4 @@
+{"id":"p1","http":200,"body":{"signal":"rag_answer_success","answer":"Adults and adolescents (12 years and over) should not take more than 6 tablets (1200 mg) of MediQuick Ibuprofen in any 24-hour period [ei_a01293014897056b].","needs_clarification":false,"full_prompt":null,"chat_history":null}}
+{"id":"p3","http":200,"body":{"signal":"rag_answer_success","answer":"I cannot answer your question about the safety of ibuprofen in the third trimester of pregnancy based on the information provided in the context.","needs_clarification":false,"full_prompt":null,"chat_history":null}}
+{"id":"p5","http":400,"body":{"signal":"rag_answer_error","message":"Could not generate an answer. Try rephrasing the question or re-indexing the project."}}
+{"id":"p7","http":200,"body":{"signal":"rag_clarification_needed","answer":"I could not map your question to a supported topic. Please rephrase or name a specific item.","needs_clarification":true,"full_prompt":null,"chat_history":null}}

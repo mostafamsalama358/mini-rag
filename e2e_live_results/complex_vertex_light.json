@@ -1,0 +1,206 @@
+{
+  "sql": [
+    {
+      "id": "Q1_stack_ar",
+      "q": "مريض بياخد Panadol Advance 500 مرتين، وخد Flurest-N وCongestal. هل فيه خطر؟",
+      "hits": {
+        "Panadol": 19,
+        "Flurest-N": 7,
+        "Congestal": 7
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q2_stack_en",
+      "q": "Can a patient take Panadol Cold & Flu Day together with Adol 500 and Comtrex?",
+      "hits": {
+        "Panadol": 19,
+        "Adol": 39,
+        "Comtrex": 14
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q3_twins",
+      "q": "Are Augmentin 1 g and Hi-Biotic 1 g the same active combination?",
+      "hits": {
+        "Augmentin": 14,
+        "Hi-Biotic": 14
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q4_plavix_ppi",
+      "q": "Patient on Plavix 75 + Aspocid. Reflux — Risek 20 or Controloc 20?",
+      "hits": {
+        "Plavix": 16,
+        "Aspocid": 16,
+        "Risek": 16,
+        "Controloc": 7
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q5_anaseziago",
+      "q": "Is Anaseziago the same as thiocolchicoside muscle relaxant?",
+      "hits": {
+        "Anaseziago": 6
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q6_lipitor_preg",
+      "q": "Is Lipitor safe in pregnancy?",
+      "hits": {
+        "Lipitor": 16
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q7_acid",
+      "q": "Jeparilon vs Controloc vs Risek vs Gaviscon classify each",
+      "hits": {
+        "Jeparilon": 7,
+        "Controloc": 7,
+        "Risek": 16,
+        "Gaviscon": 14
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q8_cipro_iron",
+      "q": "Ciprobay with Ferrotron and Gaviscon timing",
+      "hits": {
+        "Ciprobay": 16,
+        "Ferrotron": 14,
+        "Gaviscon": 14
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q9_daflon",
+      "q": "Daflon 500 vs Daflon 1000 usual daily tablet counts",
+      "hits": {
+        "Daflon": 14
+      },
+      "sql_ok": true,
+      "mark": "PASS"
+    },
+    {
+      "id": "Q10_vancomycin_neg",
+      "q": "What is the vancomycin meningitis dose for a 70 kg adult?",
+      "hits": {
+        "vancomycin": 2
+      },
+      "sql_ok": false,
+      "mark": "FAIL_NEG"
+    }
+  ],
+  "scope_panadol_advance_matches": 17,
+  "search": [
+    {
+      "id": "Q1_stack_ar",
+      "http": 200,
+      "signal": "vectordb_search_success",
+      "ents": [
+        "Flurest-N",
+        "Congestal",
+        "Panadol Cold & Flu Day",
+        "Panadol",
+        "Flurest-N"
+      ],
+      "ok": true
+    },
+    {
+      "id": "Q2_stack_en",
+      "http": 200,
+      "signal": "vectordb_search_success",
+      "ents": [
+        "Panadol Cold & Flu Day",
+        "Comtrex",
+        "Panadol Cold & Flu Day",
+        "Panadol Cold & Flu Day",
+        "Comtrex"
+      ],
+      "ok": true
+    },
+    {
+      "id": "Q3_twins",
+      "http": 200,
+      "signal": "vectordb_search_success",
+      "ents": [
+        "Hi-Biotic",
+        "Hi-Biotic",
+        "Augmentin",
+        "Hi-Biotic",
+        "Augmentin"
+      ],
+      "ok": true
+    },
+    {
+      "id": "Q4_plavix_ppi",
+      "http": 200,
+      "signal": "vectordb_search_success",
+      "ents": [
+        "Controloc 20",
+        "Risek",
+        "Controloc 20",
+        "Risek",
+        "Controloc 20"
+      ],
+      "ok": true
+    },
+    {
+      "id": "Q5_anaseziago",
+      "http": 200,
+      "signal": "vectordb_search_success",
+      "ents": [
+        "Anaseziago",
+        "Anaseziago",
+        "Anaseziago",
+        "Buscopan",
+        "MediQuick Ibuprofen"
+      ],
+      "ok": true
+    },
+    {
+      "id": "Q6_lipitor_preg",
+      "http": 200,
+      "signal": "vectordb_search_success",
+      "ents": [
+        "Lipitor",
+        "Lipitor Atorvastatin",
+        "Lipitor",
+        "Aspocid",
+        "Concor"
+      ],
+      "ok": true
+    }
+  ],
+  "answer": [
+    {
+      "id": "Q1_stack_ar",
+      "http": 200,
+      "signal": "rag_clarification_needed",
+      "ans": "I could not understand your question. Please rephrase or name a specific item."
+    },
+    {
+      "id": "Q2_stack_en",
+      "http": 200,
+      "signal": "rag_clarification_needed",
+      "ans": "I could not understand your question. Please rephrase or name a specific item."
+    }
+  ],
+  "notes": [
+    "RAG_SEMANTIC_PARSER_ENABLED=false during this run",
+    "entity scope brand-head fix applied for Panadol Advance 500"
+  ]
+}

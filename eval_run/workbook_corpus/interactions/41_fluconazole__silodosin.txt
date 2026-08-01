@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: SILODOSIN
+Risk: Moderate interaction (mild CYP3A4 inhibition)
+Type: Pharmacokinetic
+Monitoring: BP biweekly
+Dose adjustment: Max silodosin 4mg/day
+Alternative: Preferred antifungal option
+Patient warning: /Management: Standard hypotension precautions.
+Severity: caution
+
+Clinical note:
+Risk: Moderate interaction (mild CYP3A4 inhibition); Type: Pharmacokinetic; Monitoring: BP biweekly; Dosage Adjustments: Max silodosin 4mg/day; Alternative: Preferred antifungal option; Patient Warnings/Management: Standard hypotension precautions.

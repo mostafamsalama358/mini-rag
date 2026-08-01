@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: OLANZAPINE
+Risk: CYP1A2 inhibition → ↑ olanzapine (metabolic toxicity).
+Type: -
+Monitoring: Glucose, lipids; olanzapine levels. Dose Adjust: Halve olanzapine dose.
+Dose adjustment: -
+Alternative: -
+Patient warning: Monitor weight/glucose; report excessive hunger.
+Severity: caution
+
+Clinical note:
+Risk: CYP1A2 inhibition → ↑ olanzapine (metabolic toxicity). Monitoring: Glucose, lipids; olanzapine levels. Dose Adjust: Halve olanzapine dose. Patient Warning: Monitor weight/glucose; report excessive hunger.

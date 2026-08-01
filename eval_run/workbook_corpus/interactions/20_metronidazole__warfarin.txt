@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: WARFARIN
+Risk: Severe INR elevation (CYP2C9 inhibition)
+Type: Pharmacokinetic
+Monitoring: INR every 2-3 days during and 2 weeks post-therapy
+Dose adjustment: Reduce warfarin by 30-50% preemptively
+Alternative: Amoxicillin
+Patient warning: Avoid alcohol (disulfiram-like reaction), report dark urine/bleeding.
+Severity: yes
+
+Clinical note:
+Risk: Severe INR elevation (CYP2C9 inhibition); Type: Pharmacokinetic; Monitoring: INR every 2-3 days during and 2 weeks post-therapy; Dosage: Reduce warfarin by 30-50% preemptively; Alternative: Amoxicillin; Patient Warnings: Avoid alcohol (disulfiram-like reaction), report dark urine/bleeding.

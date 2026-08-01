@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: BUPROPION
+Risk: Ciprofloxacin (CYP1A2 inhibitor) may modestly ↑ bupropion levels. Action: Limit bupropion to 300mg/day (450mg if essential).
+Type: -
+Monitoring: Seizure precautions, especially in elderly.
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Ciprofloxacin (CYP1A2 inhibitor) may modestly ↑ bupropion levels. Action: Limit bupropion to 300mg/day (450mg if essential). Monitoring: Seizure precautions, especially in elderly.

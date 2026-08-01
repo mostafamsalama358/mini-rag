@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: MORPHINE
+Risk: Delayed gastric emptying increases oral bioavailability 2-fold.
+Type: -
+Monitoring: Respiratory depression for 12h post-dose. Dose Adjustment: Reduce oral morphine by 30-50%.
+Dose adjustment: -
+Alternative: -
+Patient warning: Take only when awake. Mechanism: Delayed GI transit increases absorption.
+Severity: caution
+
+Clinical note:
+Risk: Delayed gastric emptying increases oral bioavailability 2-fold. Monitoring: Respiratory depression for 12h post-dose. Dose Adjustment: Reduce oral morphine by 30-50%. Patient Warning: Take only when awake. Mechanism: Delayed GI transit increases absorption.

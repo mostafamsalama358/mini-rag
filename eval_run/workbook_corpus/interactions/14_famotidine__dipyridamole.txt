@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: DIPYRIDAMOLE
+Risk: Mild absorption delay (pH effect).
+Type: Pharmacokinetic.
+Monitoring: Headache timing (therapeutic marker).
+Dose adjustment: MR formulation preferred.
+Alternative: Rabeprazole.
+Patient warning: /Management: Evening H2A dosing minimizes interaction.
+Severity: caution
+
+Clinical note:
+Risk: Mild absorption delay (pH effect). Type: Pharmacokinetic. Monitoring: Headache timing (therapeutic marker). Dosage Adjustments: MR formulation preferred. Alternative: Rabeprazole. Patient Warnings/Management: Evening H2A dosing minimizes interaction.

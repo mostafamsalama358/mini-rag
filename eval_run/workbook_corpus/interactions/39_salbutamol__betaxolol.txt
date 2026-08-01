@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: BETAXOLOL
+Risk: High β₁-selectivity but caution required
+Type: Pharmacodynamic
+Monitoring: Morning/evening PEFR
+Dose adjustment: Betaxolol ≤10 mg/day
+Alternative: Enalapril
+Patient warning: /Management: Monitor for silent chest.
+Severity: caution
+
+Clinical note:
+Risk: High β₁-selectivity but caution required; Type: Pharmacodynamic; Monitoring: Morning/evening PEFR; Dosage Adjustments: Betaxolol ≤10 mg/day; Alternative: Enalapril; Patient Warnings/Management: Monitor for silent chest.

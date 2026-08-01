@@ -1,0 +1,101 @@
+SINGULAIR 10MG 14 F.C. TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Singulair
+Product line: Singulair
+Catalog SKU: SINGULAIR 10MG 14 F.C. TAB.
+SKU ID: 40
+INN / actives: Montelukast
+INN primary: Montelukast
+INN aliases: MONTELUKAST; MONTELUKAST SODIUM
+Strength / form: Montelukast 10 mg | Form=TAB. | Min.age=15 years
+Manufacturer / market: MERCK SHARP & DOHME
+Price (catalog): 192
+Categories: MEDICINE > ANTI-ASTHMA > ANTI-ASTHMA
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Singulair is used for
+Asthma prophylaxis - 10 mg daily (adults); 5 mg (6 to 14y); 4 mg (2 to 5y)*
+Allergic rhinitis - 10 mg daily: If Patients with both asthma and allergic rhinitis should take only 1 dose qPM*
+Exercise induced bronchospasm - 10 mg 2h pre exercise*
+
+2. Dosage — Adults
+Adult dose: 10 mg once daily evening
+Maximum daily dose: 10 mg/day (10 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 15 years
+Pediatric min age: 6 months
+Pediatric dose: 6 months-5 years: 4 mg daily. 6-14 years: 5 mg daily. >=15 years: 10 mg daily.
+Pediatric max daily dose: See pack
+
+4. Do not take Singulair if / disease cautions
+Hypersensitivity to MONTELUKAST * Psychotic Disorders * Mood Disorders (Depression & Bipolar) * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation* Phenylketonuria (PKU)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: Serious neuropsychiatric events that may include suicidal thoughts or actions have been reported in patients taking montelukast, If changes in behavior are observed, or aggression, depression, and sleep disturbances reported, advise patients to discontinue montelukast, especially in children. This Events have occurred in patients with and without pre-existing psychiatric disease
+Warnings: • personal hygiene and keep your surroundings clean to avoid allergens (allergy-causing agents) such as pollen, dust : disifectant , soap ,air filtter , wipes , napkin , masks
+• Try to sleep 7-9 hours each night can using Melatonin
+• Avoid in History of depression, ADHD, or anxiety disorders., Phenobarbital/rifampin (↓ efficacy via CYP3A4 induction), Zileuton (redundant mechanism).
+............................................................................
+• Dose Modification:
+- Hepatic/Renal: 
+No adjustment needed.
+- DDIs: 
+↑ Effects of theophylline (monitor levels); ↓ efficacy with cholestyramine.
+........................................................
+• Pregnancy/Lactation: 
+-Category B
+HCP notes: • personal hygiene and keep your surroundings clean to avoid allergens (allergy-causing agents) such as pollen, dust : disifectant , soap ,air filtter , wipes , napkin , masks
+• Try to sleep 7-9 hours each night can using Melatonin
+• Avoid in History of depression, ADHD, or anxiety disorders., Phenobarbital/rifampin (↓ efficacy via CYP3A4 induction), Zileuton (redundant mechanism).
+............................................................................
+• Dose Modification:
+- Hepatic/Renal: 
+No adjustment needed.
+- DDIs: 
+↑ Effects of theophylline (monitor levels); ↓ efficacy with cholestyramine.
+........................................................
+• Pregnancy/Lactation: 
+-Category B
+Patient education: • Timing: 
+-Daily in evening (for asthma/rhinitis); pre-exercise for EIB, Take with or without food
+• Missed Dose: 
+-Take ASAP; skip if near next dose.
+• Oral granules: 
+-administer either directly in the mouth, dissolve in breast milk, or only applesauce, carrots, rice, or ice cream (not liquid)& After opening, the full dose must be administered within 15 min
+• Interactions: 
+- Take 2h before/after cholestyramine.
+• Overdose: 
+- ER for agitation/hallucinations (symptomatic support).
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- MONTELUKAST + THIOPENTAL; Risk: THIOPENTAL decreases MONTELUKAST levels by 30% via CYP3A4 induction. Monitor: Asthma control tests.; Dose adjustment: MONTELUKAST may need 50% dose increase.; Patient warning: Watch for worsening wheezing.
+- MONTELUKAST + PHENOBARBITAL; Risk: PHENOBARBITAL decreases MONTELUKAST levels by 40% via CYP3A4 induction. Monitor: Asthma control test scores monthly.; Dose adjustment: Increase MONTELUKAST to 15mg nightly if >15yo.; Patient warning: Watch for nocturnal asthma symptoms.
+- MONTELUKAST + PHENOBARBITONE; Risk: PHENOBARBITONE reduces MONTELUKAST efficacy by 50%. Monitor: Fractional exhaled nitric oxide (FeNO) levels.; Dose adjustment: Consider alternative leukotriene modifier.; Patient warning: Increased rescue inhaler use may be needed.
+- MONTELUKAST + PRIMIDONE; Risk: PRIMIDONE (via phenobarbital) decreases MONTELUKAST AUC by 60%. Monitor: Morning/evening peak flow variability.; Dose adjustment: MONTELUKAST may need 2x daily dosing.; Patient warning: Report increased wheezing at night.
+- MONTELUKAST + AMOBARBITAL; Risk: Reduced montelukast efficacy (CYP3A4/CYP2C9 induction) worsening asthma control. Monitor: Asthma symptoms, PEFR/FEV1, rescue inhaler use. Dose Adjust: Consider montelukast dose increase if control declines; Patient warning: Report increased wheezing/shortness of breath immediately; never stop asthma meds without…
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: use_with_caution
+
+8. Breastfeeding
+Breastfeeding safety: use_with_caution
+
+9. Supplements / cross-selling
+Catalog cross-selling: Ventolin
+
+10. Possible side effects
+Major: Headache (18%)* 
+Influenza (13%)*
+Abdominal pain - children (10%)*
+Minor: Aggression (2.9%)*
+Anxiety (2.3%)*
+Nightmares (1.5%)*
+increase ALT (4%)*
+Rash (3%)*
+Dizziness (2%)*
+Churg Strauss syndrome (<0.1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

@@ -79,3 +79,38 @@ celery_app.conf.update(
 )
 
 celery_app.conf.task_default_queue = "default"
+
+
+from celery.signals import worker_ready
+
+
+@worker_ready.connect
+def _ingest_orphan_recovery_on_worker_ready(sender=None, **kwargs):
+    """Best-effort orphan reclaim on worker boot (017)."""
+    import asyncio
+    import logging
+
+    log = logging.getLogger(__name__)
+    if not settings.INGEST_RELIABILITY_ENABLED:
+        return
+
+    async def _run() -> None:
+        from celery_runtime import get_db_client
+        from services.ingest_reliability.orphans import recover_stale_orphans
+
+        engine = None
+        try:
+            engine, db_client = await get_db_client()
+            outcomes = await recover_stale_orphans(db_client)
+            if outcomes:
+                log.info("ingest orphan recovery: %s", outcomes)
+        except Exception as exc:
+            log.warning("ingest orphan recovery skipped: %s", exc)
+        finally:
+            if engine is not None:
+                await engine.dispose()
+
+    try:
+        asyncio.run(_run())
+    except Exception as exc:
+        log.warning("ingest orphan recovery bootstrap failed: %s", exc)

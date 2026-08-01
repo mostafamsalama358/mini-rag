@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: METHYLDOPA
+Risk: Reduced methyldopa absorption (↓ efficacy), BP instability
+Type: Chelation interaction
+Monitoring: BP weekly, Hb/ferritin (if anemia)
+Dose adjustment: Administer iron 2–3 hours after methyldopa
+Alternative: IV iron if oral separation impractical
+Patient warning: /Management: Take methyldopa on empty stoma…
+Severity: caution
+
+Clinical note:
+Risk: Reduced methyldopa absorption (↓ efficacy), BP instability; Type: Chelation interaction; Monitoring: BP weekly, Hb/ferritin (if anemia); Dosage Adjustments: Administer iron 2–3 hours after methyldopa; Alternative: IV iron if oral separation impractical; Patient Warnings/Management: Take methyldopa on empty stoma…

@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: METHYLDOPA
+Risk: Paradoxical hypertension → stroke
+Type: Antagonistic (β₂-agonist vs α₂-agonist)
+Monitoring: BP pre/post-inhalation, potassium
+Dose adjustment: Increase methyldopa by 250mg/day; Alternatives: Ipratropium
+Alternative: -
+Patient warning: "Report tremors/BP↑, avoid OTC decongestants"
+Severity: yes
+
+Clinical note:
+Risk: Paradoxical hypertension → stroke; Type: Antagonistic (β₂-agonist vs α₂-agonist); Monitoring: BP pre/post-inhalation, potassium; Dosage Adjustments: Increase methyldopa by 250mg/day; Alternatives: Ipratropium; Patient Warnings: "Report tremors/BP↑, avoid OTC decongestants"

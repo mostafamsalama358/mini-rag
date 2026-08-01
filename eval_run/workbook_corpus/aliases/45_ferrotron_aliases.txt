@@ -1,0 +1,17 @@
+Alias registry — Ferrotron
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 45
+Brand: Ferrotron
+
+Known aliases:
+- Ferrotron (brand)
+- FERROTRON 30 CAPS. (catalog_sku)
+- Iron (inn)
+- FERROUS (inn_alias)
+- FERROUS FUMARATE (inn_alias)
+- FERROUS SULFATE (inn_alias)
+- Folic Acid (inn)
+- FOLIC (inn_alias)
+- فيروترون (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

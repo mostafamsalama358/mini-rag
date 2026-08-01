@@ -1,0 +1,16 @@
+Drug interaction — Gaviscon Advance
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 26
+Brand: Gaviscon Advance
+API 1: SODIUM ALGINATE
+API 2: CAPTOPRIL
+Risk: Minimal absorption impact
+Type: Minimal interaction
+Monitoring: Routine BP monitoring
+Dose adjustment: None typically needed
+Alternative: Preferred for GERD with ACEIs
+Patient warning: /Management: Can be taken together if needed.
+Severity: caution
+
+Clinical note:
+Risk: Minimal absorption impact; Type: Minimal interaction; Monitoring: Routine BP monitoring; Dosage Adjustments: None typically needed; Alternative: Preferred for GERD with ACEIs; Patient Warnings/Management: Can be taken together if needed.

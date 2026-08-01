@@ -1,0 +1,16 @@
+Drug interaction — Telfast
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 36
+Brand: Telfast
+API 1: FEXOFENADINE
+API 2: KETOBEMIDONE
+Risk: Mild sedation
+Type: Additive
+Monitoring: Cognitive function
+Dose adjustment: ↓ Ketobemidone 25%
+Alternative: Loratadine
+Patient warning: Avoid driving.
+Severity: yes
+
+Clinical note:
+Risk: Mild sedation; Type: Additive; Monitoring: Cognitive function; Dosage Adjustments: ↓ Ketobemidone 25%; Alternative: Loratadine; Patient Warnings: Avoid driving.

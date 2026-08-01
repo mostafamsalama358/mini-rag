@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: BETAXOLOL
+Risk: Masked bronchospasm
+Type: Pharmacodynamic (β₂-blockade synergy)
+Monitoring: Peak flow pre/post dose
+Dose adjustment: Pantoprazole min effective dose
+Alternative: Magaldrate
+Patient warning: Keep rescue inhaler; report wheezing.
+Severity: caution
+
+Clinical note:
+Risk: Masked bronchospasm; Type: Pharmacodynamic (β₂-blockade synergy); Monitoring: Peak flow pre/post dose; Dosage: Pantoprazole min effective dose; Alternative: Magaldrate; Patient Warnings: Keep rescue inhaler; report wheezing.

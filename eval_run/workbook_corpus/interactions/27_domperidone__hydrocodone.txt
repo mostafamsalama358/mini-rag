@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: HYDROCODONE
+Risk: CYP2D6 interaction in ultrarapid metabolizers.
+Type: -
+Monitoring: Sedation scores q4h. Dose Adjustment: Limit to 15mg q6h.
+Dose adjustment: -
+Alternative: -
+Patient warning: Watch for extreme drowsiness. Mechanism: Converted to hydromorphone via CYP2D6.
+Severity: caution
+
+Clinical note:
+Risk: CYP2D6 interaction in ultrarapid metabolizers. Monitoring: Sedation scores q4h. Dose Adjustment: Limit to 15mg q6h. Patient Warning: Watch for extreme drowsiness. Mechanism: Converted to hydromorphone via CYP2D6.

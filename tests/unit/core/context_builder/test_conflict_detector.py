@@ -61,11 +61,11 @@ async def test_three_items_same_tag_merged_not_pairs(detector, config):
 
 @pytest.mark.asyncio
 async def test_detector_failure_returns_empty(monkeypatch, detector, config):
-    def _boom(_text, _tag):
+    def _boom(_text, _tag):  # noqa: ANN001
         raise RuntimeError("boom")
 
     monkeypatch.setattr(
-        "core.context_builder.conflict.entity_tag_detector._extract_numeric_values",
+        "core.context_builder.conflict.entity_tag_detector._extract_numeric_values_by_attribute",
         _boom,
     )
     item_a = make_item(entity_tags=["x"], text="x 10")
@@ -76,9 +76,33 @@ async def test_detector_failure_returns_empty(monkeypatch, detector, config):
 
 @pytest.mark.asyncio
 async def test_conflict_item_ids_present_in_input(detector, config):
-    item_a = make_item(entity_tags=["price"], text="price is 10 for product price")
-    item_b = make_item(chunk_id="c2", entity_tags=["price"], text="price is 20 for product price")
+    item_a = make_item(
+        entity_tags=["metformin"],
+        text="metformin maximum daily dose is 1000 mg",
+    )
+    item_b = make_item(
+        chunk_id="c2",
+        entity_tags=["metformin"],
+        text="metformin maximum daily dose is 2000 mg",
+    )
     input_ids = {item_a.item_id, item_b.item_id}
     groups = await detector.detect([item_a, item_b], config)
+    assert groups
     for group in groups:
         assert set(group.item_ids).issubset(input_ids)
+
+
+@pytest.mark.asyncio
+async def test_dose_vs_age_numbers_are_not_conflict(detector, config):
+    """Different attributes near the same entity must not false-positive."""
+    item_a = make_item(
+        entity_tags=["aspirin"],
+        text="aspirin maximum daily dose is 4000 mg",
+    )
+    item_b = make_item(
+        chunk_id="c2",
+        entity_tags=["aspirin"],
+        text="aspirin is not recommended under 16 years of age",
+    )
+    groups = await detector.detect([item_a, item_b], config)
+    assert groups == []

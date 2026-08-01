@@ -1,0 +1,117 @@
+ZITHROKAN 500 MG 3 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Zithrokan
+Catalog SKU: ZITHROKAN 500 MG 3 CAPS.
+INN / actives: Azithromycin
+Catalog New Material: AZITHROMYCIN
+Strength / form: Azithromycin 500 mg | (web-supplemented dosing below)
+Manufacturer / market: HIKMA PHARMA
+Price (catalog): 77
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-BACTERIAL
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=ZITHROKAN 500; sheet lookup INNs=Azithromycin, AZITHROMYCIN
+Web clinical sources: Azithromycin SmPC; Hikma Zithrokan
+
+1. What Zithrokan is used for
+Catalog uses: antibiotic.macrolide
+Approved uses (material sheet): Community acquired pneumonia - 500 mg x1, then 250 mg daily x4 days*
+Streptococcal pharyngitis - 500 mg x1, then 250 mg x4 days*
+Acute otitis media - 30 mg/kg single dose*
+Off-label mentions (material sheet): COVID 19 - combined with hydroxychloroquine, though evidence limited*
+Trachoma - 20 mg/kg single dose, max 1g*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Common short courses: 500 mg once daily for 3 days, OR 500 mg day 1 then 250 mg days 2–5 — indication-specific.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Weight-based paediatric regimens; capsules may not suit young children.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Zithrokan if / disease cautions
+From material/disease sheets:
+[AZITHROMYCIN] Hypersensitivity to AZITHROMYCIN * 
+Infants under 6 months *
+Biliary obstruction*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+Long QT syndrome (congenital or acquired)*
+Myasthenia Gravis*
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5)*
+Pregnancy; unspecified gestational age*
+Breastfeeding*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • QT Prolongation: 
+-Risk of fatal arrhythmias (especially with concomitant QT-prolonging drugs)
+Notes (material sheet): • Must have a probiotic such as lacteol fort cap to use after him and advise him to eat food rich in prebiotic such as garlic, onions, bananas, yogurt 
+• Safe for patients with kidney failure
+• Avoid: 
+- Antacids (take 2 hours apart), ergot derivatives (risk of ergotism)
+.......................................................................
+• Tablets and oral suspension: 
+-Take with or without food
+• Capsule on an empty stomach. Take at least 1 hour before or 2 hours after meals
+• Avoid taking too much calcium enriched foods and drinks as it might affect the working of AZITHROMYCIN.
+• Antacids containing aluminum or magnesium may decrease the absorption of azithromycin if taken at the same…
+Patient education excerpt: • Administration: 
+-Take 1 hour before/2 hours after food (suspension can be taken with food)
+• Side Effects: 
+-Report irregular heartbeat, severe diarrhea, or yellowing skin
+• Missed Dose:
+- Take as soon as remembered unless close to next dose
+• Storage: 
+-Keep suspension at room temperature (discard after 10 days)
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Azithromycin + AMIODARONE: Risk: Sudden cardiac death; Type: Dual QTc prolongation; Monitoring: Telemetry if combined; Dosage Adjustments: Contraindicated; Alternative: Use non-macrolide antibiotics (e.g., doxycycline, cephalexin); Patient Warnings: No OTC antacids (↓absorption of azithromycin). Note: For life-threatening infections where azith…
+- Azithromycin + DRONEDARONE: Risk: Additive QT prolongation (especially in hypokalemia); Type: Pharmacodynamic; Monitoring: ECG (QTc) & K⁺ if combination unavoidable; Dosage Adjustments: Prefer single 1g dose over multi-day; Alternative: Ceftriaxone; Patient Warnings/Management: Report syncope/palpitations immediately.
+- Azithromycin + PROPAFENONE: Risk: Additive QT prolongation (especially with hypokalemia); Type: Pharmacodynamic; Monitoring: ECG (QTc) & K⁺ if combination unavoidable; Dosage Adjustments: Prefer single 1g dose over multi-day; Alternative: Ceftriaxone; Patient Warnings/Management: Report syncope/palpitations immediately.
+- Azithromycin + ALISKIREN: Risk: Potential hyperkalemia and QT prolongation (though lower risk than other macrolides); Type: Pharmacodynamic (additive electrolyte effects); Monitoring: BP, serum potassium (weekly), renal function, ECG if high cardiac risk; Dosage Adjustments: Usually none required unless hyperkalemia occurs; Alternative: Non-ma…
+- Azithromycin + SILODOSIN: Risk: Mild additive hypotension (minimal CYP3A4 inhibition); Type: Pharmacodynamic; Monitoring: BP at days 3/7 of therapy; Dosage Adjustments: None typically needed; Alternative: First-line macrolide for silodosin patients; Patient Warnings/Management: Standard orthostatic precautions. Lowest risk macrolide.
+- Azithromycin + TAMSULOSIN: Risk: Mild pharmacodynamic interaction; Type: Additive vasodilation; Monitoring: BP at days 1/5 of therapy; Dosage Adjustments: None; Alternative: First-line combination; Patient Warnings/Management: Take tamsulosin at bedtime.
+- Azithromycin + PRAZOSIN: Risk: Mild additive hypotension (minimal CYP3A4 interaction); Type: Pharmacodynamic; Monitoring: BP at days 1/3/7; Dosage Adjustments: None typically needed; Alternative: First-line macrolide choice; Patient Warnings/Management: Take evening dose if drinking alcohol.
+- Azithromycin + ALFUZOSIN: Risk: Mild pharmacodynamic effect; Type: Additive vasodilation; Monitoring: BP at days 2/5; Dosage Adjustments: None; Alternative: Safest combination; Patient Warnings/Management: Normal activities permitted.
+- Azithromycin + DOXAZOSIN: Risk: Mild additive hypotension (minimal CYP3A4 effect); Type: Pharmacodynamic; Monitoring: BP weekly; Dosage Adjustments: None needed; Alternative: First-line macrolide choice; Patient Warnings/Management: Standard orthostatic precautions. Safest combination.
+- Azithromycin + TERAZOSIN: Risk: Minimal pharmacodynamic effect; Type: Additive vasodilation; Monitoring: BP at days 3/7; Dosage Adjustments: None; Alternative: Safest macrolide option; Patient Warnings/Management: Normal activities permitted.
+- Azithromycin + tolazoline: Risk: Mild additive vasodilation (minimal CYP3A4 interaction); Type: Pharmacodynamic; Monitoring: BP every 6h during IV therapy; Dosage Adjustments: Reduce tolazoline infusion rate by 25%; Alternative: Preferred macrolide for pulmonary HTN neonates; Patient Warnings/Management: Monitor for paradoxical hypertension.
+- Azithromycin + KETANSERIN: Risk: TdP (especially with hypokalemia); Type: Additive QT; Monitoring: ECG day 3 of therapy; Dosage Adjustments: Avoid >3g cumulative dose; Alternatives: Ceftriaxone; Patient Warnings: "Report syncope"
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Macrolides used when indicated; azithromycin often acceptable with clinician oversight.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Usually compatible short courses; monitor infant GI flora.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Diarrhea (10%)*
+Nausea (5%)*
+Abdominal pain (3%)*
+Minor (material sheet): QT prolongation (3%)*
+Hepatotoxicity (1%)*
+Hearing loss (0.5% )
+C. difficile infection (0.3%)*
+Increased serum ALT - alanine aminotransferase (< 0.1%)*
+Increased serum AST - aspartate aminotransferase (< 0.1%)*
+Increased serum Creatinine (< 0.1%)*
+Elevated LDH (< 0.1%)*
+Bilirubin (< 0.1%)*
+Dyspepsia (< 0.1%)*
+Flatulence (< 0.1%)*
+Mucositis - mouth or gut is sore and inflamed (< 0.1%)*
+Oral moniliasis - Oral candidiasis (< 0.1%)*
+Gastritis (< 0.1%)*
+Headache (< 0.1%)*
+Somnolence (< 0.1%)*
+Bronchospasm (< 0.1%)*
+Taste perversion (< 0.1%)*
+Leukopenia - low level of WBCs (< 0.1%)*
+Neutropenia - d…
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

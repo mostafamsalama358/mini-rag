@@ -1,0 +1,16 @@
+Drug interaction — Claritine
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 37
+Brand: Claritine
+API 1: LORATADINE
+API 2: OXYCODONE
+Risk: Cognitive slowing; Interaction: Subtle CNS synergy
+Type: -
+Monitoring: Digit symbol test
+Dose adjustment: Space doses 12h apart
+Alternative: Mometasone nasal
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Cognitive slowing; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dosage: Space doses 12h apart; Alternative: Mometasone nasal; Patient: Avoid complex tasks.

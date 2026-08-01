@@ -1,0 +1,111 @@
+CATAFLAM 50 MG 20 SUGAR C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Cataflam
+Catalog SKU: CATAFLAM 50 MG 20 SUGAR C.TABS.
+INN / actives: Diclofenac Potassium * Diclofenac
+Catalog New Material: DICLOFENAC POTASSIUM
+Strength / form: Catalog match Cataflam 50 mg sugar-coated (diclofenac potassium); file name legacy 25 mg | (web-supplemented dosing below)
+Manufacturer / market: NOVARTIS
+Price (catalog): 86
+Categories: MEDICINE > PAIN, FEVER & INFLAMMATION > ANALGESICS & ANTI-PYRETICS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=CATAFLAM 50 MG; sheet lookup INNs=Diclofenac Potassium, Diclofenac, DICLOFENAC POTASSIUM
+Web clinical sources: Diclofenac potassium SmPC; Novartis Cataflam class
+
+1. What Cataflam is used for
+Catalog uses: nsaid.acetic acid derivatives
+Approved uses (material sheet): Osteoarthritis/Rheumatoid Arthritis - 50 mg TID or 75 mg BID*
+Acute Pain/Primary Dysmenorrhea - 50 mg TID (max 200 mg/day)*
+Migraine - 50 mg PRN (with aura)*
+Off-label mentions (material sheet): Biliary Colic/Post operation Pain - 50 mg IM/IV*
+Gout - 50 mg BID (short-term)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Diclofenac potassium: often 50 mg initially then 25–50 mg every 6–8 h as needed; max commonly 150 mg/day short course with food. Use lowest dose/shortest duration.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not for young children unless specialist paediatric diclofenac product prescribed.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Cataflam if / disease cautions
+From material/disease sheets:
+[DICLOFENAC POTASSIUM] Infants under 1 year * Specific Coagulopathies & Platelet Disorders * Asthma & Reactive Airway Diseases * Hypersensitivity to NSAIDs/ASPIRIN * Coronary Artery Disease & Ischemic Heart Disease * Inflammatory Bowel Disease (IBD) * Peptic Ulcer Disease & Gastritis * GI Perforation / Ischemia & Bleeding * GERD & Esophageal Disorders * Gastrointestinal (GI) bleeding * Stevens-Johnson syndrome (SJS) * Toxic Epidermal Necrolysis (TEN) * Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation* Solitary kidney* Cardiac Procedures & Perioperative Pain*
+[DICLOFENAC] Hypersensitivity to NSAIDs/ASPIRIN*
+[DICLOFENAC SODIUM] Specific Coagulopathies & Platelet Disorders * Asthma & Reactive Airway Diseases * Hypersensitivity to NSAIDs/ASPIRIN * Coronary Artery Disease & Ischemic Heart Disease * Inflammatory Bowel Disease (IBD) * Peptic Ulcer Disease & Gastritis * GI Perforation / Ischemia & Bleeding * GERD & Esophageal Disorders * Gastrointestinal (GI) bleeding * Stevens-Johnson syndrome (SJS) * Toxic Epidermal Necrolysis (TEN) * Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5)*Heart Failure (CHF) * Solitary kidney * Cardiac Procedures & Perioperative Pain*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • Cardiovascular: 
+-Increased risk of MI/stroke (fatal; may occur early).
+• GI: 
+-Bleeding/ulceration/perforation (can be fatal; higher risk in elderly)
+Notes (material sheet): • Dose Modification:
+- Hepatic: 
+Reduce dose in severe impairment
+- Renal: 
+No adjustment for mild-moderate impairment; avoid if eGFR <30 mL/min.
+.......................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Category C (AU: A); contraindicated in 3rd trimester.
+- Lactation: 
+Low excretion in milk; use caution.
+........................................................
+• Lab Interactions: 
+-May elevate LFTs; monitor periodically.
+...........................................................
+Key References:
+ FDA Orange Book, StatPearls, ESCEO guidelines
+Patient education excerpt: • Timing: 
+-Take with food/milk; immediate-release on empty stomach.
+• Missed Dose: 
+-Skip if close to next dose; do not double.
+• Interactions: 
+-Avoid alcohol, aspirin, other NSAIDs.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Diclofenac Potassium + PROPAFENONE: Risk: CYP2C9 inhibition → ↑ propafenone levels (arrhythmia risk) + GI bleeding; Type: Pharmacokinetic (CYP2C9 competition) + Pharmacodynamic (antiplatelet); Monitoring: ECG (PR/QRS), Hgb, renal function; Dosage Adjustments: Max 75 mg/day diclofenac; Alternative: Topical diclofenac; Patient Warnings: Report palpitation…
+- Diclofenac Potassium + CAPTOPRIL: Risk: Hyperkalemia and AKI (higher with potassium salt); Type: Pharmacodynamic; Monitoring: K⁺, Cr (baseline + 3 days); Dosage Adjustments: Reduce diclofenac frequency; Alternative: Diclofenac topical gel; Patient Warnings/Management: Avoid potassium supplements; report muscle weakness.
+- Diclofenac Potassium + ENALAPRIL: Risk: Hyperkalemia (potassium salt) + AKI; Type: Pharmacodynamic; Monitoring: K⁺, Cr (baseline + 3 days); Dosage Adjustments: Avoid in CKD; max 75 mg/day; Alternative: Diclofenac topical; Patient Warnings/Management: Avoid potassium supplements.
+- Diclofenac Potassium + LISINOPRIL: Risk: Hyperkalemia (potassium salt) + AKI; Type: Pharmacodynamic; Monitoring: K⁺, Cr (baseline + 3 days); Dosage Adjustments: Avoid in CKD; max 75 mg/day; Alternative: Diclofenac topical; Patient Warnings/Management: Avoid potassium supplements.
+- Diclofenac Potassium + RAMIPRIL: Risk: Hyperkalemia and AKI; Type: Pharmacodynamic; Monitoring: K+, Cr (baseline + 3 days); Dosage Adjustments: Avoid if CKD; max 75 mg/day; Alternative: Topical diclofenac; Patient Warnings/Management: Avoid potassium-rich foods.
+- Diclofenac Potassium + BENAZEPRIL: Risk: Hyperkalemia and AKI; Type: Pharmacodynamic; Monitoring: K+, Cr (baseline + 3 days); Dosage Adjustments: Avoid if CKD; max 75 mg/day; Alternative: Topical diclofenac; Patient Warnings/Management: Avoid potassium-rich foods.
+- Diclofenac Potassium + CILAZAPRIL: Risk: Hyperkalemia and AKI; Type: Pharmacodynamic; Monitoring: K+, Cr (baseline + 3 days); Dosage Adjustments: Avoid if CKD; max 75 mg/day; Alternative: Topical diclofenac; Patient Warnings/Management: Avoid potassium-rich foods.
+- Diclofenac Potassium + FOSINOPRIL: Risk: Hyperkalemia (potassium salt) + AKI; Type: Pharmacodynamic; Monitoring: K+, Cr (baseline + 3 days); Dosage Adjustments: Avoid if CKD; max 75 mg/day; Alternative: Topical diclofenac; Patient Warnings/Management: Avoid potassium supplements.
+- Diclofenac Potassium + QUINAPRIL: Risk: Hyperkalemia (potassium salt) + AKI; Type: Pharmacodynamic; Monitoring: K+, Cr (baseline + 3 days); Dosage Adjustments: Avoid if CKD; max 75 mg/day; Alternative: Topical diclofenac; Patient Warnings/Management: Avoid potassium supplements.
+- Diclofenac Potassium + PERINDOPRIL: Risk: Hyperkalemia (potassium salt) + AKI; Type: Pharmacodynamic; Monitoring: K+, Cr (baseline + 3 days); Dosage Adjustments: Avoid if CKD; max 75 mg/day; Alternative: Topical diclofenac; Patient Warnings/Management: Avoid potassium-rich foods.
+- Diclofenac Potassium + ALISKIREN: Risk: Triple threat - (1) Renal impairment (30-50% Cr elevation), (2) Hyperkalemia (K⁺ >5.5 in 15-25%), (3) Attenuated antihypertensive effect (SBP ↑10-15mmHg). Type: Pharmacodynamic (PG inhibition) + Pharmacokinetic (renal clearance competition). Monitoring: Baseline + weekly: BP, Cr, eGFR, K⁺ (q48h if CKD). Dosage A…
+- Diclofenac Potassium + IRBESARTAN: Risk: Rapid K+ elevation (dual mechanism); Type: Pharmacodynamic; Monitoring: K+ at 6/12/24h; Dosage: Avoid if K+ >4.5; Alternative: Transdermal diclofenac; Patient Warnings: Muscle weakness alert.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Avoid in 3rd trimester (ductus arteriosus / oligohydramnios risk). Avoid if possible in 1st/2nd unless doctor directs.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Prefer avoid NSAIDs or use short courses only with clinician advice; ibuprofen often preferred if NSAID needed.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Dyspepsia (15%)*
+Abdominal Pain (15%)*
+Nausea/Vomiting (10%)*
+Headache (10%)*
+Dizziness (10%)*
+Diarrhea (10%)*
+Minor (material sheet): Rash (5%)*
+Pruritus (5%)*
+Edema (5%)*
+Fluid Retention (5%)*
+Peptic Ulcer - Risk increases with duration, age, and concomitant steroids/anticoagulants (1-2%)*
+GI Bleeding - Risk increases with duration, age, and concomitant steroids/anticoagulants (1-2%)*
+Renal Impairment - Elevated creatinine, acute kidney injury (2%)*
+Hepatotoxicity - Elevated transaminases (1%)*
+Hypertension (2%)*
+Severe Cutaneous Adverse Reactions (SCARs) (0.1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

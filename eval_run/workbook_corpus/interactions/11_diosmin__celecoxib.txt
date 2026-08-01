@@ -1,0 +1,16 @@
+Drug interaction — Daflon 500
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 11
+Brand: Daflon 500
+API 1: DIOSMIN
+API 2: CELECOXIB
+Risk: Increased celecoxib levels and side effects
+Type: Pharmacokinetic (theoretical CYP2C9 inhibition)
+Monitoring: Assess for GI distress or unusual bruising
+Dose adjustment: None typically required
+Alternative: Acetaminophen
+Patient warning: /Management: Report stomach pain or signs of bleeding.
+Severity: caution
+
+Clinical note:
+Risk: Increased celecoxib levels and side effects; Type: Pharmacokinetic (theoretical CYP2C9 inhibition); Monitoring: Assess for GI distress or unusual bruising; Dosage Adjustments: None typically required; Alternative: Acetaminophen; Patient Warnings/Management: Report stomach pain or signs of bleeding.

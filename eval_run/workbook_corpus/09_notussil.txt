@@ -1,0 +1,109 @@
+NOTUSSIL 4MG/ML SUSP. 60ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Notussil
+Product line: Notussil
+Catalog SKU: NOTUSSIL 4MG/ML SUSP. 60ML
+SKU ID: 09
+INN / actives: Levodropropizine
+INN primary: Levodropropizine
+INN aliases: LEVODROPROPIZINE
+Strength / form: Levodropropizine syrup | Form=SUSP. | Min.age=2 years
+Manufacturer / market: CHEMIPHARM
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > COUGH MEDICATIONS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Notussil is used for
+Non Productive Cough - Adults: 60 mg PO TID , Children 2 to 14y: 1 mg/kg/dose TID (max 60mg/day)*
+
+2. Dosage — Adults
+Adult dose: 10 mL three times/day
+Maximum daily dose: 4 doses/day (4 doses)
+
+3. Dosage — Children
+Minimum age in catalog: 2 years
+Pediatric min age: 2 years
+Pediatric dose: Children >=2 years: Use age-appropriate dose per physician. Avoid under 2 years.
+Pediatric max daily dose: See pack
+
+4. Do not take Notussil if / disease cautions
+Hypersensitivity to LEVODROPROPIZINE* 
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5)* 
+Children under 2 years*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None
+Warnings: • Avoid: 
+-CNS depressants (alcohol, opioids - ↑ sedation), MAO inhibitors (theoretical interaction) .
+...................................................................................
+• Dose Modification:
+- Hepatic: 
+Mild-mod impairment: No adjustment; Severe (Child-Pugh C): ↓ 50%
+- Renal (eGFR):
+ 30-60 mL/min: ↓ 30%; <30 mL/min: Avoid
+- Concomitant Therapy: 
+Sedating antihistamines (↑ drowsiness); Theophylline (↓ clearance)
+..........................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Not recommended (limited data; Category N/A)
+- Lactation: 
+Avoid (excreted in milk; no safety data)
+.............................................................
+• Lab Test
+HCP notes: • Avoid: 
+-CNS depressants (alcohol, opioids - ↑ sedation), MAO inhibitors (theoretical interaction) .
+...................................................................................
+• Dose Modification:
+- Hepatic: 
+Mild-mod impairment: No adjustment; Severe (Child-Pugh C): ↓ 50%
+- Renal (eGFR):
+ 30-60 mL/min: ↓ 30%; <30 mL/min: Avoid
+- Concomitant Therapy: 
+Sedating antihistamines (↑ drowsiness); Theophylline (↓ clearance)
+..........................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Not recommended (limited data; Category N/A)
+- Lactation: 
+Avoid (excreted in milk; no safety data)
+.............................................................
+• Lab Test
+Patient education: • Administration: 
+-With/without food; use calibrated dropper for syrup. 
+• Missed Dose: 
+-Skip if >1h late; never double dose. 
+• Sedation Alert: 
+-Drowsiness may occur (avoid driving).
+• Overdose Signs: 
+-Vomiting, hypotension. 
+• Critical Alert: 
+-Discontinue if rash/angioedema. 
+• Storage: 
+-Syrup discard 6mo after opening.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- No interaction rows in workbook for this SKU.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Strepsils|Otrivin|Panadol Advance
+
+10. Possible side effects
+Major: Somnolence (10-15%)*
+Diarrhea (8-12%)*
+Dizziness (5-10%)*
+Minor: Rash (3-5%)*
+Hypotension (2-4%)*
+Nausea (1-3%)*
+Headache (1-2%)*
+Bradycardia (<1%)*
+Anaphylaxis (rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

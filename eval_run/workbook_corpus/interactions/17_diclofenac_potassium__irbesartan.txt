@@ -1,0 +1,16 @@
+Drug interaction — Cataflam
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 17
+Brand: Cataflam
+API 1: DICLOFENAC POTASSIUM
+API 2: IRBESARTAN
+Risk: Rapid K+ elevation (dual mechanism)
+Type: Pharmacodynamic
+Monitoring: K+ at 6/12/24h
+Dose adjustment: Avoid if K+ >4.5
+Alternative: Transdermal diclofenac
+Patient warning: Muscle weakness alert.
+Severity: yes
+
+Clinical note:
+Risk: Rapid K+ elevation (dual mechanism); Type: Pharmacodynamic; Monitoring: K+ at 6/12/24h; Dosage: Avoid if K+ >4.5; Alternative: Transdermal diclofenac; Patient Warnings: Muscle weakness alert.

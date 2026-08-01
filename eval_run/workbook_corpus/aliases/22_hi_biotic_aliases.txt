@@ -1,0 +1,17 @@
+Alias registry — Hi-Biotic
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 22
+Brand: Hi-Biotic
+
+Known aliases:
+- Hi-Biotic (brand)
+- HIBIOTIC 1 GM 16 TABS. (catalog_sku)
+- Amoxicillin (inn)
+- Clavulanic Acid (inn)
+- CLAVULANATE (inn_alias)
+- POTASSIUM CLAVULANATE (inn_alias)
+- CLAVULANIC (inn_alias)
+- هاي بيوتك (arabic)
+- هايبيوتك (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

@@ -1,0 +1,99 @@
+TUSSIGLOBE 0.3% SYRUP 120 ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Tussigreen
+Product line: Tussigreen
+Catalog SKU: TUSSIGLOBE 0.3% SYRUP 120 ML
+SKU ID: 10
+INN / actives: Ivy * Ivy Extract
+INN primary: Ivy
+INN aliases: HEDERA HELIX; IVY; IVY EXTRACT
+Strength / form: Herbal cough syrup | Form=SYP. | Min.age=2 years
+Manufacturer / market: MARCYRL CO.
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > COUGH MEDICATIONS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Tussigreen is used for
+Acute/Chronic Bronchitis - Reduces cough severity; comparable to ambroxol in clinical trials - Typical dose: 25 to 50 drops of extract (adults) 2 to 3× daily for 7 to 14 days*
+Productive ("Chesty") Cough - Loosens mucus; improves clearance (EMA approved as expectorant)*
+Asthma/COPD Support - Increases lung oxygenation in children with asthma*
+
+2. Dosage — Adults
+Adult dose: 10 mL three times/day
+Maximum daily dose: 4 doses/day (4 doses)
+
+3. Dosage — Children
+Minimum age in catalog: 2 years
+Pediatric min age: 2 years
+Pediatric dose: Children >=2 years: Use age-appropriate dose per physician. Avoid under 2 years.
+Pediatric max daily dose: See pack
+
+4. Do not take Tussigreen if / disease cautions
+Hypersensitivity to IVY*
+Peptic Ulcer Disease & Gastritis* 
+Carbohydrate Metabolism Disorders *
+Infants under 1 year *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None for English ivy leaf extract. However, Ivy-Dry Super (a topical product containing benzyl alcohol/camphor/menthol, not Hedera helix) carries warnings for flammability and allergic reactions
+Warnings: • Avoid:
+- Antitussives (e.g., codeine - counteracts expectoration)
+- Sedatives (additive CNS effects with saponins)
+............................................................................
+Dose Modification:
+• Hepatic/Renal: No data (use caution in severe impairment)
+• Pediatric: Approved ≥2 years (liquid formulations only)
+..........................................................................
+HCP Info:
+• Risks: Nausea/vomiting (saponins), allergic reactions, GI spasms
+• Withdrawal: Not applicable (symptomatic use)
+• Surgery: No precautions
+...........................................................................
+• Pregnancy:
+- Avoid (insufficient safety data; potential uterine st
+HCP notes: • Avoid:
+- Antitussives (e.g., codeine - counteracts expectoration)
+- Sedatives (additive CNS effects with saponins)
+............................................................................
+Dose Modification:
+• Hepatic/Renal: No data (use caution in severe impairment)
+• Pediatric: Approved ≥2 years (liquid formulations only)
+..........................................................................
+HCP Info:
+• Risks: Nausea/vomiting (saponins), allergic reactions, GI spasms
+• Withdrawal: Not applicable (symptomatic use)
+• Surgery: No precautions
+...........................................................................
+• Pregnancy:
+- Avoid (insufficient safety data; potential uterine st
+Patient education: • Best Time to Use:
+-Take oral preparations (syrups/drops) with meals to minimize gastrointestinal discomfort. Dosing typically occurs 3 times daily for acute bronchitis.
+• Food/Interaction Precautions:
+-Avoid concurrent use of magnesium-containing antacids (may worsen diarrhea). No significant interactions with OTC drugs or supplements reported, but caution advised with other expectorants.
+• Missed Dose:
+-Skip if close to the next scheduled dose. Do not double dose .
+• Overdose Antidote:
+-No specific antidote. For accidental ingestion, use activated charcoal and seek medical support for symptomatic management (e.g., antiemetics for vomiting)
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- No interaction rows in workbook for this SKU.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Strepsils|Otrivin|Panadol Advance
+
+10. Possible side effects
+Major: Diarrhea (15–20%)*
+Nausea (10–15%)*
+Minor: Vomiting (5%)*
+Abdominal pain (5%)*
+Allergic rash (2%)*
+Headache (1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

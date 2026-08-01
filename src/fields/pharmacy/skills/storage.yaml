@@ -1,0 +1,7 @@
+﻿id: storage
+name: Storage
+profile: storage
+prompt: storage
+validation:
+  require_medicine: true
+order: 9

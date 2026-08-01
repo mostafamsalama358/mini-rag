@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: tolazoline
+Risk: Moderate hypotension (mild CYP3A4 inhibition)
+Type: Pharmacokinetic
+Monitoring: BP q15min during infusion
+Dose adjustment: Reduce tolazoline infusion rate by 50%
+Alternative: Preferred antifungal option
+Patient warning: /Management: Emergency BP protocol.
+Severity: caution
+
+Clinical note:
+Risk: Moderate hypotension (mild CYP3A4 inhibition); Type: Pharmacokinetic; Monitoring: BP q15min during infusion; Dosage Adjustments: Reduce tolazoline infusion rate by 50%; Alternative: Preferred antifungal option; Patient Warnings/Management: Emergency BP protocol.

@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: AMIODARONE
+Risk: Minimal interaction (safe
+Type: None
+Monitoring: Routine care
+Dose adjustment: None needed
+Alternative: Pantoprazole
+Patient warning: /Management: None specific.
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction (safe alternative); Type: None; Monitoring: Routine care; Dosage Adjustments: None needed; Alternative: Pantoprazole; Patient Warnings/Management: None specific.

@@ -1,0 +1,97 @@
+JEPARILON 10 MG 20 CHEW. TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Jeparilon
+Product line: Jeparilon
+Catalog SKU: JEPARILON 10 MG 20 CHEW. TABS.
+SKU ID: 14
+INN / actives: Famotidine * Calcium Carbonate * Magnesium Hydroxide
+INN primary: Famotidine
+INN aliases: CALCIUM; CALCIUM CARBONATE; FAMOTIDINE; MAGNESIUM; MAGNESIUM HYDROXIDE
+Strength / form: Heparinoid topical cream | Form=TAB. | Min.age=12 years
+Manufacturer / market: FUTURE PHARMACEUTICAL INDUSTRIES (FPI)
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-PEPTIC ULCER & ANTACIDS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Jeparilon is used for
+GERD - 20 mg PO BID × 6w*
+Gastric Ulcer - 40 mg PO daily × 8w*
+Heartburn (OTC) - 10 : 20 mg PRN (max 40 mg/24h)*
+
+2. Dosage — Adults
+Adult dose: Apply 2-3 times/day
+Maximum daily dose: 4 tablets/day (4 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: Not established
+Pediatric dose: Safety and efficacy in children not established.
+Pediatric max daily dose: See pack
+
+4. Do not take Jeparilon if / disease cautions
+Hypersensitivity to FAMOTIDINE* Infants under 1 year *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None
+Warnings: • causes a lack of vitamin # B12
+• Avoid excessive or chronic alcohol consumption. Alcohol increases the risk of gastric irritation.
+• Avoid: Antacids (separate by 1–2h; ↓ famotidine absorption).
+• Limit caffeine intake. Caffeine and other acidic beverages increases the risk of gastric irritation.
+• Take with or without food.
+• increases the level of Bilirubin in the blood
+........................................................................
+• for Benign Gastric Ulcer…..40 mg PO at bedtime up to 8 weeks
+• Mastocytosis (adjunct) (off-label use):
+ Oral: 10 to 20 mg every 12 hours adjusted to achieve GI symptom relief.
+• Pathological hypersecretory conditions (eg, Zollinger-Ellison syndrome
+HCP notes: • causes a lack of vitamin # B12
+• Avoid excessive or chronic alcohol consumption. Alcohol increases the risk of gastric irritation.
+• Avoid: Antacids (separate by 1–2h; ↓ famotidine absorption).
+• Limit caffeine intake. Caffeine and other acidic beverages increases the risk of gastric irritation.
+• Take with or without food.
+• increases the level of Bilirubin in the blood
+........................................................................
+• for Benign Gastric Ulcer…..40 mg PO at bedtime up to 8 weeks
+• Mastocytosis (adjunct) (off-label use):
+ Oral: 10 to 20 mg every 12 hours adjusted to achieve GI symptom relief.
+• Pathological hypersecretory conditions (eg, Zollinger-Ellison syndrome
+Patient education: • Timing: 
+-With/without food; bedtime dosing for nocturnal symptoms.
+• Missed Dose: 
+-Take ASAP; skip if near next dose.
+• Interactions: 
+-Avoid antacids within 1h; limit alcohol (↑ GI irritation).
+• Overdose Antidote: 
+-None. Supportive care.
+• Seek Help: 
+-Bloody stools, racing heart, confusion, rash.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- FAMOTIDINE + AMIODARONE; Risk: Minimal interaction (safe; Type: None; Monitoring: Routine care; Dose adjustment: None needed; Alternative: Pantoprazole; Patient warning: /Management: None specific.
+- FAMOTIDINE + TOLAZOLINE; Risk: Minimal interaction expected; Type: Pharmacodynamic; Monitoring: Standard tolazoline monitoring; Dose adjustment: None typically; Alternative: Pantoprazole if concerned; Patient warning: /Management: No special precautions.
+- FAMOTIDINE + DIPYRIDAMOLE; Risk: Mild absorption delay (pH effect).; Type: Pharmacokinetic.; Monitoring: Headache timing (therapeutic marker).; Dose adjustment: MR formulation preferred.; Alternative: Rabeprazole.; Patient warning: /Management: Evening H2A dosing minimizes interaction.
+- FAMOTIDINE + VERAPAMIL; Risk: Mild PR prolongation (additive AV node effects); Type: Pharmacodynamic; Monitoring: ECG PR interval weekly; Dose adjustment: Verapamil ↓25% if HR<55 bpm; Alternative: Pantoprazole; Patient warning: /Management: Report dizziness/syncope.
+- FAMOTIDINE + NIFEDIPINE; Risk: Reflex tachycardia (acute); Type: Pharmacodynamic; Monitoring: BP/HR q4h x3 doses; Dose adjustment: Nifedipine XL formulation; Alternative: Nifedipine + sucralfate; Patient warning: /Management: Seated BP measurements.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Daflon 500
+
+10. Possible side effects
+Major: Headache (4.7–16%)*
+Dizziness (1.3–11%)*
+Constipation (2–5%)*
+Diarrhea (1–3%)*
+Minor: Confusion - elderly (0.2–1%)*
+Thrombocytopenia (0.1%)*
+Gynecomastia - long term (<0.1%)*
+Hepatitis (rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

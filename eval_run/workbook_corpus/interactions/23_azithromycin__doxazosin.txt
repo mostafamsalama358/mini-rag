@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: DOXAZOSIN
+Risk: Mild additive hypotension (minimal CYP3A4 effect)
+Type: Pharmacodynamic
+Monitoring: BP weekly
+Dose adjustment: None needed
+Alternative: First-line macrolide choice
+Patient warning: /Management: Standard orthostatic precautions. Safest combination.
+Severity: caution
+
+Clinical note:
+Risk: Mild additive hypotension (minimal CYP3A4 effect); Type: Pharmacodynamic; Monitoring: BP weekly; Dosage Adjustments: None needed; Alternative: First-line macrolide choice; Patient Warnings/Management: Standard orthostatic precautions. Safest combination.

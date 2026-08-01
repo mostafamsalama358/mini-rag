@@ -1,0 +1,61 @@
+NORTHBRIDGE DRUG INTERACTIONS COMPENDIUM (E2E Corpus)
+Document ID: NB-DDI-COMP-E2E
+Audience: Pharmacists — pairwise interaction guidance for common outpatient medicines
+
+=== Warfarin interactions ===
+Warfarin + ibuprofen/NSAIDs: avoid; increased bleeding and INR effect. If unavoidable, lowest NSAID dose, shortest duration, close INR monitoring.
+Warfarin + aspirin (antiplatelet doses): increased bleeding risk; use only if clinician-directed dual therapy with gastroprotection when indicated.
+Warfarin + paracetamol (prolonged regular high doses): may raise INR; prefer short courses; recheck INR if used daily for several days.
+Warfarin + metronidazole or co-trimoxazole: often increases INR markedly — expect dose adjustment and early INR check.
+Warfarin + amoxicillin: usually minor; still check INR if course is prolonged or patient is unstable.
+Warfarin + omeprazole: possible INR increase in some patients; monitor when starting/stopping.
+Warfarin + vitamin K rich supplements (e.g. high-dose vitamin K, some green powder blends): may antagonize warfarin — avoid unmonitored use.
+Warfarin + fish oil / high-dose omega-3: additive bleeding risk; use caution.
+Warfarin + St John's wort: may reduce warfarin effect — avoid.
+
+=== Amoxicillin interactions ===
+Amoxicillin + methotrexate: increased methotrexate toxicity risk — monitor.
+Amoxicillin + oral contraceptives: counsel on additional contraception.
+Amoxicillin + allopurinol: higher rash risk.
+Amoxicillin + warfarin: see above.
+Amoxicillin + probenecid: higher amoxicillin levels.
+
+=== Omeprazole (PPI) interactions ===
+Omeprazole + clopidogrel: may reduce clopidogrel activation — prefer alternative acid suppression if dual therapy is critical (clinician decision).
+Omeprazole + methotrexate (high dose): may delay methotrexate clearance.
+Omeprazole + digoxin: possible digoxin level increase — monitor if symptomatic.
+Omeprazole + iron supplements: acid suppression can reduce iron absorption — separate by several hours or use clinician guidance.
+Omeprazole + calcium carbonate: absorption of some calcium salts may fall; calcium citrate is often preferred with PPIs.
+Omeprazole + atazanavir / some antivirals: can reduce antiviral levels — check specialist advice.
+
+=== Metformin interactions ===
+Metformin + iodinated contrast: hold metformin around contrast procedures per local protocol due to lactic acidosis risk in renal impairment.
+Metformin + alcohol binge: increased lactic acidosis risk — advise moderation/avoid binges.
+Metformin + ACE inhibitors / diuretics: watch renal function; metformin is renally cleared.
+Metformin + cimetidine: may increase metformin levels.
+Metformin + vitamin B12: long-term metformin can lower B12 — consider periodic B12 monitoring; supplementation if deficient.
+
+=== Atorvastatin interactions ===
+Atorvastatin + clarithromycin / erythromycin / some azoles: increased myopathy risk — avoid or use reduced statin dose per guidance.
+Atorvastatin + grapefruit juice (large amounts): may raise atorvastatin levels — advise moderation/avoid.
+Atorvastatin + gemfibrozil: high myopathy risk — avoid combination.
+Atorvastatin + amlodipine: usually acceptable; monitor for muscle symptoms at higher statin doses.
+Atorvastatin + warfarin: possible INR changes — monitor when starting/stopping statin.
+
+=== Diclofenac / NSAID class interactions ===
+Diclofenac + warfarin: avoid; bleeding risk.
+Diclofenac + ACE inhibitors / ARBs / diuretics: reduced renal function risk (“triple whammy” if combined with diuretic + ACE/ARB).
+Diclofenac + SSRIs: increased GI bleeding risk.
+Diclofenac + methotrexate: toxicity risk — caution.
+Ibuprofen + aspirin (low-dose cardio): ibuprofen may attenuate aspirin antiplatelet effect if taken just before aspirin — separate timing or avoid regular ibuprofen.
+
+=== SSRI interactions (outpatient) ===
+SSRIs + NSAIDs: higher GI bleed risk — consider gastroprotection if both needed.
+SSRIs + warfarin: higher bleed risk — monitor.
+SSRIs + tramadol / some migraines meds: serotonin syndrome risk — caution.
+
+=== Quick “what can I take instead?” notes ===
+Pain on warfarin: prefer paracetamol at standard doses; avoid OTC ibuprofen/naproxen/diclofenac unless clinician approves.
+Acid reflux on clopidogrel: discuss PPI choice with clinician (omeprazole interaction concern).
+Antibiotic with contraceptives: for short amoxicillin courses, additional contraception is still commonly advised during and 7 days after.
+Statin muscle symptoms with interacting antibiotic: pause and seek advice rather than doubling supplements blindly.

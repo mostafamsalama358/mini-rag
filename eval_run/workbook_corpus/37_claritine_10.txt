@@ -1,0 +1,85 @@
+CLARITINE 10MG 20 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Claritine
+Product line: Claritine
+Catalog SKU: CLARITINE 10MG 20 TAB.
+SKU ID: 37
+INN / actives: Loratadine
+INN primary: Loratadine
+INN aliases: LORATADINE
+Strength / form: Loratadine 10 mg | Form=TAB. | Min.age=2 years
+Manufacturer / market: BAYER HEALTHCARE
+Price (catalog): 110
+Categories: MEDICINE > ANTI-ALLERGIC > NON SEDATING
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Claritine is used for
+Allergic rhinitis - 10 mg/day (adults); 5 mg/day (ages 2 to 5)*
+Chronic urticaria - 10 mg/day*
+
+2. Dosage — Adults
+Adult dose: 10 mg once daily
+Maximum daily dose: 10 mg/day (10 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 2 years
+Pediatric min age: 2 years
+Pediatric dose: 2-12 years: <30 kg: 5 mg once daily. >=30 kg: 10 mg once daily.
+Pediatric max daily dose: See pack
+
+4. Do not take Claritine if / disease cautions
+Hypersensitivity to LORATADINE * Phenylketonuria (PKU) * Children under 2 years *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: None, but carries bolded warnings:
+- QT prolongation (doses >10 mg/day) .
+- Pediatric risk: Avoid in children <2 years (CNS stimulation)
+Warnings: • The only antihistamines that is used to treat allergic reactions in people over 65 years of age
+• Do not use in children younger than 2 years unless directed by the doctor.
+• Dose not to exceed 10 mg qDay
+• Epilepsy: Safer than 1st-gen antihistamines; avoid high doses
+........................................................................
+• Renal impairment (GFR <30 mL/min): 10 mg PO every other day
+• Hepatic impairment: 10 mg PO every other day
+........................................................................
+• Post marketing report (altered salivation, flushing, hypoesthesia, impotence, increased sweating, thirst, hypotension, palpitations, supraventricular tachyarrhythmias, sync
+HCP notes: • The only antihistamines that is used to treat allergic reactions in people over 65 years of age
+• Do not use in children younger than 2 years unless directed by the doctor.
+• Dose not to exceed 10 mg qDay
+• Epilepsy: Safer than 1st-gen antihistamines; avoid high doses
+........................................................................
+• Renal impairment (GFR <30 mL/min): 10 mg PO every other day
+• Hepatic impairment: 10 mg PO every other day
+........................................................................
+• Post marketing report (altered salivation, flushing, hypoesthesia, impotence, increased sweating, thirst, hypotension, palpitations, supraventricular tachyarrhythmias, sync
+Patient education: Dosing: Take with/without food; ODT tablets dissolve on tongue.
+- Missed dose: Skip if near next dose; never double.
+- Warning signs: Seek help for rash, palpitations, or seizures
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- LORATADINE + ANASTRAZOLE; Risk: CYP3A4/2D6 dual inhibition → anastrozole↑15%.; Monitoring: Minimal - no dose adjustment needed.; Patient warning: Dry mouth may occur.
+- LORATADINE + DEXTROMETHORPHAN; Risk: Cognitive impairment; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dose adjustment: Space doses 6h apart; Alternative: Beclomethasone nasal
+- LORATADINE + PENTAZOCINE; Risk: Dizziness; Type: Additive; Monitoring: Orthostatic BP; Dose adjustment: Usually none; Alternative: Desloratadine; Patient warning: Rise slowly.
+- LORATADINE + TRAMADOL; Risk: Cognitive slowing; Interaction: Subtle CNS effects; Monitoring: Digit symbol test; Dose adjustment: Space doses 8h apart; Alternative: Fluticasone nasal
+- LORATADINE + CODEINE; Risk: Cognitive impairment; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dose adjustment: Space doses 8h apart; Alternative: Fluticasone nasal
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: safe
+
+8. Breastfeeding
+Breastfeeding safety: safe
+
+9. Supplements / cross-selling
+Catalog cross-selling: • FAMOTIDINE for Urticaria (off-label use), (as additional therapy if insufficient response to full-dose H1 antihistamine) …..Oral: 20 mg twice daily given in combination with H1 antihistamine
+
+10. Possible side effects
+Major: Headache (12%)*
+Dry mouth (8%)*
+Minor: Fatigue (4%)*
+Nausea (3%)*
+QT prolongation (Rare)*
+Seizures - in high doses (Rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

@@ -1,0 +1,28 @@
+version: 1
+policy_id: pharmacy_recommend_v1
+# Weights are pack-owned — not architecture constants.
+max_recommendations: 3
+min_recommendations: 1
+clarification_confidence_threshold: 0.55
+prefer_higher_evidence: true
+prefer_safer_candidate: true
+never_out_of_corpus: true
+always_provide_citations: true
+clarify_instead_of_guessing: true
+respect_language_policy: true
+enabled_signals:
+  - indication_match
+  - retrieval_evidence
+  - reranker_confidence
+  - safety_fitness
+  - formulary_preference
+signal_weights:
+  indication_match: 0.35
+  retrieval_evidence: 0.30
+  reranker_confidence: 0.15
+  safety_fitness: 0.15
+  formulary_preference: 0.05
+identity_presentation:
+  prefer_line_over_brand: true
+  collapse_package_only_variants: true
+medical_advice_separation: true

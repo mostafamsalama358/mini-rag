@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: SOTALOL
+Risk: Increased sotalol levels (CYP2D6 inhibition) → QT prolongation risk
+Type: Pharmacokinetic
+Monitoring: Weekly ECG (QTc), serum electrolytes
+Dose adjustment: Reduce sotalol by 25-50%
+Alternative: Flecainide (if no structural heart disease)
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Increased sotalol levels (CYP2D6 inhibition) → QT prolongation risk; Type: Pharmacokinetic; Monitoring: Weekly ECG (QTc), serum electrolytes; Dosage: Reduce sotalol by 25-50%; Alternative: Flecainide (if no structural heart disease); Patient: Report dizziness/palpitations immediately; avoid potassium-altering di…

@@ -1,0 +1,47 @@
+NORTHBRIDGE SUPPLEMENTS & NUTRACEUTICALS GUIDE (E2E Corpus)
+Document ID: NB-SUPP-GUIDE-E2E
+Audience: Pharmacists counselling on vitamins/minerals with chronic medicines
+
+=== General rules ===
+Ask about prescription drugs before recommending any supplement.
+Prefer food-first advice; use supplements to correct documented deficiency or meet a clear indication.
+Separate interacting minerals from antibiotics/thyroid/bisphosphonates by at least 2–4 hours.
+
+=== With antibiotics (amoxicillin and class counselling) ===
+Probiotics: may help reduce antibiotic-associated diarrhoea; give ≥2 hours away from the antibiotic dose.
+Zinc lozenges: separate from some antibiotics; for amoxicillin, 2-hour separation is practical if GI upset occurs.
+Multivitamins containing iron/calcium/magnesium: separate by 2 hours from many antibiotics (critical for tetracyclines/quinolones; still sensible with amoxicillin if patient takes high-dose minerals).
+
+=== With warfarin ===
+Avoid starting high-dose vitamin E, high-dose fish oil, garlic tablets, ginkgo, or ginseng without INR monitoring — bleeding risk may rise.
+Avoid vitamin K supplements and “greens powders” unless diet is consistent and INR is monitored.
+Cranberry concentrated products: conflicting data; if used, keep intake steady and monitor INR.
+Prefer pharmacist-reviewed products over unknown herbal blends.
+
+=== With metformin ===
+Vitamin B12: long-term metformin users may need B12 level checks; supplement if deficient.
+Chromium / cinnamon “diabetes supplements”: do not replace metformin; monitor glucose if patient insists on use.
+Alcohol-containing tonics: discourage with metformin.
+
+=== With omeprazole / PPIs ===
+Calcium: calcium citrate is often better absorbed than calcium carbonate when acid is suppressed.
+Magnesium: long-term PPIs can lower magnesium — check levels if cramps/arrhythmia; supplement if low.
+Vitamin B12: prolonged acid suppression may reduce B12 absorption — monitor in long-term users.
+Iron: separate oral iron from omeprazole timing when possible; consider alternative formulations if absorption is poor.
+
+=== With atorvastatin ===
+Red yeast rice: contains statin-like compounds — avoid combining with atorvastatin (duplicate therapy / myopathy risk).
+Coenzyme Q10: sometimes used for statin-associated muscle symptoms; evidence mixed — optional adjunct, not a cure for myopathy. Stop statin and seek care if dark urine or severe weakness.
+Vitamin D: correct deficiency per labs; does not remove need for statin safety monitoring.
+Grapefruit-containing “detox” supplements: avoid with atorvastatin.
+
+=== With NSAIDs (ibuprofen / diclofenac) ===
+Fish oil high-dose + NSAID: additive bleed risk — caution.
+Licorice root supplements: may worsen blood pressure / fluid retention with NSAIDs — avoid.
+Take NSAIDs with food; antacids may be used for dyspepsia but seek review if pain persists.
+
+=== Practical “what can I take?” examples ===
+Cold/flu while on warfarin: prefer paracetamol for pain/fever; avoid ibuprofen; check any multi-ingredient cold packs for aspirin/NSAID.
+Amoxicillin course and gut comfort: probiotic 2 hours after capsules; yogurt with live cultures is acceptable food support.
+Metformin and tiredness: check B12 before blind energising supplements.
+PPI long-term: review need for calcium/magnesium/B12 monitoring rather than random megadoses.

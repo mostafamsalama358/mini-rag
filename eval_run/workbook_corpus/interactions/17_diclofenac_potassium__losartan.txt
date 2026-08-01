@@ -1,0 +1,16 @@
+Drug interaction — Cataflam
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 17
+Brand: Cataflam
+API 1: DICLOFENAC POTASSIUM
+API 2: LOSARTAN
+Risk: Hyperkalemia (K+↑ 0.6-1.5 mEq/L)
+Type: Pharmacodynamic
+Monitoring: K+ at 6/12/24h
+Dose adjustment: Avoid if K+>4.3
+Alternative: Transdermal diclofenac
+Patient warning: Palpitations concerning
+Severity: yes
+
+Clinical note:
+Risk: Hyperkalemia (K+↑ 0.6-1.5 mEq/L); Type: Pharmacodynamic; Monitoring: K+ at 6/12/24h; Dosage: Avoid if K+>4.3; Alternative: Transdermal diclofenac; Patient Warnings: Palpitations concerning

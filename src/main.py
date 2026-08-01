@@ -172,6 +172,26 @@ async def startup_span():
     await project_controller.ensure_projects_from_registry()
     logger.info("Project auto-seed from field registry complete")
 
+    # Unified pipeline composition root (spec 015). Fail-fast when mode requires it.
+    from services.rag.composition import build_rag_pipeline_factory
+
+    pipeline_mode = str(getattr(settings, "RAG_PIPELINE_MODE", "legacy") or "legacy").strip().lower()
+    try:
+        app.rag_pipeline_factory = build_rag_pipeline_factory(app)
+        logger.info("rag_pipeline_factory ready mode=%s", pipeline_mode)
+    except Exception:
+        if pipeline_mode in {"shadow", "unified"}:
+            logger.exception(
+                "rag_pipeline_factory failed to build for mode=%s — aborting startup",
+                pipeline_mode,
+            )
+            raise
+        app.rag_pipeline_factory = None
+        logger.warning(
+            "rag_pipeline_factory unavailable; continuing in legacy mode",
+            exc_info=True,
+        )
+
 
 async def shutdown_span():
     """

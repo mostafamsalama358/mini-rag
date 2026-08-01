@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: PENTAZOCINE
+Risk: Mixed agonist-antagonist may reverse analgesia while increasing CNS depression.
+Type: -
+Monitoring: Pain scores and respiratory rate q4h. Dose Adjustment: Avoid combination - use pure agonist if needed.
+Dose adjustment: -
+Alternative: -
+Patient warning: May cause withdrawal in opioid-dependent patients. Mechanism: Kappa agonist/mu partial antagonist.
+Severity: yes
+
+Clinical note:
+Risk: Mixed agonist-antagonist may reverse analgesia while increasing CNS depression. Monitoring: Pain scores and respiratory rate q4h. Dose Adjustment: Avoid combination - use pure agonist if needed. Patient Warning: May cause withdrawal in opioid-dependent patients. Mechanism: Kappa agonist/mu partial antagonist.

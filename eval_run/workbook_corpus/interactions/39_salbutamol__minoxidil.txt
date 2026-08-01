@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: MINOXIDIL
+Risk: Severe hypotension and reflex tachycardia (potent vasodilation + β₂-agonist effects)
+Type: Pharmacodynamic (additive cardiovascular effects)
+Monitoring: BP, HR, ECG if palpitations occur
+Dose adjustment: Consider lower minoxidil dose
+Alternative: Ipratropium for bronchospasm
+Patient warning: /Management:…
+Severity: caution
+
+Clinical note:
+Risk: Severe hypotension and reflex tachycardia (potent vasodilation + β₂-agonist effects); Type: Pharmacodynamic (additive cardiovascular effects); Monitoring: BP, HR, ECG if palpitations occur; Dosage Adjustments: Consider lower minoxidil dose; Alternative: Ipratropium for bronchospasm; Patient Warnings/Management:…

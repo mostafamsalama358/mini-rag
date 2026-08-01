@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: MINOXIDIL
+Risk: Severe hypotension + QT prolongation
+Type: Pharmacodynamic synergy
+Monitoring: BP 2x/day, ECG (QTc), K+/Mg2+ weekly
+Dose adjustment: Reduce minoxidil if BP <90/60
+Alternative: Topical minoxidil + clarithromycin (if systemic needed)
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Severe hypotension + QT prolongation; Type: Pharmacodynamic synergy; Monitoring: BP 2x/day, ECG (QTc), K+/Mg2+ weekly; Dosage: Reduce minoxidil if BP <90/60; Alternative: Topical minoxidil + clarithromycin (if systemic needed); Patient: Rise slowly + report syncope/arrhythmias.

@@ -1,0 +1,15 @@
+NORTHBRIDGE CLINICAL NOTE — Anticoagulant Interactions (E2E Test Corpus)
+Document ID: NB-WARF-NOTE-E2E
+Audience: Pharmacists and clinicians
+
+Warfarin has a narrow therapeutic index. Many medicines potentiate its anticoagulant effect and raise bleeding risk.
+
+NSAIDs including ibuprofen and naproxen can increase the INR effect of warfarin and the risk of gastrointestinal bleeding. Concurrent use should be avoided unless a clinician explicitly authorises it and arranges closer INR monitoring.
+
+If ibuprofen must be used briefly in a patient on warfarin:
+- Prefer the lowest effective dose for the shortest duration.
+- Advise the patient to report black stools, unusual bruising, or prolonged bleeding immediately.
+- Recheck INR within 3 to 7 days of starting or stopping the NSAID.
+
+SSRIs combined with warfarin also increase bleeding risk and warrant caution.
+Paracetamol at standard doses is generally preferred over ibuprofen for pain relief in patients taking warfarin.

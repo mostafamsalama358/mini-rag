@@ -1,0 +1,80 @@
+﻿{
+    "timestamp":  "2026-07-19T14:08:27",
+    "reindex":  "process-and-push + push do_reset=1 after entity-token + enrichment fix",
+    "vector_metadata_sample":  [
+                                   {
+                                       "entity":  "MediQuick Ibuprofen",
+                                       "field_name":  "dosage",
+                                       "id":  1
+                                   },
+                                   {
+                                       "entity":  "warfarin",
+                                       "field_name":  "interactions",
+                                       "id":  5
+                                   }
+                               ],
+    "passed":  [
+                   "p1",
+                   "p2",
+                   "p3",
+                   "p4",
+                   "p5",
+                   "p7",
+                   "p8"
+               ],
+    "failed":  [
+
+               ],
+    "pass_rate":  "7/7",
+    "results":  [
+                    {
+                        "id":  "p1",
+                        "ok":  true,
+                        "signal":  "rag_answer_success",
+                        "needs_clarification":  false,
+                        "answer":  "The maximum daily dose of MediQuick Ibuprofen for adults is 6 tablets (1200 mg) in any 24-hour period [ei_a01293014897056b (2. Dosage â€” Adults and adolescents (12 years and over))]."
+                    },
+                    {
+                        "id":  "p2",
+                        "ok":  true,
+                        "signal":  "rag_answer_success",
+                        "needs_clarification":  false,
+                        "answer":  "No, MediQuick Ibuprofen 200 mg tablets are not recommended for children under 12 years of age. An age-appropriate formulation should be sought from a doctor or pharmacist [ei_a01293014897056b]."
+                    },
+                    {
+                        "id":  "p3",
+                        "ok":  true,
+                        "signal":  "rag_answer_success",
+                        "needs_clarification":  false,
+                        "answer":  "No, ibuprofen is not safe in the third trimester of pregnancy. MediQuick Ibuprofen should not be taken if you are in the last 3 months of pregnancy (third trimester) [ei_a01293014897056b]."
+                    },
+                    {
+                        "id":  "p4",
+                        "ok":  true,
+                        "signal":  "rag_answer_success",
+                        "needs_clarification":  false,
+                        "answer":  "Common side effects of MediQuick Ibuprofen include indigestion, heartburn, nausea, and stomach pain [ei_a01293014897056b]."
+                    },
+                    {
+                        "id":  "p5",
+                        "ok":  true,
+                        "signal":  "rag_answer_success",
+                        "needs_clarification":  false,
+                        "answer":  "Concurrent use of ibuprofen and warfarin should generally be avoided due to an increased risk of gastrointestinal bleeding and an enhanced INR effect of warfarin [ei_dfaeeff4d2a96cb5]. However, if a clinician explicitly authorizes it, ibuprofen may be used with caution [ei_a01293014897056b, ei_dfaeeff4d2a96cb5].\n\nIf ibuprofen must be used, the following monitoring and precautions are needed:\n*   Use the lowest effective dose for the shortest duration [ei_dfaeeff4d2a96cb5].\n*   Advise the patient to immediately report any signs of bleeding, such as black stools, unusual bruising, or prolonged bleeding [ei_dfaeeff4d2a96cb5].\n*   Recheck the patient\u0027s International Normalized Ratio (INR) within 3 to 7 days of starting or stopping the NSAID [ei_dfaeeff4d2a96cb5]."
+                    },
+                    {
+                        "id":  "p7",
+                        "ok":  true,
+                        "signal":  "rag_clarification_needed",
+                        "needs_clarification":  true,
+                        "answer":  "I could not map your question to a supported topic. Please rephrase or name a specific item."
+                    },
+                    {
+                        "id":  "p8",
+                        "ok":  true,
+                        "signal":  "rag_answer_success",
+                        "needs_clarification":  false,
+                        "answer":  "MediQuick Ibuprofen should not be taken if you are allergic to ibuprofen, aspirin, or any other NSAID. It is also contraindicated if you have an active peptic ulcer or a history of gastrointestinal bleeding related to NSAIDs, are in the last 3 months of pregnancy (third trimester), or have severe heart failure, severe kidney failure, or severe liver failure [ei_a01293014897056b].\n\n**Renal Contraindication:** Severe kidney failure [ei_a01293014897056b].\n**Hepatic Contraindication:** Severe liver failure [ei_a01293014897056b]."
+                    }
+                ]
+}

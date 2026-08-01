@@ -1,0 +1,13 @@
+Alias registry — Norvasc
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 30
+Brand: Norvasc
+
+Known aliases:
+- Norvasc (brand)
+- NORVASC 5MG 30 TAB. (catalog_sku)
+- Amlodipine (inn)
+- AMLODIPINE BESYLATE (inn_alias)
+- نورفاسك (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

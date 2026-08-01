@@ -1,0 +1,16 @@
+Drug interaction — Panadol Cold & Flu Vapour Release
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 56
+Brand: Panadol Cold & Flu Vapour Release
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: CHOLESTYRAMINE
+Risk: Reduced paracetamol absorption leading to decreased analgesic efficacy
+Type: Pharmacokinetic (adsorption)
+Monitoring: Pain control and fever reduction
+Dose adjustment: Administer paracetamol ≥1h before or ≥1h after cholestyramine
+Alternative: IV paracetamol if rapid effect needed
+Patient warning: Maintain strict 1-…
+Severity: caution
+
+Clinical note:
+Risk: Reduced paracetamol absorption leading to decreased analgesic efficacy; Type: Pharmacokinetic (adsorption); Monitoring: Pain control and fever reduction; Dosage: Administer paracetamol ≥1h before or ≥1h after cholestyramine; Alternative: IV paracetamol if rapid effect needed; Patient Warnings: Maintain strict 1-…

@@ -1,0 +1,11 @@
+﻿id: pharmacy_consult
+filters:
+  field:
+    - dosage
+    - warnings
+    - contraindications
+    - side_effects
+    - pregnancy
+    - breastfeeding
+notes: Broader counseling profile. Corpus = RAG_CORPUS Excel workbook render (txt).
+retrieval_strategy: hybrid

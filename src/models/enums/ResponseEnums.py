@@ -22,6 +22,8 @@ class ResponseSignal(Enum):
     RAG_NO_CONTEXT = "rag_no_context"
     RAG_ANSWER_SUCCESS = "rag_answer_success"
     RAG_CLARIFICATION_NEEDED = "rag_clarification_needed"
+    RAG_ANSWER_TIMEOUT = "rag_answer_timeout"
+    RAG_SCOPE_MISS = "rag_scope_miss"
     DATA_PUSH_TASK_READY="data_push_task_ready"
     PROCESS_AND_PUSH_WORKFLOW_READY="process_and_push_workflow_ready"
     TASK_STATUS_RETRIEVED = "task_status_retrieved"

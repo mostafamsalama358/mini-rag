@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: PERINDOPRIL
+Risk: Dependent edema (35% vs 15% monotherapy) with angiotensin II escape.
+Type: Compensatory RAAS activation.
+Monitoring: Leg volume qAM, 24h ABPM.
+Dose adjustment: Perindopril 4 mg + amlodipine 2.5 mg start (fixed-dose combo available).
+Alternative: Perindopril + indapamide SR.
+Patient warning: Daytime leg elevation; report…
+Severity: caution
+
+Clinical note:
+Risk: Dependent edema (35% vs 15% monotherapy) with angiotensin II escape. Type: Compensatory RAAS activation. Monitoring: Leg volume qAM, 24h ABPM. Dosage: Perindopril 4 mg + amlodipine 2.5 mg start (fixed-dose combo available). Alternative: Perindopril + indapamide SR. Patient Warnings: Daytime leg elevation; report…

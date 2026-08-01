@@ -1,0 +1,16 @@
+Alias registry — Jeparilon
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 14
+Brand: Jeparilon
+
+Known aliases:
+- Jeparilon (brand)
+- JEPARILON 10 MG 20 CHEW. TABS. (catalog_sku)
+- Famotidine (inn)
+- Calcium Carbonate (inn)
+- CALCIUM (inn_alias)
+- Magnesium Hydroxide (inn)
+- MAGNESIUM (inn_alias)
+- جيباريلون (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

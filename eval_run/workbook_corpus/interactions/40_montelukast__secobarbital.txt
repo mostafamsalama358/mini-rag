@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: SECOBARBITAL
+Risk: Loss of asthma control from reduced montelukast AUC. Monitor: ACT/C-ACT scores, exacerbations. Dose Adjust: Consider high-dose montelukast (only if >15yrs) or switch therapy
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: Carry emergency epinephrine if history of anaphylaxis; track symptom triggers.
+Severity: caution
+
+Clinical note:
+Risk: Loss of asthma control from reduced montelukast AUC. Monitor: ACT/C-ACT scores, exacerbations. Dose Adjust: Consider high-dose montelukast (only if >15yrs) or switch therapy; Patient Warning: Carry emergency epinephrine if history of anaphylaxis; track symptom triggers.

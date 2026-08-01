@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: CLOMIPRAMINE
+Risk: Severe CNS depression: Risk of respiratory impairment in COPD; monitor O₂ saturation; avoid in respiratory disease.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Severe CNS depression: Risk of respiratory impairment in COPD; monitor O₂ saturation; avoid in respiratory disease.

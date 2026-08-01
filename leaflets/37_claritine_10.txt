@@ -1,0 +1,86 @@
+CLARITINE 10MG 20 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Claritine
+Catalog SKU: CLARITINE 10MG 20 TAB.
+INN / actives: Loratadine
+Catalog New Material: LORATADINE
+Strength / form: Loratadine 10 mg | (web-supplemented dosing below)
+Manufacturer / market: BAYER HEALTHCARE
+Price (catalog): 110
+Categories: MEDICINE > ANTI-ALLERGIC > NON SEDATING
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=CLARITINE 10MG; sheet lookup INNs=Loratadine, LORATADINE
+Web clinical sources: Loratadine SmPC; Claritine
+
+1. What Claritine is used for
+Catalog uses: anti-histamine.anti-allergy
+Approved uses (material sheet): Allergic rhinitis - 10 mg/day (adults); 5 mg/day (ages 2 to 5)*
+Chronic urticaria - 10 mg/day*
+Off-label mentions (material sheet): Pruritus in eczema/dermatitis - 10 mg/day*
+Kimura’s disease - (itch relief)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: 10 mg once daily.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Paediatric syrups/chewables by age; 10 mg tabs often ≥6–12 y per label.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Claritine if / disease cautions
+From material/disease sheets:
+[LORATADINE] Hypersensitivity to LORATADINE * Phenylketonuria (PKU) * Children under 2 years *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): None, but carries bolded warnings:
+- QT prolongation (doses >10 mg/day) .
+- Pediatric risk: Avoid in children <2 years (CNS stimulation)
+Notes (material sheet): • The only antihistamines that is used to treat allergic reactions in people over 65 years of age
+• Do not use in children younger than 2 years unless directed by the doctor.
+• Dose not to exceed 10 mg qDay
+• Epilepsy: Safer than 1st-gen antihistamines; avoid high doses
+........................................................................
+• Renal impairment (GFR <30 mL/min): 10 mg PO every other day
+• Hepatic impairment: 10 mg PO every other day
+........................................................................
+• Post marketing report (altered salivation, flushing, hypoesthesia, impotence, increased sweating, thirst, hypotension, palpitations, supraventricular tachyarrhythmias, syn…
+Patient education excerpt: Dosing: Take with/without food; ODT tablets dissolve on tongue.
+- Missed dose: Skip if near next dose; never double.
+- Warning signs: Seek help for rash, palpitations, or seizures
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Loratadine + ANASTRAZOLE: Risk: CYP3A4/2D6 dual inhibition → anastrozole↑15%. Monitoring: Minimal - no dose adjustment needed. Patient Warning: Dry mouth may occur.
+- Loratadine + DEXTROMETHORPHAN: Risk: Cognitive impairment; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dosage: Space doses 6h apart; Alternative: Beclomethasone nasal; Patient: Avoid complex tasks.
+- Loratadine + PENTAZOCINE: Risk: Dizziness; Type: Additive; Monitoring: Orthostatic BP; Dosage Adjustments: Usually none; Alternative: Desloratadine; Patient Warnings: Rise slowly.
+- Loratadine + TRAMADOL: Risk: Cognitive slowing; Interaction: Subtle CNS effects; Monitoring: Digit symbol test; Dosage: Space doses 8h apart; Alternative: Fluticasone nasal; Patient: Avoid complex decisions.
+- Loratadine + CODEINE: Risk: Cognitive impairment; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dosage: Space doses 8h apart; Alternative: Fluticasone nasal; Patient: Avoid complex tasks.
+- Loratadine + FENTANYL: Risk: Cognitive slowing; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dosage: Space doses 12h apart; Alternative: Fluticasone nasal; Patient: Avoid critical decisions.
+- Loratadine + PETHIDINE (DEMEROL): Risk: Mild CNS depression, headache; Type: Additive; Monitoring: Cognitive function; Dosage Adjustments: Usually not required; Alternative: Desloratadine; Patient Warnings: Avoid high-dose use.
+- Loratadine + KETOBEMIDONE: Risk: Dizziness; Type: Additive; Monitoring: Orthostatic BP; Dosage Adjustments: Usually none; Alternative: Desloratadine; Patient Warnings: Rise slowly.
+- Loratadine + MORPHINE: Risk: Cognitive impairment; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dosage: Space doses 12h apart; Alternative: Fluticasone nasal; Patient: Avoid complex tasks.
+- Loratadine + METHADONE: Risk: Cognitive slowing; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dosage: Space doses 12h apart; Alternative: Fluticasone nasal; Patient: Avoid critical decisions.
+- Loratadine + HYDROMORPHONE: Risk: Cognitive slowing; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dosage: Space doses 12h apart; Alternative: Mometasone nasal; Patient: Avoid critical tasks.
+- Loratadine + HYDROCODONE: Risk: Cognitive slowing; Interaction: Subtle CNS synergy; Monitoring: Digit symbol test; Dosage: Space doses 12h apart; Alternative: Mometasone nasal; Patient: Avoid critical decisions.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Often considered acceptable non-sedating choice when antihistamine needed.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Usually compatible; amounts in milk low.
+
+9. Supplements / cross-selling
+Catalog cross-selling: • FAMOTIDINE for Urticaria (off-label use), (as additional therapy if insufficient response to full-dose H1 antihistamine) …..Oral: 20 mg twice daily given in combination with H1 antihistamine
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Headache (12%)*
+Dry mouth (8%)*
+Minor (material sheet): Fatigue (4%)*
+Nausea (3%)*
+QT prolongation (Rare)*
+Seizures - in high doses (Rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

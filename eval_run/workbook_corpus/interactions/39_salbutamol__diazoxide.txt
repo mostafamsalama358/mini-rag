@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: DIAZOXIDE
+Risk: Severe hypotension and reflex tachycardia (potent arteriolar vasodilation + β₂-agonist effects)
+Type: Pharmacodynamic (additive cardiovascular effects)
+Monitoring: Continuous BP, ECG, blood glucose
+Dose adjustment: Lower salbutamol dose/frequency
+Alternative: Ipratropium for bronchospasm
+Patient warning: …
+Severity: caution
+
+Clinical note:
+Risk: Severe hypotension and reflex tachycardia (potent arteriolar vasodilation + β₂-agonist effects); Type: Pharmacodynamic (additive cardiovascular effects); Monitoring: Continuous BP, ECG, blood glucose; Dosage Adjustments: Lower salbutamol dose/frequency; Alternative: Ipratropium for bronchospasm; Patient Warnings…

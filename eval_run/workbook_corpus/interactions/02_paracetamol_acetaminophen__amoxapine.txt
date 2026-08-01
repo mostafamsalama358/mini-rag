@@ -1,0 +1,16 @@
+Drug interaction — Panadol Cold & Flu Day
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 02
+Brand: Panadol Cold & Flu Day
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: AMOXAPINE
+Risk: Hepatotoxicity (CYP3A4 competition) + delayed pain relief
+Type: -
+Monitoring: ALT/AST monthly
+Dose adjustment: Max 2g/day acetaminophen
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Hepatotoxicity (CYP3A4 competition) + delayed pain relief; Monitoring: ALT/AST monthly; Dosage: Max 2g/day acetaminophen; Patient: Do not substitute for missed TCA dose; report RUQ pain.

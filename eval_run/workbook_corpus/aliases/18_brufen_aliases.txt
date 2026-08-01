@@ -1,0 +1,14 @@
+Alias registry — Brufen
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 18
+Brand: Brufen
+
+Known aliases:
+- Brufen (brand)
+- BRUFEN 400 MG 30 TABS. (catalog_sku)
+- Ibuprofen (inn)
+- بروفين (arabic)
+- بروفن (arabic)
+- ايبوبروفين (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

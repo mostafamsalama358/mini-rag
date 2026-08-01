@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: LACIDIPINE
+Risk: First-dose hypotension
+Type: Pharmacodynamic
+Monitoring: BP hourly x4 post-dose
+Dose adjustment: Isradipine ↓1.25mg
+Alternative: Isradipine + calcium carbonate
+Patient warning: /Management: Supine position x4h.
+Severity: caution
+
+Clinical note:
+Risk: First-dose hypotension; Type: Pharmacodynamic; Monitoring: BP hourly x4 post-dose; Dosage Adjustments: Isradipine ↓1.25mg; Alternative: Isradipine + calcium carbonate; Patient Warnings/Management: Supine position x4h.

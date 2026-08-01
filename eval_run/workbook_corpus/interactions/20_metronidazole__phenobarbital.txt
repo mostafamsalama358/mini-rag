@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: PHENOBARBITAL
+Risk: ↓ Metronidazole efficacy + ↑ neurotoxicity.
+Type: -
+Monitoring: Neurologic exam daily.
+Dose adjustment: ↑ Metronidazole 50% or use IV formulation.
+Alternative: -
+Patient warning: Report numbness/ataxia immediately.
+Severity: caution
+
+Clinical note:
+Risk: ↓ Metronidazole efficacy + ↑ neurotoxicity. Monitoring: Neurologic exam daily. Dosage: ↑ Metronidazole 50% or use IV formulation. Patient Warning: Report numbness/ataxia immediately.

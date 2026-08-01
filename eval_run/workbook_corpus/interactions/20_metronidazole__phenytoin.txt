@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: PHENYTOIN
+Risk: Metronidazole inhibits CYP2C9/19 → ↑ phenytoin levels (toxicity: nystagmus, ataxia)
+Type: Pharmacokinetic
+Monitoring: Phenytoin levels at 48h & weekly
+Dose adjustment: -
+Alternative: Fosphenytoin (easier titration)
+Patient warning: Avoid alcohol (disulfiram-like react…
+Severity: yes
+
+Clinical note:
+Risk: Metronidazole inhibits CYP2C9/19 → ↑ phenytoin levels (toxicity: nystagmus, ataxia); Type: Pharmacokinetic; Monitoring: Phenytoin levels at 48h & weekly; Dosage Adjustment: ↓ phenytoin 30-40% if combined >5 days; Alternative: Fosphenytoin (easier titration); Patient Warnings: Avoid alcohol (disulfiram-like react…

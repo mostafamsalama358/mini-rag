@@ -51,8 +51,10 @@ class Settings(BaseSettings):
     VERTEX_LOCATION: str = "us-central1"
     GOOGLE_APPLICATION_CREDENTIALS: Optional[str] = None
     VERTEX_EMBEDDING_BATCH_DELAY_SECONDS: int = 0.5
-    VERTEX_EMBEDDING_RATE_LIMIT_RETRIES: int = 2
-    VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS: int = 5
+    # Keep low: each retry burns ~wait seconds inside the unified deadline.
+    VERTEX_EMBEDDING_RATE_LIMIT_RETRIES: int = 1
+    VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS: int = 3
+    VERTEX_EMBEDDING_RATE_LIMIT_RETRY_MAX_WAIT_SECONDS: int = 8
     # Soft cap for total characters sent in one Vertex embedding request.
     VERTEX_EMBEDDING_MAX_BATCH_CHARACTERS: int = 12000
     # Reuse query embeddings across requests for identical text (LRU, in-process).
@@ -140,6 +142,58 @@ class Settings(BaseSettings):
     RAG_PIPELINE_DIAGNOSTICS: bool = True
     # When set, indexing/retrieval diagnostics also log chunks matching this token.
     RAG_INDEXING_TRACE_ENTITY: str | None = None
+    # When false (default), scoped miss does NOT silently fall back to unscoped.
+    RAG_ALLOW_UNSCOPED_DEGRADE: bool = False
+    # Reject chunks lacking entity+field_name at index time when true.
+    RAG_METADATA_CONTRACT_STRICT: bool = False
+    # Boost/penalty applied after retrieval for field_name fidelity.
+    RAG_FIELD_SCORE_BOOST: float = 0.15
+    RAG_FIELD_SCORE_PENALTY: float = 0.08
+
+    # Unified production pipeline migration (015)
+    # Global selector: legacy | shadow | unified. Default keeps production on legacy.
+    RAG_PIPELINE_MODE: str = "unified"
+    # When unified fails, fall back to legacy per request (timeout/error only).
+    RAG_PIPELINE_FALLBACK_ON_ERROR: bool = False
+    # Persist shadow comparison JSONL artifacts under RAG_PIPELINE_SHADOW_DIR.
+    RAG_PIPELINE_SHADOW_PERSIST: bool = True
+    RAG_PIPELINE_SHADOW_DIR: str = ".rag_shadow/"
+    # Timeout budget for the unified branch (shadow gather / unified deadline).
+    RAG_PIPELINE_UNIFIED_TIMEOUT_S: float = 55.0
+    # Comma-separated project ids forced to unified (canary allowlist).
+    RAG_PIPELINE_CANARY_PROJECT_IDS: str = ""
+    # Normalized answer similarity below this threshold counts as shadow divergence.
+    RAG_PIPELINE_SHADOW_DIVERGENCE_THRESHOLD: float = 0.85
+
+    # Ingest reliability / scalability (017) — sole-path control plane
+    # Master enable: when false, process endpoints keep legacy task-only behavior.
+    INGEST_RELIABILITY_ENABLED: bool = True
+    # Platform operational mode: normal | degraded | maintenance | recovery | admission_restricted
+    INGEST_OPERATIONAL_MODE: str = "normal"
+    # Comma-separated project ids on scalable-path canary cohort (empty = all when enabled).
+    INGEST_CANARY_PROJECT_IDS: str = ""
+    # Max concurrent accepted ingest jobs (global soft cap for admission).
+    INGEST_MAX_CONCURRENT_JOBS: int = 32
+    # Max bounded admission backlog before reject (0 = reject when at concurrency).
+    INGEST_MAX_BACKLOG: int = 64
+    # Bytes above which a document is classified as large-document workload class.
+    INGEST_LARGE_DOCUMENT_BYTES: int = 5_000_000
+    # Hard max upload/process size in bytes (fail-fast). 0 = use FILE_MAX_SIZE * 1024 * 1024.
+    INGEST_HARD_MAX_BYTES: int = 0
+    # Max parse wall time seconds before Timed Out escalation.
+    INGEST_PARSE_TIMEOUT_SECONDS: int = 900
+    # Max job wall time seconds before Timed Out.
+    INGEST_JOB_TIMEOUT_SECONDS: int = 3600
+    # No-progress stall window seconds before stall escalation.
+    INGEST_STALL_SECONDS: int = 300
+    # Max automatic retries for transient failures.
+    INGEST_MAX_RETRIES: int = 3
+    # Permanent failure count before poison quarantine for a logical version.
+    INGEST_POISON_THRESHOLD: int = 3
+    # Interactive capacity units reserved from background/maintenance/migration.
+    INGEST_INTERACTIVE_RESERVED_SLOTS: int = 8
+    # Validated configuration version stamp recorded on each job.
+    INGEST_CONFIG_VERSION: str = "1.0.0"
 
     # Celery Configuration
     CELERY_BROKER_URL: Optional[str] = None

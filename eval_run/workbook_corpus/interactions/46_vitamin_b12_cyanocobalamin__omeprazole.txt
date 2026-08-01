@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B12 (CYANOCOBALAMIN)
+API 2: OMEPRAZOLE
+Risk: PPIs reduce acid-dependent B12 absorption, leading to deficiency over years.
+Type: -
+Monitoring: B12 after 3-4yr PPI use.
+Dose adjustment: Consider sublingual B12.
+Alternative: -
+Patient warning: Separate doses by ≥2hr; high-risk (elderly/vegetarians) need monitoring.
+Severity: caution
+
+Clinical note:
+Risk: PPIs reduce acid-dependent B12 absorption, leading to deficiency over years. Monitoring: B12 after 3-4yr PPI use. Dosage: Consider sublingual B12. Patient Warnings: Separate doses by ≥2hr; high-risk (elderly/vegetarians) need monitoring.

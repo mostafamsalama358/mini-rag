@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: LABETALOL
+Risk: Urinary retention exacerbation
+Type: Pharmacodynamic (additive α-blockade)
+Monitoring: Post-void residuals
+Dose adjustment: Pantoprazole min effective dose
+Alternative: Magaldrate
+Patient warning: Void before dosing; report hesitancy.
+Severity: caution
+
+Clinical note:
+Risk: Urinary retention exacerbation; Type: Pharmacodynamic (additive α-blockade); Monitoring: Post-void residuals; Dosage: Pantoprazole min effective dose; Alternative: Magaldrate; Patient Warnings: Void before dosing; report hesitancy.

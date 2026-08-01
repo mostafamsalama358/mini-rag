@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: REPAGLINIDE
+Risk: Mild hypoglycemia via weak CYP2C8 inhibition; monitor weekly HbA1c; no initial dose change; counsel on Churg-Strauss syndrome signs (neuropathy/rashes).
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Mild hypoglycemia via weak CYP2C8 inhibition; monitor weekly HbA1c; no initial dose change; counsel on Churg-Strauss syndrome signs (neuropathy/rashes).

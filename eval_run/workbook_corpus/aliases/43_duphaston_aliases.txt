@@ -1,0 +1,12 @@
+Alias registry — Duphaston
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 43
+Brand: Duphaston
+
+Known aliases:
+- Duphaston (brand)
+- DUPHASTON 10 MG 60 F.C.TABS. (catalog_sku)
+- Dydrogesterone (inn)
+- دوفاستون (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

@@ -1,0 +1,114 @@
+MOTILIUM 10MG 40 F.C.TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Motilium
+Catalog SKU: MOTILIUM 10MG 40 F.C.TAB.
+INN / actives: Domperidone
+Catalog New Material: DOMPERIDONE
+Strength / form: Domperidone 10 mg | (web-supplemented dosing below)
+Manufacturer / market: JANSSEN CILAG
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-NAUSEA & VOMITING
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=MOTILIUM 10MG; sheet lookup INNs=Domperidone, DOMPERIDONE
+Web clinical sources: Domperidone SmPC (Motilium) with QT warnings
+
+1. What Motilium is used for
+Catalog uses: antiemetic
+Approved uses (material sheet): Nausea/vomiting - 10 mg PO tid (max 30 mg/day) for ≤1 week *
+Gastroparesis - 10 mg tid before meals*
+Off-label mentions (material sheet): Lactation enhancement -10 mg tid (limited to 4 to 10 days; not FDA approved)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Often 10 mg up to 3 times daily before meals; short courses preferred. Cardiac QT risk — respect max daily dose and contraindications.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Restricted; cardiac risk — specialist only / avoid in young children per current warnings.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Motilium if / disease cautions
+From material/disease sheets:
+[DOMPERIDONE] Hypersensitivity to DOMPERIDONE * Infants under 1 year * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation * Atrioventricular (AV) & Heart Blocks (Without Pacemaker)* Cardiac Procedures & Perioperative Pain * Vascular / Aneurysms Heart Diseases * Structural / Valvular & Inflammatory Heart Diseases * Bradyarrhythmias & Sinus Node Dysfunction * Tachyarrhythmias & Hyperactive Conduction * Hyperprolactinemia * Gastrointestinal (GI) bleeding * Obstructive GI Diseases *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None
+• but EMA/FDA warnings include:
+- QT prolongation & sudden cardiac death (highest risk in age >60, doses >30 mg/day, or with CYP3A4 inhibitors)
+- Neuropsychiatric effects (agitation, suicidal ideation) on withdrawal during lactation.
+Notes (material sheet): • It increases the secretion of the hormone prolactin and thus increases breast milk and reduces fertility in men, gynecomastia, amenorrhea, or impotence (reversible upon decreasing dose or discontinuing drug)
+• Take before a meal. 
+Take 15-30 minutes before meals
+• Avoid:
+- CYP3A4 inhibitors (e.g., ketoconazole, erythromycin) due to increased cardiac risk.
+• Caution with:
+-Antacids/PPIs (take ≥2h apart to avoid reduced absorption)
+...........................................................................
+• When gastroparesis occurs in diabetic patients, the treatment method for gastroparesis in diabetic patients is: We give Domperidone (10 mg) before each meal three times a day
+• Nausea/v…
+Patient education excerpt: • Timing:
+- Take 15–30 min before meals.
+• Missed Dose: 
+-Skip if close to next dose; never double dose.
+• Warning Signs: 
+-Seek help for palpitations, dizziness, or uncontrolled movements
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Domperidone + ALUMINUM ASPIRIN: Risk: QT prolongation (QTc>450ms); Type: Additive cardiac effects; Monitoring: ECG baseline + weekly; Dosage Adjustments: Max domperidone 10mg TID; Alternative: Ginger supplements; Patient Warnings: Palpitation report
+- Domperidone + ACETYL SALICYLIC ACID: Risk: Cardiac arrest; Type: Potassium channel blockade; Monitoring: K+ >4.0 required; Dosage Adjustments: Max 30mg/day; Alternative: Mosapride; Patient Warnings: Syncope danger
+- Domperidone + ASPIRIN: Risk: Torsades de Pointes; Type: QTc prolongation (≥500ms); Monitoring: ECG baseline + weekly; Dosage Adjustments: Max 10mg TID; Alternative: Mosapride; Patient Warnings: Syncope danger
+- Domperidone + TRIMETAZIDINE: Risk: EPS (SAS score >3). Type: Pharmacodynamic. Monitoring: Simpson-Angus Scale weekly. Dosage Adjustments: Avoid combination. Alternative: Ondansetron. Patient Warnings/Management: Report restlessness.
+- Domperidone + DEXTROMETHORPHAN: Risk: Additive CNS depression via dopamine/sigma-1 receptor effects. Monitoring: Watch for excessive sedation, especially in CYP2D6 poor metabolizers. Dose Adjustment: Limit dextromethorphan to 30mg q6h if combined. Patient Warning: Avoid alcohol and driving. Mechanism: Weak opioid agonist with serotonergic activity.
+- Domperidone + PENTAZOCINE: Risk: Mixed agonist-antagonist may reverse analgesia while increasing CNS depression. Monitoring: Pain scores and respiratory rate q4h. Dose Adjustment: Avoid combination - use pure agonist if needed. Patient Warning: May cause withdrawal in opioid-dependent patients. Mechanism: Kappa agonist/mu partial antagonist.
+- Domperidone + TRAMADOL: Risk: Serotonin syndrome risk (weak SRI effect of tramadol). Monitoring: Watch for clonus, hyperreflexia. Dose Adjustment: Max tramadol 200mg/day if combined. Patient Warning: Report muscle twitching. Mechanism: Mu agonist + SNRI activity.
+- Domperidone + CODEINE: Risk: Enhanced CNS depression in CYP2D6 ultrarapid metabolizers. Monitoring: Respiratory rate q2h initially. Dose Adjustment: Reduce codeine by 25-50%. Patient Warning: Watch for extreme sleepiness. Mechanism: Prodrug converted to morphine via CYP2D6.
+- Domperidone + FENTANYL: Risk: Delayed gastric emptying increases transdermal absorption. Monitoring: Continuous pulse oximetry recommended. Dose Adjustment: Reduce fentanyl patch dose by 25%. Patient Warning: Remove patch if excessive drowsiness. Mechanism: Potent mu agonist.
+- Domperidone + PETHIDINE (DEMEROL): Avoid combining domperidone with meperidine when possible due to additive risk of QT prolongation. Meperidine may reduce domperidone metabolism, raising its plasma concentration. Monitor ECG and neurologic status. Instruct patients to report any palpitations, dizziness, or syncope.
+- Domperidone + KETOBEMIDONE: Risk: Enhanced dopamine blockade causing rigidity. Monitoring: Observe for Parkinsonian symptoms. Dose Adjustment: Avoid combination. Patient Warning: Report muscle stiffness. Mechanism: Mu agonist with NMDA antagonism.
+- Domperidone + MORPHINE: Risk: Delayed gastric emptying increases oral bioavailability 2-fold. Monitoring: Respiratory depression for 12h post-dose. Dose Adjustment: Reduce oral morphine by 30-50%. Patient Warning: Take only when awake. Mechanism: Delayed GI transit increases absorption.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Use only if clearly needed; limited data.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Used carefully (also galactagogue off-label) — cardiac risk assessment required; prefer clinician oversight.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Dry mouth (15%)*
+Abdominal cramps (12%)*
+Hyperprolactinemia (12%)*
+Galactorrhea (11%)*
+Gynecomastia (11%)*
+Minor (material sheet): Headache (5%)*
+Restlessness (3%)*
+Edema (4%)*
+Palpitations (7%)* 
+Pruitus (4%)*
+Urticaria (4%)*
+Hot flashes (4%)*
+Increased serum cholesterol - total (4%)*
+Increased thirst (4%)*
+Acid regurgitation (4%)*
+Change in appetite (4%)* 
+Constipation (3%)* 
+Diarrhea (9%)*
+Nausea (5%)*
+Stomatitis (4%)*
+Dysuria - pain/burning during pee (4%)*
+Mastalgia (4%)*
+Urinary frequency (4%)*
+Increased serum ALT - alanine aminotransferase (5%)*
+Increased serum AST - aspartate aminotransferase (5%)*
+Asthenia - weakness (4%)*
+Extrapyramidal reaction (4%)*
+Insomnia (3%)*
+Irritability (3%)*
+Lethargy - laziness (4%)*…
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

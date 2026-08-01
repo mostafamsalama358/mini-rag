@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: CLONIDINE HYDROCHLORIDE
+Risk: Paradoxical hypertension → stroke
+Type: Antagonistic (β₂-agonist vs α₂-agonist)
+Monitoring: BP pre/post-inhalation, ECG if tachycardic
+Dose adjustment: Increase clonidine by 0.1mg/day; Alternatives: Ipratropium
+Alternative: -
+Patient warning: "Report tremors/BP↑, avoid OTC decongestants"
+Severity: yes
+
+Clinical note:
+Risk: Paradoxical hypertension → stroke; Type: Antagonistic (β₂-agonist vs α₂-agonist); Monitoring: BP pre/post-inhalation, ECG if tachycardic; Dosage Adjustments: Increase clonidine by 0.1mg/day; Alternatives: Ipratropium; Patient Warnings: "Report tremors/BP↑, avoid OTC decongestants"

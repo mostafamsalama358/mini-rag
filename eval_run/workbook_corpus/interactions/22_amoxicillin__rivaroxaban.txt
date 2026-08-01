@@ -1,0 +1,16 @@
+Drug interaction — Hi-Biotic
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 22
+Brand: Hi-Biotic
+API 1: AMOXICILLIN
+API 2: RIVAROXABAN
+Risk: Minimal interaction but possible bleeding risk.
+Type: Unclear mechanism.
+Monitoring: Anti-Xa levels if available; clinical bleeding assessment.
+Dose adjustment: No adjustment needed.
+Alternative: Doxycycline for skin infections.
+Patient warning: Report headaches or swelling (signs of hemorrhage).
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction but possible bleeding risk. Type: Unclear mechanism. Monitoring: Anti-Xa levels if available; clinical bleeding assessment. Dosage: No adjustment needed. Alternative: Doxycycline for skin infections. Patient Warnings: Report headaches or swelling (signs of hemorrhage).

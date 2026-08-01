@@ -1,0 +1,16 @@
+Drug interaction — Congestal
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 06
+Brand: Congestal
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: CLOMIPRAMINE
+Risk: Glutathione depletion → ↑ hepatotoxicity risk
+Type: -
+Monitoring: LFTs q2mo
+Dose adjustment: Avoid chronic >2g/day
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Glutathione depletion → ↑ hepatotoxicity risk; Monitoring: LFTs q2mo; Dosage: Avoid chronic >2g/day; Patient: Take separately; report fatigue/jaundice; NAC prophylaxis considered.

@@ -1,0 +1,16 @@
+Drug interaction — Concor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 29
+Brand: Concor
+API 1: BISOPROLOL
+API 2: AMIODARONE
+Risk: ↑ Bisoprolol levels → exercise intolerance
+Type: Pharmacokinetic
+Monitoring: Exercise tolerance
+Dose adjustment: Reduce bisoprolol by 2.5mg increments
+Alternative: Ranolazine
+Patient warning: /Management: Gradual activity increase.
+Severity: caution
+
+Clinical note:
+Risk: ↑ Bisoprolol levels → exercise intolerance; Type: Pharmacokinetic; Monitoring: Exercise tolerance; Dosage Adjustments: Reduce bisoprolol by 2.5mg increments; Alternative: Ranolazine; Patient Warnings/Management: Gradual activity increase.

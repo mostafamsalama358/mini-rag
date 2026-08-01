@@ -1,0 +1,16 @@
+Drug interaction — Otrivin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 38
+Brand: Otrivin
+API 1: XYLOMETAZOLINE
+API 2: PHENELZINE
+Risk: Potentially fatal BP spike. Action: Contraindicated.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: Check BP if accidental use; seek immediate care for severe headache.
+Severity: yes
+
+Clinical note:
+Risk: Potentially fatal BP spike. Action: Contraindicated. Patient Warning: Check BP if accidental use; seek immediate care for severe headache.

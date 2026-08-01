@@ -1,0 +1,12 @@
+Alias registry — Risek
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 25
+Brand: Risek
+
+Known aliases:
+- Risek (brand)
+- RISEK 20 MG 14 CAPS. (catalog_sku)
+- Omeprazole (inn)
+- ريسك (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

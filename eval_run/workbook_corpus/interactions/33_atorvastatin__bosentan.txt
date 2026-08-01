@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: BOSENTAN
+Risk: Reduced atorvastatin efficacy (CYP3A4 induction) & hepatotoxicity
+Type: Pharmacokinetic & additive toxicity
+Monitoring: Lipid panel, LFTs monthly
+Dose adjustment: ↑ Atorvastatin dose likely
+Alternative: Fluvastatin
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Reduced atorvastatin efficacy (CYP3A4 induction) & hepatotoxicity; Type: Pharmacokinetic & additive toxicity; Monitoring: Lipid panel, LFTs monthly; Dosage: ↑ Atorvastatin dose likely; Alternative: Fluvastatin; Patient: Report muscle pain.

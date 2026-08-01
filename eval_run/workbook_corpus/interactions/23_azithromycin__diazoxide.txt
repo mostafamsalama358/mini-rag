@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: DIAZOXIDE
+Risk: Additive hypotension + QT prolongation
+Type: Pharmacodynamic synergy (BP/QT)
+Monitoring: BP daily, ECG (QTc), glucose, LFTs/Renal function
+Dose adjustment: Reduce diazoxide if hypotensive
+Alternative: Non-QT-prolonging macrolide (erythromycin)
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Additive hypotension + QT prolongation; Type: Pharmacodynamic synergy (BP/QT); Monitoring: BP daily, ECG (QTc), glucose, LFTs/Renal function; Dosage: Reduce diazoxide if hypotensive; Alternative: Non-QT-prolonging macrolide (erythromycin); Patient: Report dizziness/palpitations + avoid sudden position changes.

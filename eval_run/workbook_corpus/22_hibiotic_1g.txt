@@ -1,0 +1,86 @@
+HIBIOTIC 1 GM 16 TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Hi-Biotic
+Product line: Hi-Biotic
+Catalog SKU: HIBIOTIC 1 GM 16 TABS.
+SKU ID: 22
+INN / actives: Amoxicillin * Clavulanic Acid
+INN primary: Amoxicillin
+INN aliases: AMOXICILLIN; CLAVULANATE; CLAVULANIC ACID; POTASSIUM CLAVULANATE
+Strength / form: Amoxicillin 875 mg + Clavulanic acid 125 mg | Form=TAB. | Min.age=12 years or ≥40 kg
+Manufacturer / market: PHARCO
+Price (catalog): 173
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-BACTERIAL
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Hi-Biotic is used for
+Otitis media - 40 : 90 mg/kg/day divided q8 : 12h (pediatrics)*
+Strep pharyngitis - 500 mg q12h or 1000 mg q24h x 10d*
+UTI - 250 : 500 mg q8h*
+
+2. Dosage — Adults
+Adult dose: 1 tablet every 12 hours
+Maximum daily dose: 2 tablets/day (2 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years or ≥40 kg
+Pediatric min age: See pack
+Pediatric dose: 25-45 mg/kg/day (amoxicillin component) in 2 divided doses.
+Pediatric max daily dose: See pack
+
+4. Do not take Hi-Biotic if / disease cautions
+Hypersensitivity to β lactams * Clostridioides difficile-associated diarrhea (CDAD) * Infectious Mononucleosis * Infants under 3 months *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None
+Warnings: • Cinnarizine interferes with the allergy test and gives a false result because there is no allergy to penicillins despite the presence of allergy. The solution, as mentioned in the scientific sources, is to stop the Cinnarizine drug 4 days before the allergy test 
+• he must have a probiotic such as lacteol fort cap for use after it and advise him to eat prebiotic-rich food such as garlic, onions, bananas, yogurt
+• Avoid taking too many calcium-enriched foods and drinks as it might affect the working of AMOXICILLIN.
+• Avoid bacteriostatic agents (e.g., tetracyclines) which may antagonize effects
+• Take with food.
+.............................................................................
+•
+HCP notes: • Cinnarizine interferes with the allergy test and gives a false result because there is no allergy to penicillins despite the presence of allergy. The solution, as mentioned in the scientific sources, is to stop the Cinnarizine drug 4 days before the allergy test 
+• he must have a probiotic such as lacteol fort cap for use after it and advise him to eat prebiotic-rich food such as garlic, onions, bananas, yogurt
+• Avoid taking too many calcium-enriched foods and drinks as it might affect the working of AMOXICILLIN.
+• Avoid bacteriostatic agents (e.g., tetracyclines) which may antagonize effects
+• Take with food.
+.............................................................................
+•
+Patient education: • Timing: 
+-Take at start of meal to enhance absorption
+• Missed dose: 
+-Take as soon as remembered unless close to next dose
+• Completion: 
+-Finish full course even if symptoms improve
+• Warning: 
+-Report diarrhea, rash, or difficulty breathing
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- AMOXICILLIN + METHOTREXATE; Risk: Competitive tubular secretion → 60% ↑ MTX AUC.; Monitoring: Pre/post-dose creatinine clearance. Dose Adjustment: MTX ≤15mg/week + IV hydration.; Patient warning: Report ↓ urine output immediately.
+- AMOXICILLIN + WARFARIN; Risk: Minimal INR change (occasional GI flora effect); Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dose adjustment: None typically; Alternative: Cephalexin; Patient warning: Report rash (mononucleosis contraindication).
+- AMOXICILLIN + DICUMAROL; Risk: Minimal INR change; Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dose adjustment: None; Alternative: Cephalexin; Patient warning: Maintain consistent vitamin K intake.
+- AMOXICILLIN + PHENPROCOUMON; Risk: Minimal INR change; Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dose adjustment: None; Alternative: Cephalexin; Patient warning: Maintain consistent vitamin K intake.
+- AMOXICILLIN + ACENOCOUMAROL; Risk: Minimal INR change; Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dose adjustment: None; Alternative: Cephalexin; Patient warning: Maintain consistent vitamin K intake.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: use_with_caution
+
+8. Breastfeeding
+Breastfeeding safety: use_with_caution
+
+9. Supplements / cross-selling
+Catalog cross-selling: Enterogermina|Smecta
+
+10. Possible side effects
+Major: Diarrhea (14%)*
+Rash (10%)*
+Vaginal candidiasis (10%)*
+Minor: Nausea (8%)*
+Urticaria (3%)*
+Serum sickness like reaction (0.2%)*
+C. difficile colitis (0.1-1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

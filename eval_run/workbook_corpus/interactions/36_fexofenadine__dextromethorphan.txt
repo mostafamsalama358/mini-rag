@@ -1,0 +1,16 @@
+Drug interaction — Telfast
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 36
+Brand: Telfast
+API 1: FEXOFENADINE
+API 2: DEXTROMETHORPHAN
+Risk: Mild drowsiness (high-dose); Interaction: Additive peripheral H₁ effects
+Type: -
+Monitoring: Visual analog scale for sedation
+Dose adjustment: Max fexofenadine 120mg/day
+Alternative: Pseudoephedrine
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Mild drowsiness (high-dose); Interaction: Additive peripheral H₁ effects; Monitoring: Visual analog scale for sedation; Dosage: Max fexofenadine 120mg/day; Alternative: Pseudoephedrine; Patient: Caution with machinery.

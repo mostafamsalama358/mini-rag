@@ -1,0 +1,12 @@
+Alias registry — Flagyl
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 20
+Brand: Flagyl
+
+Known aliases:
+- Flagyl (brand)
+- FLAGYL 500MG 20 TAB. (catalog_sku)
+- Metronidazole (inn)
+- فلاجيل (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

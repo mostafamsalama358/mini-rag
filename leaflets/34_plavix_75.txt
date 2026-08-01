@@ -1,0 +1,109 @@
+PLAVIX 75 MG 28 F.C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Plavix
+Catalog SKU: PLAVIX 75 MG 28 F.C.TABS.
+INN / actives: Clopidogrel
+Catalog New Material: CLOPIDOGREL
+Strength / form: Clopidogrel 75 mg | (web-supplemented dosing below)
+Manufacturer / market: SANOFI
+Price (catalog): 311
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > ANTI-BLOOD CLOTTING
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=PLAVIX 75; sheet lookup INNs=Clopidogrel, CLOPIDOGREL
+Web clinical sources: Clopidogrel SmPC; Plavix
+
+1. What Plavix is used for
+Catalog uses: antiplatlet.adp receptor blocker
+Approved uses (material sheet): Acute Coronary Syndrome (ACS) - Unstable Angina (UA), Non ST Elevation MI (NSTEMI), ST Elevation MI (STEMI) - 300 mg or 600 mg loading dose, then 75 mg once daily*
+Recent MI, Recent Stroke, or Established Peripheral Arterial Disease (PAD) - 75 mg once daily*
+Post Percutaneous Coronary Intervention (PCI) with stent placement - 75 mg once daily with Aspirin 81 mg daily. Duration depends on indication and stent type (e.g., 1 : 12 months or longer)*
+Off-label mentions (material sheet): Atrial Fibrillation - ( when Warfarin/DOACs are contraindicated), often with Aspirin*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Maintenance 75 mg once daily. Loading doses for ACS only under cardiology protocols.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not routine.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Plavix if / disease cautions
+From material/disease sheets:
+[CLOPIDOGREL] Hypersensitivity to CLOPIDOGREL * Gastrointestinal (GI) bleeding * Non‑specific active hemorrhage / major bleeding * Abnormal uterine/ Vaginal bleeding (AUB)* Peptic Ulcer Disease & Gastritis * Intracranial hemorrhage (ICH) (intracerebral/ cerebral/ subarachnoid and hemorrhagic stroke)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): WARNING: DIMINISHED EFFECTIVENESS IN POOR METABOLIZERS
+
+Effectiveness of Clopidogrel depends on activation by CYP2C19.
+
+• Patients who are poor metabolizers (2-14% of population) receive less antiplatelet effect.
+• Tests are available to identify a patient's CYP2C19 genotype.
+• Consider alternative treatment strategies in patients identified as poor metabolizers.
+Notes (material sheet): • Take with or without food
+• Avoid eating grapefruit or drinking grapefruit juice while using this medication
+• PROTON PUMP INHIBITORS: USE WITH CAUTION. Avoid concomitant use with Omeprazole or Esomeprazole. Rationale: They inhibit CYP2C19, significantly reducing Clopidogrel's efficacy. Pantoprazole or H2 blockers are preferred
+• Vitamin K: AVOID high-dose supplements. Does not directly interact, but can counteract the anti-thrombotic state.
+• Fibrinolytic (like; heparine)administered ≤24 hours ago without a loading dose of clopidogrel: Initial: 300 mg once
+• Fibrinolytic administered >24 hours ago without a loading dose of clopidogrel: Initial: 600 mg once
+• The effectiveness of clopidog…
+Patient education excerpt: • Timing: 
+-Once daily with/without food
+• Missed dose: 
+-Take ASAP unless near next dose
+• Warning: 
+-Report unusual bleeding/black stools
+• Antidote: 
+-Platelet transfusion for severe bleeding
+• Interactions: 
+-Tell all your doctors and dentists you are on Clopidogrel. Avoid aspirin, ibuprofen, and naproxen unless specifically told to use them by your cardiologist.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Clopidogrel + DIAZOXIDE: Risk: Increased bleeding risk due to additive antiplatelet effects. Type: Pharmacodynamic (synergistic platelet inhibition). Monitoring: CBC weekly, fecal occult blood test. Dosage Adjustments: Reduce clopidogrel to 75mg QOD if combined. Alternative: Aspirin (lower bleeding risk). Patient Warnings/Management: Report b…
+- Clopidogrel + BOSENTAN: Risk: Moderate bleeding risk. Type: Pharmacodynamic. Monitoring: CBC monthly. Dosage Adjustments: None typically needed. Alternative: Aspirin. Patient Warnings/Management: Report unusual bruising.
+- Clopidogrel + MINOXIDIL: Risk: Mild additive bleeding risk. Type: Pharmacodynamic. Monitoring: Routine CBC. Dosage Adjustments: None typically. Alternative: Aspirin. Patient Warnings/Management: Standard precautions.
+- Clopidogrel + HYDRALAZINE: Risk: Mild bleeding risk. Type: Pharmacodynamic. Monitoring: CBC baseline. Dosage Adjustments: None typically. Alternative: Aspirin. Patient Warnings/Management: Standard monitoring.
+- Clopidogrel + ILOPROST: Risk: Severe bleeding due to additive antiplatelet effects. Type: Pharmacodynamic (synergistic platelet inhibition). Monitoring: CBC weekly, fecal occult blood test. Dosage Adjustments: Reduce clopidogrel to 75mg QOD if combined. Alternative: Aspirin (lower bleeding risk). Patient Warnings/Management: Report bruising/…
+- Clopidogrel + ALUMINUM ASPIRIN: Risk: Increased bleeding risk due to synergistic antiplatelet effects (dual platelet inhibition); Type: Pharmacodynamic (additive effect); Monitoring: Monitor for bleeding signs (epistaxis, bruising, melena), CBC, and platelet function tests if available; Dosage Adjustments: Use lowest effective aspirin dose (75-100 m…
+- Clopidogrel + ACETYL SALICYLIC ACID: Risk: Increased GI bleeding (2-4× baseline) with dual antiplatelet therapy; Type: Pharmacodynamic (additive effect); Monitoring: Fecal occult blood annually, Hgb q6mo; Dosage Adjustments: ASA 81 mg + clopidogrel 75 mg standard; Alternative: PPIs (avoid omeprazole); Patient Warnings/Management: Take with food, report a…
+- Clopidogrel + ASPIRIN: Risk: 1-2% annual major bleeding risk with DAPT; Type: Pharmacodynamic (additive effect); Monitoring: Verify CYP2C19 status for clopidogrel efficacy; Dosage Adjustments: Consider 325 mg ASA loading dose in ACS; Alternative: Ticagrelor in poor metabolizers; Patient Warnings/Management: Use electric razors, soft-bristle…
+- Clopidogrel + INDOMETHACIN: Risk: Increased GI bleeding (additive antiplatelet + NSAID effects). Type: Pharmacodynamic. Monitoring: Check for anemia, occult blood, abdominal pain. Dosage Adjustments: Use lowest NSAID dose, shortest duration. Alternative: Acetaminophen or COX-2 inhibitor (with caution). Patient Warnings/Management: Report black s…
+- Clopidogrel + PIROXICAM: Risk: Elevated GI bleeding risk (synergistic antiplatelet + NSAID effects). Type: Pharmacodynamic. Monitoring: Hemoglobin, GI symptoms. Dosage Adjustments: Minimize NSAID dose/duration. Alternative: Non-NSAID analgesics. Patient Warnings/Management: Watch for bleeding signs; avoid alcohol; consider gastroprotection.
+- Clopidogrel + IBUPROFEN: Risk: Reduced clopidogrel efficacy (CYP2C9 competition) + GI bleeding. Type: Mixed (PK/PD). Monitoring: Platelet function if needed. Dosage Adjustments: Space ibuprofen 2hrs after clopidogrel. Alternative: Paracetamol. Patient Warnings/Management: Short-term NSAID use only; monitor for chest pain (reduced clopidogrel…
+- Clopidogrel + DEXIBUPROFEN: Risk: GI bleeding + potential clopidogrel inhibition (CYP2C9). Type: Mixed. Monitoring: Signs of bleeding, CV events. Dosage Adjustments: Limit dexibuprofen duration. Alternative: COX-2 selective NSAID (higher CV risk). Patient Warnings/Management: Discontinue NSAID if bleeding occurs; use PPI if unavoidable.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Use only if clearly needed (bleeding risk).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Limited data — specialist decision.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Bleeding (15.7%)*
+Purpura (5-15%)*
+Bruising (5-15%)*
+Diarrhea (4-6%)*
+Rash (4-6%)*
+Pruritus (Itching (3-5%)*
+Minor (material sheet): Dyspepsia (5%)*
+Abdominal Pain (5%)*
+Headache (3-5%)*
+Nausea/Vomiting (3%)*
+Arthralgia (3%)*
+Epistaxis - Nosebleeds (2-4%)*
+Neutropenia (<0.1%)*
+Agranulocytosis (<0.1%)*
+Thrombotic Thrombocytopenic Purpura (TTP) (<0.02%)*
+Liver Function Test Abnormalities (Rare)*
+Upper respiratory tract infection (URTI) (3%)*
+Chest pain (4%)*
+Flu like syndrome (4%)*
+Dizziness (4%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

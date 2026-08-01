@@ -1,0 +1,99 @@
+DUPHASTON 10 MG 60 F.C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Duphaston
+Catalog SKU: DUPHASTON 10 MG 60 F.C.TABS.
+INN / actives: Dydrogesterone
+Catalog New Material: DYDROGESTERONE
+Strength / form: Dydrogesterone 10 mg | (web-supplemented dosing below)
+Manufacturer / market: ABBOTT LABORATORIES
+Price (catalog): 269
+Categories: MEDICINE > HORMONES > SINGLE HORMONES
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=DUPHASTON 10; sheet lookup INNs=Dydrogesterone, DYDROGESTERONE
+Web clinical sources: Dydrogesterone SmPC; Duphaston
+
+1. What Duphaston is used for
+Catalog uses: -
+Approved uses (material sheet): Luteal phase support - 10 mg BID starting at ovulation*
+Dysmenorrhea - 10 mg BID days 5 : 25 of cycle*
+Endometriosis - 10 mg BID , TID continuously*
+HRT combination - 5 : 10 mg/day with estrogen*
+Off-label mentions (material sheet): Recurrent miscarriage - 10 mg BID until 20 weeks gestation*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Indication-specific (cycle support, endometriosis, threatened miscarriage protocols): commonly 10 mg 2–3×/day for defined days — only as prescribed.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not indicated.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Duphaston if / disease cautions
+From material/disease sheets:
+[DYDROGESTERONE] Hypersensitivity to DYDROGESTERONE * Increased Intracranial Pressure (ICP)* Abnormal uterine/ Vaginal bleeding (AUB)* Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None (better safety profile than other progestins regarding cardiovascular risks)
+Notes (material sheet): • Dose Modification:
+- Liver impairment: 
+Caution in severe dysfunction (extensive hepatic metabolism)
+- Kidney impairment: 
+No dose adjustment needed
+.................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Safe (used for luteal phase support)
+- Lactation: 
+Compatible (minimal excretion in breast milk)
+..........................................................
+• Lab Tests:
+- May affect liver function tests (monitor with long-term use)
+- No significant impact on lipid profile
+............................................................
+Key References: 
+WHO Guidelines, EMA Assessment Reports, FIGO Recommendations
+Patient education excerpt: •Timing: 
+-Take with food if GI upset occurs
+• Missed dose: 
+-Take as soon as remembered unless close to next dose
+• Precautions: 
+-Report sudden vision changes or severe headaches
+• Withdrawal bleed: 
+-Expected 2-3 days after stopping cyclic therapy
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Dydrogesterone + ENALAPRIL: Risk: Minimal hyperkalemia risk as dydrogesterone has negligible mineralocorticoid activity. Type: Minimal interaction. Monitoring: Routine potassium monitoring not required unless other risk factors present. Dosage Adjustments: None typically needed. Alternatives: N/A. Patient Warnings/Management: Standard enalapril…
+- Dydrogesterone + LISINOPRIL: Risk: Minimal hyperkalemia (<1% incidence). Type: Negligible interaction. Monitoring: Routine lisinopril monitoring only (K⁺ q6-12mo). Dosage Adjustments: None required. Alternatives: N/A. Patient Warnings/Management: Standard precautions suffice.
+- Dydrogesterone + RAMIPRIL: Risk: Minimal hyperkalemia (<1%). Type: Negligible interaction. Monitoring: Routine ramipril monitoring (K⁺ q6-12mo). Dosage Adjustments: None required. Alternatives: N/A. Patient Warnings/Management: Standard precautions suffice.
+- Dydrogesterone + BENAZEPRIL: Risk: Minimal hyperkalemia risk (<1%). Type: Negligible interaction. Monitoring: Routine benazepril monitoring (K⁺ q6-12mo). Dosage Adjustments: None required. Alternatives: N/A. Patient Warnings/Management: Standard precautions sufficient.
+- Dydrogesterone + CILAZAPRIL: Risk: Minimal (0.5-1%). Type: Clinically insignificant. Monitoring: Routine labs only. Dosage Adjustments: None. Alternatives: N/A. Note: "No additional precautions beyond standard ACEi monitoring."
+- Dydrogesterone + FOSINOPRIL: Risk: Minimal (0.5-1.2%). Type: Clinically insignificant. Monitoring: Standard ACEi monitoring only. Dosage Adjustments: None required. Alternatives: N/A. Note: "No increased monitoring beyond routine care."
+- Dydrogesterone + QUINAPRIL: Risk: Minimal (0.8-1.5%). Type: Clinically negligible. Monitoring: Standard ACEi protocol. Dosage Adjustments: None. Alternatives: N/A. Note: "No additional precautions beyond routine monitoring."
+- Dydrogesterone + PERINDOPRIL: Risk: Minimal (0.5-1%). Type: Clinically insignificant. Monitoring: Standard ACEi protocol. Dosage Adjustments: None. Alternatives: N/A. Note: "No additional monitoring required."
+- Dydrogesterone + IRBESARTAN: Risk: Minimal potassium interaction; Type: None significant; Monitoring: Routine K+ monitoring unnecessary; Dosage: No changes required; Alternative: First-line for HRT combinations; Patient Warnings: Reassurance about safety profile.
+- Dydrogesterone + VALSARTAN: Risk: Minimal interaction; Type: None; Monitoring: Routine labs unnecessary; Dosage: Standard dosing; Alternative: Preferred for HRT combinations; Patient Warnings: Reassure about safety.
+- Dydrogesterone + LOSARTAN: Risk: Clinically insignificant interaction; Type: Minimal; Monitoring: Routine K+ unnecessary; Dosage: Standard dosing; Alternative: First-line for HRT; Patient Warnings: Reassure about safety.
+- Dydrogesterone + LOSARTAN POTASSIUM: Risk: Mild interaction; Type: Minimal; Monitoring: Baseline K+ only; Dosage: Standard dosing; Alternative: Safest progestin combination; Patient Warnings: Routine monitoring sufficient.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Used in obstetric protocols when prescribed; do not self-medicate.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Progestogens may be used with caution — follow obstetric advice.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Breakthrough bleeding (15%)*
+Breast tenderness (12%)*
+Headache (10%)*
+Minor (material sheet): Nausea (5%)*
+Mood changes (3%)*
+Weight gain (2%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

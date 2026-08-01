@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: BISOPROLOL FUMARATE
+Risk: Exaggerated bradycardia and QT prolongation via hypomagnesemia
+Type: Pharmacodynamic (electrolyte-mediated synergy)
+Monitoring: Biweekly ECG (QTc) + serum Mg²⁺
+Dose adjustment: Max omeprazole 20mg/day; bisoprolol ≤5mg
+Alternative: Famotidine
+Patient warning: Report palpitations; oral Mg²⁺ supplements; avoid grapefr…
+Severity: yes
+
+Clinical note:
+Risk: Exaggerated bradycardia and QT prolongation via hypomagnesemia; Type: Pharmacodynamic (electrolyte-mediated synergy); Monitoring: Biweekly ECG (QTc) + serum Mg²⁺; Dosage: Max omeprazole 20mg/day; bisoprolol ≤5mg; Alternative: Famotidine; Patient Warnings: Report palpitations; oral Mg²⁺ supplements; avoid grapefr…

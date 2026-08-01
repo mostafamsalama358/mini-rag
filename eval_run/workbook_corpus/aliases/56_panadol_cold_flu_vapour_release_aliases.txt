@@ -1,0 +1,17 @@
+Alias registry — Panadol Cold & Flu Vapour Release
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 56
+Brand: Panadol Cold & Flu Vapour Release
+
+Known aliases:
+- Panadol Cold & Flu Vapour Release (brand)
+- PANADOL COLD & FLU VAPOUR RELEASE 10 SACHETS (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- Guaifenesin (inn)
+- Phenylephrine (inn)
+- PHENYLEPHRINE HCL (inn_alias)
+- PHENYLEPHRINE HYDROCHLORIDE (inn_alias)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

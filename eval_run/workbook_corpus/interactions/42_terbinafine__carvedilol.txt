@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: CARVEDILOL
+Risk: 2-3 fold increase in carvedilol levels (CYP2D6 inhibition)
+Type: Pharmacokinetic
+Monitoring: Orthostatic BP, HF symptoms
+Dose adjustment: Halve carvedilol dose
+Alternative: Nebivolol
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: 2-3 fold increase in carvedilol levels (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: Orthostatic BP, HF symptoms; Dosage: Halve carvedilol dose; Alternative: Nebivolol; Patient: Daily weight checks.

@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: ILOPROST
+Risk: Additive vasodilation and hypotension, with increased risk of tachycardia (due to β₂-agonist effects)
+Type: Pharmacodynamic (synergistic cardiovascular effects)
+Monitoring: Blood pressure (BP), heart rate (HR), signs of hypotension/palpitations
+Dose adjustment: Titrate iloprost or salbutamol carefully; Alt…
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Additive vasodilation and hypotension, with increased risk of tachycardia (due to β₂-agonist effects); Type: Pharmacodynamic (synergistic cardiovascular effects); Monitoring: Blood pressure (BP), heart rate (HR), signs of hypotension/palpitations; Dosage Adjustments: Titrate iloprost or salbutamol carefully; Alt…

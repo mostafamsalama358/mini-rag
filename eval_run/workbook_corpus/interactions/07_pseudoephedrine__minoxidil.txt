@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: MINOXIDIL
+Risk: Dangerous BP swings
+Type: Pharmacodynamic (opposing)
+Monitoring: Home BP monitoring
+Dose adjustment: Avoid combination
+Alternative: Cetirizine for allergies
+Patient warning: /Management: Use non-drug allergy treatments.
+Severity: yes
+
+Clinical note:
+Risk: Dangerous BP swings; Type: Pharmacodynamic (opposing); Monitoring: Home BP monitoring; Dosage Adjustments: Avoid combination; Alternative: Cetirizine for allergies; Patient Warnings/Management: Use non-drug allergy treatments.

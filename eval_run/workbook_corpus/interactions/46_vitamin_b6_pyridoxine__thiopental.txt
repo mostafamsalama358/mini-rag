@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B6 (PYRIDOXINE)
+API 2: THIOPENTAL
+Risk: High-dose pyridoxine (>200mg/day) induces metabolism → reduced thiopental efficacy → inadequate anesthesia/sedation.
+Type: -
+Monitoring: EEG during anesthesia; serum thiopental levels if prolonged use.
+Dose adjustment: Increase thiopental dose 20-30% for induction.
+Alternative: -
+Patient warning: Disclose all supplements pre-surgery; report in…
+Severity: caution
+
+Clinical note:
+Risk: High-dose pyridoxine (>200mg/day) induces metabolism → reduced thiopental efficacy → inadequate anesthesia/sedation. Monitoring: EEG during anesthesia; serum thiopental levels if prolonged use. Dosage: Increase thiopental dose 20-30% for induction. Patient Warning: Disclose all supplements pre-surgery; report in…

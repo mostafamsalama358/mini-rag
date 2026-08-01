@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: ALUMINUM ASPIRIN
+Risk: QT prolongation (QTc>450ms)
+Type: Additive cardiac effects
+Monitoring: ECG baseline + weekly
+Dose adjustment: Max domperidone 10mg TID
+Alternative: Ginger supplements
+Patient warning: Palpitation report
+Severity: caution
+
+Clinical note:
+Risk: QT prolongation (QTc>450ms); Type: Additive cardiac effects; Monitoring: ECG baseline + weekly; Dosage Adjustments: Max domperidone 10mg TID; Alternative: Ginger supplements; Patient Warnings: Palpitation report

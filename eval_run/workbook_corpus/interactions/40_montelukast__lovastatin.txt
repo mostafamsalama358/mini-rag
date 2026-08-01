@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: LOVASTATIN
+Risk: Significant ↑ lovastatin AUC (CYP3A4 inhibition) → 3-fold myopathy risk
+Type: -
+Monitoring: CK weekly ×4 then monthly; Dose Adjust: Lovastatin max 20mg/day; avoid extended-release
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Significant ↑ lovastatin AUC (CYP3A4 inhibition) → 3-fold myopathy risk; Monitoring: CK weekly ×4 then monthly; Dose Adjust: Lovastatin max 20mg/day; avoid extended-release; Patient: Avoid grapefruit; report muscle tenderness.

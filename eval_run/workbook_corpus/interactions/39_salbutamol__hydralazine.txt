@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: HYDRALAZINE
+Risk: Additive hypotension and reflex tachycardia (hydralazine vasodilation + β₂-agonist effects)
+Type: Pharmacodynamic (synergistic cardiovascular effects)
+Monitoring: BP, HR, signs of hypotension/palpitations
+Dose adjustment: Titrate hydralazine or salbutamol carefully
+Alternative: Anticholinergic bronchodila…
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Additive hypotension and reflex tachycardia (hydralazine vasodilation + β₂-agonist effects); Type: Pharmacodynamic (synergistic cardiovascular effects); Monitoring: BP, HR, signs of hypotension/palpitations; Dosage Adjustments: Titrate hydralazine or salbutamol carefully; Alternative: Anticholinergic bronchodila…

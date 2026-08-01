@@ -1,0 +1,75 @@
+version: 1
+taxonomy_id: pharmacy_symptom_v1
+nodes:
+  - node_id: acidity
+    labels_en: [acidity, heartburn, acid reflux, GERD, indigestion]
+    labels_ar: [حموضة, حرقان, ارتجاع, حرقان المعدة]
+    synonyms: [pyrosis, hyperacidity]
+    indication_tags: [acidity, antacid, ppi]
+    parents: []
+    children: []
+    clarification_prompt: null
+    ambiguity_group: null
+  - node_id: migraine
+    labels_en: [migraine, migraine headache]
+    labels_ar: [صداع نصفي, ميجرين]
+    synonyms: []
+    indication_tags: [migraine, headache]
+    parents: [pain]
+    children: []
+    clarification_prompt: null
+    ambiguity_group: null
+  - node_id: headache
+    labels_en: [headache, head pain]
+    labels_ar: [صداع]
+    synonyms: []
+    indication_tags: [headache, pain]
+    parents: [pain]
+    children: [migraine]
+    clarification_prompt: null
+    ambiguity_group: null
+  - node_id: pain
+    labels_en: [pain, ache, analgesia]
+    labels_ar: [ألم, وجع]
+    synonyms: []
+    indication_tags: [pain]
+    parents: []
+    children: [headache, migraine]
+    clarification_prompt: null
+    ambiguity_group: null
+  - node_id: fever
+    labels_en: [fever, pyrexia]
+    labels_ar: [حرارة, حمى]
+    synonyms: []
+    indication_tags: [fever, pain]
+    parents: []
+    children: []
+    clarification_prompt: null
+    ambiguity_group: null
+  - node_id: diarrhea
+    labels_en: [diarrhea, diarrhoea, loose stools]
+    labels_ar: [إسهال]
+    synonyms: []
+    indication_tags: [diarrhea]
+    parents: []
+    children: []
+    clarification_prompt: null
+    ambiguity_group: null
+  - node_id: stomach_problem
+    labels_en: [stomach problem, stomach issue, tummy ache]
+    labels_ar: [مشكلة في البطن, بطني بيوجعني, ألم بطن]
+    synonyms: []
+    indication_tags: [acidity, diarrhea]
+    parents: []
+    children: []
+    clarification_prompt: "هل تقصد حموضة/حرقان أم إسهال أم شيء آخر؟"
+    ambiguity_group: gi_broad
+  - node_id: cold
+    labels_en: [cold, common cold, flu-like]
+    labels_ar: [برد, نزلة برد, إنفلونزا]
+    synonyms: []
+    indication_tags: [cold, congestion]
+    parents: []
+    children: []
+    clarification_prompt: "هل الأعراض زكام/احتقان أم صداع/حرارة فقط؟"
+    ambiguity_group: cold_broad

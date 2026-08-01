@@ -1,0 +1,16 @@
+Drug interaction — Glucophage
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 31
+Brand: Glucophage
+API 1: METFORMIN
+API 2: BENAZEPRIL
+Risk: Minimal hypoglycemia.
+Type: Pharmacodynamic.
+Monitoring: Renal function q3mo; lactate if symptomatic.
+Dose adjustment: Hold if eGFR <30.
+Alternative: Dapagliflozin.
+Patient warning: Stop for vomiting/diarrhea.
+Severity: caution
+
+Clinical note:
+Risk: Minimal hypoglycemia. Type: Pharmacodynamic. Monitoring: Renal function q3mo; lactate if symptomatic. Dosage: Hold if eGFR <30. Alternative: Dapagliflozin. Patient Warnings: Stop for vomiting/diarrhea.

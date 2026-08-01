@@ -1,0 +1,91 @@
+FERROTRON 30 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Ferrotron
+Catalog SKU: FERROTRON 30 CAPS.
+INN / actives: Iron * Ferrous * Folic Acid
+Catalog New Material: IRON * ZINC * COPPER * MOLYBDENUM * VITAMIN B1 (THIAMINE) * VITAMIN B2 (RIBOFLAVIN) * VITAMIN B6 (PYRIDOXINE) * VITAMIN B12 (CYANOCOBALAMIN) * FOLIC ACID * BIOTIN (VITAMIN B7) * VITAMIN C (ASCORBIC ACID)
+Strength / form: Iron + vitamins capsule (Ferrotron complex) | (web-supplemented dosing below)
+Manufacturer / market: NERHADOU INTERNATIONAL CO.
+Price (catalog): 138
+Categories: VITAMINS & SUPPLEMENTS > VITAMINS > MULTIVITAMINS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=FERROTRON 30; sheet lookup INNs=Iron, Ferrous, Folic Acid, IRON, ZINC, COPPER
+Web clinical sources: Oral iron counseling standards; Ferrotron pack class
+
+1. What Ferrotron is used for
+Catalog uses: anemia.iron supplement combined with folic acid
+Approved uses (material sheet): Iron deficiency anemia - 50 : 200 mg/day oral elemental iron*
+CKD anemia - IV iron sucrose 100 mg/dialysis session*
+Pregnancy prophylaxis - 27 mg/day*
+Off-label mentions (material sheet): Restless Legs Syndrome - 50 to 100 mg/day oral (target ferritin >75 µg/L)*
+Heart failure - IV ferric carboxymaltose 15 mg/kg*
+Breath holding attacks (children) - 1 to 2 mg/kg/day*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Usually 1 capsule daily or as pack directs, preferably not with tea/coffee/calcium/quinolones at the same moment (space 2–4 h).
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Adult iron capsules not for young children (overdose risk).
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Ferrotron if / disease cautions
+From material/disease sheets:
+[IRON] Hypersensitivity to IRON * Disorders of Metal Metabolism (Overload) *
+[FERROUS] Hypersensitivity to FERROUS (II)-GLYCINE SULPHATE COMPLEX* Disorders of Metal Metabolism (Overload) *
+[FERROUS FUMARATE] Hypersensitivity to IRON (FERROUS FUMARATE)* Disorders of Metal Metabolism (Overload) *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • Pediatric Overdose Risk:
+-Accidental ingestion of >60 mg/kg may cause fatal metabolic acidosis. Store in child-proof containers
+Notes (material sheet): • Indicated for treatment of iron deficiency anemia associated with chronic kidney disease
+• Iron absorption is inhibited by eggs , milk , Cocoa and coffee , drink a lot of tea with your meals , Walnuts (contain phytates) , soy protein and fiber , medications that decrease the amount of acid in the stomach, including antacids and proton pump inhibitors (PPIs)
+• Some products that may interact with this drug include: vitamin products, other iron-containing products.
+• Foods rich in iron include meats (especially liver), raisins, figs, broccoli, brussels sprouts, beans, lentils, and iron-fortified or enriched cereals
+• Avoid:
+- CALCIUM OR CALCIUM CARBONATE / ZINC OR ZINC GLUCONATE supplements…
+Patient education excerpt: • Timing: 
+-Take 1 hr before meals or 2 hrs after for best absorption; with food if GI upset occurs.
+• Food Interactions: 
+-Avoid dairy, tea, coffee within 2 hrs; take with vitamin C-rich foods.
+• Missed Dose: 
+-Skip if near next dose; never double dose.
+• Overdose Antidote: 
+-Deferoxamine IV .
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Iron + METHYLDOPA: Risk: Reduced methyldopa absorption (↓ efficacy), BP instability; Type: Chelation interaction; Monitoring: BP weekly, Hb/ferritin (if anemia); Dosage Adjustments: Administer iron 2–3 hours after methyldopa; Alternative: IV iron if oral separation impractical; Patient Warnings/Management: Take methyldopa on empty stoma…
+- Iron + CLONIDINE HYDROCHLORIDE: Risk: Reduced clonidine absorption leading to decreased efficacy and potential hypertension; Type: Chelation interaction; Monitoring: BP weekly, watch for rebound hypertension; Dosage Adjustments: Administer iron 2-4 hours after clonidine; Alternative: IV iron if oral separation not feasible; Patient Warnings/Manageme…
+- Iron + MOXONIDINE: Risk: Reduced moxonidine absorption and efficacy; Type: Chelation; Monitoring: BP weekly, watch for hypertension; Dosage Adjustments: Administer iron 3 hours after moxonidine; Alternative: IV iron if needed; Patient Warnings/Management: Take moxonidine on empty stomach.
+- Iron + CHOLESTYRAMINE: Risk: Reduced iron absorption → impaired anemia correction (risk of persistent fatigue/cardiac strain); Type: Pharmacokinetic (GI binding); Monitoring: FBC every 2-4 weeks, ferritin monthly; Dosage: Administer iron ≥4h before cholestyramine (preferably on empty stomach); Alternative: IV iron preparations (e.g., ferric…
+- Iron + COLESTIPOL: Risk: Severe iron absorption reduction (50-70%) → refractory anemia; Type: Pharmacokinetic (GI binding); Monitoring: FBC weekly, iron studies monthly; Dosage: Strict 6h separation (AM iron/PM colestipol); Alternative: IV iron (ferric carboxymaltose/ferumoxytol); Patient Warnings/Management: Take iron with 250mg vitami…
+- Iron + COLESEVELAM: Risk: Moderate absorption decrease (30-50%); Type: Pharmacokinetic (GI binding); Monitoring: FBC every 3-4 weeks; Dosage: Minimum 4h separation; Alternative: Ferric maltol if compliance issues; Patient Warnings/Management: Morning iron/evening colesevelam preferred.
+- Iron + ENTACAPONE: Risk: Reduced entacapone absorption → wearing-off; Monitoring: "Off" time diaries; Dosage: Separate by 4h; increase levodopa if needed; Alternative: IV iron if severe deficiency; Patient: Take iron with orange juice at night.
+- Iron + LEVODOPA: Risk: Chelation → ↓ levodopa absorption (up to 50%) worsening Parkinsonism; Monitoring: "ON/OFF" diaries, serum ferritin; Dosage: ↑ levodopa by 100-200mg/day if needed; Patient: Take levodopa 1h before meals, iron 2h after meals with OJ; avoid antacids.
+- Iron + LEVOTHYROXINE: Risk: Iron reduces levothyroxine absorption by 30-50% when coadministered. Monitoring: TSH 6 weeks after iron initiation/dose change. Dosage Adjustment: Administer levothyroxine 4 hours before iron. Patient Warning: Take levothyroxine on empty stomach with water only.
+- Iron + MOXIFLOXACIN: Moxifloxacin chelates iron in the gut, reducing antibiotic absorption by ~30–50% and risking subtherapeutic exposure; separate doses by ≥2 h, monitor infection response, and instruct patients to space iron supplements away from antibiotic dosing.
+- Iron + CIPROFLOXACIN: Iron salts chelate ciprofloxacin, reducing bioavailability by ~30–50% and risking therapeutic failure; separate administration by ≥2 h, monitor clinical signs of infection, and counsel patients to stagger iron and antibiotic doses.
+- Iron + NORFLOXACIN: Norfloxacin and iron may form insoluble complexes, reducing antibiotic absorption byup to 50%; separate doses by4–6 hours; monitor for inadequate infection resolution; advise patients to avoid concurrent administration and report persistent symptoms (e.g., fever, pain).
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Iron supplementation common in pregnancy when indicated — follow antenatal dose.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Compatible when iron needed.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Nausea (15–30%)*
+Constipation (20%)*
+Dark stools (100%)*
+Minor (material sheet): Anaphylaxis - IV iron (0.1–1%)*
+Iron overload - ferritin >1,000 ng/mL (1%)*
+Hypophosphatemia - IV formulations (1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

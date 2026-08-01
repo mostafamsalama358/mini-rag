@@ -1,0 +1,14 @@
+Alias registry — Adol
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 16
+Brand: Adol
+
+Known aliases:
+- Adol (brand)
+- ADOL 500MG 24 CAPLETS (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- ادول (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

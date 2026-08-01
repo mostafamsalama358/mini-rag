@@ -1,0 +1,12 @@
+Alias registry — Ciprobay
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 24
+Brand: Ciprobay
+
+Known aliases:
+- Ciprobay (brand)
+- CIPROBAY 500MG 10 F.C.TAB. (catalog_sku)
+- Ciprofloxacin (inn)
+- سيبروباي (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

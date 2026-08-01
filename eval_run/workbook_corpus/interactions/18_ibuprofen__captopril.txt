@@ -1,0 +1,16 @@
+Drug interaction — Brufen
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 18
+Brand: Brufen
+API 1: IBUPROFEN
+API 2: CAPTOPRIL
+Risk: Reversible AKI and hypertension exacerbation
+Type: Pharmacodynamic (prostaglandin-mediated)
+Monitoring: BP, renal function (baseline + 3–5 days post-NSAID start)
+Dose adjustment: Adjust captopril based on BP response
+Alternative: Naproxen if CVD risk low, but same precautions apply
+Patient warning: /Manag…
+Severity: caution
+
+Clinical note:
+Risk: Reversible AKI and hypertension exacerbation; Type: Pharmacodynamic (prostaglandin-mediated); Monitoring: BP, renal function (baseline + 3–5 days post-NSAID start); Dosage Adjustments: Adjust captopril based on BP response; Alternative: Naproxen if CVD risk low, but same precautions apply; Patient Warnings/Manag…

@@ -88,3 +88,46 @@ async def test_whitespace_only_answer_is_not_applicable(default_config) -> None:
 
     assert result.not_applicable is True
     assert result.passed is True
+
+
+@pytest.mark.asyncio
+async def test_citation_markers_do_not_create_unsupported_claims(default_config) -> None:
+    context = build_context(
+        block_texts=["Adults: take 325 mg every 4 to 6 hours as needed."]
+    )
+    answer = build_answer_result(
+        answer="Adults should take 325 mg every 4 to 6 hours as needed. [ei_21b6331ff1cd3442]"
+    )
+    fixture = build_golden_fixture("q001")
+
+    result = await TextFaithfulnessScorer().score(
+        fixture, answer, context, default_config
+    )
+
+    assert result.faithfulness_score == pytest.approx(1.0)
+    assert result.unsupported_claims == []
+    assert result.passed is True
+
+
+@pytest.mark.asyncio
+async def test_qualitative_hallucination_fails_closed(default_config) -> None:
+    context = build_context(
+        block_texts=["Adults: take 325 mg every 4 to 6 hours as needed."]
+    )
+    answer = build_answer_result(
+        answer=(
+            "you should stop taking this medication immediately if a rash develops "
+            "or if you experience unusual swelling, since this may indicate a "
+            "serious allergic reaction"
+        )
+    )
+    fixture = build_golden_fixture("q001")
+
+    result = await TextFaithfulnessScorer().score(
+        fixture, answer, context, default_config
+    )
+
+    assert result.faithfulness_score is not None
+    assert result.faithfulness_score < 0.8
+    assert result.passed is False
+    assert result.unsupported_claims

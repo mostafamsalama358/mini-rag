@@ -1,0 +1,16 @@
+Drug interaction — Duphaston
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 43
+Brand: Duphaston
+API 1: DYDROGESTERONE
+API 2: OLMESARTAN
+Risk: Minimal interaction
+Type: None
+Monitoring: Routine K+ unnecessary
+Dose adjustment: Standard dosing
+Alternative: Safest HRT option
+Patient warning: Reassure about safety profile.
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction; Type: None; Monitoring: Routine K+ unnecessary; Dosage: Standard dosing; Alternative: Safest HRT option; Patient Warnings: Reassure about safety profile.

@@ -345,3 +345,131 @@ def log_post_filter(
         lines.append(f"rows_sent_to_reranker={rows_sent_to_reranker}")
     lines.append(_SEPARATOR)
     _emit("\n".join(lines))
+
+
+def log_unified_parse(*, parse_result: Any, domain: str | None = None) -> None:
+    plan = getattr(parse_result, "query_plan", None)
+    lines = [
+        _SEPARATOR,
+        "UNIFIED PARSE",
+        _SEPARATOR,
+        f"domain={domain!r}",
+        f"original_query={getattr(parse_result, 'original_query', None)!r}",
+        f"canonical_query={getattr(parse_result, 'canonical_query', None)!r}",
+        f"entity={getattr(plan, 'entity', None)!r}",
+        f"entities={list(getattr(plan, 'entities', None) or [])!r}",
+        f"field={getattr(plan, 'field', None)!r}",
+        f"operation={getattr(plan, 'operation', None)!r}",
+        f"needs_clarification={bool(getattr(plan, 'needs_clarification', False))}",
+        f"clarification_prompt={getattr(plan, 'clarification_prompt', None)!r}",
+        _SEPARATOR,
+    ]
+    _emit("\n".join(lines))
+
+
+def log_unified_plan(*, plan: Any) -> None:
+    meta = getattr(plan, "metadata", None)
+    strategies = getattr(plan, "retrieval_strategies", None) or ()
+    lines = [
+        _SEPARATOR,
+        "UNIFIED PLAN",
+        _SEPARATOR,
+        f"plan_id={getattr(meta, 'plan_id', None)!r}",
+        f"clarification_required={bool(getattr(plan, 'clarification_required', False))}",
+        f"strategies={[getattr(s, 'strategy', s) for s in strategies]!r}",
+        f"entity_count={len(getattr(plan, 'entities', ()) or ())}",
+        _SEPARATOR,
+    ]
+    _emit("\n".join(lines))
+
+
+def log_unified_retrieval(
+    *,
+    scope: dict[str, Any],
+    candidates: list[Any],
+    top_n: int = 8,
+) -> None:
+    lines = [
+        _SEPARATOR,
+        "UNIFIED RETRIEVAL",
+        _SEPARATOR,
+        f"entity_key={scope.get('entity_key')!r}",
+        f"entity_prefix={scope.get('entity_prefix')!r}",
+        f"entity_prefixes={scope.get('entity_prefixes')!r}",
+        f"field_key={scope.get('field_key')!r}",
+        f"metadata_filter={_format_filters(scope.get('metadata_filter'))}",
+        f"candidate_count={len(candidates)}",
+    ]
+    for idx, cand in enumerate(list(candidates)[:top_n], start=1):
+        excerpt = getattr(cand, "content_excerpt", None) or ""
+        ref = getattr(cand, "source_ref", None)
+        lines.extend(
+            [
+                "",
+                f"[{idx}]",
+                f"chunk_id={getattr(cand, 'chunk_id', None)!r}",
+                f"document_id={getattr(cand, 'document_id', None)!r}",
+                f"score={getattr(cand, 'score', getattr(cand, 'raw_score', None))}",
+                f"strategy={getattr(cand, 'strategy', None)!r}",
+                f"section_title={getattr(ref, 'section_title', None)!r}",
+                f"preview={_preview(excerpt)!r}",
+            ]
+        )
+    lines.append(_SEPARATOR)
+    _emit("\n".join(lines))
+
+
+def log_unified_context(*, built_context: Any) -> None:
+    blocks = getattr(built_context, "ordered_blocks", None) or []
+    prompt = getattr(built_context, "prompt_text", None) or ""
+    citation_map = getattr(built_context, "citation_map", None)
+    lines = [
+        _SEPARATOR,
+        "UNIFIED CONTEXT",
+        _SEPARATOR,
+        f"context_id={getattr(built_context, 'context_id', None)!r}",
+        f"block_count={len(blocks)}",
+        f"prompt_chars={len(prompt)}",
+        f"prompt_preview={_preview(prompt, limit=400)!r}",
+        f"citation_keys={list(citation_map.keys()) if isinstance(citation_map, dict) else None!r}",
+        _SEPARATOR,
+    ]
+    _emit("\n".join(lines))
+
+
+def log_unified_outcome(*, outcome: str, answer_result: Any | None = None) -> None:
+    answer = getattr(answer_result, "answer", None) if answer_result is not None else None
+    lines = [
+        _SEPARATOR,
+        "UNIFIED OUTCOME",
+        _SEPARATOR,
+        f"outcome={outcome!r}",
+        f"no_answer={bool(getattr(answer_result, 'no_answer', False)) if answer_result else None}",
+        f"needs_clarification={bool(getattr(answer_result, 'needs_clarification', False)) if answer_result else None}",
+        f"answer_preview={_preview(answer)!r}",
+        _SEPARATOR,
+    ]
+    _emit("\n".join(lines))
+
+
+def log_recommend_decision(*, decision: Any | None, trace: Any | None = None) -> None:
+    """Feature 020 — recommend-mode decision + operator trace summary."""
+    decision_type = getattr(decision, "decision_type", None) if decision else None
+    candidates = list(getattr(decision, "ordered_candidates", None) or []) if decision else []
+    trace_payload = None
+    if trace is not None and hasattr(trace, "to_diagnostics"):
+        try:
+            trace_payload = trace.to_diagnostics()
+        except Exception:
+            trace_payload = None
+    lines = [
+        _SEPARATOR,
+        "RECOMMEND DECISION",
+        _SEPARATOR,
+        f"decision_type={decision_type!r}",
+        f"candidate_count={len(candidates)}",
+        f"correlation_id={(trace_payload or {}).get('correlation_id')!r}",
+        f"trace_candidates={json.dumps((trace_payload or {}).get('candidates') or [], ensure_ascii=False)[:1200]}",
+        _SEPARATOR,
+    ]
+    _emit("\n".join(lines))

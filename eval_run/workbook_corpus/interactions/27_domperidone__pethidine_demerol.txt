@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: PETHIDINE (DEMEROL)
+Risk: Avoid combining domperidone with meperidine when possible due to additive risk of QT prolongation. Meperidine may reduce domperidone metabolism, raising its plasma concentration. Monitor ECG and neurologic status. Instru
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Avoid combining domperidone with meperidine when possible due to additive risk of QT prolongation. Meperidine may reduce domperidone metabolism, raising its plasma concentration. Monitor ECG and neurologic status. Instruct patients to report any palpitations, dizziness, or syncope.

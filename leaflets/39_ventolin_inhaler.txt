@@ -1,0 +1,104 @@
+VENTOLIN EVOHALER 100MCG/ACTUATION INHALER
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Ventolin
+Catalog SKU: VENTOLIN EVOHALER 100MCG/ACTUATION INHALER
+INN / actives: Salbutamol * Albuterol
+Catalog New Material: SALBUTAMOL
+Strength / form: Salbutamol (albuterol) 100 mcg/actuation MDI | (web-supplemented dosing below)
+Manufacturer / market: GLAXO SMITHKLINE
+Price (catalog): 100
+Categories: MEDICINE > ANTI-ASTHMA > ANTI-ASTHMA
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=VENTOLIN 100; sheet lookup INNs=Salbutamol, Albuterol, SALBUTAMOL
+Web clinical sources: Salbutamol inhaler SmPC; Ventolin
+
+1. What Ventolin is used for
+Catalog uses: bronchodilator
+Approved uses (material sheet): Treatment and prevention of bronchospasm in patients with reversible obstructive airway disease - (e.g., asthma, exercise-induced bronchospasm); Dosing (MDI): Acute Bronchospasm: 2 puffs every 4 to 6 hours as needed , Exercise Induced: 2 puffs 15 to 30 minutes before exercise , Dosing (Nebulization): Adults & Children ≥12y: 2.5 mg 3 to 4 times daily as needed*
+Prevention of exercise induced bronchospasm - Dosing (MDI): Acute Bronchospasm: 2 puffs every 4 to 6 hours as needed , Exercise Induced: 2 puffs 15 to 30 minutes before exercise , Dosing (Nebulization): Adults & Children ≥12y: 2.5 mg 3 to 4 times daily as needed*
+Off-label mentions (material sheet): Hyperkalemia in dialysis patients - Used to shift potassium into cells. Administered via nebulizer*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Relief: typically 1–2 puffs as needed; may repeat. Acute severe asthma needs medical emergency care. Controllers are separate.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Paediatric puff counts by age/spacer; caregiver training essential.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Ventolin if / disease cautions
+From material/disease sheets:
+[SALBUTAMOL] Hypersensitivity to SALBUTAMOL*
+Children under 2 years *
+Hypersensitivity to MILK/WHEY/LACTOFERRIN* 
+Tachyarrhythmias & Hyperactive Conduction*
+[ALBUTEROL] Hypersensitivity to LEVALBUTEROL*
+Tachyarrhythmias & Hyperactive Conduction* 
+Hypersensitivity to Sulfites (nebulized form)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None for salbutamol itself.
+(Note: Some fixed-dose combination inhalers containing long-acting beta-agonists (LABAs) do carry a Black Box Warning about an increased risk of asthma-related death, which led to the mandate that LABAs must always be used with an inhaled corticosteroid. This warning does not apply to short-acting relievers like salbutamol when used alone).
+Notes (material sheet): • Albuterol is the preferred drug among short-acting beta-agonists (SABAs) during pregnancy. It prevents premature birth by relaxing the uterine muscles
+......................................................................
+• In Bronchospasm ; Tablet and syrup: 2-4 mg PO q6-8hr; not to exceed 32 mg/day & Extended-release tablets: 8 mg PO q12hr
+• Acute or Severe Bronchospasm only inhaler or Nebulizer
+• Exercise-induced Bronchospasm inhaled 15-30 min before exercise
+• Hyperkalemia (alternative agent) (adjunct) (off-label use): Oral inhalation: Nebulization solution: 10 to 20 mg via nebulization over 10 minutes ; Note: May use after administration of standard therapies (calcium, insulin with d…
+Patient education excerpt: • Timing:
+- Use only as needed for symptom relief or before exercise to prevent symptoms.
+- Do not exceed the recommended dose.
+• Technique:
+- Use a spacer with your inhaler (MDI). Shake the inhaler well before each puff.
+- Rinse your mouth with water after use to prevent thrush.
+• Interactions:
+- Inform your doctor if you use other asthma medicines, beta-blockers, or diuretics. Avoid caffeine and other stimulants.
+• Missed Dose:
+- This is a rescue inhaler. Use it when you have symptoms.
+- You do not need to use it on a schedule if you have no symptoms.
+• Overdose:
+- Overuse can be dangerous.
+- Seek emergency help if you experience chest pain, fast irregular heartbeat, severe shaking, or if…
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Salbutamol + METHYLDOPA: Risk: Paradoxical hypertension → stroke; Type: Antagonistic (β₂-agonist vs α₂-agonist); Monitoring: BP pre/post-inhalation, potassium; Dosage Adjustments: Increase methyldopa by 250mg/day; Alternatives: Ipratropium; Patient Warnings: "Report tremors/BP↑, avoid OTC decongestants"
+- Salbutamol + CLONIDINE HYDROCHLORIDE: Risk: Paradoxical hypertension → stroke; Type: Antagonistic (β₂-agonist vs α₂-agonist); Monitoring: BP pre/post-inhalation, ECG if tachycardic; Dosage Adjustments: Increase clonidine by 0.1mg/day; Alternatives: Ipratropium; Patient Warnings: "Report tremors/BP↑, avoid OTC decongestants"
+- Salbutamol + MOXONIDINE: Risk: Reduced antihypertensive efficacy; Type: Antagonistic; Monitoring: BP pre/post-inhalation; Dosage Adjustments: Increase moxonidine 0.2mg/day; Alternatives: Cromolyn; Patient Warnings: "Report tremors/BP↑"
+- Salbutamol + DIAZOXIDE: Risk: Severe hypotension and reflex tachycardia (potent arteriolar vasodilation + β₂-agonist effects); Type: Pharmacodynamic (additive cardiovascular effects); Monitoring: Continuous BP, ECG, blood glucose; Dosage Adjustments: Lower salbutamol dose/frequency; Alternative: Ipratropium for bronchospasm; Patient Warnings…
+- Salbutamol + BOSENTAN: Risk: Additive hypotension and reflex tachycardia (bosentan vasodilation + β₂-agonist effects); Type: Pharmacodynamic (synergistic cardiovascular effects); Monitoring: BP, HR, oxygen saturation; Dosage Adjustments: Consider lower salbutamol dose/frequency; Alternative: Ipratropium bromide for bronchospasm; Patient War…
+- Salbutamol + MINOXIDIL: Risk: Severe hypotension and reflex tachycardia (potent vasodilation + β₂-agonist effects); Type: Pharmacodynamic (additive cardiovascular effects); Monitoring: BP, HR, ECG if palpitations occur; Dosage Adjustments: Consider lower minoxidil dose; Alternative: Ipratropium for bronchospasm; Patient Warnings/Management:…
+- Salbutamol + HYDRALAZINE: Risk: Additive hypotension and reflex tachycardia (hydralazine vasodilation + β₂-agonist effects); Type: Pharmacodynamic (synergistic cardiovascular effects); Monitoring: BP, HR, signs of hypotension/palpitations; Dosage Adjustments: Titrate hydralazine or salbutamol carefully; Alternative: Anticholinergic bronchodila…
+- Salbutamol + ILOPROST: Risk: Additive vasodilation and hypotension, with increased risk of tachycardia (due to β₂-agonist effects); Type: Pharmacodynamic (synergistic cardiovascular effects); Monitoring: Blood pressure (BP), heart rate (HR), signs of hypotension/palpitations; Dosage Adjustments: Titrate iloprost or salbutamol carefully; Alt…
+- Salbutamol + METOPROLOL TARTRATE: Risk: Antagonized bronchodilation (β₂-blockade); Type: Pharmacodynamic; Monitoring: FEV₁, wheezing, BP/HR; Dosage Adjustments: Metoprolol ≤50 mg/day; Alternative: CCBs/ARBs; Patient Warnings/Management: Report worsening SOB, keep rescue inhaler accessible.
+- Salbutamol + METOPROLOL: Risk: β₂-blockade counteracts salbutamol; Type: Pharmacodynamic; Monitoring: FEV₁/FVC ratio; Dosage Adjustments: Avoid metoprolol in uncontrolled asthma; Alternative: Diltiazem; Patient Warnings/Management: Annual flu vaccine.
+- Salbutamol + TIMOLOL: Risk: Severe bronchospasm (non-selective β-blockade); Type: Pharmacodynamic; Monitoring: ICU preparedness; Dosage Adjustments: Contraindicated in asthma; Alternative: Labetalol (if β-blocker essential); Patient Warnings/Management: Emergency med-alert bracelet.
+- Salbutamol + ACEBUTOLOL: Risk: Partial β₂-blockade (ISA may reduce but not eliminate risk); Type: Pharmacodynamic; Monitoring: FEV₁, nocturnal symptoms; Dosage Adjustments: Acebutolol ≤200 mg BID; Alternative: Amlodipine; Patient Warnings/Management: Report increased inhaler use.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Salbutamol inhalers are used in pregnancy when needed for asthma control — uncontrolled asthma is riskier.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Compatible; minimal milk levels.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Nervousness - in children aged 2 to 6 years (>10%)*
+Insomnia - in children aged 6 to 12 years receiving 4 to 12 mg q12hr (>10%)*
+Tachycardia (>10%)*
+Tremor - especially hand tremor (>10%)*
+Headache (>10%)*
+Minor (material sheet): Palpitations (1-5%)*
+Muscle cramps (1-10%)*
+Dizziness (1-5%)*
+Irritability (1-5%)*
+Dry mouth (1-7%)*
+Hypokalemia - especially with high doses (1-3%)*
+Paradoxical Bronchospasm - wheezing immediately after use; stop drug immediately (1-2%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

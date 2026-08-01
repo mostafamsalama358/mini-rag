@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: NIFEDIPINE
+Risk: Reflex tachycardia (acute)
+Type: Pharmacodynamic
+Monitoring: BP/HR q4h x3 doses
+Dose adjustment: Nifedipine XL formulation
+Alternative: Nifedipine + sucralfate
+Patient warning: /Management: Seated BP measurements.
+Severity: caution
+
+Clinical note:
+Risk: Reflex tachycardia (acute); Type: Pharmacodynamic; Monitoring: BP/HR q4h x3 doses; Dosage Adjustments: Nifedipine XL formulation; Alternative: Nifedipine + sucralfate; Patient Warnings/Management: Seated BP measurements.

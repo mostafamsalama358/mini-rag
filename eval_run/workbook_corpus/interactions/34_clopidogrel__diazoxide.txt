@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: DIAZOXIDE
+Risk: Increased bleeding risk due to additive antiplatelet effects.
+Type: Pharmacodynamic (synergistic platelet inhibition).
+Monitoring: CBC weekly, fecal occult blood test.
+Dose adjustment: Reduce clopidogrel to 75mg QOD if combined.
+Alternative: Aspirin (lower bleeding risk).
+Patient warning: /Management: Report b…
+Severity: caution
+
+Clinical note:
+Risk: Increased bleeding risk due to additive antiplatelet effects. Type: Pharmacodynamic (synergistic platelet inhibition). Monitoring: CBC weekly, fecal occult blood test. Dosage Adjustments: Reduce clopidogrel to 75mg QOD if combined. Alternative: Aspirin (lower bleeding risk). Patient Warnings/Management: Report b…

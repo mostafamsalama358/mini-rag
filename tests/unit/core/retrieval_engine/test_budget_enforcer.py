@@ -37,6 +37,21 @@ def test_apply_candidate_cap():
     assert len(caps) == 3
 
 
+def test_relative_score_floor_drops_weak_distractors():
+    enforcer = BudgetEnforcer()
+    strong = _raw(0)  # score 1.0
+    weak = RawCandidate(
+        chunk_id="weak",
+        document_id="d2",
+        raw_score=0.05,
+        retriever_id="dense_vector",
+        strategy="semantic",
+        expander_variant_id="v0",
+    )
+    filtered = enforcer.apply_relative_score_floor([strong, weak], relative_score_floor=0.15)
+    assert [c.chunk_id for c in filtered] == ["c0"]
+
+
 def test_apply_evidence_cap():
     enforcer = BudgetEnforcer()
     caps = enforcer.apply_evidence_cap(

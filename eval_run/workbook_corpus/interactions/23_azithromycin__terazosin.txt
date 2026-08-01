@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: TERAZOSIN
+Risk: Minimal pharmacodynamic effect
+Type: Additive vasodilation
+Monitoring: BP at days 3/7
+Dose adjustment: None
+Alternative: Safest macrolide option
+Patient warning: /Management: Normal activities permitted.
+Severity: caution
+
+Clinical note:
+Risk: Minimal pharmacodynamic effect; Type: Additive vasodilation; Monitoring: BP at days 3/7; Dosage Adjustments: None; Alternative: Safest macrolide option; Patient Warnings/Management: Normal activities permitted.

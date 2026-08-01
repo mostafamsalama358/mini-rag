@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: DRONEDARONE
+Risk: ↑ Atorvastatin levels (CYP3A4 inhibition) → myopathy
+Type: Pharmacokinetic
+Monitoring: CPK if muscle symptoms
+Dose adjustment: Max 20mg daily
+Alternative: Rosuvastatin
+Patient warning: /Management: Report unexplained muscle pain.
+Severity: caution
+
+Clinical note:
+Risk: ↑ Atorvastatin levels (CYP3A4 inhibition) → myopathy; Type: Pharmacokinetic; Monitoring: CPK if muscle symptoms; Dosage Adjustments: Max 20mg daily; Alternative: Rosuvastatin; Patient Warnings/Management: Report unexplained muscle pain.

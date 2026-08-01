@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: PHENYTOIN
+Risk: Ciprofloxacin ↑ phenytoin levels (moderate CYP2C9 inhibition).
+Type: -
+Monitoring: Phenytoin levels within 3 days.
+Dose adjustment: ↓ phenytoin by 20-30% if combined >3 days.
+Alternative: -
+Patient warning: Watch for nausea or diplopia.
+Severity: caution
+
+Clinical note:
+Risk: Ciprofloxacin ↑ phenytoin levels (moderate CYP2C9 inhibition). Monitoring: Phenytoin levels within 3 days. Dosage: ↓ phenytoin by 20-30% if combined >3 days. Patient Warnings: Watch for nausea or diplopia.

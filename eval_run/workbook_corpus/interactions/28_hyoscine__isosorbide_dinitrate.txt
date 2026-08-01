@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: ISOSORBIDE DINITRATE
+Risk: Delirium in elderly.
+Type: Pharmacodynamic.
+Monitoring: CAM-ICU score.
+Dose adjustment: Transdermal only.
+Alternative: Meclizine.
+Patient warning: /Management: Caregiver supervision required.
+Severity: caution
+
+Clinical note:
+Risk: Delirium in elderly. Type: Pharmacodynamic. Monitoring: CAM-ICU score. Dosage Adjustments: Transdermal only. Alternative: Meclizine. Patient Warnings/Management: Caregiver supervision required.

@@ -1,0 +1,37 @@
+﻿python : C:\Users\PCM\AppData\Roaming\Python\Python313\site-packages\requests\__init__.py:113: 
+RequestsDependencyWarning: urllib3 (2.6.2) or chardet (7.4.3)/charset_normalizer (3.4.4) doesn't match a supported 
+version!
+At line:1 char:32
++ ... ING='utf-8'; python eval_run/run_complex_vertex_light.py 2>&1 | Out-F ...
++                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\PCM\Ap...ported version!:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  warnings.warn(
+=== SQL corpus + scope simulation (0 Vertex) ===
+[PASS] Q1_stack_ar hits={'Panadol': 19, 'Flurest-N': 7, 'Congestal': 7}
+[PASS] Q2_stack_en hits={'Panadol': 19, 'Adol': 39, 'Comtrex': 14}
+[PASS] Q3_twins hits={'Augmentin': 14, 'Hi-Biotic': 14}
+[PASS] Q4_plavix_ppi hits={'Plavix': 16, 'Aspocid': 16, 'Risek': 16, 'Controloc': 7}
+[PASS] Q5_anaseziago hits={'Anaseziago': 6}
+[PASS] Q6_lipitor_preg hits={'Lipitor': 16}
+[PASS] Q7_acid hits={'Jeparilon': 7, 'Controloc': 7, 'Risek': 16, 'Gaviscon': 14}
+[PASS] Q8_cipro_iron hits={'Ciprobay': 16, 'Ferrotron': 14, 'Gaviscon': 14}
+[PASS] Q9_daflon hits={'Daflon': 14}
+[FAIL_NEG] Q10_vancomycin_neg hits={'vancomycin': 2}
+[SCOPE] Panadol Advance 500 -> brand-head matches=17
+
+=== /search smoke (embed only; 4s gap; stop on quota) ===
+[PASS] Q1_stack_ar ents=['Flurest-N', 'Congestal', 'Panadol Cold & Flu Day']
+[PASS] Q2_stack_en ents=['Panadol Cold & Flu Day', 'Comtrex', 'Panadol Cold & Flu Day']
+[PASS] Q3_twins ents=['Hi-Biotic', 'Hi-Biotic', 'Augmentin']
+[PASS] Q4_plavix_ppi ents=['Controloc 20', 'Risek', 'Controloc 20']
+[PASS] Q5_anaseziago ents=['Anaseziago', 'Anaseziago', 'Anaseziago']
+[PASS] Q6_lipitor_preg ents=['Lipitor', 'Lipitor Atorvastatin', 'Lipitor']
+
+=== /answer critical 2 (heuristic parse; needs gen quota) ===
+[rag_clarification_needed] Q1_stack_ar
+  I could not understand your question. Please rephrase or name a specific item.
+[rag_clarification_needed] Q2_stack_en
+  I could not understand your question. Please rephrase or name a specific item.
+wrote D:\mini-rag\e2e_live_results\complex_vertex_light.json

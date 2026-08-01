@@ -1,0 +1,116 @@
+AMARYL 2 MG 30 TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Amaryl
+Product line: Amaryl
+Catalog SKU: AMARYL 2 MG 30 TABS.
+SKU ID: 32
+INN / actives: Glimepiride
+INN primary: Glimepiride
+INN aliases: GLIMEPIRIDE
+Strength / form: Glimepiride 2 mg | Form=TAB. | Min.age=18 years
+Manufacturer / market: SANOFI
+Price (catalog): 78
+Categories: MEDICINE > DIABETES MELLITUS > ANTI-DIABETIC DRUGS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Amaryl is used for
+Type 2 diabetes - (1 : 8 mg/day monotherapy or with insulin/metformin)*
+
+2. Dosage — Adults
+Adult dose: 1-2 mg once daily initially
+Maximum daily dose: 8 mg/day (8 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: See pack
+Pediatric dose: Not recommended in children.
+Pediatric max daily dose: See pack
+
+4. Do not take Amaryl if / disease cautions
+Hypersensitivity to GLIMEPIRIDE * Diabetes mellitus- type 1 * Diabetic ketoacidosis (DKA) * Hypersensitivity to Sulfonamides/ Sulpha drugs*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None for glimepiride, 
+• but sulfonylureas carry a class warning for increased cardiovascular mortality (based on UGDP study)
+Warnings: • Avoid alcohol. Acute and chronic alcohol intake may unpredictably affect the glucose-lowering action of glimepiride
+• Avoid with bosentan:
+-Contraindicated due to hepatotoxicity risk.
+• Herbal interactions: 
+-Bitter melon/fenugreek may potentiate hypoglycemia
+• Take with food. 
+The manufacturer recommends administration with the first meal of the day
+• If you are taking colesevelam, take glimepiride at least 4 hours before taking colesevelam
+• Check the labels on all your medicines (such as cough-and-cold products) because they may contain ingredients that could affect your blood sugar.
+.......................................................................
+• Type 2 Diabetes Mellitus :
+ In
+HCP notes: • Avoid alcohol. Acute and chronic alcohol intake may unpredictably affect the glucose-lowering action of glimepiride
+• Avoid with bosentan:
+-Contraindicated due to hepatotoxicity risk.
+• Herbal interactions: 
+-Bitter melon/fenugreek may potentiate hypoglycemia
+• Take with food. 
+The manufacturer recommends administration with the first meal of the day
+• If you are taking colesevelam, take glimepiride at least 4 hours before taking colesevelam
+• Check the labels on all your medicines (such as cough-and-cold products) because they may contain ingredients that could affect your blood sugar.
+.......................................................................
+• Type 2 Diabetes Mellitus :
+ In
+Patient education: • Timing: 
+-Take with breakfast to avoid hypoglycemia.
+• Missed Dose: 
+-Skip if near next dose; never double.
+• Hypoglycemia Management: 
+-Use 15g fast-acting sugar (e.g., juice) if blood glucose <70 mg/dL.
+• Interactions: 
+-Avoid alcohol, NSAIDs, and beta-blockers.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- GLIMEPIRIDE + CAPTOPRIL; Risk: Moderate hypoglycemia (dose-dependent).; Type: Pharmacodynamic.; Monitoring: Postprandial glucose checks.; Dose adjustment: Max 2mg daily if combined.; Alternative: Alogliptin.; Patient warning: Consistent meal timing essential.
+- GLIMEPIRIDE + ENALAPRIL; Risk: Dose-dependent hypoglycemia.; Type: Pharmacodynamic.; Monitoring: Pre-dinner glucose.; Dose adjustment: Max 2mg daily.; Alternative: Saxagliptin.; Patient warning: Consistent carbohydrate intake.
+- GLIMEPIRIDE + LISINOPRIL; Risk: Dose-dependent hypoglycemia.; Type: Pharmacodynamic.; Monitoring: Pre-dinner glucose.; Dose adjustment: Max 2mg daily.; Alternative: Saxagliptin.; Patient warning: Consistent carb intake.
+- GLIMEPIRIDE + RAMIPRIL; Risk: Dose-dependent hypoglycemia.; Type: Pharmacodynamic.; Monitoring: Pre-dinner glucose.; Dose adjustment: Max 2mg daily.; Alternative: Saxagliptin.; Patient warning: Consistent carb intake.
+- GLIMEPIRIDE + BENAZEPRIL; Risk: Dose-dependent hypoglycemia.; Type: Pharmacodynamic.; Monitoring: Pre-dinner glucose.; Dose adjustment: Max 2mg daily.; Alternative: Saxagliptin.; Patient warning: Consistent carbohydrate intake at meals.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: contraindicated
+
+8. Breastfeeding
+Breastfeeding safety: contraindicated
+
+9. Supplements / cross-selling
+Catalog cross-selling: Glucophage
+
+10. Possible side effects
+Major: Hypoglycemia (12–44%)*
+Weight gain (5–10%)*
+Headache (8%)*
+Minor: Rash (2%)*
+Dizziness (3%)*
+Asthenia (4%)*
+Nausea (5%)*
+Allergic skin reactions (5%)* 
+Erythema (5%)*
+Morbilliform eruptions (3%)*
+maculopapular eruptions (3%)* 
+Pruritus (5%)*
+Urticaria (5%)*
+Diarrhea (6%)*
+Gastrointestinal pain (5%)*
+Vomiting (6%)* 
+Agranulocytosis (1%)*
+Anemia (4%)*
+Aplastic anemia (1%)* 
+Leukopenia (1%)*
+Pancytopenia (1%)*
+Thrombocytopenia (1%)*
+Cholestasis (3%)*
+Elevation of liver enzyme levels (2%)*
+Hepatic porphyria reactions (1%)*
+Jaundice (Rare)*
+Disulfiram like reactions (2%)* 
+Hyponatremia (3%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

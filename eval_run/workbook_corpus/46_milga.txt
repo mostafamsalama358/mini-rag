@@ -1,0 +1,61 @@
+MILGA 40 F.C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Milga
+Product line: Milga
+Catalog SKU: MILGA 40 F.C.TABS.
+SKU ID: 46
+INN / actives: Benfotiamine * Pyridoxine * Cyanocobalamin
+INN primary: Benfotiamine
+INN aliases: BENFOTIAMINE; CYANOCOBALAMIN; PYRIDOXINE
+Strength / form: Benfotiamine + Vitamin B6 + Vitamin B12 | Form=TAB. | Min.age=18 years
+Manufacturer / market: EVA PHARMA
+Price (catalog): 100
+Categories: VITAMINS & SUPPLEMENTS > VITAMINS > VITAMIN B & B COMPLEX
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Milga is used for
+-
+
+2. Dosage — Adults
+Adult dose: 1 tablet 3 times/day
+Maximum daily dose: 3 tablets/day (3 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: Not established
+Pediatric dose: Safety and efficacy in children not established.
+Pediatric max daily dose: See pack
+
+4. Do not take Milga if / disease cautions
+Hypersensitivity to VITAMIN B1 (BENFOTIAMINE)*
+Children under 12 years *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: None listed
+Warnings: None listed
+HCP notes: None listed
+Patient education: Follow pharmacist counseling
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- VITAMIN B6 (PYRIDOXINE) + THIOPENTAL; Risk: High-dose pyridoxine (>200mg/day) induces metabolism → reduced thiopental efficacy → inadequate anesthesia/sedation.; Monitoring: EEG during anesthesia; serum thiopental levels if prolonged use.; Dose adjustment: Increase thiopental dose 20-30% for induction.; Patient warning: Disclose all supplements pre-surgery; report in…
+- VITAMIN B6 (PYRIDOXINE) + PHENOBARBITAL; Risk: Pyridoxine (>200mg/day) accelerates phenobarbital metabolism → subtherapeutic levels → breakthrough seizures.; Monitoring: Serum phenobarbital levels (target 15-40 μg/mL) q2wk.; Dose adjustment: Increase phenobarbital 20-50% if levels drop.; Patient warning: Report aura/seizure recurrence; never stop antiepileptic suddenly.
+- VITAMIN B6 (PYRIDOXINE) + PHENOBARBITONE; Risk: Pyridoxine (>200mg/day) accelerates phenobarbital metabolism → subtherapeutic levels → breakthrough seizures.; Monitoring: Serum phenobarbital levels (target 15-40 μg/mL) q2wk.; Dose adjustment: Increase phenobarbital 20-50% if levels drop.; Patient warning: Report aura/seizure recurrence; never stop antiepileptic suddenly.
+- VITAMIN B6 (PYRIDOXINE) + PRIMIDONE; Risk: Pyridoxine induces metabolism → reduced primidone/phenobarbital levels → loss of seizure control.; Monitoring: Serum primidone (5-12 μg/mL) and phenobarbital levels monthly.; Dose adjustment: Increase primidone 25-50mg/day increments.; Patient warning: Report dizziness/ataxia with dose increases; avoid >100mg/day B6.
+- VITAMIN B6 (PYRIDOXINE) + AMOBARBITAL; Risk: Reduced amobarbital efficacy → sedation/anesthesia failure.; Monitoring: Respiratory rate and sedation scores during use.; Dose adjustment: Increase amobarbital 30-50% for procedural sedation.; Patient warning: Disclose B6 use before medical procedures.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Jeparilon
+
+10. Possible side effects
+Major: See pack
+Minor: See pack
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

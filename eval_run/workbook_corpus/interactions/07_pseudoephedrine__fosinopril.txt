@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: FOSINOPRIL
+Risk: Attenuated BP control (daytime SBP ↑15-25mmHg).
+Type: Sympathetic override.
+Monitoring: BP 2h post-dose; limit to 72h use.
+Dose adjustment: Increase fosinopril by 40% if needed. Alternatives: Intranasal corticosteroids. Allergy Tip: "More severe during URI season."
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Attenuated BP control (daytime SBP ↑15-25mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 72h use. Dosage Adjustments: Increase fosinopril by 40% if needed. Alternatives: Intranasal corticosteroids. Allergy Tip: "More severe during URI season."

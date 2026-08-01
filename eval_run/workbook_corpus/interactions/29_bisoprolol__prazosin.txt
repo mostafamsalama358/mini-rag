@@ -1,0 +1,16 @@
+Drug interaction — Concor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 29
+Brand: Concor
+API 1: BISOPROLOL
+API 2: PRAZOSIN
+Risk: Hypotension (additive effects)
+Type: Pharmacodynamic
+Monitoring: BP, ECG if arrhythmia
+Dose adjustment: Start bisoprolol at 1.25 mg/day
+Alternative: Dihydropyridine CCB (e.g., amlodipine)
+Patient warning: /Management: Avoid grapefruit (prazosin metabolism).
+Severity: yes
+
+Clinical note:
+Risk: Hypotension (additive effects); Type: Pharmacodynamic; Monitoring: BP, ECG if arrhythmia; Dosage Adjustments: Start bisoprolol at 1.25 mg/day; Alternative: Dihydropyridine CCB (e.g., amlodipine); Patient Warnings/Management: Avoid grapefruit (prazosin metabolism).

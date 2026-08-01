@@ -1,0 +1,85 @@
+SMECTA 20% SUSPENSION 120 ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Smecta
+Catalog SKU: SMECTA 20% SUSPENSION 120 ML
+INN / actives: Diosmectite
+Catalog New Material: DIOCTAHEDRAL SMECTITE
+Strength / form: Diosmectite (smectite) suspension/sachets | (web-supplemented dosing below)
+Manufacturer / market: IPSEN
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-DIARRHEA
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=SMECTA 20% SUSPENSION 120; sheet lookup INNs=Diosmectite, DIOCTAHEDRAL SMECTITE
+Web clinical sources: Diosmectite SmPC class; Smecta
+
+1. What Smecta is used for
+Catalog uses: antidiarrhoeal
+Approved uses (material sheet): Acute Diarrhea in Adults & Children - Adult: 1 sachet (3g) three times daily , Children >2 years: 4 : 6 sachets per day (dose decreases with age and weight), Infants (<1 year): 2 sachets per day (under medical supervision)*
+Symptomatic Treatment of Esophagitis & Gastritis - Dose: 1 sachet (3g) three times daily after meals*
+Off-label mentions (material sheet): Irritable Bowel Syndrome (IBS) - for relief of diarrhea and bloating , Dose: 3g one to three times daily, adjusted to symptoms*
+Chronic Functional Diarrhea - Dose: 3g one to three times daily*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Often 3 sachets/day (or suspension equivalent) between meals for acute diarrhoea short courses; ensure rehydration.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Age-banded sachets; maintain ORS. Not a substitute for rehydration.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Smecta if / disease cautions
+From material/disease sheets:
+[DIOCTAHEDRAL SMECTITE] Hypersensitivity to DIOCTAHEDRAL SMECTITE * Obstructive GI Diseases* Infants under 1 year *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • NONE
+• Dioctahedral Smectite does not have a Black Box Warning.
+Notes (material sheet): • Dose Modification:
+- Renal/Hepatic:
+ No dose adjustment required. Not systemically absorbed.
+...................................................................
+• Medical Info:
+- Risks:
+ Constipation. Potential for heavy metal contamination in non-pharmaceutical grade products.
+- Mechanism:
+ Has a high adsorption capacity. Acts by binding to and inactivating digestive toxins, viruses, and bacteria. It also forms a protective physical barrier on the gastrointestinal mucosa.
+- Stop Use: 
+Severe constipation, absence of bowel movements, or if symptoms worsen.
+- Withdrawal:
+ No withdrawal syndrome.
+- Not recommended for children under 2 years of age without medical advice
+....................…
+Patient education excerpt: • Timing:
+- For diarrhea, it is best taken between meals. For esophagitis/gastritis, it is taken after meals. Follow product instructions.
+• Administration:
+- Empty the contents of the sachet into a glass of water (approx. 50 mL for adults). Stir until a slurry forms and drink it immediately. It can also be mixed with semi-liquid food (e.g., porridge, compote) for children.
+• Missed Dose:
+- Take as soon as remembered. If it is almost time for the next dose, skip the missed dose. Do not double dose.
+• Interactions:
+- Can adsorb other drugs in the GI tract, reducing their absorption and efficacy. Administer other medications at least 2 hours before or after taking dioctahedral smectite.
+• Ove…
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- No top pairs extracted for this API in the interaction sheet sample.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Generally considered acceptable (minimal absorption) when needed.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Compatible.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Constipation - dose dependent; mild and reversible (10%)*
+Minor (material sheet): Abdominal discomfort (rare)*
+Vomiting - mostly in children (rare)*
+Skin rash (rare)*
+Urticaria (rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

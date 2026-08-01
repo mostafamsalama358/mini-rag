@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: MINOXIDIL
+Risk: Mild additive bleeding risk.
+Type: Pharmacodynamic.
+Monitoring: Routine CBC.
+Dose adjustment: None typically.
+Alternative: Aspirin.
+Patient warning: /Management: Standard precautions.
+Severity: caution
+
+Clinical note:
+Risk: Mild additive bleeding risk. Type: Pharmacodynamic. Monitoring: Routine CBC. Dosage Adjustments: None typically. Alternative: Aspirin. Patient Warnings/Management: Standard precautions.

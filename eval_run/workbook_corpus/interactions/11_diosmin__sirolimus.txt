@@ -1,0 +1,16 @@
+Drug interaction — Daflon 500
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 11
+Brand: Daflon 500
+API 1: DIOSMIN
+API 2: SIROLIMUS
+Risk: Potential increased sirolimus exposure and risk of toxicity (e.g., nephrotoxicity).
+Type: Pharmacokinetic (potential P-gp/CYP3A4 inhibition).
+Monitoring: Monitor sirolimus trough levels, renal function.
+Dose adjustment: Sirolimus dose reduction likely required.
+Alternative: Consider alternative venotonic agent.
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Potential increased sirolimus exposure and risk of toxicity (e.g., nephrotoxicity). Type: Pharmacokinetic (potential P-gp/CYP3A4 inhibition). Monitoring: Monitor sirolimus trough levels, renal function. Dosage: Sirolimus dose reduction likely required. Alternative: Consider alternative venotonic agent. Patient:…

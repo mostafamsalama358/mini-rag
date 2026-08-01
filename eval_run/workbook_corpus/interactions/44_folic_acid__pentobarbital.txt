@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: PENTOBARBITAL
+Risk: ↓ Antiepileptic efficacy → increased hospitalization risk. Monitor: Seizure severity/duration, serum levels. Dose Adjust: ↑ Pentobarbital by 20% with level monitoring.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: ↓ Antiepileptic efficacy → increased hospitalization risk. Monitor: Seizure severity/duration, serum levels. Dose Adjust: ↑ Pentobarbital by 20% with level monitoring. Patient: Document triggers; attend all neurology appointments.

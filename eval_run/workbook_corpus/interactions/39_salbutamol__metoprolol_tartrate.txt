@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: METOPROLOL TARTRATE
+Risk: Antagonized bronchodilation (β₂-blockade)
+Type: Pharmacodynamic
+Monitoring: FEV₁, wheezing, BP/HR
+Dose adjustment: Metoprolol ≤50 mg/day
+Alternative: CCBs/ARBs
+Patient warning: /Management: Report worsening SOB, keep rescue inhaler accessible.
+Severity: caution
+
+Clinical note:
+Risk: Antagonized bronchodilation (β₂-blockade); Type: Pharmacodynamic; Monitoring: FEV₁, wheezing, BP/HR; Dosage Adjustments: Metoprolol ≤50 mg/day; Alternative: CCBs/ARBs; Patient Warnings/Management: Report worsening SOB, keep rescue inhaler accessible.

@@ -1,0 +1,98 @@
+FOLIC ACID (EIPICO) 5 MG 20 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Folic Acid
+Catalog SKU: FOLIC ACID (EIPICO) 5 MG 20 TAB.
+INN / actives: Folic Acid
+Catalog New Material: FOLIC ACID
+Strength / form: Folic acid 5 mg (EIPICO catalog match) | (web-supplemented dosing below)
+Manufacturer / market: EIPICO
+Price (catalog): 100
+Categories: VITAMINS & SUPPLEMENTS > SUPPLEMENTS > FOLIC ACID
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=FOLIC ACID (EIPICO) 5 MG; sheet lookup INNs=Folic Acid, FOLIC ACID
+Web clinical sources: Folic acid SmPC / WHO antenatal guidance class
+
+1. What Folic Acid is used for
+Catalog uses: folic acid
+Approved uses (material sheet): Folate Deficiency - 1 : 5 mg/day PO*
+NTD Prevention - 400 : 800 µg/day pre conception → 12w gestation*
+Off-label mentions (material sheet): Methotrexate Toxicity Prophylaxis - 1 to 5 mg/day (24h post-dose)*
+Hyperhomocysteinemia - 1 to 5 mg/day*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Deficiency/therapeutic: often 5 mg daily. Preconception neural-tube prevention commonly 400 mcg–5 mg depending on risk (high-risk 5 mg).
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Paediatric dosing by indication/weight.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Folic Acid if / disease cautions
+From material/disease sheets:
+[FOLIC ACID] Hypersensitivity to VITAMIN B9 (FOLATE/FOLIC ACID) * Vitamin B12 deficiency *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None.
+Notes (material sheet): • Avoid:
+- High-dose ZINC OR ZINC GLUCONATE (>50 mg/day; ↓ folate absorption).
+.........................................................................
+• Dose Modification:
+- Renal: 
+↑ Dose in dialysis (1 mg/day; losses in dialysate).
+-Hepatic: 
+No adjustment.
+.........................................................................
+• Pregnancy: 
+-Category A (essential for neural tube defect prevention).
+• Lactation: 
+-Safe (milk levels adequate).
+..........................................................................
+• Lab Interactions: 
+-Masks B12 deficiency (corrects anemia but not neuropathy); false ↓ serum folate if recent meal.
+.....................................................…
+Patient education excerpt: • Timing: 
+-With/without food; consistent daily.
+• Missed Dose: 
+-Take ASAP; skip if near next dose.
+• Interactions:
+- Take 2h apart from zinc, antacids, cholestyramine.
+• Overdose Antidote: 
+-None (excess excreted renally).
+• Seek Help Immediately: 
+-Rash, wheezing, neurological changes (numbness/balance issues).
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Folic Acid + THIOPENTAL: Risk: ↓ Antiepileptic efficacy (enhanced metabolism) → breakthrough seizures. Monitor: Seizure frequency, EEG if indicated. Dose Adjust: ↑ Thiopental dose by 20-30% if levels subtherapeutic. Patient: Report aura/seizure recurrence; maintain medication adherence.
+- Folic Acid + PHENOBARBITAL: Risk: ↓ Phenobarbital levels → seizure recurrence (CYP induction by folate). Monitor: Phenobarbital levels q1-2mo, seizure diary. Dose Adjust: ↑ Phenobarbital by 25% if levels <15 mcg/mL. Patient: Never skip doses; report increased seizures or mood changes.
+- Folic Acid + PHENOBARBITONE: Risk: ↓ Antiepileptic efficacy → loss of seizure control. Monitor: Serum levels (target 15-40 mcg/mL), breakthrough seizures. Dose Adjust: ↑ Phenobarbitone by 5-10mg/wk guided by levels. Patient: Use seizure precautions; report injury-causing events.
+- Folic Acid + PRIMIDONE: Risk: ↓ Primidone/phenobarbital levels → increased seizure risk. Monitor: Phenobarbital levels (from primidone metabolism), seizure frequency. Dose Adjust: ↑ Primidone by 25% if phenobarbital <15 mcg/mL. Patient: Watch for tremor/nystagmus (toxicity when folate stopped).
+- Folic Acid + AMOBARBITAL: Risk: Reduced antiepileptic effect → status epilepticus risk. Monitor: Amobarbital levels (if available), seizure clusters. Dose Adjust: ↑ Amobarbital by 30-50mg/day if control wanes. Patient: Carry rescue medication; report >1 breakthrough seizure/week.
+- Folic Acid + PENTOBARBITAL: Risk: ↓ Antiepileptic efficacy → increased hospitalization risk. Monitor: Seizure severity/duration, serum levels. Dose Adjust: ↑ Pentobarbital by 20% with level monitoring. Patient: Document triggers; attend all neurology appointments.
+- Folic Acid + SECOBARBITAL: Risk: Subtherapeutic levels → withdrawal seizures. Monitor: Withdrawal symptoms, level checks after folate initiation. Dose Adjust: ↑ Secobarbital by 25-50mg if levels drop >25%. Patient: Taper gradually if discontinuing; report anxiety/tremors.
+- Folic Acid + PHENYTOIN: Risk: Reduced phenytoin efficacy → breakthrough seizures. Monitoring: Serum phenytoin monthly; RBC folate. Dosage: Limit folate to ≤1 mg/day; increase phenytoin as needed. Patient: Take folate at opposite time of day from phenytoin.
+- Folic Acid + SULFASALAZINE: Risk: Sulfasalazine inhibits folate absorption → ↓ levels by 40-60%. Monitoring: RBC folate levels q3mo; homocysteine if deficient. Dose Adjustment: Folic acid 5mg daily (instead of 1mg). Patient Warning: Take folate 2h before sulfasalazine.
+- Folic Acid + FEBUXOSTAT: Risk: Masked B12 deficiency; Type: Pharmacodynamic; Monitoring: MMA levels; Dosage: No adjustment; Alternative: Folinic acid; Patient Warnings: Neurological checks.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Recommended in pregnancy; higher doses for high-risk women under advice.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Compatible and often continued.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Nausea - High dose >5 mg/day (3%)*
+Bloating - High dose >5 mg/day (2%)*
+Minor (material sheet): Masks B12 Deficiency - neurological progression (1-10%)*
+Hypersensitivity (rare)*
+Rash (rare)*
+Bronchospasm (rare)*
+Zinc Deficiency - chronic high dose (1-10%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

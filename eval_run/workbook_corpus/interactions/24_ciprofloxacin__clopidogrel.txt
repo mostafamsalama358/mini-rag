@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: CLOPIDOGREL
+Risk: Decreased clopidogrel activation (CYP2C19 inhibition).
+Type: Pharmacokinetic.
+Monitoring: Therapeutic efficacy (e.g., recurrent CV events).
+Dose adjustment: Avoid high-dose ciprofloxacin (>750mg BID).
+Alternative: Levofloxacin or non-fluoroquinolone antibiotics.
+Patient warning: /Management: Monitor for treatm…
+Severity: yes
+
+Clinical note:
+Risk: Decreased clopidogrel activation (CYP2C19 inhibition). Type: Pharmacokinetic. Monitoring: Therapeutic efficacy (e.g., recurrent CV events). Dosage Adjustments: Avoid high-dose ciprofloxacin (>750mg BID). Alternative: Levofloxacin or non-fluoroquinolone antibiotics. Patient Warnings/Management: Monitor for treatm…

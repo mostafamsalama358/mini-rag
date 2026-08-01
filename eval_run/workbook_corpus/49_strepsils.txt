@@ -1,0 +1,90 @@
+STREPSILS HONEY & LEMON 24 LOZENGES
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Strepsils
+Product line: Strepsils
+Catalog SKU: STREPSILS HONEY & LEMON 24 LOZENGES
+SKU ID: 49
+INN / actives: Amylmetacresol * Dichlorobenzyl
+INN primary: Amylmetacresol
+INN aliases: AMYLMETACRESOL; DICHLOROBENZYL
+Strength / form: Amylmetacresol 0.6 mg + Dichlorobenzyl alcohol 1.2 mg | Form=LOZENGE | Min.age=6 years
+Manufacturer / market: UNITED PARTNERS
+Price (catalog): 200
+Categories: MEDICINE > COUGH & COLD > SORE THROAT
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Strepsils is used for
+It’s an antiseptic found in lozenges (e.g., Strepsils®) used for sore throats -Its role: local antiseptic effect in the mouth and throat*
+
+2. Dosage — Adults
+Adult dose: 1 lozenge every 2-3 hours; max 12/day
+Maximum daily dose: 12 lozenges/day (12 lozenges)
+
+3. Dosage — Children
+Minimum age in catalog: 6 years
+Pediatric min age: 6 years
+Pediatric dose: Not recommended under 6 years.
+Pediatric max daily dose: See pack
+
+4. Do not take Strepsils if / disease cautions
+Hypersensitivity to AMYLMETACRESOL * Children under 6 years * Non-Acute / Cutaneous Porphyrias *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None
+Warnings: • Dose Modification:
+- No hepatic/renal adjustment needed (minimal systemic absorption)
+- Pediatrics: Safety not established <6 years
+..............................................................................................................................
+• Medical Info for HCPs:
+- Phenolic antiseptic/analgesic
+- Primarily used in throat lozenges (0.6-1.2 mg per unit)
+- Local action only; negligible systemic absorption
+.............................................................................................................
+• Pregnancy/Lactation:
+- Pregnancy: Likely safe due to minimal systemic absorption, but use only if clearly needed.
+- Lactation: Likely safe due to minimal system
+HCP notes: • Dose Modification:
+- No hepatic/renal adjustment needed (minimal systemic absorption)
+- Pediatrics: Safety not established <6 years
+..............................................................................................................................
+• Medical Info for HCPs:
+- Phenolic antiseptic/analgesic
+- Primarily used in throat lozenges (0.6-1.2 mg per unit)
+- Local action only; negligible systemic absorption
+.............................................................................................................
+• Pregnancy/Lactation:
+- Pregnancy: Likely safe due to minimal systemic absorption, but use only if clearly needed.
+- Lactation: Likely safe due to minimal system
+Patient education: • Timing:
+- Dissolve one lozenge slowly in your mouth every 2-3 hours as needed. Do not chew or swallow whole.
+- Not for children <6 years
+• Administration:
+- Allow the lozenge to dissolve slowly to maximize contact time with the throat.
+• Missed Dose:
+- Not applicable. Use as needed for symptoms.
+• Storage:
+- Store at room temperature.
+• Important Note:
+- This is for temporary relief. If symptoms persist after 2-3 days, see a doctor. Do not use for more than 3 days without medical advice.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- No interaction rows in workbook for this SKU.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Panadol Advance|Otrivin
+
+10. Possible side effects
+Major: Oral numbness (15%)*
+Taste disturbance (12%)*
+Minor: Mouth irritation (8%)*
+Allergic reactions (3%)*
+Tooth staining (2%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

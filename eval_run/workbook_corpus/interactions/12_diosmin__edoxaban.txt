@@ -1,0 +1,16 @@
+Drug interaction — Daflon 1000
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 12
+Brand: Daflon 1000
+API 1: DIOSMIN
+API 2: EDOXABAN
+Risk: Theoretical increased risk of bleeding.
+Type: Pharmacodynamic synergy.
+Monitoring: Monitor for signs of bleeding.
+Dose adjustment: No specific adjustment recommended.
+Alternative: Not usually required.
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Theoretical increased risk of bleeding. Type: Pharmacodynamic synergy. Monitoring: Monitor for signs of bleeding. Dosage: No specific adjustment recommended. Alternative: Not usually required. Patient: Report unusual bruising, bleeding gums, or blood in stool/urine.

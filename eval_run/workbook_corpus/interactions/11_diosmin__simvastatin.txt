@@ -1,0 +1,16 @@
+Drug interaction — Daflon 500
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 11
+Brand: Daflon 500
+API 1: DIOSMIN
+API 2: SIMVASTATIN
+Risk: Potential increased risk of myopathy/rhabdomyolysis.
+Type: Uncertain pharmacokinetic (potential OATP/CYP3A4 inhibition).
+Monitoring: Monitor for muscle pain/weakness and CPK levels.
+Dose adjustment: Avoid combination or use lowest possible simvastatin dose.
+Alternative: A non-interacting statin (e.g., pravastatin). Patie…
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Potential increased risk of myopathy/rhabdomyolysis. Type: Uncertain pharmacokinetic (potential OATP/CYP3A4 inhibition). Monitoring: Monitor for muscle pain/weakness and CPK levels. Dosage: Avoid combination or use lowest possible simvastatin dose. Alternative: A non-interacting statin (e.g., pravastatin). Patie…

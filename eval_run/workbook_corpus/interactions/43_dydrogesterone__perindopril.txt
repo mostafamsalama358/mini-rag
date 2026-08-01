@@ -1,0 +1,16 @@
+Drug interaction — Duphaston
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 43
+Brand: Duphaston
+API 1: DYDROGESTERONE
+API 2: PERINDOPRIL
+Risk: Minimal (0.5-1%).
+Type: Clinically insignificant.
+Monitoring: Standard ACEi protocol.
+Dose adjustment: None. Alternatives: N/A. Note: "No additional monitoring required."
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Minimal (0.5-1%). Type: Clinically insignificant. Monitoring: Standard ACEi protocol. Dosage Adjustments: None. Alternatives: N/A. Note: "No additional monitoring required."

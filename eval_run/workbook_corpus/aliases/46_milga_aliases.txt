@@ -1,0 +1,14 @@
+Alias registry — Milga
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 46
+Brand: Milga
+
+Known aliases:
+- Milga (brand)
+- MILGA 40 F.C.TABS. (catalog_sku)
+- Benfotiamine (inn)
+- Pyridoxine (inn)
+- Cyanocobalamin (inn)
+- ميلجا (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

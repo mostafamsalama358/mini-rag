@@ -1,0 +1,95 @@
+GAVISCON ADVANCE 150 ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Gaviscon Advance
+Product line: Gaviscon Advance
+Catalog SKU: GAVISCON ADVANCE 150 ML
+SKU ID: 26
+INN / actives: Sodium Alginate * Potassium Bicarbonate * Alginate
+INN primary: Sodium Alginate
+INN aliases: ALGINATE; POTASSIUM; POTASSIUM BICARBONATE; SODIUM; SODIUM ALGINATE
+Strength / form: Alginate + Antacid suspension/tablets | Form=SUSP. | Min.age=12 years
+Manufacturer / market: UNITED PARTNERS
+Price (catalog): 144
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-PEPTIC ULCER & ANTACIDS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Gaviscon Advance is used for
+Symptomatic Relief of Gastroesophageal Reflux Disease (GERD) and Heartburn - Particularly effective for "water brash" and regurgitation; Mechanism: Forms a gel like "raft" that floats on top of stomach contents, acting as a physical barrier to prevent reflux. Dosing (OTC): Typically taken after meals and at bedtime , Usual dose is 10 to 20 mL of liquid or 1 to 2 chewable tablets. Max frequency is usually 4 times daily. Always follow specific product label instructions*
+
+2. Dosage — Adults
+Adult dose: 10-20 mL or 2-4 tablets after meals and bedtime
+Maximum daily dose: 16 teaspoons/day (16 teaspoons)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: 12 years
+Pediatric dose: Not recommended under 12 years unless prescribed.
+Pediatric max daily dose: See pack
+
+4. Do not take Gaviscon Advance if / disease cautions
+Hypersensitivity to SODIUM ALGINATE *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None.
+• Sodium Alginate, as an OTC agent, does not carry a Black Box Warning.
+Warnings: • Dose Modification:
+- Renal Impairment:
+ Use with caution in severe impairment due to sodium content (in formulations containing sodium bicarbonate). Monitoring of fluid balance and blood pressure may be necessary.
+- Hepatic Impairment:
+ Use with caution in conditions predisposing to fluid overload (e.g., cirrhosis).
+- Concomitant Therapy:
+ Can interfere with the absorption of other oral medications. It is recommended to take other medications at least 2 hours before or after taking sodium alginate. This is due to its physical barrier-forming mechanism in the stomach.
+.....................................................................................
+• Medical Info for HCPs:
+- Key Risks:
+HCP notes: • Dose Modification:
+- Renal Impairment:
+ Use with caution in severe impairment due to sodium content (in formulations containing sodium bicarbonate). Monitoring of fluid balance and blood pressure may be necessary.
+- Hepatic Impairment:
+ Use with caution in conditions predisposing to fluid overload (e.g., cirrhosis).
+- Concomitant Therapy:
+ Can interfere with the absorption of other oral medications. It is recommended to take other medications at least 2 hours before or after taking sodium alginate. This is due to its physical barrier-forming mechanism in the stomach.
+.....................................................................................
+• Medical Info for HCPs:
+- Key Risks:
+Patient education: • Best Time to Take:
+- Take after meals and at bedtime.
+- This ensures the protective raft is present when the stomach is full and when lying down, which can trigger reflux.
+• How to Take:
+- Chew tablets thoroughly before swallowing. Do not swallow them whole. For liquid, shake the bottle well and take the liquid undiluted.
+• Missed Dose:
+- Take it as soon as you remember.
+- If it is almost time for your next dose, skip the missed dose. Do not double the dose.
+• Interactions:
+- Take other medications at least 2 hours before or after you take sodium alginate.
+- It can block the absorption of other drugs.
+• What to Watch For:
+- If symptoms do not improve after 2 weeks, see your doctor. Stop us
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- SODIUM ALGINATE + CAPTOPRIL; Risk: Minimal absorption impact; Type: Minimal interaction; Monitoring: Routine BP monitoring; Dose adjustment: None typically needed; Alternative: Preferred for GERD with ACEIs; Patient warning: /Management: Can be taken together if needed.
+- SODIUM ALGINATE + BENAZEPRIL; Risk: No clinically relevant interaction; Type: Non-interacting; Monitoring: Standard care; Dose adjustment: None; Alternative: Preferred for GERD; Patient warning: /Management: Safe for any administration timing.
+- SODIUM ALGINATE + CILAZAPRIL; Risk: No interaction expected; Type: Non-interacting; Monitoring: Standard BP monitoring; Dose adjustment: None; Alternative: Preferred for GERD; Patient warning: /Management: No administration restrictions.
+- SODIUM ALGINATE + ALUMINUM ASPIRIN; Risk: Mild absorption delay; Type: Physical barrier effect; Monitoring: Clinical response; Dose adjustment: Usually not required; Alternative: Alginate-free formulations; Patient warning: /Management: Take aspirin first if GERD symptoms.
+- SODIUM ALGINATE + ACETYL SALICYLIC ACID; Risk: Minimal clinical impact; Type: Mechanical interference; Monitoring: Not typically needed; Dose adjustment: None; Alternative: Non-alginate antacids; Patient warning: /Management: Normal dosing acceptable.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: safe
+
+8. Breastfeeding
+Breastfeeding safety: safe
+
+9. Supplements / cross-selling
+Catalog cross-selling: Risek|Motilium
+
+10. Possible side effects
+Major: None
+Minor: Nausea - Mild (1-5%)*
+Bloating (1-5%)*
+Diarrhea (1-5%)*
+constipation (1-2%)*
+Allergic Reactions (rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

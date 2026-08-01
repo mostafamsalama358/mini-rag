@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: AMITRIPTYLINE
+Risk: Additive antimuscarinic effects risk CNS depression, confusion, constipation, urinary retention; monitor cognitive function/bowel/bladder habits; reduce amitriptyline dose if combined; warn patients about heat intoleranc
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Additive antimuscarinic effects risk CNS depression, confusion, constipation, urinary retention; monitor cognitive function/bowel/bladder habits; reduce amitriptyline dose if combined; warn patients about heat intolerance, dry mouth, and fall risks.

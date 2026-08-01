@@ -1,0 +1,12 @@
+Alias registry — Diflucan
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 41
+Brand: Diflucan
+
+Known aliases:
+- Diflucan (brand)
+- DIFLUCAN 150 MG 1 CAPS. (catalog_sku)
+- Fluconazole (inn)
+- ديفلوكان (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

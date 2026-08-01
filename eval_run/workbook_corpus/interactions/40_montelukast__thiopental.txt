@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: THIOPENTAL
+Risk: THIOPENTAL decreases MONTELUKAST levels by 30% via CYP3A4 induction. Monitor: Asthma control tests.
+Type: -
+Monitoring: -
+Dose adjustment: MONTELUKAST may need 50% dose increase.
+Alternative: -
+Patient warning: Watch for worsening wheezing.
+Severity: caution
+
+Clinical note:
+Risk: THIOPENTAL decreases MONTELUKAST levels by 30% via CYP3A4 induction. Monitor: Asthma control tests. Dosage: MONTELUKAST may need 50% dose increase. Patient Warning: Watch for worsening wheezing.

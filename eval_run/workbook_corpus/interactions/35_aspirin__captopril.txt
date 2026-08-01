@@ -1,0 +1,16 @@
+Drug interaction — Aspocid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 35
+Brand: Aspocid
+API 1: ASPIRIN
+API 2: CAPTOPRIL
+Risk: Competitive renal excretion → transient captopril effect reduction
+Type: Pharmacokinetic/pharmacodynamic
+Monitoring: BP (post-dose), Cr
+Dose adjustment: Space doses by 2 hours if high-dose aspirin
+Alternative: Low-dose aspirin (81 mg) if for cardioprotection
+Patient warning: /Management: Report tinnitus o…
+Severity: caution
+
+Clinical note:
+Risk: Competitive renal excretion → transient captopril effect reduction; Type: Pharmacokinetic/pharmacodynamic; Monitoring: BP (post-dose), Cr; Dosage Adjustments: Space doses by 2 hours if high-dose aspirin; Alternative: Low-dose aspirin (81 mg) if for cardioprotection; Patient Warnings/Management: Report tinnitus o…

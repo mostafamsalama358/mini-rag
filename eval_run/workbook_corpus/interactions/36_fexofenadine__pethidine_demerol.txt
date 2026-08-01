@@ -1,0 +1,16 @@
+Drug interaction — Telfast
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 36
+Brand: Telfast
+API 1: FEXOFENADINE
+API 2: PETHIDINE (DEMEROL)
+Risk: Moderate sedation, dry mouth
+Type: Additive
+Monitoring: Oral mucosa, hydration status
+Dose adjustment: Reduce meperidine 25%
+Alternative: Loratadine
+Patient warning: Increase fluid intake.
+Severity: caution
+
+Clinical note:
+Risk: Moderate sedation, dry mouth; Type: Additive; Monitoring: Oral mucosa, hydration status; Dosage Adjustments: Reduce meperidine 25%; Alternative: Loratadine; Patient Warnings: Increase fluid intake.

@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: DICUMAROL
+Risk: Marked INR ↑ (delayed by 3-7 days)
+Type: Pharmacokinetic
+Monitoring: INR q3d x2 weeks
+Dose adjustment: Reduce dicumarol by 40-50%
+Alternative: Penicillin V
+Patient warning: Report metallic taste (toxicity sign).
+Severity: caution
+
+Clinical note:
+Risk: Marked INR ↑ (delayed by 3-7 days); Type: Pharmacokinetic; Monitoring: INR q3d x2 weeks; Dosage: Reduce dicumarol by 40-50%; Alternative: Penicillin V; Patient Warnings: Report metallic taste (toxicity sign).

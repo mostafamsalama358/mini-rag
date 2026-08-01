@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: BISOPROLOL FUMARATE
+Risk: Competitive β₂-antagonism (high β₁-selectivity reduces but doesn't eliminate risk)
+Type: Pharmacodynamic
+Monitoring: FEV₁, rescue inhaler use
+Dose adjustment: Bisoprolol ≤5 mg/day
+Alternative: Amlodipine
+Patient warning: /Management: Report increased SOB or nighttime symptoms.
+Severity: caution
+
+Clinical note:
+Risk: Competitive β₂-antagonism (high β₁-selectivity reduces but doesn't eliminate risk); Type: Pharmacodynamic; Monitoring: FEV₁, rescue inhaler use; Dosage Adjustments: Bisoprolol ≤5 mg/day; Alternative: Amlodipine; Patient Warnings/Management: Report increased SOB or nighttime symptoms.

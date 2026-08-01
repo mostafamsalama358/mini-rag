@@ -1,0 +1,128 @@
+SINE UP 20 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Sine-Up
+Catalog SKU: SINE UP 20 TAB.
+INN / actives: Pseudoephedrine * Triprolidine
+Catalog New Material: CHLORPHENIRAMINE * PARACETAMOL (ACETAMINOPHEN) * PHENYLEPHRINE HYDROCHLORIDE
+Strength / form: Chlorpheniramine + paracetamol + phenylephrine | (web-supplemented dosing below)
+Manufacturer / market: PHARCO
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > COLD & FLU MEDICATIONS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=SINE UP 20 TAB; sheet lookup INNs=Pseudoephedrine, Triprolidine, CHLORPHENIRAMINE, PARACETAMOL (ACETAMINOPHEN), PHENYLEPHRINE HYDROCHLORIDE
+Web clinical sources: PHARCO Sine-Up class labeling
+
+1. What Sine-Up is used for
+Catalog uses: cold products
+Approved uses (material sheet): Nasal Congestion (from URTIs, allergies, sinusitis) - Adult: 60 mg orally every 4 to 6 hours. OR 120 mg every 12 hours (extended release) , Max Dose: 240 mg in 24 hours , Pediatric (6 to 12 yrs): 30 mg every 4 to 6 hours. Max: 120 mg/24h , Pediatric (4 to 5 yrs): 15 mg every 4 to 6 hours. Max: 60 mg/24h*
+Off-label mentions (material sheet): Eustachian Tube Dysfunction/Otitis Media - Dose: Similar to nasal congestion dosing*
+Claustrophobia (MRI) to reduce anxiety - Dose: 60 to 120 mg prior to procedure (not a standard use)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Adults: 1 tablet every 6–8 hours as needed per pack; avoid duplicate actives.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not for young children; respect pack age limit.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Sine-Up if / disease cautions
+From material/disease sheets:
+[PSEUDOEPHEDRINE] Hypersensitivity to PSEUDOEPHEDRINE *
+Children under 4 years *
+Chronic thromboembolic Pulmonary Vascular Diseases * 
+Hypertensive disorders of pregnancy (including pre‑eclampsia and gestational hypertension) *
+Pulmonary Vascular Diseases * 
+Cardiac Procedures & Perioperative Pain * 
+Vascular / Aneurysms Heart Diseases * 
+Structural / Valvular & Inflammatory Heart Diseases *
+Uncontrolled Hypertension * 
+Hyperthyroidism & Thyrotoxicosis * 
+Intracranial hemorrhage (ICH) (intracerebral/ cerebral/ subarachnoid and hemorrhagic stroke)* 
+Stroke & Cerebrovascular Disease *
+Myocardial Infarction (MI / Heart Attack) *
+Tachyarrhythmias & Hyperactive Conduction * 
+Dehydration & Hypovolemia * 
+Bradyarrhythmias & Sinus Node Dysfunction * 
+Endocrine & Neuroendocrine Tumors * 
+Respiratory Failure & Insufficiency *
+Benign prostatic hyperplasia (BPH) * 
+Uncontrolled hypertension* 
+Hyperthyroidism & Thyrotoxicosis* 
+Urinary Retention*
+[PSEUDOEPHEDRINE HCL] Hypersensitivity to EPHEDRINE* Severe hypertension* Angle‑closure glaucoma*
+[PSEUDOEPHEDRINE HYDROCHLORIDE] Hypersensitivity to CHLORIDE*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • NONE
+• Pseudoephedrine does not have a formal FDA Black Box Warning.
+• However, it carries strong warnings about its cardiovascular and CNS stimulant effects and its potential for misuse in the illicit production of methamphetamine.
+Notes (material sheet): • Take with or without food.
+• Caffeine can increase the side effects of this medication. Avoid drinking large amounts of beverages containing caffeine (coffee, tea, colas), eating large amounts of chocolate, or taking nonprescription products that contain caffeine.
+• Avoid: simultaneous use of MAOI e.g: LINEZOLID* or within 14 days* 
+• Used causion with arrhythmias, diabetes mellitus, and elderly patients may be sensitive to CNS effects, glaucoma, hyperthyroidism, ischemic heart disease, prostatic hypertrophy, renal failure.
+• Pseudoephedrine may decrease the effectiveness of blood pressure medications (such as beta blockers, calcium channel blockers, guanethidine, methyldopa).Check the la…
+Patient education excerpt: • Timing:
+- Immediate-release forms can be taken with or without food.
+- Extended-release forms must be swallowed whole. Avoid taking a dose too close to bedtime as it may cause insomnia.
+• Missed Dose:
+- Skip the missed dose and take the next dose at the regular time. Do not double dose.
+• Interactions:
+- Do NOT use with other decongestants or stimulants. Avoid with MAOIs.
+- Use extreme caution with other drugs that raise blood pressure (e.g., stimulants for ADHD). Can interact with beta-blockers.
+• Overdose:
+- Seek emergency help immediately. Symptoms include severe restlessness, tremor, rapid breathing, hallucinations, hypertension, arrhythmias.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Pseudoephedrine + CAPTOPRIL: Risk: Attenuated antihypertensive efficacy (daytime SBP ↑8-12 mmHg). Type: Partial opposition. Monitoring: BP 2h post-dose; limit 3-day use. Dosage Adjustments: Morning captopril dose ↑50% if needed. Alternatives: Intranasal corticosteroids. OTC Counseling: "Check all 'non-drowsy' cold meds."
+- Pseudoephedrine + ENALAPRIL: Risk: Postural hypotension (25% incidence). Type: Autonomic interference. Monitoring: Sitting/standing BP; limit to 72h use. Dosage Adjustments: Morning enalapril dose ↑ by 5mg if needed. Alternatives: Fluticasone nasal spray. ENT Note: "More pronounced in allergic rhinitis patients."
+- Pseudoephedrine + LISINOPRIL: Risk: Attenuated antihypertensive effect (daytime SBP ↑10-15mmHg). Type: Partial opposition. Monitoring: BP 2h post-dose; limit to 5d use. Dosage Adjustments: Increase lisinopril by 20% if needed. Alternatives: Azelastine nasal spray. Allergy Note: "More pronounced during pollen seasons."
+- Pseudoephedrine + RAMIPRIL: Risk: Attenuated BP control (daytime SBP ↑12-18 mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 72h use. Dosage Adjustments: Increase ramipril by 30% if needed. Alternatives: Intranasal corticosteroids. Allergy Tip: "More pronounced during allergen exposure."
+- Pseudoephedrine + BENAZEPRIL: Risk: Attenuated BP control (daytime SBP ↑10-20mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 5d use. Dosage Adjustments: Increase benazepril by 10mg if needed. Alternatives: Fluticasone nasal spray. Allergy Tip: "More severe during upper respiratory infections."
+- Pseudoephedrine + CILAZAPRIL: Risk: Attenuated BP control (daytime SBP ↑10-15mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 3d use. Dosage Adjustments: Increase cilazapril by 30% if needed. Alternatives: Intranasal steroids. Allergy Tip: "More severe during pollen season."
+- Pseudoephedrine + FOSINOPRIL: Risk: Attenuated BP control (daytime SBP ↑15-25mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 72h use. Dosage Adjustments: Increase fosinopril by 40% if needed. Alternatives: Intranasal corticosteroids. Allergy Tip: "More severe during URI season."
+- Pseudoephedrine + QUINAPRIL: Risk: Attenuated BP control (daytime SBP ↑12-18mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 3d use. Dosage Adjustments: Increase quinapril by 30% if needed. Alternatives: Intranasal steroids. Allergy Tip: "More severe during allergen exposure."
+- Pseudoephedrine + PERINDOPRIL: Risk: Attenuated BP control (daytime SBP ↑10-15mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 3d use. Dosage Adjustments: Increase perindopril by 30% if needed. Alternatives: Intranasal steroids. Allergy Tip: "More severe during pollen season."
+- Pseudoephedrine + METHYLDOPA: Risk: Uncontrolled HTN → renal injury; Type: Pharmacodynamic; Monitoring: BP 3x/week, renal function; Dosage Adjustments: Max 30mg pseudoephedrine/day; Alternatives: Fluticasone nasal; Patient Warnings: "Avoid OTC cold medicines containing stimulants"
+- Pseudoephedrine + CLONIDINE HYDROCHLORIDE: Risk: Cerebral hemorrhage; Type: Pharmacodynamic; Monitoring: Neuro checks + BP; Dosage Adjustments: Max 60mg/day pseudoephedrine; Alternatives: Oxymetazoline nasal; Patient Warnings: "Discontinue if severe headache occurs"
+- Pseudoephedrine + MOXONIDINE: Risk: Accelerated hypertension; Type: Additive; Monitoring: Home BP logs; Dosage Adjustments: Max 30mg every 12h; Alternatives: Cetirizine; Patient Warnings: "Check BP before each dose"
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Avoid decongestant/antihistamine combinations unless advised.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Avoid if possible (sedation + milk-supply effects).
+
+9. Supplements / cross-selling
+Catalog cross-selling: • Gargel specially POVIDONE IODINE
+• lozenges
+• Immunity Vitamin ( vitamin D , vitamin C , Zinc)
+• Nasal drops/ spray
+• Hot drink (Anise , Peperment , Tilia)
+• Hot / Cold Gel poultice for fever or muscle pain
+• Masks
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Insomnia (20%)*
+Nervousness (20%)*
+Tachycardia (15%)*
+Palpitations (15%)*
+Headache (15%)*
+Dizziness (10%)*
+Restlessness (10%)*
+Minor (material sheet): Xerostomia - Dry Mouth (5%)*
+Nausea/Vomiting (5%)*
+Hypertension (5%)*
+Difficulty Urinating - in men with BPH (3%)*
+Tremor (2%)*
+Anxiety (2%)*
+Confusion (2%)*
+Diaphoresis (Sweating) (5%)*
+Hallucinations - with overdose (2%)*
+Seizures - with overdose (2%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

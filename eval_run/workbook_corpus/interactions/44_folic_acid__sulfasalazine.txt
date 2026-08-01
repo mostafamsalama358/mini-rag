@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: SULFASALAZINE
+Risk: Sulfasalazine inhibits folate absorption → ↓ levels by 40-60%.
+Type: -
+Monitoring: RBC folate levels q3mo; homocysteine if deficient. Dose Adjustment: Folic acid 5mg daily (instead of 1mg).
+Dose adjustment: -
+Alternative: -
+Patient warning: Take folate 2h before sulfasalazine.
+Severity: caution
+
+Clinical note:
+Risk: Sulfasalazine inhibits folate absorption → ↓ levels by 40-60%. Monitoring: RBC folate levels q3mo; homocysteine if deficient. Dose Adjustment: Folic acid 5mg daily (instead of 1mg). Patient Warning: Take folate 2h before sulfasalazine.

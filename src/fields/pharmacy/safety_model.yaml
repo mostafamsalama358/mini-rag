@@ -1,0 +1,41 @@
+version: 1
+model_id: pharmacy_safety_v1
+# Extensible catalog — v1 activates a subset only.
+dimensions:
+  pregnancy:
+    active: true
+  breastfeeding:
+    active: true
+  pediatric:
+    active: false
+  elderly:
+    active: false
+  renal_impairment:
+    active: false
+  hepatic_impairment:
+    active: false
+  diabetes:
+    active: false
+  hypertension:
+    active: false
+  contraindications:
+    active: false
+  interaction_severity:
+    active: false
+  otc_prescription:
+    active: false
+enums:
+  - safe
+  - use_with_caution
+  - avoid
+  - contraindicated
+  - consult_physician
+  - unknown
+actions:
+  safe: pass
+  use_with_caution: pass
+  avoid: demote
+  contraindicated: exclude
+  consult_physician: demote
+  unknown: demote
+unknown_is_not_safe: true

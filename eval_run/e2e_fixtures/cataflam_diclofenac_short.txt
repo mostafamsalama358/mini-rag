@@ -1,0 +1,21 @@
+CATAFLAM Diclofenac Potassium 50 mg Tablets
+Short Product Information — E2E Evaluation Fixture
+Product code: CF-DIC-50-E2E
+
+1. Indications
+Cataflam is used for acute pain and inflammation, including post-traumatic pain, postoperative pain, and acute flares of osteoarthritis.
+
+2. Dosage
+Adults: 50 mg two to three times daily.
+Maximum daily dose: 150 mg.
+Take with food if stomach upset occurs.
+
+3. Contraindications
+Do not take Cataflam if you have active peptic ulcer, gastrointestinal bleeding, severe heart failure, or known hypersensitivity to diclofenac or other NSAIDs.
+Do not use in the third trimester of pregnancy.
+
+4. Breastfeeding
+Diclofenac passes into breast milk in small amounts. Short-term use may be acceptable; avoid prolonged high-dose therapy while breastfeeding.
+
+5. Storage
+Store below 25°C. Protect from moisture.

@@ -1,0 +1,16 @@
+Alias registry — Panadol Advance
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 01
+Brand: Panadol Advance
+
+Known aliases:
+- Panadol Advance (brand)
+- PANADOL ADVANCE 500 MG 24 TABLETS (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- بانادول (arabic)
+- بانادول ادڤانس (arabic)
+- panadol (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

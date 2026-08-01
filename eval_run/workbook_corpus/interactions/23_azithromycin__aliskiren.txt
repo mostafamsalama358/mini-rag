@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: ALISKIREN
+Risk: Potential hyperkalemia and QT prolongation (though lower risk than other macrolides)
+Type: Pharmacodynamic (additive electrolyte effects)
+Monitoring: BP, serum potassium (weekly), renal function, ECG if high cardiac risk
+Dose adjustment: Usually none required unless hyperkalemia occurs
+Alternative: Non-ma…
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Potential hyperkalemia and QT prolongation (though lower risk than other macrolides); Type: Pharmacodynamic (additive electrolyte effects); Monitoring: BP, serum potassium (weekly), renal function, ECG if high cardiac risk; Dosage Adjustments: Usually none required unless hyperkalemia occurs; Alternative: Non-ma…

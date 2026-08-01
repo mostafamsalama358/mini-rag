@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: ESMOLOL
+Risk: Acute hypotension during cardiac procedures
+Type: Pharmacodynamic (additive vasodilation)
+Monitoring: Arterial line BP + ECG continuously
+Dose adjustment: Esmolol max 50mcg/kg/min
+Alternative: Famotidine
+Patient warning: ICU monitoring required; report chest pain immediately.
+Severity: caution
+
+Clinical note:
+Risk: Acute hypotension during cardiac procedures; Type: Pharmacodynamic (additive vasodilation); Monitoring: Arterial line BP + ECG continuously; Dosage: Esmolol max 50mcg/kg/min; Alternative: Famotidine; Patient Warnings: ICU monitoring required; report chest pain immediately.

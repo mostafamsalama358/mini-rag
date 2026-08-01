@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B12 (CYANOCOBALAMIN)
+API 2: COLCHICINE
+Risk: Colchicine impairs B12 absorption, potentially worsening deficiency.
+Type: -
+Monitoring: B12 levels annually if chronic use.
+Dose adjustment: No adjustment.
+Alternative: -
+Patient warning: Separate doses by ≥2hr; monitor for paresthesia.
+Severity: caution
+
+Clinical note:
+Risk: Colchicine impairs B12 absorption, potentially worsening deficiency. Monitoring: B12 levels annually if chronic use. Dosage: No adjustment. Patient Warnings: Separate doses by ≥2hr; monitor for paresthesia.

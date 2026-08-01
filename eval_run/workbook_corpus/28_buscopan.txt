@@ -1,0 +1,138 @@
+BUSCOPAN PLUS 20 F.C.TAB. (N/A)
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Buscopan
+Product line: Buscopan
+Catalog SKU: BUSCOPAN PLUS 20 F.C.TAB. (N/A)
+SKU ID: 28
+INN / actives: Hyoscine Butylbromide * Hyoscine
+INN primary: Hyoscine Butylbromide
+INN aliases: BUTYLSCOPOLAMINE; HYOSCINE; HYOSCINE BUTYLBROMIDE
+Strength / form: Hyoscine butylbromide 10 mg | Form=TAB. | Min.age=6 years
+Manufacturer / market: SANOFI
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-SPASMODIC
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Buscopan is used for
+Motion Sickness - Transdermal patch (1 mg/72h) or tablets (0.3 : 0.6 mg PRN)*
+Postoperative Nausea/Vomiting (PONV) - Patch applied pre surgery*
+Palliative Care - 0.2 : 0.4 mg SC q4h for excessive secretions*
+
+2. Dosage — Adults
+Adult dose: 1-2 tablets 3-5 times/day
+Maximum daily dose: 5 tablets/day (5 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 6 years
+Pediatric min age: 6 years
+Pediatric dose: 6-12 years: 10 mg three times daily.
+Pediatric max daily dose: See pack
+
+4. Do not take Buscopan if / disease cautions
+Hypersensitivity to HYOSCINE*
+Angle‑closure glaucoma*
+Obstructive GI Diseases* 
+Myasthenia Gravis*
+Hypersensitivity to BELLADONNA*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None. 
+• Critical Warnings:
+- Acute angle-closure glaucoma (discontinue if eye pain/vision loss occurs).
+- Severe CNS effects (hallucinations, seizures) in overdose
+Warnings: • Avoid:
+- Other anticholinergics ( TCAs, antihistamines) → ↑ side effects.
+- Probiotics (no interaction but may mask underlying IBS/SIBO).
+.........................................................................
+• Dose Modification:
+- Renal/Hepatic: 
+Reduce dose in severe impairment; avoid in cirrhosis.
+............................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Category B2 (AU); use only if benefits outweigh risks.
+- Lactation: 
+Avoid (excreted in breast milk).
+................................................................
+• Lab Interactions: 
+-Interferes with gastric secretion tests.
+.................................................
+HCP notes: • Avoid:
+- Other anticholinergics ( TCAs, antihistamines) → ↑ side effects.
+- Probiotics (no interaction but may mask underlying IBS/SIBO).
+.........................................................................
+• Dose Modification:
+- Renal/Hepatic: 
+Reduce dose in severe impairment; avoid in cirrhosis.
+............................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Category B2 (AU); use only if benefits outweigh risks.
+- Lactation: 
+Avoid (excreted in breast milk).
+................................................................
+• Lab Interactions: 
+-Interferes with gastric secretion tests.
+.................................................
+Patient education: • Timing: Tablets: 
+- 30 min pre-travel; Patch: 4–6h pre-exposure (behind ear).
+• Missed Dose: 
+-Skip if close to next dose; never double.
+• Interactions: 
+-Avoid alcohol, CNS depressants, MAOIs .
+• Overdose: 
+-Seek help for confusion/seizures
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- HYOSCINE + PROPAFENONE; Risk: Pronounced sedation, memory impairment; Type: Pharmacodynamic; Monitoring: Respiratory rate (if combined with other sedatives), cognition; Dose adjustment: Avoid in CNS-depressant users; Alternative: Scopolamine patch (lower oral burden); Patient warning: /Management: Avoid driving, use alarms for medication r…
+- HYOSCINE + NITROGLYCERIN; Risk: Toxic delirium (CNS penetration).; Type: Pharmacodynamic.; Monitoring: CAM-ICU score.; Dose adjustment: Transdermal only.; Alternative: Meclizine.; Patient warning: /Management: Caregiver supervision required.
+- HYOSCINE + ISOSORBIDE DINITRATE; Risk: Delirium in elderly.; Type: Pharmacodynamic.; Monitoring: CAM-ICU score.; Dose adjustment: Transdermal only.; Alternative: Meclizine.; Patient warning: /Management: Caregiver supervision required.
+- HYOSCINE + ISOSORBIDE-5-MONONITRATE; Risk: Delirium in elderly.; Type: Pharmacodynamic.; Monitoring: CAM-ICU score.; Dose adjustment: Transdermal only.; Alternative: Meclizine.; Patient warning: /Management: Caregiver supervision required.
+- HYOSCINE + SODIUM NITROPRUSSIDE; Risk: Delirium, toxic megacolon (elderly); Type: Pharmacodynamic; Monitoring: RR, pupil dilation; Dose adjustment: Avoid IV hyoscine; Alternative: Scopolamine patch (lower systemic exposure); Patient warning: /Management: Supervise for agitation.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Smecta|Motilium
+
+10. Possible side effects
+Major: Drowsiness (20–30%)*
+Dry mouth (15–25%)*
+Blurred vision (12–20%)*
+Minor: Urinary retention (5–8%)*
+Tachycardia (4–7%)*
+Hallucinations (rare)*
+Confusion (rare)*
+Bradycardia (1-5%)*
+Flushing (1-5%)*
+Orthostatic hypotension (1-5%)*
+Amnesia (1-3%)*
+Ataxia (being like drunk (1%)*
+Fatigue (1-5%)*
+Headache (1-5%)*
+Restlessness (1-5%)*
+Sedation (1-10%)*
+Dyshidrotic eczema (1-5%)*
+Erythema (1-5%)*
+Hypohidrosis (1-5%)*
+pruritus (1-5%)*
+skin rash - including drug eruption (1-5%)*
+urticaria (1-5%)*
+xeroderma (1-5%)*
+Increased thirst (1-5%)*
+Constipation (1-5%)*
+Diarrhea (1-2%)*
+dysphagia (1-5%)*
+Nausea/Vomiting (1-5%)*
+Dysuria (1-5%)*
+Angioedema (1-5%)*
+Tremor (1-5%)*
+Weakness
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

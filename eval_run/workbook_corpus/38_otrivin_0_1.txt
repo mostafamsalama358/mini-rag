@@ -1,0 +1,84 @@
+OTRIVIN 0.1% ADULT NASAL DROPS 15 ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Otrivin
+Product line: Otrivin
+Catalog SKU: OTRIVIN 0.1% ADULT NASAL DROPS 15 ML
+SKU ID: 38
+INN / actives: Xylometazoline
+INN primary: Xylometazoline
+INN aliases: XYLOMETAZOLINE; XYLOMETAZOLINE HCL
+Strength / form: Xylometazoline 0.1% | Form=NASAL DROP | Min.age=12 years
+Manufacturer / market: GLAXO SMITHKLINE
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > NASAL DECONGESTANT & SINUS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Otrivin is used for
+-
+
+2. Dosage — Adults
+Adult dose: 1 spray each nostril up to 3 times/day
+Maximum daily dose: 3 sprays/nostril/day (3 sprays/nostril)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: 2 years
+Pediatric dose: 0.05%: 2-11 years. 0.1%: >=12 years.
+Pediatric max daily dose: See pack
+
+4. Do not take Otrivin if / disease cautions
+Hypersensitivity to Xylometazoline *
+Angle‑closure glaucoma *
+Rhinitis sicca anterior*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: None listed
+Warnings: • Pregnancy Category: C
+• Lactation: not known if excreted in breast milk
+• Overuse may cause rebound congestion
+• Do not use this product for more than 3 days; use only as directed; frequent or prolonged use may cause nasal congestion to recur or worsen
+• Containdicated in Patients with transsphenoidal hypophysectomy or surgery exposing dura mater
+• The use of this device by more than one person may spread infection
+• Therapy with topical sympathomimetic agents should be administered cautiously In patients with prostate enlargement, urinary difficulty may develop or worsen due to smooth muscle contraction in the bladder neck via stimulation of alpha-1 adrenergic receptors
+• Therapy with top
+HCP notes: • Pregnancy Category: C
+• Lactation: not known if excreted in breast milk
+• Overuse may cause rebound congestion
+• Do not use this product for more than 3 days; use only as directed; frequent or prolonged use may cause nasal congestion to recur or worsen
+• Containdicated in Patients with transsphenoidal hypophysectomy or surgery exposing dura mater
+• The use of this device by more than one person may spread infection
+• Therapy with topical sympathomimetic agents should be administered cautiously In patients with prostate enlargement, urinary difficulty may develop or worsen due to smooth muscle contraction in the bladder neck via stimulation of alpha-1 adrenergic receptors
+• Therapy with top
+Patient education: Follow pharmacist counseling
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- XYLOMETAZOLINE + LINEZOLID; Risk: Extreme vasoconstriction (nasal decongestant + MAOI). Action: Contraindicated.; Patient warning: Use saline spray instead; report nosebleeds/vision changes.
+- XYLOMETAZOLINE + ISOCARBOXAZID; Risk: Hypertensive emergency. Action: Contraindicated.; Patient warning: Avoid all adrenergic stimulants (including OTC cold meds).
+- XYLOMETAZOLINE + PHENELZINE; Risk: Potentially fatal BP spike. Action: Contraindicated.; Patient warning: Check BP if accidental use; seek immediate care for severe headache.
+- XYLOMETAZOLINE + SELEGILINE CHLORIDE; Risk: Hypertension (even at low selegiline doses). Action: Contraindicated.; Patient warning: Transdermal selegiline >6 mg/24h carries highest risk.
+- XYLOMETAZOLINE + TRANYLCYPROMINE; Risk: Cerebrovascular hemorrhage. Action: Contraindicated.; Patient warning: Symptoms require ER visit (e.g., unilateral weakness).
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Panadol Advance|Strepsils
+
+10. Possible side effects
+Major: Rebound Nasal Congestion - Rhinitis Medicamentosa: with use >3-5 days (>50%)*
+Local Burning (15%)*
+Stinging (15%)*
+Dryness (15%)*
+Minor: Sneezing (5%)*
+Headache (<3%)*
+Palpitations - Systemic absorption (<1%)*
+Tachycardia - Systemic absorption (<1%)*
+Hypertension - Systemic absorption (<1%)*
+CNS Depression - Drowsiness, lethargy: Primarily in children from ingestion (<0.1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

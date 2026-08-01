@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: ATENOLOL
+Risk: β₁-selective blockade still risks bronchospasm
+Type: Pharmacodynamic
+Monitoring: FEV₁/FVC ratio
+Dose adjustment: Atenolol ≤25 mg/day
+Alternative: Losartan
+Patient warning: /Management: Annual flu vaccine.
+Severity: caution
+
+Clinical note:
+Risk: β₁-selective blockade still risks bronchospasm; Type: Pharmacodynamic; Monitoring: FEV₁/FVC ratio; Dosage Adjustments: Atenolol ≤25 mg/day; Alternative: Losartan; Patient Warnings/Management: Annual flu vaccine.

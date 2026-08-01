@@ -1,0 +1,92 @@
+NORVASC 5MG 30 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Norvasc
+Product line: Norvasc
+Catalog SKU: NORVASC 5MG 30 TAB.
+SKU ID: 30
+INN / actives: Amlodipine
+INN primary: Amlodipine
+INN aliases: AMLODIPINE; AMLODIPINE BESYLATE
+Strength / form: Amlodipine 5 mg | Form=TAB. | Min.age=6 years
+Manufacturer / market: VIATRIS EGYPT
+Price (catalog): 162
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > HYPERTENSION
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Norvasc is used for
+Hypertension - Adults: Start 5 mg daily; max 10 mg daily. Pediatrics (≥6 years): 2.5 : 5 mg daily*
+Chronic Stable Angina - 5 : 10 mg daily*
+Vasospastic Angina - 5 : 10 mg daily*
+CAD - 5 : 10 mg daily to reduce hospitalization/revascularization*
+
+2. Dosage — Adults
+Adult dose: 5 mg once daily
+Maximum daily dose: 1 tablet/day (1 tablet)
+
+3. Dosage — Children
+Minimum age in catalog: 6 years
+Pediatric min age: 6 years
+Pediatric dose: 6-17 years: 2.5-5 mg once daily.
+Pediatric max daily dose: See pack
+
+4. Do not take Norvasc if / disease cautions
+Hypersensitivity to AMLODIPINE *
+Severe Hypotension *
+Structural / Valvular & Inflammatory Heart Diseases*
+Heart Failure (CHF)*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+Pregnancy; unspecified gestational age*
+Breastfeeding*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: None for amlodipine. However, critical warnings include:
+• Angina/MI Exacerbation: Rare worsening of ischemia at initiation or dose escalation, especially in severe CAD.
+• Hypotension: Risk in volume-depleted or aortic stenosis patients
+Warnings: • Avoid grapefruit products 
+• Using amlodpine together with multivitamin with minerals can decrease the effects of amlodpine , You may need a dose adjustment or need your blood pressure checked more often if you take both medications (Calcium-containing products may decrease the effectiveness of calcium channel blockers by saturating calcium channels with calcium. Calcium chloride has been used to manage acute severe verapamil toxicity)
+• Avoid natural licorice
+.......................................................................................
+• Dose Modification:
+- Hepatic Impairment: Reduce initial dose to 2.5 mg daily in cirrhosis; titrate gradually due to prolonged half-life (60% ↑
+HCP notes: • Avoid grapefruit products 
+• Using amlodpine together with multivitamin with minerals can decrease the effects of amlodpine , You may need a dose adjustment or need your blood pressure checked more often if you take both medications (Calcium-containing products may decrease the effectiveness of calcium channel blockers by saturating calcium channels with calcium. Calcium chloride has been used to manage acute severe verapamil toxicity)
+• Avoid natural licorice
+.......................................................................................
+• Dose Modification:
+- Hepatic Impairment: Reduce initial dose to 2.5 mg daily in cirrhosis; titrate gradually due to prolonged half-life (60% ↑
+Patient education: • Best Time to Take:
+- Once daily, same time each day; with/without food.
+• Interactions:
+- Avoid grapefruit juice (↑ side effects); report use of erectile drugs (e.g., sildenafil) due to hypotension risk.
+• Missed Dose:
+- Take ASAP if <12 hours late; skip if near next dose. Never double dose
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- AMLODIPINE + AMIODARONE; Risk: Peripheral edema exacerbation; Type: Pharmacodynamic; Monitoring: Daily weights; Dose adjustment: Reduce amlodipine to 2.5mg; Alternative: ACE inhibitors; Patient warning: /Management: Leg elevation.
+- AMLODIPINE + DRONEDARONE; Risk: Additive vasodilation → hypotension; Type: Pharmacodynamic; Monitoring: BP sitting/standing; Dose adjustment: Start amlodipine 2.5mg; Alternative: ACE inhibitors; Patient warning: /Management: Rise slowly from bed.
+- AMLODIPINE + CAPTOPRIL; Risk: Additive hypotension and ankle edema; Type: Pharmacodynamic; Monitoring: BP, edema status; Dose adjustment: Start amlodipine at 2.5 mg daily; Alternative: ACEI monotherapy; Patient warning: /Management: Elevate legs when sitting.
+- AMLODIPINE + ENALAPRIL; Risk: Hypotension and peripheral edema.; Type: Pharmacodynamic (additive vasodilation).; Monitoring: BP, edema severity, and renal function.; Dose adjustment: Start amlodipine at 2.5 mg/day in high-risk; Alternative: ARB + CCB if edema intolerable.; Patient warning: /Management: Elevate legs for edema; report shortness of…
+- AMLODIPINE + LISINOPRIL; Risk: Hypotension and peripheral edema.; Type: Pharmacodynamic (additive vasodilation).; Monitoring: BP, edema severity, and renal function.; Dose adjustment: Start amlodipine at 2.5 mg/day in high-risk; Alternative: ARB + CCB if edema intolerable.; Patient warning: /Management: Elevate legs for edema; report shortness of…
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Aspocid|Lipitor
+
+10. Possible side effects
+Major: Peripheral edema - at 10 mg (10.8%)*
+Minor: Dizziness (3.4%)*
+Flushing (2.6%)*
+Palpitations (4.5%)*
+Fatigue (4.5%)*
+Nausea (2.9%)*
+Abdominal pain (1.6%)*
+Gingival hyperplasia (<1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

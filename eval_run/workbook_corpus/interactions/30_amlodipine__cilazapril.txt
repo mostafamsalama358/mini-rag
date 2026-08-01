@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: CILAZAPRIL
+Risk: Ankle edema (↑ to 28% vs 12% monotherapy), hypotension (SBP <100 mmHg in 18%).
+Type: Pharmacodynamic (arteriolar vasodilation).
+Monitoring: Circumferential leg measurements, BP alternate days.
+Dose adjustment: Cilazapril 2.5 mg + amlodipine 2.5 mg combo start.
+Alternative: Cilazapril + indapamide.
+Patient warning: Dayti…
+Severity: caution
+
+Clinical note:
+Risk: Ankle edema (↑ to 28% vs 12% monotherapy), hypotension (SBP <100 mmHg in 18%). Type: Pharmacodynamic (arteriolar vasodilation). Monitoring: Circumferential leg measurements, BP alternate days. Dosage: Cilazapril 2.5 mg + amlodipine 2.5 mg combo start. Alternative: Cilazapril + indapamide. Patient Warnings: Dayti…

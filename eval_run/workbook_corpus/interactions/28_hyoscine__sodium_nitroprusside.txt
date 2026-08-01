@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: SODIUM NITROPRUSSIDE
+Risk: Delirium, toxic megacolon (elderly)
+Type: Pharmacodynamic
+Monitoring: RR, pupil dilation
+Dose adjustment: Avoid IV hyoscine
+Alternative: Scopolamine patch (lower systemic exposure)
+Patient warning: /Management: Supervise for agitation.
+Severity: yes
+
+Clinical note:
+Risk: Delirium, toxic megacolon (elderly); Type: Pharmacodynamic; Monitoring: RR, pupil dilation; Dosage: Avoid IV hyoscine; Alternative: Scopolamine patch (lower systemic exposure); Patient Warnings/Management: Supervise for agitation.

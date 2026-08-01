@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: FEBUXOSTAT
+Risk: Masked B12 deficiency
+Type: Pharmacodynamic
+Monitoring: MMA levels
+Dose adjustment: No adjustment
+Alternative: Folinic acid
+Patient warning: Neurological checks.
+Severity: caution
+
+Clinical note:
+Risk: Masked B12 deficiency; Type: Pharmacodynamic; Monitoring: MMA levels; Dosage: No adjustment; Alternative: Folinic acid; Patient Warnings: Neurological checks.

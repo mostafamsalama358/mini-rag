@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: TRIMETAZIDINE
+Risk: EPS (SAS score >3).
+Type: Pharmacodynamic.
+Monitoring: Simpson-Angus Scale weekly.
+Dose adjustment: Avoid combination.
+Alternative: Ondansetron.
+Patient warning: /Management: Report restlessness.
+Severity: yes
+
+Clinical note:
+Risk: EPS (SAS score >3). Type: Pharmacodynamic. Monitoring: Simpson-Angus Scale weekly. Dosage Adjustments: Avoid combination. Alternative: Ondansetron. Patient Warnings/Management: Report restlessness.

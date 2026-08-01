@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: ROPINIROLE
+Risk: CYP1A2 inhibition ↑ ropinirole exposure → hallucinations, syncope, and impulse control disorders
+Type: -
+Monitoring: Neuropsychiatric eval weekly, orthostatic BP
+Dose adjustment: Halve ropinirole dose if coadministered >3 days
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: CYP1A2 inhibition ↑ ropinirole exposure → hallucinations, syncope, and impulse control disorders; Monitoring: Neuropsychiatric eval weekly, orthostatic BP; Dosage: Halve ropinirole dose if coadministered >3 days; Patient: Report gambling urges; rise slowly from sitting.

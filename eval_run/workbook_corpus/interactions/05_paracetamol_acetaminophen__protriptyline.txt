@@ -1,0 +1,16 @@
+Drug interaction — Flurest-N
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 05
+Brand: Flurest-N
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: PROTRIPTYLINE
+Risk: Delayed gastric emptying → erratic absorption
+Type: -
+Monitoring: Analgesic efficacy
+Dose adjustment: Sublingual/IV acetaminophen if critical
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Delayed gastric emptying → erratic absorption; Monitoring: Analgesic efficacy; Dosage: Sublingual/IV acetaminophen if critical; Patient: Fasted administration preferred.

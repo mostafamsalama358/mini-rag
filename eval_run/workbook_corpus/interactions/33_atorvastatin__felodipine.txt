@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: FELODIPINE
+Risk: Hepatotoxicity (ALT >3x ULN)
+Type: Pharmacokinetic
+Monitoring: LFTs monthly x3
+Dose adjustment: Atorvastatin ≤10mg daily
+Alternative: Pitavastatin
+Patient warning: /Management: Report jaundice/fatigue.
+Severity: caution
+
+Clinical note:
+Risk: Hepatotoxicity (ALT >3x ULN); Type: Pharmacokinetic; Monitoring: LFTs monthly x3; Dosage Adjustments: Atorvastatin ≤10mg daily; Alternative: Pitavastatin; Patient Warnings/Management: Report jaundice/fatigue.

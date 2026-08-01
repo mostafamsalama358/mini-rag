@@ -1,0 +1,112 @@
+ANASEZIAGO CREAM 30 GM
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Anaseziago
+Product line: Anaseziago
+Catalog SKU: ANASEZIAGO CREAM 30 GM
+SKU ID: 15
+INN / actives: Lidocaine * Prilocaine
+INN primary: Lidocaine
+INN aliases: LIDOCAINE; PRILOCAINE
+Strength / form: Topical anesthetic gel | Form=CREAM | Min.age=12 years
+Manufacturer / market: ELIXIR PHARMA
+Price (catalog): 100
+Categories: MEDICINE > SKIN HEALTH > LOCAL ANAESTHETICS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Anaseziago is used for
+Local anesthesia - 0.5 to 2% solutions*
+Ventricular tachycardia - 1 to 1.5 mg/kg IV bolus*
+
+2. Dosage — Adults
+Adult dose: Apply as needed up to 3-4 times/day
+Maximum daily dose: 4 capsules/day (4 capsules)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: 12 years
+Pediatric dose: Not recommended in children under 12 years.
+Pediatric max daily dose: See pack
+
+4. Do not take Anaseziago if / disease cautions
+Hypersensitivity to LIDOCAINE * 
+Methemoglobinemia*
+Bradyarrhythmias & Sinus Node Dysfunction* 
+Atrioventricular (AV) & Heart Blocks (Without Pacemaker)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • IV Use: 
+-"Only for ventricular arrhythmias; requires cardiac monitoring"
+Warnings: • Avoid Class I antiarrhythmics:
+- Increased cardiac toxicity risk
+...........................................................
+• Dose Modification:
+- Hepatic Impairment: 
+Reduce IV dose by 50% (Child-Pugh B/C)
+- Renal Impairment: 
+No adjustment for local use; monitor MEGX metabolites
+.....................................................
+• Medical Info for HCPs:
+- Critical Risks: 
+Seizures (≥5 mcg/mL), cardiac arrest (≥10 mcg/mL)
+- When to Stop: 
+CNS toxicity or cardiovascular collapse
+.......................................................
+• Pregnancy & Lactation:
+- Pregnancy: 
+Category B (safe for local anesthesia)
+- Breastfeeding: 
+Compatible (minimal absorption)
+..........................
+HCP notes: • Avoid Class I antiarrhythmics:
+- Increased cardiac toxicity risk
+...........................................................
+• Dose Modification:
+- Hepatic Impairment: 
+Reduce IV dose by 50% (Child-Pugh B/C)
+- Renal Impairment: 
+No adjustment for local use; monitor MEGX metabolites
+.....................................................
+• Medical Info for HCPs:
+- Critical Risks: 
+Seizures (≥5 mcg/mL), cardiac arrest (≥10 mcg/mL)
+- When to Stop: 
+CNS toxicity or cardiovascular collapse
+.......................................................
+• Pregnancy & Lactation:
+- Pregnancy: 
+Category B (safe for local anesthesia)
+- Breastfeeding: 
+Compatible (minimal absorption)
+..........................
+Patient education: • Administration:
+- By healthcare providers only
+• Topical Use: 
+-Apply thin layer to intact skin
+• Oral Use: 
+-Swish/spit (do not swallow)
+• Overdose Antidote: 
+-Lipid emulsion (20% IV)
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- DIAZOXIDE/LIDOCAINE + RALOXIFENE HYDROCHLORIDE; Risk: Raloxifene's plasma protein binding displacement increases free fractions of both drugs (diazoxide ↑40%, lidocaine ↑35%). Effects: Severe hypotension (SBP <90mmHg), neurotoxicity (lidocaine levels >5mcg/mL), and hyperglycemia (glucose >250mg/dL).; Monitoring: Continuous ECG (QTc), BP q5min, glucose checks.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Controloc 20
+
+10. Possible side effects
+Major: Dizziness (15%)*
+Numbness (12%)*
+Hypotension - IV (10%)*
+Minor: Tinnitus (8%)*
+Metallic taste (5%)*
+Skin irritation - topical (3%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

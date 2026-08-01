@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: ACENOCOUMAROL
+Risk: Rapid INR instability
+Type: Pharmacokinetic
+Monitoring: INR every 2 days
+Dose adjustment: Reduce acenocoumarol by 0.5-1mg
+Alternative: Erythromycin
+Patient warning: Avoid antacids (absorption issues).
+Severity: yes
+
+Clinical note:
+Risk: Rapid INR instability; Type: Pharmacokinetic; Monitoring: INR every 2 days; Dosage: Reduce acenocoumarol by 0.5-1mg; Alternative: Erythromycin; Patient Warnings: Avoid antacids (absorption issues).

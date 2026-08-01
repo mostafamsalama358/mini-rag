@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: LABETALOL
+Risk: Increased labetalol levels (CYP2D6 inhibition)
+Type: Pharmacokinetic
+Monitoring: Orthostatic BP q48h
+Dose adjustment: Reduce by 30-50%
+Alternative: Clevidipine
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Increased labetalol levels (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: Orthostatic BP q48h; Dosage: Reduce by 30-50%; Alternative: Clevidipine; Patient: Use grab bars at home.

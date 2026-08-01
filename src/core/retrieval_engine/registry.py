@@ -77,7 +77,10 @@ class RetrieverRegistry:
         self.register_retriever(SparseRetriever(fts_store))
         self.register_retriever(MetadataRetriever(metadata_store))
         self.register_retriever(StructuredRetriever(structured_store))
+        from core.retrieval_engine.expansion.entity_hint import EntityHintExpander
+
         self.register_expander(PassthroughExpander())
+        self.register_expander(EntityHintExpander())
         self.register_fuser(RRFScoreFuser(k=rrf_k))
         self.register_reranker(PassthroughReranker())
 
@@ -96,8 +99,10 @@ class RetrieverRegistry:
             if self._expanders
             else self.get_expander("passthrough")
         )
-        # Prefer passthrough expander unless only one is registered.
-        if "passthrough" in self._expanders:
+        # Prefer entity-aware expansion when registered; fall back to passthrough.
+        if "entity_hint" in self._expanders:
+            expander = self._expanders["entity_hint"]
+        elif "passthrough" in self._expanders:
             expander = self._expanders["passthrough"]
 
         return RetrievalEnginePipeline(

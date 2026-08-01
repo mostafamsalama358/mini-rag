@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: ANASTRAZOLE
+Risk: CYP2C8 competition → anastrozole levels↑.
+Type: -
+Monitoring: Morning trough levels. Dose Adjustment: Evening montelukast dosing.
+Dose adjustment: -
+Alternative: -
+Patient warning: Mood changes significant.
+Severity: caution
+
+Clinical note:
+Risk: CYP2C8 competition → anastrozole levels↑. Monitoring: Morning trough levels. Dose Adjustment: Evening montelukast dosing. Patient Warning: Mood changes significant.

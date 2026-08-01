@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: BOSENTAN
+Risk: Additive hypotension and reflex tachycardia (bosentan vasodilation + β₂-agonist effects)
+Type: Pharmacodynamic (synergistic cardiovascular effects)
+Monitoring: BP, HR, oxygen saturation
+Dose adjustment: Consider lower salbutamol dose/frequency
+Alternative: Ipratropium bromide for bronchospasm
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Additive hypotension and reflex tachycardia (bosentan vasodilation + β₂-agonist effects); Type: Pharmacodynamic (synergistic cardiovascular effects); Monitoring: BP, HR, oxygen saturation; Dosage Adjustments: Consider lower salbutamol dose/frequency; Alternative: Ipratropium bromide for bronchospasm; Patient War…

@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: PHENOBARBITONE
+Risk: ↓ Antiepileptic efficacy → loss of seizure control. Monitor: Serum levels (target 15-40 mcg/mL), breakthrough seizures. Dose Adjust: ↑ Phenobarbitone by 5-10mg/wk guided by levels.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: ↓ Antiepileptic efficacy → loss of seizure control. Monitor: Serum levels (target 15-40 mcg/mL), breakthrough seizures. Dose Adjust: ↑ Phenobarbitone by 5-10mg/wk guided by levels. Patient: Use seizure precautions; report injury-causing events.

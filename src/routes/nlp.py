@@ -161,13 +161,44 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
         reranker=getattr(request.app, "reranker", None),
     )
 
-    answer, full_prompt, chat_history, needs_clarification = await nlp_controller.answer_rag_question(
-        project=project,
-        query=answer_request.text,
-        limit=answer_request.limit,
-        session_id=answer_request.session_id,
-        db_client=request.app.db_client,
-        metadata_filter=answer_request.metadata_filter,
+    pipeline_router = None
+    factory = getattr(request.app, "rag_pipeline_factory", None)
+    if factory is not None:
+        pipeline_router = factory.create_router()
+    else:
+        # Legacy-only path: construct a thin router wrapping RAGService when
+        # the composition factory has not been attached (RAG_PIPELINE_MODE=legacy).
+        from helpers.config import get_settings
+        from services.rag.answer_service import RAGService
+        from services.rag.pipeline.legacy_executor import LegacyPipelineExecutor
+        from services.rag.pipeline.router import PipelineRouter
+
+        settings = get_settings()
+        if getattr(settings, "RAG_PIPELINE_MODE", "legacy") == "legacy":
+            rag_service = RAGService(
+                db_client=request.app.db_client,
+                nlp_controller=nlp_controller,
+                generation_client=request.app.generation_client,
+                template_parser=request.app.template_parser,
+                reranker=getattr(request.app, "reranker", None),
+                field_registry=getattr(request.app, "field_registry", None),
+            )
+            pipeline_router = PipelineRouter(
+                legacy_executor=LegacyPipelineExecutor(rag_service=rag_service),
+                settings=settings,
+            )
+
+    answer, full_prompt, chat_history, needs_clarification, pipeline_signal = (
+        await nlp_controller.answer_rag_question(
+            project=project,
+            query=answer_request.text,
+            limit=answer_request.limit,
+            session_id=answer_request.session_id,
+            db_client=request.app.db_client,
+            metadata_filter=answer_request.metadata_filter,
+            pipeline_router=pipeline_router,
+            skill_id=getattr(answer_request, "skill_id", None),
+        )
     )
 
     collection_info = await nlp_controller.get_vector_db_collection_info(project=project)
@@ -182,24 +213,81 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
             },
         )
 
-    if not answer:
-        return JSONResponse(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                content={
-                    "signal": ResponseSignal.RAG_ANSWER_ERROR.value,
-                    "message": "Could not generate an answer. Try rephrasing the question or re-indexing the project.",
-                }
+    if not answer and needs_clarification:
+        answer = (
+            "I could not map your question to a supported topic. "
+            "Please rephrase or name a specific item."
         )
-    
-    signal = (
-        ResponseSignal.RAG_CLARIFICATION_NEEDED
+
+    signal_value = pipeline_signal or (
+        ResponseSignal.RAG_CLARIFICATION_NEEDED.value
         if needs_clarification
-        else ResponseSignal.RAG_ANSWER_SUCCESS
+        else ResponseSignal.RAG_ANSWER_SUCCESS.value
     )
+
+    # Clarification / timeout must never collapse into opaque rag_answer_error.
+    if signal_value == ResponseSignal.RAG_ANSWER_TIMEOUT.value:
+        return JSONResponse(
+            status_code=status.HTTP_504_GATEWAY_TIMEOUT,
+            content={
+                "signal": signal_value,
+                "answer": answer,
+                "needs_clarification": False,
+                "message": answer
+                or "The answer request timed out. Please retry shortly.",
+            },
+        )
+
+    if (
+        signal_value
+        in (
+            ResponseSignal.RAG_NO_CONTEXT.value,
+            ResponseSignal.RAG_SCOPE_MISS.value,
+        )
+        and not answer
+    ):
+        miss_message = (
+            "No indexed information was found for this medicine or topic in the "
+            "current project. The drug may be missing from the corpus, or the "
+            "question needs a clearer product name. Upload the relevant leaflet/"
+            "interaction sheet and re-index, or ask about a medicine that is "
+            "already indexed."
+            if signal_value == ResponseSignal.RAG_SCOPE_MISS.value
+            else (
+                "No matching evidence found for this question under the "
+                "current retrieval scope. Re-index after metadata enrichment "
+                "or rephrase the question."
+            )
+        )
+        return JSONResponse(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            content={
+                "signal": signal_value,
+                "message": miss_message,
+            },
+        )
+
+    if not answer and signal_value != ResponseSignal.RAG_CLARIFICATION_NEEDED.value:
+        return JSONResponse(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            content={
+                "signal": ResponseSignal.RAG_ANSWER_ERROR.value,
+                "message": "Could not generate an answer. Try rephrasing the question or re-indexing the project.",
+            },
+        )
+
+    if needs_clarification or signal_value == ResponseSignal.RAG_CLARIFICATION_NEEDED.value:
+        signal_value = ResponseSignal.RAG_CLARIFICATION_NEEDED.value
+        needs_clarification = True
+        if not answer:
+            answer = (
+                "I could not map your question to a supported topic. "
+                "Please rephrase or name a specific item."
+            )
 
     return JSONResponse(
         content={
-            "signal": signal.value,
+            "signal": signal_value,
             "answer": answer,
             "needs_clarification": needs_clarification,
             "full_prompt": full_prompt,

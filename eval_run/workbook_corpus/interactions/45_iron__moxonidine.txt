@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: MOXONIDINE
+Risk: Reduced moxonidine absorption and efficacy
+Type: Chelation
+Monitoring: BP weekly, watch for hypertension
+Dose adjustment: Administer iron 3 hours after moxonidine
+Alternative: IV iron if needed
+Patient warning: /Management: Take moxonidine on empty stomach.
+Severity: caution
+
+Clinical note:
+Risk: Reduced moxonidine absorption and efficacy; Type: Chelation; Monitoring: BP weekly, watch for hypertension; Dosage Adjustments: Administer iron 3 hours after moxonidine; Alternative: IV iron if needed; Patient Warnings/Management: Take moxonidine on empty stomach.

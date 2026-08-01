@@ -1,0 +1,115 @@
+MOTILIUM 10MG 40 F.C.TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Motilium
+Product line: Motilium
+Catalog SKU: MOTILIUM 10MG 40 F.C.TAB.
+SKU ID: 27
+INN / actives: Domperidone
+INN primary: Domperidone
+INN aliases: DOMPERIDONE
+Strength / form: Domperidone 10 mg | Form=TAB. | Min.age=12 years and ≥35 kg
+Manufacturer / market: JANSSEN CILAG
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-NAUSEA & VOMITING
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Motilium is used for
+Nausea/vomiting - 10 mg PO tid (max 30 mg/day) for ≤1 week *
+Gastroparesis - 10 mg tid before meals*
+
+2. Dosage — Adults
+Adult dose: 10 mg up to 3 times/day before meals
+Maximum daily dose: 3 tablets/day (3 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years and ≥35 kg
+Pediatric min age: See pack
+Pediatric dose: Not routinely recommended in children. Use only if prescribed.
+Pediatric max daily dose: See pack
+
+4. Do not take Motilium if / disease cautions
+Hypersensitivity to DOMPERIDONE * Infants under 1 year * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation * Atrioventricular (AV) & Heart Blocks (Without Pacemaker)* Cardiac Procedures & Perioperative Pain * Vascular / Aneurysms Heart Diseases * Structural / Valvular & Inflammatory Heart Diseases * Bradyarrhythmias & Sinus Node Dysfunction * Tachyarrhythmias & Hyperactive Conduction * Hyperprolactinemia * Gastrointestinal (GI) bleeding * Obstructive GI Diseases *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None
+• but EMA/FDA warnings include:
+- QT prolongation & sudden cardiac death (highest risk in age >60, doses >30 mg/day, or with CYP3A4 inhibitors)
+- Neuropsychiatric effects (agitation, suicidal ideation) on withdrawal during lactation.
+Warnings: • It increases the secretion of the hormone prolactin and thus increases breast milk and reduces fertility in men, gynecomastia, amenorrhea, or impotence (reversible upon decreasing dose or discontinuing drug)
+• Take before a meal. 
+Take 15-30 minutes before meals
+• Avoid:
+- CYP3A4 inhibitors (e.g., ketoconazole, erythromycin) due to increased cardiac risk.
+• Caution with:
+-Antacids/PPIs (take ≥2h apart to avoid reduced absorption)
+...........................................................................
+• When gastroparesis occurs in diabetic patients, the treatment method for gastroparesis in diabetic patients is: We give Domperidone (10 mg) before each meal three times a day
+• Nausea/vo
+HCP notes: • It increases the secretion of the hormone prolactin and thus increases breast milk and reduces fertility in men, gynecomastia, amenorrhea, or impotence (reversible upon decreasing dose or discontinuing drug)
+• Take before a meal. 
+Take 15-30 minutes before meals
+• Avoid:
+- CYP3A4 inhibitors (e.g., ketoconazole, erythromycin) due to increased cardiac risk.
+• Caution with:
+-Antacids/PPIs (take ≥2h apart to avoid reduced absorption)
+...........................................................................
+• When gastroparesis occurs in diabetic patients, the treatment method for gastroparesis in diabetic patients is: We give Domperidone (10 mg) before each meal three times a day
+• Nausea/vo
+Patient education: • Timing:
+- Take 15–30 min before meals.
+• Missed Dose: 
+-Skip if close to next dose; never double dose.
+• Warning Signs: 
+-Seek help for palpitations, dizziness, or uncontrolled movements
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- DOMPERIDONE + ALUMINUM ASPIRIN; Risk: QT prolongation (QTc>450ms); Type: Additive cardiac effects; Monitoring: ECG baseline + weekly; Dose adjustment: Max domperidone 10mg TID; Alternative: Ginger supplements; Patient warning: Palpitation report
+- DOMPERIDONE + ACETYL SALICYLIC ACID; Risk: Cardiac arrest; Type: Potassium channel blockade; Monitoring: K+ >4.0 required; Dose adjustment: Max 30mg/day; Alternative: Mosapride; Patient warning: Syncope danger
+- DOMPERIDONE + ASPIRIN; Risk: Torsades de Pointes; Type: QTc prolongation (≥500ms); Monitoring: ECG baseline + weekly; Dose adjustment: Max 10mg TID; Alternative: Mosapride; Patient warning: Syncope danger
+- DOMPERIDONE + TRIMETAZIDINE; Risk: EPS (SAS score >3).; Type: Pharmacodynamic.; Monitoring: Simpson-Angus Scale weekly.; Dose adjustment: Avoid combination.; Alternative: Ondansetron.; Patient warning: /Management: Report restlessness.
+- DOMPERIDONE + DEXTROMETHORPHAN; Risk: Additive CNS depression via dopamine/sigma-1 receptor effects.; Monitoring: Watch for excessive sedation, especially in CYP2D6 poor metabolizers. Dose Adjustment: Limit dextromethorphan to 30mg q6h if combined.; Patient warning: Avoid alcohol and driving. Mechanism: Weak opioid agonist with serotonergic activity.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: avoid
+
+9. Supplements / cross-selling
+Catalog cross-selling: Gaviscon Advance|Risek|Smecta
+
+10. Possible side effects
+Major: Dry mouth (15%)*
+Abdominal cramps (12%)*
+Hyperprolactinemia (12%)*
+Galactorrhea (11%)*
+Gynecomastia (11%)*
+Minor: Headache (5%)*
+Restlessness (3%)*
+Edema (4%)*
+Palpitations (7%)* 
+Pruitus (4%)*
+Urticaria (4%)*
+Hot flashes (4%)*
+Increased serum cholesterol - total (4%)*
+Increased thirst (4%)*
+Acid regurgitation (4%)*
+Change in appetite (4%)* 
+Constipation (3%)* 
+Diarrhea (9%)*
+Nausea (5%)*
+Stomatitis (4%)*
+Dysuria - pain/burning during pee (4%)*
+Mastalgia (4%)*
+Urinary frequency (4%)*
+Increased serum ALT - alanine aminotransferase (5%)*
+Increased serum AST - aspartate aminotransferase (5%)*
+Asthenia - weakness (4%)*
+Extrapyramidal reaction (4%)*
+Insomnia (3%)*
+Irritability (3%)*
+Lethargy - laziness (4%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

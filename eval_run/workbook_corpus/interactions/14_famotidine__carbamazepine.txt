@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: CARBAMAZEPINE
+Risk: Minimal interaction (preferred H2 blocker); no routine monitoring needed; single carbamazepine level check recommended after 1 week in elderly.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Minimal interaction (preferred H2 blocker); no routine monitoring needed; single carbamazepine level check recommended after 1 week in elderly.

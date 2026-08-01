@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B6 (PYRIDOXINE)
+API 2: PHENOBARBITONE
+Risk: Pyridoxine (>200mg/day) accelerates phenobarbital metabolism → subtherapeutic levels → breakthrough seizures.
+Type: -
+Monitoring: Serum phenobarbital levels (target 15-40 μg/mL) q2wk.
+Dose adjustment: Increase phenobarbital 20-50% if levels drop.
+Alternative: -
+Patient warning: Report aura/seizure recurrence; never stop antiepileptic suddenly.
+Severity: caution
+
+Clinical note:
+Risk: Pyridoxine (>200mg/day) accelerates phenobarbital metabolism → subtherapeutic levels → breakthrough seizures. Monitoring: Serum phenobarbital levels (target 15-40 μg/mL) q2wk. Dosage: Increase phenobarbital 20-50% if levels drop. Patient Warning: Report aura/seizure recurrence; never stop antiepileptic suddenly.

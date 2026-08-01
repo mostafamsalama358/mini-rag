@@ -1,0 +1,16 @@
+Alias registry — Bradozen
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 08
+Brand: Bradozen
+
+Known aliases:
+- Bradozen (brand)
+- BRADOZEN 0.5MG 20 LOZENGES (catalog_sku)
+- Bromelain (inn)
+- Trypsin (inn)
+- Rutoside (inn)
+- RUTOSIDE TRIHYDRATE (inn_alias)
+- RUTIN (inn_alias)
+- برادوزين (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

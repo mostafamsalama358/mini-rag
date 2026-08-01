@@ -14,13 +14,108 @@ from services.FieldRegistry import FieldProfile
 from stores.llm.errors import VertexGenerationError
 
 from .errors import SemanticParseJsonError
-from .grounding import ground_entity, infer_entity_from_query
+from .grounding import ground_entity, infer_entity_from_query, _LATIN_TOKEN_RE
 from .json_extract import extract_json_object
 from .normalize import normalize_query_text
+from .need_frame import NeedFrame
 from .schema import ConversationContext, ParseResult, QueryPlan
 from .validator import validate_query_plan
+from utils.detect_language import detect_query_language
+
+_PRODUCT_LINE_SECONDS = frozenset(
+    {
+        "ADVANCE",
+        "EXTRA",
+        "JOINT",
+        "MIGRAINE",
+        "SINUS",
+        "RELIEF",
+        "COLD",
+        "FLU",
+        "DAY",
+        "NIGHT",
+        "ACUTE",
+        "HEAD",
+        "VAPOUR",
+        "VAPOR",
+        "PE",
+        "FORTE",
+        "PLUS",
+        "ALL",
+        "ONE",
+    }
+)
+
+# English filler / narrative words — never treat as drug entities in heuristic
+# recovery (e.g. "Patient already took…" must not become entity=already).
+_LATIN_ENTITY_STOPWORDS = frozenset(
+    {
+        "THE", "AND", "FOR", "WITH", "FROM", "WHAT", "IS", "ARE", "CAN",
+        "SAFE", "SAME", "DOSE", "ADULT", "PATIENT", "TAKE", "TAKING", "TOOK",
+        "TOGETHER", "BETWEEN", "ABOUT", "HAVE", "HAS", "DOES", "VS",
+        "MG", "ML", "GRAM", "GRAMS",
+        "ALREADY", "TODAY", "TONIGHT", "YESTERDAY", "TOMORROW",
+        "VARIOUS", "STILL", "THEY", "THEM", "THEIR", "THIS", "THAT",
+        "THESE", "THOSE", "WHEN", "WHERE", "WHICH", "WHO", "WHOM", "WHY",
+        "WILL", "WOULD", "COULD", "SHOULD", "SHALL", "MIGHT", "MUST",
+        "ALSO", "ONLY", "MORE", "MOST", "OTHER", "SOME", "SUCH", "THAN",
+        "THEN", "THERE", "INTO", "OVER", "AFTER", "BEFORE", "DURING",
+        "THROUGH", "UNDER", "AGAIN", "ONCE", "HERE", "JUST", "VERY",
+        "MUCH", "MANY", "EACH", "BOTH", "FEW", "OWN", "TOO", "NOW",
+        "PRODUCT", "PRODUCTS", "COLD", "CRAMP", "ABDOMINAL", "NIGHT",
+        "BEEN", "BEING", "WERE", "WAS", "HAD", "DID", "DONE", "DOING",
+        "NOT", "YES", "PLEASE", "HELP", "ASK", "TELL", "GIVE", "GIVEN",
+        "USED", "USING", "USE", "LIKE", "WANT", "NEED", "NEEDS",
+    }
+)
 
 logger = logging.getLogger("uvicorn.error")
+
+
+def _recover_latin_brand_entity(query: str) -> str | None:
+    """Best-effort brand recovery when catalog lexicon is empty.
+
+    Prefers capitalized / product-line tokens (``Buscopan Plus``,
+    ``Panadol Advance``) and skips English narrative filler
+    (``already``, ``patient``, ``today``, …).
+    """
+    matches = list(_LATIN_TOKEN_RE.finditer(query or ""))
+    if not matches:
+        return None
+
+    candidates: list[tuple[int, int, str]] = []
+    tokens = [m.group(0) for m in matches]
+    for idx, tok in enumerate(tokens):
+        upper = tok.upper()
+        if upper in _LATIN_ENTITY_STOPWORDS or len(tok) < 4:
+            continue
+        # Brand-like if original token starts with a capital (Buscopan / BUSCOPAN).
+        brand_like = tok[0].isupper()
+        parts = [tok]
+        priority = 2 if brand_like else 0
+        if idx + 1 < len(tokens):
+            nxt = tokens[idx + 1]
+            if nxt.upper() in _PRODUCT_LINE_SECONDS:
+                parts = [tok, nxt]
+                priority = max(priority, 3 if brand_like else 1)
+                for j in range(idx + 2, min(idx + 4, len(tokens))):
+                    nxt2 = tokens[j]
+                    if nxt2.upper() in _PRODUCT_LINE_SECONDS:
+                        parts.append(nxt2)
+                    else:
+                        break
+        if priority == 0 and not brand_like:
+            # Keep lowercase INN/brand fallbacks (paracetamol) at low priority
+            # so capitalized Buscopan wins when both appear.
+            priority = 0
+        candidates.append((priority, idx, " ".join(parts)))
+
+    if not candidates:
+        return None
+    # Highest priority, then latest mention (often the drug being asked about).
+    candidates.sort(key=lambda item: (item[0], item[1]))
+    return candidates[-1][2]
+
 
 PARSER_LLM_RESPONSE_SCHEMA: dict = {
     "type": "object",
@@ -63,6 +158,90 @@ PARSER_LLM_RESPONSE_SCHEMA: dict = {
 }
 
 
+def _population_from_query(query: str) -> str | None:
+    q = (query or "").casefold()
+    if any(k in q for k in ("pregnan", "حمل", "حامل")):
+        return "pregnancy"
+    if any(k in q for k in ("breast", "lactat", "رضاع")):
+        return "breastfeeding"
+    return None
+
+
+def _try_recommend_plan(query: str, *, language: str) -> tuple[QueryPlan, str] | None:
+    """Need-based recommend heuristic when no brand entity is present (Feature 020)."""
+    q = (query or "").strip()
+    if not q:
+        return None
+    ql = q.casefold()
+    if any(k in ql for k in ("what is", "ما هو", "interactions", "تعارض", "جرعة", "dosage", "strength")):
+        # Prefer entity/field lookup postures for these cues
+        if not any(c in ql or c in q for c in ("دواء ل", "medicine for", "something for", "drug for")):
+            return None
+
+    try:
+        from services.rag.domain_helpers import load_domain_helper
+
+        map_need = load_domain_helper("pharmacy", "taxonomy_mapper", "map_need")
+        if map_need is None:
+            return None
+    except Exception:
+        return None
+
+    match = map_need(q)
+    recommend_cues = (
+        "دواء ل",
+        "دوا ل",
+        "علاج ل",
+        "medicine for",
+        "something for",
+        "drug for",
+        "recommend",
+        "suggestion for",
+        "what can i take for",
+        "ايه دوا",
+        "أي دواء",
+    )
+    has_cue = any(c in ql or c in q for c in recommend_cues)
+    if not match.node_ids and not has_cue and match.confidence < 0.35:
+        return None
+
+    population = _population_from_query(q)
+    need_frame = NeedFrame(
+        normalized_need=match.node_ids[0] if match.node_ids else None,
+        population=population,
+        language=language[:2] if language else "en",
+        confidence=match.confidence,
+        raw_need_span=q,
+        indication_tags=list(match.indication_tags),
+        taxonomy_node_ids=list(match.node_ids),
+        ambiguity_group=match.ambiguity_group,
+        multiple_symptoms=list(match.node_ids) if len(match.node_ids) > 1 else [],
+    )
+    needs_clarification = bool(match.ambiguity_group) or match.confidence < 0.55
+    clarification = match.clarification_prompt
+    if needs_clarification and not clarification:
+        clarification = (
+            "هل يمكنك توضيح العرض بشكل أدق؟"
+            if (language or "").startswith("ar")
+            else "Could you clarify the symptom more precisely?"
+        )
+    plan = QueryPlan(
+        entity=None,
+        field="indications",
+        operation="recommend",
+        scope="all",
+        language=language[:2] if language else "en",
+        confidence=match.confidence,
+        needs_clarification=needs_clarification,
+        clarification_prompt=clarification if needs_clarification else None,
+        recommend_mode=True,
+        need_frame=need_frame,
+        filters={"indication_tags": list(match.indication_tags)},
+    )
+    canonical = f"recommend therapy for {need_frame.normalized_need or 'need'}"
+    return plan, canonical
+
+
 def _heuristic_plan_from_query(
     query: str,
     *,
@@ -80,7 +259,15 @@ def _heuristic_plan_from_query(
         min_score=min_score,
         entity_aliases=entity_aliases,
     )
+    # When the project catalog lexicon is empty/unavailable, still recover an
+    # explicit Latin brand / product-line from the user text
+    # (e.g. "Panadol Advance", "Buscopan Plus") — never English filler words.
     if not entity:
+        entity = _recover_latin_brand_entity(query or "")
+    if not entity:
+        recommend = _try_recommend_plan(query, language=language)
+        if recommend is not None:
+            return recommend
         return None
 
     q = (query or "").lower()
@@ -91,11 +278,35 @@ def _heuristic_plan_from_query(
         field = "strengths"
         operation = "list"
         scope = "all" if any(k in q for k in ("all", "every", "كل", "جميع")) else "single"
-    elif any(k in q for k in ("dosage", "dose", "جرعة", "جرعات", "كم")):
-        field = "dosage"
-    elif any(k in q for k in ("interaction", "interactions", "تعارض", "متعارض")):
+    elif any(
+        k in q
+        for k in (
+            "interaction",
+            "interactions",
+            "تعارض",
+            "متعارض",
+            "خطر",
+            "يخوف",
+            "together",
+            "combine",
+            "combined",
+            "مع بعض",
+            "مع بعضه",
+            "stack",
+            "still take",
+            "already took",
+            "why not",
+            "why/why",
+        )
+    ):
         field = "interactions"
         operation = "list"
+    elif any(k in q for k in ("dosage", "dose", "جرعة", "جرعات", "كم")):
+        field = "dosage"
+    elif any(k in q for k in ("pregnan", "حمل", "حامل")):
+        field = "pregnancy"
+    elif any(k in q for k in ("breast", "رضاع", "رضاعة")):
+        field = "breastfeeding"
 
     canonical = query
     if field == "strengths" and scope == "all":
@@ -117,19 +328,32 @@ def _heuristic_plan_from_query(
 
 
 def _fallback_plan(*, language: str, needs_clarification: bool = True) -> QueryPlan:
+    lang = (language or "en")[:2].lower()
+    if needs_clarification:
+        clarification = (
+            "لم أفهم سؤالك. أعد الصياغة أو اذكر اسم دواء/منتج محدد."
+            if lang == "ar"
+            else "I could not understand your question. Please rephrase or name a specific item."
+        )
+    else:
+        clarification = None
     return QueryPlan(
         entity=None,
         field="unknown",
         operation="unsupported",
         scope="single",
-        language=language[:2] if language else "en",
+        language=lang or "en",
         needs_clarification=needs_clarification,
-        clarification_prompt=(
-            "I could not understand your question. Please rephrase or name a specific item."
-            if needs_clarification
-            else None
-        ),
+        clarification_prompt=clarification,
     )
+
+
+def _force_query_language(plan: QueryPlan, query: str, *, fallback: str = "en") -> QueryPlan:
+    """Prefer user-script language over document_language / LLM rewrite to English."""
+    detected = detect_query_language(query, default=(fallback or "en")[:2])
+    if plan.language == detected:
+        return plan
+    return plan.model_copy(update={"language": detected})
 
 
 def _field_vocabulary(registry: FieldRegistryProfile, profile: ParserProfile) -> list[str]:
@@ -173,8 +397,11 @@ def _build_parser_prompt(
         f"Current entity from session: {conversation_context.current_entity or 'none'}\n"
         f"Recent turns:\n{turns_text or '(none)'}\n"
         f"User question: {query}\n\n"
-        "Respond with ONLY valid JSON:\n"
-        '{"canonical_query":"...", "query_plan":{"entity":null,"field":"...","operation":"lookup|list|compare|explain|count|unsupported","scope":"all|single|subset","language":"en","needs_clarification":false}}'
+        "Respond with ONLY valid JSON.\n"
+        "Set query_plan.language to 'ar' when the user question contains Arabic script, "
+        "otherwise 'en'. Keep brand names Latin in canonical_query if helpful for retrieval, "
+        "but never set language=en for an Arabic user question.\n"
+        '{"canonical_query":"...", "query_plan":{"entity":null,"entities":[],"field":"...","operation":"lookup|list|compare|explain|count|unsupported","scope":"all|single|subset","language":"ar|en","needs_clarification":false}}'
     )
 
 
@@ -268,7 +495,9 @@ async def semantic_parse_async(
 
     if not original.strip():
         latency_ms = (time.perf_counter() - start) * 1000.0
-        plan = _fallback_plan(language=parser_profile.document_language)
+        plan = _fallback_plan(
+            language=detect_query_language(query or "", default="en")
+        )
         return ParseResult(
             original_query=query or "",
             canonical_query=query or "",
@@ -290,6 +519,10 @@ async def semantic_parse_async(
     max_tokens = parser_profile.max_output_tokens
     temperature = parser_profile.temperature
     grounding_cfg = parser_profile.entity_grounding
+    client_name = type(generation_client).__name__ if generation_client is not None else "none"
+    generation_model = getattr(generation_client, "generation_model_id", None) or getattr(
+        generation_client, "model_id", None
+    )
 
     async def _call() -> str | None:
         llm_kwargs = {
@@ -309,14 +542,41 @@ async def semantic_parse_async(
     used_llm = False
     error: str | None = None
     canonical_query = original
-    plan = _fallback_plan(language=parser_profile.document_language, needs_clarification=False)
+    query_lang = detect_query_language(
+        original, default=(parser_profile.document_language or "en")[:2]
+    )
+    plan = _fallback_plan(language=query_lang, needs_clarification=False)
 
     for attempt in range(2):
         raw: str | None = None
         payload_text: str | None = None
         failure_category: str | None = None
+        attempt_started = time.perf_counter()
+        logger.info(
+            "semantic_parse_llm_start attempt=%d/%d timeout_s=%.1f client=%s model=%s "
+            "prompt_chars=%d max_output_tokens=%d temperature=%s query_preview=%r "
+            "catalog_terms=%d",
+            attempt + 1,
+            2,
+            timeout,
+            client_name,
+            generation_model,
+            len(prompt or ""),
+            max_tokens,
+            temperature,
+            (original[:160] + ("…" if len(original) > 160 else "")),
+            len(catalog_terms or []),
+        )
         try:
             raw = await asyncio.wait_for(_call(), timeout=timeout)
+            elapsed_ms = (time.perf_counter() - attempt_started) * 1000.0
+            logger.info(
+                "semantic_parse_llm_done attempt=%d elapsed_ms=%.1f raw_chars=%d raw_preview=%r",
+                attempt + 1,
+                elapsed_ms,
+                len(raw or ""),
+                ((raw or "")[:200] + ("…" if len(raw or "") > 200 else "")),
+            )
             canonical_query, plan = _parse_llm_json(raw or "")
             used_llm = True
             error = None
@@ -324,59 +584,77 @@ async def semantic_parse_async(
         except asyncio.TimeoutError:
             failure_category = "timeout"
             error = "timeout"
+            elapsed_ms = (time.perf_counter() - attempt_started) * 1000.0
+            # wait_for cancels the in-flight Vertex thread → CancelledError in the
+            # traceback; that is expected, not a separate bug.
             logger.warning(
-                "Semantic parse timed out after %.1fs attempt=%d category=%r raw=%r payload=%r",
-                timeout,
+                "semantic_parse_llm_timeout attempt=%d elapsed_ms=%.1f timeout_s=%.1f "
+                "client=%s model=%s prompt_chars=%d query_preview=%r "
+                "note='Vertex call cancelled by wait_for; no raw payload yet'",
                 attempt + 1,
-                failure_category,
-                raw,
-                payload_text,
-                exc_info=True,
+                elapsed_ms,
+                timeout,
+                client_name,
+                generation_model,
+                len(prompt or ""),
+                (original[:160] + ("…" if len(original) > 160 else "")),
             )
+            # A second attempt after a hard timeout usually burns another full
+            # budget under the same Vertex latency/quota pressure.
+            break
         except SemanticParseJsonError as exc:
             failure_category = exc.category
             raw = exc.raw if exc.raw is not None else raw
             payload_text = exc.payload_text
             error = str(exc)
+            elapsed_ms = (time.perf_counter() - attempt_started) * 1000.0
             logger.warning(
-                "Semantic parse failed attempt=%d category=%r raw=%r payload=%r payload_len=%r error=%r",
+                "semantic_parse_llm_failed attempt=%d elapsed_ms=%.1f category=%r "
+                "raw_chars=%d raw_preview=%r payload_len=%r error=%r",
                 attempt + 1,
+                elapsed_ms,
                 failure_category,
-                raw,
-                payload_text,
+                len(raw or ""),
+                ((raw or "")[:240] + ("…" if len(raw or "") > 240 else "")),
                 len(payload_text) if payload_text else 0,
                 error,
-                exc_info=True,
             )
         except VertexGenerationError as exc:
             failure_category = exc.category
             error = str(exc)
+            elapsed_ms = (time.perf_counter() - attempt_started) * 1000.0
             logger.warning(
-                "Semantic parse vertex failure attempt=%d category=%r diagnostics=%r error=%r",
+                "semantic_parse_vertex_failure attempt=%d elapsed_ms=%.1f category=%r "
+                "diagnostics=%r error=%r",
                 attempt + 1,
+                elapsed_ms,
                 failure_category,
                 exc.diagnostics,
                 error,
-                exc_info=True,
             )
+            # Quota/exhaustion will not recover within the same request — skip
+            # the second LLM attempt and fall through to catalog heuristic.
+            if failure_category in {"vertex_quota", "vertex_blocked_response"}:
+                break
         except Exception as exc:
             failure_category = type(exc).__name__
             error = str(exc)
+            elapsed_ms = (time.perf_counter() - attempt_started) * 1000.0
             logger.warning(
-                "Semantic parse unexpected failure attempt=%d category=%r raw=%r payload=%r error=%r traceback=%r",
+                "semantic_parse_unexpected_failure attempt=%d elapsed_ms=%.1f category=%r "
+                "raw_preview=%r error=%r traceback=%r",
                 attempt + 1,
+                elapsed_ms,
                 failure_category,
-                raw,
-                payload_text,
+                ((raw or "")[:200] if raw else None),
                 error,
                 traceback.format_exc(),
-                exc_info=True,
             )
 
     if error and not used_llm:
         heuristic = _heuristic_plan_from_query(
             original,
-            language=parser_profile.document_language,
+            language=query_lang,
             catalog_terms=catalog_terms,
             fingerprint_index=catalog_fingerprint_index,
             min_score=0.55,
@@ -386,7 +664,7 @@ async def semantic_parse_async(
             plan, canonical_query = heuristic
             error = "heuristic_fallback"
         else:
-            plan = _fallback_plan(language=parser_profile.document_language)
+            plan = _fallback_plan(language=query_lang)
 
     if (
         not plan.entity
@@ -396,6 +674,7 @@ async def semantic_parse_async(
         plan = plan.model_copy(update={"entity": conversation_context.current_entity})
 
     plan = validate_query_plan(plan, registry, parser_profile=parser_profile)
+    plan = _force_query_language(plan, original, fallback=query_lang)
 
     plan, grounding_score = ground_entity(
         plan,

@@ -1,0 +1,93 @@
+DAFLON 500MG 30 F.C. TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Daflon 500
+Product line: Daflon 500
+Catalog SKU: DAFLON 500MG 30 F.C. TABS.
+SKU ID: 11
+INN / actives: Diosmin * Hesperidin
+INN primary: Diosmin
+INN aliases: DIOSMIN; HESPERIDIN
+Strength / form: Diosmin 450 mg + Hesperidin 50 mg | Form=TAB. | Min.age=18 years
+Manufacturer / market: SERVIER
+Price (catalog): 285
+Categories: MEDICINE > HEMORRHOIDS & VARICOSE > SYSTEMIC HEMORRHOIDS & VARICOSE
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Daflon 500 is used for
+Chronic venous insufficiency (CVI) - 500 : 1,000 mg/day MPFF (diosmin + hesperidin) for 2 : 6 months*
+Hemorrhoids - Acute attacks : 1,350 mg + 150 mg hesperidin × 4 days, then 900 mg + 100 mg × 3 days*
+Venous leg ulcers - 900 mg + 100 mg hesperidin daily + compression therapy*
+
+2. Dosage — Adults
+Adult dose: 2 tablets/day
+Maximum daily dose: 6 tablets/day (6 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: Not established
+Pediatric dose: Safety and efficacy in children not established.
+Pediatric max daily dose: See pack
+
+4. Do not take Daflon 500 if / disease cautions
+Hypersensitivity to DIOSMIN * Pregnancy; unspecified gestational age*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: •None, 
+but warnings include rare arrhythmias and exacerbation of bleeding disorders
+Warnings: • Take with or without food
+• Avoid the intake of spicy and fried food as it might help to improve your symptoms
+• In hemorrhoid avoid too much pressure while defecation, as it may aggravate the disease.
+• Contraindicated with Children
+..............................................................................
+• It is primarily used to treat varicose veins (twisted and enlarged veins)
+• lymphedema (swelling of arms and legs)Acts as an antioxidant that promotes healing. Generally, the problems related to obstructive blood flow due to veins swelling are treated by DIOSMIN.
+• The usual diosmin dosage is 1,000 mg orally daily given in 2 divided doses for short durations
+• Hemorrhoidal crisis.
+HCP notes: • Take with or without food
+• Avoid the intake of spicy and fried food as it might help to improve your symptoms
+• In hemorrhoid avoid too much pressure while defecation, as it may aggravate the disease.
+• Contraindicated with Children
+..............................................................................
+• It is primarily used to treat varicose veins (twisted and enlarged veins)
+• lymphedema (swelling of arms and legs)Acts as an antioxidant that promotes healing. Generally, the problems related to obstructive blood flow due to veins swelling are treated by DIOSMIN.
+• The usual diosmin dosage is 1,000 mg orally daily given in 2 divided doses for short durations
+• Hemorrhoidal crisis.
+Patient education: • Timing: 
+-Take with meals to reduce GI upset.
+• Missed dose: 
+-Skip if near next dose; no doubling.
+• Overdose: 
+-Rare; symptoms include diarrhea/nausea (manage supportively).
+• Precautions: 
+-Report dizziness, rash, or irregular heartbeat.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- DIOSMIN + CELECOXIB; Risk: Increased celecoxib levels and side effects; Type: Pharmacokinetic (theoretical CYP2C9 inhibition); Monitoring: Assess for GI distress or unusual bruising; Dose adjustment: None typically required; Alternative: Acetaminophen; Patient warning: /Management: Report stomach pain or signs of bleeding.
+- DIOSMIN + ROSUVASTATIN; Risk: Increased myopathy and rhabdomyolysis risk due to elevated rosuvastatin levels; Type: Pharmacokinetic (transporter inhibition); Monitoring: Assess for muscle pain/weakness, check CK/LFTs; Dose adjustment: Consider rosuvastatin dose reduction; Alternative: Pravastatin; Patient warning: /Management: Report unexp…
+- DIOSMIN + ATORVASTATIN; Risk: Potential increased risk of myopathy/rhabdomyolysis.; Type: Uncertain pharmacokinetic (potential OATP inhibition).; Monitoring: Monitor for muscle pain/weakness and CPK levels.; Dose adjustment: Consider lower statin starting dose.; Alternative: A non-interacting statin (e.g., pravastatin).
+- DIOSMIN + LOVASTATIN; Risk: Potential increased risk of myopathy/rhabdomyolysis.; Type: Uncertain pharmacokinetic (potential OATP/CYP3A4 inhibition).; Monitoring: Monitor for muscle pain/weakness and CPK levels.; Dose adjustment: Avoid combination or use lowest possible lovastatin dose.; Alternative: A non-interacting statin (e.g., pravastatin). Patien…
+- DIOSMIN + SIMVASTATIN; Risk: Potential increased risk of myopathy/rhabdomyolysis.; Type: Uncertain pharmacokinetic (potential OATP/CYP3A4 inhibition).; Monitoring: Monitor for muscle pain/weakness and CPK levels.; Dose adjustment: Avoid combination or use lowest possible simvastatin dose.; Alternative: A non-interacting statin (e.g., pravastatin). Patie…
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Jeparilon
+
+10. Possible side effects
+Major: GI disturbances (15%)*
+Diarrhea (15%)*
+Nausea (15%)*
+Headache (10%)*
+Dizziness (10%)*
+Minor: Skin rash (5%)*
+pruritus (5%)* 
+Muscle pain (5%)*
+Tachycardia (rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

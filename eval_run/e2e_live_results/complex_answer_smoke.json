@@ -1,0 +1,20 @@
+[
+  {
+    "q": "مريض بياخد Panadol Advance 500 مرتين، وخد Flurest-N وCongestal. هل فيه خطر؟",
+    "http": 400,
+    "signal": "rag_answer_error",
+    "ans": "Could not generate an answer. Try rephrasing the question or re-indexing the project."
+  },
+  {
+    "q": "Is Lipitor safe in pregnancy?",
+    "http": 200,
+    "signal": "rag_clarification_needed",
+    "ans": "I could not understand your question. Please rephrase or name a specific item."
+  },
+  {
+    "q": "Is Anaseziago the same as thiocolchicoside muscle relaxant?",
+    "http": 200,
+    "signal": "rag_clarification_needed",
+    "ans": "I could not understand your question. Please rephrase or name a specific item."
+  }
+]

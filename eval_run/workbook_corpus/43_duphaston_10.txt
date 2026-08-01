@@ -1,0 +1,108 @@
+DUPHASTON 10 MG 60 F.C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Duphaston
+Product line: Duphaston
+Catalog SKU: DUPHASTON 10 MG 60 F.C.TABS.
+SKU ID: 43
+INN / actives: Dydrogesterone
+INN primary: Dydrogesterone
+INN aliases: DYDROGESTERONE
+Strength / form: Dydrogesterone 10 mg | Form=TAB. | Min.age=18 years
+Manufacturer / market: ABBOTT LABORATORIES
+Price (catalog): 269
+Categories: MEDICINE > HORMONES > SINGLE HORMONES
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Duphaston is used for
+Luteal phase support - 10 mg BID starting at ovulation*
+Dysmenorrhea - 10 mg BID days 5 : 25 of cycle*
+Endometriosis - 10 mg BID , TID continuously*
+HRT combination - 5 : 10 mg/day with estrogen*
+
+2. Dosage — Adults
+Adult dose: Depends indication; commonly 10 mg 1-2 times/day
+Maximum daily dose: 30 mg/day (30 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: See pack
+Pediatric dose: Not indicated in pediatric patients.
+Pediatric max daily dose: See pack
+
+4. Do not take Duphaston if / disease cautions
+Hypersensitivity to DYDROGESTERONE * Increased Intracranial Pressure (ICP)* Abnormal uterine/ Vaginal bleeding (AUB)* Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None (better safety profile than other progestins regarding cardiovascular risks)
+Warnings: • Dose Modification:
+- Liver impairment: 
+Caution in severe dysfunction (extensive hepatic metabolism)
+- Kidney impairment: 
+No dose adjustment needed
+.................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Safe (used for luteal phase support)
+- Lactation: 
+Compatible (minimal excretion in breast milk)
+..........................................................
+• Lab Tests:
+- May affect liver function tests (monitor with long-term use)
+- No significant impact on lipid profile
+............................................................
+Key References: 
+WHO Guidelines, EMA Assessment Reports, FIGO Recommendations
+HCP notes: • Dose Modification:
+- Liver impairment: 
+Caution in severe dysfunction (extensive hepatic metabolism)
+- Kidney impairment: 
+No dose adjustment needed
+.................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Safe (used for luteal phase support)
+- Lactation: 
+Compatible (minimal excretion in breast milk)
+..........................................................
+• Lab Tests:
+- May affect liver function tests (monitor with long-term use)
+- No significant impact on lipid profile
+............................................................
+Key References: 
+WHO Guidelines, EMA Assessment Reports, FIGO Recommendations
+Patient education: •Timing: 
+-Take with food if GI upset occurs
+• Missed dose: 
+-Take as soon as remembered unless close to next dose
+• Precautions: 
+-Report sudden vision changes or severe headaches
+• Withdrawal bleed: 
+-Expected 2-3 days after stopping cyclic therapy
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- DYDROGESTERONE + ENALAPRIL; Risk: Minimal hyperkalemia risk as dydrogesterone has negligible mineralocorticoid activity.; Type: Minimal interaction.; Monitoring: Routine potassium monitoring not required unless other risk factors present.; Dose adjustment: None typically needed. Alternatives: N/A.; Patient warning: /Management: Standard enalapril…
+- DYDROGESTERONE + LISINOPRIL; Risk: Minimal hyperkalemia (<1% incidence).; Type: Negligible interaction.; Monitoring: Routine lisinopril monitoring only (K⁺ q6-12mo).; Dose adjustment: None required. Alternatives: N/A.; Patient warning: /Management: Standard precautions suffice.
+- DYDROGESTERONE + RAMIPRIL; Risk: Minimal hyperkalemia (<1%).; Type: Negligible interaction.; Monitoring: Routine ramipril monitoring (K⁺ q6-12mo).; Dose adjustment: None required. Alternatives: N/A.; Patient warning: /Management: Standard precautions suffice.
+- DYDROGESTERONE + BENAZEPRIL; Risk: Minimal hyperkalemia risk (<1%).; Type: Negligible interaction.; Monitoring: Routine benazepril monitoring (K⁺ q6-12mo).; Dose adjustment: None required. Alternatives: N/A.; Patient warning: /Management: Standard precautions sufficient.
+- DYDROGESTERONE + CILAZAPRIL; Risk: Minimal (0.5-1%).; Type: Clinically insignificant.; Monitoring: Routine labs only.; Dose adjustment: None. Alternatives: N/A. Note: "No additional precautions beyond standard ACEi monitoring."
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: safe
+
+8. Breastfeeding
+Breastfeeding safety: avoid
+
+9. Supplements / cross-selling
+Catalog cross-selling: Folic Acid
+
+10. Possible side effects
+Major: Breakthrough bleeding (15%)*
+Breast tenderness (12%)*
+Headache (10%)*
+Minor: Nausea (5%)*
+Mood changes (3%)*
+Weight gain (2%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

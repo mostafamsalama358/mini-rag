@@ -70,6 +70,8 @@ class RetrievalEnginePipeline(IRetrievalEngine):
         self,
         plan: RetrievalPlan,
         policy: ExecutionPolicy | None = None,
+        *,
+        metadata: dict | None = None,
     ) -> RetrievalResult:
         started = time.perf_counter()
         active_policy = policy or self._default_policy
@@ -83,6 +85,7 @@ class RetrievalEnginePipeline(IRetrievalEngine):
             constraints=plan.retrieval_constraints,
             hints=plan.execution_hints,
             policy=active_policy,
+            metadata=dict(metadata or {}),
         )
 
         expansion_ctx = ExpansionContext(

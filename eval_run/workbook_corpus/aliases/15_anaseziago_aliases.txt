@@ -1,0 +1,13 @@
+Alias registry — Anaseziago
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 15
+Brand: Anaseziago
+
+Known aliases:
+- Anaseziago (brand)
+- ANASEZIAGO CREAM 30 GM (catalog_sku)
+- Lidocaine (inn)
+- Prilocaine (inn)
+- اناسيزياجو (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

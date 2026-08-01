@@ -1,0 +1,44 @@
+# Manual test questions — project 2 (expanded pharmacy corpus)
+# POST http://localhost:8000/api/v1/nlp/index/answer/2
+# Body: {"text":"<question>","limit":5}
+
+## A) Dose / leaflet facts
+A1. What is the dose of amoxicillin?
+A2. What is the usual adult dose of Amoxil 500 mg?
+A3. What is the maximum daily dose of MediQuick Ibuprofen for adults?
+A4. What is the maximum daily dose of ReliefMax Paracetamol?
+A5. What is the maximum daily dose of Cataflam?
+A6. What is a usual adult dose of Lipitor 20 mg?
+A7. How is Glucophage metformin usually started?
+
+## B) Drug–drug interactions (“متعارض مع إيه؟”)
+B1. Can a patient on warfarin take ibuprofen?
+B2. What painkiller is preferred for a patient on warfarin?
+B3. Does amoxicillin interact with warfarin?
+B4. Can omeprazole be taken with clopidogrel?
+B5. What happens if atorvastatin is taken with clarithromycin?
+B6. Is diclofenac safe with warfarin?
+B7. Does ibuprofen affect low-dose aspirin?
+B8. Which drugs interact with metformin around contrast scans?
+B9. Can SSRIs be combined with NSAIDs?
+B10. What are the interactions of amoxicillin with oral contraceptives?
+
+## C) Supplements / “آخذ مكمل إيه؟”
+C1. What supplements can be taken with amoxicillin?
+C2. Should probiotics be taken with antibiotics? How to time them?
+C3. Which supplements should be avoided with warfarin?
+C4. Does metformin require vitamin B12 monitoring?
+C5. What calcium supplement is preferred with omeprazole?
+C6. Can red yeast rice be taken with atorvastatin?
+C7. Is CoQ10 useful with statin muscle symptoms?
+C8. What can I take for a cold while on warfarin?
+
+## D) Alternatives / “بديل إيه؟”
+D1. If ibuprofen is avoided on warfarin, what can I take for pain?
+D2. Patient on clopidogrel with reflux — any caution with omeprazole?
+D3. Prefer ibuprofen or paracetamol for pain on aspirin therapy?
+
+## E) Negatives (should NOT invent)
+E1. What is the dose of vancomycin IV for meningitis?
+E2. Who won the World Cup in 2018?
+    Expected: clarification / no grounded pharmacy answer

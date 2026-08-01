@@ -97,6 +97,12 @@ class VertexAIProvider(LLMInterface):
         max_retries: int,
         retry_wait: float,
     ):
+        import random
+
+        settings = get_settings()
+        max_wait = float(
+            getattr(settings, "VERTEX_EMBEDDING_RATE_LIMIT_RETRY_MAX_WAIT_SECONDS", 8)
+        )
         for attempt in range(max_retries + 1):
             try:
                 return self.embedding_model.get_embeddings(inputs)
@@ -108,14 +114,17 @@ class VertexAIProvider(LLMInterface):
                         max_retries,
                     )
                     return None
+                # Exponential backoff with jitter, capped so unified deadline survives.
+                backoff = min(max_wait, float(retry_wait) * (2**attempt))
+                sleep_for = backoff * (0.7 + 0.6 * random.random())
                 self.logger.warning(
                     "Vertex AI embedding quota exceeded (attempt %s/%s), "
-                    "retrying in %ss",
+                    "retrying in %.1fs",
                     attempt + 1,
-                    max_retries,
-                    retry_wait,
+                    max_retries + 1,
+                    sleep_for,
                 )
-                time.sleep(retry_wait)
+                time.sleep(sleep_for)
             except InvalidArgument as exc:
                 self.logger.error(
                     "Vertex AI embedding request rejected for batch_size=%s chars=%s: %s",
@@ -140,6 +149,7 @@ class VertexAIProvider(LLMInterface):
         temperature: float,
         response_mime_type: str | None = None,
         response_schema: dict | None = None,
+        thinking_budget: int | None = 0,
     ):
         config_kwargs: dict[str, Any] = {
             "max_output_tokens": max_output_tokens,
@@ -149,11 +159,17 @@ class VertexAIProvider(LLMInterface):
             config_kwargs["response_mime_type"] = response_mime_type
         if response_schema:
             config_kwargs["response_schema"] = response_schema
+        # gemini-2.5-* counts thinking tokens against max_output_tokens. Default
+        # dynamic thinking can consume nearly the whole budget and return a
+        # mid-string truncated JSON (~80 chars) with finish_reason=MAX_TOKENS.
+        if thinking_budget is not None:
+            config_kwargs["thinking_config"] = {"thinking_budget": int(thinking_budget)}
 
         try:
             from vertexai.generative_models import GenerationConfig
 
-            return GenerationConfig(**config_kwargs)
+            # from_dict accepts thinking_config; constructor kwargs may not.
+            return GenerationConfig.from_dict(config_kwargs)
         except Exception as exc:
             self.logger.warning(
                 "Vertex GenerationConfig build failed; using dict fallback: %r",
@@ -233,6 +249,7 @@ class VertexAIProvider(LLMInterface):
                 "prompt_token_count": getattr(usage, "prompt_token_count", None),
                 "candidates_token_count": getattr(usage, "candidates_token_count", None),
                 "total_token_count": getattr(usage, "total_token_count", None),
+                "thoughts_token_count": getattr(usage, "thoughts_token_count", None),
             }
 
         return diagnostics
@@ -396,7 +413,60 @@ class VertexAIProvider(LLMInterface):
                 cause=exc,
             ) from exc
 
-        return self._extract_response_text(response)
+        diagnostics = self._diagnose_vertex_response(response)
+        finish_reasons = [
+            str(c.get("finish_reason"))
+            for c in (diagnostics.get("candidates") or [])
+        ]
+        usage = diagnostics.get("usage_metadata") or {}
+        text_preview = diagnostics.get("text")
+        text_len = len(text_preview) if isinstance(text_preview, str) else 0
+        # Use uvicorn.error so docker fastapi logs always surface these fields.
+        import logging as _logging
+
+        _uv = _logging.getLogger("uvicorn.error")
+        _uv.info(
+            "vertex_generate_content_result model=%s finish_reasons=%s "
+            "usage=%s text_len=%d text_repr=%r candidates=%r",
+            self.generation_model_id,
+            finish_reasons,
+            usage,
+            text_len,
+            (repr(text_preview)[:300] if text_preview is not None else None),
+            diagnostics.get("candidates"),
+        )
+        self.logger.info(
+            "vertex_generate_content_result model=%s finish_reasons=%s "
+            "usage=%s text_len=%d",
+            self.generation_model_id,
+            finish_reasons,
+            usage,
+            text_len,
+        )
+
+        # Surface truncated thinking-budget failures instead of silently
+        # returning a partial JSON string to the parser.
+        category = self._infer_failure_category(diagnostics)
+        if category == "vertex_truncated_generation":
+            self.logger.warning(
+                "Vertex generation truncated by token budget diagnostics=%r",
+                diagnostics,
+            )
+            raise VertexGenerationError(
+                category,
+                "Vertex AI truncated generation (finish_reason=MAX_TOKENS); "
+                "often thinking tokens consumed max_output_tokens",
+                diagnostics=diagnostics,
+            )
+
+        text = self._extract_response_text(response)
+        self.logger.info(
+            "vertex_generate_text_return model=%s text_len=%d text_repr=%r",
+            self.generation_model_id,
+            len(text),
+            repr(text)[:300],
+        )
+        return text
 
     def embed_text(self, text: Union[str, List[str]], document_type: str = None):
         if not self.embedding_model:

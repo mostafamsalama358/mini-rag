@@ -1,0 +1,21 @@
+﻿{
+    "root_causes":  [
+                        "Auto-created numeric project_id uses domain_key=generic (no pharmacy fields)",
+                        "Unified retrieve scopes by entity_key+entity_prefix/field_key but indexed chunks have has_fields_view=False / no entity metadata -\u003e empty candidates",
+                        "Vertex AI embedding quota exceeded -\u003e dense retrieval degraded",
+                        "Duplicate chunk_id across chunks of same file (ck_* shared)",
+                        "heading_path empty; oversized_element_fallback chunking collapses structure",
+                        "no_context mapped to generic 400 rag_answer_error (poor UX)"
+                    ],
+    "docker":  "started via compose; API ready; mode=unified factory_ready=true",
+    "ingest":  {
+                   "project_generic_9101":  "upload+process+push OK; 6 chunks; fully indexed",
+                   "project_pharmacy_2":  "upload+process+push OK; 6 chunks; fully indexed"
+               },
+    "answer_generic_9101":  "ALL clarification: domain=generic field=unknown",
+    "search":  {
+                   "note":  "POST /nlp/index/search returns relevant MediQuick chunks with scores ~0.66-0.71",
+                   "works":  true
+               },
+    "answer_pharmacy_2":  "parse OK (correct field) but outcome=no_context -\u003e HTTP 400 rag_answer_error"
+}

@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: CIPROFLOXACIN
+Risk: Iron salts chelate ciprofloxacin, reducing bioavailability by ~30–50% and risking therapeutic failure; separate administration by ≥2 h, monitor clinical signs of infection, and counsel patients to stagger iron and antibi
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Iron salts chelate ciprofloxacin, reducing bioavailability by ~30–50% and risking therapeutic failure; separate administration by ≥2 h, monitor clinical signs of infection, and counsel patients to stagger iron and antibiotic doses.

@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-07-18T22:55:00+03:00",
+  "config": {
+    "EMBEDDING_BACKEND": "VERTEX",
+    "EMBEDDING_MODEL_SIZE": 768,
+    "GENERATION_BACKEND": "VERTEX",
+    "RAG_ENABLE_RERANKER": false,
+    "RAG_PIPELINE_MODE": "unified"
+  },
+  "index_project_2": {
+    "collection": "collection_768_2",
+    "record_count": 6,
+    "is_fully_indexed": true,
+    "reindex_needed": false,
+    "note": "Existing 768 collection present; search returned relevant MediQuick chunks"
+  },
+  "answer_results": {
+    "passed": ["p1_max_dose", "p2_children", "p4_side_effects", "p8_contraindications"],
+    "failed": ["p3_pregnancy", "p5_warfarin", "p7_france"],
+    "pass_rate": "4/7"
+  },
+  "root_causes_remaining": [
+    "Scoped retrieve still misses (entity_key=None, chunks lack field metadata) but unscoped fallback works — confirmed in logs",
+    "Vertex embedding quota still causes dense-path retries then pipeline timeout (~55s) on some questions (p3, p5)",
+    "p7 capital of France: pipeline outcome=clarification but HTTP returned rag_answer_error (empty clarification text mapping)",
+    "Turning reranker off reduced ranking API usage; embed+generate quota remains the limiter"
+  ],
+  "quality_notes": [
+    "p1 answered 1200 mg max daily dose correctly from leaflet",
+    "p2 correctly said not for under 12",
+    "p8 returned warfarin interaction content for contraindications query (retrieval mix; content exists in corpus)"
+  ]
+}

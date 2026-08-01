@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: tolazoline
+Risk: Mild additive vasodilation (minimal CYP3A4 interaction)
+Type: Pharmacodynamic
+Monitoring: BP every 6h during IV therapy
+Dose adjustment: Reduce tolazoline infusion rate by 25%
+Alternative: Preferred macrolide for pulmonary HTN neonates
+Patient warning: /Management: Monitor for paradoxical hypertension.
+Severity: caution
+
+Clinical note:
+Risk: Mild additive vasodilation (minimal CYP3A4 interaction); Type: Pharmacodynamic; Monitoring: BP every 6h during IV therapy; Dosage Adjustments: Reduce tolazoline infusion rate by 25%; Alternative: Preferred macrolide for pulmonary HTN neonates; Patient Warnings/Management: Monitor for paradoxical hypertension.

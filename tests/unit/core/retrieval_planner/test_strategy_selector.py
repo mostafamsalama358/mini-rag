@@ -28,7 +28,22 @@ def selector() -> ConfigDrivenStrategySelector:
 
 @pytest.fixture
 def full_config() -> RetrievalPlannerConfig:
-    return RetrievalPlannerConfig(strategy_mappings=dict(_FULL_MAPPINGS))
+    # Explicitly advertise legacy strategies so mapping-primary assertions hold;
+    # production defaults only advertise semantic/keyword/hybrid (see models.py).
+    return RetrievalPlannerConfig(
+        strategy_mappings=dict(_FULL_MAPPINGS),
+        available_strategies=[
+            "semantic",
+            "keyword",
+            "metadata",
+            "graph",
+            "document",
+            "section",
+            "table",
+            "hybrid",
+            "mixed",
+        ],
+    )
 
 
 @pytest.mark.parametrize(

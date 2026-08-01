@@ -1,0 +1,14 @@
+Alias registry — Glucophage
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 31
+Brand: Glucophage
+
+Known aliases:
+- Glucophage (brand)
+- GLUCOPHAGE 500 MG 50 F.C.TABS. (catalog_sku)
+- Metformin (inn)
+- METFORMIN HCL (inn_alias)
+- METFORMIN HYDROCHLORIDE (inn_alias)
+- جلوكوفاج (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

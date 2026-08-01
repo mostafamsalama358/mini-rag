@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: NALIDIXIC ACID
+Risk: Nalidixic acid and iron may form complexes, reducing absorption by~30–50%; separate doses by4–6 hours; monitor for inadequate infection resolution; advise patients to avoid concurrent administration.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Nalidixic acid and iron may form complexes, reducing absorption by~30–50%; separate doses by4–6 hours; monitor for inadequate infection resolution; advise patients to avoid concurrent administration.

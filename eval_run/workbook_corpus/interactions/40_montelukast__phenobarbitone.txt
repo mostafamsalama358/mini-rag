@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: PHENOBARBITONE
+Risk: PHENOBARBITONE reduces MONTELUKAST efficacy by 50%. Monitor: Fractional exhaled nitric oxide (FeNO) levels.
+Type: -
+Monitoring: -
+Dose adjustment: Consider alternative leukotriene modifier.
+Alternative: -
+Patient warning: Increased rescue inhaler use may be needed.
+Severity: caution
+
+Clinical note:
+Risk: PHENOBARBITONE reduces MONTELUKAST efficacy by 50%. Monitor: Fractional exhaled nitric oxide (FeNO) levels. Dosage: Consider alternative leukotriene modifier. Patient Warning: Increased rescue inhaler use may be needed.

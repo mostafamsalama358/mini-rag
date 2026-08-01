@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: BENAZEPRIL
+Risk: Hypotension and peripheral edema.
+Type: Pharmacodynamic (additive vasodilation).
+Monitoring: BP, edema severity, and renal function weekly.
+Dose adjustment: Start amlodipine 2.5 mg/day with benazepril 5 mg/day.
+Alternative: ARB if edema intolerable.
+Patient warning: /Management: Elevate legs; report shortness of breath.
+Severity: caution
+
+Clinical note:
+Risk: Hypotension and peripheral edema. Type: Pharmacodynamic (additive vasodilation). Monitoring: BP, edema severity, and renal function weekly. Dosage: Start amlodipine 2.5 mg/day with benazepril 5 mg/day. Alternative: ARB if edema intolerable. Patient Warnings/Management: Elevate legs; report shortness of breath.

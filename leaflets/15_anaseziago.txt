@@ -1,0 +1,96 @@
+ANASEZIAGO CREAM 30 GM
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Anaseziago
+Catalog SKU: ANASEZIAGO CREAM 30 GM
+INN / actives: Lidocaine * Prilocaine
+Catalog New Material: LIDOCAINE * PRILOCAINE
+Strength / form: Lidocaine 2.5% + prilocaine 2.5% cream (EMLA-class) | (web-supplemented dosing below)
+Manufacturer / market: ELIXIR PHARMA
+Price (catalog): 100
+Categories: MEDICINE > SKIN HEALTH > LOCAL ANAESTHETICS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=ANASEZIAGO; sheet lookup INNs=Lidocaine, Prilocaine, LIDOCAINE, PRILOCAINE
+Web clinical sources: DailyMed lidocaine/prilocaine; EMC EMLA SmPC
+
+1. What Anaseziago is used for
+Catalog uses: local anesthetic
+Approved uses (material sheet): Local anesthesia - 0.5 to 2% solutions*
+Ventricular tachycardia - 1 to 1.5 mg/kg IV bolus*
+Off-label mentions (material sheet): Neuropathic pain - 5% patches (max 3 patches/day)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Intact skin minor procedures: apply thick layer under occlusive dressing, typically ~1.5 g/10 cm² for ~1 hour (follow pack). Do not apply to broken skin/eyes/mucosa unless directed.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Strict max dose/area/time by age & weight (e.g. 0–3 mo ≤1 g/10 cm²/1 h; older children higher per EMLA table). Avoid in <37 weeks gestation neonates; caution with methemoglobin-inducing drugs in infants <12 mo.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Anaseziago if / disease cautions
+From material/disease sheets:
+[LIDOCAINE] Hypersensitivity to LIDOCAINE * 
+Methemoglobinemia*
+Bradyarrhythmias & Sinus Node Dysfunction* 
+Atrioventricular (AV) & Heart Blocks (Without Pacemaker)*
+[PRILOCAINE] Hypersensitivity to PRILOCAINE *
+Methemoglobinemia*
+Anemias / Hemoglobinopathies *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • IV Use: 
+-"Only for ventricular arrhythmias; requires cardiac monitoring"
+Notes (material sheet): • Avoid Class I antiarrhythmics:
+- Increased cardiac toxicity risk
+...........................................................
+• Dose Modification:
+- Hepatic Impairment: 
+Reduce IV dose by 50% (Child-Pugh B/C)
+- Renal Impairment: 
+No adjustment for local use; monitor MEGX metabolites
+.....................................................
+• Medical Info for HCPs:
+- Critical Risks: 
+Seizures (≥5 mcg/mL), cardiac arrest (≥10 mcg/mL)
+- When to Stop: 
+CNS toxicity or cardiovascular collapse
+.......................................................
+• Pregnancy & Lactation:
+- Pregnancy: 
+Category B (safe for local anesthesia)
+- Breastfeeding: 
+Compatible (minimal absorption)
+.........................…
+Patient education excerpt: • Administration:
+- By healthcare providers only
+• Topical Use: 
+-Apply thin layer to intact skin
+• Oral Use: 
+-Swish/spit (do not swallow)
+• Overdose Antidote: 
+-Lipid emulsion (20% IV)
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Diazoxide/Lidocaine + RALOXIFENE HYDROCHLORIDE: Risk: Raloxifene's plasma protein binding displacement increases free fractions of both drugs (diazoxide ↑40%, lidocaine ↑35%). Effects: Severe hypotension (SBP <90mmHg), neurotoxicity (lidocaine levels >5mcg/mL), and hyperglycemia (glucose >250mg/dL). Monitoring: Continuous ECG (QTc), BP q5min, glucose checks. Dosage…
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Former FDA Cat B; use only if clearly needed (limited human data).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Small milk amounts; EMC states can be used if clinically needed at therapeutic topical doses.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Dizziness (15%)*
+Numbness (12%)*
+Hypotension - IV (10%)*
+Minor (material sheet): Tinnitus (8%)*
+Metallic taste (5%)*
+Skin irritation - topical (3%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

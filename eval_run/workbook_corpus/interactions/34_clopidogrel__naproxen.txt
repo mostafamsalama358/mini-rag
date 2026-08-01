@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: NAPROXEN
+Risk: GI hemorrhage + possible clopidogrel interference.
+Type: Pharmacodynamic.
+Monitoring: CBC, renal function.
+Dose adjustment: Prefer intermittent NSAID dosing.
+Alternative: Celecoxib (caution in CV
+Patient warning: /Management: Avoid concurrent use >3 days; emergency care for hematemesis.
+Severity: yes
+
+Clinical note:
+Risk: GI hemorrhage + possible clopidogrel interference. Type: Pharmacodynamic. Monitoring: CBC, renal function. Dosage Adjustments: Prefer intermittent NSAID dosing. Alternative: Celecoxib (caution in CV patients). Patient Warnings/Management: Avoid concurrent use >3 days; emergency care for hematemesis.

@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: HYDRALAZINE
+Risk: Mild additive hypotension.
+Type: Pharmacodynamic.
+Monitoring: BP baseline/weekly.
+Dose adjustment: None typically.
+Alternative: Propranolol.
+Patient warning: /Management: Standard HTN education.
+Severity: caution
+
+Clinical note:
+Risk: Mild additive hypotension. Type: Pharmacodynamic. Monitoring: BP baseline/weekly. Dosage Adjustments: None typically. Alternative: Propranolol. Patient Warnings/Management: Standard HTN education.

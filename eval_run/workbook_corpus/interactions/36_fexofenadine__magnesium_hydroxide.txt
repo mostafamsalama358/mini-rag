@@ -1,0 +1,16 @@
+Drug interaction — Telfast
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 36
+Brand: Telfast
+API 1: FEXOFENADINE
+API 2: MAGNESIUM HYDROXIDE
+Risk: Chelation → 30-40% ↓ AUC → inadequate histamine control.
+Type: -
+Monitoring: Peak allergy season symptom severity. Dosing: Morning fexofenadine, evening antacid.
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Chelation → 30-40% ↓ AUC → inadequate histamine control. Monitoring: Peak allergy season symptom severity. Dosing: Morning fexofenadine, evening antacid. Patient: Avoid fruit juices; take with water only; monitor pollen counts.

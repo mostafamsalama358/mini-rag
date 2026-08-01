@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: ALFUZOSIN
+Risk: Mild pharmacodynamic effect
+Type: Additive vasodilation
+Monitoring: BP at days 2/5
+Dose adjustment: None
+Alternative: Safest combination
+Patient warning: /Management: Normal activities permitted.
+Severity: caution
+
+Clinical note:
+Risk: Mild pharmacodynamic effect; Type: Additive vasodilation; Monitoring: BP at days 2/5; Dosage Adjustments: None; Alternative: Safest combination; Patient Warnings/Management: Normal activities permitted.

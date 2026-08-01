@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: METHADONE
+Risk: QT prolongation additive with domperidone.
+Type: -
+Monitoring: ECG at baseline and weekly. Dose Adjustment: Max methadone 30mg/day if combined.
+Dose adjustment: -
+Alternative: -
+Patient warning: Report dizziness/palpitations. Mechanism: Both prolong QTc via hERG blockade.
+Severity: caution
+
+Clinical note:
+Risk: QT prolongation additive with domperidone. Monitoring: ECG at baseline and weekly. Dose Adjustment: Max methadone 30mg/day if combined. Patient Warning: Report dizziness/palpitations. Mechanism: Both prolong QTc via hERG blockade.

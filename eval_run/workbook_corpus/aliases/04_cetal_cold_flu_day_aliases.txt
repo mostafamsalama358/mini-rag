@@ -1,0 +1,19 @@
+Alias registry — Cetal Cold & Flu Day
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 04
+Brand: Cetal Cold & Flu Day
+
+Known aliases:
+- Cetal Cold & Flu Day (brand)
+- CETAL COLD & FLU 20 CAPLETS (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- Caffeine (inn)
+- Phenylephrine (inn)
+- PHENYLEPHRINE HCL (inn_alias)
+- PHENYLEPHRINE HYDROCHLORIDE (inn_alias)
+- سيتال (arabic)
+- سيتال كولد (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

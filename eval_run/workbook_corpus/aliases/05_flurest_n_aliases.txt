@@ -1,0 +1,22 @@
+Alias registry — Flurest-N
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 05
+Brand: Flurest-N
+
+Known aliases:
+- Flurest-N (brand)
+- FLUREST N 20 TABS. (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- Chlorpheniramine Maleate (inn)
+- CHLORPHENIRAMINE (inn_alias)
+- CHLORPHENAMINE (inn_alias)
+- Phenylephrine (inn)
+- PHENYLEPHRINE HCL (inn_alias)
+- PHENYLEPHRINE HYDROCHLORIDE (inn_alias)
+- فلورست (arabic)
+- فلورست ن (arabic)
+- flurest (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

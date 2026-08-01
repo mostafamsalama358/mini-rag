@@ -1,0 +1,119 @@
+LAMISIL 250MG 14 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Lamisil
+Product line: Lamisil
+Catalog SKU: LAMISIL 250MG 14 TAB.
+SKU ID: 42
+INN / actives: Terbinafine
+INN primary: Terbinafine
+INN aliases: TERBINAFINE; TERBINAFINE HCL
+Strength / form: Terbinafine 250 mg | Form=TAB. | Min.age=18 years
+Manufacturer / market: NOVARTIS
+Price (catalog): 100
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-FUNGAL
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Lamisil is used for
+Onychomycosis (Fingernail/Toenail) - 250 mg daily for 6 weeks (fingernails) or 12 weeks (toenails)*
+Tinea Pedis (Athlete's Foot), Tinea Cruris (Jock Itch), Tinea Corporis (Ringworm) - Topical cream/gel/spray applied once or twice daily for 1 to 4 weeks*
+
+2. Dosage — Adults
+Adult dose: 250 mg once daily
+Maximum daily dose: 250 mg/day (250 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: See pack
+Pediatric dose: Oral: Weight-based. Topical: Use according to product labeling.
+Pediatric max daily dose: See pack
+
+4. Do not take Lamisil if / disease cautions
+Hypersensitivity to TERBINAFINE * 
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation * 
+Acute liver failure (including fulminant hepatic necrosis and acute‑on‑chronic liver failure)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: Terbinafine does not carry a FDA Black Box Warning. 
+However, the prescribing information contains strong warnings for:
+• Hepatotoxicity:
+- Cases of liver failure, some leading to death or liver transplant, have occurred.
+• Serious Skin Reactions:
+- (e.g., Stevens-Johnson Syndrome, Toxic Epidermal Necrolysis).
+• Taste Disturbance:
+- Including taste loss, which can be permanent.
+Warnings: • Prevent premature labor
+• Limit caffeine intake. Terbinafine may reduce the metabolism of caffeine by approximately 19%, 
+• Take with or without food
+• Avoid Nail Trauma:
+- Wear protective footwear in public areas like pools and locker rooms.
+• Do Not Share Personal Items:
+- Such as nail clippers, files, or towels to prevent spread and reinfection.
+.........................................................................
+• Indicated for onychomycosis of the toenail or fingernail owing to dermatophytes (tinea unguium) ..250 mg (1 tablet) PO daily for 6 weeks (fingernail) or 12 weeks (toenail)
+..........................................................................
+• Equation . ........ Cr
+HCP notes: • Prevent premature labor
+• Limit caffeine intake. Terbinafine may reduce the metabolism of caffeine by approximately 19%, 
+• Take with or without food
+• Avoid Nail Trauma:
+- Wear protective footwear in public areas like pools and locker rooms.
+• Do Not Share Personal Items:
+- Such as nail clippers, files, or towels to prevent spread and reinfection.
+.........................................................................
+• Indicated for onychomycosis of the toenail or fingernail owing to dermatophytes (tinea unguium) ..250 mg (1 tablet) PO daily for 6 weeks (fingernail) or 12 weeks (toenail)
+..........................................................................
+• Equation . ........ Cr
+Patient education: • Adherence:
+- Take the tablet once daily, with or without food. Complete the full course as prescribed, even if the nail starts to look better.
+• Time to See Results:
+- Nail fungus clears slowly as the healthy nail grows out. It may take 6-12 months after stopping treatment to see the full result for toenails.
+• Side Effects to Report Immediately:
+- Liver: 
+Loss of appetite, nausea, vomiting, unusual tiredness, yellowing of skin/eyes, dark urine.
+- Taste/Smell:
+ Any change or loss of taste or smell.
+- Skin: 
+Severe rash or blisters.
+- Infection:
+ Persistent fever, sore throat.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- TERBINAFINE + PROPAFENONE; Risk: Mild ↑ propafenone levels (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: ECG (PR interval), BP; Dose adjustment: None unless CYP2D6 PM; Alternative: Amorolfine nail lacquer; Patient warning: Watch for worsened side effects.
+- TERBINAFINE + SOTALOL; Risk: Increased sotalol levels (CYP2D6 inhibition) → QT prolongation risk; Type: Pharmacokinetic; Monitoring: Weekly ECG (QTc), serum electrolytes; Dose adjustment: Reduce sotalol by 25-50%; Alternative: Flecainide (if no structural heart disease)
+- TERBINAFINE + METOPROLOL TARTRATE; Risk: 2-4 fold increase in metoprolol exposure (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: Daily BP/HR for first week; Dose adjustment: Reduce metoprolol by 50-75%; Alternative: Atenolol
+- TERBINAFINE + METOPROLOL; Risk: 2-4 fold increase in metoprolol exposure (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: Daily BP/HR for first week; Dose adjustment: Reduce metoprolol by 50-75%; Alternative: Atenolol
+- TERBINAFINE + PROPRANOLOL; Risk: Markedly increased propranolol levels (CYP2D6/1A2 inhibition); Type: Pharmacokinetic; Monitoring: BP, CNS depression signs; Dose adjustment: Reduce dose by 50% or switch to LA formulation; Alternative: Nadolol
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: avoid
+
+9. Supplements / cross-selling
+Catalog cross-selling: Diflucan
+
+10. Possible side effects
+Major: None
+Minor: Rash (5.6%)*
+Pruitus (3%)*
+Nausea (5-10%)*
+Diarrhea (5-10%)*
+Dyspepsia (5-10%)*
+Abdominal pain (5-10%)*
+Taste disturbance - Dysgeusia; Can be long lasting or permanent in rare cases (3%)*
+Increased LFT - Liver function tests (4%)*
+Visual disturbance (1%)*
+Urticaria (Hives (0.9%)*
+Myalgia (0.5-0.7%)*
+Arthralgia (0.5-0.7%)*
+Severe Skin Reactions - SJS/TEN (Rare)*
+Neutropenia (Rare)*
+Agranulocytosis (Rare)*
+Hepatitis (Rare)*
+Jaundice (Rare)*
+Alopecia (Rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

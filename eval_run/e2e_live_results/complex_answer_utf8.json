@@ -1,0 +1,14 @@
+[
+  {
+    "q": "مريض بياخد Panadol Advance 500 مرتين، وخد Flurest-N وCongestal. هل فيه خطر؟",
+    "http": 400,
+    "signal": "rag_answer_error",
+    "ans": "Could not generate an answer. Try rephrasing the question or re-indexing the project."
+  },
+  {
+    "q": "Is Lipitor safe in pregnancy?",
+    "http": 400,
+    "signal": "rag_answer_error",
+    "ans": "Could not generate an answer. Try rephrasing the question or re-indexing the project."
+  }
+]

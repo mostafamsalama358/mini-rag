@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: PROPRANOLOL
+Risk: Masked hypoglycemia
+Type: Pharmacodynamic (additive β₂-blockade)
+Monitoring: Fasting glucose + hypoglycemia symptoms
+Dose adjustment: Pantoprazole avoid IV route
+Alternative: Magaldrate
+Patient warning: Carry glucose tablets; recognize tremor/sweating.
+Severity: yes
+
+Clinical note:
+Risk: Masked hypoglycemia; Type: Pharmacodynamic (additive β₂-blockade); Monitoring: Fasting glucose + hypoglycemia symptoms; Dosage: Pantoprazole avoid IV route; Alternative: Magaldrate; Patient Warnings: Carry glucose tablets; recognize tremor/sweating.

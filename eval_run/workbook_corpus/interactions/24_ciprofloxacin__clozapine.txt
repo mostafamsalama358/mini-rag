@@ -1,0 +1,16 @@
+Drug interaction — Ciprobay
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 24
+Brand: Ciprobay
+API 1: CIPROFLOXACIN
+API 2: CLOZAPINE
+Risk: CYP1A2 inhibition → ↑ clozapine levels (seizure/sedation).
+Type: -
+Monitoring: Clozapine levels, EEG. Dose Adjust: Reduce clozapine by 40-60%.
+Dose adjustment: -
+Alternative: -
+Patient warning: Report myoclonic jerks; avoid driving.
+Severity: yes
+
+Clinical note:
+Risk: CYP1A2 inhibition → ↑ clozapine levels (seizure/sedation). Monitoring: Clozapine levels, EEG. Dose Adjust: Reduce clozapine by 40-60%. Patient Warning: Report myoclonic jerks; avoid driving.

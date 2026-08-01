@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: NADOLOL
+Risk: Minimal interaction (renal clearance)
+Type: Pharmacodynamic
+Monitoring: Routine BP
+Dose adjustment: None
+Alternative: None
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction (renal clearance); Type: Pharmacodynamic; Monitoring: Routine BP; Dosage: None; Alternative: None; Patient: Normal precautions.

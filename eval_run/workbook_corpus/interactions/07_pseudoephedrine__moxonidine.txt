@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: MOXONIDINE
+Risk: Accelerated hypertension
+Type: Additive
+Monitoring: Home BP logs
+Dose adjustment: Max 30mg every 12h; Alternatives: Cetirizine
+Alternative: -
+Patient warning: "Check BP before each dose"
+Severity: caution
+
+Clinical note:
+Risk: Accelerated hypertension; Type: Additive; Monitoring: Home BP logs; Dosage Adjustments: Max 30mg every 12h; Alternatives: Cetirizine; Patient Warnings: "Check BP before each dose"

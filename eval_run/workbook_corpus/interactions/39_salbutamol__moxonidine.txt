@@ -1,0 +1,16 @@
+Drug interaction — Ventolin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 39
+Brand: Ventolin
+API 1: SALBUTAMOL
+API 2: MOXONIDINE
+Risk: Reduced antihypertensive efficacy
+Type: Antagonistic
+Monitoring: BP pre/post-inhalation
+Dose adjustment: Increase moxonidine 0.2mg/day; Alternatives: Cromolyn
+Alternative: -
+Patient warning: "Report tremors/BP↑"
+Severity: caution
+
+Clinical note:
+Risk: Reduced antihypertensive efficacy; Type: Antagonistic; Monitoring: BP pre/post-inhalation; Dosage Adjustments: Increase moxonidine 0.2mg/day; Alternatives: Cromolyn; Patient Warnings: "Report tremors/BP↑"

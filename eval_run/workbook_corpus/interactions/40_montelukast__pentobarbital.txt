@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: PENTOBARBITAL
+Risk: Significantly reduced montelukast exposure (CYP induction) compromising asthma management. Monitor: Day/night symptom scores, exacerbation frequency. Dose Adjust: Optimize asthma therapy; consider
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: Use rescue inhaler for breakthrough symptoms; attend all follow-ups.
+Severity: caution
+
+Clinical note:
+Risk: Significantly reduced montelukast exposure (CYP induction) compromising asthma management. Monitor: Day/night symptom scores, exacerbation frequency. Dose Adjust: Optimize asthma therapy; consider alternative controller; Patient Warning: Use rescue inhaler for breakthrough symptoms; attend all follow-ups.

@@ -31,12 +31,10 @@ class LLMInterface(ABC):
     def construct_prompt(self, prompt: str, role: str):
         pass
 
-    # ------------------------------------------------------------------
     # Optional async surface. Default implementations delegate to the sync
     # methods so providers that have no native async client still work, but
     # run inside a worker thread to avoid blocking the event loop.
     # Providers with a real async client (e.g. AsyncOpenAI) override these.
-    # ------------------------------------------------------------------
     async def generate_text_async(
         self,
         prompt: str,
@@ -48,7 +46,10 @@ class LLMInterface(ABC):
         response_schema: dict = None,
     ):
         import asyncio
-        return await asyncio.to_thread(
+        import logging
+
+        logger = logging.getLogger("uvicorn.error")
+        text = await asyncio.to_thread(
             self.generate_text,
             prompt,
             chat_history or [],
@@ -57,6 +58,13 @@ class LLMInterface(ABC):
             response_mime_type=response_mime_type,
             response_schema=response_schema,
         )
+        logger.info(
+            "generate_text_async_return provider=%s text_len=%s text_repr=%r",
+            type(self).__name__,
+            len(text) if isinstance(text, str) else None,
+            (repr(text)[:300] if isinstance(text, str) else text),
+        )
+        return text
 
     async def embed_text_async(self, text, document_type: str = None):
         import asyncio

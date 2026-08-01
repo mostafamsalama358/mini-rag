@@ -1,0 +1,14 @@
+Alias registry — Ventolin
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 39
+Brand: Ventolin
+
+Known aliases:
+- Ventolin (brand)
+- VENTOLIN EVOHALER 100MCG/ACTUATION INHALER (catalog_sku)
+- Salbutamol (inn)
+- ALBUTEROL (inn_alias)
+- SALBUTAMOL SULFATE (inn_alias)
+- فنتولين (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: AMIODARONE
+Risk: ↑ Atorvastatin levels → myopathy
+Type: Pharmacokinetic
+Monitoring: LFTs/CPK
+Dose adjustment: Max 20mg daily
+Alternative: Rosuvastatin
+Patient warning: /Management: Avoid strenuous exercise.
+Severity: yes
+
+Clinical note:
+Risk: ↑ Atorvastatin levels → myopathy; Type: Pharmacokinetic; Monitoring: LFTs/CPK; Dosage Adjustments: Max 20mg daily; Alternative: Rosuvastatin; Patient Warnings/Management: Avoid strenuous exercise.

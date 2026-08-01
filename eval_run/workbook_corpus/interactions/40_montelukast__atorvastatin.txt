@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: ATORVASTATIN
+Risk: Increased atorvastatin exposure (CYP3A4 inhibition) → elevated myopathy/rhabdomyolysis risk
+Type: -
+Monitoring: CK baseline + q3mo; LFTs monthly ×3; Dose Adjust: Max atorvastatin 20mg/day
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Increased atorvastatin exposure (CYP3A4 inhibition) → elevated myopathy/rhabdomyolysis risk; Monitoring: CK baseline + q3mo; LFTs monthly ×3; Dose Adjust: Max atorvastatin 20mg/day; Patient: Report muscle pain/weakness or brown urine immediately.

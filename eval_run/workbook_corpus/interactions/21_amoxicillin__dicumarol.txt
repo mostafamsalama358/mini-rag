@@ -1,0 +1,16 @@
+Drug interaction — Augmentin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 21
+Brand: Augmentin
+API 1: AMOXICILLIN
+API 2: DICUMAROL
+Risk: Minimal INR change
+Type: Pharmacodynamic
+Monitoring: INR baseline + weekly
+Dose adjustment: None
+Alternative: Cephalexin
+Patient warning: Maintain consistent vitamin K intake.
+Severity: caution
+
+Clinical note:
+Risk: Minimal INR change; Type: Pharmacodynamic; Monitoring: INR baseline + weekly; Dosage: None; Alternative: Cephalexin; Patient Warnings: Maintain consistent vitamin K intake.

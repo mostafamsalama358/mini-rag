@@ -1,0 +1,16 @@
+Drug interaction — Telfast
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 36
+Brand: Telfast
+API 1: FEXOFENADINE
+API 2: ALUMINUM HYDROXIDE
+Risk: Complex formation → ↓ bioavailability → treatment failure.
+Type: -
+Monitoring: QoL impact scores. Dosing: Separate by ≥3h.
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Complex formation → ↓ bioavailability → treatment failure. Monitoring: QoL impact scores. Dosing: Separate by ≥3h. Patient: Report persistent itching/sneezing; use saline nasal rinses as adjunct.

@@ -1,0 +1,7 @@
+﻿id: contraindications
+name: Contraindications
+profile: contraindications
+prompt: contraindications
+validation:
+  require_medicine: true
+order: 6

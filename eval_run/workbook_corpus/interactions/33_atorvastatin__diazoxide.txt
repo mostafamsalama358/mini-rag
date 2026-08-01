@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: DIAZOXIDE
+Risk: Exacerbated hyperglycemia
+Type: Additive metabolic effect
+Monitoring: Glucose HbA1c q3mo, LFTs
+Dose adjustment: Usually none needed
+Alternative: Pravastatin
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Exacerbated hyperglycemia; Type: Additive metabolic effect; Monitoring: Glucose HbA1c q3mo, LFTs; Dosage: Usually none needed; Alternative: Pravastatin; Patient: Standard diabetic/statin precautions.

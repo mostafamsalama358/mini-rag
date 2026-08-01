@@ -1,0 +1,14 @@
+Alias registry — Panadol Joint
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 52
+Brand: Panadol Joint
+
+Known aliases:
+- Panadol Joint (brand)
+- PANADOL JOINT 24 ER TABLETS (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- بانادول جوينت (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

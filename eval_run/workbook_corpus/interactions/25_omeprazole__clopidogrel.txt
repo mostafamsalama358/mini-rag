@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: CLOPIDOGREL
+Risk: Stent thrombosis (CYP2C19 competitive inhibition).
+Type: Pharmacokinetic.
+Monitoring: Platelet reactivity index.
+Dose adjustment: Absolute avoidance.
+Alternative: Pantoprazole.
+Patient warning: /Management: Separate by 12 hours if unavoidable.
+Severity: yes
+
+Clinical note:
+Risk: Stent thrombosis (CYP2C19 competitive inhibition). Type: Pharmacokinetic. Monitoring: Platelet reactivity index. Dosage Adjustments: Absolute avoidance. Alternative: Pantoprazole. Patient Warnings/Management: Separate by 12 hours if unavoidable.

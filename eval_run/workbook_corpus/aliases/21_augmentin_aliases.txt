@@ -1,0 +1,17 @@
+Alias registry — Augmentin
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 21
+Brand: Augmentin
+
+Known aliases:
+- Augmentin (brand)
+- AUGMENTIN 1 GM 14 F.C.TABS. (catalog_sku)
+- Amoxicillin (inn)
+- Clavulanic Acid (inn)
+- CLAVULANATE (inn_alias)
+- POTASSIUM CLAVULANATE (inn_alias)
+- CLAVULANIC (inn_alias)
+- اوجمنتين (arabic)
+- أوجمنتين (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

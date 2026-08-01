@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: FOSINOPRIL
+Risk: Dependent edema (32% vs 15% monotherapy) with angiotensin II escape.
+Type: Compensatory RAAS activation.
+Monitoring: Leg volume measurements, BP biweekly.
+Dose adjustment: Fosinopril 20 mg + amlodipine 5 mg optimal.
+Alternative: Fosinopril + indapamide.
+Patient warning: Daytime leg elevation; compression stockings.
+Severity: caution
+
+Clinical note:
+Risk: Dependent edema (32% vs 15% monotherapy) with angiotensin II escape. Type: Compensatory RAAS activation. Monitoring: Leg volume measurements, BP biweekly. Dosage: Fosinopril 20 mg + amlodipine 5 mg optimal. Alternative: Fosinopril + indapamide. Patient Warnings: Daytime leg elevation; compression stockings.

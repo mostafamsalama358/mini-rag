@@ -1,0 +1,16 @@
+Drug interaction — Hi-Biotic
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 22
+Brand: Hi-Biotic
+API 1: AMOXICILLIN
+API 2: DABIGATRAN ETEXILATE
+Risk: Potential increased bleeding risk due to altered gut flora affecting dabigatran absorption.
+Type: Pharmacokinetic (indirect).
+Monitoring: Monitor for signs of bleeding (INR not reliable for dabigatran); assess renal function (CrCl).
+Dose adjustment: Adjust dabigatran in renal impairment (CrCl <50 mL/min).
+Alternative: Ce…
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Potential increased bleeding risk due to altered gut flora affecting dabigatran absorption. Type: Pharmacokinetic (indirect). Monitoring: Monitor for signs of bleeding (INR not reliable for dabigatran); assess renal function (CrCl). Dosage: Adjust dabigatran in renal impairment (CrCl <50 mL/min). Alternative: Ce…

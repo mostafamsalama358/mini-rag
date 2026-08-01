@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: TOLAZOLINE
+Risk: Minimal interaction expected
+Type: Pharmacodynamic
+Monitoring: Standard tolazoline monitoring
+Dose adjustment: None typically
+Alternative: Pantoprazole if concerned
+Patient warning: /Management: No special precautions.
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction expected; Type: Pharmacodynamic; Monitoring: Standard tolazoline monitoring; Dosage Adjustments: None typically; Alternative: Pantoprazole if concerned; Patient Warnings/Management: No special precautions.

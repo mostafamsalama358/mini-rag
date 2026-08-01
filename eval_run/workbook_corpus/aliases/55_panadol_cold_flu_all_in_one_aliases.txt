@@ -1,0 +1,17 @@
+Alias registry — Panadol Cold & Flu All In One
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 55
+Brand: Panadol Cold & Flu All In One
+
+Known aliases:
+- Panadol Cold & Flu All In One (brand)
+- PANADOL COLD & FLU (ALL IN ONE) 24 F.C. TABS.(N/A YET) (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- Guaifenesin (inn)
+- Phenylephrine (inn)
+- PHENYLEPHRINE HCL (inn_alias)
+- PHENYLEPHRINE HYDROCHLORIDE (inn_alias)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

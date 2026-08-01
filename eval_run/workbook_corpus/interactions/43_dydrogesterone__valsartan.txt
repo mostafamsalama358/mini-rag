@@ -1,0 +1,16 @@
+Drug interaction — Duphaston
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 43
+Brand: Duphaston
+API 1: DYDROGESTERONE
+API 2: VALSARTAN
+Risk: Minimal interaction
+Type: None
+Monitoring: Routine labs unnecessary
+Dose adjustment: Standard dosing
+Alternative: Preferred for HRT combinations
+Patient warning: Reassure about safety.
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction; Type: None; Monitoring: Routine labs unnecessary; Dosage: Standard dosing; Alternative: Preferred for HRT combinations; Patient Warnings: Reassure about safety.

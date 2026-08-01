@@ -1,0 +1,92 @@
+ANTINAL 200MG 24 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Antinal
+Product line: Antinal
+Catalog SKU: ANTINAL 200MG 24 CAPS.
+SKU ID: 19
+INN / actives: Nifuroxazide
+INN primary: Nifuroxazide
+INN aliases: NIFUROXAZIDE
+Strength / form: Nifuroxazide 200 mg | Form=CAP. | Min.age=6 years
+Manufacturer / market: AMOUN
+Price (catalog): 52
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-DIARRHEA
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Antinal is used for
+Acute bacterial diarrhea - 200mg 4x/day (adults); 100mg 4x/day (children 6+ years)*
+
+2. Dosage — Adults
+Adult dose: 1 capsule 4 times/day
+Maximum daily dose: 8 capsules/day (8 capsules)
+
+3. Dosage — Children
+Minimum age in catalog: 6 years
+Pediatric min age: 2 years
+Pediatric dose: >=2 years: 200 mg every 6 hours.
+Pediatric max daily dose: See pack
+
+4. Do not take Antinal if / disease cautions
+Hypersensitivity to NIFUROXAZIDE* Infants under 6 months *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None (Not assigned by FDA/EMA)
+Warnings: • Avoid antimotility drugs (e.g., loperamide): May worsen bacterial diarrhea
+...................................................................
+• Dose Modification:
+- Renal Impairment: Use with caution (limited data)
+- Hepatic Impairment: No dose adjustment needed
+....................................................................
+• Medical Info for HCPs:
+- Serious Risks: Hypersensitivity reactions (rare)
+- When to Stop: If severe rash, angioedema, or persistent diarrhea >48h
+.....................................................................
+• Pregnancy & Lactation:
+- Pregnancy: Avoid (insufficient safety data)
+- Breastfeeding: Contraindicated (excreted in milk)
+........................
+HCP notes: • Avoid antimotility drugs (e.g., loperamide): May worsen bacterial diarrhea
+...................................................................
+• Dose Modification:
+- Renal Impairment: Use with caution (limited data)
+- Hepatic Impairment: No dose adjustment needed
+....................................................................
+• Medical Info for HCPs:
+- Serious Risks: Hypersensitivity reactions (rare)
+- When to Stop: If severe rash, angioedema, or persistent diarrhea >48h
+.....................................................................
+• Pregnancy & Lactation:
+- Pregnancy: Avoid (insufficient safety data)
+- Breastfeeding: Contraindicated (excreted in milk)
+........................
+Patient education: • Best Time to Take:
+- With meals
+• Missed Dose:
+- Take as soon as remembered, but skip if close to next dose
+• Food Interactions:
+- No restrictions
+• Overdose Antidote:
+- None (symptomatic management)
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- No interaction rows in workbook for this SKU.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Enterogermina|Smecta
+
+10. Possible side effects
+Major: Abdominal pain (15%)*
+Nausea (12%)*
+Skin rash (10%)*
+Minor: Headache (5%)*
+Dizziness (3%)*
+Vomiting (2%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

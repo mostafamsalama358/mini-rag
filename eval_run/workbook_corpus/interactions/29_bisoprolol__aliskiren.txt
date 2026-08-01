@@ -1,0 +1,16 @@
+Drug interaction — Concor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 29
+Brand: Concor
+API 1: BISOPROLOL
+API 2: ALISKIREN
+Risk: Balanced hepatic/renal excretion minimizes interaction
+Type: Minimal
+Monitoring: BP monthly if stable
+Dose adjustment: None
+Alternative: First-line β-blocker combo
+Patient warning: /Management: Take in morning.
+Severity: caution
+
+Clinical note:
+Risk: Balanced hepatic/renal excretion minimizes interaction; Type: Minimal; Monitoring: BP monthly if stable; Dosage Adjustments: None; Alternative: First-line β-blocker combo; Patient Warnings/Management: Take in morning.

@@ -1,0 +1,92 @@
+CIPROBAY 500MG 10 F.C.TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Ciprobay
+Product line: Ciprobay
+Catalog SKU: CIPROBAY 500MG 10 F.C.TAB.
+SKU ID: 24
+INN / actives: Ciprofloxacin
+INN primary: Ciprofloxacin
+INN aliases: CIPROFLOXACIN
+Strength / form: Ciprofloxacin 500 mg | Form=TAB. | Min.age=18 years
+Manufacturer / market: BAYER SCHERING
+Price (catalog): 100
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-BACTERIAL
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Ciprobay is used for
+UTIs - 250 : 500 mg q12h (3 : 14 days)*
+In chronic UTIs - 500 mg (two pills per day for 6 weeks) means for 45 days*
+Respiratory infections - 500 : 750 mg q12h (7 : 14 days)*
+Intra abdominal infections - 500 mg q12h + metronidazole*
+Anthrax/plague - 500 mg q12h (60 days for anthrax)*
+Acute Sinusitis ,Mild/moderate - 500 mg PO q12hr for 10 days , Reserve fluoroquinolones for patients who do not has other available treatment options for acute sinusitis*
+Bone & Joint Infections, Mild/moderate - 500 mg PO for ≥4 : 6 weeks , Severe/complicated: 750 mg PO q12hr for ≥4 : 6 weeks*
+Chronic bacterial prostatitis caused by Escherichia coli or Proteus mirabilis, Mild/moderate - 500 mg PO q12hr for 28 days*
+Infectious Diarrhea , Mild/moderate/severe - 500 mg PO q12hr for 5 : 7 days*
+Skin/Skin Structure Infections , Mild/moderate - 500 mg PO q12hr for 7 : 14 days, Severe/complicated: 750 mg PO q12hr fo
+
+2. Dosage — Adults
+Adult dose: 500 mg every 12 hours
+Maximum daily dose: 2 tablets/day (2 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: See pack
+Pediatric dose: Use only for approved pediatric indications. Dose depends on indication.
+Pediatric max daily dose: See pack
+
+4. Do not take Ciprobay if / disease cautions
+Hypersensitivity to CIPROFLOXACIN * Myasthenia Gravis * Pregnancy; unspecified gestational age * Favism (G6PD DEFICIENCY) * Clostridioides difficile-associated diarrhea (CDAD) * Neurological Disorders * Long QT syndrome (congenital or acquired) * Dehydration & Hypovolemia * Enthesopathies of the Lower Limb * Enthesopathies of the Shoulder & Elbow * Disorders of Synovium & Tendon *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • Tendon rupture (especially >60 years, transplant recipients)
+• Peripheral neuropathy (may be irreversible)
+• CNS effects (e.g., hallucinations, depression)
+• Exacerbates myasthenia gravis
+Warnings: • Forbidden in pregnancy but sort of safe in breastfeeding, 
+• Avoid multivalent cations: 
+-Antacids , iron , ZINC OR ZINC GLUCONATE , CALCIUM OR CALCIUM CARBONATE supplements reduce absorption (separate by 2-6 hours)
+........................................................................
+• Renal impairment.....CrCl >50 mL/min Dose adjustment not necessary,.......CrCl 30-50 mL/min Immediate-release: 250-500 mg PO q12hr, Extended-release: 1 g PO q24hr....... CrCl <30 mL/min Immediate-release: 500 mg PO q24hr, Extended-release: 500 mg PO q24hr)
+• Equation . ........ Creat_Clear = Sex * ((140 - Age) / (Serum_Creat)) * (Weight / 72) ; NOTE: Female = 0.85 , Male = 1
+• Hepatic Impairment: IV, Ora
+HCP notes: • Forbidden in pregnancy but sort of safe in breastfeeding, 
+• Avoid multivalent cations: 
+-Antacids , iron , ZINC OR ZINC GLUCONATE , CALCIUM OR CALCIUM CARBONATE supplements reduce absorption (separate by 2-6 hours)
+........................................................................
+• Renal impairment.....CrCl >50 mL/min Dose adjustment not necessary,.......CrCl 30-50 mL/min Immediate-release: 250-500 mg PO q12hr, Extended-release: 1 g PO q24hr....... CrCl <30 mL/min Immediate-release: 500 mg PO q24hr, Extended-release: 500 mg PO q24hr)
+• Equation . ........ Creat_Clear = Sex * ((140 - Age) / (Serum_Creat)) * (Weight / 72) ; NOTE: Female = 0.85 , Male = 1
+• Hepatic Impairment: IV, Ora
+Patient education: • Timing: 
+-Take 2h before/6h after antacids; with food if GI upset occurs
+• Take this medication at least 2 hours before or 6 hours after taking other products that may bind to it like sucralfate, vitamins/minerals (including iron and zinc supplements), and products containing magnesium, aluminum, or calcium (such as antacids, didanosine solution, calcium supplements).Calcium-rich foods, including dairy products (such as milk, yogurt) or calcium-enriched juice,
+• Avoid drinking large amounts of beverages containing caffeine (coffee, tea, colas), eating large amounts of chocolate, or taking over-the-counter products that contain caffeine. This drug may increase and/or prolong the effects of
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- CIPROFLOXACIN + CLOPIDOGREL; Risk: Decreased clopidogrel activation (CYP2C19 inhibition).; Type: Pharmacokinetic.; Monitoring: Therapeutic efficacy (e.g., recurrent CV events).; Dose adjustment: Avoid high-dose ciprofloxacin (>750mg BID).; Alternative: Levofloxacin or non-fluoroquinolone antibiotics.; Patient warning: /Management: Monitor for treatm…
+- CIPROFLOXACIN + DULOXETINE; Risk: ↑ Duloxetine levels (CYP1A2 inhibition); Type: Pharmacokinetic; Monitoring: BP, serotonin syndrome signs; Alternative: Levofloxacin; Patient warning: Discontinue if hypertensive crisis occurs.
+- CIPROFLOXACIN + PHENYTOIN; Risk: Ciprofloxacin ↑ phenytoin levels (moderate CYP2C9 inhibition).; Monitoring: Phenytoin levels within 3 days.; Dose adjustment: ↓ phenytoin by 20-30% if combined >3 days.; Patient warning: Watch for nausea or diplopia.
+- CIPROFLOXACIN + ZOLMITRIPTAN; Risk: Possible reduced zolmitriptan efficacy; Monitoring: Document migraine attack duration/severity; Dose adjustment: Adjust dose based on clinical response; Patient warning: Avoid missing doses due to interaction risk.
+- CIPROFLOXACIN + ROPINIROLE; Risk: CYP1A2 inhibition ↑ ropinirole exposure → hallucinations, syncope, and impulse control disorders; Monitoring: Neuropsychiatric eval weekly, orthostatic BP; Dose adjustment: Halve ropinirole dose if coadministered >3 days
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: contraindicated
+
+8. Breastfeeding
+Breastfeeding safety: contraindicated
+
+9. Supplements / cross-selling
+Catalog cross-selling: Enterogermina|Smecta
+
+10. Possible side effects
+Major: Nausea (5.4%)*
+Diarrhea (2.3%)*
+Headache (1.2%)*
+Minor: Tendon rupture (0.1-0.4%)*
+QT prolongation (0.3%)*
+C. difficile colitis (0.1-2%)*
+Photosensitivity (1-2%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: PRIMIDONE
+Risk: Seizure threshold lowering + ↓ antibiotic efficacy.
+Type: -
+Monitoring: EEG if high doses.
+Dose adjustment: Avoid combination in epilepsy
+Alternative: -
+Patient warning: Report myoclonus immediately.
+Severity: yes
+
+Clinical note:
+Risk: Seizure threshold lowering + ↓ antibiotic efficacy. Monitoring: EEG if high doses. Dosage: Avoid combination in epilepsy patients. Patient Warning: Report myoclonus immediately.

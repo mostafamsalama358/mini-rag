@@ -1,0 +1,16 @@
+Drug interaction — Brufen
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 18
+Brand: Brufen
+API 1: IBUPROFEN
+API 2: PROPAFENONE
+Risk: Reversible ↓ propafenone metabolism (CYP2C9 competition) → arrhythmia risk
+Type: Pharmacokinetic
+Monitoring: ECG (prolonged PR/QRS), ibuprofen duration
+Dose adjustment: Limit ibuprofen to 3 days
+Alternative: Naproxen (preferred CYP2C9 substrate)
+Patient warning: Report palpitations, avoid high-dose OTC…
+Severity: yes
+
+Clinical note:
+Risk: Reversible ↓ propafenone metabolism (CYP2C9 competition) → arrhythmia risk; Type: Pharmacokinetic; Monitoring: ECG (prolonged PR/QRS), ibuprofen duration; Dosage Adjustments: Limit ibuprofen to 3 days; Alternative: Naproxen (preferred CYP2C9 substrate); Patient Warnings: Report palpitations, avoid high-dose OTC…

@@ -1,0 +1,96 @@
+CONTROLOC 20MG 14 GASTRO-RESISTANT TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Controloc 20
+Product line: Controloc 20
+Catalog SKU: CONTROLOC 20MG 14 GASTRO-RESISTANT TABS.
+SKU ID: 13
+INN / actives: Pantoprazole
+INN primary: Pantoprazole
+INN aliases: PANTOPRAZOLE
+Strength / form: Pantoprazole 20 mg | Form=TAB. | Min.age=12 years
+Manufacturer / market: MARCYRL CO.
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-PEPTIC ULCER & ANTACIDS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Controloc 20 is used for
+Treatment and maintenance of healing of erosive esophagitis (EE) associated with GERD - Adults (Oral): 40 mg once daily for up to 8 weeks. Maintenance: 40 mg once daily , (IV): 40 mg once daily via IV infusion for 7 to 10 days*
+Treatment of pathological hypersecretory conditions (e.g., Zollinger Ellison syndrome) - Adults (Oral): Starting dose 40 mg twice daily; adjust based on acid output , (IV): 40 mg once daily via IV infusion for 7 to 10 days*
+
+2. Dosage — Adults
+Adult dose: 20 mg once daily
+Maximum daily dose: 2 tablets/day (2 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: 5 years
+Pediatric dose: >=5 years: 20 mg once daily for approved indications.
+Pediatric max daily dose: See pack
+
+4. Do not take Controloc 20 if / disease cautions
+Hypersensitivity to PANTOPRAZOLE *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • Pantoprazole does not carry an FDA Black Box Warning. However, the prescribing information contains WARNINGS and PRECAUTIONS for:
+- Acute Tubulointerstitial Nephritis
+- Clostridium difficile-Associated Diarrhea
+- Bone Fracture
+- Severe Hypomagnesemia
+- Vitamin B12 Deficiency
+Warnings: • Avoid:
+-Concomitant use with rilpivirine-containing products (due to potential for HIV treatment failure).
+• The (PPIs) drugs cause hypomagnesemia, but this does not happen until after (3 months) of using the (PPIs). It is necessary to monitor the magnesium in the blood after 3 months of using the (PPIs).
+• Hypomagnesemia may lead to hypocalcemia and/or hypokalemia and may exacerbate underlying hypocalcemia in at-risk patients; in most patients, treatment of hypomagnesemia required magnesium replacement and discontinuation of the PPI
+• And there is a lack of vitamin (B12) this thing does not happen until after (3 years) of using the (PPIs), and vitamin (B12) deficiency occurs in women more
+HCP notes: • Avoid:
+-Concomitant use with rilpivirine-containing products (due to potential for HIV treatment failure).
+• The (PPIs) drugs cause hypomagnesemia, but this does not happen until after (3 months) of using the (PPIs). It is necessary to monitor the magnesium in the blood after 3 months of using the (PPIs).
+• Hypomagnesemia may lead to hypocalcemia and/or hypokalemia and may exacerbate underlying hypocalcemia in at-risk patients; in most patients, treatment of hypomagnesemia required magnesium replacement and discontinuation of the PPI
+• And there is a lack of vitamin (B12) this thing does not happen until after (3 years) of using the (PPIs), and vitamin (B12) deficiency occurs in women more
+Patient education: • Timing:
+- Take the tablet once daily, before a meal (typically before breakfast). Swallow the delayed-release tablet whole; do not crush, split, or chew.
+• What to Report to Your Doctor:
+- Diarrhea that is watery or bloody.
+- Dizziness, fast or irregular heartbeat, jitteriness, muscle spasms (signs of low magnesium).
+- Joint pain, wrist, or hip pain (signs of bone issues).
+- New or worsening kidney disease symptoms (e.g., change in urine output).
+• Long-Term Use:
+- Use the lowest dose and shortest duration of therapy appropriate for your condition. Do not take for longer than prescribed.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- PANTOPRAZOLE + DIPYRIDAMOLE; Risk: Minimal interaction (CYP2C19 sparing).; Type: Negligible.; Monitoring: Routine follow-up.; Dose adjustment: None required.; Alternative: First-line PPI.; Patient warning: /Management: No special precautions.
+- PANTOPRAZOLE + SOTALOL; Risk: Bradycardia exacerbation; Type: Pharmacodynamic (additive HR reduction); Monitoring: 24h Holter + exercise tolerance; Dose adjustment: Avoid IV pantoprazole; Alternative: Sucralfate; Patient warning: Check AM pulse; withhold if <50 bpm.
+- PANTOPRAZOLE + METOPROLOL TARTRATE; Risk: Exercise-induced hypotension; Type: Pharmacodynamic (blunted compensatory response); Monitoring: Treadmill BP test; Dose adjustment: Pantoprazole min effective dose; Alternative: Aluminum hydroxide; Patient warning: Avoid sudden standing; compression stockings.
+- PANTOPRAZOLE + METOPROLOL; Risk: Exercise-induced hypotension; Type: Pharmacodynamic (blunted compensatory response); Monitoring: Treadmill BP test + orthostatic checks; Dose adjustment: Pantoprazole min effective dose; Alternative: Aluminum hydroxide antacids; Patient warning: Avoid sudden standing; compression stockings.
+- PANTOPRAZOLE + PROPRANOLOL; Risk: Masked hypoglycemia; Type: Pharmacodynamic (additive β₂-blockade); Monitoring: Fasting glucose + hypoglycemia symptoms; Dose adjustment: Pantoprazole avoid IV route; Alternative: Magaldrate; Patient warning: Carry glucose tablets; recognize tremor/sweating.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Gaviscon Advance|Motilium
+
+10. Possible side effects
+Major: Headache (2-10%)*
+Minor: Diarrhea (1-4%)*
+Nausea/Vomiting (1-5%)*
+Abdominal Pain (1-5%)*
+Flatulence (1-5%)*
+Dizziness (<1%)*
+Rash (<1%)*
+Pruritus (<1%)*
+Dry Mouth (<1%)*
+Fatigue (<1%)*
+Hypomagnesemia - risk with long term use >3 months (<1%)*
+Vitamin B12 Deficiency - risk with long term use (1-5%)*
+Increased risk of C. difficile infection (1-5%)*
+Increased risk of bone fracture - with high dose, long term use (1-5%)*
+Acute Interstitial Nephritis - kidney inflammation (Rare)*
+Fundic Gland Polyps - with long term use (Rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

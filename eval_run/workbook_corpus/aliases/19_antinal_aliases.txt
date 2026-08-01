@@ -1,0 +1,12 @@
+Alias registry — Antinal
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 19
+Brand: Antinal
+
+Known aliases:
+- Antinal (brand)
+- ANTINAL 200MG 24 CAPS. (catalog_sku)
+- Nifuroxazide (inn)
+- انتينال (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

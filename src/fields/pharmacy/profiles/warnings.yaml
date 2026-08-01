@@ -1,0 +1,6 @@
+﻿id: warnings
+filters:
+  field:
+    - warnings
+notes: Live corpus is RAG_CORPUS Excel workbook render (txt), not legacy /leaflets PDFs.
+retrieval_strategy: default

@@ -1,0 +1,16 @@
+Drug interaction — Cetal Cold & Flu Day
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 04
+Brand: Cetal Cold & Flu Day
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: TRIMIPRAMINE
+Risk: Masked fever in anticholinergic syndrome
+Type: -
+Monitoring: Core temperature
+Dose adjustment: Avoid during infection
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Masked fever in anticholinergic syndrome; Monitoring: Core temperature; Dosage: Avoid during infection; Patient: Use axillary thermometer; report chills without fever.

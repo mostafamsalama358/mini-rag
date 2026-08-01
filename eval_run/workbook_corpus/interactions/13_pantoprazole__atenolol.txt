@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: ATENOLOL
+Risk: Cold extremity exacerbation
+Type: Pharmacodynamic (peripheral vasoconstriction)
+Monitoring: Digital thermography + capillary refill
+Dose adjustment: Avoid IV pantoprazole
+Alternative: Sucralfate
+Patient warning: Wear thermal gloves; avoid caffeine.
+Severity: yes
+
+Clinical note:
+Risk: Cold extremity exacerbation; Type: Pharmacodynamic (peripheral vasoconstriction); Monitoring: Digital thermography + capillary refill; Dosage: Avoid IV pantoprazole; Alternative: Sucralfate; Patient Warnings: Wear thermal gloves; avoid caffeine.

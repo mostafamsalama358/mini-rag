@@ -1,0 +1,12 @@
+Alias registry — Motilium
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 27
+Brand: Motilium
+
+Known aliases:
+- Motilium (brand)
+- MOTILIUM 10MG 40 F.C.TAB. (catalog_sku)
+- Domperidone (inn)
+- موتيليوم (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

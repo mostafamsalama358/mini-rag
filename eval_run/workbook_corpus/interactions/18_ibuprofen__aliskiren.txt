@@ -1,0 +1,16 @@
+Drug interaction — Brufen
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 18
+Brand: Brufen
+API 1: IBUPROFEN
+API 2: ALISKIREN
+Risk: Triple threat - (1) Renal impairment (30-50% Cr elevation), (2) Hyperkalemia (K⁺ >5.5 in 15-25%), (3) Attenuated antihypertensive effect (SBP ↑10-15mmHg).
+Type: Pharmacodynamic (PG inhibition) + Pharmacokinetic (renal clearance competition).
+Monitoring: Baseline + weekly: BP, Cr, eGFR, K⁺ (q48h if CKD).
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Triple threat - (1) Renal impairment (30-50% Cr elevation), (2) Hyperkalemia (K⁺ >5.5 in 15-25%), (3) Attenuated antihypertensive effect (SBP ↑10-15mmHg). Type: Pharmacodynamic (PG inhibition) + Pharmacokinetic (renal clearance competition). Monitoring: Baseline + weekly: BP, Cr, eGFR, K⁺ (q48h if CKD). Dosage A…

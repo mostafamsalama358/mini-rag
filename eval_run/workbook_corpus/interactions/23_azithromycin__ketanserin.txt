@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: KETANSERIN
+Risk: TdP (especially with hypokalemia)
+Type: Additive QT
+Monitoring: ECG day 3 of therapy
+Dose adjustment: Avoid >3g cumulative dose; Alternatives: Ceftriaxone
+Alternative: -
+Patient warning: "Report syncope"
+Severity: yes
+
+Clinical note:
+Risk: TdP (especially with hypokalemia); Type: Additive QT; Monitoring: ECG day 3 of therapy; Dosage Adjustments: Avoid >3g cumulative dose; Alternatives: Ceftriaxone; Patient Warnings: "Report syncope"

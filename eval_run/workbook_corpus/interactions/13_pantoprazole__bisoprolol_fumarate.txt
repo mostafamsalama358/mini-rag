@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: BISOPROLOL FUMARATE
+Risk: Exercise-induced AV block
+Type: Pharmacodynamic (additive conduction delay)
+Monitoring: Stress test ECG + orthostatic BP
+Dose adjustment: Avoid IV pantoprazole
+Alternative: Calcium-based antacids
+Patient warning: Stop activity if dizzy; compression stockings.
+Severity: yes
+
+Clinical note:
+Risk: Exercise-induced AV block; Type: Pharmacodynamic (additive conduction delay); Monitoring: Stress test ECG + orthostatic BP; Dosage: Avoid IV pantoprazole; Alternative: Calcium-based antacids; Patient Warnings: Stop activity if dizzy; compression stockings.

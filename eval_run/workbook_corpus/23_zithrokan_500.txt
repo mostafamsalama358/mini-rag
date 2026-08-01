@@ -1,0 +1,117 @@
+ZITHROKAN 500 MG 3 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Zithrokan
+Product line: Zithrokan
+Catalog SKU: ZITHROKAN 500 MG 3 CAPS.
+SKU ID: 23
+INN / actives: Azithromycin
+INN primary: Azithromycin
+INN aliases: AZITHROMYCIN
+Strength / form: Azithromycin 500 mg | Form=CAP. | Min.age=45 kg or adult
+Manufacturer / market: HIKMA PHARMA
+Price (catalog): 77
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-BACTERIAL
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Zithrokan is used for
+Community acquired pneumonia - 500 mg x1, then 250 mg daily x4 days*
+Streptococcal pharyngitis - 500 mg x1, then 250 mg x4 days*
+Acute otitis media - 30 mg/kg single dose*
+
+2. Dosage — Adults
+Adult dose: 500 mg once daily for 3 days
+Maximum daily dose: 1 tablet/day (1 tablet)
+
+3. Dosage — Children
+Minimum age in catalog: 45 kg or adult
+Pediatric min age: See pack
+Pediatric dose: 10 mg/kg once daily for 3 days or 10 mg/kg day 1 then 5 mg/kg/day days 2-5.
+Pediatric max daily dose: See pack
+
+4. Do not take Zithrokan if / disease cautions
+Hypersensitivity to AZITHROMYCIN * 
+Infants under 6 months *
+Biliary obstruction*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+Long QT syndrome (congenital or acquired)*
+Myasthenia Gravis*
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5)*
+Pregnancy; unspecified gestational age*
+Breastfeeding*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • QT Prolongation: 
+-Risk of fatal arrhythmias (especially with concomitant QT-prolonging drugs)
+Warnings: • Must have a probiotic such as lacteol fort cap to use after him and advise him to eat food rich in prebiotic such as garlic, onions, bananas, yogurt 
+• Safe for patients with kidney failure
+• Avoid: 
+- Antacids (take 2 hours apart), ergot derivatives (risk of ergotism)
+.......................................................................
+• Tablets and oral suspension: 
+-Take with or without food
+• Capsule on an empty stomach. Take at least 1 hour before or 2 hours after meals
+• Avoid taking too much calcium enriched foods and drinks as it might affect the working of AZITHROMYCIN.
+• Antacids containing aluminum or magnesium may decrease the absorption of azithromycin if taken at the same
+HCP notes: • Must have a probiotic such as lacteol fort cap to use after him and advise him to eat food rich in prebiotic such as garlic, onions, bananas, yogurt 
+• Safe for patients with kidney failure
+• Avoid: 
+- Antacids (take 2 hours apart), ergot derivatives (risk of ergotism)
+.......................................................................
+• Tablets and oral suspension: 
+-Take with or without food
+• Capsule on an empty stomach. Take at least 1 hour before or 2 hours after meals
+• Avoid taking too much calcium enriched foods and drinks as it might affect the working of AZITHROMYCIN.
+• Antacids containing aluminum or magnesium may decrease the absorption of azithromycin if taken at the same
+Patient education: • Administration: 
+-Take 1 hour before/2 hours after food (suspension can be taken with food)
+• Side Effects: 
+-Report irregular heartbeat, severe diarrhea, or yellowing skin
+• Missed Dose:
+- Take as soon as remembered unless close to next dose
+• Storage: 
+-Keep suspension at room temperature (discard after 10 days)
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- AZITHROMYCIN + AMIODARONE; Risk: Sudden cardiac death; Type: Dual QTc prolongation; Monitoring: Telemetry if combined; Dose adjustment: Contraindicated; Alternative: Use non-macrolide antibiotics (e.g., doxycycline, cephalexin); Patient warning: No OTC antacids (↓absorption of azithromycin). Note: For life-threatening infections where azith…
+- AZITHROMYCIN + DRONEDARONE; Risk: Additive QT prolongation (especially in hypokalemia); Type: Pharmacodynamic; Monitoring: ECG (QTc) & K⁺ if combination unavoidable; Dose adjustment: Prefer single 1g dose over multi-day; Alternative: Ceftriaxone; Patient warning: /Management: Report syncope/palpitations immediately.
+- AZITHROMYCIN + PROPAFENONE; Risk: Additive QT prolongation (especially with hypokalemia); Type: Pharmacodynamic; Monitoring: ECG (QTc) & K⁺ if combination unavoidable; Dose adjustment: Prefer single 1g dose over multi-day; Alternative: Ceftriaxone; Patient warning: /Management: Report syncope/palpitations immediately.
+- AZITHROMYCIN + ALISKIREN; Risk: Potential hyperkalemia and QT prolongation (though lower risk than other macrolides); Type: Pharmacodynamic (additive electrolyte effects); Monitoring: BP, serum potassium (weekly), renal function, ECG if high cardiac risk; Dose adjustment: Usually none required unless hyperkalemia occurs; Alternative: Non-ma…
+- AZITHROMYCIN + SILODOSIN; Risk: Mild additive hypotension (minimal CYP3A4 inhibition); Type: Pharmacodynamic; Monitoring: BP at days 3/7 of therapy; Dose adjustment: None typically needed; Alternative: First-line macrolide for silodosin; Patient warning: /Management: Standard orthostatic precautions. Lowest risk macrolide.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: use_with_caution
+
+8. Breastfeeding
+Breastfeeding safety: use_with_caution
+
+9. Supplements / cross-selling
+Catalog cross-selling: Enterogermina|Smecta
+
+10. Possible side effects
+Major: Diarrhea (10%)*
+Nausea (5%)*
+Abdominal pain (3%)*
+Minor: QT prolongation (3%)*
+Hepatotoxicity (1%)*
+Hearing loss (0.5% )
+C. difficile infection (0.3%)*
+Increased serum ALT - alanine aminotransferase (< 0.1%)*
+Increased serum AST - aspartate aminotransferase (< 0.1%)*
+Increased serum Creatinine (< 0.1%)*
+Elevated LDH (< 0.1%)*
+Bilirubin (< 0.1%)*
+Dyspepsia (< 0.1%)*
+Flatulence (< 0.1%)*
+Mucositis - mouth or gut is sore and inflamed (< 0.1%)*
+Oral moniliasis - Oral candidiasis (< 0.1%)*
+Gastritis (< 0.1%)*
+Headache (< 0.1%)*
+Somnolence (< 0.1%)*
+Bronchospasm (< 0.1%)*
+Taste perversion (< 0.1%)*
+Leukopenia - low level of WBCs (< 0.1%)*
+Neutropenia - de
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

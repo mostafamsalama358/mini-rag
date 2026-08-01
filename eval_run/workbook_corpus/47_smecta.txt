@@ -1,0 +1,96 @@
+SMECTA 20% SUSPENSION 120 ML
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Smecta
+Product line: Smecta
+Catalog SKU: SMECTA 20% SUSPENSION 120 ML
+SKU ID: 47
+INN / actives: Diosmectite
+INN primary: Diosmectite
+INN aliases: DIOCTAHEDRAL SMECTITE; DIOSMECTITE; SMECTITE
+Strength / form: Diosmectite 3 g/sachet | Form=SUSP. | Min.age=Any age
+Manufacturer / market: IPSEN
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-DIARRHEA
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Smecta is used for
+Acute Diarrhea in Adults & Children - Adult: 1 sachet (3g) three times daily , Children >2 years: 4 : 6 sachets per day (dose decreases with age and weight), Infants (<1 year): 2 sachets per day (under medical supervision)*
+Symptomatic Treatment of Esophagitis & Gastritis - Dose: 1 sachet (3g) three times daily after meals*
+
+2. Dosage — Adults
+Adult dose: 3 sachets/day
+Maximum daily dose: 6 sachets/day (6 sachets)
+
+3. Dosage — Children
+Minimum age in catalog: Any age
+Pediatric min age: Infancy
+Pediatric dose: <1 year: 1 sachet/day. 1-2 years: 1-2 sachets/day. >2 years: 2-3 sachets/day.
+Pediatric max daily dose: 3 sachets/day
+
+4. Do not take Smecta if / disease cautions
+Hypersensitivity to DIOCTAHEDRAL SMECTITE * Obstructive GI Diseases* Infants under 1 year *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • NONE
+• Dioctahedral Smectite does not have a Black Box Warning.
+Warnings: • Dose Modification:
+- Renal/Hepatic:
+ No dose adjustment required. Not systemically absorbed.
+...................................................................
+• Medical Info:
+- Risks:
+ Constipation. Potential for heavy metal contamination in non-pharmaceutical grade products.
+- Mechanism:
+ Has a high adsorption capacity. Acts by binding to and inactivating digestive toxins, viruses, and bacteria. It also forms a protective physical barrier on the gastrointestinal mucosa.
+- Stop Use: 
+Severe constipation, absence of bowel movements, or if symptoms worsen.
+- Withdrawal:
+ No withdrawal syndrome.
+- Not recommended for children under 2 years of age without medical advice
+.....................
+HCP notes: • Dose Modification:
+- Renal/Hepatic:
+ No dose adjustment required. Not systemically absorbed.
+...................................................................
+• Medical Info:
+- Risks:
+ Constipation. Potential for heavy metal contamination in non-pharmaceutical grade products.
+- Mechanism:
+ Has a high adsorption capacity. Acts by binding to and inactivating digestive toxins, viruses, and bacteria. It also forms a protective physical barrier on the gastrointestinal mucosa.
+- Stop Use: 
+Severe constipation, absence of bowel movements, or if symptoms worsen.
+- Withdrawal:
+ No withdrawal syndrome.
+- Not recommended for children under 2 years of age without medical advice
+.....................
+Patient education: • Timing:
+- For diarrhea, it is best taken between meals. For esophagitis/gastritis, it is taken after meals. Follow product instructions.
+• Administration:
+- Empty the contents of the sachet into a glass of water (approx. 50 mL for adults). Stir until a slurry forms and drink it immediately. It can also be mixed with semi-liquid food (e.g., porridge, compote) for children.
+• Missed Dose:
+- Take as soon as remembered. If it is almost time for the next dose, skip the missed dose. Do not double dose.
+• Interactions:
+- Can adsorb other drugs in the GI tract, reducing their absorption and efficacy. Administer other medications at least 2 hours before or after taking dioctahedral smectite.
+• Over
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- No interaction rows in workbook for this SKU.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Enterogermina
+
+10. Possible side effects
+Major: Constipation - dose dependent; mild and reversible (10%)*
+Minor: Abdominal discomfort (rare)*
+Vomiting - mostly in children (rare)*
+Skin rash (rare)*
+Urticaria (rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

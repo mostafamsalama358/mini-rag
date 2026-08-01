@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: PERINDOPRIL
+Risk: Attenuated BP control (daytime SBP ↑10-15mmHg).
+Type: Sympathetic override.
+Monitoring: BP 2h post-dose; limit to 3d use.
+Dose adjustment: Increase perindopril by 30% if needed. Alternatives: Intranasal steroids. Allergy Tip: "More severe during pollen season."
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Attenuated BP control (daytime SBP ↑10-15mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 3d use. Dosage Adjustments: Increase perindopril by 30% if needed. Alternatives: Intranasal steroids. Allergy Tip: "More severe during pollen season."

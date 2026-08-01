@@ -1,0 +1,89 @@
+TELFAST 120MG 20 F.C. TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Telfast
+Catalog SKU: TELFAST 120MG 20 F.C. TABS.
+INN / actives: Fexofenadine
+Catalog New Material: FEXOFENADINE
+Strength / form: Fexofenadine 120 mg | (web-supplemented dosing below)
+Manufacturer / market: SANOFI
+Price (catalog): 76
+Categories: MEDICINE > ANTI-ALLERGIC > NON SEDATING
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=TELFAST 120; sheet lookup INNs=Fexofenadine, FEXOFENADINE
+Web clinical sources: Fexofenadine SmPC; Telfast
+
+1. What Telfast is used for
+Catalog uses: anti-histamine.anti-allergy
+Approved uses (material sheet): Allergic Rhinitis - Adults: 60mg BID or 180mg daily , Children 6 to 11y: 30mg BID*
+Chronic Urticaria - Adults: 180mg daily , Children 6 to 11y: 30mg BID*
+Off-label mentions (material sheet): Pruritus in Atopic Dermatitis - 180mg daily (adjunctive)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Allergic rhinitis: 120 mg once daily. Chronic urticaria may use 180 mg products.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Age-banded paediatric fexofenadine; 120 mg tabs usually ≥12 y.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Telfast if / disease cautions
+From material/disease sheets:
+[FEXOFENADINE] Hypersensitivity to FEXOFENADINE* Infants under 6 months *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None.
+Notes (material sheet): • Avoid fruit juice. Fruit juices like grapefruit, orange, and apple may reduce bioavailability and overall exposure to the medication, separate administration by at least 4 hr
+• Take with or without food.
+• Do not take at the same time as aluminum or magnesium antacids
+• Note: No sedation vs. placebo in clinical trials.
+...................................................................
+• For Upper respiratory allergies: ......... Twice-daily formulations: Oral: 60 mg every 12 hours (maximum: 120 mg/day) ....... Once-daily formulations: Oral: 180 mg once daily (maximum: 180 mg/day).
+• Urticaria, new onset and chronic spontaneous (off-label use):......... New onset: Oral: Initial: 180 mg on…
+Patient education excerpt: • Timing: 
+-On empty stomach (1h pre- or 2h post-meal); avoid fruit juices.
+• Missed Dose: 
+-Take ASAP; skip if near next dose.
+• Interactions: 
+-Take 2h apart from antacids (aluminum/magnesium).
+• Overdose Antidote: 
+-None (supportive care).
+• Seek Help Immediately: 
+-Rapid heartbeat, severe dizziness, rash.
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Fexofenadine + DEXTROMETHORPHAN: Risk: Mild drowsiness (high-dose); Interaction: Additive peripheral H₁ effects; Monitoring: Visual analog scale for sedation; Dosage: Max fexofenadine 120mg/day; Alternative: Pseudoephedrine; Patient: Caution with machinery.
+- Fexofenadine + PENTAZOCINE: Risk: Mild sedation; Type: Additive; Monitoring: Cognitive function; Dosage Adjustments: ↓ Pentazocine 25%; Alternative: Loratadine; Patient Warnings: Avoid driving.
+- Fexofenadine + TRAMADOL: Risk: Mild drowsiness (high-dose); Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Nasal cromolyn; Patient: Caution with machinery.
+- Fexofenadine + CODEINE: Risk: Mild drowsiness (high-dose); Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Intranasal steroids; Patient: Caution with driving.
+- Fexofenadine + FENTANYL: Risk: Mild drowsiness (high-dose); Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Intranasal steroids; Patient: Caution with driving.
+- Fexofenadine + PETHIDINE (DEMEROL): Risk: Moderate sedation, dry mouth; Type: Additive; Monitoring: Oral mucosa, hydration status; Dosage Adjustments: Reduce meperidine 25%; Alternative: Loratadine; Patient Warnings: Increase fluid intake.
+- Fexofenadine + KETOBEMIDONE: Risk: Mild sedation; Type: Additive; Monitoring: Cognitive function; Dosage Adjustments: ↓ Ketobemidone 25%; Alternative: Loratadine; Patient Warnings: Avoid driving.
+- Fexofenadine + MORPHINE: Risk: Mild drowsiness; Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Intranasal steroids; Patient: Caution with driving.
+- Fexofenadine + METHADONE: Risk: Mild drowsiness; Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Intranasal steroids; Patient: Caution with driving.
+- Fexofenadine + HYDROMORPHONE: Risk: Mild drowsiness; Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Intranasal steroids; Patient: Caution with machinery.
+- Fexofenadine + HYDROCODONE: Risk: Mild drowsiness; Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Intranasal steroids; Patient: Caution with driving.
+- Fexofenadine + OXYCODONE: Risk: Mild drowsiness; Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Intranasal steroids; Patient: Caution with driving.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Non-sedating antihistamines: use if needed after clinician advice (fexofenadine often acceptable).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Limited data; non-sedating agents preferred over 1st-generation — ask pharmacist.
+
+9. Supplements / cross-selling
+Catalog cross-selling: • FAMOTIDINE for Urticaria (off-label use), (as additional therapy if insufficient response to full-dose H1 antihistamine) …..Oral: 20 mg twice daily given in combination with H1 antihistamine
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Headache (10–12%)*
+Nausea (3–5%)*
+Minor (material sheet): Drowsiness (1.3%)*
+Dyspepsia (2%)*
+Fatigue (1.6%)*
+Back Pain (1%)*
+Viral Infection (3%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

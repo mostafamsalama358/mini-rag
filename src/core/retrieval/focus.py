@@ -199,7 +199,14 @@ def _document_matches_term(doc: RetrievedDocument, term: str) -> bool:
         for value in fields_view.values():
             if term_u in str(value or "").upper():
                 return True
-    for key in ("brand_name", "trade_name", "product_name"):
+    for key in (
+        "entity",
+        "entity_aliases",
+        "brand_name",
+        "trade_name",
+        "product_name",
+        "file_name",
+    ):
         value = str(metadata.get(key) or "").upper()
         if term_u in value:
             return True
@@ -242,10 +249,11 @@ def ground_documents_to_entity(
         return list(documents or [])
 
     def _haystack_matches(doc: RetrievedDocument, tokens_u: set[str]) -> bool:
-        """True if ANY token appears in the row text OR in the structured
-        ``fields`` view the chunker writes (canonical values that may not be
-        spelled the same in the text representation). Mirrors
-        ``_document_matches_term`` so there is a single matching contract."""
+        """True if ANY token appears in the row text OR entity-bearing metadata.
+
+        Field-sliced dosage/warning chunks often omit the brand from body text
+        while still carrying ``entity`` / ``file_name`` from the leaflet.
+        """
         text_u = (doc.text or "").upper()
         if any(tok in text_u for tok in tokens_u):
             return True
@@ -256,6 +264,17 @@ def ground_documents_to_entity(
                 value_u = str(value or "").upper()
                 if any(tok in value_u for tok in tokens_u):
                     return True
+        for key in (
+            "entity",
+            "entity_aliases",
+            "brand_name",
+            "trade_name",
+            "product_name",
+            "file_name",
+        ):
+            value_u = str(metadata.get(key) or "").upper()
+            if any(tok in value_u for tok in tokens_u):
+                return True
         return False
 
     other_trade: list[RetrievedDocument] = []

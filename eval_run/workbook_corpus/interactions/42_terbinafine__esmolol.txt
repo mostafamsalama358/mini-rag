@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: ESMOLOL
+Risk: Minimal interaction (esterase metabolism)
+Type: Pharmacodynamic only
+Monitoring: BP during infusion
+Dose adjustment: None
+Alternative: None
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction (esterase metabolism); Type: Pharmacodynamic only; Monitoring: BP during infusion; Dosage: None; Alternative: None; Patient: N/A (acute care).

@@ -1,0 +1,16 @@
+Drug interaction — Ferrotron
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 45
+Brand: Ferrotron
+API 1: IRON
+API 2: LEVODOPA
+Risk: Chelation → ↓ levodopa absorption (up to 50%) worsening Parkinsonism
+Type: -
+Monitoring: "ON/OFF" diaries, serum ferritin
+Dose adjustment: ↑ levodopa by 100-200mg/day if needed
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Chelation → ↓ levodopa absorption (up to 50%) worsening Parkinsonism; Monitoring: "ON/OFF" diaries, serum ferritin; Dosage: ↑ levodopa by 100-200mg/day if needed; Patient: Take levodopa 1h before meals, iron 2h after meals with OJ; avoid antacids.

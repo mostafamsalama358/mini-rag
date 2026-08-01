@@ -1,0 +1,84 @@
+FERROTRON 30 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Ferrotron
+Product line: Ferrotron
+Catalog SKU: FERROTRON 30 CAPS.
+SKU ID: 45
+INN / actives: Iron * Ferrous * Folic Acid
+INN primary: Iron
+INN aliases: FERROUS; FERROUS FUMARATE; FOLIC; FOLIC ACID; IRON
+Strength / form: Iron supplement | Form=CAP. | Min.age=12 years
+Manufacturer / market: NERHADOU INTERNATIONAL CO.
+Price (catalog): 138
+Categories: VITAMINS & SUPPLEMENTS > VITAMINS > MULTIVITAMINS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Ferrotron is used for
+Iron deficiency anemia - 50 : 200 mg/day oral elemental iron*
+CKD anemia - IV iron sucrose 100 mg/dialysis session*
+Pregnancy prophylaxis - 27 mg/day*
+
+2. Dosage — Adults
+Adult dose: 1 capsule once daily
+Maximum daily dose: 1 capsule/day (1 capsule)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: See pack
+Pediatric dose: Dose depends on elemental iron requirement and age.
+Pediatric max daily dose: See pack
+
+4. Do not take Ferrotron if / disease cautions
+Hypersensitivity to IRON * Disorders of Metal Metabolism (Overload) *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • Pediatric Overdose Risk:
+-Accidental ingestion of >60 mg/kg may cause fatal metabolic acidosis. Store in child-proof containers
+Warnings: • Indicated for treatment of iron deficiency anemia associated with chronic kidney disease
+• Iron absorption is inhibited by eggs , milk , Cocoa and coffee , drink a lot of tea with your meals , Walnuts (contain phytates) , soy protein and fiber , medications that decrease the amount of acid in the stomach, including antacids and proton pump inhibitors (PPIs)
+• Some products that may interact with this drug include: vitamin products, other iron-containing products.
+• Foods rich in iron include meats (especially liver), raisins, figs, broccoli, brussels sprouts, beans, lentils, and iron-fortified or enriched cereals
+• Avoid:
+- CALCIUM OR CALCIUM CARBONATE / ZINC OR ZINC GLUCONATE supplements:
+HCP notes: • Indicated for treatment of iron deficiency anemia associated with chronic kidney disease
+• Iron absorption is inhibited by eggs , milk , Cocoa and coffee , drink a lot of tea with your meals , Walnuts (contain phytates) , soy protein and fiber , medications that decrease the amount of acid in the stomach, including antacids and proton pump inhibitors (PPIs)
+• Some products that may interact with this drug include: vitamin products, other iron-containing products.
+• Foods rich in iron include meats (especially liver), raisins, figs, broccoli, brussels sprouts, beans, lentils, and iron-fortified or enriched cereals
+• Avoid:
+- CALCIUM OR CALCIUM CARBONATE / ZINC OR ZINC GLUCONATE supplements:
+Patient education: • Timing: 
+-Take 1 hr before meals or 2 hrs after for best absorption; with food if GI upset occurs.
+• Food Interactions: 
+-Avoid dairy, tea, coffee within 2 hrs; take with vitamin C-rich foods.
+• Missed Dose: 
+-Skip if near next dose; never double dose.
+• Overdose Antidote: 
+-Deferoxamine IV .
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- IRON + METHYLDOPA; Risk: Reduced methyldopa absorption (↓ efficacy), BP instability; Type: Chelation interaction; Monitoring: BP weekly, Hb/ferritin (if anemia); Dose adjustment: Administer iron 2–3 hours after methyldopa; Alternative: IV iron if oral separation impractical; Patient warning: /Management: Take methyldopa on empty stoma…
+- IRON + CLONIDINE HYDROCHLORIDE; Risk: Reduced clonidine absorption leading to decreased efficacy and potential hypertension; Type: Chelation interaction; Monitoring: BP weekly, watch for rebound hypertension; Dose adjustment: Administer iron 2-4 hours after clonidine; Alternative: IV iron if oral separation not feasible; Patient warning: /Manageme…
+- IRON + MOXONIDINE; Risk: Reduced moxonidine absorption and efficacy; Type: Chelation; Monitoring: BP weekly, watch for hypertension; Dose adjustment: Administer iron 3 hours after moxonidine; Alternative: IV iron if needed; Patient warning: /Management: Take moxonidine on empty stomach.
+- IRON + CHOLESTYRAMINE; Risk: Reduced iron absorption → impaired anemia correction (risk of persistent fatigue/cardiac strain); Type: Pharmacokinetic (GI binding); Monitoring: FBC every 2-4 weeks, ferritin monthly; Dose adjustment: Administer iron ≥4h before cholestyramine (preferably on empty stomach); Alternative: IV iron preparations (e.g., ferric…
+- IRON + COLESTIPOL; Risk: Severe iron absorption reduction (50-70%) → refractory anemia; Type: Pharmacokinetic (GI binding); Monitoring: FBC weekly, iron studies monthly; Dose adjustment: Strict 6h separation (AM iron/PM colestipol); Alternative: IV iron (ferric carboxymaltose/ferumoxytol); Patient warning: /Management: Take iron with 250mg vitami…
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: safe
+
+8. Breastfeeding
+Breastfeeding safety: safe
+
+9. Supplements / cross-selling
+Catalog cross-selling: Folic Acid
+
+10. Possible side effects
+Major: Nausea (15–30%)*
+Constipation (20%)*
+Dark stools (100%)*
+Minor: Anaphylaxis - IV iron (0.1–1%)*
+Iron overload - ferritin >1,000 ng/mL (1%)*
+Hypophosphatemia - IV formulations (1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

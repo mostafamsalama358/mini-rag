@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: CODEINE
+Risk: Enhanced CNS depression in CYP2D6 ultrarapid metabolizers.
+Type: -
+Monitoring: Respiratory rate q2h initially. Dose Adjustment: Reduce codeine by 25-50%.
+Dose adjustment: -
+Alternative: -
+Patient warning: Watch for extreme sleepiness. Mechanism: Prodrug converted to morphine via CYP2D6.
+Severity: caution
+
+Clinical note:
+Risk: Enhanced CNS depression in CYP2D6 ultrarapid metabolizers. Monitoring: Respiratory rate q2h initially. Dose Adjustment: Reduce codeine by 25-50%. Patient Warning: Watch for extreme sleepiness. Mechanism: Prodrug converted to morphine via CYP2D6.

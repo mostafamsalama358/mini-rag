@@ -20,9 +20,6 @@ from utils.chunk_metadata import format_source_label
 from utils.detect_language import detect_query_language
 from utils.rag_history import select_chat_history_messages
 from utils.rag_response import parse_rag_answer
-from core.query_parser import build_conversation_context, semantic_parse_async
-from core.query_parser.grounding import build_catalog_fingerprint_index
-from core.query_parser.normalize import normalize_query_text as semantic_normalize_query_text
 from core.field_resolution import (
     FieldManifest,
     assess_field_capability,
@@ -74,7 +71,6 @@ from utils.rerank import get_reranker
 
 logger = logging.getLogger("uvicorn.error")
 
-_catalog_lexicon_cache: dict[int, tuple[list[str], dict[str, list[str]]]] = {}
 _field_manifest_cache: dict[int, FieldManifest] = {}
 
 
@@ -93,10 +89,14 @@ class RetrievalContext:
 
 
 @dataclass(frozen=True)
-class RetrievalResult:
+class LegacyRetrievalOutcome:
     documents: list
     retrieval_path: str
     rows_after_entity_filter: int
+
+
+# Backward-compatible alias during migration; prefer LegacyRetrievalOutcome.
+RetrievalResult = LegacyRetrievalOutcome
 
 
 def _entity_spelling_match(token: str, entity: str) -> bool:
@@ -209,31 +209,10 @@ class RAGService:
         self.template_parser = template_parser
         self.reranker = reranker
         self.field_registry = field_registry or get_field_registry()
+        self._skill_runtime = None
 
-    async def _load_catalog_for_parser(
-        self,
-        project: Project,
-        profile: FieldProfile,
-    ) -> tuple[list[str], dict[str, list[str]]]:
-        project_id = int(project.project_id)
-        cached = _catalog_lexicon_cache.get(project_id)
-        if cached is not None:
-            return cached
-
-        parser_profile = profile.parser_profile
-        metadata_keys = list(parser_profile.entity_grounding.metadata_keys or [])
-        if not metadata_keys or self.db_client is None:
-            return [], {}
-
-        chunk_model = await ChunkModel.create_instance(self.db_client)
-        terms = await chunk_model.get_distinct_metadata_tokens(
-            project_id,
-            metadata_keys=metadata_keys,
-        )
-        index = build_catalog_fingerprint_index(terms)
-        lexicon = (terms, index)
-        _catalog_lexicon_cache[project_id] = lexicon
-        return lexicon
+    def set_skill_runtime(self, skill_runtime) -> None:
+        self._skill_runtime = skill_runtime
 
     async def _run_parse_stage(
         self,
@@ -243,34 +222,18 @@ class RAGService:
         profile: FieldProfile,
         session_id: str | None,
     ):
-        normalized_query = semantic_normalize_query_text(original_query, profile.config)
-        parser_profile = profile.parser_profile
+        from services.rag.pipeline.query_parse_service import QueryParseService
 
-        prior_messages = None
-        if session_id and self.db_client is not None:
-            chat_message_model = await ChatMessageModel.create_instance(self.db_client)
-            prior_messages = await chat_message_model.get_chat_history(
-                session_id=session_id,
-                project_id=project.project_id,
-            )
-
-        conversation_context = build_conversation_context(
-            domain_key=profile.domain_key,
-            document_language=parser_profile.document_language,
-            chat_messages=prior_messages or [],
-            context_turn_window=parser_profile.context_turn_window,
-        )
-
-        catalog_terms, fingerprint_index = await self._load_catalog_for_parser(project, profile)
-        parse_result = await semantic_parse_async(
-            normalized_query,
+        parse_service = QueryParseService(
             generation_client=self.generation_client,
-            profile=profile,
-            conversation_context=conversation_context,
-            catalog_terms=catalog_terms or None,
-            catalog_fingerprint_index=fingerprint_index or None,
+            db_client=self.db_client,
         )
-        return parse_result, prior_messages
+        return await parse_service.parse(
+            project=project,
+            query=original_query,
+            profile=profile,
+            session_id=session_id,
+        )
 
     async def _build_retrieval_context(
         self,
@@ -315,13 +278,6 @@ class RAGService:
             retrieval_limit = max(limit, int(profile.retrieval.exhaustive_min_limit))
         if field_is_list and query_plan.scope in ("all", "subset"):
             retrieval_limit = max(retrieval_limit, int(profile.retrieval.exhaustive_min_limit))
-        # Temporary domain hook until YAML retrieval strategies land (005 T021).
-        if query_plan.field == "interactions":
-            retrieval_limit = max(
-                retrieval_limit,
-                int(profile.retrieval.exhaustive_min_limit),
-                500,
-            )
 
         query_type = query_plan.field if query_plan.field != "unknown" else "factual"
         search_mode = resolve_search_mode(
@@ -356,54 +312,14 @@ class RAGService:
         embedding_cache = EmbeddingCache()
         retrieval_start = time.time()
         composition_api_token: str | None = None
-        retrieval_path = (
+        default_path = (
             "entity_scoped" if retrieval.entity_key and retrieval.entity_prefix else "vector"
         )
-        search_entity_key = (
-            retrieval.entity_key
-            if query_plan.entity and query_plan.field != "interactions"
-            else None
-        )
-        search_entity_prefix = (
-            retrieval.entity_prefix
-            if query_plan.entity and query_plan.field != "interactions"
-            else None
-        )
+        search_entity_key = retrieval.entity_key if query_plan.entity else None
+        search_entity_prefix = retrieval.entity_prefix if query_plan.entity else None
 
-        if query_plan.field == "interactions" and query_plan.entity:
-            chunk_model = await ChunkModel.create_instance(self.db_client)
-            retrieved_documents, composition_api_token = await fetch_interaction_documents(
-                project_id=int(project.project_id),
-                entity=query_plan.entity,
-                chunk_model=chunk_model,
-                field_manifest=retrieval.field_manifest,
-                registry=profile.field_registry,
-                limit=retrieval.retrieval_limit,
-            )
-            if not retrieved_documents:
-                retrieval_path = "interactions_structured_miss→vector"
-                logger.info(
-                    "interaction_structured_miss project=%s entity=%r api_token=%r",
-                    project_label,
-                    query_plan.entity,
-                    composition_api_token,
-                )
-                retrieved_documents = await self.nlp_controller.search_vector_db_collection(
-                    project=project,
-                    text=parse_result.canonical_query,
-                    limit=retrieval.retrieval_limit,
-                    metadata_filter=retrieval.entity_filter or None,
-                    profile=profile,
-                    embedding_cache=embedding_cache,
-                    field_resolution=retrieval.field_resolution,
-                    query_plan=query_plan,
-                    entity_key=search_entity_key,
-                    entity_prefix=search_entity_prefix,
-                )
-            else:
-                retrieval_path = "interactions_structured"
-        else:
-            retrieved_documents = await self.nlp_controller.search_vector_db_collection(
+        async def _search_vector():
+            return await self.nlp_controller.search_vector_db_collection(
                 project=project,
                 text=parse_result.canonical_query,
                 limit=retrieval.retrieval_limit,
@@ -415,6 +331,28 @@ class RAGService:
                 entity_key=search_entity_key,
                 entity_prefix=search_entity_prefix,
             )
+
+        async def _fetch_pair(*, entity: str):
+            chunk_model = await ChunkModel.create_instance(self.db_client)
+            return await fetch_interaction_documents(
+                project_id=int(project.project_id),
+                entity=entity,
+                chunk_model=chunk_model,
+                field_manifest=retrieval.field_manifest,
+                registry=profile.field_registry,
+                limit=retrieval.retrieval_limit,
+            )
+
+        from services.rag.skills import get_retrieval_strategy
+
+        strategy = get_retrieval_strategy("default")
+        retrieved_documents, retrieval_path = await strategy.retrieve(
+            ctx=None,
+            search_vector=_search_vector,
+            fetch_pair_documents=_fetch_pair,
+            default_path=default_path,
+        )
+        _ = composition_api_token
 
         RAG_RETRIEVAL_LATENCY.labels(project_id=project_label).observe(time.time() - retrieval_start)
 
@@ -436,7 +374,7 @@ class RAGService:
     ) -> tuple[list, int, list]:
         pre_grounding_count = len(retrieved_documents)
         pre_grounding_documents = list(retrieved_documents)
-        if query_plan.entity and query_plan.field != "interactions":
+        if query_plan.entity:
             entity_tokens = _grounding_entity_tokens(query_plan.entity, [query_plan.entity])
             retrieved_documents = ground_documents_to_entity(
                 retrieved_documents,
@@ -455,6 +393,7 @@ class RAGService:
         session_id: str | None = None,
         metadata_filter: dict | None = None,
         profile: FieldProfile | None = None,
+        skill_id: str | None = None,
     ) -> tuple[str | None, str | None, list | None, bool]:
         """Answer a user question using semantic parse → retrieval → generation."""
         if profile is None:
@@ -467,6 +406,22 @@ class RAGService:
         original_query = query
         settings = get_settings()
 
+        from services.rag.pipeline.skill_orchestrator import profile_has_skills
+
+        if profile_has_skills(profile) and self._skill_runtime is not None:
+            return await self._skill_runtime.execute_as_legacy_tuple(
+                project=project,
+                query=query,
+                limit=limit,
+                session_id=session_id,
+                metadata_filter=metadata_filter,
+                profile=profile,
+                skill_id=skill_id,
+            )
+
+        if profile_has_skills(profile):
+            raise RuntimeError("Skill runtime not configured")
+
         if not settings.RAG_SEMANTIC_PARSER_ENABLED:
             lang = detect_query_language(original_query, default="en")
             if lang.startswith("ar"):
@@ -475,7 +430,6 @@ class RAGService:
                 msg = "Semantic query parser is disabled. Set RAG_SEMANTIC_PARSER_ENABLED=true to continue."
             return msg, None, None, False
 
-        # Stage 1: parse the question into a canonical query and QueryPlan.
         parse_result, prior_messages = await self._run_parse_stage(
             project=project,
             original_query=query,
@@ -483,15 +437,17 @@ class RAGService:
             session_id=session_id,
         )
         query_plan = parse_result.query_plan
-        outcome = "clarify" if query_plan.needs_clarification else ("fallback" if parse_result.error else "ok")
+        outcome = (
+            "clarify"
+            if query_plan.needs_clarification
+            else ("fallback" if parse_result.error else "ok")
+        )
         RAG_PARSE_LATENCY.labels(
             project_id=project_label,
             domain_key=profile.domain_key,
             outcome=outcome,
         ).observe(parse_result.latency_ms / 1000.0)
-
         log_query_plan(parse_result)
-
         if query_plan.needs_clarification:
             RAG_CLARIFICATION_TOTAL.labels(project_id=project_label).inc()
             prompt = query_plan.clarification_prompt or _no_context_answer(
@@ -586,48 +542,17 @@ class RAGService:
             retrieval_path="entity_scoped" if retrieval.entity_key and retrieval.entity_prefix else "vector",
         )
 
-        # Stage 3: search with the canonical query plus plan-derived hints.
+        # Stage 3: strategy-driven retrieval (default strategy via registry).
+        from services.rag.skills import get_retrieval_strategy
+
         embedding_cache = EmbeddingCache()
         retrieval_start = time.time()
-        composition_api_token: str | None = None
-        retrieval_path = "entity_scoped" if entity_key and entity_prefix else "vector"
-        search_entity_key = entity_key if query_plan.entity and query_plan.field != "interactions" else None
-        search_entity_prefix = entity_prefix if query_plan.entity and query_plan.field != "interactions" else None
+        default_path = "entity_scoped" if entity_key and entity_prefix else "vector"
+        search_entity_key = entity_key if query_plan.entity else None
+        search_entity_prefix = entity_prefix if query_plan.entity else None
 
-        if query_plan.field == "interactions" and query_plan.entity:
-            chunk_model = await ChunkModel.create_instance(self.db_client)
-            retrieved_documents, composition_api_token = await fetch_interaction_documents(
-                project_id=int(project.project_id),
-                entity=query_plan.entity,
-                chunk_model=chunk_model,
-                field_manifest=field_manifest,
-                registry=profile.field_registry,
-                limit=retrieval_limit,
-            )
-            if not retrieved_documents:
-                retrieval_path = "interactions_structured_miss→vector"
-                logger.info(
-                    "interaction_structured_miss project=%s entity=%r api_token=%r",
-                    project_label,
-                    query_plan.entity,
-                    composition_api_token,
-                )
-                retrieved_documents = await self.nlp_controller.search_vector_db_collection(
-                    project=project,
-                    text=parse_result.canonical_query,
-                    limit=retrieval_limit,
-                    metadata_filter=entity_filter or None,
-                    profile=profile,
-                    embedding_cache=embedding_cache,
-                    field_resolution=field_resolution,
-                    query_plan=query_plan,
-                    entity_key=search_entity_key,
-                    entity_prefix=search_entity_prefix,
-                )
-            else:
-                retrieval_path = "interactions_structured"
-        else:
-            retrieved_documents = await self.nlp_controller.search_vector_db_collection(
+        async def _search_vector():
+            return await self.nlp_controller.search_vector_db_collection(
                 project=project,
                 text=parse_result.canonical_query,
                 limit=retrieval_limit,
@@ -639,6 +564,25 @@ class RAGService:
                 entity_key=search_entity_key,
                 entity_prefix=search_entity_prefix,
             )
+
+        async def _fetch_pair(*, entity: str):
+            chunk_model = await ChunkModel.create_instance(self.db_client)
+            return await fetch_interaction_documents(
+                project_id=int(project.project_id),
+                entity=entity,
+                chunk_model=chunk_model,
+                field_manifest=field_manifest,
+                registry=profile.field_registry,
+                limit=retrieval_limit,
+            )
+
+        strategy = get_retrieval_strategy("default")
+        retrieved_documents, retrieval_path = await strategy.retrieve(
+            ctx=None,
+            search_vector=_search_vector,
+            fetch_pair_documents=_fetch_pair,
+            default_path=default_path,
+        )
         RAG_RETRIEVAL_LATENCY.labels(project_id=project_label).observe(time.time() - retrieval_start)
 
         if retrieved_documents is False:
@@ -684,7 +628,7 @@ class RAGService:
             retrieved_documents=retrieved_documents,
             query_plan=query_plan,
         )
-        if query_plan.entity and query_plan.field != "interactions":
+        if query_plan.entity:
             entity_tokens = _grounding_entity_tokens(query_plan.entity, [query_plan.entity])
             log_post_filter(
                 rows_after_entity_filter=rows_after_entity_filter,

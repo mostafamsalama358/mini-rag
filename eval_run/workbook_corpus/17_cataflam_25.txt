@@ -1,0 +1,116 @@
+CATAFLAM 50 MG 20 SUGAR C.TABS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Cataflam
+Product line: Cataflam
+Catalog SKU: CATAFLAM 50 MG 20 SUGAR C.TABS.
+SKU ID: 17
+INN / actives: Diclofenac Potassium * Diclofenac
+INN primary: Diclofenac Potassium
+INN aliases: DICLOFENAC; DICLOFENAC POTASSIUM; DICLOFENAC SODIUM
+Strength / form: Diclofenac potassium 25 mg | Form=TAB. | Min.age=14 years
+Manufacturer / market: NOVARTIS
+Price (catalog): 86
+Categories: MEDICINE > PAIN, FEVER & INFLAMMATION > ANALGESICS & ANTI-PYRETICS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Cataflam is used for
+Osteoarthritis/Rheumatoid Arthritis - 50 mg TID or 75 mg BID*
+Acute Pain/Primary Dysmenorrhea - 50 mg TID (max 200 mg/day)*
+Migraine - 50 mg PRN (with aura)*
+
+2. Dosage — Adults
+Adult dose: 1 tablet 2-3 times/day
+Maximum daily dose: 150 mg/day (150 mg/day)
+
+3. Dosage — Children
+Minimum age in catalog: 14 years
+Pediatric min age: See pack
+Pediatric dose: 0.5-2 mg/kg/day in 2-3 divided doses. Max 150 mg/day.
+Pediatric max daily dose: 150 mg/day
+
+4. Do not take Cataflam if / disease cautions
+Infants under 1 year * Specific Coagulopathies & Platelet Disorders * Asthma & Reactive Airway Diseases * Hypersensitivity to NSAIDs/ASPIRIN * Coronary Artery Disease & Ischemic Heart Disease * Inflammatory Bowel Disease (IBD) * Peptic Ulcer Disease & Gastritis * GI Perforation / Ischemia & Bleeding * GERD & Esophageal Disorders * Gastrointestinal (GI) bleeding * Stevens-Johnson syndrome (SJS) * Toxic Epidermal Necrolysis (TEN) * Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) * Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation* Solitary kidney* Cardiac Procedures & Perioperative Pain*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • Cardiovascular: 
+-Increased risk of MI/stroke (fatal; may occur early).
+• GI: 
+-Bleeding/ulceration/perforation (can be fatal; higher risk in elderly)
+Warnings: • Dose Modification:
+- Hepatic: 
+Reduce dose in severe impairment
+- Renal: 
+No adjustment for mild-moderate impairment; avoid if eGFR <30 mL/min.
+.......................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Category C (AU: A); contraindicated in 3rd trimester.
+- Lactation: 
+Low excretion in milk; use caution.
+........................................................
+• Lab Interactions: 
+-May elevate LFTs; monitor periodically.
+...........................................................
+Key References:
+ FDA Orange Book, StatPearls, ESCEO guidelines
+HCP notes: • Dose Modification:
+- Hepatic: 
+Reduce dose in severe impairment
+- Renal: 
+No adjustment for mild-moderate impairment; avoid if eGFR <30 mL/min.
+.......................................................................
+• Pregnancy/Lactation:
+- Pregnancy: 
+Category C (AU: A); contraindicated in 3rd trimester.
+- Lactation: 
+Low excretion in milk; use caution.
+........................................................
+• Lab Interactions: 
+-May elevate LFTs; monitor periodically.
+...........................................................
+Key References:
+ FDA Orange Book, StatPearls, ESCEO guidelines
+Patient education: • Timing: 
+-Take with food/milk; immediate-release on empty stomach.
+• Missed Dose: 
+-Skip if close to next dose; do not double.
+• Interactions: 
+-Avoid alcohol, aspirin, other NSAIDs.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- DICLOFENAC POTASSIUM + PROPAFENONE; Risk: CYP2C9 inhibition → ↑ propafenone levels (arrhythmia risk) + GI bleeding; Type: Pharmacokinetic (CYP2C9 competition) + Pharmacodynamic (antiplatelet); Monitoring: ECG (PR/QRS), Hgb, renal function; Dose adjustment: Max 75 mg/day diclofenac; Alternative: Topical diclofenac; Patient warning: Report palpitation…
+- DICLOFENAC POTASSIUM + CAPTOPRIL; Risk: Hyperkalemia and AKI (higher with potassium salt); Type: Pharmacodynamic; Monitoring: K⁺, Cr (baseline + 3 days); Dose adjustment: Reduce diclofenac frequency; Alternative: Diclofenac topical gel; Patient warning: /Management: Avoid potassium supplements; report muscle weakness.
+- DICLOFENAC POTASSIUM + ENALAPRIL; Risk: Hyperkalemia (potassium salt) + AKI; Type: Pharmacodynamic; Monitoring: K⁺, Cr (baseline + 3 days); Dose adjustment: Avoid in CKD; max 75 mg/day; Alternative: Diclofenac topical; Patient warning: /Management: Avoid potassium supplements.
+- DICLOFENAC POTASSIUM + LISINOPRIL; Risk: Hyperkalemia (potassium salt) + AKI; Type: Pharmacodynamic; Monitoring: K⁺, Cr (baseline + 3 days); Dose adjustment: Avoid in CKD; max 75 mg/day; Alternative: Diclofenac topical; Patient warning: /Management: Avoid potassium supplements.
+- DICLOFENAC POTASSIUM + RAMIPRIL; Risk: Hyperkalemia and AKI; Type: Pharmacodynamic; Monitoring: K+, Cr (baseline + 3 days); Dose adjustment: Avoid if CKD; max 75 mg/day; Alternative: Topical diclofenac; Patient warning: /Management: Avoid potassium-rich foods.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: avoid
+
+8. Breastfeeding
+Breastfeeding safety: use_with_caution
+
+9. Supplements / cross-selling
+Catalog cross-selling: Controloc 20|Gaviscon Advance
+
+10. Possible side effects
+Major: Dyspepsia (15%)*
+Abdominal Pain (15%)*
+Nausea/Vomiting (10%)*
+Headache (10%)*
+Dizziness (10%)*
+Diarrhea (10%)*
+Minor: Rash (5%)*
+Pruritus (5%)*
+Edema (5%)*
+Fluid Retention (5%)*
+Peptic Ulcer - Risk increases with duration, age, and concomitant steroids/anticoagulants (1-2%)*
+GI Bleeding - Risk increases with duration, age, and concomitant steroids/anticoagulants (1-2%)*
+Renal Impairment - Elevated creatinine, acute kidney injury (2%)*
+Hepatotoxicity - Elevated transaminases (1%)*
+Hypertension (2%)*
+Severe Cutaneous Adverse Reactions (SCARs) (0.1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

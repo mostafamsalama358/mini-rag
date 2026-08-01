@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: SILODOSIN
+Risk: Mild additive hypotension (minimal CYP3A4 inhibition)
+Type: Pharmacodynamic
+Monitoring: BP at days 3/7 of therapy
+Dose adjustment: None typically needed
+Alternative: First-line macrolide for silodosin
+Patient warning: /Management: Standard orthostatic precautions. Lowest risk macrolide.
+Severity: caution
+
+Clinical note:
+Risk: Mild additive hypotension (minimal CYP3A4 inhibition); Type: Pharmacodynamic; Monitoring: BP at days 3/7 of therapy; Dosage Adjustments: None typically needed; Alternative: First-line macrolide for silodosin patients; Patient Warnings/Management: Standard orthostatic precautions. Lowest risk macrolide.

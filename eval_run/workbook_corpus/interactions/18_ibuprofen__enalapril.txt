@@ -1,0 +1,16 @@
+Drug interaction — Brufen
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 18
+Brand: Brufen
+API 1: IBUPROFEN
+API 2: ENALAPRIL
+Risk: Moderate BP elevation and reversible AKI
+Type: Pharmacodynamic
+Monitoring: BP pre/post dose, Cr if use >3 days
+Dose adjustment: Adjust enalapril based on BP response
+Alternative: Naproxen if CVD risk low
+Patient warning: /Management: Use lowest effective ibuprofen dose (≤400 mg/dose).
+Severity: caution
+
+Clinical note:
+Risk: Moderate BP elevation and reversible AKI; Type: Pharmacodynamic; Monitoring: BP pre/post dose, Cr if use >3 days; Dosage Adjustments: Adjust enalapril based on BP response; Alternative: Naproxen if CVD risk low; Patient Warnings/Management: Use lowest effective ibuprofen dose (≤400 mg/dose).

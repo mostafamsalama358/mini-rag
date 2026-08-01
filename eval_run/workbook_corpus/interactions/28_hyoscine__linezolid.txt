@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: LINEZOLID
+Risk: Serotonin syndrome, coma
+Type: Pharmacodynamic
+Monitoring: GCS, hyperreflexia
+Dose adjustment: Transdermal only
+Alternative: Ondansetron
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Serotonin syndrome, coma; Type: Pharmacodynamic; Monitoring: GCS, hyperreflexia; Dosage: Transdermal only; Alternative: Ondansetron; Patient: Discontinue if myoclonus.

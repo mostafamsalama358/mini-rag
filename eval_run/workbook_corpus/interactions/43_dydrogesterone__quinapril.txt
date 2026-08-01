@@ -1,0 +1,16 @@
+Drug interaction — Duphaston
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 43
+Brand: Duphaston
+API 1: DYDROGESTERONE
+API 2: QUINAPRIL
+Risk: Minimal (0.8-1.5%).
+Type: Clinically negligible.
+Monitoring: Standard ACEi protocol.
+Dose adjustment: None. Alternatives: N/A. Note: "No additional precautions beyond routine monitoring."
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Minimal (0.8-1.5%). Type: Clinically negligible. Monitoring: Standard ACEi protocol. Dosage Adjustments: None. Alternatives: N/A. Note: "No additional precautions beyond routine monitoring."

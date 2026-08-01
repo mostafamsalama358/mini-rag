@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: LITHIUM CARBONATE
+Risk: Lithium toxicity (reduced renal clearance)
+Type: Pharmacokinetic
+Monitoring: Lithium levels day 3 and 5
+Dose adjustment: Reduce lithium by 30%
+Alternative: Vancomycin for C.diff
+Patient warning: /Management: Report metallic taste/ataxia.
+Severity: caution
+
+Clinical note:
+Risk: Lithium toxicity (reduced renal clearance); Type: Pharmacokinetic; Monitoring: Lithium levels day 3 and 5; Dosage Adjustments: Reduce lithium by 30%; Alternative: Vancomycin for C.diff; Patient Warnings/Management: Report metallic taste/ataxia.

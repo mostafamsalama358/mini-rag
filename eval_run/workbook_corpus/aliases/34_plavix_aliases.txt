@@ -1,0 +1,12 @@
+Alias registry — Plavix
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 34
+Brand: Plavix
+
+Known aliases:
+- Plavix (brand)
+- PLAVIX 75 MG 28 F.C.TABS. (catalog_sku)
+- Clopidogrel (inn)
+- بلافيكس (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

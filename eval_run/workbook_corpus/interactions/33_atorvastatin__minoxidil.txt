@@ -1,0 +1,16 @@
+Drug interaction — Lipitor
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 33
+Brand: Lipitor
+API 1: ATORVASTATIN
+API 2: MINOXIDIL
+Risk: Orthostatic hypotension
+Type: Pharmacodynamic
+Monitoring: Sitting/standing BP, CK
+Dose adjustment: Minoxidil dose reduction may be needed
+Alternative: Pravastatin
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Orthostatic hypotension; Type: Pharmacodynamic; Monitoring: Sitting/standing BP, CK; Dosage: Minoxidil dose reduction may be needed; Alternative: Pravastatin; Patient: Rise slowly; report muscle pain.

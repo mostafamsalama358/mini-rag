@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: BENAZEPRIL
+Risk: Attenuated BP control (daytime SBP ↑10-20mmHg).
+Type: Sympathetic override.
+Monitoring: BP 2h post-dose; limit to 5d use.
+Dose adjustment: Increase benazepril by 10mg if needed. Alternatives: Fluticasone nasal spray. Allergy Tip: "More severe during upper respiratory infections."
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Attenuated BP control (daytime SBP ↑10-20mmHg). Type: Sympathetic override. Monitoring: BP 2h post-dose; limit to 5d use. Dosage Adjustments: Increase benazepril by 10mg if needed. Alternatives: Fluticasone nasal spray. Allergy Tip: "More severe during upper respiratory infections."

@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B6 (PYRIDOXINE)
+API 2: SECOBARBITAL
+Risk: Diminished secobarbital effect → insomnia treatment failure.
+Type: -
+Monitoring: Sleep architecture studies if available.
+Dose adjustment: Avoid chronic use; consider non-barbiturate hypnotics.
+Alternative: -
+Patient warning: Report rebound insomnia; max B6 ≤100mg/day.
+Severity: yes
+
+Clinical note:
+Risk: Diminished secobarbital effect → insomnia treatment failure. Monitoring: Sleep architecture studies if available. Dosage: Avoid chronic use; consider non-barbiturate hypnotics. Patient Warning: Report rebound insomnia; max B6 ≤100mg/day.

@@ -1,0 +1,13 @@
+Alias registry — Zithrokan
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 23
+Brand: Zithrokan
+
+Known aliases:
+- Zithrokan (brand)
+- ZITHROKAN 500 MG 3 CAPS. (catalog_sku)
+- Azithromycin (inn)
+- زثروكان (arabic)
+- زيثروكان (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

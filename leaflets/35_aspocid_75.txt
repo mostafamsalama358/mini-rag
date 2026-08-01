@@ -1,0 +1,120 @@
+ASPOCID 75MG 20 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Aspocid
+Catalog SKU: ASPOCID 75MG 20 TAB.
+INN / actives: Aspirin * Acetylsalicylic Acid
+Catalog New Material: ACETYL SALICYLIC ACID
+Strength / form: Aspirin (acetylsalicylic acid) 75 mg | (web-supplemented dosing below)
+Manufacturer / market: CID
+Price (catalog): 100
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > ANTI-BLOOD CLOTTING
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=ASPOCID 75MG; sheet lookup INNs=Aspirin, Acetylsalicylic Acid, ACETYL SALICYLIC ACID
+Web clinical sources: Aspirin antiplatelet SmPC; Aspocid
+
+1. What Aspocid is used for
+Catalog uses: nsaid.salicylates
+Approved uses (material sheet): Analgesia - 325 : 650 mg q4 : 6h (max 4g/day)*
+CAD secondary prevention 81 : 325 mg/day*
+Fever - 10 : 15 mg/kg/dose (pediatrics, where indicated)*
+Off-label mentions (material sheet): Colorectal cancer prevention - 81 mg/day*
+Preeclampsia prevention - 81 mg/day (after 12 weeks)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Antiplatelet: 75–100 mg once daily as prescribed. Take with food if GI upset.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Avoid aspirin in children/teens with viral illness (Reye risk) unless specialist Kawasaki protocols.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Aspocid if / disease cautions
+From material/disease sheets:
+[ASPIRIN] Children under 16 years *
+Hypersensitivity to NSAIDs/ASPIRIN * 
+Gastrointestinal (GI) bleeding *
+Anemias / Hemoglobinopathies * 
+Favism (G6PD DEFICIENCY) * 
+Specific Coagulopathies & Platelet Disorders*
+Breastfeeding * 
+Asthma & Reactive Airway Diseases *
+Acute Appendicitis * 
+Obstructive GI Diseases * 
+Dehydration & Hypovolemia *
+Hemorrhagic Risk & Bleeding Diatheses ( Include anticoagulants therapy) * 
+Acute liver failure (including fulminant hepatic necrosis and acute‑on‑chronic liver failure) * 
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation *
+Liver tumours (malignant and benign) * 
+Peptic Ulcer Disease & Gastritis*
+[ACETYLSALICYLIC ACID] Hypersensitivity to NSAIDs/ASPIRIN*
+[ACETYL SALICYLIC ACID] Children under 16 years *
+Hypersensitivity to NSAIDs/ASPIRIN * 
+Gastrointestinal (GI) bleeding *
+Anemias / Hemoglobinopathies* 
+Favism (G6PD DEFICIENCY) *
+Specific Coagulopathies & Platelet Disorders *
+Hemorrhagic Risk & Bleeding Diatheses ( Include anticoagulants therapy) *
+Breastfeeding *
+Acute Appendicitis * 
+Asthma & Reactive Airway Diseases * 
+Obstructive GI Diseases * 
+Dehydration & Hypovolemia *
+Non‑dialysis‑dependent severe Chronic Kidney Disease (CKD Stage 4‑5) * 
+Reye's syndrome * 
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) includi…
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • Risk of serious GI bleeding (especially in elderly)
+• Reye's syndrome in children with viral infections
+Notes (material sheet): • Poor absorption of the drug (Aspirin) in the body, and the reason is that some heart patients use enteric-coated aspirin instead of uncoated aspirin to avoid stomach ulcers
+• Avoid alcohol. Alcohol increases the risk of gastrointestinal bleeding.
+• Avoid herbs and supplements with anticoagulant/antiplatelet activity. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba.May increase bleeding risk
+• Take after a meal. This reduces irritating gastrointestinal effects.
+• Take with a full glass of water.
+• Do not lie down for at least 10 minutes after you have taken this drug. If stomach upset occurs while you are taking this medication, you may take it with food or…
+Patient education excerpt: • Timing: 
+-Take with food/milk to reduce GI upset
+• Missed dose: 
+-Skip if close to next dose (for chronic use)
+• Warning: 
+-Report black stools, ringing ears, or swelling
+• Antidote: 
+-Vitamin K/FFP for major bleeding
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Aspirin + PROPAFENONE: Risk: High-dose (>325 mg) → ↑ GI/renal toxicity; Type: Pharmacodynamic; Monitoring: Fecal occult blood; Dosage Adjustments: Prefer ≤325 mg/day; Alternative: Clopidogrel (if antiplatelet needed); Patient Warnings: Take with food, report abdominal pain.
+- Aspirin + CAPTOPRIL: Risk: Competitive renal excretion → transient captopril effect reduction; Type: Pharmacokinetic/pharmacodynamic; Monitoring: BP (post-dose), Cr; Dosage Adjustments: Space doses by 2 hours if high-dose aspirin; Alternative: Low-dose aspirin (81 mg) if for cardioprotection; Patient Warnings/Management: Report tinnitus o…
+- Aspirin + ENALAPRIL: Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose aspirin); Dosage Adjustments: Usually none needed for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools (GI bleed).
+- Aspirin + LISINOPRIL: Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose aspirin); Dosage Adjustments: Usually none needed for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools (GI bleed).
+- Aspirin + RAMIPRIL: Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose); Dosage Adjustments: Usually none for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools.
+- Aspirin + BENAZEPRIL: Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose); Dosage Adjustments: Usually none for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools.
+- Aspirin + CILAZAPRIL: Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose); Dosage Adjustments: Usually none for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools.
+- Aspirin + FOSINOPRIL: Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose aspirin); Dosage Adjustments: Usually none needed for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools (GI bleed).
+- Aspirin + QUINAPRIL: Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose aspirin); Dosage Adjustments: Usually none needed for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools (GI bleed).
+- Aspirin + PERINDOPRIL: Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose aspirin); Dosage Adjustments: Usually none needed for low-dose; Alternative: Non-NSAID antiplatelets; Patient Warnings/Management: Report black stools (GI bleed).
+- Aspirin + ALISKIREN: Risk: Triple threat - (1) Renal impairment (30-50% Cr elevation), (2) Hyperkalemia (K⁺ >5.5 in 15-25%), (3) Attenuated antihypertensive effect (SBP ↑10-15mmHg). Type: Pharmacodynamic (PG inhibition) + Pharmacokinetic (renal clearance competition). Monitoring: Baseline + weekly: BP, Cr, eGFR, K⁺ (q48h if CKD). Dosage A…
+- Aspirin + SILODOSIN: Risk: Increased bleeding with prostate procedures; Type: Mixed; Monitoring: BP, bleeding time pre-op; Dosage: Hold aspirin 7 days pre-TURP; Alternative: Clopidogrel if antiplatelet needed; Patient Warnings: Report hematuria.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Low-dose aspirin used in obstetric protocols when indicated; avoid analgesic-dose NSAID aspirin especially late pregnancy.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Low-dose often acceptable; avoid high-dose.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Dyspepsia (15%)*
+GI irritation (10%)*
+Increased bleeding time - at antiplatelet doses (100%)*
+Minor (material sheet): Tinnitus (3%)*
+Urticaria (2%)*
+Bronchospasm (0.3%)*
+Reye's syndrome (rare)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

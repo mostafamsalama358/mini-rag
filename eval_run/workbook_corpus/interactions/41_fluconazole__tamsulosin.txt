@@ -1,0 +1,16 @@
+Drug interaction — Diflucan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 41
+Brand: Diflucan
+API 1: FLUCONAZOLE
+API 2: TAMSULOSIN
+Risk: Mild tamsulosin increase
+Type: Pharmacokinetic
+Monitoring: BP weekly
+Dose adjustment: None typically needed
+Alternative: First-line antifungal option
+Patient warning: /Management: Normal activities permitted.
+Severity: caution
+
+Clinical note:
+Risk: Mild tamsulosin increase; Type: Pharmacokinetic; Monitoring: BP weekly; Dosage Adjustments: None typically needed; Alternative: First-line antifungal option; Patient Warnings/Management: Normal activities permitted.

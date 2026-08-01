@@ -270,13 +270,67 @@ async def _process_project_files(task_instance, project_id: int,
                 logger.error(f"Error while processing file: {file_id}")
                 continue
 
+            max_batch_elements = None
+            workload_label = "small"
+            stage_t0 = None
+            if settings.INGEST_RELIABILITY_ENABLED:
+                try:
+                    import time as _time
+                    from services.ingest_reliability.workload import (
+                        budget_for,
+                        resolve_workload_class,
+                    )
+                    from services.ingest_reliability.progress_bridge import mark_stage
+                    from services.ingest_reliability.models import (
+                        LifecycleState,
+                        ProgressKind,
+                    )
+
+                    asset_size = 0
+                    try:
+                        _asset = await asset_model.get_asset_record(
+                            asset_project_id=project_id, asset_name=file_id
+                        )
+                        if _asset is not None:
+                            asset_size = int(_asset.asset_size or 0)
+                    except Exception:
+                        asset_size = 0
+                    _wl = resolve_workload_class(asset_size, settings)
+                    workload_label = _wl.value
+                    max_batch_elements = budget_for(_wl, settings).max_batch_elements
+                    celery_tid = getattr(task_instance.request, "id", None) or ""
+                    if celery_tid:
+                        await mark_stage(
+                            db_client,
+                            celery_tid,
+                            state=LifecycleState.CHUNK_PREPARATION,
+                            stage="chunk_preparation",
+                            kind=ProgressKind.PROGRESSING,
+                        )
+                    stage_t0 = _time.perf_counter()
+                except Exception as _rel_exc:
+                    logger.debug("ingest reliability budget skipped: %s", _rel_exc)
+
             file_chunks = process_controller.process_file_content(
                 file_content=file_content,
                 file_id=file_id,
                 chunk_size=chunk_size,
                 overlap_size=overlap_size,
                 profile=_profile,
+                max_batch_elements=max_batch_elements,
             )
+
+            if settings.INGEST_RELIABILITY_ENABLED and stage_t0 is not None:
+                try:
+                    import time as _time
+                    from utils.metrics import INGEST_STAGE_DURATION
+
+                    INGEST_STAGE_DURATION.labels(
+                        stage="chunk_preparation",
+                        workload_class=workload_label,
+                    ).observe(max(0.0, _time.perf_counter() - stage_t0))
+                except Exception:
+                    pass
 
             if file_chunks is None or len(file_chunks) == 0:
 

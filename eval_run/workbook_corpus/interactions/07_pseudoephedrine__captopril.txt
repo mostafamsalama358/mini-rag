@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: CAPTOPRIL
+Risk: Attenuated antihypertensive efficacy (daytime SBP ↑8-12 mmHg).
+Type: Partial opposition.
+Monitoring: BP 2h post-dose; limit 3-day use.
+Dose adjustment: Morning captopril dose ↑50% if needed. Alternatives: Intranasal corticosteroids. OTC Counseling: "Check all 'non-drowsy' cold meds."
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Attenuated antihypertensive efficacy (daytime SBP ↑8-12 mmHg). Type: Partial opposition. Monitoring: BP 2h post-dose; limit 3-day use. Dosage Adjustments: Morning captopril dose ↑50% if needed. Alternatives: Intranasal corticosteroids. OTC Counseling: "Check all 'non-drowsy' cold meds."

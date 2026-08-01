@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: NIMODIPINE
+Risk: Lipid-soluble accumulation
+Type: Pharmacokinetic
+Monitoring: Fasting lipids q3mo
+Dose adjustment: Lacidipine ↓2mg
+Alternative: Lacidipine + magaldrate
+Patient warning: /Management: Weight monitoring.
+Severity: caution
+
+Clinical note:
+Risk: Lipid-soluble accumulation; Type: Pharmacokinetic; Monitoring: Fasting lipids q3mo; Dosage Adjustments: Lacidipine ↓2mg; Alternative: Lacidipine + magaldrate; Patient Warnings/Management: Weight monitoring.

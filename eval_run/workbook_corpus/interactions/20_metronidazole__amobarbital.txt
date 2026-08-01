@@ -1,0 +1,16 @@
+Drug interaction — Flagyl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 20
+Brand: Flagyl
+API 1: METRONIDAZOLE
+API 2: AMOBARBITAL
+Risk: ↓ Metronidazole efficacy + disulfiram-like reaction.
+Type: -
+Monitoring: Neurologic exam daily, ethanol screen.
+Dose adjustment: ↑ Metronidazole 50%; avoid ethanol-containing products.
+Alternative: -
+Patient warning: No alcohol 72h post-treatment.
+Severity: yes
+
+Clinical note:
+Risk: ↓ Metronidazole efficacy + disulfiram-like reaction. Monitoring: Neurologic exam daily, ethanol screen. Dosage: ↑ Metronidazole 50%; avoid ethanol-containing products. Patient Warning: No alcohol 72h post-treatment.

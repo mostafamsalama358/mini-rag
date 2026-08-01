@@ -1,0 +1,17 @@
+﻿{
+    "assets":  63,
+    "chunks":  393,
+    "entity_repair_updates":  341,
+    "leaflets_uploaded":  50,
+    "fully_indexed":  true,
+    "push_task":  "495a257c-71ac-415a-8eb0-ec47c5dd60f3",
+    "timestamp":  "2026-07-22T00:55:35.2758447+03:00",
+    "project_id":  2,
+    "status":  "reindex_complete",
+    "vectors":  626,
+    "notes":  [
+                  "Excel+web-enriched leaflets uploaded and indexed",
+                  "Brand entity pollution repaired in-place",
+                  "Vertex 429 during answer smoke tests after heavy embed push — wait then retest"
+              ]
+}

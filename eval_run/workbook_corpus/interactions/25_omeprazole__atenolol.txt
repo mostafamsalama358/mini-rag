@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: ATENOLOL
+Risk: Exaggerated bradycardia and electrolyte-mediated arrhythmias
+Type: Pharmacodynamic (additive cardiac depression)
+Monitoring: Biweekly ECG + serum Mg²⁺/K⁺
+Dose adjustment: Max omeprazole 20mg/day
+Alternative: Famotidine
+Patient warning: Report palpitations; oral Mg²⁺ supplements; avoid grapefruit.
+Severity: yes
+
+Clinical note:
+Risk: Exaggerated bradycardia and electrolyte-mediated arrhythmias; Type: Pharmacodynamic (additive cardiac depression); Monitoring: Biweekly ECG + serum Mg²⁺/K⁺; Dosage: Max omeprazole 20mg/day; Alternative: Famotidine; Patient Warnings: Report palpitations; oral Mg²⁺ supplements; avoid grapefruit.

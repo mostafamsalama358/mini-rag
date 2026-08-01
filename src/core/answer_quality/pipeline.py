@@ -94,7 +94,25 @@ class GoldenTestRunner(IGoldenTestRunner):
                     },
                 )
 
-            passed = coverage.passed and faithfulness.passed and completeness.passed
+            conflict_ok = True
+            if snapshot.context.conflicts:
+                conflict_ok = bool(snapshot.answer_result.conflicts_disclosed)
+                if not conflict_ok:
+                    logger.warning(
+                        "conflict_disclosure_missing",
+                        extra={
+                            "run_id": run_id,
+                            "question_id": fixture.question_id,
+                            "conflict_count": len(snapshot.context.conflicts),
+                        },
+                    )
+
+            passed = (
+                coverage.passed
+                and faithfulness.passed
+                and completeness.passed
+                and conflict_ok
+            )
             evaluated_at = _utc_now_iso()
             question_results.append(
                 GoldenTestResult(

@@ -1,0 +1,16 @@
+Drug interaction — Cataflam
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 17
+Brand: Cataflam
+API 1: DICLOFENAC POTASSIUM
+API 2: BENAZEPRIL
+Risk: Hyperkalemia and AKI
+Type: Pharmacodynamic
+Monitoring: K+, Cr (baseline + 3 days)
+Dose adjustment: Avoid if CKD; max 75 mg/day
+Alternative: Topical diclofenac
+Patient warning: /Management: Avoid potassium-rich foods.
+Severity: yes
+
+Clinical note:
+Risk: Hyperkalemia and AKI; Type: Pharmacodynamic; Monitoring: K+, Cr (baseline + 3 days); Dosage Adjustments: Avoid if CKD; max 75 mg/day; Alternative: Topical diclofenac; Patient Warnings/Management: Avoid potassium-rich foods.

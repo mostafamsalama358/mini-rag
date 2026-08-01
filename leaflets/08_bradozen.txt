@@ -1,0 +1,65 @@
+BRADOZEN 0.5MG 20 LOZENGES
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Bradozen
+Catalog SKU: BRADOZEN 0.5MG 20 LOZENGES
+INN / actives: Bromelain * Trypsin * Rutoside
+Catalog New Material: DOMIPHEN
+Strength / form: Domiphen bromide 0.5 mg lozenge | (web-supplemented dosing below)
+Manufacturer / market: MEDIZEN PHARMACEUTICAL INDUSTRIES
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > SORE THROAT
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=BRADOZEN; sheet lookup INNs=Bromelain, Trypsin, Rutoside, DOMIPHEN
+Web clinical sources: Medizen Bradozen; Health Canada throat-lozenge monograph (domiphen)
+
+1. What Bradozen is used for
+Catalog uses: sore throat
+Approved uses (material sheet): See labeled uses
+Off-label mentions (material sheet): Not listed
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Dissolve 1 lozenge slowly in the mouth every 2–4 hours (commonly 3–6 times/day). Do not chew/swallow whole. Do not exceed pack daily maximum.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Not for infants (choking risk). For school-age children only if pack allows; dissolve slowly under supervision.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Bradozen if / disease cautions
+From material/disease sheets:
+[BROMELAIN] Hypersensitivity to BROMELAIN*
+[TRYPSIN] Hypersensitivity to TRYPSIN*
+Hypersensitivity to BOVINE Sources*
+[RUTOSIDE] Hypersensitivity to RUTOSIDE * 
+Hypersensitivity to CITRUS BIOFLAVONOIDS*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): None listed in material sheet
+Notes (material sheet): • Do not use this product if you are pregnant or plan to become pregnant soon. Use birth control you can trust while taking this product.
+• Take extra care if you are allergic to bee stings or foods like pineapple, papaya, or celery. Also, take extra care if you are allergic to cypress or olive tree pollens. You may also have problems if you are allergic to plants like ragweed, daisy, aster, marigolds, or chrysanthemums.
+• Take extra care if you are taking drugs for blood pressure. These are drugs like captopril, atenolol, furosemide, and amlodipine.
+• Take extra care if you are taking drugs to thin your blood. These are drugs like warfarin, heparin, or enoxaparin.
+• Take extra care if you…
+Patient education excerpt: Follow pharmacist counseling
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- No top pairs extracted for this API in the interaction sheet sample.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Topical antiseptic with minimal systemic absorption; ask doctor/pharmacist before use (standard lozenge warning).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Likely low systemic exposure; ask clinician before routine use.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): See pack
+Minor (material sheet): See pack
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

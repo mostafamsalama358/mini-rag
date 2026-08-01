@@ -1,0 +1,16 @@
+Drug interaction — Risek
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 25
+Brand: Risek
+API 1: OMEPRAZOLE
+API 2: PROPRANOLOL
+Risk: Propranolol toxicity (bronchospasm, hypotension) via CYP2C19/1A2 inhibition
+Type: Pharmacokinetic (metabolism inhibition)
+Monitoring: Peak flowmetry + weekly LFTs
+Dose adjustment: Propranolol reduce 30%
+Alternative: Pantoprazole
+Patient warning: Use rescue inhaler; report wheezing.
+Severity: caution
+
+Clinical note:
+Risk: Propranolol toxicity (bronchospasm, hypotension) via CYP2C19/1A2 inhibition; Type: Pharmacokinetic (metabolism inhibition); Monitoring: Peak flowmetry + weekly LFTs; Dosage: Propranolol reduce 30%; Alternative: Pantoprazole; Patient Warnings: Use rescue inhaler; report wheezing.

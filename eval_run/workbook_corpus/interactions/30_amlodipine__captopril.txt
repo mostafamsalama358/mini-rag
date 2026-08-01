@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: CAPTOPRIL
+Risk: Additive hypotension and ankle edema
+Type: Pharmacodynamic
+Monitoring: BP, edema status
+Dose adjustment: Start amlodipine at 2.5 mg daily
+Alternative: ACEI monotherapy
+Patient warning: /Management: Elevate legs when sitting.
+Severity: caution
+
+Clinical note:
+Risk: Additive hypotension and ankle edema; Type: Pharmacodynamic; Monitoring: BP, edema status; Dosage Adjustments: Start amlodipine at 2.5 mg daily; Alternative: ACEI monotherapy; Patient Warnings/Management: Elevate legs when sitting.

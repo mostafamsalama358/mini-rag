@@ -1,0 +1,16 @@
+Drug interaction — Duphaston
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 43
+Brand: Duphaston
+API 1: DYDROGESTERONE
+API 2: LOSARTAN POTASSIUM
+Risk: Mild interaction
+Type: Minimal
+Monitoring: Baseline K+ only
+Dose adjustment: Standard dosing
+Alternative: Safest progestin combination
+Patient warning: Routine monitoring sufficient.
+Severity: caution
+
+Clinical note:
+Risk: Mild interaction; Type: Minimal; Monitoring: Baseline K+ only; Dosage: Standard dosing; Alternative: Safest progestin combination; Patient Warnings: Routine monitoring sufficient.

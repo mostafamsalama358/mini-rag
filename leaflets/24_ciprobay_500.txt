@@ -1,0 +1,95 @@
+CIPROBAY 500MG 10 F.C.TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Ciprobay
+Catalog SKU: CIPROBAY 500MG 10 F.C.TAB.
+INN / actives: Ciprofloxacin
+Catalog New Material: CIPROFLOXACIN
+Strength / form: Ciprofloxacin 500 mg | (web-supplemented dosing below)
+Manufacturer / market: BAYER SCHERING
+Price (catalog): 100
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-BACTERIAL
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=CIPROBAY 500; sheet lookup INNs=Ciprofloxacin, CIPROFLOXACIN
+Web clinical sources: Ciprofloxacin SmPC; Bayer Ciprobay
+
+1. What Ciprobay is used for
+Catalog uses: antibiotic.quinolone
+Approved uses (material sheet): UTIs - 250 : 500 mg q12h (3 : 14 days)*
+In chronic UTIs - 500 mg (two pills per day for 6 weeks) means for 45 days*
+Respiratory infections - 500 : 750 mg q12h (7 : 14 days)*
+Intra abdominal infections - 500 mg q12h + metronidazole*
+Anthrax/plague - 500 mg q12h (60 days for anthrax)*
+Acute Sinusitis ,Mild/moderate - 500 mg PO q12hr for 10 days , Reserve fluoroquinolones for patients who do not has other available treatment options for acute sinusitis*
+Bone & Joint Infections, Mild/moderate - 500 mg PO for ≥4 : 6 weeks , Severe/complicated: 750 mg PO q12hr for ≥4 : 6 weeks*
+Chronic bacterial prostatitis caused by Escherichia coli or Proteus mirabilis, Mild/moderate - 500 mg PO q12hr for 28 days*
+Infectious Diarrhea , Mild/moderate/severe - 500 mg PO q12hr for 5 : 7 days*
+Skin/Skin Structure Infections , Mild/moderate - 500 mg PO q12hr for 7 : 14 days, Severe/complicated: 750 mg PO q12hr f…
+Off-label mentions (material sheet): Crohn’s fistulas - 500 mg q12h*
+Cystic fibrosis exacerbations - 20 to 40 mg/kg/day*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Often 500 mg every 12 h for prescribed duration. Separate from dairy/antacids/minerals by ≥2–4 h. Tendon/CNS warnings apply.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Generally avoid in children/adolescents unless specialist exception (cartilage risk).
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Ciprobay if / disease cautions
+From material/disease sheets:
+[CIPROFLOXACIN] Hypersensitivity to CIPROFLOXACIN * Myasthenia Gravis * Pregnancy; unspecified gestational age * Favism (G6PD DEFICIENCY) * Clostridioides difficile-associated diarrhea (CDAD) * Neurological Disorders * Long QT syndrome (congenital or acquired) * Dehydration & Hypovolemia * Enthesopathies of the Lower Limb * Enthesopathies of the Shoulder & Elbow * Disorders of Synovium & Tendon *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • Tendon rupture (especially >60 years, transplant recipients)
+• Peripheral neuropathy (may be irreversible)
+• CNS effects (e.g., hallucinations, depression)
+• Exacerbates myasthenia gravis
+Notes (material sheet): • Forbidden in pregnancy but sort of safe in breastfeeding, 
+• Avoid multivalent cations: 
+-Antacids , iron , ZINC OR ZINC GLUCONATE , CALCIUM OR CALCIUM CARBONATE supplements reduce absorption (separate by 2-6 hours)
+........................................................................
+• Renal impairment.....CrCl >50 mL/min Dose adjustment not necessary,.......CrCl 30-50 mL/min Immediate-release: 250-500 mg PO q12hr, Extended-release: 1 g PO q24hr....... CrCl <30 mL/min Immediate-release: 500 mg PO q24hr, Extended-release: 500 mg PO q24hr)
+• Equation . ........ Creat_Clear = Sex * ((140 - Age) / (Serum_Creat)) * (Weight / 72) ; NOTE: Female = 0.85 , Male = 1
+• Hepatic Impairment: IV, Or…
+Patient education excerpt: • Timing: 
+-Take 2h before/6h after antacids; with food if GI upset occurs
+• Take this medication at least 2 hours before or 6 hours after taking other products that may bind to it like sucralfate, vitamins/minerals (including iron and zinc supplements), and products containing magnesium, aluminum, or calcium (such as antacids, didanosine solution, calcium supplements).Calcium-rich foods, including dairy products (such as milk, yogurt) or calcium-enriched juice,
+• Avoid drinking large amounts of beverages containing caffeine (coffee, tea, colas), eating large amounts of chocolate, or taking over-the-counter products that contain caffeine. This drug may increase and/or prolong the effects of…
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Ciprofloxacin + CLOPIDOGREL: Risk: Decreased clopidogrel activation (CYP2C19 inhibition). Type: Pharmacokinetic. Monitoring: Therapeutic efficacy (e.g., recurrent CV events). Dosage Adjustments: Avoid high-dose ciprofloxacin (>750mg BID). Alternative: Levofloxacin or non-fluoroquinolone antibiotics. Patient Warnings/Management: Monitor for treatm…
+- Ciprofloxacin + DULOXETINE: Risk: ↑ Duloxetine levels (CYP1A2 inhibition); Type: Pharmacokinetic; Monitoring: BP, serotonin syndrome signs; Dosage Adjustment: Max duloxetine 40mg/day; Alternative: Levofloxacin; Patient Warning: Discontinue if hypertensive crisis occurs.
+- Ciprofloxacin + PHENYTOIN: Risk: Ciprofloxacin ↑ phenytoin levels (moderate CYP2C9 inhibition). Monitoring: Phenytoin levels within 3 days. Dosage: ↓ phenytoin by 20-30% if combined >3 days. Patient Warnings: Watch for nausea or diplopia.
+- Ciprofloxacin + ZOLMITRIPTAN: Risk: Possible reduced zolmitriptan efficacy; Monitoring: Document migraine attack duration/severity; Dosage: Adjust dose based on clinical response; Patient Warnings: Avoid missing doses due to interaction risk.
+- Ciprofloxacin + ROPINIROLE: Risk: CYP1A2 inhibition ↑ ropinirole exposure → hallucinations, syncope, and impulse control disorders; Monitoring: Neuropsychiatric eval weekly, orthostatic BP; Dosage: Halve ropinirole dose if coadministered >3 days; Patient: Report gambling urges; rise slowly from sitting.
+- Ciprofloxacin + CLOZAPINE: Risk: CYP1A2 inhibition → ↑ clozapine levels (seizure/sedation). Monitoring: Clozapine levels, EEG. Dose Adjust: Reduce clozapine by 40-60%. Patient Warning: Report myoclonic jerks; avoid driving.
+- Ciprofloxacin + OLANZAPINE: Risk: CYP1A2 inhibition → ↑ olanzapine (metabolic toxicity). Monitoring: Glucose, lipids; olanzapine levels. Dose Adjust: Halve olanzapine dose. Patient Warning: Monitor weight/glucose; report excessive hunger.
+- Ciprofloxacin + BUPROPION: Risk: Ciprofloxacin (CYP1A2 inhibitor) may modestly ↑ bupropion levels. Action: Limit bupropion to 300mg/day (450mg if essential). Monitoring: Seizure precautions, especially in elderly.
+- Ciprofloxacin + METHOTREXATE: Risk: OATP1B1 inhibition → hepatic MTX retention. Monitoring: Daily LFTs +胆汁酸. Dose Adjustment: MTX ≤15mg/m² with cipro. Patient Warning: Pruritus precedes hepatotoxicity.
+- Ciprofloxacin + WARFARIN: Risk: Significant INR increase (CYP1A2 inhibition); Type: Pharmacokinetic; Monitoring: INR every 2-3 days; Dosage: Reduce warfarin by 30-40%; Alternative: Levofloxacin; Patient Warnings: Hydrate well, report tendon pain.
+- Ciprofloxacin + DICUMAROL: Risk: Marked INR increase (CYP1A2 inhibition); Type: Pharmacokinetic; Monitoring: INR every 2-3 days; Dosage: Reduce dicumarol by 35-45%; Alternative: Levofloxacin; Patient Warnings: Hydrate well, report tendon pain.
+- Ciprofloxacin + PHENPROCOUMON: Risk: Marked INR increase (CYP1A2 inhibition); Type: Pharmacokinetic; Monitoring: INR every 2-3 days; Dosage: Reduce phenprocoumon by 35-45%; Alternative: Levofloxacin; Patient Warnings: Hydrate well, report tendon pain.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Avoid if safer alternatives exist (fluoroquinolone caution).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Generally avoid; excreted in milk.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Nausea (5.4%)*
+Diarrhea (2.3%)*
+Headache (1.2%)*
+Minor (material sheet): Tendon rupture (0.1-0.4%)*
+QT prolongation (0.3%)*
+C. difficile colitis (0.1-2%)*
+Photosensitivity (1-2%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

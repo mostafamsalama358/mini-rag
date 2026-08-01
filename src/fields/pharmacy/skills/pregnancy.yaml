@@ -1,0 +1,7 @@
+﻿id: pregnancy
+name: Pregnancy
+profile: pregnancy
+prompt: pregnancy
+validation:
+  require_medicine: true
+order: 4

@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: LISINOPRIL
+Risk: Attenuated antihypertensive effect (daytime SBP ↑10-15mmHg).
+Type: Partial opposition.
+Monitoring: BP 2h post-dose; limit to 5d use.
+Dose adjustment: Increase lisinopril by 20% if needed. Alternatives: Azelastine nasal spray. Allergy Note: "More pronounced during pollen seasons."
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Attenuated antihypertensive effect (daytime SBP ↑10-15mmHg). Type: Partial opposition. Monitoring: BP 2h post-dose; limit to 5d use. Dosage Adjustments: Increase lisinopril by 20% if needed. Alternatives: Azelastine nasal spray. Allergy Note: "More pronounced during pollen seasons."

@@ -1,0 +1,16 @@
+Drug interaction — Folic Acid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 44
+Brand: Folic Acid
+API 1: FOLIC ACID
+API 2: AMOBARBITAL
+Risk: Reduced antiepileptic effect → status epilepticus risk. Monitor: Amobarbital levels (if available), seizure clusters. Dose Adjust: ↑ Amobarbital by 30-50mg/day if control wanes.
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Reduced antiepileptic effect → status epilepticus risk. Monitor: Amobarbital levels (if available), seizure clusters. Dose Adjust: ↑ Amobarbital by 30-50mg/day if control wanes. Patient: Carry rescue medication; report >1 breakthrough seizure/week.

@@ -1,0 +1,93 @@
+DIFLUCAN 150 MG 1 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Diflucan
+Product line: Diflucan
+Catalog SKU: DIFLUCAN 150 MG 1 CAPS.
+SKU ID: 41
+INN / actives: Fluconazole
+INN primary: Fluconazole
+INN aliases: FLUCONAZOLE
+Strength / form: Fluconazole 150 mg | Form=CAP. | Min.age=18 years
+Manufacturer / market: PFIZER
+Price (catalog): 111
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-FUNGAL
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Diflucan is used for
+Oropharyngeal Candidiasis - 200 mg day 1, then 100 mg daily × 7 : 14d*
+Vaginal Candidiasis - 150 mg × 1 dose*
+Cryptococcal Meningitis - 400 : 800 mg daily × 10 : 12w (induction)*
+
+2. Dosage — Adults
+Adult dose: 150 mg single dose
+Maximum daily dose: 400 mg/day (400 mg)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: See pack
+Pediatric dose: 3-12 mg/kg/day depending on indication.
+Pediatric max daily dose: See pack
+
+4. Do not take Diflucan if / disease cautions
+Infants under 6 months * Hypersensitivity to AZOLES (ITRACONAZOLE/FLUCONAZOLE/VORICONAZOLE...) * First trimester pregnancy * Long QT syndrome (congenital or acquired)*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • HEPATIC TOXICITY & QT PROLONGATION:
+"May cause severe hepatotoxicity. Monitor LFTs. Avoid in congenital long QT syndrome or with other QT-prolonging drugs."
+Warnings: • Take this medication by mouth usually as a single dose, with or without food at any time of the day
+• All azole antifungal medicines: cause liver problems and cause heart rhythm disturbances because they prolong the QT except fluconazole, which is excreted through the kidneys
+• It increases the level of INR in the patient who uses warfarin, and the most dangerous of them is fluconazole, ketoconazole, voriconazole, so it is necessary to monitor the INR level well.
+• Avoid:
+- St. John’s wort (↓ fluconazole levels via CYP3A4 induction).
+- Alcohol (↑ hepatotoxicity risk)
+.........................................................................
+• for Oropharyngeal Candidiasis…. 200 mg PO on Day
+HCP notes: • Take this medication by mouth usually as a single dose, with or without food at any time of the day
+• All azole antifungal medicines: cause liver problems and cause heart rhythm disturbances because they prolong the QT except fluconazole, which is excreted through the kidneys
+• It increases the level of INR in the patient who uses warfarin, and the most dangerous of them is fluconazole, ketoconazole, voriconazole, so it is necessary to monitor the INR level well.
+• Avoid:
+- St. John’s wort (↓ fluconazole levels via CYP3A4 induction).
+- Alcohol (↑ hepatotoxicity risk)
+.........................................................................
+• for Oropharyngeal Candidiasis…. 200 mg PO on Day
+Patient education: • Timing: 
+-With/without food; consistent daily timing.
+• Missed Dose: 
+-Take ASAP; skip if near next dose.
+• Interactions:
+- Avoid alcohol, blood thinners, cisapride; report supplements.
+• Overdose Antidote: 
+-None (hemodialysis removes 50%).
+• Seek Help Immediately: 
+-Dark urine, yellow skin/eyes, dizziness/fainting, irregular heartbeat.
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- FLUCONAZOLE + AMIODARONE; Risk: Sudden cardiac death (QTc >550ms); Type: CYP3A4 + hERG inhibition; Monitoring: LFTs + QTc weekly; Dose adjustment: Contraindicated; Alternative: Isavuconazonium; Patient warning: Avoid grapefruit.
+- FLUCONAZOLE + DRONEDARONE; Risk: QT prolongation + CYP3A4 inhibition; Type: Mixed; Monitoring: QTc if >400mg/day; Dose adjustment: Max fluconazole 200mg/day; Alternative: Anidulafungin; Patient warning: /Management: Watch for dizziness.
+- FLUCONAZOLE + PROPAFENONE; Risk: QT prolongation + CYP3A4 inhibition; Type: Mixed; Monitoring: QTc if >400mg/day; Dose adjustment: Max fluconazole 200mg/day; Alternative: Anidulafungin; Patient warning: /Management: Watch for dizziness.
+- FLUCONAZOLE + SILODOSIN; Risk: Moderate interaction (mild CYP3A4 inhibition); Type: Pharmacokinetic; Monitoring: BP biweekly; Dose adjustment: Max silodosin 4mg/day; Alternative: Preferred antifungal option; Patient warning: /Management: Standard hypotension precautions.
+- FLUCONAZOLE + TAMSULOSIN; Risk: Mild tamsulosin increase; Type: Pharmacokinetic; Monitoring: BP weekly; Dose adjustment: None typically needed; Alternative: First-line antifungal option; Patient warning: /Management: Normal activities permitted.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: avoid
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Lamisil
+
+10. Possible side effects
+Major: Headache (13%)*
+Nausea/Vomiting (10–15%)*
+Rash (8%)*
+Diarrhea (6–12%)*
+Minor: Increase ALT increase (5–8%)*
+QT Prolongation (3%)*
+Seizures (1%)*
+Alopecia (2%)*
+Anaphylaxis (rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

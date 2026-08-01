@@ -1,0 +1,16 @@
+Drug interaction — Panadol Acute Head Cold
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 54
+Brand: Panadol Acute Head Cold
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: COLESTIPOL
+Risk: Moderate reduction in paracetamol absorption
+Type: Pharmacokinetic
+Monitoring: Therapeutic response
+Dose adjustment: Separate doses by ≥1h
+Alternative: Liquid paracetamol formulation may have faster absorption
+Patient warning: Ensure proper timing between medications.
+Severity: caution
+
+Clinical note:
+Risk: Moderate reduction in paracetamol absorption; Type: Pharmacokinetic; Monitoring: Therapeutic response; Dosage: Separate doses by ≥1h; Alternative: Liquid paracetamol formulation may have faster absorption; Patient Warnings: Ensure proper timing between medications.

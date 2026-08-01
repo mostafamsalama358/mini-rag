@@ -1,0 +1,16 @@
+Drug interaction — Augmentin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 21
+Brand: Augmentin
+API 1: CLAVULANIC ACID
+API 2: WARFARIN
+Risk: Minimal INR effect when used alone
+Type: Pharmacodynamic
+Monitoring: INR baseline monitoring recommended
+Dose adjustment: None typically needed
+Alternative: None (always combined with β-lactams)
+Patient warning: Watch for allergic reactions when combined with penicillins.
+Severity: caution
+
+Clinical note:
+Risk: Minimal INR effect when used alone; Type: Pharmacodynamic; Monitoring: INR baseline monitoring recommended; Dosage: None typically needed; Alternative: None (always combined with β-lactams); Patient Warnings: Watch for allergic reactions when combined with penicillins.

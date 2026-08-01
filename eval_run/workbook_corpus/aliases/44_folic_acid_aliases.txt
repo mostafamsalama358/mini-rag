@@ -1,0 +1,13 @@
+Alias registry — Folic Acid
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 44
+Brand: Folic Acid
+
+Known aliases:
+- Folic Acid (brand)
+- FOLIC ACID (EIPICO) 5 MG 20 TAB. (catalog_sku)
+- FOLIC (inn_alias)
+- فوليك (arabic)
+- حمض الفوليك (arabic)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

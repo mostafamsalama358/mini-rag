@@ -1,0 +1,16 @@
+Drug interaction — Zithrokan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 23
+Brand: Zithrokan
+API 1: AZITHROMYCIN
+API 2: AMIODARONE
+Risk: Sudden cardiac death
+Type: Dual QTc prolongation
+Monitoring: Telemetry if combined
+Dose adjustment: Contraindicated
+Alternative: Use non-macrolide antibiotics (e.g., doxycycline, cephalexin)
+Patient warning: No OTC antacids (↓absorption of azithromycin). Note: For life-threatening infections where azith…
+Severity: yes
+
+Clinical note:
+Risk: Sudden cardiac death; Type: Dual QTc prolongation; Monitoring: Telemetry if combined; Dosage Adjustments: Contraindicated; Alternative: Use non-macrolide antibiotics (e.g., doxycycline, cephalexin); Patient Warnings: No OTC antacids (↓absorption of azithromycin). Note: For life-threatening infections where azith…

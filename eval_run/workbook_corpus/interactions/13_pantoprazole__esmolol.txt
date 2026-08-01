@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: ESMOLOL
+Risk: Masked hypoperfusion in shock states
+Type: Pharmacodynamic (blunted compensatory response)
+Monitoring: Lactate levels + urine output
+Dose adjustment: Avoid IV pantoprazole
+Alternative: Antacids
+Patient warning: Post-op fluid monitoring.
+Severity: yes
+
+Clinical note:
+Risk: Masked hypoperfusion in shock states; Type: Pharmacodynamic (blunted compensatory response); Monitoring: Lactate levels + urine output; Dosage: Avoid IV pantoprazole; Alternative: Antacids; Patient Warnings: Post-op fluid monitoring.

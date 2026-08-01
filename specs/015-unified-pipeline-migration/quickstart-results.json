@@ -1,0 +1,14 @@
+{
+  "feature": "015-unified-pipeline-migration",
+  "recorded_at": "2026-07-15",
+  "checklist": {
+    "phase0_legacy_default": "implemented",
+    "unified_path_wiring": "implemented",
+    "shadow_mode": "implemented",
+    "rollback_tests": "implemented",
+    "fallback_tests": "implemented",
+    "golden_gate_scripts": "implemented",
+    "health_rag_pipeline_block": "implemented"
+  },
+  "notes": "Automated unit/integration suite exercises router modes with mocks. Full Docker live curl pass requires a running stack with indexed content."
+}

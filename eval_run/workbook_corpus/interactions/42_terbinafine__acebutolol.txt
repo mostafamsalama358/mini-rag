@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: ACEBUTOLOL
+Risk: Increased acebutolol/diacetolol levels (CYP2D6 inhibition)
+Type: Pharmacokinetic
+Monitoring: Exercise tolerance
+Dose adjustment: Reduce dose by 50%
+Alternative: Bisoprolol
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Increased acebutolol/diacetolol levels (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: Exercise tolerance; Dosage: Reduce dose by 50%; Alternative: Bisoprolol; Patient: Document activity tolerance.

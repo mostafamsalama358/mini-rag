@@ -260,8 +260,12 @@ def ground_entity(
         update={
             "needs_clarification": True,
             "clarification_prompt": (
-                f"I could not find '{plan.entity}' in the indexed catalog. "
-                "Please check the spelling or name a specific item."
+                f"لم أجد '{plan.entity}' في الفهرس. راجع الإملاء أو اذكر اسم منتج محدد."
+                if str(plan.language or "").lower().startswith("ar")
+                else (
+                    f"I could not find '{plan.entity}' in the indexed catalog. "
+                    "Please check the spelling or name a specific item."
+                )
             ),
         }
     ), score

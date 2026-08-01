@@ -1,0 +1,98 @@
+VENTOLIN EVOHALER 100MCG/ACTUATION INHALER
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Ventolin
+Product line: Ventolin
+Catalog SKU: VENTOLIN EVOHALER 100MCG/ACTUATION INHALER
+SKU ID: 39
+INN / actives: Salbutamol * Albuterol
+INN primary: Salbutamol
+INN aliases: ALBUTEROL; SALBUTAMOL; SALBUTAMOL SULFATE
+Strength / form: Salbutamol 100 mcg/puff | Form=INHALER | Min.age=4 years
+Manufacturer / market: GLAXO SMITHKLINE
+Price (catalog): 100
+Categories: MEDICINE > ANTI-ASTHMA > ANTI-ASTHMA
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Ventolin is used for
+Treatment and prevention of bronchospasm in patients with reversible obstructive airway disease - (e.g., asthma, exercise-induced bronchospasm); Dosing (MDI): Acute Bronchospasm: 2 puffs every 4 to 6 hours as needed , Exercise Induced: 2 puffs 15 to 30 minutes before exercise , Dosing (Nebulization): Adults & Children ≥12y: 2.5 mg 3 to 4 times daily as needed*
+Prevention of exercise induced bronchospasm - Dosing (MDI): Acute Bronchospasm: 2 puffs every 4 to 6 hours as needed , Exercise Induced: 2 puffs 15 to 30 minutes before exercise , Dosing (Nebulization): Adults & Children ≥12y: 2.5 mg 3 to 4 times daily as needed*
+
+2. Dosage — Adults
+Adult dose: 1-2 puffs as needed
+Maximum daily dose: 8 puffs/day (8 puffs)
+
+3. Dosage — Children
+Minimum age in catalog: 4 years
+Pediatric min age: See pack
+Pediatric dose: Inhaler: 100-200 mcg as needed. Max according to physician.
+Pediatric max daily dose: See pack
+
+4. Do not take Ventolin if / disease cautions
+Hypersensitivity to SALBUTAMOL*
+Children under 2 years *
+Hypersensitivity to MILK/WHEY/LACTOFERRIN* 
+Tachyarrhythmias & Hyperactive Conduction*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None for salbutamol itself.
+(Note: Some fixed-dose combination inhalers containing long-acting beta-agonists (LABAs) do carry a Black Box Warning about an increased risk of asthma-related death, which led to the mandate that LABAs must always be used with an inhaled corticosteroid. This warning does not apply to short-acting relievers like salbutamol when used alone).
+Warnings: • Albuterol is the preferred drug among short-acting beta-agonists (SABAs) during pregnancy. It prevents premature birth by relaxing the uterine muscles
+......................................................................
+• In Bronchospasm ; Tablet and syrup: 2-4 mg PO q6-8hr; not to exceed 32 mg/day & Extended-release tablets: 8 mg PO q12hr
+• Acute or Severe Bronchospasm only inhaler or Nebulizer
+• Exercise-induced Bronchospasm inhaled 15-30 min before exercise
+• Hyperkalemia (alternative agent) (adjunct) (off-label use): Oral inhalation: Nebulization solution: 10 to 20 mg via nebulization over 10 minutes ; Note: May use after administration of standard therapies (calcium, insulin with de
+HCP notes: • Albuterol is the preferred drug among short-acting beta-agonists (SABAs) during pregnancy. It prevents premature birth by relaxing the uterine muscles
+......................................................................
+• In Bronchospasm ; Tablet and syrup: 2-4 mg PO q6-8hr; not to exceed 32 mg/day & Extended-release tablets: 8 mg PO q12hr
+• Acute or Severe Bronchospasm only inhaler or Nebulizer
+• Exercise-induced Bronchospasm inhaled 15-30 min before exercise
+• Hyperkalemia (alternative agent) (adjunct) (off-label use): Oral inhalation: Nebulization solution: 10 to 20 mg via nebulization over 10 minutes ; Note: May use after administration of standard therapies (calcium, insulin with de
+Patient education: • Timing:
+- Use only as needed for symptom relief or before exercise to prevent symptoms.
+- Do not exceed the recommended dose.
+• Technique:
+- Use a spacer with your inhaler (MDI). Shake the inhaler well before each puff.
+- Rinse your mouth with water after use to prevent thrush.
+• Interactions:
+- Inform your doctor if you use other asthma medicines, beta-blockers, or diuretics. Avoid caffeine and other stimulants.
+• Missed Dose:
+- This is a rescue inhaler. Use it when you have symptoms.
+- You do not need to use it on a schedule if you have no symptoms.
+• Overdose:
+- Overuse can be dangerous.
+- Seek emergency help if you experience chest pain, fast irregular heartbeat, severe shaking, or if
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- SALBUTAMOL + METHYLDOPA; Risk: Paradoxical hypertension → stroke; Type: Antagonistic (β₂-agonist vs α₂-agonist); Monitoring: BP pre/post-inhalation, potassium; Dose adjustment: Increase methyldopa by 250mg/day; Alternatives: Ipratropium; Patient warning: "Report tremors/BP↑, avoid OTC decongestants"
+- SALBUTAMOL + CLONIDINE HYDROCHLORIDE; Risk: Paradoxical hypertension → stroke; Type: Antagonistic (β₂-agonist vs α₂-agonist); Monitoring: BP pre/post-inhalation, ECG if tachycardic; Dose adjustment: Increase clonidine by 0.1mg/day; Alternatives: Ipratropium; Patient warning: "Report tremors/BP↑, avoid OTC decongestants"
+- SALBUTAMOL + MOXONIDINE; Risk: Reduced antihypertensive efficacy; Type: Antagonistic; Monitoring: BP pre/post-inhalation; Dose adjustment: Increase moxonidine 0.2mg/day; Alternatives: Cromolyn; Patient warning: "Report tremors/BP↑"
+- SALBUTAMOL + DIAZOXIDE; Risk: Severe hypotension and reflex tachycardia (potent arteriolar vasodilation + β₂-agonist effects); Type: Pharmacodynamic (additive cardiovascular effects); Monitoring: Continuous BP, ECG, blood glucose; Dose adjustment: Lower salbutamol dose/frequency; Alternative: Ipratropium for bronchospasm; Patient warning: …
+- SALBUTAMOL + BOSENTAN; Risk: Additive hypotension and reflex tachycardia (bosentan vasodilation + β₂-agonist effects); Type: Pharmacodynamic (synergistic cardiovascular effects); Monitoring: BP, HR, oxygen saturation; Dose adjustment: Consider lower salbutamol dose/frequency; Alternative: Ipratropium bromide for bronchospasm
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: use_with_caution
+
+8. Breastfeeding
+Breastfeeding safety: use_with_caution
+
+9. Supplements / cross-selling
+Catalog cross-selling: Singulair
+
+10. Possible side effects
+Major: Nervousness - in children aged 2 to 6 years (>10%)*
+Insomnia - in children aged 6 to 12 years receiving 4 to 12 mg q12hr (>10%)*
+Tachycardia (>10%)*
+Tremor - especially hand tremor (>10%)*
+Headache (>10%)*
+Minor: Palpitations (1-5%)*
+Muscle cramps (1-10%)*
+Dizziness (1-5%)*
+Irritability (1-5%)*
+Dry mouth (1-7%)*
+Hypokalemia - especially with high doses (1-3%)*
+Paradoxical Bronchospasm - wheezing immediately after use; stop drug immediately (1-2%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

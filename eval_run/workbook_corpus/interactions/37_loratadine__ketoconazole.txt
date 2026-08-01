@@ -1,0 +1,16 @@
+Drug interaction — Claritine
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 37
+Brand: Claritine
+API 1: LORATADINE
+API 2: KETOCONAZOLE
+Risk: Increased loratadine exposure (CYP3A4 inhibition)
+Type: -
+Monitoring: ECG if high doses
+Dose adjustment: Max loratadine 10mg every other day
+Alternative: Fexofenadine
+Patient warning: Drowsiness precautions.
+Severity: caution
+
+Clinical note:
+Risk: Increased loratadine exposure (CYP3A4 inhibition); Monitoring: ECG if high doses; Dosage: Max loratadine 10mg every other day; Alternative: Fexofenadine; Patient Warnings: Drowsiness precautions.

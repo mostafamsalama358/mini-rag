@@ -1,0 +1,59 @@
+﻿[
+    {
+        "id":  "p1",
+        "ok":  true,
+        "latency_ms":  8129,
+        "signal":  "rag_answer_success",
+        "outcome":  null,
+        "needs_clarification":  false,
+        "answer":  "Adults and adolescents (12 years and over) should not take more than 6 tablets (1200 mg) of MediQuick Ibuprofen in any 24-hour period [ei_a01293014897056b]."
+    },
+    {
+        "id":  "p2",
+        "ok":  true,
+        "latency_ms":  28003,
+        "signal":  "rag_answer_success",
+        "outcome":  null,
+        "needs_clarification":  false,
+        "answer":  "No, MediQuick Ibuprofen 200 mg tablets are not recommended for children under 12 years of age. An age-appropriate formulation should be sought from a doctor or pharmacist [ei_a01293014897056b]."
+    },
+    {
+        "id":  "p3",
+        "ok":  false,
+        "latency_ms":  55052,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}"
+    },
+    {
+        "id":  "p4",
+        "ok":  true,
+        "latency_ms":  5585,
+        "signal":  "rag_answer_success",
+        "outcome":  null,
+        "needs_clarification":  false,
+        "answer":  "Common side effects of ibuprofen include indigestion, heartburn, nausea, and stomach pain [ei_a01293014897056b]."
+    },
+    {
+        "id":  "p5",
+        "ok":  false,
+        "latency_ms":  57187,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}"
+    },
+    {
+        "id":  "p7",
+        "ok":  false,
+        "latency_ms":  2409,
+        "error":  "The remote server returned an error: (400) Bad Request.",
+        "error_body":  "{\"signal\":\"rag_answer_error\",\"message\":\"Could not generate an answer. Try rephrasing the question or re-indexing the project.\"}"
+    },
+    {
+        "id":  "p8",
+        "ok":  true,
+        "latency_ms":  6818,
+        "signal":  "rag_answer_success",
+        "outcome":  null,
+        "needs_clarification":  false,
+        "answer":  "Concurrent use of ibuprofen with warfarin should generally be avoided due to the potential to increase warfarin\u0027s INR effect and elevate the risk of gastrointestinal bleeding. If ibuprofen must be used briefly in a patient on warfarin, it should only be under explicit clinician authorization, with the lowest effective dose for the shortest duration, and close INR monitoring [ei_dfaeeff4d2a96cb5]."
+    }
+]

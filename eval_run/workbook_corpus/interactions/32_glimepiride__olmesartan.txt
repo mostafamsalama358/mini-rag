@@ -1,0 +1,16 @@
+Drug interaction — Amaryl
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 32
+Brand: Amaryl
+API 1: GLIMEPIRIDE
+API 2: OLMESARTAN
+Risk: CV mortality in high-risk
+Type: Pharmacodynamic.
+Monitoring: Cardiac biomarkers if chest pain occurs.
+Dose adjustment: Avoid in recent ACS. Alternatives: ARNI (e.g., sacubitril/valsartan).
+Alternative: -
+Patient warning: /Management: Seek ER for chest pressure.
+Severity: yes
+
+Clinical note:
+Risk: CV mortality in high-risk patients (ONTARGET interaction pattern). Type: Pharmacodynamic. Monitoring: Cardiac biomarkers if chest pain occurs. Dosage Adjustments: Avoid in recent ACS. Alternatives: ARNI (e.g., sacubitril/valsartan). Patient Warnings/Management: Seek ER for chest pressure.

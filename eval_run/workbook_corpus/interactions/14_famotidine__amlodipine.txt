@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: AMLODIPINE
+Risk: Delayed edema onset (2-3 weeks)
+Type: Pharmacodynamic
+Monitoring: Ankle circumference weekly
+Dose adjustment: Amlodipine ↓2.5mg if edema
+Alternative: Amlodipine + PPIs
+Patient warning: /Management: Leg elevation protocol.
+Severity: caution
+
+Clinical note:
+Risk: Delayed edema onset (2-3 weeks); Type: Pharmacodynamic; Monitoring: Ankle circumference weekly; Dosage Adjustments: Amlodipine ↓2.5mg if edema; Alternative: Amlodipine + PPIs; Patient Warnings/Management: Leg elevation protocol.

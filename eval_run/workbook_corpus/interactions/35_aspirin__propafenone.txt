@@ -1,0 +1,16 @@
+Drug interaction — Aspocid
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 35
+Brand: Aspocid
+API 1: ASPIRIN
+API 2: PROPAFENONE
+Risk: High-dose (>325 mg) → ↑ GI/renal toxicity
+Type: Pharmacodynamic
+Monitoring: Fecal occult blood
+Dose adjustment: Prefer ≤325 mg/day
+Alternative: Clopidogrel (if antiplatelet needed)
+Patient warning: Take with food, report abdominal pain.
+Severity: caution
+
+Clinical note:
+Risk: High-dose (>325 mg) → ↑ GI/renal toxicity; Type: Pharmacodynamic; Monitoring: Fecal occult blood; Dosage Adjustments: Prefer ≤325 mg/day; Alternative: Clopidogrel (if antiplatelet needed); Patient Warnings: Take with food, report abdominal pain.

@@ -1,0 +1,16 @@
+Drug interaction — Controloc 20
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 13
+Brand: Controloc 20
+API 1: PANTOPRAZOLE
+API 2: DIPYRIDAMOLE
+Risk: Minimal interaction (CYP2C19 sparing).
+Type: Negligible.
+Monitoring: Routine follow-up.
+Dose adjustment: None required.
+Alternative: First-line PPI.
+Patient warning: /Management: No special precautions.
+Severity: caution
+
+Clinical note:
+Risk: Minimal interaction (CYP2C19 sparing). Type: Negligible. Monitoring: Routine follow-up. Dosage Adjustments: None required. Alternative: First-line PPI. Patient Warnings/Management: No special precautions.

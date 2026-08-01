@@ -1,0 +1,16 @@
+Drug interaction — Singulair
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 40
+Brand: Singulair
+API 1: MONTELUKAST
+API 2: SALMETEROL
+Risk: CYP2C8/3A4 INHIBITION: Salmeterol ↓ montelukast metabolism → ↑ serum levels → neuropsychiatric risk (agitation, depression, suicidal ideation); monitor for behavioral changes monthly; consider montelukast dose reduction
+Type: -
+Monitoring: -
+Dose adjustment: -
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+CYP2C8/3A4 INHIBITION: Salmeterol ↓ montelukast metabolism → ↑ serum levels → neuropsychiatric risk (agitation, depression, suicidal ideation); monitor for behavioral changes monthly; consider montelukast dose reduction (max 5mg/day if pediatric); warn patients/caregivers to report mood changes immediately and avoid d…

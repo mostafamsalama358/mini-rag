@@ -1,0 +1,17 @@
+Alias registry — Panadol Acute Head Cold
+Corpus type: RAG_CORPUS workbook / ALIASES sheet
+SKU ID: 54
+Brand: Panadol Acute Head Cold
+
+Known aliases:
+- Panadol Acute Head Cold (brand)
+- PANADOL ACUTE HEAD COLD 20 F.C.TABS (catalog_sku)
+- Paracetamol (inn)
+- PARACETAMOL (ACETAMINOPHEN) (inn_alias)
+- ACETAMINOPHEN (inn_alias)
+- Guaifenesin (inn)
+- Phenylephrine (inn)
+- PHENYLEPHRINE HCL (inn_alias)
+- PHENYLEPHRINE HYDROCHLORIDE (inn_alias)
+
+Retrieval hint: map user surface forms (brand, INN, Arabic, catalog SKU) to this product.

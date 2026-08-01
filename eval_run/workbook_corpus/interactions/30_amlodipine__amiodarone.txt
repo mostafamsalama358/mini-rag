@@ -1,0 +1,16 @@
+Drug interaction — Norvasc
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 30
+Brand: Norvasc
+API 1: AMLODIPINE
+API 2: AMIODARONE
+Risk: Peripheral edema exacerbation
+Type: Pharmacodynamic
+Monitoring: Daily weights
+Dose adjustment: Reduce amlodipine to 2.5mg
+Alternative: ACE inhibitors
+Patient warning: /Management: Leg elevation.
+Severity: caution
+
+Clinical note:
+Risk: Peripheral edema exacerbation; Type: Pharmacodynamic; Monitoring: Daily weights; Dosage Adjustments: Reduce amlodipine to 2.5mg; Alternative: ACE inhibitors; Patient Warnings/Management: Leg elevation.

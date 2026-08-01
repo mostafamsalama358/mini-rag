@@ -1,0 +1,16 @@
+Drug interaction — Plavix
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 34
+Brand: Plavix
+API 1: CLOPIDOGREL
+API 2: INDOMETHACIN
+Risk: Increased GI bleeding (additive antiplatelet + NSAID effects).
+Type: Pharmacodynamic.
+Monitoring: Check for anemia, occult blood, abdominal pain.
+Dose adjustment: Use lowest NSAID dose, shortest duration.
+Alternative: Acetaminophen or COX-2 inhibitor (with caution).
+Patient warning: /Management: Report black s…
+Severity: caution
+
+Clinical note:
+Risk: Increased GI bleeding (additive antiplatelet + NSAID effects). Type: Pharmacodynamic. Monitoring: Check for anemia, occult blood, abdominal pain. Dosage Adjustments: Use lowest NSAID dose, shortest duration. Alternative: Acetaminophen or COX-2 inhibitor (with caution). Patient Warnings/Management: Report black s…

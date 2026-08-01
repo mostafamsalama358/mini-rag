@@ -1,0 +1,16 @@
+Drug interaction — Sine-Up
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 07
+Brand: Sine-Up
+API 1: PSEUDOEPHEDRINE
+API 2: ENALAPRIL
+Risk: Postural hypotension (25% incidence).
+Type: Autonomic interference.
+Monitoring: Sitting/standing BP; limit to 72h use.
+Dose adjustment: Morning enalapril dose ↑ by 5mg if needed. Alternatives: Fluticasone nasal spray. ENT Note: "More pronounced in allergic rhinitis
+Alternative: -
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Postural hypotension (25% incidence). Type: Autonomic interference. Monitoring: Sitting/standing BP; limit to 72h use. Dosage Adjustments: Morning enalapril dose ↑ by 5mg if needed. Alternatives: Fluticasone nasal spray. ENT Note: "More pronounced in allergic rhinitis patients."

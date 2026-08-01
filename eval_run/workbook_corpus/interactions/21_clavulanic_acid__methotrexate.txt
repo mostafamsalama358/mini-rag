@@ -1,0 +1,16 @@
+Drug interaction — Augmentin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 21
+Brand: Augmentin
+API 1: CLAVULANIC ACID
+API 2: METHOTREXATE
+Risk: β-lactamase inhibition → gut flora disruption → enterohepatic MTX recycling.
+Type: -
+Monitoring: Fecal MTX levels + microbiome analysis. Dose Adjustment: Probiotic coadministration recommended.
+Dose adjustment: -
+Alternative: -
+Patient warning: Diarrhea >3x/day needs evaluation.
+Severity: caution
+
+Clinical note:
+Risk: β-lactamase inhibition → gut flora disruption → enterohepatic MTX recycling. Monitoring: Fecal MTX levels + microbiome analysis. Dose Adjustment: Probiotic coadministration recommended. Patient Warning: Diarrhea >3x/day needs evaluation.

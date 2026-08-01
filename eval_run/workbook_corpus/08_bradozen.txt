@@ -1,0 +1,63 @@
+BRADOZEN 0.5MG 20 LOZENGES
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Bradozen
+Product line: Bradozen
+Catalog SKU: BRADOZEN 0.5MG 20 LOZENGES
+SKU ID: 08
+INN / actives: Bromelain * Trypsin * Rutoside
+INN primary: Bromelain
+INN aliases: BROMELAIN; RUTIN; RUTOSIDE; RUTOSIDE TRIHYDRATE; TRYPSIN
+Strength / form: Herbal cough formulation | Form=LOZENGE | Min.age=12 years
+Manufacturer / market: MEDIZEN PHARMACEUTICAL INDUSTRIES
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > SORE THROAT
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Bradozen is used for
+-
+
+2. Dosage — Adults
+Adult dose: 1 tablet 3 times/day
+Maximum daily dose: 4 tablets/day (4 tablets)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: Not established
+Pediatric dose: Not established. Not recommended in children unless prescribed.
+Pediatric max daily dose: See pack
+
+4. Do not take Bradozen if / disease cautions
+Hypersensitivity to BROMELAIN*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: None listed
+Warnings: • Do not use this product if you are pregnant or plan to become pregnant soon. Use birth control you can trust while taking this product.
+• Take extra care if you are allergic to bee stings or foods like pineapple, papaya, or celery. Also, take extra care if you are allergic to cypress or olive tree pollens. You may also have problems if you are allergic to plants like ragweed, daisy, aster, marigolds, or chrysanthemums.
+• Take extra care if you are taking drugs for blood pressure. These are drugs like captopril, atenolol, furosemide, and amlodipine.
+• Take extra care if you are taking drugs to thin your blood. These are drugs like warfarin, heparin, or enoxaparin.
+• Take extra care if you a
+HCP notes: • Do not use this product if you are pregnant or plan to become pregnant soon. Use birth control you can trust while taking this product.
+• Take extra care if you are allergic to bee stings or foods like pineapple, papaya, or celery. Also, take extra care if you are allergic to cypress or olive tree pollens. You may also have problems if you are allergic to plants like ragweed, daisy, aster, marigolds, or chrysanthemums.
+• Take extra care if you are taking drugs for blood pressure. These are drugs like captopril, atenolol, furosemide, and amlodipine.
+• Take extra care if you are taking drugs to thin your blood. These are drugs like warfarin, heparin, or enoxaparin.
+• Take extra care if you a
+Patient education: Follow pharmacist counseling
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- No interaction rows in workbook for this SKU.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Otrivin|Strepsils|Panadol Advance
+
+10. Possible side effects
+Major: See pack
+Minor: See pack
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

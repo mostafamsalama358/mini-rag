@@ -1,0 +1,16 @@
+Drug interaction — Cataflam
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 17
+Brand: Cataflam
+API 1: DICLOFENAC POTASSIUM
+API 2: CAPTOPRIL
+Risk: Hyperkalemia and AKI (higher with potassium salt)
+Type: Pharmacodynamic
+Monitoring: K⁺, Cr (baseline + 3 days)
+Dose adjustment: Reduce diclofenac frequency
+Alternative: Diclofenac topical gel
+Patient warning: /Management: Avoid potassium supplements; report muscle weakness.
+Severity: yes
+
+Clinical note:
+Risk: Hyperkalemia and AKI (higher with potassium salt); Type: Pharmacodynamic; Monitoring: K⁺, Cr (baseline + 3 days); Dosage Adjustments: Reduce diclofenac frequency; Alternative: Diclofenac topical gel; Patient Warnings/Management: Avoid potassium supplements; report muscle weakness.

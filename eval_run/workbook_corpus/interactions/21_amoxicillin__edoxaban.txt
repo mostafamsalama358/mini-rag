@@ -1,0 +1,16 @@
+Drug interaction — Augmentin
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 21
+Brand: Augmentin
+API 1: AMOXICILLIN
+API 2: EDOXABAN
+Risk: Low clinical significance.
+Type: Theoretical.
+Monitoring: Clinical bleeding signs; renal function.
+Dose adjustment: Edoxaban 30 mg if CrCl 15-50 mL/min.
+Alternative: Nitrofurantoin for UTIs.
+Patient warning: Avoid falls/trauma; monitor gum bleeding.
+Severity: yes
+
+Clinical note:
+Risk: Low clinical significance. Type: Theoretical. Monitoring: Clinical bleeding signs; renal function. Dosage: Edoxaban 30 mg if CrCl 15-50 mL/min. Alternative: Nitrofurantoin for UTIs. Patient Warnings: Avoid falls/trauma; monitor gum bleeding.

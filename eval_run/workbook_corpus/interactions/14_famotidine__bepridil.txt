@@ -1,0 +1,16 @@
+Drug interaction — Jeparilon
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 14
+Brand: Jeparilon
+API 1: FAMOTIDINE
+API 2: BEPRIDIL
+Risk: QT prolongation (additive K+ effects)
+Type: Pharmacodynamic
+Monitoring: Telemetry, QTc q8h
+Dose adjustment: Absolute contraindication
+Alternative: Famotidine + verapamil
+Patient warning: /Management: Defibrillator access required.
+Severity: yes
+
+Clinical note:
+Risk: QT prolongation (additive K+ effects); Type: Pharmacodynamic; Monitoring: Telemetry, QTc q8h; Dosage Adjustments: Absolute contraindication; Alternative: Famotidine + verapamil; Patient Warnings/Management: Defibrillator access required.

@@ -45,25 +45,24 @@ _FILTER_OPERATORS = frozenset(
 SCHEMA_VERSION = "1.0.0"
 PLANNER_VERSION = "1.0.0"
 
+# Default to strategies the production composition root actually registers
+# (semantic/keyword aliases + hybrid expansion). Strategies like metadata /
+# document / table / graph remain selectable via field-pack overrides once a
+# concrete IRetriever is registered — they must not be advertised by default
+# or the planner emits plans that silently yield zero candidates (F7).
 _DEFAULT_AVAILABLE_STRATEGIES: list[str] = [
     "semantic",
     "keyword",
-    "metadata",
-    "graph",
-    "document",
-    "section",
-    "table",
     "hybrid",
-    "mixed",
 ]
 
 _DEFAULT_STRATEGY_MAPPINGS: dict[str, list[str]] = {
     "factual": ["semantic", "hybrid"],
     "list": ["semantic", "keyword"],
-    "comparative": ["semantic", "hybrid", "graph"],
-    "procedural": ["semantic", "document"],
-    "tabular": ["table", "semantic"],
-    "navigational": ["metadata", "document"],
+    "comparative": ["semantic", "hybrid", "keyword"],
+    "procedural": ["semantic", "keyword"],
+    "tabular": ["semantic", "keyword"],
+    "navigational": ["semantic", "keyword"],
     "mixed": ["hybrid", "semantic", "keyword"],
 }
 

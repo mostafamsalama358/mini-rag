@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B12 (CYANOCOBALAMIN)
+API 2: LANSOPRAZOLE
+Risk: Like omeprazole - decreased B12 absorption with chronic use.
+Type: -
+Monitoring: B12 every 2-3yr if >12mo therapy.
+Dose adjustment: No adjustment.
+Alternative: -
+Patient warning: Take B12 with food if separating doses is impractical.
+Severity: caution
+
+Clinical note:
+Risk: Like omeprazole - decreased B12 absorption with chronic use. Monitoring: B12 every 2-3yr if >12mo therapy. Dosage: No adjustment. Patient Warnings: Take B12 with food if separating doses is impractical.

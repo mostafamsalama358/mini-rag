@@ -1,0 +1,81 @@
+ANTINAL 200MG 24 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Antinal
+Catalog SKU: ANTINAL 200MG 24 CAPS.
+INN / actives: Nifuroxazide
+Catalog New Material: NIFUROXAZIDE
+Strength / form: Nifuroxazide 200 mg capsules | (web-supplemented dosing below)
+Manufacturer / market: AMOUN
+Price (catalog): 52
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-DIARRHEA
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=ANTINAL 200MG 24; sheet lookup INNs=Nifuroxazide, NIFUROXAZIDE
+Web clinical sources: Nifuroxazide product information class (Amoun Antinal)
+
+1. What Antinal is used for
+Catalog uses: antidiarrhoeal
+Approved uses (material sheet): Acute bacterial diarrhea - 200mg 4x/day (adults); 100mg 4x/day (children 6+ years)*
+Off-label mentions (material sheet): Traveler’s diarrhea prophylaxis - 200mg 2x/day (limited evidence)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Common adult regimen: 200 mg four times daily for acute bacterial diarrhoea short courses (typically ≤7 days) — follow pack/doctor.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Age/formulation dependent; suspensions for younger children when labeled. Capsules not for toddlers.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Antinal if / disease cautions
+From material/disease sheets:
+[NIFUROXAZIDE] Hypersensitivity to NIFUROXAZIDE* Infants under 6 months *
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None (Not assigned by FDA/EMA)
+Notes (material sheet): • Avoid antimotility drugs (e.g., loperamide): May worsen bacterial diarrhea
+...................................................................
+• Dose Modification:
+- Renal Impairment: Use with caution (limited data)
+- Hepatic Impairment: No dose adjustment needed
+....................................................................
+• Medical Info for HCPs:
+- Serious Risks: Hypersensitivity reactions (rare)
+- When to Stop: If severe rash, angioedema, or persistent diarrhea >48h
+.....................................................................
+• Pregnancy & Lactation:
+- Pregnancy: Avoid (insufficient safety data)
+- Breastfeeding: Contraindicated (excreted in milk)
+.......................…
+Patient education excerpt: • Best Time to Take:
+- With meals
+• Missed Dose:
+- Take as soon as remembered, but skip if close to next dose
+• Food Interactions:
+- No restrictions
+• Overdose Antidote:
+- None (symptomatic management)
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- No top pairs extracted for this API in the interaction sheet sample.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Avoid unless clinician judges benefit > risk (limited data for nifuroxazide).
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Ask clinician; often avoided if safer alternatives exist.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Abdominal pain (15%)*
+Nausea (12%)*
+Skin rash (10%)*
+Minor (material sheet): Headache (5%)*
+Dizziness (3%)*
+Vomiting (2%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

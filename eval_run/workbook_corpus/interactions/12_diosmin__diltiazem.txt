@@ -1,0 +1,16 @@
+Drug interaction — Daflon 1000
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 12
+Brand: Daflon 1000
+API 1: DIOSMIN
+API 2: DILTIAZEM
+Risk: Potential increased diosmin absorption/bioavailability.
+Type: Pharmacokinetic (P-gp inhibition).
+Monitoring: Monitor for enhanced diosmin effects (GI upset).
+Dose adjustment: No specific adjustment recommended.
+Alternative: Not usually required.
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Potential increased diosmin absorption/bioavailability. Type: Pharmacokinetic (P-gp inhibition). Monitoring: Monitor for enhanced diosmin effects (GI upset). Dosage: No specific adjustment recommended. Alternative: Not usually required. Patient: Report increased gastrointestinal discomfort.

@@ -1,0 +1,96 @@
+FLAGYL 500MG 20 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Flagyl
+Catalog SKU: FLAGYL 500MG 20 TAB.
+INN / actives: Metronidazole
+Catalog New Material: METRONIDAZOLE
+Strength / form: Metronidazole 500 mg tablets | (web-supplemented dosing below)
+Manufacturer / market: SANOFI
+Price (catalog): 23
+Categories: MEDICINE > ANTI-MICROBIAL > ANTI-PROTOZOAL
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: Matched prefers=FLAGYL 500MG 20 TAB; sheet lookup INNs=Metronidazole, METRONIDAZOLE
+Web clinical sources: Metronidazole SmPC; Sanofi Flagyl
+
+1. What Flagyl is used for
+Catalog uses: antiprotozoal.nitroimidazole
+Approved uses (material sheet): Anaerobic infections - 500 mg IV/PO q6 to 8h*
+Amebiasis - 500 to 750 mg PO q8hr for 5 to 10 days & Pediatric: 35 to 50 mg/kg/day in 3 divided doses x 10 days*
+C. difficile - 500 mg PO TID x10 to 14d*
+Trichomoniasis - 2g PO single dose*
+Bacterial vaginosis - Topical 0.75% gel 5g qd x5d. or Nonpregnant women 500 mg PO BID x 7 days OR 2 g PO qDay single dose, Pregnant women 500 mg PO BID x 7 days, OR 250 mg PO TID x 7 days*
+Sexually Transmitted Disease , Prevention following sexual assault - 2 g PO as a single dose; 3 drug regimen that also includes ceftriaxone or cefixime, PLUS azithromycin or doxycycline*
+Off-label mentions (material sheet): H. pylori - 500 mg PO BID x14d (triple therapy)*
+Rosacea - 0.75% topical BID*
+Prophylaxis; start after mechanical bowel preparation the afternoon and evening before surgery -1 g PO q6 to 8hr for 3 doses*
+Nongonococcal Urethritis - 2 g PO qDay single dose with erythromycin (500 mg QID) or erythromycin ethylsuccinate (800 mg QID) x 7 days*
+Pelvic Inflammatory Disease - 500 mg PO q12hr for 14 days in conjunction with ofloxacin or levofloxacin*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Indication-dependent (e.g. anaerobic infection / amebiasis / bacterial vaginosis protocols). Common oral ranges 400–500 mg 2–3×/day for prescribed durations. Avoid alcohol during and ≥48 h after.
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Weight-based paediatric dosing only under prescription.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Flagyl if / disease cautions
+From material/disease sheets:
+[METRONIDAZOLE] Hypersensitivity to NITROIMIDAZOLES (METRONIDAZOLE/TINIDAZOLE/SECNIDAZOLE) * Young infants (<2 months) * First trimester pregnancy * Cockayne syndrome*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None (Note: Carcinogenicity observed in rodents; avoid unnecessary use).
+Notes (material sheet): • Changes the color of the skin, urine, or stool to Brown/Yellow
+• If a diabetic has diarrhea and this diarrhea is always at night (for a period of more than 10 to 14 days), the treatments used to treat diarrhea are: Metronidazole, Doxycycline, and if the diarrhea does not stop when using these two medicines, the diabetic should use octreotide, (The first line treatment of delayed digestion in diabetics)
+• If you are being treated for a certain infection (trichomoniasis), all sexual partners may also need to be treated to avoid re-infection. During treatment, avoid sexual intercourse, or always use a latex or polyurethane condom.
+• Avoid: 
+-Alcohol (disulfiram-like reaction), Warfarin (↑ IN…
+Patient education excerpt: • Timing: 
+-With food or a full glass of water or milk to reduce nausea.
+• Missed Dose:
+- Take ASAP; skip if ≤2h to next dose.
+• Interactions: 
+-NO ALCOHOL (reaction: vomiting/flushing). Avoid until 72h post-treatment.
+• Overdose: 
+-ER immediately (seizure management; no antidote).
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- Metronidazole + LITHIUM CARBONATE: Risk: Lithium toxicity (reduced renal clearance); Type: Pharmacokinetic; Monitoring: Lithium levels day 3 and 5; Dosage Adjustments: Reduce lithium by 30%; Alternative: Vancomycin for C.diff; Patient Warnings/Management: Report metallic taste/ataxia.
+- Metronidazole + THIOPENTAL: Risk: ↓ Metronidazole efficacy + disulfiram-like reaction with IV thiopental. Monitoring: Ethanol screen, neurologic status. Dosage: Avoid ethanol-containing products; ↑ metronidazole 33%. Patient Warning: No alcohol 72h post-treatment.
+- Metronidazole + PHENOBARBITAL: Risk: ↓ Metronidazole efficacy + ↑ neurotoxicity. Monitoring: Neurologic exam daily. Dosage: ↑ Metronidazole 50% or use IV formulation. Patient Warning: Report numbness/ataxia immediately.
+- Metronidazole + PHENOBARBITONE: Risk: ↓ Metronidazole efficacy + ↑ neurotoxicity risk. Monitoring: Daily neurologic exams. Dosage: ↑ Metronidazole 50% or use IV route. Patient Warning: Absolute alcohol avoidance for 96h.
+- Metronidazole + PRIMIDONE: Risk: Seizure threshold lowering + ↓ antibiotic efficacy. Monitoring: EEG if high doses. Dosage: Avoid combination in epilepsy patients. Patient Warning: Report myoclonus immediately.
+- Metronidazole + AMOBARBITAL: Risk: ↓ Metronidazole efficacy + disulfiram-like reaction. Monitoring: Neurologic exam daily, ethanol screen. Dosage: ↑ Metronidazole 50%; avoid ethanol-containing products. Patient Warning: No alcohol 72h post-treatment.
+- Metronidazole + PENTOBARBITAL: Risk: Seizure threshold lowering + neurotoxicity. Monitoring: EEG if high doses. Dosage: Avoid in epilepsy patients. Patient Warning: Report numbness/tingling immediately.
+- Metronidazole + SECOBARBITAL: Risk: Psychotic reactions possible. Monitoring: Mental status exams. Dosage: ↑ Metronidazole 100% or avoid. Patient Warning: Report hallucinations/confusion.
+- Metronidazole + PHENYTOIN: Risk: Metronidazole inhibits CYP2C9/19 → ↑ phenytoin levels (toxicity: nystagmus, ataxia); Type: Pharmacokinetic; Monitoring: Phenytoin levels at 48h & weekly; Dosage Adjustment: ↓ phenytoin 30-40% if combined >5 days; Alternative: Fosphenytoin (easier titration); Patient Warnings: Avoid alcohol (disulfiram-like react…
+- Metronidazole + ANASTRAZOLE: Risk: CYP2C19 inhibition → anastrozole AUC↑150%. Monitoring: Breast tenderness/pain. Dose Adjustment: Anastrozole 0.5mg daily during combo. Patient Warning: Discontinue if metallic taste occurs.
+- Metronidazole + WARFARIN: Risk: Severe INR elevation (CYP2C9 inhibition); Type: Pharmacokinetic; Monitoring: INR every 2-3 days during and 2 weeks post-therapy; Dosage: Reduce warfarin by 30-50% preemptively; Alternative: Amoxicillin; Patient Warnings: Avoid alcohol (disulfiram-like reaction), report dark urine/bleeding.
+- Metronidazole + DICUMAROL: Risk: Marked INR ↑ (delayed by 3-7 days); Type: Pharmacokinetic; Monitoring: INR q3d x2 weeks; Dosage: Reduce dicumarol by 40-50%; Alternative: Penicillin V; Patient Warnings: Report metallic taste (toxicity sign).
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Avoid in 1st trimester if possible; may be used later when clearly indicated (e.g. trichomoniasis protocols) under obstetric advice.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Excreted in milk; may interrupt breastfeeding for high-dose courses or choose alternatives — follow obstetric/paediatric advice.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Nausea (10-33%)*
+Metallic taste (10-30%)*
+Headache (15-25%)*
+Anorexia (10-20%)*
+Vomiting (10-15%)*
+Minor (material sheet): Peripheral neuropathy (5-8%)*
+Dark urine (5%)*
+Dizziness (3-5%)*
+Seizures (<1%)*
+Pancreatitis (<1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.

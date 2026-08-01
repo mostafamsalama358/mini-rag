@@ -1,0 +1,16 @@
+Drug interaction — Buscopan
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 28
+Brand: Buscopan
+API 1: HYOSCINE
+API 2: TRANYLCYPROMINE
+Risk: Serotonin syndrome, coma
+Type: Pharmacodynamic
+Monitoring: GCS, hyperreflexia
+Dose adjustment: Transdermal only (≤1mg/72h)
+Alternative: Ondansetron
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Serotonin syndrome, coma; Type: Pharmacodynamic; Monitoring: GCS, hyperreflexia; Dosage: Transdermal only (≤1mg/72h); Alternative: Ondansetron; Patient: Discontinue if myoclonus; avoid fermented foods.

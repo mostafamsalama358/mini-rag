@@ -1,0 +1,116 @@
+RISEK 20 MG 14 CAPS.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Risek
+Product line: Risek
+Catalog SKU: RISEK 20 MG 14 CAPS.
+SKU ID: 25
+INN / actives: Omeprazole
+INN primary: Omeprazole
+INN aliases: OMEPRAZOLE
+Strength / form: Omeprazole 20 mg | Form=CAP. | Min.age=12 years
+Manufacturer / market: JULPHAR
+Price (catalog): 100
+Categories: MEDICINE > DIGESTIVE HEALTH > ANTI-PEPTIC ULCER & ANTACIDS
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Risek is used for
+Healing of Erosive Esophagitis - 20 mg daily for 4 to 8 weeks*
+Maintenance of Healing - 20 mg daily*
+Symptomatic GERD - 20 mg daily for 4 weeks*
+Risk Reduction of NSAID Associated Gastric Ulcer - 20 mg daily for up to 6 months*
+H. pylori Eradication - 20 mg BID as part of combination therapy (e.g., with amoxicillin and clarithromycin) for 10 to 14 days*
+Pathological Hypersecretory Conditions (e.g., Zollinger Ellison syndrome) - Starting dose 60 mg daily; adjust based on acid output. Doses >80 mg daily should be divided*
+Duodenal Ulcer - 20 mg daily for 4 to 8 weeks*
+
+2. Dosage — Adults
+Adult dose: 20 mg once daily
+Maximum daily dose: 2 capsules/day (2 capsules)
+
+3. Dosage — Children
+Minimum age in catalog: 12 years
+Pediatric min age: See pack
+Pediatric dose: 0.7-3.3 mg/kg/day depending on indication.
+Pediatric max daily dose: See pack
+
+4. Do not take Risek if / disease cautions
+Hypersensitivity to OMEPRAZOLE*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation *
+Gastrointestinal (GI) Malignancies*
+Hypomagnesemia*
+Vitamin B12 deficiency *
+Clostridioides difficile-associated diarrhea (CDAD)*
+Infectious & Structural Lung Diseases *
+Pyelonephritis (Kidney Infection)*
+Systemic lupus erythematosus (SLE)*
+Pregnancy; unspecified gestational age*
+Breastfeeding*
+Hypersensitivity to benzimidazoles*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None for omeprazole. 
+• However, the class label contains warnings about increased risk of fractures and C. difficile-associated diarrhea.
+Warnings: • The (PPIs) drugs cause hypomagnesemia, but this does not happen until after (3 months) of using the (PPIs). It is necessary to monitor the magnesium in the blood after 3 months of using the (PPIs).
+• And there is a lack of vitamin (B12) this thing does not happen until after (3 years) of using the (PPIs), and vitamin (B12) deficiency occurs in women more than men, especially those who are less than (30 years old)
+• Safe in kidney failure
+• Take before a meal. Allow 30-60 minutes before a meal.
+• In children, the dosage is also based on weight
+• Antacids may be taken along with this medication.
+• Do not take it for more than 14 days unless directed by your doctor.
+• Avoid:
+- Atazanavir, Ril
+HCP notes: • The (PPIs) drugs cause hypomagnesemia, but this does not happen until after (3 months) of using the (PPIs). It is necessary to monitor the magnesium in the blood after 3 months of using the (PPIs).
+• And there is a lack of vitamin (B12) this thing does not happen until after (3 years) of using the (PPIs), and vitamin (B12) deficiency occurs in women more than men, especially those who are less than (30 years old)
+• Safe in kidney failure
+• Take before a meal. Allow 30-60 minutes before a meal.
+• In children, the dosage is also based on weight
+• Antacids may be taken along with this medication.
+• Do not take it for more than 14 days unless directed by your doctor.
+• Avoid:
+- Atazanavir, Ril
+Patient education: • Administration (CRITICAL):
+- Take before a meal, typically 30-60 minutes before breakfast. For twice-daily dosing, take before the morning and evening meals.
+- Swallow delayed-release capsules/tablets whole; do not crush, chew, or break them.
+- For oral suspension:
+ Empty the packet into a small cup containing 1-2 tablespoons of water. Stir and drink immediately. Refill with water, stir, and drink again to ensure full dose.
+• Key Points:
+- Short-Term Course:
+ Use the lowest effective dose for the shortest duration needed. Do not take longer than prescribed without consulting your doctor.
+- Bone Fracture Risk:
+ Long-term, high-dose use may increase the risk of fractures of the hip, wrist, o
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- OMEPRAZOLE + CLOPIDOGREL; Risk: Stent thrombosis (CYP2C19 competitive inhibition).; Type: Pharmacokinetic.; Monitoring: Platelet reactivity index.; Dose adjustment: Absolute avoidance.; Alternative: Pantoprazole.; Patient warning: /Management: Separate by 12 hours if unavoidable.
+- OMEPRAZOLE + DIPYRIDAMOLE; Risk: Therapeutic failure (CYP2C19 competition).; Type: Pharmacokinetic.; Monitoring: Platelet function tests.; Dose adjustment: MR formulation required.; Alternative: Pantoprazole.; Patient warning: /Management: Separate by 12h if unavoidable.
+- OMEPRAZOLE + SOTALOL; Risk: QT prolongation and hypomagnesemia-induced torsades; Type: Pharmacokinetic (CYP2C19 competition) + Pharmacodynamic (electrolyte imbalance); Monitoring: Biweekly ECG (QTc), serum Mg²⁺/K⁺; Dose adjustment: Max omeprazole 20mg/day; sotalol reduce 25%; Alternative: Famotidine; Patient warning: Report palpitations; avoid gra…
+- OMEPRAZOLE + METOPROLOL TARTRATE; Risk: Metoprolol toxicity (CYP2D6 inhibition); Type: Pharmacokinetic (metabolism inhibition); Monitoring: Metoprolol levels + HR/BP daily ×7; Dose adjustment: Reduce metoprolol 50%; Alternative: Rabeprazole; Patient warning: Report fatigue; no driving with dizziness.
+- OMEPRAZOLE + METOPROLOL; Risk: Metoprolol toxicity (bradycardia, fatigue) due to CYP2D6 inhibition; Type: Pharmacokinetic (metabolism inhibition); Monitoring: Daily HR/BP + metoprolol levels if available; Dose adjustment: Reduce metoprolol 25-50%; Alternative: Rabeprazole; Patient warning: Report dizziness; no driving with fatigue; avoid grapefruit.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Gaviscon Advance|Motilium
+
+10. Possible side effects
+Major: Headache (7%)*
+Abdominal Pain (5%)*
+Nausea (4%)*
+Diarrhea (4%)*
+Vomiting (3%)*
+Flatulence (3%)*
+Minor: Constipation (2%)*
+Dizziness (2%)*
+Rash (2%)*
+Cough (1%)*
+Acute Interstitial Nephritis (<1%)*
+C. difficile associated Diarrhea (<1%)*
+Hypomagnesemia - with long term use (4%)*
+Vitamin B12 Deficiency - with long term use (3%)*
+Increased risk of fractures - with long term, high dose use (4%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

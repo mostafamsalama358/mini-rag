@@ -1,0 +1,16 @@
+Drug interaction — Telfast
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 36
+Brand: Telfast
+API 1: FEXOFENADINE
+API 2: CODEINE
+Risk: Mild drowsiness (high-dose); Interaction: Peripheral H₁ additivity
+Type: -
+Monitoring: Epworth scale
+Dose adjustment: Max fexofenadine 180mg/day
+Alternative: Intranasal steroids
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: Mild drowsiness (high-dose); Interaction: Peripheral H₁ additivity; Monitoring: Epworth scale; Dosage: Max fexofenadine 180mg/day; Alternative: Intranasal steroids; Patient: Caution with driving.

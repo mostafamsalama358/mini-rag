@@ -1,0 +1,114 @@
+CONCOR 5 MG 30 F.C. TABS
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Concor
+Product line: Concor
+Catalog SKU: CONCOR 5 MG 30 F.C. TABS
+SKU ID: 29
+INN / actives: Bisoprolol
+INN primary: Bisoprolol
+INN aliases: BISOPROLOL; BISOPROLOL FUMARATE
+Strength / form: Bisoprolol 5 mg | Form=TAB. | Min.age=18 years
+Manufacturer / market: SIGMA
+Price (catalog): 72
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > HYPERTENSION
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Concor is used for
+Hypertension - Initial dose 5 mg once daily. May be increased to 10 mg, and then up to 20 mg once daily if needed*
+Chronic Heart Failure (NYHA Class II , III) - Must be initiated at a very low dose and titrated slowly. Initial: 1.25 mg once daily. Target: 10 mg once daily, if tolerated*
+
+2. Dosage — Adults
+Adult dose: 5 mg once daily
+Maximum daily dose: 1 tablet/day (1 tablet)
+
+3. Dosage — Children
+Minimum age in catalog: 18 years
+Pediatric min age: Not established
+Pediatric dose: Safety and efficacy in children not established.
+Pediatric max daily dose: See pack
+
+4. Do not take Concor if / disease cautions
+Hypersensitivity to BISOPROLOL FUMARATE * 
+Bradyarrhythmias & Sinus Node Dysfunction *
+Heart Failure (CHF)*
+Severe Hypotension*
+Asthma & Reactive Airway Diseases *
+COPD & Chronic Obstructive Lung Disease*
+Raynaud's phenomenon*
+Endocrine & Neuroendocrine Tumors*
+Atrioventricular (AV) & Heart Blocks (Without Pacemaker)*
+End‑Stage Renal Disease (ESRD) requiring or treated with Renal Replacement Therapy (RRT)*
+Coronary Artery Disease & Ischemic Heart Disease*
+Vascular / Aneurysms Heart Diseases*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • None
+Warnings: • NSAIDs reduce the effectiveness of antihypertensive therapy, especially if they are used concomitantly with beta-blockers, ACE inhibitors, or ARBs
+• Take with or without food.
+• When gradually stopping this medication, it is recommended that you temporarily limit physical activity to decrease strain on the heart.
+......................................................................
+• Equation . ........ Creat_Clear = Sex * ((140 - Age) / (Serum_Creat)) * (Weight / 72) ; NOTE: Female = 0.85 , Male = 1
+Dose Modification:
+• Renal Impairment: Dose adjustment is recommended. In severe renal impairment (CrCl <20 mL/min), the maximum recommended dose is 10 mg daily. Start low (2.5 mg/day) and ti
+HCP notes: • NSAIDs reduce the effectiveness of antihypertensive therapy, especially if they are used concomitantly with beta-blockers, ACE inhibitors, or ARBs
+• Take with or without food.
+• When gradually stopping this medication, it is recommended that you temporarily limit physical activity to decrease strain on the heart.
+......................................................................
+• Equation . ........ Creat_Clear = Sex * ((140 - Age) / (Serum_Creat)) * (Weight / 72) ; NOTE: Female = 0.85 , Male = 1
+Dose Modification:
+• Renal Impairment: Dose adjustment is recommended. In severe renal impairment (CrCl <20 mL/min), the maximum recommended dose is 10 mg daily. Start low (2.5 mg/day) and ti
+Patient education: Do not stop taking this medicine suddenly. This can cause dangerous heart problems. Your doctor will tell you how to reduce the dose gradually if you need to stop.
+
+Monitor Your Pulse: Learn how to check your heart rate. If it drops below 50-55 beats per minute (or as directed by your doctor) and you feel dizzy or tired, contact your doctor.
+
+For Diabetics: This drug can mask the fast heartbeat you feel when your blood sugar is low. Be extra vigilant about monitoring your blood glucose levels.
+
+Side Effects: You may feel more tired or dizzy when you first start. This usually improves. Be careful when standing up from a sitting or lying position. Report any shortness of breath, swelling in yo
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- BISOPROLOL + AMIODARONE; Risk: ↑ Bisoprolol levels → exercise intolerance; Type: Pharmacokinetic; Monitoring: Exercise tolerance; Dose adjustment: Reduce bisoprolol by 2.5mg increments; Alternative: Ranolazine; Patient warning: /Management: Gradual activity increase.
+- BISOPROLOL + CAPTOPRIL; Risk: Additive cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, and signs of heart failure; Dose adjustment: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient warning: /Management: Monitor for edema or dyspnea.
+- BISOPROLOL + ENALAPRIL; Risk: Additive cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, and signs of HF; Dose adjustment: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient warning: /Management: Monitor for edema.
+- BISOPROLOL + LISINOPRIL; Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dose adjustment: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient warning: /Management: Monitor for edema.
+- BISOPROLOL + RAMIPRIL; Risk: Cardiac depression; Type: Pharmacodynamic; Monitoring: BP, HR, HF signs; Dose adjustment: Reduce bisoprolol by 25% if needed; Alternative: ARB monotherapy; Patient warning: /Management: Monitor for edema.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: consult_physician
+
+8. Breastfeeding
+Breastfeeding safety: consult_physician
+
+9. Supplements / cross-selling
+Catalog cross-selling: Aspocid|Lipitor
+
+10. Possible side effects
+Major: Dizziness (>10%)*
+Insomnia (>10%)*
+Bradyarrhythmia (>10%)*
+Cold extremities (>10%)*
+Rhinitis (>10%)*
+Arthralgia (joint pain (>10%)*
+Cough (>10%)*
+Dyspnea (>10%)*
+Nausea (>10%)*
+Pharyngitis (>10%)*
+Sinusitis (>10%)*
+Vomiting (>10%)*
+Minor: Upper respiratory tract infection (URTI) (1-10%)*
+Hypotension (1-10%)*
+Depression (1-10%)*
+Dyspepsia (1-10%)*
+Diarrhea (1-10%)*
+Bronchospasm (1-10%)*
+Aggravated congestive heart failure (CHF) (1-10%)*
+Decrease HDL (1-10%)*
+Hypertriglyceridemia (1-10%)*
+Mask symptoms of hypoglycemia (1-10%)*
+Decreased exercise tolerance (1-10%)*
+Raynaud syndrome (1-10%)*
+Increase triglyceride levels (<1%)*
+Increase insulin resistance (<1%)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

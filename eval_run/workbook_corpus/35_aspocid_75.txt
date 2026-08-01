@@ -1,0 +1,100 @@
+ASPOCID 75MG 20 TAB.
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (RAG_CORPUS workbook)
+Brand: Aspocid
+Product line: Aspocid
+Catalog SKU: ASPOCID 75MG 20 TAB.
+SKU ID: 35
+INN / actives: Aspirin * Acetylsalicylic Acid
+INN primary: Aspirin
+INN aliases: ACETYLSALICYLIC; ACETYLSALICYLIC ACID; ASPIRIN
+Strength / form: Aspirin 75 mg | Form=TAB. | Min.age=16 years
+Manufacturer / market: CID
+Price (catalog): 100
+Categories: MEDICINE > HEART, BLOOD & HYPERTENSIONS > ANTI-BLOOD CLOTTING
+Source workbook: FINAL MEDICIN + ALL MATERIAL 1 + FINAL MATERIAL VS DISEASE + curated clinical enums
+
+1. What Aspocid is used for
+Analgesia - 325 : 650 mg q4 : 6h (max 4g/day)*
+CAD secondary prevention 81 : 325 mg/day*
+Fever - 10 : 15 mg/kg/dose (pediatrics, where indicated)*
+
+2. Dosage — Adults
+Adult dose: 75 mg once daily
+Maximum daily dose: 75-100 mg/day (antiplatelet) (100 mg/day)
+
+3. Dosage — Children
+Minimum age in catalog: 16 years
+Pediatric min age: 16 years
+Pediatric dose: Avoid under 16 years with viral illness. Otherwise only if prescribed.
+Pediatric max daily dose: See pack
+
+4. Do not take Aspocid if / disease cautions
+Children under 16 years *
+Hypersensitivity to NSAIDs/ASPIRIN * 
+Gastrointestinal (GI) bleeding *
+Anemias / Hemoglobinopathies * 
+Favism (G6PD DEFICIENCY) * 
+Specific Coagulopathies & Platelet Disorders*
+Breastfeeding * 
+Asthma & Reactive Airway Diseases *
+Acute Appendicitis * 
+Obstructive GI Diseases * 
+Dehydration & Hypovolemia *
+Hemorrhagic Risk & Bleeding Diatheses ( Include anticoagulants therapy) * 
+Acute liver failure (including fulminant hepatic necrosis and acute‑on‑chronic liver failure) * 
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation *
+Liver tumours (malignant and benign) * 
+Peptic Ulcer Disease & Gastritis*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings: • Risk of serious GI bleeding (especially in elderly)
+• Reye's syndrome in children with viral infections
+Warnings: • Poor absorption of the drug (Aspirin) in the body, and the reason is that some heart patients use enteric-coated aspirin instead of uncoated aspirin to avoid stomach ulcers
+• Avoid alcohol. Alcohol increases the risk of gastrointestinal bleeding.
+• Avoid herbs and supplements with anticoagulant/antiplatelet activity. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba.May increase bleeding risk
+• Take after a meal. This reduces irritating gastrointestinal effects.
+• Take with a full glass of water.
+• Do not lie down for at least 10 minutes after you have taken this drug. If stomach upset occurs while you are taking this medication, you may take it with food or
+HCP notes: • Poor absorption of the drug (Aspirin) in the body, and the reason is that some heart patients use enteric-coated aspirin instead of uncoated aspirin to avoid stomach ulcers
+• Avoid alcohol. Alcohol increases the risk of gastrointestinal bleeding.
+• Avoid herbs and supplements with anticoagulant/antiplatelet activity. Examples include garlic, ginger, bilberry, danshen, piracetam, and ginkgo biloba.May increase bleeding risk
+• Take after a meal. This reduces irritating gastrointestinal effects.
+• Take with a full glass of water.
+• Do not lie down for at least 10 minutes after you have taken this drug. If stomach upset occurs while you are taking this medication, you may take it with food or
+Patient education: • Timing: 
+-Take with food/milk to reduce GI upset
+• Missed dose: 
+-Skip if close to next dose (for chronic use)
+• Warning: 
+-Report black stools, ringing ears, or swelling
+• Antidote: 
+-Vitamin K/FFP for major bleeding
+
+6. Interactions (from workbook INTERACTIONS sheet)
+- ASPIRIN + PROPAFENONE; Risk: High-dose (>325 mg) → ↑ GI/renal toxicity; Type: Pharmacodynamic; Monitoring: Fecal occult blood; Dose adjustment: Prefer ≤325 mg/day; Alternative: Clopidogrel (if antiplatelet needed); Patient warning: Take with food, report abdominal pain.
+- ASPIRIN + CAPTOPRIL; Risk: Competitive renal excretion → transient captopril effect reduction; Type: Pharmacokinetic/pharmacodynamic; Monitoring: BP (post-dose), Cr; Dose adjustment: Space doses by 2 hours if high-dose aspirin; Alternative: Low-dose aspirin (81 mg) if for cardioprotection; Patient warning: /Management: Report tinnitus o…
+- ASPIRIN + ENALAPRIL; Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose aspirin); Dose adjustment: Usually none needed for low-dose; Alternative: Non-NSAID antiplatelets; Patient warning: /Management: Report black stools (GI bleed).
+- ASPIRIN + LISINOPRIL; Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose aspirin); Dose adjustment: Usually none needed for low-dose; Alternative: Non-NSAID antiplatelets; Patient warning: /Management: Report black stools (GI bleed).
+- ASPIRIN + RAMIPRIL; Risk: Mild ACEI effect reduction; Type: Pharmacokinetic; Monitoring: BP (if high-dose); Dose adjustment: Usually none for low-dose; Alternative: Non-NSAID antiplatelets; Patient warning: /Management: Report black stools.
+- See dedicated interaction documents in the workbook corpus for full pairs.
+
+7. Pregnancy
+Pregnancy safety: avoid
+
+8. Breastfeeding
+Breastfeeding safety: use_with_caution
+
+9. Supplements / cross-selling
+Catalog cross-selling: Lipitor
+
+10. Possible side effects
+Major: Dyspepsia (15%)*
+GI irritation (10%)*
+Increased bleeding time - at antiplatelet doses (100%)*
+Minor: Tinnitus (3%)*
+Urticaria (2%)*
+Bronchospasm (0.3%)*
+Reye's syndrome (rare)*
+
+11. Storage
+Store as labeled on Egyptian pack (commonly below 25–30°C, dry, away from children).

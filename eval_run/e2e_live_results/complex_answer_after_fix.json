@@ -1,0 +1,22 @@
+﻿[
+    {
+        "q":  "مريض بياخد Panadol Advance 500 مرتين، وخد Flurest-N وCongestal. هل فيه خطر؟",
+        "ans":  "I could not understand your question. Please rephrase or name a specific item.",
+        "signal":  "rag_clarification_needed"
+    },
+    {
+        "q":  "Is Lipitor safe in pregnancy?",
+        "ans":  "I could not understand your question. Please rephrase or name a specific item.",
+        "signal":  "rag_clarification_needed"
+    },
+    {
+        "q":  "Is Anaseziago the same as thiocolchicoside muscle relaxant?",
+        "ans":  "I could not understand your question. Please rephrase or name a specific item.",
+        "signal":  "rag_clarification_needed"
+    },
+    {
+        "q":  "Are Augmentin 1 g and Hi-Biotic 1 g the same active combination?",
+        "ans":  "I could not understand your question. Please rephrase or name a specific item.",
+        "signal":  "rag_clarification_needed"
+    }
+]

@@ -1,0 +1,16 @@
+Drug interaction — Motilium
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 27
+Brand: Motilium
+API 1: DOMPERIDONE
+API 2: HYDROMORPHONE
+Risk: Enhanced CNS depression with delayed gastric emptying.
+Type: -
+Monitoring: Respiratory rate q4h. Dose Adjustment: Reduce oral dose by 25%.
+Dose adjustment: -
+Alternative: -
+Patient warning: Avoid other sedating medications. Mechanism: Increased bioavailability.
+Severity: yes
+
+Clinical note:
+Risk: Enhanced CNS depression with delayed gastric emptying. Monitoring: Respiratory rate q4h. Dose Adjustment: Reduce oral dose by 25%. Patient Warning: Avoid other sedating medications. Mechanism: Increased bioavailability.

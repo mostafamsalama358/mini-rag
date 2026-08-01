@@ -1,0 +1,16 @@
+Drug interaction — Claritine
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 37
+Brand: Claritine
+API 1: LORATADINE
+API 2: POSACONAZOLE
+Risk: Moderate interaction
+Type: -
+Monitoring: Symptom-based
+Dose adjustment: Reduce loratadine frequency
+Alternative: Levocetirizine
+Patient warning: Limit alcohol intake.
+Severity: caution
+
+Clinical note:
+Risk: Moderate interaction; Monitoring: Symptom-based; Dosage: Reduce loratadine frequency; Alternative: Levocetirizine; Patient Warnings: Limit alcohol intake.

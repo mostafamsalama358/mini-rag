@@ -1,0 +1,16 @@
+Drug interaction — Claritine
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 37
+Brand: Claritine
+API 1: LORATADINE
+API 2: PETHIDINE (DEMEROL)
+Risk: Mild CNS depression, headache
+Type: Additive
+Monitoring: Cognitive function
+Dose adjustment: Usually not required
+Alternative: Desloratadine
+Patient warning: Avoid high-dose use.
+Severity: yes
+
+Clinical note:
+Risk: Mild CNS depression, headache; Type: Additive; Monitoring: Cognitive function; Dosage Adjustments: Usually not required; Alternative: Desloratadine; Patient Warnings: Avoid high-dose use.

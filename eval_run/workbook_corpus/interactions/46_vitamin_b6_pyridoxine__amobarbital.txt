@@ -1,0 +1,16 @@
+Drug interaction — Milga
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 46
+Brand: Milga
+API 1: VITAMIN B6 (PYRIDOXINE)
+API 2: AMOBARBITAL
+Risk: Reduced amobarbital efficacy → sedation/anesthesia failure.
+Type: -
+Monitoring: Respiratory rate and sedation scores during use.
+Dose adjustment: Increase amobarbital 30-50% for procedural sedation.
+Alternative: -
+Patient warning: Disclose B6 use before medical procedures.
+Severity: caution
+
+Clinical note:
+Risk: Reduced amobarbital efficacy → sedation/anesthesia failure. Monitoring: Respiratory rate and sedation scores during use. Dosage: Increase amobarbital 30-50% for procedural sedation. Patient Warning: Disclose B6 use before medical procedures.

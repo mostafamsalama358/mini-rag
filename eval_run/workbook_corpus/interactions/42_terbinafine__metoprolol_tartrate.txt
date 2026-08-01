@@ -1,0 +1,16 @@
+Drug interaction — Lamisil
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 42
+Brand: Lamisil
+API 1: TERBINAFINE
+API 2: METOPROLOL TARTRATE
+Risk: 2-4 fold increase in metoprolol exposure (CYP2D6 inhibition)
+Type: Pharmacokinetic
+Monitoring: Daily BP/HR for first week
+Dose adjustment: Reduce metoprolol by 50-75%
+Alternative: Atenolol
+Patient warning: -
+Severity: caution
+
+Clinical note:
+Risk: 2-4 fold increase in metoprolol exposure (CYP2D6 inhibition); Type: Pharmacokinetic; Monitoring: Daily BP/HR for first week; Dosage: Reduce metoprolol by 50-75%; Alternative: Atenolol; Patient: Check pulse daily; rise slowly from sitting.

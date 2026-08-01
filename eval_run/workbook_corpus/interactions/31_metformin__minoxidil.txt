@@ -1,0 +1,16 @@
+Drug interaction — Glucophage
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 31
+Brand: Glucophage
+API 1: METFORMIN
+API 2: MINOXIDIL
+Risk: Hyperglycemia
+Type: Pharmacodynamic antagonism
+Monitoring: Renal function + lactate annually
+Dose adjustment: Increase metformin by 500mg weekly (max 2550mg/day)
+Alternative: Add DPP-4 inhibitor
+Patient warning: Report muscle pain/hyperventilation .
+Severity: caution
+
+Clinical note:
+Risk: Hyperglycemia; Type: Pharmacodynamic antagonism; Monitoring: Renal function + lactate annually; Dosage: Increase metformin by 500mg weekly (max 2550mg/day); Alternative: Add DPP-4 inhibitor; Patient Warnings: Report muscle pain/hyperventilation .

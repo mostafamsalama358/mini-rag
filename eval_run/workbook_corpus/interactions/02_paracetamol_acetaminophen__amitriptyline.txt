@@ -1,0 +1,16 @@
+Drug interaction — Panadol Cold & Flu Day
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 02
+Brand: Panadol Cold & Flu Day
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: AMITRIPTYLINE
+Risk: Delayed analgesia onset (30-60min) + chronic hepatotoxicity
+Type: -
+Monitoring: LFTs q3mo if daily use
+Dose adjustment: Max acetaminophen 3g/day
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Delayed analgesia onset (30-60min) + chronic hepatotoxicity; Monitoring: LFTs q3mo if daily use; Dosage: Max acetaminophen 3g/day; Patient: Take 1h before TCA; report jaundice/dark urine; avoid alcohol.

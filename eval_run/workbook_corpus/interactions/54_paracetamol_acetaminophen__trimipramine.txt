@@ -1,0 +1,16 @@
+Drug interaction — Panadol Acute Head Cold
+Corpus type: RAG_CORPUS workbook / INTERACTIONS sheet
+SKU ID: 54
+Brand: Panadol Acute Head Cold
+API 1: PARACETAMOL (ACETAMINOPHEN)
+API 2: TRIMIPRAMINE
+Risk: Masked fever in anticholinergic syndrome
+Type: -
+Monitoring: Core temperature
+Dose adjustment: Avoid during infection
+Alternative: -
+Patient warning: -
+Severity: yes
+
+Clinical note:
+Risk: Masked fever in anticholinergic syndrome; Monitoring: Core temperature; Dosage: Avoid during infection; Patient: Use axillary thermometer; report chills without fever.

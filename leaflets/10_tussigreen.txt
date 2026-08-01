@@ -1,0 +1,99 @@
+TUSSIGREEN (corpus proxy via TUSSIGLOBE 0.3% SYRUP 120 ML)
+Patient Information Leaflet — Egyptian Commercial E2E Corpus (Excel-enriched)
+Brand: Tussigreen
+Catalog SKU: TUSSIGLOBE 0.3% SYRUP 120 ML
+INN / actives: Ivy * Ivy Extract
+Catalog New Material: BENPROPERINE
+Strength / form: Corpus proxy: benproperine cough syrup class (Tussiglobe catalog match); confirm real Tussigreen PIL if available | (web-supplemented dosing below)
+Manufacturer / market: MARCYRL CO.
+Price (catalog): 100
+Categories: MEDICINE > COUGH & COLD > COUGH MEDICATIONS
+Source files: FINAL MEDICIN.xlsx + ALL MATERIAL 1.xlsx + NEW DRUG INTERACTION.xlsx + FINAL MATERIAL VS DISEASE.xlsx
+Corpus note: Enriched from local Egyptian pharmacy Excel sheets for AlgoRAG testing. Verify against official PIL/MoH label before clinical use.
+Match note: No TUSSIGREEN SKU in FINAL MEDICIN; enriched using closest cough catalog SKU + Ivy INN sheet lookup
+Web clinical sources: Benproperine monograph; Egyptian Pectipro syrup leaflet class
+
+1. What Tussigreen is used for
+Catalog uses: cough suppressant
+Approved uses (material sheet): Acute/Chronic Bronchitis - Reduces cough severity; comparable to ambroxol in clinical trials - Typical dose: 25 to 50 drops of extract (adults) 2 to 3× daily for 7 to 14 days*
+Productive ("Chesty") Cough - Loosens mucus; improves clearance (EMA approved as expectorant)*
+Asthma/COPD Support - Increases lung oxygenation in children with asthma*
+Off-label mentions (material sheet): Stretch mark reduction - (topical creams with horsetail/lady’s mantle)*
+
+2. Dosage — Adults
+Web-supplemented adult dosing: Benproperine class: adults often 25–50 mg 2–3 times daily OR syrup tablespoon-equivalent 2–3×/day with meals (Egyptian Pectipro-class leaflets).
+Catalog DOSE field may still be empty — prefer this section + official Egyptian pack.
+
+3. Dosage — Children
+Web-supplemented paediatric dosing: Age-banded syrup teaspoons (example Pectipro-class): 1–3 y ½ tsp; 3–6 y 1 tsp; 6–12 y 2 tsp; 2–3× daily. Catalog min.age for Tussiglobe proxy: 6 years.
+Always prefer the age/weight table on the Egyptian pack for this SKU.
+
+4. Do not take Tussigreen if / disease cautions
+From material/disease sheets:
+[IVY] Hypersensitivity to IVY*
+Peptic Ulcer Disease & Gastritis* 
+Carbohydrate Metabolism Disorders *
+Infants under 1 year *
+[IVY EXTRACT] Hypersensitivity to IVY *
+Peptic Ulcer Disease & Gastritis* 
+Carbohydrate Metabolism Disorders *
+Infants under 1 year *
+[BENPROPERINE] Hypersensitivity to BENPROPERINE *
+Angle‑closure glaucoma*
+Benign prostatic hyperplasia (BPH)*
+Urinary Retention*
+Obstructive GI Diseases*
+Chronic liver disease with moderate to severe hepatic impairment (Child‑Pugh class B or C) including cirrhosis and decompensation*
+First trimester pregnancy*
+Children under 6 years*
+
+5. Warnings and precautions
+BLACK BOX / serious warnings (material sheet): • None for English ivy leaf extract. However, Ivy-Dry Super (a topical product containing benzyl alcohol/camphor/menthol, not Hedera helix) carries warnings for flammability and allergic reactions
+Notes (material sheet): • Avoid:
+- Antitussives (e.g., codeine - counteracts expectoration)
+- Sedatives (additive CNS effects with saponins)
+............................................................................
+Dose Modification:
+• Hepatic/Renal: No data (use caution in severe impairment)
+• Pediatric: Approved ≥2 years (liquid formulations only)
+..........................................................................
+HCP Info:
+• Risks: Nausea/vomiting (saponins), allergic reactions, GI spasms
+• Withdrawal: Not applicable (symptomatic use)
+• Surgery: No precautions
+...........................................................................
+• Pregnancy:
+- Avoid (insufficient safety data; potential uterine s…
+Patient education excerpt: • Best Time to Use:
+-Take oral preparations (syrups/drops) with meals to minimize gastrointestinal discomfort. Dosing typically occurs 3 times daily for acute bronchitis.
+• Food/Interaction Precautions:
+-Avoid concurrent use of magnesium-containing antacids (may worsen diarrhea). No significant interactions with OTC drugs or supplements reported, but caution advised with other expectorants.
+• Missed Dose:
+-Skip if close to the next scheduled dose. Do not double dose .
+• Overdose Antidote:
+-No specific antidote. For accidental ingestion, use activated charcoal and seek medical support for symptomatic management (e.g., antiemetics for vomiting)
+
+6. Interactions (from NEW DRUG INTERACTION.xlsx)
+- No top pairs extracted for this API in the interaction sheet sample.
+Also avoid duplicating the same actives in other cold/pain/antibiotic products.
+
+7. Pregnancy
+Web-supplemented pregnancy guidance: Not recommended — limited safety data.
+
+8. Breastfeeding
+Web-supplemented breastfeeding guidance: Not recommended — limited data.
+
+9. Supplements / cross-selling
+Catalog cross-selling: None listed
+Supportive tips: separate minerals from quinolones/tetracyclines by 2–4 hours; probiotics may be timed away from antibiotics; ORS with antidiarrheals when dehydrated.
+
+10. Possible side effects
+Major (material sheet): Diarrhea (15–20%)*
+Nausea (10–15%)*
+Minor (material sheet): Vomiting (5%)*
+Abdominal pain (5%)*
+Allergic rash (2%)*
+Headache (1%)*
+
+11. Storage
+Store as labeled on the Egyptian pack (commonly below 25–30°C, dry, away from children). Reconstituted suspensions may need refrigeration — check the bottle.
