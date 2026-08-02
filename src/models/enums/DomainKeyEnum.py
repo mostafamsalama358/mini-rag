@@ -14,6 +14,7 @@ class DomainKeyEnum(str, Enum):
     GENERIC = "generic"
     PHARMACY = "pharmacy"
     LEGAL = "legal"
+    GRC = "grc"
 
     @classmethod
     def values(cls) -> list[str]:

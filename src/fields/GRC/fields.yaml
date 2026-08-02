@@ -1,0 +1,102 @@
+# GRC field-concept registry — financial audit against internal bylaw.
+
+entity_concept: partner
+composition_concept: null
+interaction_column_pairs: []
+entity_key_hint: null
+
+concepts:
+  - concept: partner
+    output_shape: prose
+    synonyms:
+      - partner
+      - customer
+      - vendor
+      - supplier
+      - شريك
+      - عميل
+      - مورد
+    resolves_to_columns: [Partner, partner, Customer, Vendor]
+
+  - concept: tax_compliance
+    output_shape: prose
+    synonyms:
+      - tax
+      - tax id
+      - vat
+      - exemption
+      - exemptions
+      - ضريبة
+      - الرقم الضريبي
+      - قيمة مضافة
+      - إعفاء
+      - إعفاءات
+      - RULE-TAX
+    resolves_to_columns: [Partner/Tax ID, Tax, Untaxed Amount]
+
+  - concept: credit_policy
+    output_shape: prose
+    synonyms:
+      - credit
+      - due date
+      - overdue
+      - payment status
+      - receivables
+      - ائتمان
+      - استحقاق
+      - متأخر
+      - حالة الدفع
+      - RULE-CRD
+    resolves_to_columns: [Due Date, Status In Payment]
+
+  - concept: cutoff_integrity
+    output_shape: prose
+    synonyms:
+      - cut-off
+      - cutoff
+      - draft
+      - posting date
+      - revenue recognition
+      - ifrs 15
+      - ترحيل
+      - مسودة
+      - قطع الفترة
+      - RULE-CUT
+    resolves_to_columns: [Status, Posting Date, Invoice/Bill Date]
+
+  - concept: fraud_detection
+    output_shape: prose
+    synonyms:
+      - fraud
+      - duplicate
+      - duplicate invoice
+      - split invoice
+      - suspicious
+      - احتيال
+      - تكرار
+      - فواتير مكررة
+      - تجزئة
+      - RULE-FRD
+    resolves_to_columns: [Partner, Untaxed Amount]
+
+  - concept: policy
+    output_shape: prose
+    synonyms:
+      - policy
+      - bylaw
+      - regulation
+      - لائحة
+      - مادة
+      - سياسة
+    resolves_to_columns: []
+
+  - concept: requirement
+    output_shape: prose
+    synonyms:
+      - requirement
+      - must
+      - shall
+      - متطلب
+      - يجب
+      - يُحظر
+    resolves_to_columns: []

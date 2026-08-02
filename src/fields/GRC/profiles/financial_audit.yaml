@@ -1,0 +1,13 @@
+id: financial_audit
+filters:
+  field:
+    - tax_compliance
+    - credit_policy
+    - cutoff_integrity
+    - fraud_detection
+    - policy
+    - requirement
+notes: >-
+  Sole GRC Skill profile. Prefer transaction-row fields (Excel/CSV) first so
+  uploaded journals are retrieved alongside bylaw RULE-* / policy chunks.
+retrieval_strategy: hybrid

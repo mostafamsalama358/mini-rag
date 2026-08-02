@@ -1,0 +1,115 @@
+# Pack-owned Financial Audit policy (sole GRC Skill: financial_audit).
+# Instructions.pdf = system/task prompt (see prompts/skills/financial_audit.jinja).
+# لايحة داخلية.pdf = knowledge base / policy document (ingest + retrieve).
+# Subskills are stages inside financial_audit — NOT separate Skill catalog entries.
+
+version: 1
+policy_id: grc_financial_audit_v1
+skill_id: financial_audit
+
+knowledge_base:
+  primary_document: لايحة داخلية.pdf
+  prompt_document: Instructions.pdf
+  notes: >-
+    Index the bylaw for retrieval. Instructions content is authored into the
+    Skill prompt; do not treat Instructions as a second parallel skill.
+
+transaction_input:
+  accepted_formats: [xlsx, csv]
+  example_workbook: Journal Entry_with_Sales_and_Purchases.xlsx
+  expected_fields:
+    - Partner
+    - Partner/Tax ID
+    - Tax
+    - Untaxed Amount
+    - Due Date
+    - Status In Payment
+    - Invoice/Bill Date
+    - Status
+    - Posting Date
+    - Journal
+
+subskills:
+  - id: tax_compliance
+    name: Tax Compliance
+    article: 2
+    focuses:
+      - tax_id
+      - vat
+      - exemptions
+    rules: [RULE-TAX-001, RULE-TAX-002]
+  - id: credit_policy
+    name: Credit Policy
+    article: 3
+    focuses:
+      - due_date
+      - payment_status
+      - overdue
+    rules: [RULE-CRD-001]
+  - id: cutoff_integrity
+    name: Cut-off Integrity
+    article: 3
+    focuses:
+      - draft
+      - posting_date
+      - revenue_recognition
+    rules: [RULE-CUT-001]
+  - id: fraud_detection
+    name: Fraud Detection
+    article: 4
+    focuses:
+      - duplicate_invoice
+      - invoice_split
+      - suspicious_pattern
+    rules: [RULE-FRD-001]
+  - id: audit_report
+    name: Audit Report
+    article: null
+    focuses:
+      - summary
+      - risk_distribution
+      - recommendations
+      - json_output
+    rules: []
+
+# Rules table — injectable into DB / vector metadata (from bylaw appendix).
+rules:
+  - rule_id: RULE-TAX-001
+    name: التحقق من الرقم الضريبي
+    subskill: tax_compliance
+    article: 2
+    condition: "Partner/Tax ID IS NULL OR invalid"
+    risk_level: High
+    auto_action: إيقاف التثبيت وتنبيه مسئول الامتثال
+  - rule_id: RULE-TAX-002
+    name: مطابقة معادلة VAT
+    subskill: tax_compliance
+    article: 2
+    condition: "Tax differs from Untaxed Amount × 0.14 when no exemption (exact 14% is OK)"
+    risk_level: Medium
+    auto_action: تسجيل مخالفة احتساب وتحديد الفارق
+  - rule_id: RULE-CRD-001
+    name: تجاوز مهلة الاستحقاق
+    subskill: credit_policy
+    article: 3
+    condition: "Payment Status == Unpaid AND Days Overdue > 15"
+    risk_level: High
+    auto_action: إدراج الحساب في قائمة الحظر الائتماني
+  - rule_id: RULE-FRD-001
+    name: كشف الفواتير المكررة
+    subskill: fraud_detection
+    article: 4
+    condition: "Duplicate (Partner + Amount + 48h)"
+    risk_level: Critical
+    auto_action: تعليق الفاتورة وإحالتها للمراجع الداخلي
+  - rule_id: RULE-CUT-001
+    name: الفواتير المعلقة في المسودة
+    subskill: cutoff_integrity
+    article: 3
+    condition: "Status == Draft AND Age > 5 Days"
+    risk_level: Low
+    auto_action: إرسال تنبيه للمحاسب لإغلاق الحركة
+
+risk_levels: [Critical, High, Medium, Low]
+never_invent_violations: true
+json_only_output: true

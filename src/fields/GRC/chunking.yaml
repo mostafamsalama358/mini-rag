@@ -1,0 +1,25 @@
+by_extension:
+  .pdf: page
+  .txt: character
+  .docx: page
+default_strategy: character
+strategy: semantic_structural
+policy: rule_based
+chunk_size: 900
+overlap: 100
+element_mapping:
+  section:
+    group: false
+    metadata_keys: [page, section_path, framework, standard]
+  paragraph:
+    group: true
+    metadata_keys: [page, framework, standard, field_name]
+  heading:
+    group: false
+    metadata_keys: [page, section_path]
+  list-item:
+    group: true
+    metadata_keys: [page]
+  table-row:
+    group: false
+    metadata_keys: [page, row_index, rule_id, risk_level]

@@ -190,18 +190,20 @@ class RetrievalStage:
         reranker = kwargs.get("reranker")
         from services.rag.skills.runtime_support import rerank_and_enrich_documents
 
-        retrieved_documents = await rerank_and_enrich_documents(
-            project=project,
-            project_label=project_label,
-            parse_result=parse_result,
-            query_plan=query_plan,
-            profile=profile,
-            documents=retrieved_documents,
-            entity_key=retrieval.entity_key,
-            nlp_controller=nlp_controller,
-            db_client=db_client,
-            reranker=reranker,
-        )
+        if not skill_ctx._retrieval_flag("fetch_all_transactions"):
+            retrieved_documents = await rerank_and_enrich_documents(
+                project=project,
+                project_label=project_label,
+                parse_result=parse_result,
+                query_plan=query_plan,
+                profile=profile,
+                documents=retrieved_documents,
+                entity_key=retrieval.entity_key,
+                nlp_controller=nlp_controller,
+                db_client=db_client,
+                reranker=reranker,
+                skill_ctx=skill_ctx,
+            )
 
         if not retrieved_documents:
             RAG_NO_CONTEXT_TOTAL.labels(project_id=project_label).inc()

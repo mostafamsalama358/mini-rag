@@ -1,0 +1,3 @@
+Hello! I am the GRC Financial Audit assistant for this project.
+Select the **Financial Audit** skill, then paste or ask about accounting rows (Excel/CSV): Tax ID, VAT, credit overdue, cut-off/draft posting, and duplicate-invoice fraud checks — grounded in the internal bylaw.
+Output is a structured JSON audit report. This is not formal legal or audit advice.

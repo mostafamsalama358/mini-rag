@@ -279,6 +279,75 @@ class ChunkModel(BaseDataModel):
                             counts[token.split()[0]] += 1
         return [token for token, _ in counts.most_common()]
 
+    async def list_transaction_table_rows(
+        self,
+        project_id: int,
+        *,
+        limit: int = 5000,
+    ) -> list[dict]:
+        """Return Excel/CSV table-row chunks for full-file financial audit."""
+        sql = """
+            SELECT chunk_text, chunk_metadata
+            FROM chunks
+            WHERE chunk_project_id = :pid
+              AND (
+                LOWER(COALESCE(chunk_metadata->>'source_type', ''))
+                  IN ('xlsx', 'xls', 'csv')
+                OR LOWER(COALESCE(chunk_metadata->>'element_type', '')) = 'table-row'
+              )
+            ORDER BY
+              COALESCE(chunk_metadata->>'file_name', ''),
+              chunk_id
+            LIMIT :lim
+        """
+        rows: list[dict] = []
+        async with self.db_client() as session:
+            result = await session.execute(
+                text(sql), {"pid": project_id, "lim": int(limit)}
+            )
+            for row in result:
+                rows.append(
+                    {
+                        "text": row.chunk_text or "",
+                        "metadata": dict(row.chunk_metadata or {}),
+                    }
+                )
+        return rows
+
+    async def list_bylaw_policy_chunks(
+        self,
+        project_id: int,
+        *,
+        limit: int = 40,
+    ) -> list[dict]:
+        """Return internal bylaw / Instructions chunks (exclude large IFRS/COSO noise)."""
+        sql = """
+            SELECT chunk_text, chunk_metadata
+            FROM chunks
+            WHERE chunk_project_id = :pid
+              AND (
+                LOWER(COALESCE(chunk_metadata->>'entity', ''))
+                  IN ('internal bylaw', 'audit instructions')
+                OR LOWER(COALESCE(chunk_metadata->>'file_name', ''))
+                  LIKE ANY (ARRAY['%bylaw%', '%instruction%', '%لايحة%', '%لائحة%'])
+              )
+            ORDER BY chunk_id
+            LIMIT :lim
+        """
+        rows: list[dict] = []
+        async with self.db_client() as session:
+            result = await session.execute(
+                text(sql), {"pid": project_id, "lim": int(limit)}
+            )
+            for row in result:
+                rows.append(
+                    {
+                        "text": row.chunk_text or "",
+                        "metadata": dict(row.chunk_metadata or {}),
+                    }
+                )
+        return rows
+
     async def list_chunks_matching_metadata(
         self,
         project_id: int,

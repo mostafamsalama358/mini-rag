@@ -9,6 +9,8 @@ langchain==0.1.20
 
 PyMuPDF==1.24.3
 Pillow>=10.0.0
+# PDF hybrid parser (searchable → OpenDataLoader). Requires Java 11+ at runtime.
+opendataloader-pdf>=1.0.0
 # docling>=2.0.0
 # rapidocr-paddle>=1.4.0
 FlagEmbedding>=1.4.0

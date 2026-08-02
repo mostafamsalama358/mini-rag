@@ -1,0 +1,648 @@
+============================================================
+FILE: 2750-New-COSO-2013-Framework-WHITEPAPER-V4.pdf
+pages=8 title='' author=''
+empty_or_image_pages≈0 structure_hits=20
+  p2: 2  COSO Internal Control – Integrated Framework (2013)
+  p2: 2013 Framework lists three categories
+  p3: 3  COSO Internal Control – Integrated Framework (2013)
+  p4: 4  COSO Internal Control – Integrated Framework (2013)
+  p4: 1992 Framework related to Control
+  p4: 2013 Framework’s requirement for
+  p4: 17 principles and five components,
+  p5: 5  COSO Internal Control – Integrated Framework (2013)
+  p6: 6  COSO Internal Control – Integrated Framework (2013)
+  p6: 2013 Framework.
+  p6: component. Some controls, by their
+  p6: component or principle. We believe
+  p7: 7  COSO Internal Control – Integrated Framework (2013)
+  p7: 2013 Framework is encouraged for
+  p7: 1992 Framework available until
+  p7: 1992 Framework during the transition
+  p7: 2013 Framework but must specify
+  p7: 1992 Framework will be superseded
+  p7: 2013 Framework.
+  p7: 3 NI 52-109 Annual Form 52-109F1 item 5.1 or SEC Regulation S-K, Item 3-09.
+--- page 1 chars=3548 searchable=True ---
+COSO also issued these companion documents: 
+• Executive Summary; 
+• Internal Control – Integrated Framework: Illustrative Tools for Assessing 
+Effectiveness of a System of Internal Control (Illustrative Tools), which 
+provides templates to assist users in documenting their assessment 
+of principles, components, the overall system of internal control, and 
+scenarios of how the templates could be used; and
+• Internal Control Over External Financial Reporting: A Compendium of 
+Approaches and Examples (the Compendium), which features examples 
+of internal control over financial reporting and illustrates how users might 
+apply the principles of the 2013 Framework to external financial reporting 
+objectives.
+Just as with the 1992 Framework, the 2013 Framework may be used by issuers 
+and non-issuers. This article focuses on the impact to Canadian non-venture 
+issuers and SEC registrants that are required to certify on the effectiveness of 
+internal control over financial reporting but may be of interest to management 
+of other entities that voluntarily utilized the 1992 Framework. 
+The changes made to update the 1992 Framework are evolutionary, not 
+revolutionary. The 2013 Framework takes into account changes in the 
+business environment and operations over the last 20 years. The 2013 
+Framework retains the definition of internal control and the COSO cube, 
+including the five components of internal control: Control Environment, 
+Risk Assessment, Control Activities, Information and Communication, and 
+Monitoring Activities.
+The most significant change made in the 2013 Framework is the codification 
+of the 17 principles that support the five components. The 17 principles were 
+fundamental concepts implicit in the 1992 Framework. For effective internal 
+controls, the 2013 Framew
+
+--- page 2 chars=5147 searchable=True ---
+2  COSO Internal Control – Integrated Framework (2013)
+the components and relevant principles 
+continue to exist in the system of 
+internal control. The 2013 Framework 
+also provides example characteristics 
+for each of the 17 principles, called 
+Points of Focus, to assist management 
+in determining whether a principle is 
+present and functioning. The judgment 
+required by management, the board 
+of directors, and other organization 
+personnel to design, implement, and 
+conduct the internal controls and assess 
+their effectiveness has not changed. 
+Users should reference Appendix F for 
+a summary of significant changes and 
+emphasis in the 2013 Framework from 
+the 1992 Framework.
+Management of Canadian non-
+venture issuers and SEC registrants 
+may use the 1992 Framework or 
+the 2013 Framework to evaluate 
+the effectiveness of their internal 
+control over financial reporting 
+during the transition period ending 
+December 15, 2014.2 Thereafter, 
+the 1992 Framework is considered 
+superseded by the COSO Board. The 
+COSO Board recommends describing 
+the applicable Framework used during 
+the transition period by identifying the 
+year of the Framework in the title. Since 
+Canadian non-venture issuers state 
+the Framework applied in their interim 
+certificates on internal control we 
+recommend identifying the year of the 
+Framework in the next certificate filed.
+In adopting the 2013 Framework, COSO 
+followed due-process procedures 
+during the five phases of the project 
+described in Appendix D, including 
+broad distribution of the Framework for 
+public comment. The Framework was 
+exposed for public comments twice, in 
+September 2012 and December 2011. 
+Definition of Internal Control and 
+Objectives
+Internal control is defined in the 2013 
+Framework as “a process, effected by an 
+
+--- page 3 chars=4608 searchable=True ---
+3  COSO Internal Control – Integrated Framework (2013)
+that registrant’s process would include 
+policies and procedures that: 
+1. Provide for the maintenance 
+of records that in reasonable 
+detail accurately and fairly reflect 
+transactions and dispositions of the 
+assets of the issuer
+2. Provide reasonable assurance 
+that transactions are recorded as 
+necessary to permit preparation of 
+financial statements in accordance 
+with GAAP, and that receipts and 
+expenditures of the issuer are 
+being made only in accordance with 
+authorizations of management and 
+directors of the issuer
+3. Provide reasonable assurance about 
+prevention or timely detection of 
+unauthorized acquisition, use or 
+disposition of the issuer’s assets that 
+could have a material effect on the 
+financial statements. 
+The objective of effective internal control 
+over financial reporting by a Canadian non-
+venture issuer or SEC registrant are based 
+on this definition of internal control.
+Components
+The five components of internal control 
+are the same in both the 1992 and 2013 
+Frameworks; however, their definitions 
+have been expanded in the 2013 
+Framework to address the following 
+broad-based changes:
+• Globalization of markets and 
+operations – changes in operating 
+models and organizational structures 
+and risk factors as a result of 
+globalization of markets and 
+operations
+• Governance concepts – enhanced 
+governance concepts imposed by 
+regulators and more complex global 
+organizations
+• Different business models 
+and organizational structures – 
+expanded to include third-party 
+service providers and partnering 
+arrangements
+• Laws and regulations – expanded 
+demands and complexities in laws, 
+regulations, and standards to promote 
+greater stakeholder protection and 
+confidence in external repor
+
+--- page 5 chars=4692 searchable=True ---
+5  COSO Internal Control – Integrated Framework (2013)
+The three principles relating to Control 
+Activities are:
+10. The organization selects and develops 
+control activities that contribute to the 
+mitigation of risks to the achievement 
+of objectives to acceptable levels.
+11. The organization selects and 
+develops general control activities 
+over technology to support the 
+achievement of objectives.
+12. The organization deploys control 
+activities through policies that establish 
+what is expected and in procedures 
+that put policies into action.
+Information and Communication. 
+“Information is necessary for 
+the entity to carry out internal 
+control responsibilities in support 
+of achievement of its objectives. 
+Communication occurs both internally 
+and externally and provides the 
+organization with the information needed 
+to carry out day-to-day internal control 
+activities. Communication enables 
+personnel to understand internal control 
+responsibilities and their importance to 
+the achievement of objectives.”
+The importance of having the right 
+information communicated to managers 
+at the right time has become a key to 
+successful business operations and 
+effective internal control as organizations 
+have become more complex in their 
+structure and global operations and 
+become more dependent on technology. 
+Changes in the Information and 
+Communication component include:
+• An expanded discussion about the 
+verification of the source of information 
+and its retention when information is 
+used to support reporting objectives to 
+external parties
+• Additional discussion on the impact 
+of regulatory requirements on 
+the reliability and protection of 
+information
+• An examination of the impact 
+of technology and other 
+communications mechanisms on the 
+speed, means, and 
+
+--- page 8 chars=1959 searchable=True ---
+kpmg.ca
+We expect that prior to the adoption of the 2013 Framework, Canadian non-venture 
+issuers and SEC registrants will describe any changes in internal control over 
+financial reporting. We believe that the release of the 2013 Framework will result 
+in management, auditors, and regulators taking a fresh look at the assessment of 
+the effectiveness of internal control over financial reporting. If the organization’s 
+documentation of its internal controls has kept pace with increased globalization, 
+changes in laws, regulations, technology, and other significant changes, then its 
+transition to the 2013 Framework may be a relatively non-complex mapping exercise 
+of referencing its internal control over financial reporting as documented under 
+the 1992 Framework to the 17 codified principles. However, we expect that the 
+transition to the 2013 Framework will require a more extensive effort, analysis, and 
+documentation in many cases.
+KPMG’s Audit and Advisory professionals are available to respond to your questions 
+and to assist you with your organization’s adoption of the COSO 2013 Framework.
+The information contained herein is of a general nature and is not intended to address the circumstances of any particular individual or entity. Although we endeavor to 
+provide accurate and timely information, there can be no guarantee that such information is accurate as of the date it is received or that it will continue to be accurate in the 
+future. No one should act on such information without appropriate professional advice after a thorough examination of the particular situation.
+© 2013 KPMG LLP, a Canadian limited liability partnership and a member firm of the KPMG network of independent member firms affiliated with KPMG International 
+Cooperative (“KPMG International”)
+
+============================================================
+FILE: International-financial-reporting-standards-a-practical-guide-sixth-edition.pdf
+pages=452 title='World Bank Document' author='World Bank Group'
+empty_or_image_pages≈27 structure_hits=2198
+  p6: 1818 H Street NW
+  p6: 1  2  3  4  ::  14  13  12  11
+  p7: PART I
+  p7: Chapter 1
+  p7: IFRS 1
+  p7: IAS 1
+  p7: IAS 7
+  p7: IAS 8
+  p7: PART II
+  p7: Chapter 6
+  p7: IFRS 3
+  p7: IAS 27
+  p7: IAS 28
+  p7: IAS 31
+  p7: PART III
+  p7: Chapter 10
+  p7: IAS 16
+  p7: IAS 40
+  p7: IAS 41
+  p7: IAS 38
+  p7: IAS 17
+  p7: IAS 12
+  p7: IAS 2
+  p7: IAS 39
+  p7: IFRS 9
+  p7: IFRS 5
+  p7: IFRS 6
+  p7: IAS 37
+  p7: IAS 21
+  p8: PART IV
+  p8: Chapter 23
+  p8: IAS 18
+  p8: IAS 11
+  p8: IAS 19
+  p8: IAS 36
+  p8: IAS 23
+  p8: IAS 20
+  p8: IFRS 2
+  p8: PART V
+  p8: Chapter 30
+  p8: IAS 10
+  p8: IAS 24
+  p8: IAS 33
+  p8: IAS 32
+  p8: IFRS 7
+  p8: IFRS 8
+  p8: IAS 34
+  p8: IAS 26
+  p8: IFRS 4
+  p8: IAS 29
+--- page 1 chars=302 searchable=True ---
+Covers all 
+IASB standards 
+through 
+September 2010
+HENNIE VAN GREUNING
+DARREL SCOTT
+SIMONET TERBLANCHE
+INTERNATIONAL
+FINANCIAL
+REPORTING STANDARDS
+A PRACTICAL GUIDE
+SIXTH  EDITION
+Public Disclosure Authorized
+Public Disclosure Authorized
+Public Disclosure Authorized
+Public Disclosure Authorized
+60807
+
+--- page 2 chars=0 searchable=False ---
+
+
+--- page 3 chars=62 searchable=True ---
+International Financial 
+Reporting Standards
+A Practical Guide
+
+--- page 114 chars=2777 searchable=True ---
+100 
+Chapter 9 Interests in Joint Ventures (IAS 31)
+■ all the following conditions apply:
+– the venturer is a wholly owned or partially owned subsidiary and its owners have 
+been informed and do not object to the venturer not applying proportionate consoli-
+dation or the equity method;
+– the venturer’s debt or equity instruments are not traded in a public market;
+– the venturer is not in the process of issuing instruments that will be traded in a pub-
+lic market; and
+– the ultimate or any intermediate parent of the venturer produces consolidated finan-
+cial statements available for public use that comply with IFRS.
+9.3  
+KEY CONCEPTS
+9.3.1 A joint venture is a contractual arrangement whereby two or more parties undertake 
+an economic activity that is subject to joint control.
+9.3.2 The following are characteristics of all joint ventures:
+■ Two or more venturers are bound by a contractual arrangement.
+■ A joint venture establishes joint control; that is, the contractually agreed sharing of con-
+trol over a joint venture is such that no one party can exercise unilateral control.
+■ A venturer is a party to a joint venture and has joint control over that joint venture.
+9.3.3 The existence of a contractual arrangement distinguishes joint ventures from associ-
+ates. It is usually in writing and deals with such matters as:
+■ activity, duration, and reporting;
+■ appointment of a board of directors or equivalent body and voting rights;
+■ capital contributions by venturers; and
+■ sharing by the venturers of the output, income, expenses, or results of the joint venture.
+9.3.4 IAS 31 identifies three forms of joint ventures: jointly controlled operations, jointly 
+controlled assets, and jointly controlled entities.
+9.3.5 Jointly controlled operations involve the use of resources of
+
+--- page 227 chars=2193 searchable=True ---
+Chapter 17 Financial Instruments: Recognition and Measurement (IAS 39)   
+213
+The gain or loss on the cash flow hedge should be removed from other comprehensive 
+income, and the value of the underlying asset recognized should be adjusted, if that is the 
+accounting policy elected by the entity. Alternatively the gain or loss remains in other com-
+prehensive income until the underlying asset affects profit or loss, at which point it is recy-
+cled to profit or loss.
+It is clear from this example that the value of the inventory is adjusted with the gain on the 
+hedging instrument, resulting in the inventory being accounted for at the hedged price or 
+futures price.
+If the futures contract did not expire or was not closed out on May 31, the gains or losses 
+calculated on the futures contract thereafter would be accounted for in profit or loss, because 
+the cash flow hedge relationship no longer exists.
+EXAMPLE 17.3
+This example concerns short-term money market instruments not marked-to-market (held in 
+a held-to-maturity portfolio).
+A company buys a 120-day Treasury bill with a face value of $1 million for $996,742. When 
+purchased, the recorded book value of the bill is this original cost.
+EXPLANATION
+Held-to-maturity instruments are recognized at amortized cost on the Statement of Financial 
+Position using the effective interest rate method. The effective interest rate takes into account 
+any premium or discount. The interest income is reported in profit or loss. The discount earned 
+is recorded as an operating cash flow. Following is the entry to record the purchase of the bill:
+Dr ($)
+Cr ($)
+Short-term Investments
+996,742
+Cash
+996,742
+If 60 days later the company is constructing its financial statements, the Treasury bill must be 
+marked up to its amortized cost using t
+
+--- page 452 chars=1911 searchable=True ---
+“ The sixth edition of this publication provides a timely update on important developments 
+in the International Financial Reporting Standards (IFRS) framework. With the growing 
+number of countries adopting IFRS, this practical guide provides a valuable aid to both the 
+understanding and application of the standards. Grouping standards by themes provides an 
+effective tool for preparers to understand the requirements of individual standards within 
+the broader framework, thus ensuring greater transparency and usefulness of the ﬁ nancial 
+statements.”
+—Kenneth Sullivan, Senior Financial Expert, Monetary and Exchange Affairs Department, 
+International Monetary Fund
+Applying International Financial Reporting Standards (IFRS) in a business situation can have 
+a signiﬁ cant effect on the ﬁ nancial results and position of a division or an entire business 
+enterprise. International Financial Reporting Standards: A Practical Guide gives private 
+or public sector executives, managers, and ﬁ nancial analysts, who may not have a strong 
+background in accounting, the tools they need to participate in discussions and decisions on 
+the appropriateness or application of IFRS.
+Each chapter summarizes an International Financial Reporting Standard, following a 
+consistent structure:
+• Objective of the Standard
+• Scope of the Standard
+• Key concepts
+• Accounting treatment
+• Presentation and disclosure
+• Financial analysis and interpretation
+• Commentary on current developments
+• Implementation decisions from strategic and tactical perspectives
+Many chapters of the book also contain examples that illustrate the practical application of 
+key concepts in a particular standard. The publication includes all of the standards issued 
+by the International Accounting Standards Board (IASB) throug
+
+============================================================
+FILE: لايحة داخلية.pdf
+pages=2 title='Untitled document' author=''
+empty_or_image_pages≈0 structure_hits=4
+  p1: المادة (
+  p1: المادة (
+  p1: المادة (
+  p1: المادة (
+--- page 1 chars=2525 searchable=True ---
+الالئحة المالية والرقابية الداخلية لضبط وإدارة المعامالت 
+المحاسبية 
+المادة (
+1
+:)
+ نطاق التطبيق والقواعد العامة 
+1
+.​تسري أحكام هذه الالئحة على كافة المعامالت 
+،المالية وفواتير 
+،المبيعات ومشتريات 
+،الموردين والقيود اليومية المسجلة 
+.بالدفاتر 
+2
+.​ال تُعتبر المعاملة المالية نافذة أو معتمدة 
+ًنهائيا إال إذا تحولت حالتها إلى تثبيت (
+Status: Posted
+) واستوفت جميع الشروط 
+الضريبية والرقابية الموضحة بهذه 
+.الالئحة 
+المادة (
+2
+:)
+ المتثال والتحقق الضريبي (
+Partner Tax Compliance
+)
+ 
+1
+.​التسجيل الضريبي 
+:اإللزامي يُحظر 
+ًحظرا 
+ًتاما إجراء أي معاملة بيع أو شراء أو فتح حساب لشريك تجاري (
+Partner
+) دون 
+استيفاء وتسجيل الرقم الضريبي الخاص به (
+Partner/Tax ID
+.)
+ 
+2
+.​سالمة األرقام 
+:الضريبية يُمنع تكرار نفس الرقم الضريبي لشركات مختلفة دون وجود رابط ملكية مثبت 
+.ًرسميا 
+3
+.​صحة المعادلة 
+:الضريبية يجب أن يتطابق المبلغ الضريبي (
+Tax
+) بدقة مع النسبة الضريبية المقررة 
+ًقانونا (مثل 
+14
+%
+ 
+لضريبة القيمة 
+)المضافة من واقع حقل المبلغ غير الخاضع للضريبة (
+Untaxed Amount
+.)
+ 
+🤖
+ قاعدة النظام (
+Rule Logic
+:)
+ 
+●​إذا كان 
+Partner/Tax ID
+ 
+ًخاليا أو غير صحيح 
+⬅️
+ مخالفة امتثال (
+High Risk
+).
+ 
+●​إذا كان 
+Tax != Untaxed Amount * 0.14
+ (مع عدم وجود 
+)إعفاء 
+⬅️
+ مخالفة احتساب ضريبي 
+(
+Medium Risk
+).
+ 
+المادة (
+3
+:)
+ سياسة الئتمان وحظر التجاوزات (
+Credit & Receivables Policy
+)
+ 
+1
+.​مهلة السداد 
+:و الستحقاق يلتزم قسم المبيعات بتحديد تاريخ استحقاق (
+Due Date
+) محدد لكل فاتورة 
+ًبناء على التسهيالت 
+الئتمانية المعتمدة لكل 
+.عميل 
+2
+.​حظر الئتمان 
+:التلقائي يُحظر إصدار فواتير آتية جديدة ألي عميل في حالة وجود فواتير مستحقة وغير مدفوعة (
+Status In
+ 
+Payment: Not Paid
+) تجاوَ ز تاريخ استحقاقها أكثر من 
+15
+ 
+ًيوما.
+ 
+3
+.​سالمة توقيت التثبيت (
+Cut-off Integrity
+:)
+ يُلزم المحاسب بترحيل الفاتورة (
+Posted
+) في نفس الشهر/الفترة المالية 
+التي صدرت فيها الفاتورة (
+Invoice/Bill Date
+) لمنع التالعب بتوقيت الع
+
+--- page 2 chars=1173 searchable=True ---
+3
+.​الفواتير 
+:المكررة يُعتبر تسجيل فاتورتين بنفس المبلغ ونفس المورد خالل 
+48
+ ساعة 
+ًمؤشرا شبهة احتيال أو خطأ مدخالت 
+يجب إيقافه 
+.ًفورا 
+🤖
+ قاعدة النظام (
+Rule Logic
+:)
+ 
+●​إذا تم رصد فواتير متكررة بنفس 
+Partner
+ و 
+Untaxed Amount
+ في تواريخ متقاربة 
+⬅️
+ شبهة تكرار 
+واحتيال (
+Critical Risk
+).
+ 
+📊
+ جدول القواعد البرمجية المجهزة للحقن في نظام الـ 
+GRC
+ 
+يمكنك تغذية هذا الجدول مباشرة لقاعدة بيانات النظام (
+Rules Engine / Vector DB
+:)
+ 
+كود القاعدة 
+(
+Rule ID
+)
+ 
+اسم الضابط 
+الرقابي 
+الشروط الحاكمة (
+Conditions
+)
+ درجة الخطر اإلجراء التلقائي 
+للنظام 
+RULE-TA
+X-001
+ 
+التحقق من الرقم 
+الضريبي 
+Partner/Tax ID IS NULL
+ 
+High
+ إيقاف التثبيت 
+وتنبيه مسئول 
+المتثال 
+RULE-TA
+X-002
+ 
+مطابقة معادلة 
+VAT
+ 
+Tax != Untaxed Amount *
+ 
+0.14
+ 
+Medium
+ تسجيل مخالفة 
+احتساب وتحديد 
+الفارق 
+RULE-CR
+D-001
+ 
+تجاوز مهلة 
+الستحقاق 
+Payment Status ==
+ 
+Unpaid AND Days
+ 
+Overdue > 15
+ 
+High
+ إدراج الحساب في 
+قائمة الحظر 
+الئتماني 
+RULE-FR
+D-001
+ 
+كشف الفواتير 
+المكررة 
+Duplicate (Partner +
+ 
+Amount + 48h
+)
+ 
+Critical
+ تعليق الفاتورة 
+وإحالتها للمراجع 
+الداخلي 
+RULE-CU
+T-001
+ 
+الفواتير المعلقة 
+في المسودة 
+Status == Draft AND Age
+ 
+> 5 Days
+ 
+Low
+ إرسال تنبيه 
+للمحاسب إلغالق 
+الحركة

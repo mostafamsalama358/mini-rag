@@ -211,6 +211,96 @@ def _extract_text_from_image_with_ocr(
     return text
 
 
+def extract_pages_with_ocr(
+    pdf_path: str,
+    page_numbers: set[int] | list[int],
+) -> list[PdfPageDocument]:
+    """OCR only the requested 1-indexed pages (fill scanned gaps after ODL)."""
+    wanted = {int(p) for p in page_numbers if int(p) > 0}
+    if not wanted:
+        return []
+
+    doc = fitz.open(pdf_path)
+    pages: list[PdfPageDocument] = []
+    try:
+        ocr_lang = _resolve_ocr_language(doc)
+        ocr_engine = _configured_ocr_engine()
+        file_name = os.path.basename(pdf_path)
+
+        tasks = []
+        for page_num in sorted(wanted):
+            if page_num < 1 or page_num > len(doc):
+                continue
+            page = doc[page_num - 1]
+            img = _page_to_image(page)
+            tasks.append({"page_num": page_num, "img": img})
+
+        doc.close()
+        doc = None
+
+        if not tasks:
+            return []
+
+        max_workers = min(len(tasks), 4)
+        logger.info(
+            "OCR selective pages | count=%s workers=%s file=%s",
+            len(tasks),
+            max_workers,
+            pdf_path,
+        )
+
+        import concurrent.futures
+
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            future_to_task = {
+                executor.submit(
+                    _extract_text_from_image_with_ocr,
+                    task["img"],
+                    ocr_lang,
+                    task["page_num"],
+                    pdf_path,
+                    ocr_engine,
+                ): task
+                for task in tasks
+            }
+            for future in concurrent.futures.as_completed(future_to_task):
+                task = future_to_task[future]
+                try:
+                    task["text"] = future.result()
+                except Exception as exc:
+                    logger.error(
+                        "Selective OCR failed | page=%s err=%s",
+                        task["page_num"],
+                        exc,
+                    )
+                    task["text"] = ""
+                gc.collect()
+
+        for task in sorted(tasks, key=lambda t: t["page_num"]):
+            text = clean_extracted_text(task.get("text"))
+            if not text:
+                continue
+            pages.append(
+                PdfPageDocument(
+                    page_content=text,
+                    metadata={
+                        "file_name": file_name,
+                        "page": task["page_num"],
+                        "source_type": "pdf",
+                        "ocr_engine": ocr_engine,
+                        "ocr_used": True,
+                        "ocr_lang": ocr_lang,
+                        "parser": "ocr",
+                    },
+                )
+            )
+    finally:
+        if doc:
+            doc.close()
+
+    return pages
+
+
 def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
     doc = fitz.open(pdf_path)
     pages: list[PdfPageDocument] = []

@@ -1,0 +1,91 @@
+id: financial_audit
+name: Financial Audit
+profile: financial_audit
+prompt: financial_audit
+description: >-
+  Audit accounting transactions (Excel/CSV) against the internal financial
+  bylaw and Instructions — tax, credit, cut-off, fraud, then JSON audit report.
+order: 1
+citation_policy: strict
+retrieval:
+  strategy: hybrid
+  exhaustive: true
+  min_limit: 80
+  # Audit over uploaded journals: do not ground/filter by parsed phrase entities
+  # (e.g. "journal transactions") — that drops Excel table-row chunks.
+  skip_entity_grounding: true
+  suppress_entity_scoped_search: true
+  prioritize_transactions: true
+  drop_non_audit_sources: true
+  # Load EVERY Excel/CSV table-row from DB (not vector top-k) and score RULE-* in code.
+  fetch_all_transactions: true
+  deterministic_rules: true
+  transaction_limit: 5000
+  policy_limit: 40
+validation: {}
+output:
+  format: json
+  json_only: true
+  subskills:
+    - id: tax_compliance
+      name: Tax Compliance
+      focuses: [tax_id, vat, exemptions]
+      rule_ids: [RULE-TAX-001, RULE-TAX-002]
+    - id: credit_policy
+      name: Credit Policy
+      focuses: [due_date, payment_status, overdue]
+      rule_ids: [RULE-CRD-001]
+    - id: cutoff_integrity
+      name: Cut-off Integrity
+      focuses: [draft, posting_date, revenue_recognition]
+      rule_ids: [RULE-CUT-001]
+    - id: fraud_detection
+      name: Fraud Detection
+      focuses: [duplicate_invoice, invoice_split, suspicious_pattern]
+      rule_ids: [RULE-FRD-001]
+    - id: audit_report
+      name: Audit Report
+      focuses: [summary, risk_distribution, recommendations, json_output]
+      rule_ids: []
+response_schema:
+  type: object
+  required: [executive_summary, issues, recommendations, subskill_results]
+  properties:
+    executive_summary:
+      type: object
+      properties:
+        transactions_reviewed: { type: integer }
+        violations_found: { type: integer }
+        risk_distribution:
+          type: object
+          properties:
+            critical: { type: integer }
+            high: { type: integer }
+            medium: { type: integer }
+            low: { type: integer }
+        overall_compliance_assessment: { type: string }
+    issues:
+      type: array
+      items:
+        type: object
+        properties:
+          transaction_id: { type: string }
+          partner: { type: string }
+          violation_type: { type: string }
+          risk_level: { type: string }
+          rule_id: { type: string }
+          regulatory_reference: { type: string }
+          root_cause: { type: string }
+          corrective_action: { type: string }
+          subskill: { type: string }
+    recommendations:
+      type: array
+      items: { type: string }
+    subskill_results:
+      type: object
+      properties:
+        tax_compliance: { type: object }
+        credit_policy: { type: object }
+        cutoff_integrity: { type: object }
+        fraud_detection: { type: object }
+        audit_report: { type: object }

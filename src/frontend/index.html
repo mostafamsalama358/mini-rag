@@ -78,11 +78,16 @@
           <div id="skillPicker" class="skill-picker" style="display: none; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;"></div>
           <p id="skillHint" style="display: none; font-size: 0.8rem; color: var(--text-muted); margin: 0 0 0.5rem;">Select a Skill before asking.</p>
           <form id="chatForm" class="chat-input-wrapper">
+            <input type="file" id="chatFileInput" accept=".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv" hidden multiple>
+            <button type="button" class="attach-btn" id="attachBtn" title="Upload Excel/CSV — auto Financial Audit" style="display: none;" aria-label="Upload file">
+              <span class="material-symbols-outlined">upload_file</span>
+            </button>
             <textarea id="questionInput" class="chat-input" placeholder="Ask me anything about this project..." rows="1" required></textarea>
             <button type="submit" class="send-btn" id="sendBtn">
               <span class="material-symbols-outlined">send</span>
             </button>
           </form>
+          <p id="attachHint" style="display: none; font-size: 0.75rem; color: var(--text-muted); margin: 0.5rem 0 0;">Upload Excel/CSV → index → Financial Audit runs automatically (no question needed).</p>
         </div>
 
       </div>

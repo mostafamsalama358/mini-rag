@@ -1,0 +1,5 @@
+# GRC domain overrides — recency boost for regulatory/policy updates.
+fusion_weights:
+  recency: 0.2
+  retrieval: 0.5
+  entity: 0.3

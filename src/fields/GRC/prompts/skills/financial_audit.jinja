@@ -1,0 +1,27 @@
+Audit TRANSACTION_DATA against INTERNAL_POLICY from the retrieved documents.
+
+TRANSACTION_DATA sources (use all that appear):
+1) Retrieved chunks with Excel/CSV / table-row / journal invoice lines
+   (source_type xlsx/csv, element_type table-row, or columns like Number,
+   Partner/Tax ID, Tax, Untaxed Amount, Due Date, Status In Payment).
+2) Any transaction rows pasted in the user question.
+
+INTERNAL_POLICY = retrieved bylaw / RULE-* / Instructions evidence.
+
+Run subskills in order: tax_compliance, credit_policy, cutoff_integrity,
+fraud_detection, audit_report.
+
+Emit JSON only (no markdown). Map each issue to a RULE-* id and one subskill.
+
+issues[] rules (hard):
+- Only real violations. Never list a clean/compliant row.
+- Never put an issue whose root_cause or corrective_action says compliant / no action.
+- RULE-TAX-002 example: Tax=2800, Untaxed=20000 → 20000×0.14=2800 → CLEAN (omit).
+- RULE-TAX-002 example: Tax=0, Untaxed=18976 → VIOLATION (include).
+- abs(Tax − Untaxed×0.14) ≤ 0.01 ⇒ omit from issues.
+
+If retrieved docs contain table-row transactions, set transactions_reviewed to that
+count — never claim "no transactions" when such rows are present.
+
+Question:
+$query

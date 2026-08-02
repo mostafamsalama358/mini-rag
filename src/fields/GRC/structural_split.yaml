@@ -1,0 +1,37 @@
+# GRC structural patterns — bylaw articles + RULE-* table rows.
+
+boundaries:
+  - '(?=(?:\(\s*)?م[ـ]?ادة\s*\(\s*\d+\s*\))'
+  - '(?=RULE-[A-Z]+-\d+)'
+  - '(?=(?i)\bRule Logic\b|قاعدة النظام)'
+  - '(?=(?:الفصل|الباب|القسم)\s+(?:ال)?(?:اول|اولى|أول|أولى|\d+))'
+
+article_query_patterns:
+  - '(?:ال?\s*م[ـ]?ادة|article)\s*(?:رقم\s*)?\(?\s*(\d+)'
+  - '(?i)\bRULE-(?:TAX|CRD|FRD|CUT)-(\d+)\b'
+
+chapter_query_patterns:
+  - '(?:ال?\s*(?:فصل|باب|قسم)|chapter|section|part)\s+(?:رقم\s+)?(.+)'
+  - '(?i)\b(Partner Tax Compliance|Credit|Cut-?off|Fraud|Procurement)\b'
+
+article_text_patterns:
+  - '(?:\(\s*)?م[ـ]?ادة\s*\(\s*(\d+)\s*\)'
+  - '(?i)\bRULE-(?:TAX|CRD|FRD|CUT)-(\d+)\b'
+
+chapter_text_patterns:
+  - '(?:الفصل|الباب|القسم)\s+(?:ال)?(?:اول|اولى|أول|\d+)'
+  - '(?i)\bRULE-[A-Z]+-\d+\b'
+
+article_reference_prefix: "مادة"
+expansion_article_template: "مادة {value}"
+expansion_chapter_template: "الفصل {value}"
+bare_number_article_hint_keywords:
+  - "مادة"
+  - "article"
+  - "RULE"
+  - "TAX"
+  - "CRD"
+  - "FRD"
+  - "CUT"
+
+min_segment_chars: 80

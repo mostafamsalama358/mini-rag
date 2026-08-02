@@ -65,6 +65,13 @@ OCR_IMAGE_SCALE=1.5
 OCR_PAGE_TIMEOUT_SECONDS=180
 OCR_GEMINI_MODEL_ID=gemini-2.5-flash
 
+# PDF_PARSER_MODE: hybrid | legacy
+# hybrid - searchable via OpenDataLoader (Java 11+); scanned via OCR
+# legacy - PyMuPDF text + OCR fallback
+PDF_PARSER_MODE=hybrid
+PDF_SEARCHABLE_MIN_CHARS=10
+PDF_SEARCHABLE_RATIO_THRESHOLD=0.05
+
 # ========================= Language =========================
 PRIMARY_LANG=ar
 DEFAULT_LANG=en
@@ -79,8 +86,6 @@ RAG_RERANKER_WARMUP_ON_STARTUP=false
 RAG_RERANKER_TOP_N=5
 
 # ========================= RAG =========================
-RAG_ENABLE_HYBRID_SEARCH=true
-# Legacy alias only — consulted only when RAG_ENABLE_HYBRID_SEARCH is unset.
 RAG_ENABLE_BM25=false
 RAG_RETRIEVAL_CANDIDATES=30
 RAG_RRF_K=60
@@ -95,7 +100,6 @@ RAG_PIPELINE_DIAGNOSTICS=true
 RAG_INDEXING_TRACE_ENTITY=CATAFLAM
 
 # Unified production pipeline (015)
-# legacy | shadow | unified
 RAG_PIPELINE_MODE=unified
 RAG_PIPELINE_FALLBACK_ON_ERROR=false
 RAG_PIPELINE_SHADOW_PERSIST=true
@@ -120,7 +124,7 @@ INGEST_POISON_THRESHOLD=3
 INGEST_INTERACTIVE_RESERVED_SLOTS=8
 INGEST_CONFIG_VERSION=1.0.0
 
-# Hugging Face — only needed if you switch embedding/reranker to BGE
+# Hugging Face â€” only needed if you switch embedding/reranker to BGE
 HF_TOKEN=
 HF_HOME=/root/.cache/huggingface
 

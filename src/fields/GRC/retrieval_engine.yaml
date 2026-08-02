@@ -1,0 +1,14 @@
+# GRC domain overrides — Retrieval Engine (spec 010).
+enabled_strategies:
+  - semantic
+  - keyword
+  - metadata
+  - structured
+hybrid_components:
+  - semantic
+  - keyword
+reranker_backend: cross_encoder
+rrf_k: 30
+budget_defaults:
+  max_candidates: 30
+  max_evidence_units: 8

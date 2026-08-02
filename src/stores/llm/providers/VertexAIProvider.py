@@ -155,6 +155,8 @@ class VertexAIProvider(LLMInterface):
             "max_output_tokens": max_output_tokens,
             "temperature": temperature,
         }
+        if response_schema and not response_mime_type:
+            response_mime_type = "application/json"
         if response_mime_type:
             config_kwargs["response_mime_type"] = response_mime_type
         if response_schema:

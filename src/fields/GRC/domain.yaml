@@ -1,0 +1,7 @@
+key: grc
+label: GRC
+languages: [en, ar]
+description: >-
+  Financial audit & compliance — single Skill financial_audit audits Excel/CSV
+  transactions against the internal bylaw (knowledge base) using Instructions
+  as the audit task prompt. Subskills: tax, credit, cut-off, fraud, report.

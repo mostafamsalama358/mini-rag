@@ -9,6 +9,7 @@ from tests.architecture._repo import REPO_ROOT
 SKILL_DIRS = [
     REPO_ROOT / "src" / "fields" / "pharmacy" / "skills",
     REPO_ROOT / "src" / "fields" / "legal" / "skills",
+    REPO_ROOT / "src" / "fields" / "grc" / "skills",
 ]
 
 

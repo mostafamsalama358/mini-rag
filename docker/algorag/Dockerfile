@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     libxslt1-dev \
     libffi-dev \
     curl \
+    openjdk-17-jre-headless \
     && rm -rf /var/lib/apt/lists/*
 
 COPY src/requirements.txt .

@@ -87,6 +87,14 @@ class Settings(BaseSettings):
     OCR_ENGINE: str = "gemini"
     OCR_GEMINI_MODEL_ID: Optional[str] = None
 
+    # PDF parse routing (sole ingest path): hybrid = OpenDataLoader for searchable
+    # pages + OCR for scanned pages; legacy = PyMuPDF text layer + OCR fallback.
+    PDF_PARSER_MODE: str = "hybrid"
+    # Min extracted chars for a page to count as searchable (text layer present).
+    PDF_SEARCHABLE_MIN_CHARS: int = 10
+    # If searchable_page_ratio < threshold, skip OpenDataLoader and use OCR path.
+    PDF_SEARCHABLE_RATIO_THRESHOLD: float = 0.05
+
     RAG_HISTORY_MODE: str = "auto"
     # Over-fetch multiplier for expansion queries. The initial retrieval pass
     # uses RAG_RETRIEVAL_CANDIDATES instead (see below).

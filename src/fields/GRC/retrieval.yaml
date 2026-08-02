@@ -1,0 +1,16 @@
+# GRC retrieval intents — bylaw articles + RULE IDs + audit subskill cues.
+
+intents:
+  structural:
+    patterns:
+      - '(?:مادة|article)\s*(?:رقم\s*)?\(?\s*(\d+)'
+      - '(?i)\bRULE-((?:TAX|CRD|FRD|CUT)-\d+)\b'
+    flags: "IGNORECASE"
+  exhaustive_list:
+    patterns:
+      - '(?i)\b(?:all|every|list)\b.*\b(?:rules|violations|issues|RULE-)\b'
+      - '(?:جميع|كل)\s+(?:القواعد|المخالفات|المواد)'
+    flags: "IGNORECASE"
+
+exhaustive_min_limit: 80
+disable_chunk_focus: true

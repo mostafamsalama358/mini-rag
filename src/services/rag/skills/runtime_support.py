@@ -143,11 +143,25 @@ async def build_skill_retrieval_context(
     if field_is_list and query_plan.scope in ("all", "subset"):
         retrieval_limit = max(retrieval_limit, int(profile.retrieval.exhaustive_min_limit))
     if skill_ctx.prefers_exhaustive_retrieval:
-        retrieval_limit = max(
-            retrieval_limit,
-            int(profile.retrieval.exhaustive_min_limit),
-            500,
+        ret = (
+            skill_ctx.skill.retrieval
+            if isinstance(skill_ctx.skill.retrieval, dict)
+            else {}
         )
+        custom_floor = ret.get("min_limit")
+        if skill_ctx.retrieval_strategy == "pair_lookup":
+            retrieval_limit = max(
+                retrieval_limit,
+                int(profile.retrieval.exhaustive_min_limit),
+                500,
+            )
+        elif custom_floor is not None:
+            retrieval_limit = max(retrieval_limit, int(custom_floor))
+        else:
+            retrieval_limit = max(
+                retrieval_limit,
+                int(profile.retrieval.exhaustive_min_limit),
+            )
 
     query_type = query_plan.field if query_plan.field != "unknown" else "factual"
     search_mode = resolve_search_mode(
@@ -202,6 +216,26 @@ async def retrieve_via_strategy(
     db_client,
 ) -> SkillRetrievalOutcome:
     """Strategy-plugin retrieval — callers MUST NOT branch on strategy name."""
+    if skill_ctx._retrieval_flag("fetch_all_transactions"):
+        from services.rag.skills.financial_audit_full import load_full_audit_documents
+
+        ret = (
+            skill_ctx.skill.retrieval
+            if isinstance(skill_ctx.skill.retrieval, dict)
+            else {}
+        )
+        docs = await load_full_audit_documents(
+            project_id=int(project.project_id),
+            db_client=db_client,
+            transaction_limit=int(ret.get("transaction_limit") or 5000),
+            policy_limit=int(ret.get("policy_limit") or 40),
+        )
+        return SkillRetrievalOutcome(
+            documents=docs,
+            retrieval_path="financial_audit_full_fetch",
+            rows_after_entity_filter=len(docs),
+        )
+
     embedding_cache = EmbeddingCache()
     retrieval_start = time.time()
     default_path = (
@@ -327,9 +361,15 @@ async def rerank_and_enrich_documents(
     nlp_controller,
     db_client,
     reranker=None,
+    skill_ctx: SkillExecutionContext | None = None,
 ) -> list:
     settings = get_settings()
     structural_patterns = profile.structural_patterns
+    if skill_ctx is not None and skill_ctx._retrieval_flag("prioritize_transactions"):
+        documents = order_documents_for_financial_audit(
+            documents,
+            drop_non_audit_sources=skill_ctx._retrieval_flag("drop_non_audit_sources"),
+        )
     documents = sort_documents_for_prompt(
         documents,
         parse_result.canonical_query,
@@ -382,6 +422,9 @@ async def rerank_and_enrich_documents(
     RAG_TOP_SCORE.labels(project_id=project_label).observe(float(top_score))
 
     char_budget = int(getattr(settings, "RAG_PROMPT_CHAR_BUDGET", 0))
+    if skill_ctx is not None and skill_ctx._retrieval_flag("prioritize_transactions"):
+        # Transaction rows are short; allow a wider pack for audit JSON.
+        char_budget = max(char_budget, 40000)
     if char_budget > 0 and documents:
         budget_filtered: list = []
         running_chars = 0
@@ -396,6 +439,102 @@ async def rerank_and_enrich_documents(
     return documents
 
 
+def _rule_tax_002_is_false_positive(text: str) -> bool:
+    """True when Tax already equals Untaxed×0.14 (model still says 'does not equal')."""
+    import re
+
+    blob = text or ""
+    tax_m = re.search(
+        r"tax\s*(?:amount)?\s*(?:\(|=|:)?\s*(-?\d+(?:[.,]\d+)?)",
+        blob,
+        flags=re.IGNORECASE,
+    )
+    untax_m = re.search(
+        r"untaxed\s*(?:amount)?\s*(?:\(|=|:)?\s*(-?\d+(?:[.,]\d+)?)",
+        blob,
+        flags=re.IGNORECASE,
+    )
+    if not (tax_m and untax_m):
+        return False
+    tax = float(tax_m.group(1).replace(",", ""))
+    untaxed = float(untax_m.group(1).replace(",", ""))
+    # Only compare Tax vs Untaxed×0.14 — do NOT treat "expected" product alone
+    # as a match (real violations often include Untaxed×0.14 next to Tax=0).
+    return abs(untaxed * 0.14 - tax) <= 0.05
+
+
+def sanitize_financial_audit_answer(answer: str) -> str:
+    """Drop false-positive issues the model labels as compliant / no-action."""
+    import json
+
+    text = (answer or "").strip()
+    if not text:
+        return answer
+    try:
+        payload = json.loads(text)
+    except json.JSONDecodeError:
+        start = text.find("{")
+        end = text.rfind("}")
+        if start < 0 or end <= start:
+            return answer
+        try:
+            payload = json.loads(text[start : end + 1])
+        except json.JSONDecodeError:
+            return answer
+
+    if not isinstance(payload, dict):
+        return answer
+    issues = payload.get("issues")
+    if not isinstance(issues, list):
+        return answer
+
+    clean_markers = (
+        "this transaction is compliant",
+        "transaction is compliant",
+        "no corrective action",
+        "no action needed",
+        "لا يلزم",
+        "سليمة",
+    )
+    kept: list = []
+    for issue in issues:
+        if not isinstance(issue, dict):
+            continue
+        blob = " ".join(
+            str(issue.get(key) or "")
+            for key in ("root_cause", "corrective_action", "violation_type")
+        )
+        blob_l = blob.lower()
+        if any(marker in blob_l for marker in clean_markers):
+            continue
+        rule_id = str(issue.get("rule_id") or "").upper()
+        if rule_id == "RULE-TAX-002" and _rule_tax_002_is_false_positive(blob):
+            continue
+        kept.append(issue)
+
+    payload["issues"] = kept
+    summary = payload.get("executive_summary")
+    if isinstance(summary, dict):
+        summary["violations_found"] = len(kept)
+        dist = {"critical": 0, "high": 0, "medium": 0, "low": 0}
+        for issue in kept:
+            level = str(issue.get("risk_level") or "").strip().lower()
+            if level in dist:
+                dist[level] += 1
+        summary["risk_distribution"] = dist
+        if not kept:
+            summary["overall_compliance_assessment"] = (
+                "No confirmed violations in the reviewed transaction sample "
+                "(false-positive VAT matches removed)."
+            )
+        payload["executive_summary"] = summary
+
+    try:
+        return json.dumps(payload, ensure_ascii=False, indent=2)
+    except (TypeError, ValueError):
+        return answer
+
+
 def document_text_for_prompt(text: str, query: str, profile: FieldProfile | None = None) -> str:
     chunk_text = text or ""
     if profile is not None and profile.retrieval.disable_chunk_focus:
@@ -403,6 +542,51 @@ def document_text_for_prompt(text: str, query: str, profile: FieldProfile | None
     if should_focus_document_text(query):
         chunk_text = focus_document_text_for_query(chunk_text, query)
     return chunk_text
+
+
+def _is_transaction_document(doc) -> bool:
+    md = getattr(doc, "metadata", None) or {}
+    source_type = str(md.get("source_type") or "").lower()
+    element_type = str(md.get("element_type") or "").lower()
+    if source_type in {"xlsx", "xls", "csv"}:
+        return True
+    if element_type == "table-row":
+        return True
+    return False
+
+
+def _is_audit_policy_document(doc) -> bool:
+    md = getattr(doc, "metadata", None) or {}
+    file_name = str(md.get("file_name") or "").lower()
+    entity = str(md.get("entity") or "").lower()
+    source = str(md.get("source") or "").lower()
+    if entity in {"internal bylaw", "audit instructions"}:
+        return True
+    if source in {"bylaw", "policy", "instructions"}:
+        return True
+    markers = ("bylaw", "لايحة", "لائحة", "instruction", "rule-tax", "rule-crd", "rule-frd", "rule-cut")
+    return any(marker in file_name for marker in markers)
+
+
+def order_documents_for_financial_audit(
+    documents: list,
+    *,
+    drop_non_audit_sources: bool = False,
+) -> list:
+    """Prefer Excel/CSV rows, then bylaw/Instructions; optionally drop IFRS/COSO noise."""
+    transactions: list = []
+    policy: list = []
+    other: list = []
+    for doc in documents:
+        if _is_transaction_document(doc):
+            transactions.append(doc)
+        elif _is_audit_policy_document(doc):
+            policy.append(doc)
+        else:
+            other.append(doc)
+    if drop_non_audit_sources:
+        return transactions + policy
+    return transactions + policy + other
 
 
 async def generate_skill_answer(
@@ -430,6 +614,33 @@ async def generate_skill_answer(
     answer = None
     needs_clarification = False
 
+    # Full-workbook audit: every Excel/CSV row via deterministic RULE-* (not top-k LLM).
+    if skill_ctx.skill_id == "financial_audit" and skill_ctx._retrieval_flag(
+        "deterministic_rules"
+    ):
+        from services.rag.skills.financial_audit_full import (
+            build_deterministic_audit_report,
+            report_to_answer_json,
+        )
+
+        report = build_deterministic_audit_report(
+            list(retrieved_documents or []),
+            language=query_lang,
+        )
+        answer = report_to_answer_json(report)
+        log_generation_context(
+            context_length=sum(len(getattr(d, "text", "") or "") for d in retrieved_documents),
+            chunks_used=len(retrieved_documents or []),
+            chunk_ids=chunk_ids_from_documents(retrieved_documents or []),
+        )
+        log_generation_result(
+            answer_generated=True,
+            fallback_used=False,
+            reason="FINANCIAL_AUDIT_DETERMINISTIC_FULL",
+        )
+        template_parser.set_language(previous_lang)
+        return answer, "financial_audit_deterministic_full", [], False
+
     try:
         skill_prompt = load_skill_prompt(
             skill_ctx.domain_key,
@@ -437,12 +648,21 @@ async def generate_skill_answer(
             variables={"query": original_query},
         )
         system_prompt_str = profile.prompts.get(query_lang)
-        if skill_prompt:
-            system_prompt = skill_prompt
-        elif system_prompt_str:
+        if system_prompt_str:
             from string import Template
 
-            system_prompt = Template(system_prompt_str).substitute({})
+            domain_system = Template(system_prompt_str).substitute({})
+        else:
+            domain_system = None
+
+        # Pharmacy-style pack layout: domain system_*.txt is the base system
+        # prompt; Skill jinja specializes it. Prefer domain+skill when both exist.
+        if domain_system and skill_prompt:
+            system_prompt = f"{domain_system}\n\n{skill_prompt}"
+        elif skill_prompt:
+            system_prompt = skill_prompt
+        elif domain_system:
+            system_prompt = domain_system
         else:
             system_prompt = template_parser.get("rag", "system_prompt")
 
@@ -465,35 +685,68 @@ async def generate_skill_answer(
             if hint:
                 system_prompt = f"{system_prompt}\n\n{hint}"
 
-        documents_prompts = "\n".join(
-            [
-                template_parser.get(
-                    "rag",
-                    "document_prompt",
-                    {
-                        "doc_num": idx + 1,
-                        "source_label": format_source_label(
-                            doc.metadata,
-                            lang=query_lang,
-                            label_template=getattr(profile.metadata, "label_template", None),
-                        ),
-                        "chunk_text": generation_client.process_text(
-                            document_text_for_prompt(
-                                doc.text or "", original_query, profile
-                            )
-                        ),
-                    },
+        if skill_ctx._retrieval_flag("prioritize_transactions"):
+            retrieved_documents = order_documents_for_financial_audit(
+                retrieved_documents,
+                drop_non_audit_sources=skill_ctx._retrieval_flag(
+                    "drop_non_audit_sources"
+                ),
+            )
+
+        doc_blocks: list[str] = []
+        tx_count = 0
+        for idx, doc in enumerate(retrieved_documents):
+            chunk_text = generation_client.process_text(
+                document_text_for_prompt(doc.text or "", original_query, profile)
+            )
+            source_label = format_source_label(
+                doc.metadata,
+                lang=query_lang,
+                label_template=getattr(profile.metadata, "label_template", None),
+            )
+            if skill_ctx._retrieval_flag("prioritize_transactions") and _is_transaction_document(
+                doc
+            ):
+                tx_count += 1
+                doc_blocks.append(
+                    f"## TRANSACTION_DATA row {tx_count}\n"
+                    f"Source: {source_label}\n{chunk_text}"
                 )
-                for idx, doc in enumerate(retrieved_documents)
-            ]
-        )
+            elif skill_ctx._retrieval_flag("prioritize_transactions") and _is_audit_policy_document(
+                doc
+            ):
+                doc_blocks.append(
+                    f"## INTERNAL_POLICY document {idx + 1}\n"
+                    f"Source: {source_label}\n{chunk_text}"
+                )
+            else:
+                doc_blocks.append(
+                    template_parser.get(
+                        "rag",
+                        "document_prompt",
+                        {
+                            "doc_num": idx + 1,
+                            "source_label": source_label,
+                            "chunk_text": chunk_text,
+                        },
+                    )
+                )
+        documents_prompts = "\n".join(doc_blocks)
         header_prompt = template_parser.get(
             "rag", "header_prompt", {"query": original_query}
         )
         is_exhaustive = field_is_list or (
             query_plan.operation == "list" and query_plan.scope == "all"
         )
-        if skill_prompt:
+        if skill_ctx._retrieval_flag("prioritize_transactions"):
+            footer_prompt = (
+                f"Audit the TRANSACTION_DATA rows above against INTERNAL_POLICY. "
+                f"Retrieved transaction rows in context: {tx_count}. "
+                f"Set transactions_reviewed to the number of TRANSACTION_DATA rows you audited "
+                f"(must be > 0 when any TRANSACTION_DATA rows are present).\n\n"
+                f"## Question:\n{original_query}\n\n## Answer:\n"
+            )
+        elif skill_prompt:
             footer_prompt = (
                 f"Answer from retrieved documents only.\n\n## Question:\n{original_query}\n\n## Answer:\n"
             )
@@ -532,6 +785,9 @@ async def generate_skill_answer(
         generation_start = time.time()
         gen_kwargs: dict = {}
         if skill_ctx.response_schema:
+            # Vertex rejects response_schema unless mime is application/json
+            # (default text/plain → InvalidArgument 400).
+            gen_kwargs["response_mime_type"] = "application/json"
             gen_kwargs["response_schema"] = skill_ctx.response_schema
         if settings.LLM_USE_ASYNC and generate_async is not None:
             raw_generated_answer = await generate_async(
@@ -551,6 +807,8 @@ async def generate_skill_answer(
             time.time() - generation_start
         )
         answer, needs_clarification = parse_rag_answer(raw_generated_answer)
+        if skill_ctx.skill_id == "financial_audit" and answer:
+            answer = sanitize_financial_audit_answer(answer)
         if not answer or not str(answer).strip():
             log_generation_result(
                 answer_generated=False,

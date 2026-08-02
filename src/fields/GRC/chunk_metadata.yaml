@@ -1,0 +1,76 @@
+# GRC chunk metadata — optimized for internal bylaw + Instructions KB.
+
+label_template: "{file_name} — {entity} / {field_name} {section}"
+extra_keys:
+  - file_name
+  - page
+  - section
+  - sections
+  - article_number
+  - rule_id
+  - risk_level
+  - doc_type
+  - source
+  - language
+  - field_name
+  - field_names
+  - entity
+  - entity_aliases
+
+enrichment:
+  enabled: true
+  entity_key_default: entity
+  section_header_pattern: '(?m)^\s*((?:المادة\s*\(\s*\d+\s*\)|RULE-[A-Z]+-\d+))\s*[:：.\-–]?\s*([^\n]{0,120})'
+  field_patterns:
+    - field: tax_compliance
+      pattern: '(?i)RULE-TAX|Tax ID|Partner/Tax ID|VAT|Untaxed Amount|ضريب|إعفاء|المادة\s*\(\s*2\s*\)'
+    - field: credit_policy
+      pattern: '(?i)RULE-CRD|Due Date|Overdue|Status In Payment|ائتمان|استحقاق|المادة\s*\(\s*3\s*\).*ائتمان'
+    - field: cutoff_integrity
+      pattern: '(?i)RULE-CUT|Cut-?off|Draft|Posting Date|IFRS\s*15|قطع الفترة|مسودة'
+    - field: fraud_detection
+      pattern: '(?i)RULE-FRD|Duplicate|Split Invoice|احتيال|فواتير مكررة|تجزئة|المادة\s*\(\s*4\s*\)'
+    - field: requirement
+      pattern: '(?i)\b(must|shall|mandatory)\b|يُحظر|يجب|يُلزم|يُمنع'
+    - field: policy
+      pattern: '(?i)\b(bylaw|policy|instructions)\b|لائحة|مادة\s*\(|سياسة'
+  entity_detectors:
+    - id: internal_bylaw
+      entity: Internal Bylaw
+      match_any: true
+      file_name_regex: '(?i)لايحة|لائحة|bylaw|internal'
+      text_regex: 'اللائحة|الالئحة|مادة\s*\('
+      text_head_prefix: 'الالئحة'
+    - id: instructions_prompt_doc
+      entity: Audit Instructions
+      match_any: true
+      file_name_regex: '(?i)instruction'
+      text_regex: '(?i)GRC Auditor|TRANSACTION_DATA|INTERNAL_POLICY'
+      text_head_prefix: 'Role'
+    - id: rule_tax
+      entity_from_match: 'RULE-TAX-{1}'
+      text_regex: '(?i)RULE-TAX-(\d+)'
+    - id: rule_crd
+      entity_from_match: 'RULE-CRD-{1}'
+      text_regex: '(?i)RULE-CRD-(\d+)'
+    - id: rule_frd
+      entity_from_match: 'RULE-FRD-{1}'
+      text_regex: '(?i)RULE-FRD-(\d+)'
+    - id: rule_cut
+      entity_from_match: 'RULE-CUT-{1}'
+      text_regex: '(?i)RULE-CUT-(\d+)'
+  alias_detectors:
+    - aliases: [Internal Bylaw, bylaw, اللائحة, اللائحة المالية]
+      primary_contains: Bylaw
+    - aliases: [Audit Instructions, Instructions]
+      primary_contains: Instructions
+    - aliases: [RULE-TAX-001, tax_compliance]
+      text_regex: '(?i)RULE-TAX-001'
+    - aliases: [RULE-TAX-002, tax_compliance]
+      text_regex: '(?i)RULE-TAX-002'
+    - aliases: [RULE-CRD-001, credit_policy]
+      text_regex: '(?i)RULE-CRD-001'
+    - aliases: [RULE-FRD-001, fraud_detection]
+      text_regex: '(?i)RULE-FRD-001'
+    - aliases: [RULE-CUT-001, cutoff_integrity]
+      text_regex: '(?i)RULE-CUT-001'

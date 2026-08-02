@@ -107,20 +107,30 @@ class SkillExecutionContext:
     def primary_entity(self) -> str | None:
         return self.entities[0] if self.entities else None
 
+    def _retrieval_flag(self, key: str) -> bool:
+        ret = self.skill.retrieval if isinstance(self.skill.retrieval, dict) else None
+        return bool(ret and ret.get(key))
+
     @property
     def suppress_entity_scoped_search(self) -> bool:
         """Strategy hint: pair lookup owns entity scoping via structured fetch."""
-        return self.retrieval_strategy == "pair_lookup"
+        if self.retrieval_strategy == "pair_lookup":
+            return True
+        return self._retrieval_flag("suppress_entity_scoped_search")
 
     @property
     def skip_entity_grounding(self) -> bool:
         """Strategy hint: structured pair results skip post-retrieval grounding."""
-        return self.retrieval_strategy == "pair_lookup"
+        if self.retrieval_strategy == "pair_lookup":
+            return True
+        return self._retrieval_flag("skip_entity_grounding")
 
     @property
     def prefers_exhaustive_retrieval(self) -> bool:
         """Strategy hint: widen retrieval limit for exhaustive pair/list flows."""
-        return self.retrieval_strategy == "pair_lookup"
+        if self.retrieval_strategy == "pair_lookup":
+            return True
+        return self._retrieval_flag("exhaustive")
 
     def build_query_plan(self, *, language: str = "en") -> QueryPlan:
         """Build QueryPlan from Skill context + entities — transitional bridge only."""

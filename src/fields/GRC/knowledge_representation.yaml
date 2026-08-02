@@ -1,0 +1,17 @@
+knowledge_representation:
+  normalizer_params:
+    alias_map:
+      bylaw: Internal Bylaw
+      "internal regulation": Internal Bylaw
+      "لائحة": Internal Bylaw
+      "لايحة": Internal Bylaw
+      instructions: Audit Instructions
+      "tax id": Partner/Tax ID
+      vat: Tax
+      overdue: Status In Payment
+      draft: Status
+      "rule-tax-001": RULE-TAX-001
+      "rule-tax-002": RULE-TAX-002
+      "rule-crd-001": RULE-CRD-001
+      "rule-frd-001": RULE-FRD-001
+      "rule-cut-001": RULE-CUT-001
