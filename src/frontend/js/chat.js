@@ -5,6 +5,7 @@ const state = {
   sessionId: localStorage.getItem("algorag.sessionId") || crypto.randomUUID(),
   isIndexed: false,
   selectedSkillId: localStorage.getItem("algorag.selectedSkillId") || "",
+  selectedSubject: localStorage.getItem("algorag.selectedSubject") || "",
   skills: [],
   uploading: false,
 };
@@ -171,6 +172,124 @@ function refreshAttachControl() {
   }
 }
 
+function isGroupedSkillCatalog(skills) {
+  return skills.length > 0 && skills.every((s) => typeof s.subject === "string" && s.subject);
+}
+
+function uniqueSubjects(skills) {
+  const seen = [];
+  const labels = {};
+  skills.forEach((skill) => {
+    if (!skill.subject || labels[skill.subject]) return;
+    labels[skill.subject] = skill.subject_label || skill.subject;
+    seen.push(skill.subject);
+  });
+  return seen.map((id) => ({ id, label: labels[id] }));
+}
+
+function skillHintCopy() {
+  const ar = uiLanguage() === "ar";
+  if (isGroupedSkillCatalog(state.skills)) {
+    if (!state.selectedSubject) {
+      return ar ? "اختر المادة أولاً." : "Select a subject first.";
+    }
+    if (!state.selectedSkillId) {
+      return ar ? "اختر نوع السؤال (شرح، ملخص، تمرين، …)." : "Select what you need (Explain, Summary, Exercise, …).";
+    }
+    return "";
+  }
+  return ar ? "اختر مهارة قبل السؤال." : "Select a Skill before asking.";
+}
+
+function makeChip({ className, label, title, selected, onClick }) {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = className + (selected ? " is-selected" : "");
+  btn.textContent = label;
+  btn.title = title || label;
+  btn.addEventListener("click", onClick);
+  return btn;
+}
+
+function renderFlatSkillPicker(picker) {
+  picker.style.flexDirection = "row";
+  state.skills.forEach((skill) => {
+    picker.appendChild(makeChip({
+      className: "skill-btn",
+      label: skill.name || skill.id,
+      title: skill.description || skill.id,
+      selected: skill.id === state.selectedSkillId,
+      onClick: () => {
+        state.selectedSkillId = skill.id;
+        localStorage.setItem("algorag.selectedSkillId", skill.id);
+        refreshSkillPicker();
+        updateSendGate();
+      },
+    }));
+  });
+}
+
+function renderGroupedSkillPicker(picker) {
+  picker.style.flexDirection = "column";
+  const subjects = uniqueSubjects(state.skills);
+  const bound = state.skills.find((s) => s.id === state.selectedSkillId);
+  if (bound && bound.subject) {
+    state.selectedSubject = bound.subject;
+    localStorage.setItem("algorag.selectedSubject", state.selectedSubject);
+  }
+  if (state.selectedSubject && !subjects.some((s) => s.id === state.selectedSubject)) {
+    state.selectedSubject = "";
+    localStorage.removeItem("algorag.selectedSubject");
+  }
+
+  const subjectRow = document.createElement("div");
+  subjectRow.className = "skill-picker-row";
+  subjects.forEach((subject) => {
+    subjectRow.appendChild(makeChip({
+      className: "skill-subject-btn",
+      label: subject.label,
+      title: subject.label,
+      selected: subject.id === state.selectedSubject,
+      onClick: () => {
+        if (state.selectedSubject !== subject.id) {
+          const current = state.skills.find((s) => s.id === state.selectedSkillId);
+          if (!current || current.subject !== subject.id) {
+            state.selectedSkillId = "";
+            localStorage.removeItem("algorag.selectedSkillId");
+          }
+        }
+        state.selectedSubject = subject.id;
+        localStorage.setItem("algorag.selectedSubject", subject.id);
+        refreshSkillPicker();
+        updateSendGate();
+      },
+    }));
+  });
+  picker.appendChild(subjectRow);
+
+  if (!state.selectedSubject) return;
+
+  const intentRow = document.createElement("div");
+  intentRow.className = "skill-picker-row";
+  state.skills
+    .filter((s) => s.subject === state.selectedSubject)
+    .forEach((skill) => {
+      intentRow.appendChild(makeChip({
+        className: "skill-btn",
+        label: skill.name || skill.intent || skill.id,
+        title: skill.description || skill.id,
+        selected: skill.id === state.selectedSkillId,
+        onClick: () => {
+          state.selectedSkillId = skill.id;
+          localStorage.setItem("algorag.selectedSkillId", skill.id);
+          refreshSkillPicker();
+          updateSendGate();
+        },
+      }));
+    });
+  picker.appendChild(intentRow);
+}
+
 function refreshSkillPicker() {
   const project = getActiveProject();
   state.skills = (project && Array.isArray(project.skills)) ? project.skills : [];
@@ -182,13 +301,14 @@ function refreshSkillPicker() {
     picker.style.display = "none";
     if (hint) hint.style.display = "none";
     state.selectedSkillId = "";
+    state.selectedSubject = "";
     localStorage.removeItem("algorag.selectedSkillId");
+    localStorage.removeItem("algorag.selectedSubject");
     updateSendGate();
     return;
   }
 
   picker.style.display = "flex";
-  if (hint) hint.style.display = "block";
   picker.innerHTML = "";
 
   const known = state.skills.some((s) => s.id === state.selectedSkillId);
@@ -197,25 +317,11 @@ function refreshSkillPicker() {
     localStorage.removeItem("algorag.selectedSkillId");
   }
 
-  state.skills.forEach((skill) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "skill-btn";
-    btn.textContent = skill.name || skill.id;
-    btn.title = skill.description || skill.id;
-    btn.style.cssText = "padding: 0.35rem 0.75rem; border-radius: 999px; border: 1px solid var(--border-color); background: var(--bg-surface); color: var(--text); cursor: pointer; font-size: 0.8rem;";
-    if (skill.id === state.selectedSkillId) {
-      btn.style.borderColor = "var(--primary)";
-      btn.style.background = "rgba(59,130,246,0.15)";
-    }
-    btn.addEventListener("click", () => {
-      state.selectedSkillId = skill.id;
-      localStorage.setItem("algorag.selectedSkillId", skill.id);
-      refreshSkillPicker();
-      updateSendGate();
-    });
-    picker.appendChild(btn);
-  });
+  if (isGroupedSkillCatalog(state.skills)) {
+    renderGroupedSkillPicker(picker);
+  } else {
+    renderFlatSkillPicker(picker);
+  }
   updateSendGate();
 }
 
@@ -226,6 +332,8 @@ function updateSendGate() {
   if (el.questionInput) el.questionInput.disabled = !canSend;
   if (el.sendBtn) el.sendBtn.disabled = !canSend;
   if (el.skillHint) {
+    const text = skillHintCopy();
+    el.skillHint.textContent = text || (uiLanguage() === "ar" ? "اختر مهارة قبل السؤال." : "Select a Skill before asking.");
     el.skillHint.style.display = needsSkill && !state.selectedSkillId ? "block" : "none";
   }
   refreshAttachControl();
@@ -607,7 +715,9 @@ el.projectSelector.addEventListener("change", () => {
   state.sessionId = crypto.randomUUID();
   localStorage.setItem("algorag.sessionId", state.sessionId);
   state.selectedSkillId = "";
+  state.selectedSubject = "";
   localStorage.removeItem("algorag.selectedSkillId");
+  localStorage.removeItem("algorag.selectedSubject");
   el.chatLog.innerHTML = `
     <div class="message assistant welcome-message">
       <div class="avatar"><span class="material-symbols-outlined">smart_toy</span></div>

@@ -621,3 +621,36 @@ a:hover {
   outline: none;
   border-color: var(--primary);
 }
+
+.skill-picker {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skill-picker-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-btn,
+.skill-subject-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+}
+
+.skill-subject-btn {
+  font-weight: 600;
+}
+
+.skill-btn.is-selected,
+.skill-subject-btn.is-selected {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.18);
+}

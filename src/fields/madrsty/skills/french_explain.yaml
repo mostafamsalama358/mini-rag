@@ -1,0 +1,10 @@
+id: french_explain
+name: Explain
+subject: french
+subject_label: French
+intent: explain
+profile: french_explain
+prompt: explain
+description: Explain a French-lesson idea from the textbook.
+order: 20
+validation: {}

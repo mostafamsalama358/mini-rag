@@ -1,0 +1,10 @@
+id: geography_explain
+name: Explain
+subject: geography
+subject_label: Geography
+intent: explain
+profile: geography_explain
+prompt: explain
+description: Explain a Geography concept or process from the textbook.
+order: 10
+validation: {}

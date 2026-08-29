@@ -1,0 +1,6 @@
+id: geography_example
+filters:
+  extra:
+    subject: geography
+notes: Subject-only hard filter. Geography chunks are mostly unlabeled; intent is prompt-only.
+retrieval_strategy: default

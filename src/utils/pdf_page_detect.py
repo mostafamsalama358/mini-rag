@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_MIN_TEXT_CHARS = 10
+DEFAULT_MIN_TEXT_CHARS = 50
 
 
 @dataclass(frozen=True)

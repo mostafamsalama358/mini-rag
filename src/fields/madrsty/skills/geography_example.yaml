@@ -1,0 +1,10 @@
+id: geography_example
+name: Example
+subject: geography
+subject_label: Geography
+intent: example
+profile: geography_example
+prompt: example
+description: Worked or textbook example in Geography.
+order: 12
+validation: {}

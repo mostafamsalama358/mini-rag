@@ -1,0 +1,10 @@
+id: french_grammar
+name: Grammar
+subject: french
+subject_label: French
+intent: grammar
+profile: french_grammar
+prompt: grammar
+description: French grammar (grammaire) from the student book.
+order: 22
+validation: {}

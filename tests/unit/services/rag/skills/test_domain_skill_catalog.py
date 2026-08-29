@@ -22,3 +22,15 @@ def test_cross_domain_skill_rejected() -> None:
     legal = get_field_registry().build_profile("legal")
     with pytest.raises(SkillResolutionError):
         resolve_skill(legal, "interactions")
+
+
+def test_madrsty_catalog_isolated_from_pharmacy() -> None:
+    reg = get_field_registry()
+    madrsty = list_skill_catalog(reg.build_profile("madrsty"))
+    pharmacy = list_skill_catalog(reg.build_profile("pharmacy"))
+    md_ids = {s["id"] for s in madrsty}
+    ph_ids = {s["id"] for s in pharmacy}
+    assert "geography_explain" in md_ids
+    assert "geography_explain" not in ph_ids
+    assert "interactions" not in md_ids
+

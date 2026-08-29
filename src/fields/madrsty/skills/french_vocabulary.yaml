@@ -1,0 +1,10 @@
+id: french_vocabulary
+name: Vocabulary
+subject: french
+subject_label: French
+intent: vocabulary
+profile: french_vocabulary
+prompt: vocabulary
+description: French vocabulary (vocabulaire) from the student book.
+order: 23
+validation: {}

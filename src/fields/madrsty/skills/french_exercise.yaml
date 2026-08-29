@@ -1,0 +1,10 @@
+id: french_exercise
+name: Exercise
+subject: french
+subject_label: French
+intent: exercise
+profile: french_exercise
+prompt: exercise
+description: French exercises and activités from the student book.
+order: 26
+validation: {}

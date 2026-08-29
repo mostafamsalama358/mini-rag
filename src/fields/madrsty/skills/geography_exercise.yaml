@@ -1,0 +1,10 @@
+id: geography_exercise
+name: Exercise
+subject: geography
+subject_label: Geography
+intent: exercise
+profile: geography_exercise
+prompt: exercise
+description: Geography exercises and questions from the book.
+order: 13
+validation: {}

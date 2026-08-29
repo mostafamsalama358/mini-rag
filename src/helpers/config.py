@@ -91,7 +91,8 @@ class Settings(BaseSettings):
     # pages + OCR for scanned pages; legacy = PyMuPDF text layer + OCR fallback.
     PDF_PARSER_MODE: str = "hybrid"
     # Min extracted chars for a page to count as searchable (text layer present).
-    PDF_SEARCHABLE_MIN_CHARS: int = 10
+    # Below this, hybrid/legacy routes the page to OCR.
+    PDF_SEARCHABLE_MIN_CHARS: int = 50
     # If searchable_page_ratio < threshold, skip OpenDataLoader and use OCR path.
     PDF_SEARCHABLE_RATIO_THRESHOLD: float = 0.05
 

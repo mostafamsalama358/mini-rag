@@ -1,0 +1,10 @@
+id: french_dialogue
+name: Dialogue
+subject: french
+subject_label: French
+intent: dialogue
+profile: french_dialogue
+prompt: dialogue
+description: Dialogue comprehension from the French textbook.
+order: 24
+validation: {}

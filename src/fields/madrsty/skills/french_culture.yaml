@@ -1,0 +1,10 @@
+id: french_culture
+name: Culture
+subject: french
+subject_label: French
+intent: culture
+profile: french_culture
+prompt: culture
+description: Culture / civilisation passages in the French textbook.
+order: 25
+validation: {}

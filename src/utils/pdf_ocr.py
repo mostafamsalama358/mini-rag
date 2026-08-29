@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 OCR_IMAGE_SCALE = 1.5
 DEFAULT_OCR_ENGINE = "gemini"
-MIN_TEXT_LENGTH = 10
+MIN_TEXT_LENGTH = 50
 MAX_LANG_SAMPLE_CHARS = 5000
 
 
@@ -73,6 +73,15 @@ def _configured_page_timeout() -> int:
         return 120
 
 
+def _min_extract_chars() -> int:
+    """Pages with fewer extracted chars are treated as scanned and go to OCR."""
+    settings = _get_ocr_settings()
+    try:
+        return max(1, int(getattr(settings, "PDF_SEARCHABLE_MIN_CHARS", MIN_TEXT_LENGTH)))
+    except (TypeError, ValueError):
+        return MIN_TEXT_LENGTH
+
+
 def _configured_ocr_engine() -> str:
     settings = _get_ocr_settings()
     engine = (getattr(settings, "OCR_ENGINE", None) or DEFAULT_OCR_ENGINE).lower().strip()
@@ -88,7 +97,13 @@ class OcrPageTimeout(TimeoutError):
 
 @contextmanager
 def _ocr_timeout(seconds: int):
-    if not hasattr(signal, "SIGALRM"):
+    """Best-effort alarm timeout. SIGALRM is process-wide and main-thread only."""
+    import threading
+
+    if (
+        not hasattr(signal, "SIGALRM")
+        or threading.current_thread() is not threading.main_thread()
+    ):
         yield
         return
 
@@ -323,7 +338,7 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
             page = doc[page_num]
             text = page.get_text().strip()
             
-            if len(text) < MIN_TEXT_LENGTH:
+            if len(text) < _min_extract_chars():
                 # Render the image in the main thread (which is fast and PyMuPDF-thread-safe)
                 img = _page_to_image(page)
                 page_tasks.append({

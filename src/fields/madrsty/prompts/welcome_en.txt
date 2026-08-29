@@ -1,0 +1,4 @@
+Hello! I am the school-textbook assistant.
+
+Select a subject, then what you need (Explain, Summary, Exercise, …), then ask about the lesson.
+Answers come only from the indexed books.

@@ -1,0 +1,10 @@
+id: geography_map
+name: Map
+subject: geography
+subject_label: Geography
+intent: map
+profile: geography_map
+prompt: map
+description: Map, chart, or figure questions in Geography.
+order: 14
+validation: {}

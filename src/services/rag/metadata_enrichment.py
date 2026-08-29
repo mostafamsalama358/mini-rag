@@ -12,6 +12,7 @@ from typing import Any
 
 from fields.schemas import (
     MetadataAliasDetector,
+    MetadataDocumentDetector,
     MetadataEnrichmentProfile,
     MetadataEntityDetector,
     MetadataFieldPattern,
@@ -212,6 +213,27 @@ def extract_entity_aliases(
     return out
 
 
+def _apply_document_detectors(
+    meta: dict[str, Any],
+    detectors: list[MetadataDocumentDetector],
+) -> None:
+    """Copy pack filename attributes onto chunk metadata (fill-only)."""
+    file_name = str(meta.get("file_name") or "")
+    if not file_name or not detectors:
+        return
+    for detector in detectors:
+        if not detector.file_name_regex or not detector.attributes:
+            continue
+        if not _compile(detector.file_name_regex).search(file_name):
+            continue
+        for key, value in detector.attributes.items():
+            if not key or value in (None, ""):
+                continue
+            if meta.get(key) in (None, ""):
+                meta[key] = value
+        break
+
+
 def _primary_field_from_sections(
     sections: list[str],
     field_patterns: list[MetadataFieldPattern],
@@ -238,6 +260,8 @@ def enrich_chunk_metadata(
         if require_entity and not str(meta.get("entity") or "").strip():
             meta["metadata_reject_reason"] = "entity_missing"
         return meta
+
+    _apply_document_detectors(meta, rules.document_detectors)
 
     field_names = extract_field_names(text, rules.field_patterns)
     sections = extract_sections(text, section_header_pattern=rules.section_header_pattern)

@@ -1,0 +1,10 @@
+id: geography_summary
+name: Summary
+subject: geography
+subject_label: Geography
+intent: summary
+profile: geography_summary
+prompt: summary
+description: Summarize a Geography lesson or section.
+order: 11
+validation: {}

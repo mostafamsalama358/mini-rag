@@ -25,6 +25,9 @@ from helpers.config import get_settings
 from typing import List
 import asyncio
 import json
+import logging
+
+logger = logging.getLogger("uvicorn.error")
 
 class NLPController(BaseController):
 
@@ -384,8 +387,11 @@ class NLPController(BaseController):
 
         entity_scoped = bool(entity_key and entity_prefix)
         has_scoped = hasattr(self.vectordb_client, "search_by_vector_scoped")
+        # extra.subject (and other JSONB filters) must stay applied when a Skill
+        # also sets field_key. search_by_vector_field has no metadata_filter arg.
+        use_scoped = bool((entity_scoped or metadata_filter) and has_scoped)
 
-        if entity_scoped and has_scoped:
+        if use_scoped:
             dense_coro = self.vectordb_client.search_by_vector_scoped(
                 collection_name=collection_name,
                 vector=query_vector,
@@ -420,7 +426,7 @@ class NLPController(BaseController):
 
         sparse_coro = None
         if hybrid_enabled and hasattr(self.vectordb_client, "search_by_text"):
-            if entity_scoped and hasattr(self.vectordb_client, "search_by_text_scoped"):
+            if use_scoped and hasattr(self.vectordb_client, "search_by_text_scoped"):
                 sparse_coro = self.vectordb_client.search_by_text_scoped(
                     collection_name=collection_name,
                     query=text,
@@ -453,12 +459,38 @@ class NLPController(BaseController):
                 )
 
         if sparse_coro is not None:
-            # asyncio.gather is equivalent to Task.WhenAll
-            (dense_results, sparse_results) = await asyncio.gather(dense_coro, sparse_coro)
-            return dense_results or [], sparse_results or []
+            dense_results, sparse_results = await asyncio.gather(dense_coro, sparse_coro)
+            dense_results = dense_results or []
+            sparse_results = sparse_results or []
         else:
-            dense_results = await dense_coro
-            return dense_results or [], []
+            dense_results = (await dense_coro) or []
+            sparse_results = []
+
+        if (
+            field_key
+            and metadata_filter
+            and not dense_results
+            and not sparse_results
+            and has_scoped
+        ):
+            logger.info(
+                "skill_field_soft_miss field_key=%r metadata_filter=%r",
+                field_key,
+                metadata_filter,
+            )
+            return await self._fetch_dense_and_sparse_candidates(
+                collection_name=collection_name,
+                query_vector=query_vector,
+                text=text,
+                metadata_filter=metadata_filter,
+                candidates=candidates,
+                hybrid_enabled=hybrid_enabled,
+                field_resolution=None,
+                entity_key=entity_key,
+                entity_prefix=entity_prefix,
+            )
+
+        return dense_results, sparse_results
 
     async def _run_expansion_and_merge(
         self,

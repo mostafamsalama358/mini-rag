@@ -1,0 +1,13 @@
+# Textbook structural headers — generic engine, pack-owned patterns.
+boundaries:
+  - '(?=(?:ال)?(?:وحدة|درس|فصل|باب|محور)\s+)'
+  - '(?=Dossier\s+\d+)'
+  - '(?=Le[cç]on\s+\d+)'
+  - '(?=Unit[eé]\s+\d+)'
+  - '(?=Chapitre\s+\d+)'
+
+chapter_query_patterns:
+  - '(?:ال?\s*(?:فصل|وحدة|درس|باب)|chapter|unit|lesson|dossier|leçon)\s+(?:رقم\s+)?(.+)'
+
+article_query_patterns: []
+min_segment_chars: 80

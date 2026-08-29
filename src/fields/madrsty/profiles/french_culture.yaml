@@ -1,0 +1,7 @@
+id: french_culture
+filters:
+  field:
+    - culture
+  extra:
+    subject: french
+retrieval_strategy: default

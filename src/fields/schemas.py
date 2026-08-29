@@ -227,6 +227,18 @@ class MetadataAliasDetector(BaseModel):
     primary_contains: str | None = None
 
 
+class MetadataDocumentDetector(BaseModel):
+    """Filename → document-level attributes (subject, grade, book, …).
+
+    First matching detector wins; existing chunk keys are not overwritten.
+    """
+
+    model_config = ConfigDict(extra="ignore")
+
+    file_name_regex: str | None = None
+    attributes: dict[str, str] = Field(default_factory=dict)
+
+
 class MetadataEnrichmentProfile(BaseModel):
     """Domain-pack driven chunk enrichment (leaflets / notes).
 
@@ -241,6 +253,7 @@ class MetadataEnrichmentProfile(BaseModel):
     field_patterns: list[MetadataFieldPattern] = Field(default_factory=list)
     entity_detectors: list[MetadataEntityDetector] = Field(default_factory=list)
     alias_detectors: list[MetadataAliasDetector] = Field(default_factory=list)
+    document_detectors: list[MetadataDocumentDetector] = Field(default_factory=list)
 
 
 class MetadataProfile(BaseModel):
@@ -403,6 +416,10 @@ class SkillDefinition(BaseModel):
     # Optional additive contracts (021 medium priority)
     response_schema: dict[str, Any] | str | None = None
     citation_policy: Literal["strict", "relaxed", "leaflet_only"] | None = None
+    # Optional UI grouping (madrsty: subject chips → intent chips → one skill_id).
+    subject: str | None = None
+    subject_label: str | None = None
+    intent: str | None = None
 
     @model_validator(mode="before")
     @classmethod

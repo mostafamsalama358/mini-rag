@@ -1,0 +1,7 @@
+id: french_summary
+filters:
+  field:
+    - summary
+  extra:
+    subject: french
+retrieval_strategy: default

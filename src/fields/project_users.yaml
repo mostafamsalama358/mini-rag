@@ -17,8 +17,10 @@ users:
     - generic
     - legal
     - grc
+    - madrsty
   admin456:
     - pharmacy
     - legal
     - generic
     - grc
+    - madrsty

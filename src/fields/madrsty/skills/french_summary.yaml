@@ -1,0 +1,10 @@
+id: french_summary
+name: Summary
+subject: french
+subject_label: French
+intent: summary
+profile: french_summary
+prompt: summary
+description: Summarize a French lesson, dossier, or section.
+order: 21
+validation: {}

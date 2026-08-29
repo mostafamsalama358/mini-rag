@@ -1,0 +1,7 @@
+id: french_dialogue
+filters:
+  field:
+    - dialogue
+  extra:
+    subject: french
+retrieval_strategy: default

@@ -1,0 +1,60 @@
+# Educational chunk metadata. subject/grade/book come from document_detectors
+# (filename) so Skill extra.subject JSONB filters match at retrieval time.
+label_template: "{book} — page {page}"
+extra_keys:
+  - file_name
+  - page
+  - subject
+  - grade
+  - term
+  - book
+  - field_name
+  - chapter
+  - lesson
+
+enrichment:
+  enabled: true
+  entity_key_default: entity
+  section_header_pattern: '(?m)^\s*(?:(?:ال)?(?:درس|وحدة|فصل|محور|باب)\s+[^\n]{1,80}|Dossier\s+\d+[^\n]{0,80}|Le[cç]on\s+\d+[^\n]{0,80}|Unit[eé]\s+\d+[^\n]{0,80}|\d+\s*[\.\-–]\s+[^\n]{3,80})'
+  field_patterns:
+    - field: grammar
+      pattern: 'grammaire|\bgrammar\b|قواعد|passé composé|présent|imparfait|futur|conjugaison'
+    - field: vocabulary
+      pattern: 'vocabulaire|\bvocabulary\b|مفردات|lexique'
+    - field: dialogue
+      pattern: 'dialogue|حوار|écoutez|écouter'
+    - field: culture
+      pattern: 'civilisation|culture|ثقافة'
+    - field: figure
+      pattern: 'خريطة|شكل|مخطط|رسم|carte\b|\bmap\b|\bfigure\b|\bdiagram'
+    - field: table
+      pattern: 'جدول|\btable\b'
+    - field: formula
+      pattern: 'قانون|معادلة|صيغة|\bformula\b|\bequation\b'
+    - field: exercise
+      pattern: 'تمرين|تدريب|نشاط|أسئلة|exercice|exercise|activités?'
+    - field: example
+      pattern: 'مثال|exemple|example'
+    - field: definition
+      pattern: 'تعريف|يُعر[َّ]?ف|\bdefinition\b'
+    - field: summary
+      pattern: 'ملخص|خلاصة|résumé|summary'
+    - field: explanation
+      pattern: 'شرح|مفهوم|يقصد|\bexplain\b|\bconcept\b'
+    - field: concept
+      pattern: 'مفهوم|\bconcept\b'
+  document_detectors:
+    - file_name_regex: '(?i)الفرنس|french'
+      attributes:
+        subject: french
+        grade: "11"
+        term: "1"
+        book: "اللغة الفرنسية — الصف الحادي عشر"
+    - file_name_regex: '(?i)الجغرافيا|geography'
+      attributes:
+        subject: geography
+        grade: "11"
+        term: "1"
+        book: "مبادئ علم الجغرافيا والاقتصاد — الصف الحادي عشر"
+  entity_detectors: []
+  alias_detectors: []

@@ -1,0 +1,31 @@
+# Textbook retrieval intents (used when no Skill is bound — madrsty requires Skills).
+intents:
+  explain:
+    patterns:
+      - "اشرح"
+      - "وضح"
+      - "ما\\s+(?:هو|هي|هى)"
+      - "\\bexplain\\b"
+      - "\\bwhat\\s+is\\b"
+    flags: "IGNORECASE"
+  summary:
+    patterns:
+      - "لخص"
+      - "ملخص"
+      - "\\bsummar"
+    flags: "IGNORECASE"
+  exercise:
+    patterns:
+      - "تمرين"
+      - "حل"
+      - "\\bexercise\\b"
+      - "\\bsolve\\b"
+    flags: "IGNORECASE"
+  grammar:
+    patterns:
+      - "قواعد"
+      - "grammaire"
+      - "\\bgrammar\\b"
+    flags: "IGNORECASE"
+exhaustive_min_limit: 30
+disable_chunk_focus: false

@@ -1,0 +1,45 @@
+version: 1
+timeout_seconds: 25.0
+max_output_tokens: 2048
+temperature: 0.0
+document_language: ar
+context_turn_window: 4
+allowed_fields:
+  - explanation
+  - concept
+  - definition
+  - summary
+  - example
+  - exercise
+  - grammar
+  - vocabulary
+  - dialogue
+  - culture
+  - figure
+  - table
+  - formula
+  - unknown
+entity_grounding:
+  enabled: true
+  min_score: 0.82
+  metadata_keys:
+    - entity
+    - chapter
+    - lesson
+    - book
+prompt: |
+  You are a school-textbook query parser. Indexed documents are Arabic (and
+  sometimes French) student books. Parse Arabic, English, or mixed questions
+  into JSON (canonical_query + query_plan).
+
+  Rules:
+  - canonical_query SHOULD stay in the document language (usually Arabic;
+    French phrases such as passé composé stay in French).
+  - field MUST be one of the allowed fields, or "unknown".
+  - entity is the topic/concept (الزلازل, الضغط الجوي, passé composé), NOT the
+    school subject — the client Skill already selected the subject.
+  - Put subject/grade/book in query_plan.filters only when the user states them.
+  - operation: lookup, list, explain, compare, unsupported.
+  - needs_clarification=true when the topic cannot be identified.
+  - Feature 021: when skill_id is bound, field/operation are injected server-side
+    — still extract entities/topics; do NOT invent skill_id.

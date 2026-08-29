@@ -1,0 +1,7 @@
+id: french_grammar
+filters:
+  field:
+    - grammar
+  extra:
+    subject: french
+retrieval_strategy: default

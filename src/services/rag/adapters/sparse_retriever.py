@@ -15,6 +15,7 @@ from services.rag.adapters.scope import (
     allow_unscoped_degrade,
     apply_field_score_boost,
     classify_scoped_miss,
+    field_soft_miss_eligible,
     log_scoped_miss,
     merge_retrieved_docs,
     per_entity_fetch_limit,
@@ -112,13 +113,13 @@ class PgVectorSparseRetriever(IRetriever):
             return False
         if docs:
             return list(docs)
-        if scope.get("field_key") and (
-            scope.get("entity_prefix") or scope.get("entity_prefixes")
-        ):
+        if field_soft_miss_eligible(scope):
             logger.info(
-                "pgvector_sparse_field_soft_miss field_key=%r entity_prefixes=%r",
+                "pgvector_sparse_field_soft_miss field_key=%r entity_prefixes=%r "
+                "metadata_filter=%r",
                 scope.get("field_key"),
                 scope.get("entity_prefixes") or [scope.get("entity_prefix")],
+                scope.get("metadata_filter"),
             )
             soft_docs = await self._vectordb.search_by_text_scoped(
                 collection_name=collection_name,

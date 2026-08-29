@@ -23,6 +23,21 @@ def allow_unscoped_degrade() -> bool:
     return bool(getattr(get_settings(), "RAG_ALLOW_UNSCOPED_DEGRADE", False))
 
 
+def field_soft_miss_eligible(scope: dict[str, Any]) -> bool:
+    """Retry without field_key when a hard field constraint zeros the set.
+
+    Pharmacy uses entity_prefix; Domain Pack extra.* (e.g. extra.subject) is
+    carried on metadata_filter. Either is enough to keep the remaining scope.
+    """
+    if not scope.get("field_key"):
+        return False
+    return bool(
+        scope.get("entity_prefix")
+        or scope.get("entity_prefixes")
+        or scope.get("metadata_filter")
+    )
+
+
 def resolve_entity_prefixes(scope: dict[str, Any]) -> list[str]:
     """Deduped entity prefixes from scope (multi-entity compare aware)."""
     out: list[str] = []

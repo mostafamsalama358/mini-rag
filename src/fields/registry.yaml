@@ -13,3 +13,5 @@ fields:
     label: Legal
   - key: grc
     label: GRC
+  - key: madrsty
+    label: Madrsty

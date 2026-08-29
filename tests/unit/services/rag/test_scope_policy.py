@@ -2,6 +2,7 @@ from services.rag.adapters.scope import (
     ScopeMissReason,
     apply_field_score_boost,
     classify_scoped_miss,
+    field_soft_miss_eligible,
     merge_retrieved_docs,
     per_entity_fetch_limit,
     resolve_entity_prefixes,
@@ -161,3 +162,16 @@ def test_field_score_boost_prefers_matching_field():
     ranked = apply_field_score_boost(docs, field_key="contraindications", boost=0.2)
     assert ranked[0].metadata["field_name"] == "contraindications"
     assert ranked[0].score > ranked[1].score
+
+
+def test_field_soft_miss_eligible_for_subject_filter_without_entity():
+    assert field_soft_miss_eligible(
+        {"field_key": "explanation", "metadata_filter": {"subject": "geography"}}
+    )
+    assert field_soft_miss_eligible(
+        {"field_key": "dosage", "entity_prefix": "BRUFEN"}
+    )
+    assert not field_soft_miss_eligible({"field_key": "explanation"})
+    assert not field_soft_miss_eligible(
+        {"metadata_filter": {"subject": "geography"}}
+    )

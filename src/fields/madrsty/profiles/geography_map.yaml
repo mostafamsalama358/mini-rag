@@ -1,0 +1,6 @@
+id: geography_map
+filters:
+  extra:
+    subject: geography
+notes: Subject-only hard filter. Only two geography chunks are tagged figure; map copy lives on unlabeled pages.
+retrieval_strategy: default

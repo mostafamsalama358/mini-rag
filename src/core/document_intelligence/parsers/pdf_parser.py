@@ -217,6 +217,7 @@ class PdfDocumentParser:
         odl_doc = convert_pdf_to_json(file_path)
         elements = json_to_structural_elements(odl_doc, file_id=file_id)
         covered = covered_page_numbers(elements)
+        non_searchable = {p.page_num for p in page_flags if not p.searchable}
 
         # Non-searchable pages always need OCR. Also OCR searchable pages ODL missed.
         need_ocr = {
@@ -229,11 +230,31 @@ class PdfDocumentParser:
             from utils.pdf_ocr import extract_pages_with_ocr
 
             ocr_pages = extract_pages_with_ocr(file_path, need_ocr)
-            # Avoid duplicating pages already covered by ODL.
+
+            def _ocr_page_num(page) -> int:
+                try:
+                    return int((getattr(page, "metadata", None) or {}).get("page") or 0)
+                except (TypeError, ValueError):
+                    return 0
+
+            ocr_ok = {
+                _ocr_page_num(page)
+                for page in ocr_pages
+                if (getattr(page, "page_content", None) or "").strip() and _ocr_page_num(page) > 0
+            }
+            # Prefer OCR over ODL placeholders/garbage on scanned pages.
+            replace_pages = ocr_ok & non_searchable
+            if replace_pages:
+                elements = [
+                    el
+                    for el in elements
+                    if (el.provenance or {}).get("page") not in replace_pages
+                ]
+            covered_after = covered_page_numbers(elements)
             ocr_pages = [
                 page
                 for page in ocr_pages
-                if int((getattr(page, "metadata", None) or {}).get("page") or 0) not in covered
+                if _ocr_page_num(page) not in covered_after
             ]
             start_order = (max((el.order for el in elements), default=-1) + 1) if elements else 0
             elements.extend(

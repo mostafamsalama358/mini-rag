@@ -10,6 +10,7 @@ SKILL_DIRS = [
     REPO_ROOT / "src" / "fields" / "pharmacy" / "skills",
     REPO_ROOT / "src" / "fields" / "legal" / "skills",
     REPO_ROOT / "src" / "fields" / "grc" / "skills",
+    REPO_ROOT / "src" / "fields" / "madrsty" / "skills",
 ]
 
 

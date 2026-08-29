@@ -28,10 +28,20 @@ def list_skill_catalog(profile: FieldProfile) -> list[dict[str, Any]]:
         skills.values(),
         key=lambda s: (s.order if s.order is not None else 999, s.id),
     )
-    return [
-        {"id": s.id, "name": s.name, "description": s.description}
-        for s in ordered
-    ]
+    catalog: list[dict[str, Any]] = []
+    for skill in ordered:
+        item: dict[str, Any] = {
+            "id": skill.id,
+            "name": skill.name,
+            "description": skill.description,
+        }
+        if skill.subject:
+            item["subject"] = skill.subject
+            item["subject_label"] = skill.subject_label or skill.subject
+            if skill.intent:
+                item["intent"] = skill.intent
+        catalog.append(item)
+    return catalog
 
 
 def resolve_skill(

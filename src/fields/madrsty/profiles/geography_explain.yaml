@@ -1,0 +1,6 @@
+id: geography_explain
+filters:
+  extra:
+    subject: geography
+notes: Subject-only hard filter. Geography chunks are mostly unlabeled (no field_name); intent is prompt-only until enrichment tags content types.
+retrieval_strategy: default

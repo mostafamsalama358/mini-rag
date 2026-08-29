@@ -191,6 +191,68 @@ def test_hybrid_ocrs_non_searchable_pages(monkeypatch):
     get_settings.cache_clear()
 
 
+def test_hybrid_prefers_ocr_over_odl_figure_on_scanned_page(monkeypatch):
+    monkeypatch.setenv("PDF_PARSER_MODE", "hybrid")
+    from helpers.config import get_settings
+
+    get_settings.cache_clear()
+
+    sample = FIXTURES / "sample_with_table.pdf"
+    fake_odl = {
+        "file name": "sample_with_table.pdf",
+        "number of pages": 2,
+        "kids": [
+            {
+                "type": "paragraph",
+                "id": 1,
+                "page number": 1,
+                "content": "Digital page from ODL",
+            },
+            {
+                "type": "figure",
+                "id": 2,
+                "page number": 2,
+                "content": "Map caption only",
+            },
+        ],
+    }
+    ocr_page = SimpleNamespace(
+        page_content="Scanned map labels from OCR",
+        metadata={"page": 2, "ocr_used": True, "parser": "ocr"},
+    )
+
+    with (
+        patch(
+            "utils.opendataloader_pdf.is_opendataloader_available",
+            return_value=True,
+        ),
+        patch(
+            "utils.opendataloader_pdf.convert_pdf_to_json",
+            return_value=fake_odl,
+        ),
+        patch(
+            "utils.pdf_page_detect.classify_pdf_pages",
+            return_value=[
+                PageSearchability(1, True, 80),
+                PageSearchability(2, False, 8),
+            ],
+        ),
+        patch("utils.pdf_ocr.extract_pages_with_ocr", return_value=[ocr_page]),
+    ):
+        model = PdfDocumentParser().parse(str(sample), "sample_with_table.pdf")
+
+    texts = " ".join(el.text or "" for el in model.elements)
+    assert "Digital page from ODL" in texts
+    assert "Scanned map labels from OCR" in texts
+    page2_parsers = {
+        (el.provenance or {}).get("parser")
+        for el in model.elements
+        if (el.provenance or {}).get("page") == 2
+    }
+    assert page2_parsers == {"ocr"}
+    get_settings.cache_clear()
+
+
 def test_legacy_mode_skips_odl(monkeypatch):
     monkeypatch.setenv("PDF_PARSER_MODE", "legacy")
     from helpers.config import get_settings

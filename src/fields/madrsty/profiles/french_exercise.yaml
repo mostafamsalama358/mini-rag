@@ -1,0 +1,7 @@
+id: french_exercise
+filters:
+  field:
+    - exercise
+  extra:
+    subject: french
+retrieval_strategy: default

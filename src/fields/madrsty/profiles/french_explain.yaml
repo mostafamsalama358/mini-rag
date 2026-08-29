@@ -1,0 +1,7 @@
+id: french_explain
+filters:
+  field:
+    - explanation
+  extra:
+    subject: french
+retrieval_strategy: default

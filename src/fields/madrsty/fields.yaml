@@ -1,0 +1,34 @@
+entity_concept: topic
+composition_concept: null
+interaction_column_pairs: []
+entity_key_hint: null
+
+concepts:
+  - concept: topic
+    output_shape: prose
+    synonyms:
+      - موضوع
+      - مفهوم
+      - topic
+      - concept
+    resolves_to_columns: [entity, chapter, lesson]
+  - concept: explanation
+    output_shape: prose
+    synonyms: [شرح, اشرح, explain]
+    resolves_to_columns: [explanation]
+  - concept: summary
+    output_shape: prose
+    synonyms: [ملخص, لخص, summary]
+    resolves_to_columns: [summary]
+  - concept: grammar
+    output_shape: prose
+    synonyms: [قواعد, grammaire, grammar]
+    resolves_to_columns: [grammar]
+  - concept: vocabulary
+    output_shape: prose
+    synonyms: [مفردات, vocabulaire, vocabulary]
+    resolves_to_columns: [vocabulary]
+  - concept: exercise
+    output_shape: prose
+    synonyms: [تمرين, حل, exercice, exercise]
+    resolves_to_columns: [exercise]
