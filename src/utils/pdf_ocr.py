@@ -91,6 +91,16 @@ def _configured_ocr_engine() -> str:
     return engine
 
 
+def _ocr_worker_count(task_count: int) -> int:
+    """One Gemini OCR call at a time when Vertex is capped at 5 requests/minute."""
+    if _configured_ocr_engine() == "gemini":
+        settings = _get_ocr_settings()
+        interval = float(getattr(settings, "VERTEX_EMBEDDING_MIN_INTERVAL_SECONDS", 0) or 0)
+        if interval > 0:
+            return 1
+    return min(max(task_count, 1), 4)
+
+
 class OcrPageTimeout(TimeoutError):
     pass
 
@@ -256,7 +266,7 @@ def extract_pages_with_ocr(
         if not tasks:
             return []
 
-        max_workers = min(len(tasks), 4)
+        max_workers = _ocr_worker_count(len(tasks))
         logger.info(
             "OCR selective pages | count=%s workers=%s file=%s",
             len(tasks),
@@ -364,8 +374,7 @@ def load_pdf_with_ocr_fallback(pdf_path: str) -> list[PdfPageDocument]:
         
         if ocr_tasks:
             import concurrent.futures
-            # Keep pool size moderate on CPU to balance context switching
-            max_workers = min(len(ocr_tasks), 4)
+            max_workers = _ocr_worker_count(len(ocr_tasks))
             
             logger.info("Running parallel OCR for %d pages with %d workers", len(ocr_tasks), max_workers)
             

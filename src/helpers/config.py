@@ -51,6 +51,8 @@ class Settings(BaseSettings):
     VERTEX_LOCATION: str = "us-central1"
     GOOGLE_APPLICATION_CREDENTIALS: Optional[str] = None
     VERTEX_EMBEDDING_BATCH_DELAY_SECONDS: int = 0.5
+    # Minimum gap between Vertex embedding API calls (5 requests/minute → 12s).
+    VERTEX_EMBEDDING_MIN_INTERVAL_SECONDS: float = 12.0
     # Keep low: each retry burns ~wait seconds inside the unified deadline.
     VERTEX_EMBEDDING_RATE_LIMIT_RETRIES: int = 1
     VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS: int = 3

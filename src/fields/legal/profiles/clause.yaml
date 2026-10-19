@@ -1,7 +1,0 @@
-﻿id: clause
-filters:
-  field:
-    - clause
-  source:
-    - contract
-retrieval_strategy: document_lookup

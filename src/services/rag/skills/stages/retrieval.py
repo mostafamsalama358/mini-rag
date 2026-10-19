@@ -115,7 +115,10 @@ class RetrievalStage:
                 stage=self.name,
                 status="no_context",
                 payload={
-                    "answer": no_context_message(original_query),
+                    "answer": no_context_message(
+                        original_query,
+                        getattr(profile, "domain_key", None),
+                    ),
                     "needs_clarification": False,
                 },
             )
@@ -175,7 +178,10 @@ class RetrievalStage:
                     stage=self.name,
                     status="no_context",
                     payload={
-                        "answer": no_context_message(original_query),
+                        "answer": no_context_message(
+                            original_query,
+                            getattr(profile, "domain_key", None),
+                        ),
                         "needs_clarification": False,
                     },
                 )
@@ -211,7 +217,10 @@ class RetrievalStage:
                 stage=self.name,
                 status="no_context",
                 payload={
-                    "answer": no_context_message(original_query),
+                    "answer": no_context_message(
+                        original_query,
+                        getattr(profile, "domain_key", None),
+                    ),
                     "needs_clarification": False,
                 },
             )

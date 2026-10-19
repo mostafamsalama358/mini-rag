@@ -403,12 +403,14 @@ def _row_fields(row: dict[str, Any]) -> dict[str, str]:
 
 
 def _node_text(node: dict[str, Any]) -> str:
+    from utils.text_cleaning import unflip_visually_reversed_arabic
+
     content = node.get("content")
     if isinstance(content, str) and content.strip():
-        return content.strip()
+        return unflip_visually_reversed_arabic(content.strip())
     description = node.get("description")
     if isinstance(description, str) and description.strip():
-        return description.strip()
+        return unflip_visually_reversed_arabic(description.strip())
     return ""
 
 

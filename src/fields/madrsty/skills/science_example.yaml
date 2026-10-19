@@ -1,0 +1,10 @@
+id: science_example
+name: Example
+subject: science
+subject_label: العلوم
+intent: example
+profile: science_example
+prompt: example
+description: Worked or textbook example in science.
+order: 52
+validation: {}

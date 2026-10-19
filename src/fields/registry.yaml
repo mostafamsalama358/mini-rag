@@ -9,9 +9,5 @@ fields:
     label: Generic RAG
   - key: pharmacy
     label: Pharmacy
-  - key: legal
-    label: Legal
-  - key: grc
-    label: GRC
   - key: madrsty
     label: Madrsty

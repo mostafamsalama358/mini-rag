@@ -234,6 +234,28 @@ def _apply_document_detectors(
         break
 
 
+DOCUMENT_ATTRIBUTE_KEYS = ("subject", "grade", "term", "book")
+
+
+def overlay_document_attributes(
+    metadata: dict[str, Any] | None,
+    source: dict[str, Any] | None,
+) -> dict[str, Any]:
+    """Copy upload document attributes onto chunk metadata.
+
+    Explicit asset values win over filename detectors so two files that share
+    a name (علوم.pdf in G8a and G9a) keep the class they were uploaded with.
+    """
+    out = dict(metadata or {})
+    if not isinstance(source, dict):
+        return out
+    for key in DOCUMENT_ATTRIBUTE_KEYS:
+        value = source.get(key)
+        if isinstance(value, str) and value.strip():
+            out[key] = value.strip()
+    return out
+
+
 def _primary_field_from_sections(
     sections: list[str],
     field_patterns: list[MetadataFieldPattern],

@@ -634,7 +634,8 @@ a:hover {
 }
 
 .skill-btn,
-.skill-subject-btn {
+.skill-subject-btn,
+.skill-class-btn {
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
   border: 1px solid var(--border-color);
@@ -645,12 +646,21 @@ a:hover {
   font-family: var(--font-body);
 }
 
-.skill-subject-btn {
+.skill-subject-btn,
+.skill-class-btn {
   font-weight: 600;
 }
 
+.skill-btn:disabled,
+.skill-subject-btn:disabled,
+.skill-class-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .skill-btn.is-selected,
-.skill-subject-btn.is-selected {
+.skill-subject-btn.is-selected,
+.skill-class-btn.is-selected {
   border-color: var(--primary);
   background: rgba(99, 102, 241, 0.18);
 }

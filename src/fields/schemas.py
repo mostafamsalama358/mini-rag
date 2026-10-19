@@ -279,6 +279,33 @@ class DomainMeta(BaseModel):
     description: str | None = None
 
 
+class ClassSubject(BaseModel):
+    """One subject chip inside a class (id matches Skill ``subject``)."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    label: str
+
+
+class ClassDefinition(BaseModel):
+    """Chat class chip. ``id`` is stored on chunks as ``grade``."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    label: str
+    subjects: list[ClassSubject] = Field(default_factory=list)
+
+
+class ClassCatalog(BaseModel):
+    """classes.yaml — class chips, then the subjects that belong to each class."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    classes: list[ClassDefinition] = Field(default_factory=list)
+
+
 class ProjectDefaults(BaseModel):
     """project.defaults.yaml — copied into projects.config_json on create.
 

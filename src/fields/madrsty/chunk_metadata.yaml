@@ -56,5 +56,21 @@ enrichment:
         grade: "11"
         term: "1"
         book: "مبادئ علم الجغرافيا والاقتصاد — الصف الحادي عشر"
+    - file_name_regex: '(?i)احصاء|إحصاء|statistics'
+      attributes:
+        subject: statistics
+        grade: "11"
+        term: "1"
+        book: "الإحصاء — الصف الحادي عشر"
+    - file_name_regex: '(?i)علم\s*النفس|علم\s*الاجتماع|psychology|sociology'
+      attributes:
+        subject: psychology
+        grade: "11"
+        term: "1"
+        book: "علم النفس وعلم الاجتماع — الصف الحادي عشر"
+    - file_name_regex: '(?i)علوم|(?:^|[^a-z])science(?:[^a-z]|$)'
+      attributes:
+        subject: science
+        book: "العلوم"
   entity_detectors: []
   alias_detectors: []

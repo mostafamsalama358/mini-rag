@@ -1,0 +1,10 @@
+id: science_exercise
+name: Exercise
+subject: science
+subject_label: العلوم
+intent: exercise
+profile: science_exercise
+prompt: exercise
+description: Practice a science exercise from the textbook.
+order: 53
+validation: {}

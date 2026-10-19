@@ -64,6 +64,18 @@ def test_answer_error_schema():
     assert payload["signal"] == "rag_answer_error"
 
 
+def test_quota_error_reuses_answer_error_signal():
+    payload = {
+        "signal": ResponseSignal.RAG_ANSWER_ERROR.value,
+        "message": (
+            "The answer service is temporarily unavailable due to generation "
+            "quota limits. Please retry in a few minutes."
+        ),
+    }
+    assert payload["signal"] == "rag_answer_error"
+    assert "quota" in payload["message"].lower()
+
+
 def test_pipeline_answer_response_maps_to_api_keys():
     from services.rag.pipeline.response_adapter import ResponseAdapter
 

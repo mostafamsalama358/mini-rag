@@ -13,6 +13,7 @@ from services.process_service import ProcessController
 from services.rag.rag_service import NLPController
 from utils.idempotency_manager import IdempotencyManager
 from utils.chunk_metadata import normalize_chunk_metadata
+from services.rag.metadata_enrichment import overlay_document_attributes
 from services.rag.indexing_diagnostics import (
     log_field_manifest_persist,
     log_indexing_batch_summary,
@@ -337,16 +338,31 @@ async def _process_project_files(task_instance, project_id: int,
                 logger.error(f"No chunks for file_id: {file_id}")
                 pass
 
+            document_attributes: dict = {}
+            try:
+                asset_row = await asset_model.get_asset_record(
+                    asset_project_id=project_id, asset_name=file_id
+                )
+                if asset_row is not None and isinstance(asset_row.asset_config, dict):
+                    document_attributes = asset_row.asset_config
+            except Exception as exc:
+                logger.warning("asset document attributes skipped for %s: %s", file_id, exc)
+
             file_chunks_records = [
                 DataChunk(
                     chunk_text=chunk.page_content,
-                    chunk_metadata=normalize_chunk_metadata({
-                        **(chunk.metadata or {}),
-                        "file_name": file_id,
-                        "asset_id": asset_id,
-                        "chunk_order": i + 1,
-                        "char_count": len(chunk.page_content),
-                    }),
+                    chunk_metadata=normalize_chunk_metadata(
+                        overlay_document_attributes(
+                            {
+                                **(chunk.metadata or {}),
+                                "file_name": file_id,
+                                "asset_id": asset_id,
+                                "chunk_order": i + 1,
+                                "char_count": len(chunk.page_content),
+                            },
+                            document_attributes,
+                        )
+                    ),
                     chunk_order=i+1,
                     chunk_project_id=project.project_id,
                     chunk_asset_id=asset_id

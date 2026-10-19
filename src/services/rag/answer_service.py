@@ -119,15 +119,27 @@ def _grounding_entity_tokens(effective_entity: str, lexical_variants: list[str])
     return tokens
 
 
-def _no_context_answer(query: str, *, lang: str) -> str:
-    if (lang or "").lower().startswith("ar"):
+def _no_context_answer(query: str, *, lang: str, domain_key: str | None = None) -> str:
+    is_ar = (lang or "").lower().startswith("ar")
+    domain = str(getattr(domain_key, "value", domain_key) or "").lower()
+    if domain == "pharmacy":
+        if is_ar:
+            return (
+                "لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. "
+                "جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال."
+            )
+        return (
+            "I could not find enough information in the indexed documents to answer this question. "
+            "Try naming a specific drug or product, or rephrase your question."
+        )
+    if is_ar:
         return (
             "لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. "
-            "جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال."
+            "جرّب إعادة صياغة السؤال أو اختيار المادة والمهارة المناسبتين."
         )
     return (
         "I could not find enough information in the indexed documents to answer this question. "
-        "Try naming a specific drug or product, or rephrase your question."
+        "Try rephrasing, or pick a different subject/skill."
     )
 
 
@@ -453,6 +465,7 @@ class RAGService:
             prompt = query_plan.clarification_prompt or _no_context_answer(
                 original_query,
                 lang=detect_query_language(original_query, default="en"),
+                domain_key=getattr(profile, "domain_key", None),
             )
             return prompt, None, None, True
 
@@ -609,7 +622,7 @@ class RAGService:
             )
             RAG_NO_CONTEXT_TOTAL.labels(project_id=project_label).inc()
             lang = detect_query_language(original_query, default="en")
-            return _no_context_answer(original_query, lang=lang), None, None, False
+            return _no_context_answer(original_query, lang=lang, domain_key=getattr(profile, "domain_key", None)), None, None, False
 
         log_retrieval_results(
             retrieved_documents,
@@ -662,7 +675,7 @@ class RAGService:
                 )
                 RAG_NO_CONTEXT_TOTAL.labels(project_id=project_label).inc()
                 lang = detect_query_language(original_query, default="en")
-                return _no_context_answer(original_query, lang=lang), None, None, False
+                return _no_context_answer(original_query, lang=lang, domain_key=getattr(profile, "domain_key", None)), None, None, False
 
             log_retrieval_results(
                 retrieved_documents,
@@ -702,7 +715,7 @@ class RAGService:
             )
             RAG_NO_CONTEXT_TOTAL.labels(project_id=project_label).inc()
             lang = detect_query_language(original_query, default="en")
-            return _no_context_answer(original_query, lang=lang), None, None, False
+            return _no_context_answer(original_query, lang=lang, domain_key=getattr(profile, "domain_key", None)), None, None, False
 
         log_retrieval_results(
             retrieved_documents,
@@ -752,7 +765,7 @@ class RAGService:
             )
             RAG_NO_CONTEXT_TOTAL.labels(project_id=project_label).inc()
             lang = detect_query_language(original_query, default="en")
-            return _no_context_answer(original_query, lang=lang), None, None, False
+            return _no_context_answer(original_query, lang=lang, domain_key=getattr(profile, "domain_key", None)), None, None, False
 
         previous_lang = self.template_parser.language
         query_lang = detect_query_language(query, default=getattr(self.template_parser, "default_language", "en"))

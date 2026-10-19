@@ -1,0 +1,56 @@
+# Chat class chips. Subject id matches a Skill subject when that subject is live.
+# Subjects without a Skill stay visible and stay disabled until their book is added.
+classes:
+  - id: "11"
+    label: الصف 11
+    subjects:
+      - id: geography
+        label: الجغرافيا
+      - id: french
+        label: الفرنسية
+      - id: statistics
+        label: الإحصاء
+      - id: psychology
+        label: علم النفس وعلم الاجتماع
+  - id: G8a
+    label: G8a
+    subjects:
+      - id: science
+        label: العلوم
+      - id: english
+        label: الإنجليزية
+      - id: math
+        label: الرياضيات
+      - id: arabic
+        label: لغتي العربية
+      - id: islamic
+        label: التربية الإسلامية
+      - id: quran
+        label: القرآن الكريم
+      - id: home_economics
+        label: الاقتصاد المنزلي
+      - id: digital
+        label: الذكاء الرقمي
+      - id: kuwait_world
+        label: الكويت والعالم الإسلامي
+  - id: G9a
+    label: G9a
+    subjects:
+      - id: science
+        label: العلوم
+      - id: english
+        label: الإنجليزية
+      - id: math
+        label: الرياضيات
+      - id: arabic
+        label: عربي
+      - id: islamic
+        label: التربية الإسلامية
+      - id: quran
+        label: القرآن الكريم
+      - id: home_economics
+        label: الاقتصاد المنزلي
+      - id: digital
+        label: الذكاء الرقمي
+      - id: social
+        label: اجتماعيات

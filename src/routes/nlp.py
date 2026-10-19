@@ -8,6 +8,12 @@ from models.enums.AssetTypeEnum import AssetTypeEnum
 from services.rag.rag_service import NLPController
 from services.rag.embedding import EmbeddingCache
 from models import ResponseSignal
+from services.rag.answer_errors import (
+    domain_key_value,
+    scope_miss_message,
+    vertex_generation_error_body,
+)
+from stores.llm.errors import VertexGenerationError
 from tqdm.auto import tqdm
 from tasks.data_indexing import index_data_content
 
@@ -188,18 +194,31 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
                 settings=settings,
             )
 
-    answer, full_prompt, chat_history, needs_clarification, pipeline_signal = (
-        await nlp_controller.answer_rag_question(
-            project=project,
-            query=answer_request.text,
-            limit=answer_request.limit,
-            session_id=answer_request.session_id,
-            db_client=request.app.db_client,
-            metadata_filter=answer_request.metadata_filter,
-            pipeline_router=pipeline_router,
-            skill_id=getattr(answer_request, "skill_id", None),
+    try:
+        answer, full_prompt, chat_history, needs_clarification, pipeline_signal = (
+            await nlp_controller.answer_rag_question(
+                project=project,
+                query=answer_request.text,
+                limit=answer_request.limit,
+                session_id=answer_request.session_id,
+                db_client=request.app.db_client,
+                metadata_filter=answer_request.metadata_filter,
+                pipeline_router=pipeline_router,
+                skill_id=getattr(answer_request, "skill_id", None),
+            )
         )
-    )
+    except VertexGenerationError as exc:
+        logger.warning(
+            "answer_generation_failed project_id=%s category=%s error=%s",
+            project_id,
+            exc.category,
+            exc,
+        )
+        status_code, content = vertex_generation_error_body(exc)
+        return JSONResponse(
+            status_code=status_code,
+            content=content,
+        )
 
     collection_info = await nlp_controller.get_vector_db_collection_info(project=project)
     has_index = collection_info is not None and collection_info.get("record_count", 0) > 0
@@ -247,11 +266,7 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
         and not answer
     ):
         miss_message = (
-            "No indexed information was found for this medicine or topic in the "
-            "current project. The drug may be missing from the corpus, or the "
-            "question needs a clearer product name. Upload the relevant leaflet/"
-            "interaction sheet and re-index, or ask about a medicine that is "
-            "already indexed."
+            scope_miss_message(domain_key_value(project))
             if signal_value == ResponseSignal.RAG_SCOPE_MISS.value
             else (
                 "No matching evidence found for this question under the "

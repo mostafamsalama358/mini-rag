@@ -312,6 +312,12 @@ def dispatch_index_data_content(task_instance, project_id: int, do_reset: int):
     logger.warning("index_data_content started")
     settings = get_settings()
     shard_count = max(1, settings.INDEXING_SHARD_COUNT)
+    # Vertex embedding quota is shared. Parallel shards would multiply requests.
+    if (
+        settings.EMBEDDING_BACKEND == LLMEnums.VERTEX.value
+        and float(getattr(settings, "VERTEX_EMBEDDING_MIN_INTERVAL_SECONDS", 0) or 0) > 0
+    ):
+        shard_count = 1
     min_chunks = max(1, settings.INDEXING_SHARD_MIN_CHUNKS)
 
     total_chunks = asyncio.run(_get_total_chunks_count(project_id))

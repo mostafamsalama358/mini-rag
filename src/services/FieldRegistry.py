@@ -31,6 +31,7 @@ from core.context_builder.config import (
 )
 from fields.schemas import (
     ChunkingProfile,
+    ClassCatalog,
     DomainMeta,
     FieldRegistryProfile,
     MetadataProfile,
@@ -76,6 +77,7 @@ class FieldPack:
     field_registry: FieldRegistryProfile = field(default_factory=FieldRegistryProfile)
     skills: dict[str, SkillDefinition] = field(default_factory=dict)
     skill_profiles: dict[str, SkillFilterProfile] = field(default_factory=dict)
+    classes: list[dict[str, Any]] = field(default_factory=list)
 
 
 @dataclass
@@ -235,6 +237,7 @@ class FieldRegistry:
         parser = self._load_parser(pack_dir)
         field_registry = self._load_field_registry(pack_dir)
         skills, skill_profiles = self._load_skills_and_profiles(pack_dir)
+        classes = self._load_classes(pack_dir)
 
         return FieldPack(
             key=key,
@@ -250,7 +253,16 @@ class FieldRegistry:
             field_registry=field_registry,
             skills=skills,
             skill_profiles=skill_profiles,
+            classes=classes,
         )
+
+    @staticmethod
+    def _load_classes(pack_dir: Path) -> list[dict[str, Any]]:
+        path = pack_dir / "classes.yaml"
+        if not path.exists():
+            return []
+        catalog = FieldRegistry._load_yaml_model(path, ClassCatalog)
+        return [item.model_dump() for item in catalog.classes]
 
     @staticmethod
     def list_pharmacy_recommend_pack_files() -> list[str]:

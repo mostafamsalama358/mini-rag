@@ -1,0 +1,10 @@
+id: science_explain
+name: Explain
+subject: science
+subject_label: العلوم
+intent: explain
+profile: science_explain
+prompt: explain
+description: Explain a science concept from the textbook.
+order: 50
+validation: {}

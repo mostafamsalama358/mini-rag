@@ -39,6 +39,14 @@ def extract_text_from_page_image(pil_image: Image.Image) -> str:
     pil_image.save(buffer, format="PNG")
     image_bytes = buffer.getvalue()
 
+    from helpers.config import get_settings
+    from utils.vertex_embed_pace import reserve_vertex_embed_slot
+
+    settings = get_settings()
+    reserve_vertex_embed_slot(
+        float(getattr(settings, "VERTEX_EMBEDDING_MIN_INTERVAL_SECONDS", 0) or 0)
+    )
+
     model = _get_gemini_ocr_model()
     response = model.generate_content(
         [

@@ -6,7 +6,9 @@ const state = {
   isIndexed: false,
   selectedSkillId: localStorage.getItem("algorag.selectedSkillId") || "",
   selectedSubject: localStorage.getItem("algorag.selectedSubject") || "",
+  selectedClassId: localStorage.getItem("algorag.selectedClassId") || "",
   skills: [],
+  classes: [],
   uploading: false,
 };
 
@@ -92,7 +94,9 @@ async function api(path, options = {}) {
   const payload = contentType.includes("application/json") ? await response.json() : await response.text();
 
   if (!response.ok) {
-    const message = typeof payload === "string" ? payload : payload.detail || payload.signal || response.statusText;
+    const message = typeof payload === "string"
+      ? payload
+      : payload.message || payload.detail || payload.signal || response.statusText;
     throw new Error(message);
   }
 
@@ -189,9 +193,16 @@ function uniqueSubjects(skills) {
 
 function skillHintCopy() {
   const ar = uiLanguage() === "ar";
+  if (state.classes.length && !state.selectedClassId) {
+    return ar ? "اختر الفصل أولاً." : "Select a class first.";
+  }
   if (isGroupedSkillCatalog(state.skills)) {
     if (!state.selectedSubject) {
-      return ar ? "اختر المادة أولاً." : "Select a subject first.";
+      return ar ? "اختر المادة." : "Select a subject.";
+    }
+    const subjectReady = state.skills.some((s) => s.subject === state.selectedSubject);
+    if (!subjectReady) {
+      return ar ? "المادة دي لسه مش مفهرسة." : "This subject is not indexed yet.";
     }
     if (!state.selectedSkillId) {
       return ar ? "اختر نوع السؤال (شرح، ملخص، تمرين، …)." : "Select what you need (Explain, Summary, Exercise, …).";
@@ -201,13 +212,14 @@ function skillHintCopy() {
   return ar ? "اختر مهارة قبل السؤال." : "Select a Skill before asking.";
 }
 
-function makeChip({ className, label, title, selected, onClick }) {
+function makeChip({ className, label, title, selected, disabled, onClick }) {
   const btn = document.createElement("button");
   btn.type = "button";
   btn.className = className + (selected ? " is-selected" : "");
   btn.textContent = label;
   btn.title = title || label;
-  btn.addEventListener("click", onClick);
+  btn.disabled = !!disabled;
+  if (!disabled && onClick) btn.addEventListener("click", onClick);
   return btn;
 }
 
@@ -229,27 +241,74 @@ function renderFlatSkillPicker(picker) {
   });
 }
 
+function selectedClassSubjects() {
+  const classDef = state.classes.find((item) => item.id === state.selectedClassId);
+  if (!classDef || !Array.isArray(classDef.subjects)) return null;
+  return classDef.subjects;
+}
+
 function renderGroupedSkillPicker(picker) {
   picker.style.flexDirection = "column";
-  const subjects = uniqueSubjects(state.skills);
+  const classSubjects = selectedClassSubjects();
+  const subjects = classSubjects
+    ? classSubjects.map((subject) => ({
+        id: subject.id,
+        label: subject.label || subject.id,
+        ready: state.skills.some((skill) => skill.subject === subject.id),
+      }))
+    : uniqueSubjects(state.skills).map((subject) => ({ ...subject, ready: true }));
+
+  if (state.classes.length) {
+    const classRow = document.createElement("div");
+    classRow.className = "skill-picker-row";
+    state.classes.forEach((classDef) => {
+      classRow.appendChild(makeChip({
+        className: "skill-class-btn",
+        label: classDef.label || classDef.id,
+        title: classDef.label || classDef.id,
+        selected: classDef.id === state.selectedClassId,
+        onClick: () => {
+          if (state.selectedClassId !== classDef.id) {
+            state.selectedSubject = "";
+            state.selectedSkillId = "";
+            localStorage.removeItem("algorag.selectedSubject");
+            localStorage.removeItem("algorag.selectedSkillId");
+          }
+          state.selectedClassId = classDef.id;
+          localStorage.setItem("algorag.selectedClassId", classDef.id);
+          refreshSkillPicker();
+          updateSendGate();
+        },
+      }));
+    });
+    picker.appendChild(classRow);
+    if (!state.selectedClassId) return;
+  }
+
   const bound = state.skills.find((s) => s.id === state.selectedSkillId);
-  if (bound && bound.subject) {
+  if (bound && bound.subject && subjects.some((s) => s.id === bound.subject && s.ready)) {
     state.selectedSubject = bound.subject;
     localStorage.setItem("algorag.selectedSubject", state.selectedSubject);
   }
-  if (state.selectedSubject && !subjects.some((s) => s.id === state.selectedSubject)) {
+  if (state.selectedSubject && !subjects.some((s) => s.id === state.selectedSubject && s.ready)) {
     state.selectedSubject = "";
+    state.selectedSkillId = "";
     localStorage.removeItem("algorag.selectedSubject");
+    localStorage.removeItem("algorag.selectedSkillId");
   }
 
   const subjectRow = document.createElement("div");
   subjectRow.className = "skill-picker-row";
   subjects.forEach((subject) => {
+    const ready = subject.ready !== false;
     subjectRow.appendChild(makeChip({
       className: "skill-subject-btn",
       label: subject.label,
-      title: subject.label,
+      title: ready
+        ? subject.label
+        : (uiLanguage() === "ar" ? `${subject.label} — لسه مش مفهرسة` : `${subject.label} — not indexed yet`),
       selected: subject.id === state.selectedSubject,
+      disabled: !ready,
       onClick: () => {
         if (state.selectedSubject !== subject.id) {
           const current = state.skills.find((s) => s.id === state.selectedSkillId);
@@ -293,6 +352,11 @@ function renderGroupedSkillPicker(picker) {
 function refreshSkillPicker() {
   const project = getActiveProject();
   state.skills = (project && Array.isArray(project.skills)) ? project.skills : [];
+  state.classes = (project && Array.isArray(project.classes)) ? project.classes : [];
+  if (state.selectedClassId && !state.classes.some((item) => item.id === state.selectedClassId)) {
+    state.selectedClassId = "";
+    localStorage.removeItem("algorag.selectedClassId");
+  }
   const picker = el.skillPicker;
   const hint = el.skillHint;
   if (!picker) return;
@@ -302,8 +366,11 @@ function refreshSkillPicker() {
     if (hint) hint.style.display = "none";
     state.selectedSkillId = "";
     state.selectedSubject = "";
+    state.selectedClassId = "";
+    state.classes = [];
     localStorage.removeItem("algorag.selectedSkillId");
     localStorage.removeItem("algorag.selectedSubject");
+    localStorage.removeItem("algorag.selectedClassId");
     updateSendGate();
     return;
   }
@@ -326,15 +393,17 @@ function refreshSkillPicker() {
 }
 
 function updateSendGate() {
+  const needsClass = state.classes.length > 0;
   const needsSkill = state.skills.length > 0;
+  const classOk = !needsClass || !!state.selectedClassId;
   const skillOk = !needsSkill || !!state.selectedSkillId;
-  const canSend = state.isIndexed && skillOk && !state.uploading;
+  const canSend = state.isIndexed && classOk && skillOk && !state.uploading;
   if (el.questionInput) el.questionInput.disabled = !canSend;
   if (el.sendBtn) el.sendBtn.disabled = !canSend;
   if (el.skillHint) {
     const text = skillHintCopy();
     el.skillHint.textContent = text || (uiLanguage() === "ar" ? "اختر مهارة قبل السؤال." : "Select a Skill before asking.");
-    el.skillHint.style.display = needsSkill && !state.selectedSkillId ? "block" : "none";
+    el.skillHint.style.display = (needsClass && !classOk) || (needsSkill && !skillOk) ? "block" : "none";
   }
   refreshAttachControl();
 }
@@ -547,8 +616,13 @@ async function runAnswer(text, { showUserBubble = true } = {}) {
   const pId = getActiveProjectNumericId();
   if (!pId) return null;
 
+  if (state.classes.length > 0 && !state.selectedClassId) {
+    addMessage("assistant", uiLanguage() === "ar" ? "اختر الفصل أولاً." : "Select a class first.");
+    return null;
+  }
+
   if (state.skills.length > 0 && !state.selectedSkillId) {
-    addMessage("assistant", "Select a Skill before asking.");
+    addMessage("assistant", uiLanguage() === "ar" ? "اختر المادة ونوع السؤال." : "Select a subject and question type.");
     return null;
   }
 
@@ -568,6 +642,9 @@ async function runAnswer(text, { showUserBubble = true } = {}) {
     };
     if (state.selectedSkillId) {
       body.skill_id = state.selectedSkillId;
+    }
+    if (state.selectedClassId) {
+      body.metadata_filter = { grade: state.selectedClassId };
     }
     const payload = await api(`/api/v1/nlp/index/answer/${pId}`, {
       method: "POST",

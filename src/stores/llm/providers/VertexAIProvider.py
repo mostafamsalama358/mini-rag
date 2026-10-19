@@ -485,9 +485,15 @@ class VertexAIProvider(LLMInterface):
         settings = get_settings()
         max_retries = settings.VERTEX_EMBEDDING_RATE_LIMIT_RETRIES
         retry_wait = settings.VERTEX_EMBEDDING_RATE_LIMIT_RETRY_WAIT_SECONDS
+        min_interval = float(
+            getattr(settings, "VERTEX_EMBEDDING_MIN_INTERVAL_SECONDS", 12) or 0
+        )
         all_embeddings = []
 
+        from utils.vertex_embed_pace import reserve_vertex_embed_slot
+
         for batch in self._build_embedding_input_batches(text, task_type=task_type):
+            reserve_vertex_embed_slot(min_interval)
             embeddings = self._get_embeddings_with_retry(
                 batch,
                 max_retries=max_retries,

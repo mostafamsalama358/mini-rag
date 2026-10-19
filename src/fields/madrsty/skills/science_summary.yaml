@@ -1,0 +1,10 @@
+id: science_summary
+name: Summary
+subject: science
+subject_label: العلوم
+intent: summary
+profile: science_summary
+prompt: summary
+description: Summarize a science lesson or section.
+order: 51
+validation: {}

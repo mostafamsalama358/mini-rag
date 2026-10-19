@@ -76,6 +76,9 @@ class ProjectController(BaseController):
                     skill_profiles=dict(pack.skill_profiles),
                 )
                 payload["skills"] = list_skill_catalog(thin)
+            classes = list(getattr(pack, "classes", None) or [])
+            if classes:
+                payload["classes"] = classes
         if available_domains is not None:
             payload["available_domains"] = available_domains
         return payload

@@ -1,0 +1,422 @@
+[
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "اسم الكتاب هو \"الإحصاء\" للمرحلة \"الصف الحادي عشر أدبي الفصل الدراسي الأول\". الجهة الناشرة هي \"وزارة التربية\" و \"House of Education\" و \"شركة مطابع الرسالة - الكويت\". (الإحصاء — الصف الحادي عشر — صفحة 1, الإحصاء — الصف الحادي عشر — صفحة 3, الإحصاء — الصف الحادي عشر — صفحة 109)",
+    "needs_clarification": false,
+    "id": "S01",
+    "skill_id": "statistics_summary",
+    "question": "ما اسم الكتاب والمرحلة والجهة الناشرة؟",
+    "elapsed_s": 3.5
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "يدرس درس Real Numbers في كتاب الإحصاء للصف الحادي عشر. (الإحصاء - الصف الحادي عشر - صفحة 11)",
+    "needs_clarification": false,
+    "id": "S02",
+    "skill_id": "statistics_explain",
+    "question": "ماذا يدرس درس Real Numbers في الكتاب؟",
+    "elapsed_s": 12.8
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "موضوع Roots and Radical Expressions هو الجذور والتعبيرات الجذرية (Roots and Radical Expressions). [الإحصاء - الصف الحادي عشر - page 13]\n\nكما يتضمن هذا الموضوع الجذور التكعيبية (Cubic Roots). [الإحصاء - الصف الحادي عشر - page 13]\n\nويشمل أيضًا العمليات على الجذور والتعبيرات الجذرية (Roots and Radical Expressions and Operations). [الإحصاء - الصف الحادي عشر - page 13]",
+    "needs_clarification": false,
+    "id": "S03",
+    "skill_id": "statistics_explain",
+    "question": "ما موضوع Roots and Radical Expressions؟",
+    "elapsed_s": 2.4
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "لم يتم تقديم مثال محدد لتبسيط تعبير جذري في النصوص المسترجعة. النصوص تشير إلى موضوع \"Simplifying Radical Expressions\" في الصفحة 14 من كتاب الإحصاء للصف الحادي عشر، ولكنها لا تحتوي على مثال توضيحي.",
+    "needs_clarification": false,
+    "id": "S04",
+    "skill_id": "statistics_example",
+    "question": "هات مثالا من الكتاب على تبسيط تعبير جذري Simplifying Radical Expressions.",
+    "elapsed_s": 5.4
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "المعلومات المطلوبة غير متوفرة في المستندات المقدمة. (الإحصاء — الصف الحادي عشر — page 15)",
+    "needs_clarification": false,
+    "id": "S05",
+    "skill_id": "statistics_explain",
+    "question": "كيف نجمع ونطرح التعبيرات الجذرية Addition and Subtraction of Radical Expressions؟",
+    "elapsed_s": 3.4
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "لا يمكنني الإجابة على سؤالك حول كيفية ضرب وقسمة التعبيرات الجذرية بناءً على المستند المقدم. المستند يشير فقط إلى عنوان الموضوع \"Multiplication and Division of Radical Expressions\" في صفحة 18 من كتاب الإحصاء للصف الحادي عشر، ولكنه لا يقدم أي شرح أو تفاصيل حول كيفية القيام بذلك.",
+    "needs_clarification": false,
+    "id": "S06",
+    "skill_id": "statistics_explain",
+    "question": "كيف نضرب ونقسم التعبيرات الجذرية Multiplication and Division of Radical Expressions؟",
+    "elapsed_s": 3.7
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "المرافق (Conjugate) هو مفهوم رياضي يستخدم في سياقات مختلفة، مثل الأعداد المركبة.\n\n**كيف يستخدم؟**\nيُستخدم المرافق في العمليات الحسابية، فمثلاً:\n*   إذا كان لدينا عدد مركب على الصورة F + i، فإن مرافقه هو F - i.\n*   عند ضرب عدد مركب في مرافقه، تكون النتيجة F² + F² (الإحصاء - الصف الحادي عشر - صفحة 21).\n\n**أمثلة على استخدامه:**\n*   F × F = F² + F² (الإحصاء - الصف الحادي عشر - صفحة 21).\n*   (F + i) × (F - i) = F² + F² (الإحصاء - الصف الحادي عشر - صفحة 21).",
+    "needs_clarification": false,
+    "id": "S07",
+    "skill_id": "statistics_formula",
+    "question": "ما المقصود بالمرافق Conjugate وكيف يستخدم؟",
+    "elapsed_s": 3.3
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "الأسس النسبية (Rational Exponents) هي موضوع يتم تناوله في كتاب الإحصاء للصف الحادي عشر، وتحديداً في الصفحة 25، حيث يوجد قسم بعنوان \"Rational Exponents and Properties\" (المستند رقم 3). كما يتم ذكر خصائص الأسس النسبية (Properties of Rational Exponents) في الصفحة 30 من نفس الكتاب (المستند رقم 1).\n\nللأسف، المستندات المتوفرة لا تقدم شرحاً تفصيلياً لمفهوم الأسس النسبية أو خصائصها، بل تذكر فقط وجود هذه العناوين في الكتاب.",
+    "needs_clarification": false,
+    "id": "S08",
+    "skill_id": "statistics_explain",
+    "question": "اشرح الاسس النسبية Rational Exponents وخصائصها.",
+    "elapsed_s": 2.9
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "لم يذكر النص الفرق بين Qualitative Data و Quantitative Data. ذكر النص فقط وجود Qualitative Data في الصفحة 42 و Quantitative Data في الصفحة 43 من كتاب الإحصاء للصف الحادي عشر.",
+    "needs_clarification": false,
+    "id": "S09",
+    "skill_id": "statistics_explain",
+    "question": "ما الفرق بين Qualitative Data و Quantitative Data؟",
+    "elapsed_s": 2.0
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S10",
+    "skill_id": "statistics_explain",
+    "question": "ما انواع وطرق جمع البيانات Types and methods of Data Collection؟",
+    "elapsed_s": 2.0
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S11",
+    "skill_id": "statistics_explain",
+    "question": "عدد Methods of Data Collecting حسب الكتاب.",
+    "elapsed_s": 2.0
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S12",
+    "skill_id": "statistics_explain",
+    "question": "ما انواع العينات Samples Types في الكتاب؟",
+    "elapsed_s": 2.3
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S13",
+    "skill_id": "statistics_explain",
+    "question": "ما العينة العشوائية البسيطة Simple Random Sample؟",
+    "elapsed_s": 2.2
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S14",
+    "skill_id": "statistics_explain",
+    "question": "ما العينة الطبقية Stratified Random Sample؟",
+    "elapsed_s": 2.3
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S15",
+    "skill_id": "statistics_explain",
+    "question": "ما العينة المنتظمة Systematic Random Sample؟",
+    "elapsed_s": 2.0
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S16",
+    "skill_id": "statistics_explain",
+    "question": "ما طرق عرض البيانات Ways to Display Data؟",
+    "elapsed_s": 2.1
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "الـ Frequency Table (جدول التكرار) هو جدول يستخدم لتنظيم البيانات، ويُستخدم لـ Discrete Data (البيانات المنفصلة) (الإحصاء - الصف الحادي عشر - صفحة 89).",
+    "needs_clarification": false,
+    "id": "S17",
+    "skill_id": "statistics_example",
+    "question": "اشرح Frequency Table ومتى تستخدم.",
+    "elapsed_s": 10.4
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S18",
+    "skill_id": "statistics_explain",
+    "question": "متى نستخدم Pie Chart ومتى Histogram؟",
+    "elapsed_s": 1.5
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S19",
+    "skill_id": "statistics_explain",
+    "question": "ما Frequency Curve و Frequency Polygon؟",
+    "elapsed_s": 1.3
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "S20",
+    "skill_id": "statistics_exercise",
+    "question": "الكتاب يشرح تمثيل البيانات على Excel Histogram Data Analysis. ماذا يطلب من الطالب؟",
+    "elapsed_s": 1.7
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "لا توجد معلومات حول أقسام صخور القشرة الأرضية في المستندات المتوفرة. المستندات تتناول مواضيع متعلقة بالإحصاء.",
+    "needs_clarification": false,
+    "id": "Sneg",
+    "skill_id": "statistics_explain",
+    "question": "ما اقسام صخور القشرة الارضية؟",
+    "elapsed_s": 2.6
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P01",
+    "skill_id": "psychology_summary",
+    "question": "عرف علم النفس حسب الكتاب.",
+    "elapsed_s": 2.8
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P02",
+    "skill_id": "psychology_explain",
+    "question": "ما الميادين النظرية والتطبيقية لعلم النفس؟",
+    "elapsed_s": 3.1
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "يستفيد من دراسة علم النفس كل إنسان، حيث أصبح علم النفس من العلوم التي تلقى اهتمامًا وإقبالًا على قراءتها. (علم النفس وعلم الاجتماع - الصف الحادي عشر - صفحة 18)",
+    "needs_clarification": false,
+    "id": "P03",
+    "skill_id": "psychology_exercise",
+    "question": "من يستفيد من دراسة علم النفس؟ اذكر الفئات في الكتاب.",
+    "elapsed_s": 2.5
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "تُعد وظائف أعضاء الجسم وأثرها في السلوك أحد الفصول التي يتناولها كتاب علم النفس وعلم الاجتماع للصف الحادي عشر. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 30)",
+    "needs_clarification": false,
+    "id": "P04",
+    "skill_id": "psychology_explain",
+    "question": "ما علاقة وظائف اعضاء الجسم بالسلوك؟",
+    "elapsed_s": 3.3
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P05",
+    "skill_id": "psychology_explain",
+    "question": "ما الجهاز العصبي حسب الكتاب؟",
+    "elapsed_s": 8.5
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P06",
+    "skill_id": "psychology_explain",
+    "question": "ما الغدد الصماء وما اثرها في السلوك؟",
+    "elapsed_s": 2.0
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P07",
+    "skill_id": "psychology_exercise",
+    "question": "ماذا يحدث عند نقص افرازات الغدة الدرقية وزيادة افراز الغدة النخامية؟",
+    "elapsed_s": 2.3
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P08",
+    "skill_id": "psychology_explain",
+    "question": "عرف الدافعية ودوافع السلوك.",
+    "elapsed_s": 2.9
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P09",
+    "skill_id": "psychology_explain",
+    "question": "ما الانفعال وما مكوناته؟",
+    "elapsed_s": 28.2
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P10",
+    "skill_id": "psychology_explain",
+    "question": "ما الانفعالات الاساسية والمركبة؟ وما وظيفة الخوف؟",
+    "elapsed_s": 2.6
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "يدرس الفصل الخامس العمليات العقلية التالية:\n* الإحساس (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 76)\n* الإدراك (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 79)\n* التذكر (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 74)\n* النسيان (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 74)",
+    "needs_clarification": false,
+    "id": "P11",
+    "skill_id": "psychology_explain",
+    "question": "ما العمليات العقلية التي يدرسها الفصل الخامس؟",
+    "elapsed_s": 11.1
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "مثال على التعلم بالاشتراط من نشاط الكتاب هو \"بيبطلا نم لفطلا فوخ\" (خوف الطفل من الطبيب). (علم النفس وعلم الاجتماع — الصف الحادي عشر — صفحة 67)",
+    "needs_clarification": false,
+    "id": "P12",
+    "skill_id": "psychology_example",
+    "question": "هات مثالا على التعلم بالاشتراط من نشاط الكتاب.",
+    "elapsed_s": 3.5
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "يحدث النسيان نتيجة لعدة أسباب:\n1. **عدم المزاولة:** يحدث النسيان إذا تُركت المادة المتعلمة دون تدريب لفترة زمنية معينة، أو عدم استخدامها يؤدي إلى نسيانها. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 74)\n2. **تداخل المواد:** يحدث النسيان نتيجة لتداخل المواد وتزاحمها وتعرضها. فإذا تعلم الإنسان مادة ثم تعلم بعدها مادة أخرى، فإن انشغال الذهن بالمادة الجديدة يؤدي إلى إضعاف تذكر المادة الأولى. وقد تؤدي خبراتنا السابقة إلى إعاقة تعلم خبرات جديدة. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 74)\n3. **التبكب والخبرات السلبية:** قد يحدث النسيان نتيجة للتبكب وكنتيجة لخبرات سلبية، حيث يميل الإنسان إلى نسيان الذكريات غير السارة أو التي تسبب له الألم والتعاسة أكثر من ميله لنسيان الأحداث السارة في حياته. ويساهم الاكتئاب في نسيان الكثير من الخبرات، وهو ظاهرة تتمثل في عدم قدرة الفرد على استرجاع المعلومات التي قد تسبب له التعاسة. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 75)\n4. **عدم القدرة على العثور على الشيء:** يحدث النسيان نتيجة لعدم القدرة على العثور على الشيء، وليس فقدان الشيء نفسه. فقد يفشل الفرد في استرجاع بعض المعلومات في موقف معين، وعندما تتغير الظروف يستطيع تذكر تلك المعلومات بشكل تلقائي. ويعتبر النسيان هنا ظاهرة مؤقتة أكثر منها دائمة. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 75)",
+    "needs_clarification": false,
+    "id": "P13",
+    "skill_id": "psychology_explain",
+    "question": "عرف النسيان حسب الكتاب.",
+    "elapsed_s": 5.1
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "الإدراك الحسي هو عملية تنظيم وتفسير وتقييم للمنبهات الحسية، وهو يختلف عن الإحساس الذي هو الاستجابة الأولية المباشرة لتأثير منبه معين على الخلايا الحسية المستقبلة. فالإحساس وحده لا يكفي لتوجيه سلوك الإنسان التكيفي في العالم المعقد الذي نعيش فيه، لذلك لا بد للإنسان أن يستعين بالإدراك الحسي ليضيف معنى معينًا على هذه الإحساسات المختلفة وينظمها. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 76)\n\nمن العوامل المؤثرة في الإدراك الحسي العوامل الموضوعية، وهي تنظيمات إدراكية فطرية تحدث عند جميع الناس بطريقة مماثلة ومستقلة نسبيًا عن الخبرات السابقة. ومن أمثلتها:\n1. **الشكل والأرضية**: نميل إلى تنظيم المدركات البصرية التي نراها إلى شكل وأرضية. فمثلاً، عند قراءة صفحة من كتاب، لا تبدو لنا مجرد بقع من اللونين الأبيض والأسود، بل نقوم بتنظيمها ككلمات سوداء واضحة على أرضية بيضاء. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 80)\n2. **التقارب**: يؤدي تقارب العناصر أو الجزئيات بعضها من بعض إلى إدراكنا لها في تنظيم أو سياق معين. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 80)\n\nكما أن هناك أمثلة توضح عملية التنظيم في الإدراك الحسي، مثل رقعة الشطرنج التي تتكون من تسعة وأربعين مربعًا وأربعين مربعًا موضوعة على مسافات متساوية. لا نرى جميع المربعات في الشكل كأجزاء مستقلة عن بعضها البعض، ولكنها تنتظم في مجموعات تتكون كل منها من أربعة مربعات أحيانًا، أو تنتظم في صفوف أو أعمدة أحيانًا أخرى. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 78)\n\nأيضًا، عند النظر إلى شكل معين، إذا وجهت انتباهك إلى الشكل الأبيض الموجود على أرضية سوداء، ستدرك كأسًا، وإذا وجهت انتباهك إلى الشكل الأسود الموجود على أرضية بيضاء، ستدرك وجهين. التنبيهات الحسية الواقعة على عينيك واحدة في الحالتين، ولكن تفسيرك لهذه الإحساسات هو الذي تغير. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 76, 23)",
+    "needs_clarification": false,
+    "id": "P14",
+    "skill_id": "psychology_explain",
+    "question": "ما الادراك الحسي وما العوامل المؤثرة فيه؟",
+    "elapsed_s": 6.3
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "أنواع التفكير لم تُذكر في المستندات المتاحة.\n\nأما التفكير المبدع فهو تفكير موجه يتميز بالأصالة والتحرر من أنماط التفكير الجامدة المألوفة، وينظر إلى الموقف بنظرة جديدة، ويؤلف عناصره في نظام جديد، مما يؤدي إلى اكتشاف علاقات جديدة أو الوصول إلى نتائج فريدة وجديدة، سواء في الفن أو الأدب أو العلم. (علم النفس وعلم الاجتماع — الصف الحادي عشر — صفحة 85)\n\nويقوم المفكرون المبدعون بتنظيم معلوماتهم ويكتشفون علاقات جديدة، أو يخترعون أشياء جديدة لم تُعرف من قبل في حل المشكلات. (علم النفس وعلم الاجتماع — الصف الحادي عشر — صفحة 84)",
+    "needs_clarification": false,
+    "id": "P15",
+    "skill_id": "psychology_explain",
+    "question": "ما انواع التفكير؟ وما التفكير المبدع؟",
+    "elapsed_s": 3.1
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "لم يذكر المستند معلومات حول قوانين النمو النفسي العامة.",
+    "needs_clarification": false,
+    "id": "P16",
+    "skill_id": "psychology_explain",
+    "question": "ما قوانين النمو النفسي العامة؟",
+    "elapsed_s": 3.4
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P17",
+    "skill_id": "psychology_explain",
+    "question": "ما التوافق النفسي والاجتماعي وما اساليبه؟",
+    "elapsed_s": 2.2
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P18",
+    "skill_id": "psychology_explain",
+    "question": "من رواد نشاة علم الاجتماع في الكتاب؟ وكيف عرف اوجست كونت علم الاجتماع؟",
+    "elapsed_s": 2.2
+  },
+  {
+    "http": 500,
+    "signal": null,
+    "answer": "Internal Server Error",
+    "needs_clarification": null,
+    "id": "P19",
+    "skill_id": "psychology_explain",
+    "question": "ما فروع علم الاجتماع المذكورة في الكتاب؟",
+    "elapsed_s": 18.4
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "لم يتم توفير معلومات حول مقارنة الأسرة النووية والأسرة الممتدة، أو التغير الاجتماعي وعوامله، أو أمثلة المشكلات الاجتماعية في المستندات المقدمة.",
+    "needs_clarification": false,
+    "id": "P20",
+    "skill_id": "psychology_explain",
+    "question": "قارن الاسرة النووية والاسرة الممتدة، ثم ما التغير الاجتماعي وعوامله؟ وما امثلة المشكلات الاجتماعية؟",
+    "elapsed_s": 14.6
+  },
+  {
+    "http": 200,
+    "signal": "rag_answer_success",
+    "answer": "لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.",
+    "needs_clarification": false,
+    "id": "Pneg",
+    "skill_id": "psychology_explain",
+    "question": "ما العينة الطبقية Stratified Random Sample؟",
+    "elapsed_s": 0.9
+  }
+]

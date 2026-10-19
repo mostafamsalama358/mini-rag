@@ -1,0 +1,43 @@
+01/42 S01 http=200 sig=rag_answer_success 3.5s | اسم الكتاب هو "الإحصاء" للمرحلة "الصف الحادي عشر أدبي الفصل الدراسي الأول". الجهة الناشرة هي "وزارة التربية" و "House of Education" و "شركة مطابع الرسالة - الكو
+02/42 S02 http=200 sig=rag_answer_success 12.8s | يدرس درس Real Numbers في كتاب الإحصاء للصف الحادي عشر. (الإحصاء - الصف الحادي عشر - صفحة 11)
+03/42 S03 http=200 sig=rag_answer_success 2.4s | موضوع Roots and Radical Expressions هو الجذور والتعبيرات الجذرية (Roots and Radical Expressions). [الإحصاء - الصف الحادي عشر - page 13]  كما يتضمن هذا الموضوع ا
+04/42 S04 http=200 sig=rag_answer_success 5.4s | لم يتم تقديم مثال محدد لتبسيط تعبير جذري في النصوص المسترجعة. النصوص تشير إلى موضوع "Simplifying Radical Expressions" في الصفحة 14 من كتاب الإحصاء للصف الحادي ع
+05/42 S05 http=200 sig=rag_answer_success 3.4s | المعلومات المطلوبة غير متوفرة في المستندات المقدمة. (الإحصاء — الصف الحادي عشر — page 15)
+06/42 S06 http=200 sig=rag_answer_success 3.7s | لا يمكنني الإجابة على سؤالك حول كيفية ضرب وقسمة التعبيرات الجذرية بناءً على المستند المقدم. المستند يشير فقط إلى عنوان الموضوع "Multiplication and Division of R
+07/42 S07 http=200 sig=rag_answer_success 3.3s | المرافق (Conjugate) هو مفهوم رياضي يستخدم في سياقات مختلفة، مثل الأعداد المركبة.  **كيف يستخدم؟** يُستخدم المرافق في العمليات الحسابية، فمثلاً: *   إذا كان لدين
+08/42 S08 http=200 sig=rag_answer_success 2.9s | الأسس النسبية (Rational Exponents) هي موضوع يتم تناوله في كتاب الإحصاء للصف الحادي عشر، وتحديداً في الصفحة 25، حيث يوجد قسم بعنوان "Rational Exponents and Prope
+09/42 S09 http=200 sig=rag_answer_success 2.0s | لم يذكر النص الفرق بين Qualitative Data و Quantitative Data. ذكر النص فقط وجود Qualitative Data في الصفحة 42 و Quantitative Data في الصفحة 43 من كتاب الإحصاء لل
+10/42 S10 http=500 sig=None 2.0s | Internal Server Error
+11/42 S11 http=500 sig=None 2.0s | Internal Server Error
+12/42 S12 http=500 sig=None 2.3s | Internal Server Error
+13/42 S13 http=500 sig=None 2.2s | Internal Server Error
+14/42 S14 http=500 sig=None 2.3s | Internal Server Error
+15/42 S15 http=500 sig=None 2.0s | Internal Server Error
+16/42 S16 http=500 sig=None 2.1s | Internal Server Error
+17/42 S17 http=200 sig=rag_answer_success 10.4s | الـ Frequency Table (جدول التكرار) هو جدول يستخدم لتنظيم البيانات، ويُستخدم لـ Discrete Data (البيانات المنفصلة) (الإحصاء - الصف الحادي عشر - صفحة 89).
+18/42 S18 http=500 sig=None 1.5s | Internal Server Error
+19/42 S19 http=500 sig=None 1.3s | Internal Server Error
+20/42 S20 http=500 sig=None 1.7s | Internal Server Error
+21/42 Sneg http=200 sig=rag_answer_success 2.6s | لا توجد معلومات حول أقسام صخور القشرة الأرضية في المستندات المتوفرة. المستندات تتناول مواضيع متعلقة بالإحصاء.
+22/42 P01 http=500 sig=None 2.8s | Internal Server Error
+23/42 P02 http=500 sig=None 3.1s | Internal Server Error
+24/42 P03 http=200 sig=rag_answer_success 2.5s | يستفيد من دراسة علم النفس كل إنسان، حيث أصبح علم النفس من العلوم التي تلقى اهتمامًا وإقبالًا على قراءتها. (علم النفس وعلم الاجتماع - الصف الحادي عشر - صفحة 18)
+25/42 P04 http=200 sig=rag_answer_success 3.3s | تُعد وظائف أعضاء الجسم وأثرها في السلوك أحد الفصول التي يتناولها كتاب علم النفس وعلم الاجتماع للصف الحادي عشر. (علم النفس وعلم الاجتماع — الصف الحادي عشر — page
+26/42 P05 http=500 sig=None 8.5s | Internal Server Error
+27/42 P06 http=500 sig=None 2.0s | Internal Server Error
+28/42 P07 http=500 sig=None 2.3s | Internal Server Error
+29/42 P08 http=500 sig=None 2.9s | Internal Server Error
+30/42 P09 http=500 sig=None 28.2s | Internal Server Error
+31/42 P10 http=500 sig=None 2.6s | Internal Server Error
+32/42 P11 http=200 sig=rag_answer_success 11.1s | يدرس الفصل الخامس العمليات العقلية التالية: * الإحساس (علم النفس وعلم الاجتماع — الصف الحادي عشر — page 76) * الإدراك (علم النفس وعلم الاجتماع — الصف الحادي عشر
+33/42 P12 http=200 sig=rag_answer_success 3.5s | مثال على التعلم بالاشتراط من نشاط الكتاب هو "بيبطلا نم لفطلا فوخ" (خوف الطفل من الطبيب). (علم النفس وعلم الاجتماع — الصف الحادي عشر — صفحة 67)
+34/42 P13 http=200 sig=rag_answer_success 5.1s | يحدث النسيان نتيجة لعدة أسباب: 1. **عدم المزاولة:** يحدث النسيان إذا تُركت المادة المتعلمة دون تدريب لفترة زمنية معينة، أو عدم استخدامها يؤدي إلى نسيانها. (علم 
+35/42 P14 http=200 sig=rag_answer_success 6.3s | الإدراك الحسي هو عملية تنظيم وتفسير وتقييم للمنبهات الحسية، وهو يختلف عن الإحساس الذي هو الاستجابة الأولية المباشرة لتأثير منبه معين على الخلايا الحسية المستقبل
+36/42 P15 http=200 sig=rag_answer_success 3.1s | أنواع التفكير لم تُذكر في المستندات المتاحة.  أما التفكير المبدع فهو تفكير موجه يتميز بالأصالة والتحرر من أنماط التفكير الجامدة المألوفة، وينظر إلى الموقف بنظرة
+37/42 P16 http=200 sig=rag_answer_success 3.4s | لم يذكر المستند معلومات حول قوانين النمو النفسي العامة.
+38/42 P17 http=500 sig=None 2.2s | Internal Server Error
+39/42 P18 http=500 sig=None 2.2s | Internal Server Error
+40/42 P19 http=500 sig=None 18.4s | Internal Server Error
+41/42 P20 http=200 sig=rag_answer_success 14.6s | لم يتم توفير معلومات حول مقارنة الأسرة النووية والأسرة الممتدة، أو التغير الاجتماعي وعوامله، أو أمثلة المشكلات الاجتماعية في المستندات المقدمة.
+42/42 Pneg http=200 sig=rag_answer_success 0.9s | لم أجد في المستندات المفهرسة معلومات كافية للإجابة على هذا السؤال. جرّب ذكر اسم دواء أو منتج محدد، أو أعد صياغة السؤال.
+WROTE D:\mini-rag\eval_run\probe_madrsty_new_subjects.json

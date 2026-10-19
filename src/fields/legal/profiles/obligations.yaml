@@ -1,7 +1,0 @@
-﻿id: obligations
-filters:
-  field:
-    - obligations
-  source:
-    - contract
-retrieval_strategy: default

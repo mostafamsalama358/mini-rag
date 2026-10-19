@@ -49,3 +49,6 @@ Thumbs.db
 .env.*
 !.env.example
 docker/env/
+
+# Local database dumps
+backups/

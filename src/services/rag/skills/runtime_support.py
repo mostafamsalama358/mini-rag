@@ -875,9 +875,9 @@ def check_field_capability(
     )
 
 
-def no_context_message(original_query: str) -> str:
+def no_context_message(original_query: str, domain_key: str | None = None) -> str:
     lang = detect_query_language(original_query, default="en")
-    return _no_context_answer(original_query, lang=lang)
+    return _no_context_answer(original_query, lang=lang, domain_key=domain_key)
 
 
 def log_skill_parse(project_label: str, domain_key: str, entity_result: EntityParseResult) -> None:
