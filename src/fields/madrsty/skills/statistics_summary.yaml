@@ -1,0 +1,10 @@
+id: statistics_summary
+name: Summary
+subject: statistics
+subject_label: الإحصاء
+intent: summary
+profile: statistics_summary
+prompt: summary
+description: Summarize a statistics lesson or section.
+order: 51
+validation: {}

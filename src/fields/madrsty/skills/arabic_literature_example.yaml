@@ -1,0 +1,10 @@
+id: arabic_literature_example
+name: Example
+subject: arabic_literature
+subject_label: عربي (عروض وأدب)
+intent: example
+profile: arabic_literature_example
+prompt: example
+description: Worked or textbook example in arabic literature.
+order: 52
+validation: {}

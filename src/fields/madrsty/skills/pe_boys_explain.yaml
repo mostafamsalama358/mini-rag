@@ -1,0 +1,10 @@
+id: pe_boys_explain
+name: Explain
+subject: pe_boys
+subject_label: التربية البدنية - بنين
+intent: explain
+profile: pe_boys_explain
+prompt: explain
+description: Explain a pe boys concept from the textbook.
+order: 50
+validation: {}

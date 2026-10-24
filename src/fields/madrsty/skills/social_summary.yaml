@@ -1,0 +1,10 @@
+id: social_summary
+name: Summary
+subject: social
+subject_label: الاجتماعيات
+intent: summary
+profile: social_summary
+prompt: summary
+description: Summarize a social lesson or section.
+order: 51
+validation: {}

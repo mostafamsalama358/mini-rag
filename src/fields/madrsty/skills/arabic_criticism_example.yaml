@@ -1,0 +1,10 @@
+id: arabic_criticism_example
+name: Example
+subject: arabic_criticism
+subject_label: عربي (نقد وبلاغة)
+intent: example
+profile: arabic_criticism_example
+prompt: example
+description: Worked or textbook example in arabic criticism.
+order: 52
+validation: {}

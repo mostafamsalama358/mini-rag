@@ -1,0 +1,10 @@
+id: kuwait_world_exercise
+name: Exercise
+subject: kuwait_world
+subject_label: الكويت والعالم الإسلامي
+intent: exercise
+profile: kuwait_world_exercise
+prompt: exercise
+description: Practice a kuwait world exercise from the textbook.
+order: 53
+validation: {}

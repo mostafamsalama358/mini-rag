@@ -1,0 +1,10 @@
+id: art_summary
+name: Summary
+subject: art
+subject_label: التربية الفنية
+intent: summary
+profile: art_summary
+prompt: summary
+description: Summarize a art lesson or section.
+order: 51
+validation: {}

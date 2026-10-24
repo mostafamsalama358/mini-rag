@@ -1,0 +1,10 @@
+id: social_example
+name: Example
+subject: social
+subject_label: الاجتماعيات
+intent: example
+profile: social_example
+prompt: example
+description: Worked or textbook example in social.
+order: 52
+validation: {}

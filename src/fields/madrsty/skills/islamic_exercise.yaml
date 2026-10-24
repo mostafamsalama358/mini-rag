@@ -1,0 +1,10 @@
+id: islamic_exercise
+name: Exercise
+subject: islamic
+subject_label: التربية الإسلامية
+intent: exercise
+profile: islamic_exercise
+prompt: exercise
+description: Practice a islamic exercise from the textbook.
+order: 53
+validation: {}

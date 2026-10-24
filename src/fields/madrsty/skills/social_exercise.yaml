@@ -1,0 +1,10 @@
+id: social_exercise
+name: Exercise
+subject: social
+subject_label: الاجتماعيات
+intent: exercise
+profile: social_exercise
+prompt: exercise
+description: Practice a social exercise from the textbook.
+order: 53
+validation: {}

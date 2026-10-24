@@ -1,0 +1,10 @@
+id: physics_formula
+name: Formula
+subject: physics
+subject_label: الفيزياء
+intent: formula
+profile: physics_formula
+prompt: formula
+description: Explain a formula from the physics textbook.
+order: 54
+validation: {}

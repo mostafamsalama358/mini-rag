@@ -1,0 +1,10 @@
+id: quran_summary
+name: Summary
+subject: quran
+subject_label: القرآن الكريم
+intent: summary
+profile: quran_summary
+prompt: summary
+description: Summarize a quran lesson or section.
+order: 51
+validation: {}

@@ -1,0 +1,10 @@
+id: psychology_summary
+name: Summary
+subject: psychology
+subject_label: علم النفس وعلم الاجتماع
+intent: summary
+profile: psychology_summary
+prompt: summary
+description: Summarize a psychology lesson or section.
+order: 51
+validation: {}

@@ -1,0 +1,6 @@
+id: quran_example
+filters:
+  extra:
+    subject: quran
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

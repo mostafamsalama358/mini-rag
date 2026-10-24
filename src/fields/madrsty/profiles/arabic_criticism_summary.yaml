@@ -1,0 +1,6 @@
+id: arabic_criticism_summary
+filters:
+  extra:
+    subject: arabic_criticism
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

@@ -1,0 +1,10 @@
+id: digital_exercise
+name: Exercise
+subject: digital
+subject_label: الذكاء الرقمي
+intent: exercise
+profile: digital_exercise
+prompt: exercise
+description: Practice a digital exercise from the textbook.
+order: 53
+validation: {}

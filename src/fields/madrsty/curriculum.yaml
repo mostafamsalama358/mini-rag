@@ -1,0 +1,95 @@
+# Live answers_local tree.
+# Countries → section → stage → grade id (classes.yaml).
+# Units, lessons, and attachments stay in SQL Server. Upload them with
+# unit_id, lesson_id, and attachment_id.
+countries:
+  - id: KW
+    label: الكويت
+    code: "+965"
+    sections:
+      - id: arabic_schools
+        label: مدارس عربية
+        stages:
+          - id: primary
+            label: ابتدائي
+            grades: [G0, G1, G2, G3, G4, G5]
+          - id: middle
+            label: متوسط
+            grades: [G6, G7, G8, G9]
+          - id: secondary
+            label: ثانوي
+            grades: [G10, G11_SCI, G11_LIT, G12_SCI, G12_LIT, G12_REL]
+      - id: university
+        label: جامعي
+        stages:
+          - id: kuwait_university
+            label: جامعة الكويت
+            grades: [UNI_MED, UNI_PHARM]
+          - id: aas_university
+            label: جامعة عبد الله السالم
+            grades: []
+          - id: paaet_colleges
+            label: كليات التطبيقي
+            grades: [UNI_ENG]
+          - id: paaet_institutes
+            label: معاهد التطبيقي
+            grades: [UNI_INST]
+      - id: aptitude
+        label: قدرات
+        stages:
+          - id: aptitude_english
+            label: مادة انجليزي
+            grades: [APT_EN]
+          - id: aptitude_math
+            label: مادة رياضيات
+            grades: []
+          - id: aptitude_chemistry
+            label: في مادة الكيمياء
+            grades: []
+          - id: aptitude_arabic
+            label: اللغة العربية
+            grades: []
+          - id: aptitude_french
+            label: اللغة الفرنسية
+            grades: []
+      - id: ielts
+        label: ielts
+        stages:
+          - id: british_council
+            label: British council
+            grades: []
+          - id: idp
+            label: IDP
+            grades: []
+  - id: EG
+    label: مصر
+    code: "+2"
+    sections: []
+
+semesters:
+  - {id: "1", label: الفصل الدراسي الأول}
+  - {id: "2", label: الفصل الدراسي الثاني}
+  - {id: summer, label: Course الصيفي Summer}
+
+grades:
+  - {id: G0, db_name: zero, section: arabic_schools, stage: primary}
+  - {id: G1, db_name: "1- أول", section: arabic_schools, stage: primary}
+  - {id: G2, db_name: "2- ثاني", section: arabic_schools, stage: primary}
+  - {id: G3, db_name: "3- ثالث", section: arabic_schools, stage: primary}
+  - {id: G4, db_name: "4- رابع", section: arabic_schools, stage: primary}
+  - {id: G5, db_name: "5- خامس", section: arabic_schools, stage: primary}
+  - {id: G6, db_name: "6- سادس", section: arabic_schools, stage: middle}
+  - {id: G7, db_name: "7- سابع", section: arabic_schools, stage: middle}
+  - {id: G8, db_name: "8- ثامن", section: arabic_schools, stage: middle}
+  - {id: G9, db_name: "9- تاسع", section: arabic_schools, stage: middle}
+  - {id: G10, db_name: عاشر, section: arabic_schools, stage: secondary}
+  - {id: G11_SCI, db_name: حادي عشر علمي, section: arabic_schools, stage: secondary}
+  - {id: G11_LIT, db_name: حادي عشر أدبي, section: arabic_schools, stage: secondary}
+  - {id: G12_SCI, db_name: ثاني عشر علمي, section: arabic_schools, stage: secondary}
+  - {id: G12_LIT, db_name: ثاني عشر أدبي, section: arabic_schools, stage: secondary}
+  - {id: G12_REL, db_name: ثاني عشر تعليم ديني, section: arabic_schools, stage: secondary}
+  - {id: UNI_MED, db_name: كلية الطب, section: university, stage: kuwait_university}
+  - {id: UNI_PHARM, db_name: كلية الصيدلة, section: university, stage: kuwait_university}
+  - {id: UNI_ENG, db_name: كليه الهندسه, section: university, stage: paaet_colleges}
+  - {id: UNI_INST, db_name: أول, section: university, stage: paaet_institutes}
+  - {id: APT_EN, db_name: تست صف, section: aptitude, stage: aptitude_english}

@@ -1,0 +1,10 @@
+id: arabic_literature_exercise
+name: Exercise
+subject: arabic_literature
+subject_label: عربي (عروض وأدب)
+intent: exercise
+profile: arabic_literature_exercise
+prompt: exercise
+description: Practice a arabic literature exercise from the textbook.
+order: 53
+validation: {}

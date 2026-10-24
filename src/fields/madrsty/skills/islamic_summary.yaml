@@ -1,0 +1,10 @@
+id: islamic_summary
+name: Summary
+subject: islamic
+subject_label: التربية الإسلامية
+intent: summary
+profile: islamic_summary
+prompt: summary
+description: Summarize a islamic lesson or section.
+order: 51
+validation: {}

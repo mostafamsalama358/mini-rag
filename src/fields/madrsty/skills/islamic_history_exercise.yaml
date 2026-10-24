@@ -1,0 +1,10 @@
+id: islamic_history_exercise
+name: Exercise
+subject: islamic_history
+subject_label: التاريخ الإسلامي
+intent: exercise
+profile: islamic_history_exercise
+prompt: exercise
+description: Practice a islamic history exercise from the textbook.
+order: 53
+validation: {}

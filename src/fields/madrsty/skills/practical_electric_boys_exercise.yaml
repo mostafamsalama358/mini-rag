@@ -1,0 +1,10 @@
+id: practical_electric_boys_exercise
+name: Exercise
+subject: practical_electric_boys
+subject_label: الدراسات العملية / الكهرباء - بنين
+intent: exercise
+profile: practical_electric_boys_exercise
+prompt: exercise
+description: Practice a practical electric boys exercise from the textbook.
+order: 53
+validation: {}

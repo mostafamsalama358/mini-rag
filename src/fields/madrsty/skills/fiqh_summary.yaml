@@ -1,0 +1,10 @@
+id: fiqh_summary
+name: Summary
+subject: fiqh
+subject_label: الفقه التحريري
+intent: summary
+profile: fiqh_summary
+prompt: summary
+description: Summarize a fiqh lesson or section.
+order: 51
+validation: {}

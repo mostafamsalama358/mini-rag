@@ -1,0 +1,10 @@
+id: kuwait_history_explain
+name: Explain
+subject: kuwait_history
+subject_label: تاريخ الكويت
+intent: explain
+profile: kuwait_history_explain
+prompt: explain
+description: Explain a kuwait history concept from the textbook.
+order: 50
+validation: {}

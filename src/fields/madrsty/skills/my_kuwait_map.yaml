@@ -1,0 +1,10 @@
+id: my_kuwait_map
+name: Map
+subject: my_kuwait
+subject_label: بلادي الكويت
+intent: map
+profile: my_kuwait_map
+prompt: map
+description: Answer a map or figure question from the my kuwait textbook.
+order: 55
+validation: {}

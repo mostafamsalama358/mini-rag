@@ -1,0 +1,10 @@
+id: practical_decor_girls_exercise
+name: Exercise
+subject: practical_decor_girls
+subject_label: الدراسات العملية / الديكور - بنات
+intent: exercise
+profile: practical_decor_girls_exercise
+prompt: exercise
+description: Practice a practical decor girls exercise from the textbook.
+order: 53
+validation: {}

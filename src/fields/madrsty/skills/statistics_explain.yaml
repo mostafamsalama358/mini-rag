@@ -1,0 +1,10 @@
+id: statistics_explain
+name: Explain
+subject: statistics
+subject_label: الإحصاء
+intent: explain
+profile: statistics_explain
+prompt: explain
+description: Explain a statistics concept from the textbook.
+order: 50
+validation: {}

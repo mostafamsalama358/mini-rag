@@ -1,56 +1,345 @@
-# Chat class chips. Subject id matches a Skill subject when that subject is live.
-# Subjects without a Skill stay visible and stay disabled until their book is added.
+# Chat class chips. id is stored on chunks as grade.
+# country / section / stage match curriculum.yaml.
+# Subject ids are the canonical codes used by Skill filters.
+# IT books (عالمنا الرقمي، عالم التقنية، حاسوب، تقنية المعلومات) stay on digital.
 classes:
-  - id: "11"
-    label: الصف 11
+  - id: G0
+    label: zero
+    country: KW
+    section: arabic_schools
+    stage: primary
+    subjects: []
+  - id: G1
+    label: الصف الأول
+    country: KW
+    section: arabic_schools
+    stage: primary
     subjects:
-      - id: geography
-        label: الجغرافيا
-      - id: french
-        label: الفرنسية
-      - id: statistics
-        label: الإحصاء
-      - id: psychology
-        label: علم النفس وعلم الاجتماع
-  - id: G8a
-    label: G8a
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+  - id: G2
+    label: الصف الثاني
+    country: KW
+    section: arabic_schools
+    stage: primary
     subjects:
-      - id: science
-        label: العلوم
-      - id: english
-        label: الإنجليزية
-      - id: math
-        label: الرياضيات
-      - id: arabic
-        label: لغتي العربية
-      - id: islamic
-        label: التربية الإسلامية
-      - id: quran
-        label: القرآن الكريم
-      - id: home_economics
-        label: الاقتصاد المنزلي
-      - id: digital
-        label: الذكاء الرقمي
-      - id: kuwait_world
-        label: الكويت والعالم الإسلامي
-  - id: G9a
-    label: G9a
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+      - {id: arabic_calligraphy, label: الخط العربي}
+  - id: G3
+    label: الصف الثالث
+    country: KW
+    section: arabic_schools
+    stage: primary
     subjects:
-      - id: science
-        label: العلوم
-      - id: english
-        label: الإنجليزية
-      - id: math
-        label: الرياضيات
-      - id: arabic
-        label: عربي
-      - id: islamic
-        label: التربية الإسلامية
-      - id: quran
-        label: القرآن الكريم
-      - id: home_economics
-        label: الاقتصاد المنزلي
-      - id: digital
-        label: الذكاء الرقمي
-      - id: social
-        label: اجتماعيات
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+  - id: G4
+    label: الصف الرابع
+    country: KW
+    section: arabic_schools
+    stage: primary
+    subjects:
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+      - {id: arabic_calligraphy, label: الخط العربي}
+      - {id: my_kuwait, label: بلادي الكويت}
+  - id: G5
+    label: الصف الخامس
+    country: KW
+    section: arabic_schools
+    stage: primary
+    subjects:
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+      - {id: arabic_calligraphy, label: الخط العربي}
+      - {id: my_kuwait, label: بلادي الكويت}
+  - id: G6
+    label: الصف السادس
+    country: KW
+    section: arabic_schools
+    stage: middle
+    subjects:
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: home_economics, label: الاقتصاد المنزلي}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+      - {id: music, label: التربية الموسيقية}
+      - {id: practical_decor_girls, label: الدراسات العملية / الديكور - بنات}
+      - {id: practical_decor_boys, label: الدراسات العملية / الديكور - بنين}
+      - {id: practical_electric_girls, label: الدراسات العملية / الكهرباء - بنات}
+      - {id: practical_electric_boys, label: الدراسات العملية / الكهرباء - بنين}
+  - id: G7
+    label: الصف السابع
+    country: KW
+    section: arabic_schools
+    stage: middle
+    subjects:
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: home_economics, label: الاقتصاد المنزلي}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+      - {id: music, label: التربية الموسيقية}
+      - {id: practical_decor_girls, label: الدراسات العملية / الديكور - بنات}
+      - {id: practical_decor_boys, label: الدراسات العملية / الديكور - بنين}
+      - {id: practical_electric_girls, label: الدراسات العملية / الكهرباء - بنات}
+      - {id: practical_electric_boys, label: الدراسات العملية / الكهرباء - بنين}
+  - id: G8
+    label: الصف الثامن
+    country: KW
+    section: arabic_schools
+    stage: middle
+    subjects:
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: kuwait_world, label: الكويت والعالم الإسلامي}
+      - {id: home_economics, label: الاقتصاد المنزلي}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+      - {id: music, label: التربية الموسيقية}
+      - {id: practical_decor_girls, label: الدراسات العملية / الديكور - بنات}
+      - {id: practical_decor_boys, label: الدراسات العملية / الديكور - بنين}
+      - {id: practical_electric_girls, label: الدراسات العملية / الكهرباء - بنات}
+      - {id: practical_electric_boys, label: الدراسات العملية / الكهرباء - بنين}
+  - id: G9
+    label: الصف التاسع
+    country: KW
+    section: arabic_schools
+    stage: middle
+    subjects:
+      - {id: science, label: العلوم}
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: home_economics, label: الاقتصاد المنزلي}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: art, label: التربية الفنية}
+      - {id: music, label: التربية الموسيقية}
+      - {id: practical_decor_girls, label: الدراسات العملية / الديكور - بنات}
+      - {id: practical_decor_boys, label: الدراسات العملية / الديكور - بنين}
+      - {id: practical_electric_girls, label: الدراسات العملية / الكهرباء - بنات}
+      - {id: practical_electric_boys, label: الدراسات العملية / الكهرباء - بنين}
+  - id: G10
+    label: الصف العاشر
+    country: KW
+    section: arabic_schools
+    stage: secondary
+    subjects:
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: physics, label: الفيزياء}
+      - {id: chemistry, label: الكيمياء}
+      - {id: biology, label: الأحياء}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: kuwait_history, label: تاريخ الكويت}
+      - {id: arabic_rhetoric, label: عربي (فنون بلاغة)}
+      - {id: arabic_grammar, label: عربي (نحو وصرف)}
+  - id: G11_SCI
+    label: الحادي عشر علمي
+    country: KW
+    section: arabic_schools
+    stage: secondary
+    subjects:
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: physics, label: الفيزياء}
+      - {id: chemistry, label: الكيمياء}
+      - {id: biology, label: الأحياء}
+      - {id: geology, label: الجيولوجيا}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: arabic_rhetoric, label: عربي (فنون البلاغة)}
+      - {id: arabic_grammar, label: عربي (نحو وصرف)}
+  - id: G11_LIT
+    label: الحادي عشر أدبي
+    country: KW
+    section: arabic_schools
+    stage: secondary
+    subjects:
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: french, label: اللغة الفرنسية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: geography, label: الجغرافيا}
+      - {id: statistics, label: الإحصاء}
+      - {id: psychology, label: علم النفس وعلم الاجتماع}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: islamic_history, label: التاريخ الإسلامي}
+      - {id: arabic_rhetoric, label: عربي (فنون البلاغة)}
+      - {id: arabic_grammar, label: عربي (نحو وصرف)}
+  - id: G12_SCI
+    label: الثاني عشر علمي
+    country: KW
+    section: arabic_schools
+    stage: secondary
+    subjects:
+      - {id: math, label: الرياضيات}
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: physics, label: الفيزياء}
+      - {id: chemistry, label: الكيمياء}
+      - {id: biology, label: الأحياء}
+      - {id: constitution, label: الدستور}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: elective, label: اختياري حر}
+      - {id: arabic_rhetoric, label: عربي (بلاغة)}
+      - {id: arabic_grammar, label: عربي (نحو وصرف)}
+  - id: G12_LIT
+    label: الثاني عشر أدبي
+    country: KW
+    section: arabic_schools
+    stage: secondary
+    subjects:
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: french, label: اللغة الفرنسية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: quran, label: القرآن الكريم}
+      - {id: social, label: الاجتماعيات}
+      - {id: digital, label: الذكاء الرقمي}
+      - {id: statistics, label: الإحصاء}
+      - {id: philosophy, label: الفلسفة}
+      - {id: constitution, label: الدستور}
+      - {id: pe_girls, label: التربية البدنية - بنات}
+      - {id: pe_boys, label: التربية البدنية - بنين}
+      - {id: elective, label: اختياري حر}
+      - {id: modern_world_history, label: تاريخ العالم الحديث المعاصر}
+      - {id: environment, label: قضايا البيئة والتنمية المعاصرة}
+      - {id: arabic_rhetoric, label: عربي (بلاغة)}
+      - {id: arabic_grammar, label: عربي (نحو وصرف)}
+  - id: G12_REL
+    label: الثاني عشر تعليم ديني
+    country: KW
+    section: arabic_schools
+    stage: secondary
+    subjects:
+      - {id: arabic, label: اللغة العربية}
+      - {id: english, label: اللغة الإنجليزية}
+      - {id: french, label: اللغة الفرنسية}
+      - {id: islamic, label: التربية الإسلامية}
+      - {id: social, label: الاجتماعيات}
+      - {id: philosophy, label: الفلسفة}
+      - {id: tafsir, label: التفسير}
+      - {id: hadith, label: الحديث الشريف}
+      - {id: fiqh, label: الفقه التحريري}
+      - {id: classical_logic, label: المنطق القديم}
+      - {id: arabic_expression, label: عربي (تعبير وقراءة)}
+      - {id: arabic_literature, label: عربي (عروض وأدب)}
+      - {id: arabic_grammar, label: عربي (نحو وصرف)}
+      - {id: arabic_criticism, label: عربي (نقد وبلاغة)}
+  - id: UNI_MED
+    label: كلية الطب
+    country: KW
+    section: university
+    stage: kuwait_university
+    subjects: []
+  - id: UNI_PHARM
+    label: كلية الصيدلة
+    country: KW
+    section: university
+    stage: kuwait_university
+    subjects: []
+  - id: UNI_ENG
+    label: كلية الهندسة
+    country: KW
+    section: university
+    stage: paaet_colleges
+    subjects:
+      - {id: math_2, label: رياضيات 2}
+  - id: UNI_INST
+    label: أول
+    country: KW
+    section: university
+    stage: paaet_institutes
+    subjects: []
+  - id: APT_EN
+    label: تست صف
+    country: KW
+    section: aptitude
+    stage: aptitude_english
+    subjects: []

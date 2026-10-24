@@ -1,0 +1,10 @@
+id: english_exercise
+name: Exercise
+subject: english
+subject_label: اللغة الإنجليزية
+intent: exercise
+profile: english_exercise
+prompt: exercise
+description: Practice a english exercise from the textbook.
+order: 53
+validation: {}

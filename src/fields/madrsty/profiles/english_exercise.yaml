@@ -1,0 +1,6 @@
+id: english_exercise
+filters:
+  extra:
+    subject: english
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

@@ -1,0 +1,10 @@
+id: practical_decor_boys_exercise
+name: Exercise
+subject: practical_decor_boys
+subject_label: الدراسات العملية / الديكور - بنين
+intent: exercise
+profile: practical_decor_boys_exercise
+prompt: exercise
+description: Practice a practical decor boys exercise from the textbook.
+order: 53
+validation: {}

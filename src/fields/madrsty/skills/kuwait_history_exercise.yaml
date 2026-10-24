@@ -1,0 +1,10 @@
+id: kuwait_history_exercise
+name: Exercise
+subject: kuwait_history
+subject_label: تاريخ الكويت
+intent: exercise
+profile: kuwait_history_exercise
+prompt: exercise
+description: Practice a kuwait history exercise from the textbook.
+order: 53
+validation: {}

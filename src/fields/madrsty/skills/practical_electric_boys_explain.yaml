@@ -1,0 +1,10 @@
+id: practical_electric_boys_explain
+name: Explain
+subject: practical_electric_boys
+subject_label: الدراسات العملية / الكهرباء - بنين
+intent: explain
+profile: practical_electric_boys_explain
+prompt: explain
+description: Explain a practical electric boys concept from the textbook.
+order: 50
+validation: {}

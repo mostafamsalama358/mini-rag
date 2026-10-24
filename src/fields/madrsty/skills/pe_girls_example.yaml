@@ -1,0 +1,10 @@
+id: pe_girls_example
+name: Example
+subject: pe_girls
+subject_label: التربية البدنية - بنات
+intent: example
+profile: pe_girls_example
+prompt: example
+description: Worked or textbook example in pe girls.
+order: 52
+validation: {}

@@ -1,0 +1,10 @@
+id: my_kuwait_summary
+name: Summary
+subject: my_kuwait
+subject_label: بلادي الكويت
+intent: summary
+profile: my_kuwait_summary
+prompt: summary
+description: Summarize a my kuwait lesson or section.
+order: 51
+validation: {}

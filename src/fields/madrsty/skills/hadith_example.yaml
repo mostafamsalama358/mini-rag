@@ -1,0 +1,10 @@
+id: hadith_example
+name: Example
+subject: hadith
+subject_label: الحديث الشريف
+intent: example
+profile: hadith_example
+prompt: example
+description: Worked or textbook example in hadith.
+order: 52
+validation: {}

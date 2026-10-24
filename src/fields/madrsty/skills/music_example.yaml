@@ -1,0 +1,10 @@
+id: music_example
+name: Example
+subject: music
+subject_label: التربية الموسيقية
+intent: example
+profile: music_example
+prompt: example
+description: Worked or textbook example in music.
+order: 52
+validation: {}

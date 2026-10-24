@@ -1,0 +1,10 @@
+id: practical_electric_girls_exercise
+name: Exercise
+subject: practical_electric_girls
+subject_label: الدراسات العملية / الكهرباء - بنات
+intent: exercise
+profile: practical_electric_girls_exercise
+prompt: exercise
+description: Practice a practical electric girls exercise from the textbook.
+order: 53
+validation: {}

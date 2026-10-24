@@ -1,0 +1,10 @@
+id: math_2_summary
+name: Summary
+subject: math_2
+subject_label: رياضيات 2
+intent: summary
+profile: math_2_summary
+prompt: summary
+description: Summarize a math 2 lesson or section.
+order: 51
+validation: {}

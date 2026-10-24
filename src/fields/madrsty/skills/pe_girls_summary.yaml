@@ -1,0 +1,10 @@
+id: pe_girls_summary
+name: Summary
+subject: pe_girls
+subject_label: التربية البدنية - بنات
+intent: summary
+profile: pe_girls_summary
+prompt: summary
+description: Summarize a pe girls lesson or section.
+order: 51
+validation: {}

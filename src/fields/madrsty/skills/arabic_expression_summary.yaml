@@ -1,0 +1,10 @@
+id: arabic_expression_summary
+name: Summary
+subject: arabic_expression
+subject_label: عربي (تعبير وقراءة)
+intent: summary
+profile: arabic_expression_summary
+prompt: summary
+description: Summarize a arabic expression lesson or section.
+order: 51
+validation: {}

@@ -1,0 +1,10 @@
+id: social_explain
+name: Explain
+subject: social
+subject_label: الاجتماعيات
+intent: explain
+profile: social_explain
+prompt: explain
+description: Explain a social concept from the textbook.
+order: 50
+validation: {}

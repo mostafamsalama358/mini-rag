@@ -1,0 +1,10 @@
+id: psychology_example
+name: Example
+subject: psychology
+subject_label: علم النفس وعلم الاجتماع
+intent: example
+profile: psychology_example
+prompt: example
+description: Worked or textbook example in psychology.
+order: 52
+validation: {}

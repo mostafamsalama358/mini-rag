@@ -1,0 +1,10 @@
+id: arabic_expression_explain
+name: Explain
+subject: arabic_expression
+subject_label: عربي (تعبير وقراءة)
+intent: explain
+profile: arabic_expression_explain
+prompt: explain
+description: Explain a arabic expression concept from the textbook.
+order: 50
+validation: {}

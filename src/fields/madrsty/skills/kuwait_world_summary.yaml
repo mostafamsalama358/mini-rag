@@ -1,0 +1,10 @@
+id: kuwait_world_summary
+name: Summary
+subject: kuwait_world
+subject_label: الكويت والعالم الإسلامي
+intent: summary
+profile: kuwait_world_summary
+prompt: summary
+description: Summarize a kuwait world lesson or section.
+order: 51
+validation: {}

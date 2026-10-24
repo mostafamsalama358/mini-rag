@@ -1,0 +1,10 @@
+id: islamic_history_explain
+name: Explain
+subject: islamic_history
+subject_label: التاريخ الإسلامي
+intent: explain
+profile: islamic_history_explain
+prompt: explain
+description: Explain a islamic history concept from the textbook.
+order: 50
+validation: {}

@@ -1,0 +1,10 @@
+id: geology_explain
+name: Explain
+subject: geology
+subject_label: الجيولوجيا
+intent: explain
+profile: geology_explain
+prompt: explain
+description: Explain a geology concept from the textbook.
+order: 50
+validation: {}

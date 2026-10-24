@@ -1,0 +1,10 @@
+id: psychology_exercise
+name: Exercise
+subject: psychology
+subject_label: علم النفس وعلم الاجتماع
+intent: exercise
+profile: psychology_exercise
+prompt: exercise
+description: Practice a psychology exercise from the textbook.
+order: 53
+validation: {}

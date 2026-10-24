@@ -1,0 +1,10 @@
+id: arabic_literature_summary
+name: Summary
+subject: arabic_literature
+subject_label: عربي (عروض وأدب)
+intent: summary
+profile: arabic_literature_summary
+prompt: summary
+description: Summarize a arabic literature lesson or section.
+order: 51
+validation: {}

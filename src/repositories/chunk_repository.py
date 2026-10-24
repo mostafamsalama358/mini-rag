@@ -64,6 +64,26 @@ class ChunkModel(BaseDataModel):
             await session.commit()
         return result.rowcount
 
+    async def get_asset_metadata_sample(
+        self,
+        *,
+        project_id: int,
+        asset_id: int,
+    ) -> dict | None:
+        """One chunk's metadata, used to see if an asset's content token changed."""
+        async with self.db_client() as session:
+            stmt = (
+                select(DataChunk.chunk_metadata)
+                .where(
+                    DataChunk.chunk_project_id == project_id,
+                    DataChunk.chunk_asset_id == asset_id,
+                )
+                .limit(1)
+            )
+            result = await session.execute(stmt)
+            value = result.scalar_one_or_none()
+            return value if isinstance(value, dict) else None
+
     async def delete_chunks_by_asset_id(self, project_id: int, asset_id: int):
         async with self.db_client() as session:
             stmt = delete(DataChunk).where(

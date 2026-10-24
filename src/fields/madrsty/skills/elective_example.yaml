@@ -1,0 +1,10 @@
+id: elective_example
+name: Example
+subject: elective
+subject_label: اختياري حر
+intent: example
+profile: elective_example
+prompt: example
+description: Worked or textbook example in elective.
+order: 52
+validation: {}

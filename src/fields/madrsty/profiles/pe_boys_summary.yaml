@@ -1,0 +1,6 @@
+id: pe_boys_summary
+filters:
+  extra:
+    subject: pe_boys
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

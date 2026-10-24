@@ -1,0 +1,10 @@
+id: environment_summary
+name: Summary
+subject: environment
+subject_label: قضايا البيئة والتنمية المعاصرة
+intent: summary
+profile: environment_summary
+prompt: summary
+description: Summarize a environment lesson or section.
+order: 51
+validation: {}

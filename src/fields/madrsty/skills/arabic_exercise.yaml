@@ -1,0 +1,10 @@
+id: arabic_exercise
+name: Exercise
+subject: arabic
+subject_label: اللغة العربية
+intent: exercise
+profile: arabic_exercise
+prompt: exercise
+description: Practice a arabic exercise from the textbook.
+order: 53
+validation: {}

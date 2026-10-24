@@ -1,0 +1,10 @@
+id: digital_example
+name: Example
+subject: digital
+subject_label: الذكاء الرقمي
+intent: example
+profile: digital_example
+prompt: example
+description: Worked or textbook example in digital.
+order: 52
+validation: {}

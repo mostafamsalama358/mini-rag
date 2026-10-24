@@ -1,0 +1,10 @@
+id: arabic_vocabulary
+name: Vocabulary
+subject: arabic
+subject_label: اللغة العربية
+intent: vocabulary
+profile: arabic_vocabulary
+prompt: vocabulary
+description: Teach vocabulary from the Arabic textbook.
+order: 54
+validation: {}

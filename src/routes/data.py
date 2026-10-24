@@ -1,4 +1,5 @@
 from fastapi import FastAPI, APIRouter, Depends, UploadFile, status, Request
+from helpers.auth import require_service_api_key
 from fastapi.responses import JSONResponse
 from celery import chain
 from celery.result import AsyncResult
@@ -27,6 +28,7 @@ logger = logging.getLogger('uvicorn.error')
 data_router = APIRouter(
     prefix="/api/v1/data",
     tags=["api_v1", "data"],
+    dependencies=[Depends(require_service_api_key)],
 )
 
 from fastapi import Form

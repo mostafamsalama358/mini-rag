@@ -1,0 +1,10 @@
+id: quran_exercise
+name: Exercise
+subject: quran
+subject_label: القرآن الكريم
+intent: exercise
+profile: quran_exercise
+prompt: exercise
+description: Practice a quran exercise from the textbook.
+order: 53
+validation: {}

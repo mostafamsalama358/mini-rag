@@ -1,0 +1,10 @@
+id: classical_logic_explain
+name: Explain
+subject: classical_logic
+subject_label: المنطق القديم
+intent: explain
+profile: classical_logic_explain
+prompt: explain
+description: Explain a classical logic concept from the textbook.
+order: 50
+validation: {}

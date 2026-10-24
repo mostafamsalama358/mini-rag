@@ -1,0 +1,10 @@
+id: practical_decor_girls_explain
+name: Explain
+subject: practical_decor_girls
+subject_label: الدراسات العملية / الديكور - بنات
+intent: explain
+profile: practical_decor_girls_explain
+prompt: explain
+description: Explain a practical decor girls concept from the textbook.
+order: 50
+validation: {}

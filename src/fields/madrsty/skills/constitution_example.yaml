@@ -1,0 +1,10 @@
+id: constitution_example
+name: Example
+subject: constitution
+subject_label: الدستور
+intent: example
+profile: constitution_example
+prompt: example
+description: Worked or textbook example in constitution.
+order: 52
+validation: {}

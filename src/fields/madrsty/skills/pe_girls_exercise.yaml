@@ -1,0 +1,10 @@
+id: pe_girls_exercise
+name: Exercise
+subject: pe_girls
+subject_label: التربية البدنية - بنات
+intent: exercise
+profile: pe_girls_exercise
+prompt: exercise
+description: Practice a pe girls exercise from the textbook.
+order: 53
+validation: {}

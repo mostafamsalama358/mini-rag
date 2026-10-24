@@ -1,0 +1,10 @@
+id: constitution_exercise
+name: Exercise
+subject: constitution
+subject_label: الدستور
+intent: exercise
+profile: constitution_exercise
+prompt: exercise
+description: Practice a constitution exercise from the textbook.
+order: 53
+validation: {}

@@ -1,0 +1,10 @@
+id: fiqh_example
+name: Example
+subject: fiqh
+subject_label: الفقه التحريري
+intent: example
+profile: fiqh_example
+prompt: example
+description: Worked or textbook example in fiqh.
+order: 52
+validation: {}

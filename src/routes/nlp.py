@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, status, Request
+from fastapi import FastAPI, APIRouter, Depends, HTTPException, status, Request
 from fastapi.responses import JSONResponse
 from routes.schemes.nlp import PushRequest, SearchRequest, AnswerRequest
 from repositories.project_repository import ProjectModel
@@ -8,11 +8,13 @@ from models.enums.AssetTypeEnum import AssetTypeEnum
 from services.rag.rag_service import NLPController
 from services.rag.embedding import EmbeddingCache
 from models import ResponseSignal
+from helpers.auth import require_service_api_key
 from services.rag.answer_errors import (
     domain_key_value,
     scope_miss_message,
     vertex_generation_error_body,
 )
+from services.rag.domain_helpers import load_domain_helper
 from stores.llm.errors import VertexGenerationError
 from tqdm.auto import tqdm
 from tasks.data_indexing import index_data_content
@@ -24,7 +26,21 @@ logger = logging.getLogger('uvicorn.error')
 nlp_router = APIRouter(
     prefix="/api/v1/nlp",
     tags=["api_v1", "nlp"],
+    dependencies=[Depends(require_service_api_key)],
 )
+
+
+def _require_domain_retrieval_scope(project, metadata_filter, *, route: str, skill_id: str | None = None) -> None:
+    """422 when the active domain pack exports a retrieval-scope check."""
+    checker = load_domain_helper(domain_key_value(project), "scope", "check_retrieval_scope")
+    if checker is None:
+        return
+    message = checker(project, metadata_filter, route=route, skill_id=skill_id)
+    if message:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=message,
+        )
 
 @nlp_router.post("/index/push/{project_id}")
 async def index_project(request: Request, project_id: int, push_request: PushRequest):
@@ -116,6 +132,12 @@ async def search_index(request: Request, project_id: int, search_request: Search
         project_id=project_id
     )
 
+    _require_domain_retrieval_scope(
+        project,
+        search_request.metadata_filter,
+        route="search",
+    )
+
     nlp_controller = NLPController(
         vectordb_client=request.app.vectordb_client,
         generation_client=request.app.generation_client,
@@ -157,6 +179,13 @@ async def answer_rag(request: Request, project_id: int, answer_request: AnswerRe
 
     project = await project_model.get_project_or_create_one(
         project_id=project_id
+    )
+
+    _require_domain_retrieval_scope(
+        project,
+        answer_request.metadata_filter,
+        route="answer",
+        skill_id=getattr(answer_request, "skill_id", None),
     )
 
     nlp_controller = NLPController(

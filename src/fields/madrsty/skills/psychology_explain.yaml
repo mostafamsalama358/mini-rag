@@ -1,0 +1,10 @@
+id: psychology_explain
+name: Explain
+subject: psychology
+subject_label: علم النفس وعلم الاجتماع
+intent: explain
+profile: psychology_explain
+prompt: explain
+description: Explain a psychology concept from the textbook.
+order: 50
+validation: {}

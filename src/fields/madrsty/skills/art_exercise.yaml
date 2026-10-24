@@ -1,0 +1,10 @@
+id: art_exercise
+name: Exercise
+subject: art
+subject_label: التربية الفنية
+intent: exercise
+profile: art_exercise
+prompt: exercise
+description: Practice a art exercise from the textbook.
+order: 53
+validation: {}

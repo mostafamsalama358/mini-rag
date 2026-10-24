@@ -1,0 +1,10 @@
+id: math_example
+name: Example
+subject: math
+subject_label: الرياضيات
+intent: example
+profile: math_example
+prompt: example
+description: Worked or textbook example in math.
+order: 52
+validation: {}

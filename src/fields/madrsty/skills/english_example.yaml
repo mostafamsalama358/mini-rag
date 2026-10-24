@@ -1,0 +1,10 @@
+id: english_example
+name: Example
+subject: english
+subject_label: اللغة الإنجليزية
+intent: example
+profile: english_example
+prompt: example
+description: Worked or textbook example in english.
+order: 52
+validation: {}

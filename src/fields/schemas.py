@@ -295,6 +295,9 @@ class ClassDefinition(BaseModel):
 
     id: str
     label: str
+    country: str = ""
+    section: str = ""
+    stage: str = ""
     subjects: list[ClassSubject] = Field(default_factory=list)
 
 
@@ -304,6 +307,67 @@ class ClassCatalog(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
     classes: list[ClassDefinition] = Field(default_factory=list)
+
+
+class CurriculumStage(BaseModel):
+    """One stage inside a section (ابتدائي، متوسط، ثانوي، …)."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    label: str
+    grades: list[str] = Field(default_factory=list)
+
+
+class CurriculumSection(BaseModel):
+    """One education section inside a country (مدارس عربية، جامعي، …)."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    label: str
+    stages: list[CurriculumStage] = Field(default_factory=list)
+
+
+class CurriculumCountry(BaseModel):
+    """One country in the curriculum tree."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    label: str
+    code: str = ""
+    sections: list[CurriculumSection] = Field(default_factory=list)
+
+
+class CurriculumSemester(BaseModel):
+    """One semester. ``id`` is stored on chunks as ``term`` when it is 1 or 2."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    label: str
+
+
+class CurriculumGrade(BaseModel):
+    """Crosswalk from a live grade name to the class chip id."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    id: str
+    db_name: str
+    section: str = ""
+    stage: str = ""
+
+
+class CurriculumCatalog(BaseModel):
+    """curriculum.yaml — country, section, stage, grade, and semester tree."""
+
+    model_config = ConfigDict(extra="ignore")
+
+    countries: list[CurriculumCountry] = Field(default_factory=list)
+    semesters: list[CurriculumSemester] = Field(default_factory=list)
+    grades: list[CurriculumGrade] = Field(default_factory=list)
 
 
 class ProjectDefaults(BaseModel):

@@ -1,0 +1,10 @@
+id: home_economics_exercise
+name: Exercise
+subject: home_economics
+subject_label: الاقتصاد المنزلي
+intent: exercise
+profile: home_economics_exercise
+prompt: exercise
+description: Practice a home economics exercise from the textbook.
+order: 53
+validation: {}

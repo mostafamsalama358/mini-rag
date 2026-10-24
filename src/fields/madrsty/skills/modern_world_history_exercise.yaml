@@ -1,0 +1,10 @@
+id: modern_world_history_exercise
+name: Exercise
+subject: modern_world_history
+subject_label: تاريخ العالم الحديث المعاصر
+intent: exercise
+profile: modern_world_history_exercise
+prompt: exercise
+description: Practice a modern world history exercise from the textbook.
+order: 53
+validation: {}

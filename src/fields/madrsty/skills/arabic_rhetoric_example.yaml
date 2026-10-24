@@ -1,0 +1,10 @@
+id: arabic_rhetoric_example
+name: Example
+subject: arabic_rhetoric
+subject_label: عربي (فنون بلاغة)
+intent: example
+profile: arabic_rhetoric_example
+prompt: example
+description: Worked or textbook example in arabic rhetoric.
+order: 52
+validation: {}

@@ -1,0 +1,10 @@
+id: elective_summary
+name: Summary
+subject: elective
+subject_label: اختياري حر
+intent: summary
+profile: elective_summary
+prompt: summary
+description: Summarize a elective lesson or section.
+order: 51
+validation: {}

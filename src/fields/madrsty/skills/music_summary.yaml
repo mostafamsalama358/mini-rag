@@ -1,0 +1,10 @@
+id: music_summary
+name: Summary
+subject: music
+subject_label: التربية الموسيقية
+intent: summary
+profile: music_summary
+prompt: summary
+description: Summarize a music lesson or section.
+order: 51
+validation: {}

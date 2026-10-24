@@ -1,0 +1,10 @@
+id: arabic_criticism_summary
+name: Summary
+subject: arabic_criticism
+subject_label: عربي (نقد وبلاغة)
+intent: summary
+profile: arabic_criticism_summary
+prompt: summary
+description: Summarize a arabic criticism lesson or section.
+order: 51
+validation: {}

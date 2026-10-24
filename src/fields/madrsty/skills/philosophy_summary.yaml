@@ -1,0 +1,10 @@
+id: philosophy_summary
+name: Summary
+subject: philosophy
+subject_label: الفلسفة
+intent: summary
+profile: philosophy_summary
+prompt: summary
+description: Summarize a philosophy lesson or section.
+order: 51
+validation: {}

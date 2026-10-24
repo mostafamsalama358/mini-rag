@@ -1,0 +1,10 @@
+id: statistics_exercise
+name: Exercise
+subject: statistics
+subject_label: الإحصاء
+intent: exercise
+profile: statistics_exercise
+prompt: exercise
+description: Practice a statistics exercise from the textbook.
+order: 53
+validation: {}

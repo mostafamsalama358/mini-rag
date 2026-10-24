@@ -1,0 +1,10 @@
+id: geography_summary
+name: Summary
+subject: geography
+subject_label: الجغرافيا
+intent: summary
+profile: geography_summary
+prompt: summary
+description: Summarize a geography lesson or section.
+order: 51
+validation: {}

@@ -1,0 +1,10 @@
+id: chemistry_exercise
+name: Exercise
+subject: chemistry
+subject_label: الكيمياء
+intent: exercise
+profile: chemistry_exercise
+prompt: exercise
+description: Practice a chemistry exercise from the textbook.
+order: 53
+validation: {}

@@ -1,0 +1,10 @@
+id: arabic_calligraphy_explain
+name: Explain
+subject: arabic_calligraphy
+subject_label: الخط العربي
+intent: explain
+profile: arabic_calligraphy_explain
+prompt: explain
+description: Explain a arabic calligraphy concept from the textbook.
+order: 50
+validation: {}

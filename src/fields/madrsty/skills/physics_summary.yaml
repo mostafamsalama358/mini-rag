@@ -1,0 +1,10 @@
+id: physics_summary
+name: Summary
+subject: physics
+subject_label: الفيزياء
+intent: summary
+profile: physics_summary
+prompt: summary
+description: Summarize a physics lesson or section.
+order: 51
+validation: {}

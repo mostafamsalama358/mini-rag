@@ -1,0 +1,10 @@
+id: arabic_calligraphy_exercise
+name: Exercise
+subject: arabic_calligraphy
+subject_label: الخط العربي
+intent: exercise
+profile: arabic_calligraphy_exercise
+prompt: exercise
+description: Practice a arabic calligraphy exercise from the textbook.
+order: 53
+validation: {}

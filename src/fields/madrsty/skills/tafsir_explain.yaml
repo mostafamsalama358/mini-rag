@@ -1,0 +1,10 @@
+id: tafsir_explain
+name: Explain
+subject: tafsir
+subject_label: التفسير
+intent: explain
+profile: tafsir_explain
+prompt: explain
+description: Explain a tafsir concept from the textbook.
+order: 50
+validation: {}

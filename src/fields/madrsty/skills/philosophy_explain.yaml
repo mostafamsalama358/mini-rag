@@ -1,0 +1,10 @@
+id: philosophy_explain
+name: Explain
+subject: philosophy
+subject_label: الفلسفة
+intent: explain
+profile: philosophy_explain
+prompt: explain
+description: Explain a philosophy concept from the textbook.
+order: 50
+validation: {}

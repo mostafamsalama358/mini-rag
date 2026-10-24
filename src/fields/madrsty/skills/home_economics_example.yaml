@@ -1,0 +1,10 @@
+id: home_economics_example
+name: Example
+subject: home_economics
+subject_label: الاقتصاد المنزلي
+intent: example
+profile: home_economics_example
+prompt: example
+description: Worked or textbook example in home economics.
+order: 52
+validation: {}

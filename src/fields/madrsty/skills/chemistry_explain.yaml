@@ -1,0 +1,10 @@
+id: chemistry_explain
+name: Explain
+subject: chemistry
+subject_label: الكيمياء
+intent: explain
+profile: chemistry_explain
+prompt: explain
+description: Explain a chemistry concept from the textbook.
+order: 50
+validation: {}

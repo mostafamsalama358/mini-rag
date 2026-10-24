@@ -1,0 +1,10 @@
+id: arabic_criticism_exercise
+name: Exercise
+subject: arabic_criticism
+subject_label: عربي (نقد وبلاغة)
+intent: exercise
+profile: arabic_criticism_exercise
+prompt: exercise
+description: Practice a arabic criticism exercise from the textbook.
+order: 53
+validation: {}

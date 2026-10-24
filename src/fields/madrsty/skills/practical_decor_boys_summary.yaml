@@ -1,0 +1,10 @@
+id: practical_decor_boys_summary
+name: Summary
+subject: practical_decor_boys
+subject_label: الدراسات العملية / الديكور - بنين
+intent: summary
+profile: practical_decor_boys_summary
+prompt: summary
+description: Summarize a practical decor boys lesson or section.
+order: 51
+validation: {}

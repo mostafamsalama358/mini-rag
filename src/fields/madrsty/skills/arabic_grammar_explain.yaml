@@ -1,0 +1,10 @@
+id: arabic_grammar_explain
+name: Explain
+subject: arabic_grammar
+subject_label: عربي (نحو وصرف)
+intent: explain
+profile: arabic_grammar_explain
+prompt: explain
+description: Explain a arabic grammar concept from the textbook.
+order: 50
+validation: {}

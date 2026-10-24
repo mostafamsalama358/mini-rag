@@ -1,0 +1,10 @@
+id: physics_explain
+name: Explain
+subject: physics
+subject_label: الفيزياء
+intent: explain
+profile: physics_explain
+prompt: explain
+description: Explain a physics concept from the textbook.
+order: 50
+validation: {}

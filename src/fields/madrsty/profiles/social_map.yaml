@@ -1,0 +1,6 @@
+id: social_map
+filters:
+  extra:
+    subject: social
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

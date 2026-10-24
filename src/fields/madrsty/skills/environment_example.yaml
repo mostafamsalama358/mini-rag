@@ -1,0 +1,10 @@
+id: environment_example
+name: Example
+subject: environment
+subject_label: قضايا البيئة والتنمية المعاصرة
+intent: example
+profile: environment_example
+prompt: example
+description: Worked or textbook example in environment.
+order: 52
+validation: {}

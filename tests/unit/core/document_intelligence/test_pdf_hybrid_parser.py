@@ -253,6 +253,59 @@ def test_hybrid_prefers_ocr_over_odl_figure_on_scanned_page(monkeypatch):
     get_settings.cache_clear()
 
 
+def test_low_searchable_ratio_still_uses_opendataloader(monkeypatch):
+    monkeypatch.setenv("PDF_PARSER_MODE", "hybrid")
+    from helpers.config import get_settings
+
+    get_settings.cache_clear()
+
+    sample = FIXTURES / "sample_with_table.pdf"
+    fake_odl = {
+        "file name": "sample_with_table.pdf",
+        "number of pages": 2,
+        "kids": [
+            {
+                "type": "paragraph",
+                "id": 1,
+                "page number": 1,
+                "content": "Only readable page",
+            }
+        ],
+    }
+    ocr_page = SimpleNamespace(
+        page_content="OCR of the garbled page",
+        metadata={"page": 2, "ocr_used": True, "parser": "ocr"},
+    )
+
+    with (
+        patch(
+            "utils.opendataloader_pdf.is_opendataloader_available",
+            return_value=True,
+        ),
+        patch(
+            "utils.opendataloader_pdf.convert_pdf_to_json",
+            return_value=fake_odl,
+        ) as odl_mock,
+        patch(
+            "utils.pdf_page_detect.classify_pdf_pages",
+            return_value=[
+                PageSearchability(1, True, 80),
+                PageSearchability(2, False, 900),
+            ],
+        ),
+        patch("utils.pdf_ocr.extract_pages_with_ocr", return_value=[ocr_page]),
+        patch("utils.pdf_ocr.load_pdf_with_ocr_fallback") as legacy_mock,
+    ):
+        model = PdfDocumentParser().parse(str(sample), "sample_with_table.pdf")
+
+    odl_mock.assert_called_once()
+    legacy_mock.assert_not_called()
+    texts = " ".join(el.text or "" for el in model.elements)
+    assert "Only readable page" in texts
+    assert "OCR of the garbled page" in texts
+    get_settings.cache_clear()
+
+
 def test_legacy_mode_skips_odl(monkeypatch):
     monkeypatch.setenv("PDF_PARSER_MODE", "legacy")
     from helpers.config import get_settings

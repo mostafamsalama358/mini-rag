@@ -1,0 +1,10 @@
+id: classical_logic_summary
+name: Summary
+subject: classical_logic
+subject_label: المنطق القديم
+intent: summary
+profile: classical_logic_summary
+prompt: summary
+description: Summarize a classical logic lesson or section.
+order: 51
+validation: {}

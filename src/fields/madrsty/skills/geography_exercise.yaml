@@ -1,0 +1,10 @@
+id: geography_exercise
+name: Exercise
+subject: geography
+subject_label: الجغرافيا
+intent: exercise
+profile: geography_exercise
+prompt: exercise
+description: Practice a geography exercise from the textbook.
+order: 53
+validation: {}

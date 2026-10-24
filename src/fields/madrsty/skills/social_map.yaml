@@ -1,0 +1,10 @@
+id: social_map
+name: Map
+subject: social
+subject_label: الاجتماعيات
+intent: map
+profile: social_map
+prompt: map
+description: Answer a map or figure question from the social textbook.
+order: 55
+validation: {}

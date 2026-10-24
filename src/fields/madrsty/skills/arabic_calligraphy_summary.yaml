@@ -1,0 +1,10 @@
+id: arabic_calligraphy_summary
+name: Summary
+subject: arabic_calligraphy
+subject_label: الخط العربي
+intent: summary
+profile: arabic_calligraphy_summary
+prompt: summary
+description: Summarize a arabic calligraphy lesson or section.
+order: 51
+validation: {}

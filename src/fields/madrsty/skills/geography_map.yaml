@@ -1,0 +1,10 @@
+id: geography_map
+name: Map
+subject: geography
+subject_label: الجغرافيا
+intent: map
+profile: geography_map
+prompt: map
+description: Answer a map or figure question from the geography textbook.
+order: 55
+validation: {}

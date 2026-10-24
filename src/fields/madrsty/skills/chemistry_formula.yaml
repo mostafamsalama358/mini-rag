@@ -1,0 +1,10 @@
+id: chemistry_formula
+name: Formula
+subject: chemistry
+subject_label: الكيمياء
+intent: formula
+profile: chemistry_formula
+prompt: formula
+description: Explain a formula from the chemistry textbook.
+order: 54
+validation: {}

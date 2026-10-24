@@ -19,10 +19,77 @@ from services.rag.indexing_diagnostics import (
     log_indexing_batch_summary,
     log_indexing_chunk,
 )
-from utils.project_assets import build_asset_fingerprint
+from utils.project_assets import build_asset_fingerprint, content_token_from_mapping
 
 import logging
 logger = logging.getLogger(__name__)
+
+
+async def _asset_content_changed(
+    asset_model,
+    chunk_model,
+    *,
+    project_id: int,
+    asset_id: int,
+    asset_name: str,
+) -> bool:
+    """True when asset_config checksum/version differs from stored chunk metadata."""
+    config: dict = {}
+    try:
+        asset_row = await asset_model.get_asset_record(
+            asset_project_id=project_id,
+            asset_name=asset_name,
+        )
+        if asset_row is not None and isinstance(asset_row.asset_config, dict):
+            config = asset_row.asset_config
+    except Exception as exc:
+        logger.warning("asset content token skipped for %s: %s", asset_name, exc)
+        return False
+
+    stored_meta = await chunk_model.get_asset_metadata_sample(
+        project_id=project_id,
+        asset_id=asset_id,
+    )
+    return content_token_from_mapping(config) != content_token_from_mapping(stored_meta)
+
+
+async def _ensure_vector_client(db_client, current):
+    if current is not None:
+        return current
+    from stores.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
+
+    settings = get_settings()
+    factory = VectorDBProviderFactory(config=settings, db_client=db_client)
+    client = factory.create(provider=settings.VECTOR_DB_BACKEND)
+    await client.connect()
+    return client
+
+
+async def _delete_asset_vectors_then_chunks(
+    vectordb_client,
+    chunk_model,
+    *,
+    project_id: int,
+    asset_id: int,
+) -> None:
+    """Drop vector rows for an asset, then its chunk rows (foreign key order)."""
+    collection_name = f"collection_{vectordb_client.default_vector_size}_{project_id}"
+    delete_vectors = getattr(vectordb_client, "delete_vectors_by_asset_id", None)
+    if delete_vectors is None:
+        logger.warning(
+            "Vector provider cannot delete by asset_id; skipping vector delete | asset_id=%s",
+            asset_id,
+        )
+    else:
+        await delete_vectors(
+            collection_name=collection_name,
+            project_id=project_id,
+            asset_id=asset_id,
+        )
+    await chunk_model.delete_chunks_by_asset_id(
+        project_id=project_id,
+        asset_id=asset_id,
+    )
 
 @celery_app.task(
                  bind=True, name="tasks.file_processing.process_project_files",
@@ -254,12 +321,27 @@ async def _process_project_files(task_instance, project_id: int,
         for asset_id, file_id in project_files_ids.items():
 
             if do_reset == 0 and asset_id in indexed_asset_ids:
-                logger.info(
-                    "Skipping already processed asset | asset_id=%s file=%s",
-                    asset_id,
-                    file_id,
+                content_changed = await _asset_content_changed(
+                    asset_model,
+                    chunk_model,
+                    project_id=project.project_id,
+                    asset_id=asset_id,
+                    asset_name=file_id,
                 )
-                continue
+                if not content_changed:
+                    logger.info(
+                        "Skipping already processed asset | asset_id=%s file=%s",
+                        asset_id,
+                        file_id,
+                    )
+                    continue
+                vectordb_client = await _ensure_vector_client(db_client, vectordb_client)
+                await _delete_asset_vectors_then_chunks(
+                    vectordb_client,
+                    chunk_model,
+                    project_id=project.project_id,
+                    asset_id=asset_id,
+                )
 
             _file_ext = os.path.splitext(file_id)[-1].lstrip(".") or "unknown"
             _strategy = _profile.chunking_strategy_for(_file_ext) if _profile is not None else None

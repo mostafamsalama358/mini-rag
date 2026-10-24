@@ -1,0 +1,6 @@
+id: practical_decor_girls_explain
+filters:
+  extra:
+    subject: practical_decor_girls
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

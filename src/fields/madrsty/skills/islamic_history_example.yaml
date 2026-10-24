@@ -1,0 +1,10 @@
+id: islamic_history_example
+name: Example
+subject: islamic_history
+subject_label: التاريخ الإسلامي
+intent: example
+profile: islamic_history_example
+prompt: example
+description: Worked or textbook example in islamic history.
+order: 52
+validation: {}

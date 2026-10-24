@@ -1,0 +1,10 @@
+id: philosophy_example
+name: Example
+subject: philosophy
+subject_label: الفلسفة
+intent: example
+profile: philosophy_example
+prompt: example
+description: Worked or textbook example in philosophy.
+order: 52
+validation: {}

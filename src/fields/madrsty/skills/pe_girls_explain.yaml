@@ -1,0 +1,10 @@
+id: pe_girls_explain
+name: Explain
+subject: pe_girls
+subject_label: التربية البدنية - بنات
+intent: explain
+profile: pe_girls_explain
+prompt: explain
+description: Explain a pe girls concept from the textbook.
+order: 50
+validation: {}

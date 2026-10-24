@@ -1,0 +1,10 @@
+id: kuwait_history_example
+name: Example
+subject: kuwait_history
+subject_label: تاريخ الكويت
+intent: example
+profile: kuwait_history_example
+prompt: example
+description: Worked or textbook example in kuwait history.
+order: 52
+validation: {}

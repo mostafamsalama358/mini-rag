@@ -1,0 +1,10 @@
+id: biology_summary
+name: Summary
+subject: biology
+subject_label: الأحياء
+intent: summary
+profile: biology_summary
+prompt: summary
+description: Summarize a biology lesson or section.
+order: 51
+validation: {}

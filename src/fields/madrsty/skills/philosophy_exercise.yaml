@@ -1,0 +1,10 @@
+id: philosophy_exercise
+name: Exercise
+subject: philosophy
+subject_label: الفلسفة
+intent: exercise
+profile: philosophy_exercise
+prompt: exercise
+description: Practice a philosophy exercise from the textbook.
+order: 53
+validation: {}

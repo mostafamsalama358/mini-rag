@@ -1,0 +1,6 @@
+id: arabic_literature_summary
+filters:
+  extra:
+    subject: arabic_literature
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

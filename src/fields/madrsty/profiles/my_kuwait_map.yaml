@@ -1,0 +1,6 @@
+id: my_kuwait_map
+filters:
+  extra:
+    subject: my_kuwait
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

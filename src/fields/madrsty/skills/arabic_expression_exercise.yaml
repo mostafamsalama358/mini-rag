@@ -1,0 +1,10 @@
+id: arabic_expression_exercise
+name: Exercise
+subject: arabic_expression
+subject_label: عربي (تعبير وقراءة)
+intent: exercise
+profile: arabic_expression_exercise
+prompt: exercise
+description: Practice a arabic expression exercise from the textbook.
+order: 53
+validation: {}

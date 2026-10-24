@@ -1,0 +1,10 @@
+id: islamic_explain
+name: Explain
+subject: islamic
+subject_label: التربية الإسلامية
+intent: explain
+profile: islamic_explain
+prompt: explain
+description: Explain a islamic concept from the textbook.
+order: 50
+validation: {}

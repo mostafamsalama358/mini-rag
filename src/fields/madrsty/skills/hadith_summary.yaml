@@ -1,0 +1,10 @@
+id: hadith_summary
+name: Summary
+subject: hadith
+subject_label: الحديث الشريف
+intent: summary
+profile: hadith_summary
+prompt: summary
+description: Summarize a hadith lesson or section.
+order: 51
+validation: {}

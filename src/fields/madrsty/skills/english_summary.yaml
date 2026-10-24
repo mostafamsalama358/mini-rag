@@ -1,0 +1,10 @@
+id: english_summary
+name: Summary
+subject: english
+subject_label: اللغة الإنجليزية
+intent: summary
+profile: english_summary
+prompt: summary
+description: Summarize a english lesson or section.
+order: 51
+validation: {}

@@ -1,0 +1,10 @@
+id: statistics_formula
+name: Formula
+subject: statistics
+subject_label: الإحصاء
+intent: formula
+profile: statistics_formula
+prompt: formula
+description: Explain a formula from the statistics textbook.
+order: 54
+validation: {}

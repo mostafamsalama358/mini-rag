@@ -1,0 +1,10 @@
+id: arabic_calligraphy_example
+name: Example
+subject: arabic_calligraphy
+subject_label: الخط العربي
+intent: example
+profile: arabic_calligraphy_example
+prompt: example
+description: Worked or textbook example in arabic calligraphy.
+order: 52
+validation: {}

@@ -1,0 +1,6 @@
+id: practical_electric_boys_explain
+filters:
+  extra:
+    subject: practical_electric_boys
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

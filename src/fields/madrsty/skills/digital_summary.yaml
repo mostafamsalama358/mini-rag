@@ -1,0 +1,10 @@
+id: digital_summary
+name: Summary
+subject: digital
+subject_label: الذكاء الرقمي
+intent: summary
+profile: digital_summary
+prompt: summary
+description: Summarize a digital lesson or section.
+order: 51
+validation: {}

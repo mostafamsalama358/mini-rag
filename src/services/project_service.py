@@ -79,6 +79,9 @@ class ProjectController(BaseController):
             classes = list(getattr(pack, "classes", None) or [])
             if classes:
                 payload["classes"] = classes
+            curriculum = getattr(pack, "curriculum", None) or {}
+            if curriculum:
+                payload["curriculum"] = curriculum
         if available_domains is not None:
             payload["available_domains"] = available_domains
         return payload

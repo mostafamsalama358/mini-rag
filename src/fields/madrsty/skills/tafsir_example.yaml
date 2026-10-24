@@ -1,0 +1,10 @@
+id: tafsir_example
+name: Example
+subject: tafsir
+subject_label: التفسير
+intent: example
+profile: tafsir_example
+prompt: example
+description: Worked or textbook example in tafsir.
+order: 52
+validation: {}

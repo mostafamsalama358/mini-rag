@@ -23,7 +23,7 @@ import time
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-from routes import base, data, nlp, projects
+from routes import base, data, egaabat, nlp, projects
 from helpers.config import get_settings
 from stores.llm.LLMProviderFactory import LLMProviderFactory
 from stores.vectordb.VectorDBProviderFactory import VectorDBProviderFactory
@@ -212,6 +212,7 @@ app.include_router(base.base_router)          # Health check / base routes
 app.include_router(projects.projects_router)  # /api/v1/projects
 app.include_router(data.data_router)          # /api/v1/data
 app.include_router(nlp.nlp_router)            # /api/v1/nlp
+app.include_router(egaabat.egaabat_router)    # /api/v1/integrations/egaabat
 
 
 @app.get("/", include_in_schema=False)

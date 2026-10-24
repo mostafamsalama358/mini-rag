@@ -1,0 +1,10 @@
+id: digital_explain
+name: Explain
+subject: digital
+subject_label: الذكاء الرقمي
+intent: explain
+profile: digital_explain
+prompt: explain
+description: Explain a digital concept from the textbook.
+order: 50
+validation: {}

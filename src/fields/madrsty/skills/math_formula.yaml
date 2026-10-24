@@ -1,0 +1,10 @@
+id: math_formula
+name: Formula
+subject: math
+subject_label: الرياضيات
+intent: formula
+profile: math_formula
+prompt: formula
+description: Explain a formula from the math textbook.
+order: 54
+validation: {}

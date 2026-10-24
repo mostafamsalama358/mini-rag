@@ -1,0 +1,10 @@
+id: geology_exercise
+name: Exercise
+subject: geology
+subject_label: الجيولوجيا
+intent: exercise
+profile: geology_exercise
+prompt: exercise
+description: Practice a geology exercise from the textbook.
+order: 53
+validation: {}

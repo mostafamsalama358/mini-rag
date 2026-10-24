@@ -1,0 +1,10 @@
+id: practical_decor_girls_summary
+name: Summary
+subject: practical_decor_girls
+subject_label: الدراسات العملية / الديكور - بنات
+intent: summary
+profile: practical_decor_girls_summary
+prompt: summary
+description: Summarize a practical decor girls lesson or section.
+order: 51
+validation: {}

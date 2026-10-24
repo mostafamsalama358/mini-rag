@@ -1,0 +1,10 @@
+id: english_vocabulary
+name: Vocabulary
+subject: english
+subject_label: اللغة الإنجليزية
+intent: vocabulary
+profile: english_vocabulary
+prompt: vocabulary
+description: Teach vocabulary from the English textbook.
+order: 54
+validation: {}

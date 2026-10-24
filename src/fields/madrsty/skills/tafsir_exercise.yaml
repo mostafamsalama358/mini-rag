@@ -1,0 +1,10 @@
+id: tafsir_exercise
+name: Exercise
+subject: tafsir
+subject_label: التفسير
+intent: exercise
+profile: tafsir_exercise
+prompt: exercise
+description: Practice a tafsir exercise from the textbook.
+order: 53
+validation: {}

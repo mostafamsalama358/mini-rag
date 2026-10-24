@@ -1,0 +1,10 @@
+id: classical_logic_exercise
+name: Exercise
+subject: classical_logic
+subject_label: المنطق القديم
+intent: exercise
+profile: classical_logic_exercise
+prompt: exercise
+description: Practice a classical logic exercise from the textbook.
+order: 53
+validation: {}

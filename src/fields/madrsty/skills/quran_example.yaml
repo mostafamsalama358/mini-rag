@@ -1,0 +1,10 @@
+id: quran_example
+name: Example
+subject: quran
+subject_label: القرآن الكريم
+intent: example
+profile: quran_example
+prompt: example
+description: Worked or textbook example in quran.
+order: 52
+validation: {}

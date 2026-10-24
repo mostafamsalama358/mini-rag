@@ -1,0 +1,10 @@
+id: physics_exercise
+name: Exercise
+subject: physics
+subject_label: الفيزياء
+intent: exercise
+profile: physics_exercise
+prompt: exercise
+description: Practice a physics exercise from the textbook.
+order: 53
+validation: {}

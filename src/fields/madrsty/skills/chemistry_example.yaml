@@ -1,0 +1,10 @@
+id: chemistry_example
+name: Example
+subject: chemistry
+subject_label: الكيمياء
+intent: example
+profile: chemistry_example
+prompt: example
+description: Worked or textbook example in chemistry.
+order: 52
+validation: {}

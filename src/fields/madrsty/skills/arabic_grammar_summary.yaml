@@ -1,0 +1,10 @@
+id: arabic_grammar_summary
+name: Summary
+subject: arabic_grammar
+subject_label: عربي (نحو وصرف)
+intent: summary
+profile: arabic_grammar_summary
+prompt: summary
+description: Summarize a arabic grammar lesson or section.
+order: 51
+validation: {}

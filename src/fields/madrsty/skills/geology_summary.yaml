@@ -1,0 +1,10 @@
+id: geology_summary
+name: Summary
+subject: geology
+subject_label: الجيولوجيا
+intent: summary
+profile: geology_summary
+prompt: summary
+description: Summarize a geology lesson or section.
+order: 51
+validation: {}

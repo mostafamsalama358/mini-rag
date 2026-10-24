@@ -1,0 +1,10 @@
+id: arabic_summary
+name: Summary
+subject: arabic
+subject_label: اللغة العربية
+intent: summary
+profile: arabic_summary
+prompt: summary
+description: Summarize a arabic lesson or section.
+order: 51
+validation: {}

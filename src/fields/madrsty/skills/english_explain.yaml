@@ -1,0 +1,10 @@
+id: english_explain
+name: Explain
+subject: english
+subject_label: اللغة الإنجليزية
+intent: explain
+profile: english_explain
+prompt: explain
+description: Explain a english concept from the textbook.
+order: 50
+validation: {}

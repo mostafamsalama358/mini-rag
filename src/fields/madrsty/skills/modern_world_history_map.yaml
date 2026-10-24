@@ -1,0 +1,10 @@
+id: modern_world_history_map
+name: Map
+subject: modern_world_history
+subject_label: تاريخ العالم الحديث المعاصر
+intent: map
+profile: modern_world_history_map
+prompt: map
+description: Answer a map or figure question from the modern world history textbook.
+order: 55
+validation: {}

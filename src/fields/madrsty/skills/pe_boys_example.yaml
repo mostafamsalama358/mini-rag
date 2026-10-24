@@ -1,0 +1,10 @@
+id: pe_boys_example
+name: Example
+subject: pe_boys
+subject_label: التربية البدنية - بنين
+intent: example
+profile: pe_boys_example
+prompt: example
+description: Worked or textbook example in pe boys.
+order: 52
+validation: {}

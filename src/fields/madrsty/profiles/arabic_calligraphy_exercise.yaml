@@ -1,0 +1,6 @@
+id: arabic_calligraphy_exercise
+filters:
+  extra:
+    subject: arabic_calligraphy
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

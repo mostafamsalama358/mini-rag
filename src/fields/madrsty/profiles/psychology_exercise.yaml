@@ -1,0 +1,6 @@
+id: psychology_exercise
+filters:
+  extra:
+    subject: psychology
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

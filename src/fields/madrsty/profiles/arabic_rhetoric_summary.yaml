@@ -1,0 +1,6 @@
+id: arabic_rhetoric_summary
+filters:
+  extra:
+    subject: arabic_rhetoric
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

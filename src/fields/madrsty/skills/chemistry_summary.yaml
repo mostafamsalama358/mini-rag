@@ -1,0 +1,10 @@
+id: chemistry_summary
+name: Summary
+subject: chemistry
+subject_label: الكيمياء
+intent: summary
+profile: chemistry_summary
+prompt: summary
+description: Summarize a chemistry lesson or section.
+order: 51
+validation: {}

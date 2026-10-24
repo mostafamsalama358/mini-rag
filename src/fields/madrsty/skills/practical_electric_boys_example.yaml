@@ -1,0 +1,10 @@
+id: practical_electric_boys_example
+name: Example
+subject: practical_electric_boys
+subject_label: الدراسات العملية / الكهرباء - بنين
+intent: example
+profile: practical_electric_boys_example
+prompt: example
+description: Worked or textbook example in practical electric boys.
+order: 52
+validation: {}

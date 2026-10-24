@@ -1,0 +1,10 @@
+id: constitution_summary
+name: Summary
+subject: constitution
+subject_label: الدستور
+intent: summary
+profile: constitution_summary
+prompt: summary
+description: Summarize a constitution lesson or section.
+order: 51
+validation: {}

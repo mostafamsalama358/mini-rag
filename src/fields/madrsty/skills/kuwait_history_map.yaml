@@ -1,0 +1,10 @@
+id: kuwait_history_map
+name: Map
+subject: kuwait_history
+subject_label: تاريخ الكويت
+intent: map
+profile: kuwait_history_map
+prompt: map
+description: Answer a map or figure question from the kuwait history textbook.
+order: 55
+validation: {}

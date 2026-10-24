@@ -1,0 +1,10 @@
+id: tafsir_summary
+name: Summary
+subject: tafsir
+subject_label: التفسير
+intent: summary
+profile: tafsir_summary
+prompt: summary
+description: Summarize a tafsir lesson or section.
+order: 51
+validation: {}

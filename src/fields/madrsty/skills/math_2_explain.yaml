@@ -1,0 +1,10 @@
+id: math_2_explain
+name: Explain
+subject: math_2
+subject_label: رياضيات 2
+intent: explain
+profile: math_2_explain
+prompt: explain
+description: Explain a math 2 concept from the textbook.
+order: 50
+validation: {}

@@ -1,0 +1,10 @@
+id: modern_world_history_example
+name: Example
+subject: modern_world_history
+subject_label: تاريخ العالم الحديث المعاصر
+intent: example
+profile: modern_world_history_example
+prompt: example
+description: Worked or textbook example in modern world history.
+order: 52
+validation: {}

@@ -1,0 +1,10 @@
+id: my_kuwait_example
+name: Example
+subject: my_kuwait
+subject_label: بلادي الكويت
+intent: example
+profile: my_kuwait_example
+prompt: example
+description: Worked or textbook example in my kuwait.
+order: 52
+validation: {}

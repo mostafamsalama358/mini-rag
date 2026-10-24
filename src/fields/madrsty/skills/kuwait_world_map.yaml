@@ -1,0 +1,10 @@
+id: kuwait_world_map
+name: Map
+subject: kuwait_world
+subject_label: الكويت والعالم الإسلامي
+intent: map
+profile: kuwait_world_map
+prompt: map
+description: Answer a map or figure question from the kuwait world textbook.
+order: 55
+validation: {}

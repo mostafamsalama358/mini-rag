@@ -1,0 +1,10 @@
+id: practical_decor_girls_example
+name: Example
+subject: practical_decor_girls
+subject_label: الدراسات العملية / الديكور - بنات
+intent: example
+profile: practical_decor_girls_example
+prompt: example
+description: Worked or textbook example in practical decor girls.
+order: 52
+validation: {}

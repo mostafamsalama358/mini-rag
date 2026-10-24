@@ -1,0 +1,10 @@
+id: islamic_history_map
+name: Map
+subject: islamic_history
+subject_label: التاريخ الإسلامي
+intent: map
+profile: islamic_history_map
+prompt: map
+description: Answer a map or figure question from the islamic history textbook.
+order: 55
+validation: {}

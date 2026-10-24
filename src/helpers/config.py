@@ -20,7 +20,8 @@ class Settings(BaseSettings):
     APP_VERSION: str
 
     FILE_ALLOWED_TYPES: list
-    FILE_MAX_SIZE: int
+    # Megabytes. Upload and ingest both stop at this size (150 MB).
+    FILE_MAX_SIZE: int = 150
     FILE_DEFAULT_CHUNK_SIZE: int
     TEXT_CHUNK_SIZE: int = 800
     TEXT_CHUNK_OVERLAP: int = 120
@@ -95,7 +96,8 @@ class Settings(BaseSettings):
     # Min extracted chars for a page to count as searchable (text layer present).
     # Below this, hybrid/legacy routes the page to OCR.
     PDF_SEARCHABLE_MIN_CHARS: int = 50
-    # If searchable_page_ratio < threshold, skip OpenDataLoader and use OCR path.
+    # No longer chooses the parser. Hybrid always uses OpenDataLoader when Java
+    # and the package are installed. Kept so existing env files still load.
     PDF_SEARCHABLE_RATIO_THRESHOLD: float = 0.05
 
     RAG_HISTORY_MODE: str = "auto"
@@ -176,6 +178,9 @@ class Settings(BaseSettings):
     # Normalized answer similarity below this threshold counts as shadow divergence.
     RAG_PIPELINE_SHADOW_DIVERGENCE_THRESHOLD: float = 0.85
 
+    # answers_local mapper tables. Empty uses localhost\\SQLEXPRESS.
+    ANSWERS_SQLSERVER_CONNECTION: str = ""
+
     # Ingest reliability / scalability (017) — sole-path control plane
     # Master enable: when false, process endpoints keep legacy task-only behavior.
     INGEST_RELIABILITY_ENABLED: bool = True
@@ -189,8 +194,9 @@ class Settings(BaseSettings):
     INGEST_MAX_BACKLOG: int = 64
     # Bytes above which a document is classified as large-document workload class.
     INGEST_LARGE_DOCUMENT_BYTES: int = 5_000_000
-    # Hard max upload/process size in bytes (fail-fast). 0 = use FILE_MAX_SIZE * 1024 * 1024.
-    INGEST_HARD_MAX_BYTES: int = 0
+    # Hard max upload/process size in bytes (fail-fast). Matches FILE_MAX_SIZE (150 MB).
+    # 0 = use FILE_MAX_SIZE * 1024 * 1024.
+    INGEST_HARD_MAX_BYTES: int = 150 * 1024 * 1024
     # Max parse wall time seconds before Timed Out escalation.
     INGEST_PARSE_TIMEOUT_SECONDS: int = 900
     # Max job wall time seconds before Timed Out.
@@ -220,6 +226,9 @@ class Settings(BaseSettings):
     CELERY_TASK_RETENTION_SECONDS: int = 86400
 
     AUTH_USER_ID_HEADER: str = "X-User-Id"
+    # When non-empty, /api/v1/data and /api/v1/nlp require this token via
+    # Authorization: Bearer <token> or X-Service-Key.
+    MINIRAG_SERVICE_API_KEY: str = ""
 
     HF_TOKEN: Optional[str] = None
     HF_HOME: str = "/root/.cache/huggingface"

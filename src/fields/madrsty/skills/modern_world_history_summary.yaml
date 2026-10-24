@@ -1,0 +1,10 @@
+id: modern_world_history_summary
+name: Summary
+subject: modern_world_history
+subject_label: تاريخ العالم الحديث المعاصر
+intent: summary
+profile: modern_world_history_summary
+prompt: summary
+description: Summarize a modern world history lesson or section.
+order: 51
+validation: {}

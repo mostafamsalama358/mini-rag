@@ -1,0 +1,10 @@
+id: arabic_dialogue
+name: Dialogue
+subject: arabic
+subject_label: اللغة العربية
+intent: dialogue
+profile: arabic_dialogue
+prompt: dialogue
+description: Answer a dialogue question from the Arabic textbook.
+order: 55
+validation: {}

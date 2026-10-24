@@ -1,0 +1,10 @@
+id: math_2_exercise
+name: Exercise
+subject: math_2
+subject_label: رياضيات 2
+intent: exercise
+profile: math_2_exercise
+prompt: exercise
+description: Practice a math 2 exercise from the textbook.
+order: 53
+validation: {}

@@ -1,0 +1,10 @@
+id: arabic_rhetoric_explain
+name: Explain
+subject: arabic_rhetoric
+subject_label: عربي (فنون بلاغة)
+intent: explain
+profile: arabic_rhetoric_explain
+prompt: explain
+description: Explain a arabic rhetoric concept from the textbook.
+order: 50
+validation: {}

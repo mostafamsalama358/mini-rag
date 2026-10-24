@@ -1,0 +1,6 @@
+id: home_economics_example
+filters:
+  extra:
+    subject: home_economics
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

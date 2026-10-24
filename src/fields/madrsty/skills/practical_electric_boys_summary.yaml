@@ -1,0 +1,10 @@
+id: practical_electric_boys_summary
+name: Summary
+subject: practical_electric_boys
+subject_label: الدراسات العملية / الكهرباء - بنين
+intent: summary
+profile: practical_electric_boys_summary
+prompt: summary
+description: Summarize a practical electric boys lesson or section.
+order: 51
+validation: {}

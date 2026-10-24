@@ -633,6 +633,58 @@ a:hover {
   gap: 0.5rem;
 }
 
+.skill-scope-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.skill-scope-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 12rem;
+}
+
+.skill-scope-field span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.skill-select {
+  width: 100%;
+  background: var(--bg-input);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.65rem 2.2rem 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  appearance: none;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+}
+
+.skill-scope-row[dir="rtl"] .skill-select {
+  background-position: left 0.75rem center;
+  padding: 0.65rem 0.75rem 0.65rem 2.2rem;
+}
+
+.skill-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.skill-select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .skill-btn,
 .skill-subject-btn,
 .skill-class-btn {

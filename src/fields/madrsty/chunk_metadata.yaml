@@ -1,5 +1,5 @@
-# Educational chunk metadata. subject/grade/book come from document_detectors
-# (filename) so Skill extra.subject JSONB filters match at retrieval time.
+# Educational chunk metadata. subject/book may come from filename detectors.
+# grade is supplied by the upload (asset_config) and is not inferred from the file name.
 label_template: "{book} — page {page}"
 extra_keys:
   - file_name
@@ -11,6 +11,13 @@ extra_keys:
   - field_name
   - chapter
   - lesson
+  - country
+  - section
+  - stage
+  - semester
+  - unit_id
+  - lesson_id
+  - attachment_id
 
 enrichment:
   enabled: true
@@ -47,25 +54,21 @@ enrichment:
     - file_name_regex: '(?i)الفرنس|french'
       attributes:
         subject: french
-        grade: "11"
         term: "1"
         book: "اللغة الفرنسية — الصف الحادي عشر"
     - file_name_regex: '(?i)الجغرافيا|geography'
       attributes:
         subject: geography
-        grade: "11"
         term: "1"
         book: "مبادئ علم الجغرافيا والاقتصاد — الصف الحادي عشر"
     - file_name_regex: '(?i)احصاء|إحصاء|statistics'
       attributes:
         subject: statistics
-        grade: "11"
         term: "1"
         book: "الإحصاء — الصف الحادي عشر"
     - file_name_regex: '(?i)علم\s*النفس|علم\s*الاجتماع|psychology|sociology'
       attributes:
         subject: psychology
-        grade: "11"
         term: "1"
         book: "علم النفس وعلم الاجتماع — الصف الحادي عشر"
     - file_name_regex: '(?i)علوم|(?:^|[^a-z])science(?:[^a-z]|$)'

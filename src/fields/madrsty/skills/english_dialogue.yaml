@@ -1,0 +1,10 @@
+id: english_dialogue
+name: Dialogue
+subject: english
+subject_label: اللغة الإنجليزية
+intent: dialogue
+profile: english_dialogue
+prompt: dialogue
+description: Answer a dialogue question from the English textbook.
+order: 55
+validation: {}

@@ -1,0 +1,10 @@
+id: home_economics_explain
+name: Explain
+subject: home_economics
+subject_label: الاقتصاد المنزلي
+intent: explain
+profile: home_economics_explain
+prompt: explain
+description: Explain a home economics concept from the textbook.
+order: 50
+validation: {}

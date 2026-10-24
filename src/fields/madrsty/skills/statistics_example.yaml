@@ -1,0 +1,10 @@
+id: statistics_example
+name: Example
+subject: statistics
+subject_label: الإحصاء
+intent: example
+profile: statistics_example
+prompt: example
+description: Worked or textbook example in statistics.
+order: 52
+validation: {}

@@ -26,6 +26,7 @@ from .schema import (
     create_collection as _create_collection,
     create_vector_index as _create_vector_index,
     delete_collection as _delete_collection,
+    delete_vectors_by_asset_id as _delete_vectors_by_asset_id,
     disconnect as _disconnect,
     get_collection_info as _get_collection_info,
     is_collection_existed as _is_collection_existed,
@@ -85,6 +86,21 @@ class PGVectorProvider(VectorDBInterface):
 
     async def delete_collection(self, collection_name: str):
         return await _delete_collection(self.db_client, self.logger, collection_name)
+
+    async def delete_vectors_by_asset_id(
+        self,
+        collection_name: str,
+        project_id: int,
+        asset_id: int,
+    ) -> int:
+        """Remove vector rows for one asset before deleting its chunk rows."""
+        return await _delete_vectors_by_asset_id(
+            self.db_client,
+            self.logger,
+            collection_name,
+            project_id,
+            asset_id,
+        )
 
     async def create_collection(self, collection_name: str, embedding_size: int, do_reset: bool = False):
         return await _create_collection(

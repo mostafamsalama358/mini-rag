@@ -1,0 +1,10 @@
+id: art_explain
+name: Explain
+subject: art
+subject_label: التربية الفنية
+intent: explain
+profile: art_explain
+prompt: explain
+description: Explain a art concept from the textbook.
+order: 50
+validation: {}

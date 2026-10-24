@@ -217,7 +217,12 @@ def _apply_document_detectors(
     meta: dict[str, Any],
     detectors: list[MetadataDocumentDetector],
 ) -> None:
-    """Copy pack filename attributes onto chunk metadata (fill-only)."""
+    """Copy pack filename attributes onto chunk metadata (fill-only).
+
+    Keys already set by the upload are left untouched. Callers also restore
+    ``DOCUMENT_ATTRIBUTE_KEYS`` after this pass so a detector cannot replace
+    ``grade`` or ``subject`` during chunking or vector indexing.
+    """
     file_name = str(meta.get("file_name") or "")
     if not file_name or not detectors:
         return
@@ -234,7 +239,47 @@ def _apply_document_detectors(
         break
 
 
-DOCUMENT_ATTRIBUTE_KEYS = ("subject", "grade", "term", "book")
+# Canonical chunk keys. Egaabat aliases are accepted on input and stored here.
+_ATTRIBUTE_SOURCES: dict[str, tuple[str, ...]] = {
+    "subject": ("subject", "subjectId", "subject_id"),
+    "grade": ("grade", "classId", "class_id"),
+    "term": ("term",),
+    "book": ("book",),
+    "content_id": ("content_id", "contentId"),
+    "content_type": ("content_type", "contentType"),
+    "unit_id": ("unit_id", "unitId"),
+    "lesson_id": ("lesson_id", "lessonId"),
+    "country": ("country", "countryId", "country_id"),
+    "section": ("section", "sectionId", "section_id"),
+    "stage": ("stage", "stageId", "stage_id"),
+    "semester": ("semester", "semesterId", "semester_id"),
+    "attachment_id": ("attachment_id", "attachmentId"),
+    "checksum_sha256": ("checksum_sha256", "checksumSha256"),
+    "content_version": ("content_version", "contentVersion"),
+}
+
+DOCUMENT_ATTRIBUTE_KEYS = tuple(_ATTRIBUTE_SOURCES)
+
+
+def _uploaded_attribute_value(source: dict[str, Any], keys: tuple[str, ...]) -> Any:
+    """First non-empty alias. Strings are stripped; numbers are kept as-is."""
+    for key in keys:
+        if key not in source:
+            continue
+        value = source[key]
+        if value is None or isinstance(value, bool):
+            continue
+        if isinstance(value, str):
+            stripped = value.strip()
+            if stripped:
+                return stripped
+            continue
+        if isinstance(value, (int, float)):
+            return value
+        text = str(value).strip()
+        if text:
+            return text
+    return None
 
 
 def overlay_document_attributes(
@@ -243,17 +288,31 @@ def overlay_document_attributes(
 ) -> dict[str, Any]:
     """Copy upload document attributes onto chunk metadata.
 
-    Explicit asset values win over filename detectors so two files that share
-    a name (علوم.pdf in G8a and G9a) keep the class they were uploaded with.
+    Explicit asset values win over filename detectors. ``classId`` is stored as
+    ``grade`` and ``subjectId`` as ``subject``. Two files that share a name keep
+    the class they were uploaded with.
     """
     out = dict(metadata or {})
     if not isinstance(source, dict):
         return out
-    for key in DOCUMENT_ATTRIBUTE_KEYS:
-        value = source.get(key)
-        if isinstance(value, str) and value.strip():
-            out[key] = value.strip()
+    for key, aliases in _ATTRIBUTE_SOURCES.items():
+        value = _uploaded_attribute_value(source, aliases)
+        if value is not None:
+            out[key] = value
     return out
+
+
+def _protected_document_attributes(meta: dict[str, Any]) -> dict[str, Any]:
+    """Values a filename detector must not replace."""
+    protected: dict[str, Any] = {}
+    for key in DOCUMENT_ATTRIBUTE_KEYS:
+        if key not in meta:
+            continue
+        value = meta.get(key)
+        if value in (None, ""):
+            continue
+        protected[key] = value
+    return protected
 
 
 def _primary_field_from_sections(
@@ -283,7 +342,9 @@ def enrich_chunk_metadata(
             meta["metadata_reject_reason"] = "entity_missing"
         return meta
 
+    protected_attributes = _protected_document_attributes(meta)
     _apply_document_detectors(meta, rules.document_detectors)
+    meta.update(protected_attributes)
 
     field_names = extract_field_names(text, rules.field_patterns)
     sections = extract_sections(text, section_header_pattern=rules.section_header_pattern)

@@ -1,0 +1,10 @@
+id: fiqh_explain
+name: Explain
+subject: fiqh
+subject_label: الفقه التحريري
+intent: explain
+profile: fiqh_explain
+prompt: explain
+description: Explain a fiqh concept from the textbook.
+order: 50
+validation: {}

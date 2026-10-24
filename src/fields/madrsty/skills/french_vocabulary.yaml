@@ -1,0 +1,10 @@
+id: french_vocabulary
+name: Vocabulary
+subject: french
+subject_label: اللغة الفرنسية
+intent: vocabulary
+profile: french_vocabulary
+prompt: vocabulary
+description: Teach vocabulary from the French textbook.
+order: 27
+validation: {}

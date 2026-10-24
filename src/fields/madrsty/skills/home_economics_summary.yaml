@@ -1,0 +1,10 @@
+id: home_economics_summary
+name: Summary
+subject: home_economics
+subject_label: الاقتصاد المنزلي
+intent: summary
+profile: home_economics_summary
+prompt: summary
+description: Summarize a home economics lesson or section.
+order: 51
+validation: {}

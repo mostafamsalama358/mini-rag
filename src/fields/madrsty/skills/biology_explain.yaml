@@ -1,0 +1,10 @@
+id: biology_explain
+name: Explain
+subject: biology
+subject_label: الأحياء
+intent: explain
+profile: biology_explain
+prompt: explain
+description: Explain a biology concept from the textbook.
+order: 50
+validation: {}

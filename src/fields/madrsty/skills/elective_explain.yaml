@@ -1,0 +1,10 @@
+id: elective_explain
+name: Explain
+subject: elective
+subject_label: اختياري حر
+intent: explain
+profile: elective_explain
+prompt: explain
+description: Explain a elective concept from the textbook.
+order: 50
+validation: {}

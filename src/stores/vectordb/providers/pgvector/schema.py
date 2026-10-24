@@ -37,6 +37,10 @@ def _default_index_name(collection_name: str) -> str:
     return f"{collection_name}_vector_idx"
 
 
+def _chunk_id_index_name(collection_name: str) -> str:
+    return f"{collection_name}_chunk_id_idx"
+
+
 async def connect(db_client, logger: logging.Logger) -> None:
     async with db_client() as session:
         try:
@@ -171,11 +175,76 @@ async def create_collection(
                 )
                 await session.execute(metadata_idx_sql)
 
+                chunk_id_idx_sql = sql_text(
+                    f'CREATE INDEX IF NOT EXISTS "{_chunk_id_index_name(collection_name)}" '
+                    f'ON "{collection_name}" ({PgVectorTableSchemeEnums.CHUNK_ID.value})'
+                )
+                await session.execute(chunk_id_idx_sql)
+
                 await session.commit()
 
         return True
 
+    await ensure_chunk_id_index(db_client, collection_name)
     return False
+
+
+async def ensure_chunk_id_index(db_client, collection_name: str) -> None:
+    """B-tree on chunk_id so a single-asset delete does not scan the collection."""
+    collection_name = _validate_identifier(collection_name)
+    index_name = _validate_identifier(_chunk_id_index_name(collection_name))
+    chunk_col = PgVectorTableSchemeEnums.CHUNK_ID.value
+    async with db_client() as session:
+        async with session.begin():
+            await session.execute(
+                sql_text(
+                    f'CREATE INDEX IF NOT EXISTS "{index_name}" '
+                    f'ON "{collection_name}" ({chunk_col})'
+                )
+            )
+            await session.commit()
+
+
+async def delete_vectors_by_asset_id(
+    db_client,
+    logger: logging.Logger,
+    collection_name: str,
+    project_id: int,
+    asset_id: int,
+) -> int:
+    """Delete vector rows that reference chunks of one asset.
+
+    Call this before ``delete_chunks_by_asset_id``. The collection foreign key
+    has no ON DELETE CASCADE, so removing chunks first raises.
+    """
+    collection_name = _validate_identifier(collection_name)
+    if not await is_collection_existed(db_client, collection_name):
+        return 0
+
+    await ensure_chunk_id_index(db_client, collection_name)
+    chunk_col = PgVectorTableSchemeEnums.CHUNK_ID.value
+    delete_sql = sql_text(
+        f'DELETE FROM "{collection_name}" '
+        f'WHERE {chunk_col} IN ('
+        f' SELECT chunk_id FROM chunks'
+        f' WHERE chunk_project_id = :project_id'
+        f' AND chunk_asset_id = :asset_id'
+        f')'
+    )
+    async with db_client() as session:
+        async with session.begin():
+            logger.info(
+                "Deleting vectors for asset_id=%s project_id=%s collection=%s",
+                asset_id,
+                project_id,
+                collection_name,
+            )
+            result = await session.execute(
+                delete_sql,
+                {"project_id": int(project_id), "asset_id": int(asset_id)},
+            )
+            await session.commit()
+            return int(result.rowcount or 0)
 
 
 async def is_index_existed(db_client, collection_name: str) -> bool:

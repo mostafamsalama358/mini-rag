@@ -1,0 +1,10 @@
+id: elective_exercise
+name: Exercise
+subject: elective
+subject_label: اختياري حر
+intent: exercise
+profile: elective_exercise
+prompt: exercise
+description: Practice a elective exercise from the textbook.
+order: 53
+validation: {}

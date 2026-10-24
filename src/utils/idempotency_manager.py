@@ -14,6 +14,23 @@ def _as_aware_utc(value: datetime | None) -> datetime | None:
         return value.replace(tzinfo=timezone.utc)
     return value.astimezone(timezone.utc)
 
+# Floor for the stuck-task window. OCR of a textbook stays STARTED far longer
+# than 120s, and CELERY_LONG_TASK_TIME_LIMIT is 3600s. A shorter window lets a
+# poller start a second chunk pass while the first is still running.
+LONG_TASK_FLOOR_SECONDS = 3600
+
+
+def stuck_task_window_seconds(task_time_limit: int | None) -> int:
+    """Seconds a PENDING/STARTED task stays exclusive before it may be retried."""
+    try:
+        limit = int(task_time_limit or 0)
+    except (TypeError, ValueError):
+        limit = 0
+    if limit < 0:
+        limit = 0
+    return max(limit, LONG_TASK_FLOOR_SECONDS)
+
+
 class IdempotencyManager:
 
     def __init__(self, db_client, db_engine):
@@ -118,8 +135,8 @@ class IdempotencyManager:
         if existing_task.status == 'SUCCESS':
             return False, existing_task
             
-        # Re-run if a worker died mid-task (OCR can take minutes and may OOM).
-        stuck_after_seconds = min(120, max(90, task_time_limit // 5))
+        # Re-run only after the long-task limit. A 120s window double-runs OCR.
+        stuck_after_seconds = stuck_task_window_seconds(task_time_limit)
         if existing_task.status in ['PENDING', 'STARTED', 'RETRY']:
             started_at = _as_aware_utc(existing_task.started_at)
             if started_at:

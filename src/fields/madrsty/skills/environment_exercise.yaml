@@ -1,0 +1,10 @@
+id: environment_exercise
+name: Exercise
+subject: environment
+subject_label: قضايا البيئة والتنمية المعاصرة
+intent: exercise
+profile: environment_exercise
+prompt: exercise
+description: Practice a environment exercise from the textbook.
+order: 53
+validation: {}

@@ -1,0 +1,10 @@
+id: arabic_literature_explain
+name: Explain
+subject: arabic_literature
+subject_label: عربي (عروض وأدب)
+intent: explain
+profile: arabic_literature_explain
+prompt: explain
+description: Explain a arabic literature concept from the textbook.
+order: 50
+validation: {}

@@ -1,0 +1,6 @@
+id: tafsir_example
+filters:
+  extra:
+    subject: tafsir
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

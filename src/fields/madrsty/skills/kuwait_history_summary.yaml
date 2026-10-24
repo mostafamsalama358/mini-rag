@@ -1,0 +1,10 @@
+id: kuwait_history_summary
+name: Summary
+subject: kuwait_history
+subject_label: تاريخ الكويت
+intent: summary
+profile: kuwait_history_summary
+prompt: summary
+description: Summarize a kuwait history lesson or section.
+order: 51
+validation: {}

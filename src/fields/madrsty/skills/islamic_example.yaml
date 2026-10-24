@@ -1,0 +1,10 @@
+id: islamic_example
+name: Example
+subject: islamic
+subject_label: التربية الإسلامية
+intent: example
+profile: islamic_example
+prompt: example
+description: Worked or textbook example in islamic.
+order: 52
+validation: {}

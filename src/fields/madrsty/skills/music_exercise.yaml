@@ -1,0 +1,10 @@
+id: music_exercise
+name: Exercise
+subject: music
+subject_label: التربية الموسيقية
+intent: exercise
+profile: music_exercise
+prompt: exercise
+description: Practice a music exercise from the textbook.
+order: 53
+validation: {}

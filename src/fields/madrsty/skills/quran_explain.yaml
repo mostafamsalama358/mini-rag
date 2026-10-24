@@ -1,0 +1,10 @@
+id: quran_explain
+name: Explain
+subject: quran
+subject_label: القرآن الكريم
+intent: explain
+profile: quran_explain
+prompt: explain
+description: Explain a quran concept from the textbook.
+order: 50
+validation: {}

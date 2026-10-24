@@ -1,0 +1,10 @@
+id: geology_example
+name: Example
+subject: geology
+subject_label: الجيولوجيا
+intent: example
+profile: geology_example
+prompt: example
+description: Worked or textbook example in geology.
+order: 52
+validation: {}

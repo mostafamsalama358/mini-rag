@@ -1,0 +1,10 @@
+id: biology_exercise
+name: Exercise
+subject: biology
+subject_label: الأحياء
+intent: exercise
+profile: biology_exercise
+prompt: exercise
+description: Practice a biology exercise from the textbook.
+order: 53
+validation: {}

@@ -9,6 +9,7 @@ const state = {
   selectedClassId: localStorage.getItem("algorag.selectedClassId") || "",
   skills: [],
   classes: [],
+  curriculum: null,
   uploading: false,
 };
 
@@ -194,7 +195,7 @@ function uniqueSubjects(skills) {
 function skillHintCopy() {
   const ar = uiLanguage() === "ar";
   if (state.classes.length && !state.selectedClassId) {
-    return ar ? "اختر الفصل أولاً." : "Select a class first.";
+    return ar ? "اختر الصف أولاً." : "Select a grade first.";
   }
   if (isGroupedSkillCatalog(state.skills)) {
     if (!state.selectedSubject) {
@@ -247,10 +248,92 @@ function selectedClassSubjects() {
   return classDef.subjects;
 }
 
+const INTENT_LABELS_AR = {
+  explain: "شرح",
+  summary: "ملخص",
+  example: "مثال",
+  exercise: "تمرين",
+  formula: "قانون",
+  map: "خريطة",
+  grammar: "قواعد",
+  vocabulary: "مفردات",
+  dialogue: "حوار",
+  culture: "ثقافة",
+};
+
+function intentChipLabel(skill) {
+  if (uiLanguage() === "ar" && skill.intent && INTENT_LABELS_AR[skill.intent]) {
+    return INTENT_LABELS_AR[skill.intent];
+  }
+  return skill.name || skill.intent || skill.id;
+}
+
+function classGroups(classes, curriculum) {
+  const byId = new Map(classes.map((item) => [item.id, item]));
+  const used = new Set();
+  const groups = [];
+  const countries = (curriculum && curriculum.countries) || [];
+  countries.forEach((country) => {
+    (country.sections || []).forEach((section) => {
+      (section.stages || []).forEach((stage) => {
+        const items = (stage.grades || []).map((id) => byId.get(id)).filter(Boolean);
+        items.forEach((item) => used.add(item.id));
+        if (items.length) groups.push({ label: stage.label || stage.id, items });
+      });
+    });
+  });
+  const rest = classes.filter((item) => !used.has(item.id));
+  if (rest.length) groups.push({ label: "", items: rest });
+  if (!groups.length) groups.push({ label: "", items: classes });
+  return groups;
+}
+
+function makeSelect({ ariaLabel, value, placeholder, groups, disabled, onChange }) {
+  const select = document.createElement("select");
+  select.className = "skill-select";
+  select.setAttribute("aria-label", ariaLabel);
+  select.disabled = !!disabled;
+  const blank = document.createElement("option");
+  blank.value = "";
+  blank.textContent = placeholder;
+  select.appendChild(blank);
+  (groups || []).forEach((group) => {
+    const parent = group.label ? document.createElement("optgroup") : select;
+    if (group.label) {
+      parent.label = group.label;
+      select.appendChild(parent);
+    }
+    group.items.forEach((item) => {
+      const option = document.createElement("option");
+      option.value = item.id;
+      option.textContent = item.label || item.id;
+      if (item.title) option.title = item.title;
+      if (item.disabled) option.disabled = true;
+      parent.appendChild(option);
+    });
+  });
+  const known = (groups || []).some((group) => group.items.some((item) => item.id === value && !item.disabled));
+  select.value = known ? value : "";
+  select.addEventListener("change", () => onChange(select.value));
+  return select;
+}
+
+function scopeField(label, control) {
+  const field = document.createElement("label");
+  field.className = "skill-scope-field";
+  const caption = document.createElement("span");
+  caption.textContent = label;
+  field.appendChild(caption);
+  field.appendChild(control);
+  return field;
+}
+
 function renderGroupedSkillPicker(picker) {
   picker.style.flexDirection = "column";
   const classSubjects = selectedClassSubjects();
-  const subjects = classSubjects
+  const subjects = (state.classes.length && !state.selectedClassId)
+    ? []
+    : classSubjects
     ? classSubjects.map((subject) => ({
         id: subject.id,
         label: subject.label || subject.id,
@@ -258,31 +341,35 @@ function renderGroupedSkillPicker(picker) {
       }))
     : uniqueSubjects(state.skills).map((subject) => ({ ...subject, ready: true }));
 
+  const ar = uiLanguage() === "ar";
+  const scopeRow = document.createElement("div");
+  scopeRow.className = "skill-scope-row";
+  scopeRow.dir = ar ? "rtl" : "ltr";
+
   if (state.classes.length) {
-    const classRow = document.createElement("div");
-    classRow.className = "skill-picker-row";
-    state.classes.forEach((classDef) => {
-      classRow.appendChild(makeChip({
-        className: "skill-class-btn",
-        label: classDef.label || classDef.id,
-        title: classDef.label || classDef.id,
-        selected: classDef.id === state.selectedClassId,
-        onClick: () => {
-          if (state.selectedClassId !== classDef.id) {
+    const project = getActiveProject();
+    scopeRow.appendChild(scopeField(
+      ar ? "الصف" : "Grade",
+      makeSelect({
+        ariaLabel: ar ? "الصف" : "Grade",
+        value: state.selectedClassId,
+        placeholder: ar ? "اختر الصف" : "Select a grade",
+        groups: classGroups(state.classes, (project && project.curriculum) || state.curriculum),
+        onChange: (gradeId) => {
+          if (state.selectedClassId !== gradeId) {
             state.selectedSubject = "";
             state.selectedSkillId = "";
             localStorage.removeItem("algorag.selectedSubject");
             localStorage.removeItem("algorag.selectedSkillId");
           }
-          state.selectedClassId = classDef.id;
-          localStorage.setItem("algorag.selectedClassId", classDef.id);
+          state.selectedClassId = gradeId;
+          if (gradeId) localStorage.setItem("algorag.selectedClassId", gradeId);
+          else localStorage.removeItem("algorag.selectedClassId");
           refreshSkillPicker();
           updateSendGate();
         },
-      }));
-    });
-    picker.appendChild(classRow);
-    if (!state.selectedClassId) return;
+      }),
+    ));
   }
 
   const bound = state.skills.find((s) => s.id === state.selectedSkillId);
@@ -297,45 +384,57 @@ function renderGroupedSkillPicker(picker) {
     localStorage.removeItem("algorag.selectedSkillId");
   }
 
-  const subjectRow = document.createElement("div");
-  subjectRow.className = "skill-picker-row";
-  subjects.forEach((subject) => {
-    const ready = subject.ready !== false;
-    subjectRow.appendChild(makeChip({
-      className: "skill-subject-btn",
-      label: subject.label,
-      title: ready
-        ? subject.label
-        : (uiLanguage() === "ar" ? `${subject.label} — لسه مش مفهرسة` : `${subject.label} — not indexed yet`),
-      selected: subject.id === state.selectedSubject,
-      disabled: !ready,
-      onClick: () => {
-        if (state.selectedSubject !== subject.id) {
+  scopeRow.appendChild(scopeField(
+    ar ? "المادة" : "Subject",
+    makeSelect({
+      ariaLabel: ar ? "المادة" : "Subject",
+      value: state.selectedSubject,
+      placeholder: ar ? "اختر المادة" : "Select a subject",
+      disabled: state.classes.length > 0 && !state.selectedClassId,
+      groups: [{
+        label: "",
+        items: subjects.map((subject) => {
+          const ready = subject.ready !== false;
+          return {
+            id: subject.id,
+            label: subject.label,
+            disabled: !ready,
+            title: ready
+              ? subject.label
+              : (ar ? `${subject.label} — لسه مش مفهرسة` : `${subject.label} — not indexed yet`),
+          };
+        }),
+      }],
+      onChange: (subjectId) => {
+        if (state.selectedSubject !== subjectId) {
           const current = state.skills.find((s) => s.id === state.selectedSkillId);
-          if (!current || current.subject !== subject.id) {
+          if (!current || current.subject !== subjectId) {
             state.selectedSkillId = "";
             localStorage.removeItem("algorag.selectedSkillId");
           }
         }
-        state.selectedSubject = subject.id;
-        localStorage.setItem("algorag.selectedSubject", subject.id);
+        state.selectedSubject = subjectId;
+        if (subjectId) localStorage.setItem("algorag.selectedSubject", subjectId);
+        else localStorage.removeItem("algorag.selectedSubject");
         refreshSkillPicker();
         updateSendGate();
       },
-    }));
-  });
-  picker.appendChild(subjectRow);
+    }),
+  ));
+  picker.appendChild(scopeRow);
+  if (state.classes.length && !state.selectedClassId) return;
 
   if (!state.selectedSubject) return;
 
   const intentRow = document.createElement("div");
   intentRow.className = "skill-picker-row";
+  intentRow.dir = ar ? "rtl" : "ltr";
   state.skills
     .filter((s) => s.subject === state.selectedSubject)
     .forEach((skill) => {
       intentRow.appendChild(makeChip({
         className: "skill-btn",
-        label: skill.name || skill.intent || skill.id,
+        label: intentChipLabel(skill),
         title: skill.description || skill.id,
         selected: skill.id === state.selectedSkillId,
         onClick: () => {
@@ -353,6 +452,7 @@ function refreshSkillPicker() {
   const project = getActiveProject();
   state.skills = (project && Array.isArray(project.skills)) ? project.skills : [];
   state.classes = (project && Array.isArray(project.classes)) ? project.classes : [];
+  state.curriculum = (project && project.curriculum) || null;
   if (state.selectedClassId && !state.classes.some((item) => item.id === state.selectedClassId)) {
     state.selectedClassId = "";
     localStorage.removeItem("algorag.selectedClassId");
@@ -368,6 +468,7 @@ function refreshSkillPicker() {
     state.selectedSubject = "";
     state.selectedClassId = "";
     state.classes = [];
+    state.curriculum = null;
     localStorage.removeItem("algorag.selectedSkillId");
     localStorage.removeItem("algorag.selectedSubject");
     localStorage.removeItem("algorag.selectedClassId");
@@ -617,7 +718,7 @@ async function runAnswer(text, { showUserBubble = true } = {}) {
   if (!pId) return null;
 
   if (state.classes.length > 0 && !state.selectedClassId) {
-    addMessage("assistant", uiLanguage() === "ar" ? "اختر الفصل أولاً." : "Select a class first.");
+    addMessage("assistant", uiLanguage() === "ar" ? "اختر الصف أولاً." : "Select a grade first.");
     return null;
   }
 

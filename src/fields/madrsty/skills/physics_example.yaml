@@ -1,0 +1,10 @@
+id: physics_example
+name: Example
+subject: physics
+subject_label: الفيزياء
+intent: example
+profile: physics_example
+prompt: example
+description: Worked or textbook example in physics.
+order: 52
+validation: {}

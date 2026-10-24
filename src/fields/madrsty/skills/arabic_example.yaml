@@ -1,0 +1,10 @@
+id: arabic_example
+name: Example
+subject: arabic
+subject_label: اللغة العربية
+intent: example
+profile: arabic_example
+prompt: example
+description: Worked or textbook example in arabic.
+order: 52
+validation: {}

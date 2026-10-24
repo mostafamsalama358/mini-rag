@@ -1,0 +1,10 @@
+id: modern_world_history_explain
+name: Explain
+subject: modern_world_history
+subject_label: تاريخ العالم الحديث المعاصر
+intent: explain
+profile: modern_world_history_explain
+prompt: explain
+description: Explain a modern world history concept from the textbook.
+order: 50
+validation: {}

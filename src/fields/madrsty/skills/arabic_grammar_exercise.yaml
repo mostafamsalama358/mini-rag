@@ -1,0 +1,10 @@
+id: arabic_grammar_exercise
+name: Exercise
+subject: arabic_grammar
+subject_label: عربي (نحو وصرف)
+intent: exercise
+profile: arabic_grammar_exercise
+prompt: exercise
+description: Practice a arabic grammar exercise from the textbook.
+order: 53
+validation: {}

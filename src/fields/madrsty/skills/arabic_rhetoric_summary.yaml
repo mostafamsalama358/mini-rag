@@ -1,0 +1,10 @@
+id: arabic_rhetoric_summary
+name: Summary
+subject: arabic_rhetoric
+subject_label: عربي (فنون بلاغة)
+intent: summary
+profile: arabic_rhetoric_summary
+prompt: summary
+description: Summarize a arabic rhetoric lesson or section.
+order: 51
+validation: {}

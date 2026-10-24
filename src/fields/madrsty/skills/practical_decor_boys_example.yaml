@@ -1,0 +1,10 @@
+id: practical_decor_boys_example
+name: Example
+subject: practical_decor_boys
+subject_label: الدراسات العملية / الديكور - بنين
+intent: example
+profile: practical_decor_boys_example
+prompt: example
+description: Worked or textbook example in practical decor boys.
+order: 52
+validation: {}

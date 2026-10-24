@@ -1,0 +1,10 @@
+id: hadith_explain
+name: Explain
+subject: hadith
+subject_label: الحديث الشريف
+intent: explain
+profile: hadith_explain
+prompt: explain
+description: Explain a hadith concept from the textbook.
+order: 50
+validation: {}

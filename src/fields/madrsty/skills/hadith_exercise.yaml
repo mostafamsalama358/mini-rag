@@ -1,0 +1,10 @@
+id: hadith_exercise
+name: Exercise
+subject: hadith
+subject_label: الحديث الشريف
+intent: exercise
+profile: hadith_exercise
+prompt: exercise
+description: Practice a hadith exercise from the textbook.
+order: 53
+validation: {}

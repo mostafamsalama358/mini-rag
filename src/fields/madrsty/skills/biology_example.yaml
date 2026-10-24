@@ -1,0 +1,10 @@
+id: biology_example
+name: Example
+subject: biology
+subject_label: الأحياء
+intent: example
+profile: biology_example
+prompt: example
+description: Worked or textbook example in biology.
+order: 52
+validation: {}

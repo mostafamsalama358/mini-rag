@@ -1,0 +1,10 @@
+id: kuwait_world_example
+name: Example
+subject: kuwait_world
+subject_label: الكويت والعالم الإسلامي
+intent: example
+profile: kuwait_world_example
+prompt: example
+description: Worked or textbook example in kuwait world.
+order: 52
+validation: {}

@@ -1,0 +1,6 @@
+id: physics_summary
+filters:
+  extra:
+    subject: physics
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

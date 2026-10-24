@@ -1,0 +1,10 @@
+id: art_example
+name: Example
+subject: art
+subject_label: التربية الفنية
+intent: example
+profile: art_example
+prompt: example
+description: Worked or textbook example in art.
+order: 52
+validation: {}

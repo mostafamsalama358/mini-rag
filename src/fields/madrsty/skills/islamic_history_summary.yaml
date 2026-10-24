@@ -1,0 +1,10 @@
+id: islamic_history_summary
+name: Summary
+subject: islamic_history
+subject_label: التاريخ الإسلامي
+intent: summary
+profile: islamic_history_summary
+prompt: summary
+description: Summarize a islamic history lesson or section.
+order: 51
+validation: {}

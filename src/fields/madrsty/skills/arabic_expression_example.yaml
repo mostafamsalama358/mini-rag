@@ -1,0 +1,10 @@
+id: arabic_expression_example
+name: Example
+subject: arabic_expression
+subject_label: عربي (تعبير وقراءة)
+intent: example
+profile: arabic_expression_example
+prompt: example
+description: Worked or textbook example in arabic expression.
+order: 52
+validation: {}

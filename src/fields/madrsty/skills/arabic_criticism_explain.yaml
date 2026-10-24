@@ -1,0 +1,10 @@
+id: arabic_criticism_explain
+name: Explain
+subject: arabic_criticism
+subject_label: عربي (نقد وبلاغة)
+intent: explain
+profile: arabic_criticism_explain
+prompt: explain
+description: Explain a arabic criticism concept from the textbook.
+order: 50
+validation: {}

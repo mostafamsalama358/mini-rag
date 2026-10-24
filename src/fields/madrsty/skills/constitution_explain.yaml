@@ -1,0 +1,10 @@
+id: constitution_explain
+name: Explain
+subject: constitution
+subject_label: الدستور
+intent: explain
+profile: constitution_explain
+prompt: explain
+description: Explain a constitution concept from the textbook.
+order: 50
+validation: {}

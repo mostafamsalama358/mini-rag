@@ -1,0 +1,10 @@
+id: french_dialogue
+name: Dialogue
+subject: french
+subject_label: اللغة الفرنسية
+intent: dialogue
+profile: french_dialogue
+prompt: dialogue
+description: Answer a dialogue question from the French textbook.
+order: 28
+validation: {}

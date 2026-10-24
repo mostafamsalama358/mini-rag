@@ -1,0 +1,10 @@
+id: arabic_explain
+name: Explain
+subject: arabic
+subject_label: اللغة العربية
+intent: explain
+profile: arabic_explain
+prompt: explain
+description: Explain a arabic concept from the textbook.
+order: 50
+validation: {}

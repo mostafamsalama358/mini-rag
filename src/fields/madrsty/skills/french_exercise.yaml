@@ -1,0 +1,10 @@
+id: french_exercise
+name: Exercise
+subject: french
+subject_label: اللغة الفرنسية
+intent: exercise
+profile: french_exercise
+prompt: exercise
+description: Practice a french exercise from the textbook.
+order: 53
+validation: {}

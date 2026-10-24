@@ -1,0 +1,6 @@
+id: kuwait_history_map
+filters:
+  extra:
+    subject: kuwait_history
+notes: Subject-only hard filter. Class comes from the client grade filter.
+retrieval_strategy: default

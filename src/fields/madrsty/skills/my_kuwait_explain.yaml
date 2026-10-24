@@ -1,0 +1,10 @@
+id: my_kuwait_explain
+name: Explain
+subject: my_kuwait
+subject_label: بلادي الكويت
+intent: explain
+profile: my_kuwait_explain
+prompt: explain
+description: Explain a my kuwait concept from the textbook.
+order: 50
+validation: {}

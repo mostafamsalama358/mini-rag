@@ -1,0 +1,10 @@
+id: my_kuwait_exercise
+name: Exercise
+subject: my_kuwait
+subject_label: بلادي الكويت
+intent: exercise
+profile: my_kuwait_exercise
+prompt: exercise
+description: Practice a my kuwait exercise from the textbook.
+order: 53
+validation: {}

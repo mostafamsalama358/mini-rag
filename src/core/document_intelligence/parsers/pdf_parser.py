@@ -3,8 +3,8 @@
 Flow:
   Upload PDF
     → detect searchable pages (text layer)
-    → searchable ratio above threshold → OpenDataLoader (+ OCR for non-searchable pages)
-    → otherwise → legacy PyMuPDF/OCR path
+    → OpenDataLoader for the file, OCR for non-searchable pages
+    → legacy PyMuPDF path only when OpenDataLoader/Java is missing, or PDF_PARSER_MODE=legacy
     → DocumentModel → chunking/embedding (unchanged sole ingest path)
 """
 
@@ -47,16 +47,6 @@ def _parser_mode() -> str:
         logger.warning("Unknown PDF_PARSER_MODE=%r; using hybrid", mode)
         return "hybrid"
     return mode
-
-
-def _searchable_ratio_threshold() -> float:
-    try:
-        from helpers.config import get_settings
-
-        value = float(getattr(get_settings(), "PDF_SEARCHABLE_RATIO_THRESHOLD", 0.05))
-    except Exception:
-        value = 0.05
-    return min(1.0, max(0.0, value))
 
 
 def _pages_to_elements(
@@ -194,24 +184,21 @@ class PdfDocumentParser:
             raise DocumentIntelligenceDegraded("empty_content", "pdf produced no pages")
 
         ratio = searchable_ratio(page_flags)
-        threshold = _searchable_ratio_threshold()
         odl_ready = is_opendataloader_available()
 
         logger.info(
-            "PDF hybrid routing | file=%s pages=%s searchable_ratio=%.3f threshold=%.3f odl=%s",
+            "PDF hybrid routing | file=%s pages=%s searchable_ratio=%.3f odl=%s",
             file_path,
             len(page_flags),
             ratio,
-            threshold,
             odl_ready,
         )
 
-        if ratio < threshold or not odl_ready:
-            if not odl_ready and ratio >= threshold:
-                logger.warning(
-                    "OpenDataLoader unavailable (package/Java); using legacy OCR path | file=%s",
-                    file_path,
-                )
+        if not odl_ready:
+            logger.warning(
+                "OpenDataLoader unavailable (package/Java); using legacy OCR path | file=%s",
+                file_path,
+            )
             return self._parse_legacy(file_path, file_id)
 
         odl_doc = convert_pdf_to_json(file_path)

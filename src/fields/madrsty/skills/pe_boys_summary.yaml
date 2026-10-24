@@ -1,0 +1,10 @@
+id: pe_boys_summary
+name: Summary
+subject: pe_boys
+subject_label: التربية البدنية - بنين
+intent: summary
+profile: pe_boys_summary
+prompt: summary
+description: Summarize a pe boys lesson or section.
+order: 51
+validation: {}

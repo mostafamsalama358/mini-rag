@@ -1,0 +1,10 @@
+id: pe_boys_exercise
+name: Exercise
+subject: pe_boys
+subject_label: التربية البدنية - بنين
+intent: exercise
+profile: pe_boys_exercise
+prompt: exercise
+description: Practice a pe boys exercise from the textbook.
+order: 53
+validation: {}

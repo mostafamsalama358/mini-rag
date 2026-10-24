@@ -1,0 +1,10 @@
+id: classical_logic_example
+name: Example
+subject: classical_logic
+subject_label: المنطق القديم
+intent: example
+profile: classical_logic_example
+prompt: example
+description: Worked or textbook example in classical logic.
+order: 52
+validation: {}

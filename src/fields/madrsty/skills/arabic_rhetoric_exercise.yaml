@@ -1,0 +1,10 @@
+id: arabic_rhetoric_exercise
+name: Exercise
+subject: arabic_rhetoric
+subject_label: عربي (فنون بلاغة)
+intent: exercise
+profile: arabic_rhetoric_exercise
+prompt: exercise
+description: Practice a arabic rhetoric exercise from the textbook.
+order: 53
+validation: {}
